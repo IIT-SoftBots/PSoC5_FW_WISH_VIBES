@@ -1,0 +1,15 @@
+FW_SH_ReversibleMotor/*.cydsn/codegentemp/
+FW_SH_ReversibleMotor/*.cydsn/CortexM3/
+FW_SH_ReversibleMotor/*.cydsn/Export/
+FW_SH_ReversibleMotor/*.cydsn/Generated_Source/
+
+FW_Socket/*.cydsn/codegentemp/
+FW_Socket/*cydsn/CortexM3/
+FW_Socket/*cydsn/Export/
+FW_Socket/*cydsn/Generated_Source/
+
+FW_Socket/*Backup/
+FW_SH_ReversibleMotor/*.Backup/
+
+# Catkin custom files
+CATKIN_IGNORE
