@@ -1,0 +1,9 @@
+C:\Users\mgnocco\Documents\ControlloDiVersione\WISH_TOAST\Scheda_Mano\SoftHand_Pro.cydsn\SoftHand_Pro.cyprj|4d23d666-515f-4052-9627-03d7d019f4e5
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|3975ee5a-e6a0-4394-9220-67df797dd965
+C:\Users\mgnocco\Documents\PSoC Creator\4.4\Downloads ( 4.4).cylib\Downloads ( 4.4).cyprj|81b5c645-57bd-4430-a733-93051a2918a4
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|282c0b70-02bb-4978-a8ef-f2c77808b7c1
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|8ff76f96-cdd0-44cb-a2e6-47e2d0263f86
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|095ef11b-1cb1-49fb-a311-42ae4a8e3f07
+C:\Users\mgnocco\Documents\ControlloDiVersione\WISH_TOAST\Scheda_Mano\Generic.cydsn\Generic.cyprj|e43bc747-8b77-449e-81c5-2ea1b74944a4
+C:\Users\mgnocco\Documents\ControlloDiVersione\WISH_TOAST\Scheda_Mano\Air_Chambers_Haptic_Feedback.cydsn\Air_Chambers_Haptic_Feedback.cyprj|8228f94b-4360-468f-a919-bc7a978dba6f
+C:\Users\mgnocco\Documents\ControlloDiVersione\WISH_TOAST\Scheda_Mano\Ottobock_Active_Wrist.cydsn\Ottobock_Active_Wrist.cyprj|7468c23e-774e-4de0-8bbb-5409c64c94bc

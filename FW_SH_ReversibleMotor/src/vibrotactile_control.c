@@ -223,7 +223,11 @@ float BandPassFilter(float new_value, int idx, int dir){
 
 int32 GeneratePWMValue(float acc_filt_sum){ 
     int32 pwm_hapt;
-    pwm_hapt = (int32)(SCALA * acc_filt_sum );
+    pwm_hapt = (int32)(50 * acc_filt_sum ); 
+    //Here a 'scala' factor should be used instead of 50 according to the actuatuator used for VT feedback.
+    //Usually 'scala' is around 30-40. Here we multiply by 50 and send this value to the socket.
+    //in the socket this value will be divided by 50 and multiplied by the 'scala' parameter corresponding to the actuator
+    //mountedon that specific socket. This way the FW of the hand should be not modified when the actuators change.
     return pwm_hapt;
 }
 
@@ -237,10 +241,7 @@ void driveVibrotactileFeedback(){
             SignalFiltering(i);
             SingleAxisMapping(i);  
             ActuatorsInputComputation(i);
-    
-            if (input_act_sent[i] < 10)
-                input_act_sent[i] = 0;
-    
+        
             g_refNew_vibrotactile[i].pwm = (int16)input_act_sent[i] ;
 
         }

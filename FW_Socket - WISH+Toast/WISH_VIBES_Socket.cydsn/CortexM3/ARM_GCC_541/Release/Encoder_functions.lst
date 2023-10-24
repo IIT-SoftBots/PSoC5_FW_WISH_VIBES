@@ -1,0 +1,851 @@
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cczULO9j.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 6
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.syntax unified
+  15              		.file	"Encoder_functions.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.section	.text.Change_CS_EncoderLine,"ax",%progbits
+  20              		.align	2
+  21              		.global	Change_CS_EncoderLine
+  22              		.thumb
+  23              		.thumb_func
+  24              		.type	Change_CS_EncoderLine, %function
+  25              	Change_CS_EncoderLine:
+  26              	.LFB64:
+  27              		.file 1 "..\\src\\Encoder_functions.c"
+   1:..\src/Encoder_functions.c **** // ----------------------------------------------------------------------------
+   2:..\src/Encoder_functions.c **** // BSD 3-Clause License
+   3:..\src/Encoder_functions.c **** 
+   4:..\src/Encoder_functions.c **** // Copyright (c) 2016, qbrobotics
+   5:..\src/Encoder_functions.c **** // Copyright (c) 2017-2020, Centro "E.Piaggio"
+   6:..\src/Encoder_functions.c **** // All rights reserved.
+   7:..\src/Encoder_functions.c **** 
+   8:..\src/Encoder_functions.c **** // Redistribution and use in source and binary forms, with or without
+   9:..\src/Encoder_functions.c **** // modification, are permitted provided that the following conditions are met:
+  10:..\src/Encoder_functions.c **** 
+  11:..\src/Encoder_functions.c **** // * Redistributions of source code must retain the above copyright notice, this
+  12:..\src/Encoder_functions.c **** //   list of conditions and the following disclaimer.
+  13:..\src/Encoder_functions.c **** 
+  14:..\src/Encoder_functions.c **** // * Redistributions in binary form must reproduce the above copyright notice,
+  15:..\src/Encoder_functions.c **** //   this list of conditions and the following disclaimer in the documentation
+  16:..\src/Encoder_functions.c **** //   and/or other materials provided with the distribution.
+  17:..\src/Encoder_functions.c **** 
+  18:..\src/Encoder_functions.c **** // * Neither the name of the copyright holder nor the names of its
+  19:..\src/Encoder_functions.c **** //   contributors may be used to endorse or promote products derived from
+  20:..\src/Encoder_functions.c **** //   this software without specific prior written permission.
+  21:..\src/Encoder_functions.c **** 
+  22:..\src/Encoder_functions.c **** // THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+  23:..\src/Encoder_functions.c **** // AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+  24:..\src/Encoder_functions.c **** // IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+  25:..\src/Encoder_functions.c **** // DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+  26:..\src/Encoder_functions.c **** // FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+  27:..\src/Encoder_functions.c **** // DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+  28:..\src/Encoder_functions.c **** // SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+  29:..\src/Encoder_functions.c **** // CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+  30:..\src/Encoder_functions.c **** // OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cczULO9j.s 			page 2
+
+
+  31:..\src/Encoder_functions.c **** // OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+  32:..\src/Encoder_functions.c **** // POSSIBILITY OF SUCH DAMAGE.
+  33:..\src/Encoder_functions.c **** // ----------------------------------------------------------------------------
+  34:..\src/Encoder_functions.c **** 
+  35:..\src/Encoder_functions.c **** /**
+  36:..\src/Encoder_functions.c **** * \file         Encoder_functions.c
+  37:..\src/Encoder_functions.c **** *
+  38:..\src/Encoder_functions.c **** * \brief        Implementation of SPI module functions.
+  39:..\src/Encoder_functions.c **** * \date         March 20th, 2020
+  40:..\src/Encoder_functions.c **** * \author       _Centro "E.Piaggio"_
+  41:..\src/Encoder_functions.c **** * \copyright    (C) 2012-2016 qbrobotics. All rights reserved.
+  42:..\src/Encoder_functions.c **** * \copyright    (C) 2017-2020 Centro "E.Piaggio". All rights reserved.
+  43:..\src/Encoder_functions.c **** */
+  44:..\src/Encoder_functions.c **** 
+  45:..\src/Encoder_functions.c **** #include "Encoder_functions.h"
+  46:..\src/Encoder_functions.c **** 
+  47:..\src/Encoder_functions.c **** /********************************************************************************
+  48:..\src/Encoder_functions.c **** * Function Name: Change_CS_EncoderLine                                                   *
+  49:..\src/Encoder_functions.c **** *********************************************************************************/
+  50:..\src/Encoder_functions.c **** void Change_CS_EncoderLine(int n)
+  51:..\src/Encoder_functions.c **** { 
+  28              		.loc 1 51 0
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 8
+  31              		@ frame_needed = 1, uses_anonymous_args = 0
+  32              		@ link register save eliminated.
+  33 0000 80B4     		push	{r7}
+  34              		.cfi_def_cfa_offset 4
+  35              		.cfi_offset 7, -4
+  36 0002 83B0     		sub	sp, sp, #12
+  37              		.cfi_def_cfa_offset 16
+  38 0004 00AF     		add	r7, sp, #0
+  39              		.cfi_def_cfa_register 7
+  40 0006 7860     		str	r0, [r7, #4]
+  52:..\src/Encoder_functions.c **** }
+  41              		.loc 1 52 0
+  42 0008 00BF     		nop
+  43 000a 0C37     		adds	r7, r7, #12
+  44              		.cfi_def_cfa_offset 4
+  45 000c BD46     		mov	sp, r7
+  46              		.cfi_def_cfa_register 13
+  47              		@ sp needed
+  48 000e 80BC     		pop	{r7}
+  49              		.cfi_restore 7
+  50              		.cfi_def_cfa_offset 0
+  51 0010 7047     		bx	lr
+  52              		.cfi_endproc
+  53              	.LFE64:
+  54              		.size	Change_CS_EncoderLine, .-Change_CS_EncoderLine
+  55 0012 00BF     		.section	.text.EncoderReset,"ax",%progbits
+  56              		.align	2
+  57              		.global	EncoderReset
+  58              		.thumb
+  59              		.thumb_func
+  60              		.type	EncoderReset, %function
+  61              	EncoderReset:
+  62              	.LFB65:
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cczULO9j.s 			page 3
+
+
+  53:..\src/Encoder_functions.c **** 
+  54:..\src/Encoder_functions.c **** /*******************************************************************************
+  55:..\src/Encoder_functions.c **** * Function Name: Encoder Reset
+  56:..\src/Encoder_functions.c **** *********************************************************************************/
+  57:..\src/Encoder_functions.c **** void EncoderReset() {
+  63              		.loc 1 57 0
+  64              		.cfi_startproc
+  65              		@ args = 0, pretend = 0, frame = 0
+  66              		@ frame_needed = 1, uses_anonymous_args = 0
+  67              		@ link register save eliminated.
+  68 0000 80B4     		push	{r7}
+  69              		.cfi_def_cfa_offset 4
+  70              		.cfi_offset 7, -4
+  71 0002 00AF     		add	r7, sp, #0
+  72              		.cfi_def_cfa_register 7
+  58:..\src/Encoder_functions.c **** 	
+  59:..\src/Encoder_functions.c **** }
+  73              		.loc 1 59 0
+  74 0004 00BF     		nop
+  75 0006 BD46     		mov	sp, r7
+  76              		.cfi_def_cfa_register 13
+  77              		@ sp needed
+  78 0008 80BC     		pop	{r7}
+  79              		.cfi_restore 7
+  80              		.cfi_def_cfa_offset 0
+  81 000a 7047     		bx	lr
+  82              		.cfi_endproc
+  83              	.LFE65:
+  84              		.size	EncoderReset, .-EncoderReset
+  85              		.section	.text.InitEncoderGeneral,"ax",%progbits
+  86              		.align	2
+  87              		.global	InitEncoderGeneral
+  88              		.thumb
+  89              		.thumb_func
+  90              		.type	InitEncoderGeneral, %function
+  91              	InitEncoderGeneral:
+  92              	.LFB66:
+  60:..\src/Encoder_functions.c **** 
+  61:..\src/Encoder_functions.c **** /********************************************************************************
+  62:..\src/Encoder_functions.c **** * Function Name: InitEncoderGeneral                                                 *
+  63:..\src/Encoder_functions.c **** *********************************************************************************/
+  64:..\src/Encoder_functions.c **** void InitEncoderGeneral()
+  65:..\src/Encoder_functions.c **** {
+  93              		.loc 1 65 0
+  94              		.cfi_startproc
+  95              		@ args = 0, pretend = 0, frame = 0
+  96              		@ frame_needed = 1, uses_anonymous_args = 0
+  97              		@ link register save eliminated.
+  98 0000 80B4     		push	{r7}
+  99              		.cfi_def_cfa_offset 4
+ 100              		.cfi_offset 7, -4
+ 101 0002 00AF     		add	r7, sp, #0
+ 102              		.cfi_def_cfa_register 7
+  66:..\src/Encoder_functions.c **** }
+ 103              		.loc 1 66 0
+ 104 0004 00BF     		nop
+ 105 0006 BD46     		mov	sp, r7
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cczULO9j.s 			page 4
+
+
+ 106              		.cfi_def_cfa_register 13
+ 107              		@ sp needed
+ 108 0008 80BC     		pop	{r7}
+ 109              		.cfi_restore 7
+ 110              		.cfi_def_cfa_offset 0
+ 111 000a 7047     		bx	lr
+ 112              		.cfi_endproc
+ 113              	.LFE66:
+ 114              		.size	InitEncoderGeneral, .-InitEncoderGeneral
+ 115              		.section	.text.InitEncoderLine,"ax",%progbits
+ 116              		.align	2
+ 117              		.global	InitEncoderLine
+ 118              		.thumb
+ 119              		.thumb_func
+ 120              		.type	InitEncoderLine, %function
+ 121              	InitEncoderLine:
+ 122              	.LFB67:
+  67:..\src/Encoder_functions.c **** 
+  68:..\src/Encoder_functions.c **** /*******************************************************************************
+  69:..\src/Encoder_functions.c **** * Function Name: Encoder Initialization
+  70:..\src/Encoder_functions.c **** *********************************************************************************/
+  71:..\src/Encoder_functions.c **** void InitEncoderLine(uint8 n){
+ 123              		.loc 1 71 0
+ 124              		.cfi_startproc
+ 125              		@ args = 0, pretend = 0, frame = 8
+ 126              		@ frame_needed = 1, uses_anonymous_args = 0
+ 127              		@ link register save eliminated.
+ 128 0000 80B4     		push	{r7}
+ 129              		.cfi_def_cfa_offset 4
+ 130              		.cfi_offset 7, -4
+ 131 0002 83B0     		sub	sp, sp, #12
+ 132              		.cfi_def_cfa_offset 16
+ 133 0004 00AF     		add	r7, sp, #0
+ 134              		.cfi_def_cfa_register 7
+ 135 0006 0346     		mov	r3, r0
+ 136 0008 FB71     		strb	r3, [r7, #7]
+  72:..\src/Encoder_functions.c ****   
+  73:..\src/Encoder_functions.c **** }
+ 137              		.loc 1 73 0
+ 138 000a 00BF     		nop
+ 139 000c 0C37     		adds	r7, r7, #12
+ 140              		.cfi_def_cfa_offset 4
+ 141 000e BD46     		mov	sp, r7
+ 142              		.cfi_def_cfa_register 13
+ 143              		@ sp needed
+ 144 0010 80BC     		pop	{r7}
+ 145              		.cfi_restore 7
+ 146              		.cfi_def_cfa_offset 0
+ 147 0012 7047     		bx	lr
+ 148              		.cfi_endproc
+ 149              	.LFE67:
+ 150              		.size	InitEncoderLine, .-InitEncoderLine
+ 151              		.section	.text.ReadEncoderLine,"ax",%progbits
+ 152              		.align	2
+ 153              		.global	ReadEncoderLine
+ 154              		.thumb
+ 155              		.thumb_func
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cczULO9j.s 			page 5
+
+
+ 156              		.type	ReadEncoderLine, %function
+ 157              	ReadEncoderLine:
+ 158              	.LFB68:
+  74:..\src/Encoder_functions.c **** 
+  75:..\src/Encoder_functions.c **** /*******************************************************************************
+  76:..\src/Encoder_functions.c **** * Function Name: Read Encoder
+  77:..\src/Encoder_functions.c **** *********************************************************************************/
+  78:..\src/Encoder_functions.c **** void ReadEncoderLine(int n_encoders, int n_line)
+  79:..\src/Encoder_functions.c **** {  
+ 159              		.loc 1 79 0
+ 160              		.cfi_startproc
+ 161              		@ args = 0, pretend = 0, frame = 8
+ 162              		@ frame_needed = 1, uses_anonymous_args = 0
+ 163              		@ link register save eliminated.
+ 164 0000 80B4     		push	{r7}
+ 165              		.cfi_def_cfa_offset 4
+ 166              		.cfi_offset 7, -4
+ 167 0002 83B0     		sub	sp, sp, #12
+ 168              		.cfi_def_cfa_offset 16
+ 169 0004 00AF     		add	r7, sp, #0
+ 170              		.cfi_def_cfa_register 7
+ 171 0006 7860     		str	r0, [r7, #4]
+ 172 0008 3960     		str	r1, [r7]
+  80:..\src/Encoder_functions.c **** }...
+ 173              		.loc 1 80 0
+ 174 000a 00BF     		nop
+ 175 000c 0C37     		adds	r7, r7, #12
+ 176              		.cfi_def_cfa_offset 4
+ 177 000e BD46     		mov	sp, r7
+ 178              		.cfi_def_cfa_register 13
+ 179              		@ sp needed
+ 180 0010 80BC     		pop	{r7}
+ 181              		.cfi_restore 7
+ 182              		.cfi_def_cfa_offset 0
+ 183 0012 7047     		bx	lr
+ 184              		.cfi_endproc
+ 185              	.LFE68:
+ 186              		.size	ReadEncoderLine, .-ReadEncoderLine
+ 187              		.text
+ 188              	.Letext0:
+ 189              		.file 2 "c:\\program files (x86)\\cypress\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.
+ 190              		.file 3 "c:\\program files (x86)\\cypress\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.
+ 191              		.file 4 "Generated_Source\\PSoC5/cytypes.h"
+ 192              		.file 5 "Generated_Source\\PSoC5/core_cm3.h"
+ 193              		.section	.debug_info,"",%progbits
+ 194              	.Ldebug_info0:
+ 195 0000 56010000 		.4byte	0x156
+ 196 0004 0400     		.2byte	0x4
+ 197 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 198 000a 04       		.byte	0x4
+ 199 000b 01       		.uleb128 0x1
+ 200 000c 81000000 		.4byte	.LASF24
+ 201 0010 0C       		.byte	0xc
+ 202 0011 3C010000 		.4byte	.LASF25
+ 203 0015 83010000 		.4byte	.LASF26
+ 204 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 205 001d 00000000 		.4byte	0
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cczULO9j.s 			page 6
+
+
+ 206 0021 00000000 		.4byte	.Ldebug_line0
+ 207 0025 02       		.uleb128 0x2
+ 208 0026 01       		.byte	0x1
+ 209 0027 06       		.byte	0x6
+ 210 0028 77010000 		.4byte	.LASF0
+ 211 002c 02       		.uleb128 0x2
+ 212 002d 01       		.byte	0x1
+ 213 002e 08       		.byte	0x8
+ 214 002f 0F010000 		.4byte	.LASF1
+ 215 0033 02       		.uleb128 0x2
+ 216 0034 02       		.byte	0x2
+ 217 0035 05       		.byte	0x5
+ 218 0036 21020000 		.4byte	.LASF2
+ 219 003a 02       		.uleb128 0x2
+ 220 003b 02       		.byte	0x2
+ 221 003c 07       		.byte	0x7
+ 222 003d 0E000000 		.4byte	.LASF3
+ 223 0041 03       		.uleb128 0x3
+ 224 0042 01020000 		.4byte	.LASF9
+ 225 0046 02       		.byte	0x2
+ 226 0047 3F       		.byte	0x3f
+ 227 0048 4C000000 		.4byte	0x4c
+ 228 004c 02       		.uleb128 0x2
+ 229 004d 04       		.byte	0x4
+ 230 004e 05       		.byte	0x5
+ 231 004f 33010000 		.4byte	.LASF4
+ 232 0053 02       		.uleb128 0x2
+ 233 0054 04       		.byte	0x4
+ 234 0055 07       		.byte	0x7
+ 235 0056 53000000 		.4byte	.LASF5
+ 236 005a 02       		.uleb128 0x2
+ 237 005b 08       		.byte	0x8
+ 238 005c 05       		.byte	0x5
+ 239 005d 00000000 		.4byte	.LASF6
+ 240 0061 02       		.uleb128 0x2
+ 241 0062 08       		.byte	0x8
+ 242 0063 07       		.byte	0x7
+ 243 0064 65000000 		.4byte	.LASF7
+ 244 0068 04       		.uleb128 0x4
+ 245 0069 04       		.byte	0x4
+ 246 006a 05       		.byte	0x5
+ 247 006b 696E7400 		.ascii	"int\000"
+ 248 006f 02       		.uleb128 0x2
+ 249 0070 04       		.byte	0x4
+ 250 0071 07       		.byte	0x7
+ 251 0072 21000000 		.4byte	.LASF8
+ 252 0076 03       		.uleb128 0x3
+ 253 0077 2B020000 		.4byte	.LASF10
+ 254 007b 03       		.byte	0x3
+ 255 007c 2C       		.byte	0x2c
+ 256 007d 41000000 		.4byte	0x41
+ 257 0081 05       		.uleb128 0x5
+ 258 0082 4D000000 		.4byte	.LASF11
+ 259 0086 04       		.byte	0x4
+ 260 0087 E401     		.2byte	0x1e4
+ 261 0089 2C000000 		.4byte	0x2c
+ 262 008d 02       		.uleb128 0x2
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cczULO9j.s 			page 7
+
+
+ 263 008e 04       		.byte	0x4
+ 264 008f 04       		.byte	0x4
+ 265 0090 1B020000 		.4byte	.LASF12
+ 266 0094 02       		.uleb128 0x2
+ 267 0095 08       		.byte	0x8
+ 268 0096 04       		.byte	0x4
+ 269 0097 57010000 		.4byte	.LASF13
+ 270 009b 02       		.uleb128 0x2
+ 271 009c 01       		.byte	0x1
+ 272 009d 08       		.byte	0x8
+ 273 009e 7C000000 		.4byte	.LASF14
+ 274 00a2 02       		.uleb128 0x2
+ 275 00a3 08       		.byte	0x8
+ 276 00a4 04       		.byte	0x4
+ 277 00a5 5E010000 		.4byte	.LASF15
+ 278 00a9 02       		.uleb128 0x2
+ 279 00aa 04       		.byte	0x4
+ 280 00ab 07       		.byte	0x7
+ 281 00ac 43020000 		.4byte	.LASF16
+ 282 00b0 06       		.uleb128 0x6
+ 283 00b1 1D010000 		.4byte	.LASF19
+ 284 00b5 01       		.byte	0x1
+ 285 00b6 32       		.byte	0x32
+ 286 00b7 00000000 		.4byte	.LFB64
+ 287 00bb 12000000 		.4byte	.LFE64-.LFB64
+ 288 00bf 01       		.uleb128 0x1
+ 289 00c0 9C       		.byte	0x9c
+ 290 00c1 D2000000 		.4byte	0xd2
+ 291 00c5 07       		.uleb128 0x7
+ 292 00c6 6E00     		.ascii	"n\000"
+ 293 00c8 01       		.byte	0x1
+ 294 00c9 32       		.byte	0x32
+ 295 00ca 68000000 		.4byte	0x68
+ 296 00ce 02       		.uleb128 0x2
+ 297 00cf 91       		.byte	0x91
+ 298 00d0 74       		.sleb128 -12
+ 299 00d1 00       		.byte	0
+ 300 00d2 08       		.uleb128 0x8
+ 301 00d3 40000000 		.4byte	.LASF17
+ 302 00d7 01       		.byte	0x1
+ 303 00d8 39       		.byte	0x39
+ 304 00d9 00000000 		.4byte	.LFB65
+ 305 00dd 0C000000 		.4byte	.LFE65-.LFB65
+ 306 00e1 01       		.uleb128 0x1
+ 307 00e2 9C       		.byte	0x9c
+ 308 00e3 08       		.uleb128 0x8
+ 309 00e4 EE010000 		.4byte	.LASF18
+ 310 00e8 01       		.byte	0x1
+ 311 00e9 40       		.byte	0x40
+ 312 00ea 00000000 		.4byte	.LFB66
+ 313 00ee 0C000000 		.4byte	.LFE66-.LFB66
+ 314 00f2 01       		.uleb128 0x1
+ 315 00f3 9C       		.byte	0x9c
+ 316 00f4 06       		.uleb128 0x6
+ 317 00f5 33020000 		.4byte	.LASF20
+ 318 00f9 01       		.byte	0x1
+ 319 00fa 47       		.byte	0x47
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cczULO9j.s 			page 8
+
+
+ 320 00fb 00000000 		.4byte	.LFB67
+ 321 00ff 14000000 		.4byte	.LFE67-.LFB67
+ 322 0103 01       		.uleb128 0x1
+ 323 0104 9C       		.byte	0x9c
+ 324 0105 16010000 		.4byte	0x116
+ 325 0109 07       		.uleb128 0x7
+ 326 010a 6E00     		.ascii	"n\000"
+ 327 010c 01       		.byte	0x1
+ 328 010d 47       		.byte	0x47
+ 329 010e 81000000 		.4byte	0x81
+ 330 0112 02       		.uleb128 0x2
+ 331 0113 91       		.byte	0x91
+ 332 0114 77       		.sleb128 -9
+ 333 0115 00       		.byte	0
+ 334 0116 06       		.uleb128 0x6
+ 335 0117 0B020000 		.4byte	.LASF21
+ 336 011b 01       		.byte	0x1
+ 337 011c 4E       		.byte	0x4e
+ 338 011d 00000000 		.4byte	.LFB68
+ 339 0121 14000000 		.4byte	.LFE68-.LFB68
+ 340 0125 01       		.uleb128 0x1
+ 341 0126 9C       		.byte	0x9c
+ 342 0127 48010000 		.4byte	0x148
+ 343 012b 09       		.uleb128 0x9
+ 344 012c 35000000 		.4byte	.LASF22
+ 345 0130 01       		.byte	0x1
+ 346 0131 4E       		.byte	0x4e
+ 347 0132 68000000 		.4byte	0x68
+ 348 0136 02       		.uleb128 0x2
+ 349 0137 91       		.byte	0x91
+ 350 0138 74       		.sleb128 -12
+ 351 0139 09       		.uleb128 0x9
+ 352 013a 2E000000 		.4byte	.LASF23
+ 353 013e 01       		.byte	0x1
+ 354 013f 4E       		.byte	0x4e
+ 355 0140 68000000 		.4byte	0x68
+ 356 0144 02       		.uleb128 0x2
+ 357 0145 91       		.byte	0x91
+ 358 0146 70       		.sleb128 -16
+ 359 0147 00       		.byte	0
+ 360 0148 0A       		.uleb128 0xa
+ 361 0149 6A010000 		.4byte	.LASF27
+ 362 014d 05       		.byte	0x5
+ 363 014e 1207     		.2byte	0x712
+ 364 0150 54010000 		.4byte	0x154
+ 365 0154 0B       		.uleb128 0xb
+ 366 0155 76000000 		.4byte	0x76
+ 367 0159 00       		.byte	0
+ 368              		.section	.debug_abbrev,"",%progbits
+ 369              	.Ldebug_abbrev0:
+ 370 0000 01       		.uleb128 0x1
+ 371 0001 11       		.uleb128 0x11
+ 372 0002 01       		.byte	0x1
+ 373 0003 25       		.uleb128 0x25
+ 374 0004 0E       		.uleb128 0xe
+ 375 0005 13       		.uleb128 0x13
+ 376 0006 0B       		.uleb128 0xb
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cczULO9j.s 			page 9
+
+
+ 377 0007 03       		.uleb128 0x3
+ 378 0008 0E       		.uleb128 0xe
+ 379 0009 1B       		.uleb128 0x1b
+ 380 000a 0E       		.uleb128 0xe
+ 381 000b 55       		.uleb128 0x55
+ 382 000c 17       		.uleb128 0x17
+ 383 000d 11       		.uleb128 0x11
+ 384 000e 01       		.uleb128 0x1
+ 385 000f 10       		.uleb128 0x10
+ 386 0010 17       		.uleb128 0x17
+ 387 0011 00       		.byte	0
+ 388 0012 00       		.byte	0
+ 389 0013 02       		.uleb128 0x2
+ 390 0014 24       		.uleb128 0x24
+ 391 0015 00       		.byte	0
+ 392 0016 0B       		.uleb128 0xb
+ 393 0017 0B       		.uleb128 0xb
+ 394 0018 3E       		.uleb128 0x3e
+ 395 0019 0B       		.uleb128 0xb
+ 396 001a 03       		.uleb128 0x3
+ 397 001b 0E       		.uleb128 0xe
+ 398 001c 00       		.byte	0
+ 399 001d 00       		.byte	0
+ 400 001e 03       		.uleb128 0x3
+ 401 001f 16       		.uleb128 0x16
+ 402 0020 00       		.byte	0
+ 403 0021 03       		.uleb128 0x3
+ 404 0022 0E       		.uleb128 0xe
+ 405 0023 3A       		.uleb128 0x3a
+ 406 0024 0B       		.uleb128 0xb
+ 407 0025 3B       		.uleb128 0x3b
+ 408 0026 0B       		.uleb128 0xb
+ 409 0027 49       		.uleb128 0x49
+ 410 0028 13       		.uleb128 0x13
+ 411 0029 00       		.byte	0
+ 412 002a 00       		.byte	0
+ 413 002b 04       		.uleb128 0x4
+ 414 002c 24       		.uleb128 0x24
+ 415 002d 00       		.byte	0
+ 416 002e 0B       		.uleb128 0xb
+ 417 002f 0B       		.uleb128 0xb
+ 418 0030 3E       		.uleb128 0x3e
+ 419 0031 0B       		.uleb128 0xb
+ 420 0032 03       		.uleb128 0x3
+ 421 0033 08       		.uleb128 0x8
+ 422 0034 00       		.byte	0
+ 423 0035 00       		.byte	0
+ 424 0036 05       		.uleb128 0x5
+ 425 0037 16       		.uleb128 0x16
+ 426 0038 00       		.byte	0
+ 427 0039 03       		.uleb128 0x3
+ 428 003a 0E       		.uleb128 0xe
+ 429 003b 3A       		.uleb128 0x3a
+ 430 003c 0B       		.uleb128 0xb
+ 431 003d 3B       		.uleb128 0x3b
+ 432 003e 05       		.uleb128 0x5
+ 433 003f 49       		.uleb128 0x49
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cczULO9j.s 			page 10
+
+
+ 434 0040 13       		.uleb128 0x13
+ 435 0041 00       		.byte	0
+ 436 0042 00       		.byte	0
+ 437 0043 06       		.uleb128 0x6
+ 438 0044 2E       		.uleb128 0x2e
+ 439 0045 01       		.byte	0x1
+ 440 0046 3F       		.uleb128 0x3f
+ 441 0047 19       		.uleb128 0x19
+ 442 0048 03       		.uleb128 0x3
+ 443 0049 0E       		.uleb128 0xe
+ 444 004a 3A       		.uleb128 0x3a
+ 445 004b 0B       		.uleb128 0xb
+ 446 004c 3B       		.uleb128 0x3b
+ 447 004d 0B       		.uleb128 0xb
+ 448 004e 27       		.uleb128 0x27
+ 449 004f 19       		.uleb128 0x19
+ 450 0050 11       		.uleb128 0x11
+ 451 0051 01       		.uleb128 0x1
+ 452 0052 12       		.uleb128 0x12
+ 453 0053 06       		.uleb128 0x6
+ 454 0054 40       		.uleb128 0x40
+ 455 0055 18       		.uleb128 0x18
+ 456 0056 9742     		.uleb128 0x2117
+ 457 0058 19       		.uleb128 0x19
+ 458 0059 01       		.uleb128 0x1
+ 459 005a 13       		.uleb128 0x13
+ 460 005b 00       		.byte	0
+ 461 005c 00       		.byte	0
+ 462 005d 07       		.uleb128 0x7
+ 463 005e 05       		.uleb128 0x5
+ 464 005f 00       		.byte	0
+ 465 0060 03       		.uleb128 0x3
+ 466 0061 08       		.uleb128 0x8
+ 467 0062 3A       		.uleb128 0x3a
+ 468 0063 0B       		.uleb128 0xb
+ 469 0064 3B       		.uleb128 0x3b
+ 470 0065 0B       		.uleb128 0xb
+ 471 0066 49       		.uleb128 0x49
+ 472 0067 13       		.uleb128 0x13
+ 473 0068 02       		.uleb128 0x2
+ 474 0069 18       		.uleb128 0x18
+ 475 006a 00       		.byte	0
+ 476 006b 00       		.byte	0
+ 477 006c 08       		.uleb128 0x8
+ 478 006d 2E       		.uleb128 0x2e
+ 479 006e 00       		.byte	0
+ 480 006f 3F       		.uleb128 0x3f
+ 481 0070 19       		.uleb128 0x19
+ 482 0071 03       		.uleb128 0x3
+ 483 0072 0E       		.uleb128 0xe
+ 484 0073 3A       		.uleb128 0x3a
+ 485 0074 0B       		.uleb128 0xb
+ 486 0075 3B       		.uleb128 0x3b
+ 487 0076 0B       		.uleb128 0xb
+ 488 0077 11       		.uleb128 0x11
+ 489 0078 01       		.uleb128 0x1
+ 490 0079 12       		.uleb128 0x12
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cczULO9j.s 			page 11
+
+
+ 491 007a 06       		.uleb128 0x6
+ 492 007b 40       		.uleb128 0x40
+ 493 007c 18       		.uleb128 0x18
+ 494 007d 9742     		.uleb128 0x2117
+ 495 007f 19       		.uleb128 0x19
+ 496 0080 00       		.byte	0
+ 497 0081 00       		.byte	0
+ 498 0082 09       		.uleb128 0x9
+ 499 0083 05       		.uleb128 0x5
+ 500 0084 00       		.byte	0
+ 501 0085 03       		.uleb128 0x3
+ 502 0086 0E       		.uleb128 0xe
+ 503 0087 3A       		.uleb128 0x3a
+ 504 0088 0B       		.uleb128 0xb
+ 505 0089 3B       		.uleb128 0x3b
+ 506 008a 0B       		.uleb128 0xb
+ 507 008b 49       		.uleb128 0x49
+ 508 008c 13       		.uleb128 0x13
+ 509 008d 02       		.uleb128 0x2
+ 510 008e 18       		.uleb128 0x18
+ 511 008f 00       		.byte	0
+ 512 0090 00       		.byte	0
+ 513 0091 0A       		.uleb128 0xa
+ 514 0092 34       		.uleb128 0x34
+ 515 0093 00       		.byte	0
+ 516 0094 03       		.uleb128 0x3
+ 517 0095 0E       		.uleb128 0xe
+ 518 0096 3A       		.uleb128 0x3a
+ 519 0097 0B       		.uleb128 0xb
+ 520 0098 3B       		.uleb128 0x3b
+ 521 0099 05       		.uleb128 0x5
+ 522 009a 49       		.uleb128 0x49
+ 523 009b 13       		.uleb128 0x13
+ 524 009c 3F       		.uleb128 0x3f
+ 525 009d 19       		.uleb128 0x19
+ 526 009e 3C       		.uleb128 0x3c
+ 527 009f 19       		.uleb128 0x19
+ 528 00a0 00       		.byte	0
+ 529 00a1 00       		.byte	0
+ 530 00a2 0B       		.uleb128 0xb
+ 531 00a3 35       		.uleb128 0x35
+ 532 00a4 00       		.byte	0
+ 533 00a5 49       		.uleb128 0x49
+ 534 00a6 13       		.uleb128 0x13
+ 535 00a7 00       		.byte	0
+ 536 00a8 00       		.byte	0
+ 537 00a9 00       		.byte	0
+ 538              		.section	.debug_aranges,"",%progbits
+ 539 0000 3C000000 		.4byte	0x3c
+ 540 0004 0200     		.2byte	0x2
+ 541 0006 00000000 		.4byte	.Ldebug_info0
+ 542 000a 04       		.byte	0x4
+ 543 000b 00       		.byte	0
+ 544 000c 0000     		.2byte	0
+ 545 000e 0000     		.2byte	0
+ 546 0010 00000000 		.4byte	.LFB64
+ 547 0014 12000000 		.4byte	.LFE64-.LFB64
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cczULO9j.s 			page 12
+
+
+ 548 0018 00000000 		.4byte	.LFB65
+ 549 001c 0C000000 		.4byte	.LFE65-.LFB65
+ 550 0020 00000000 		.4byte	.LFB66
+ 551 0024 0C000000 		.4byte	.LFE66-.LFB66
+ 552 0028 00000000 		.4byte	.LFB67
+ 553 002c 14000000 		.4byte	.LFE67-.LFB67
+ 554 0030 00000000 		.4byte	.LFB68
+ 555 0034 14000000 		.4byte	.LFE68-.LFB68
+ 556 0038 00000000 		.4byte	0
+ 557 003c 00000000 		.4byte	0
+ 558              		.section	.debug_ranges,"",%progbits
+ 559              	.Ldebug_ranges0:
+ 560 0000 00000000 		.4byte	.LFB64
+ 561 0004 12000000 		.4byte	.LFE64
+ 562 0008 00000000 		.4byte	.LFB65
+ 563 000c 0C000000 		.4byte	.LFE65
+ 564 0010 00000000 		.4byte	.LFB66
+ 565 0014 0C000000 		.4byte	.LFE66
+ 566 0018 00000000 		.4byte	.LFB67
+ 567 001c 14000000 		.4byte	.LFE67
+ 568 0020 00000000 		.4byte	.LFB68
+ 569 0024 14000000 		.4byte	.LFE68
+ 570 0028 00000000 		.4byte	0
+ 571 002c 00000000 		.4byte	0
+ 572              		.section	.debug_line,"",%progbits
+ 573              	.Ldebug_line0:
+ 574 0000 B9010000 		.section	.debug_str,"MS",%progbits,1
+ 574      02006001 
+ 574      00000201 
+ 574      FB0E0D00 
+ 574      01010101 
+ 575              	.LASF6:
+ 576 0000 6C6F6E67 		.ascii	"long long int\000"
+ 576      206C6F6E 
+ 576      6720696E 
+ 576      7400
+ 577              	.LASF3:
+ 578 000e 73686F72 		.ascii	"short unsigned int\000"
+ 578      7420756E 
+ 578      7369676E 
+ 578      65642069 
+ 578      6E7400
+ 579              	.LASF8:
+ 580 0021 756E7369 		.ascii	"unsigned int\000"
+ 580      676E6564 
+ 580      20696E74 
+ 580      00
+ 581              	.LASF23:
+ 582 002e 6E5F6C69 		.ascii	"n_line\000"
+ 582      6E6500
+ 583              	.LASF22:
+ 584 0035 6E5F656E 		.ascii	"n_encoders\000"
+ 584      636F6465 
+ 584      727300
+ 585              	.LASF17:
+ 586 0040 456E636F 		.ascii	"EncoderReset\000"
+ 586      64657252 
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cczULO9j.s 			page 13
+
+
+ 586      65736574 
+ 586      00
+ 587              	.LASF11:
+ 588 004d 75696E74 		.ascii	"uint8\000"
+ 588      3800
+ 589              	.LASF5:
+ 590 0053 6C6F6E67 		.ascii	"long unsigned int\000"
+ 590      20756E73 
+ 590      69676E65 
+ 590      6420696E 
+ 590      7400
+ 591              	.LASF7:
+ 592 0065 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 592      206C6F6E 
+ 592      6720756E 
+ 592      7369676E 
+ 592      65642069 
+ 593              	.LASF14:
+ 594 007c 63686172 		.ascii	"char\000"
+ 594      00
+ 595              	.LASF24:
+ 596 0081 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 596      43313120 
+ 596      352E342E 
+ 596      31203230 
+ 596      31363036 
+ 597 00b4 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
+ 597      20726576 
+ 597      6973696F 
+ 597      6E203233 
+ 597      37373135 
+ 598 00e7 30202D66 		.ascii	"0 -ffunction-sections -ffat-lto-objects\000"
+ 598      66756E63 
+ 598      74696F6E 
+ 598      2D736563 
+ 598      74696F6E 
+ 599              	.LASF1:
+ 600 010f 756E7369 		.ascii	"unsigned char\000"
+ 600      676E6564 
+ 600      20636861 
+ 600      7200
+ 601              	.LASF19:
+ 602 011d 4368616E 		.ascii	"Change_CS_EncoderLine\000"
+ 602      67655F43 
+ 602      535F456E 
+ 602      636F6465 
+ 602      724C696E 
+ 603              	.LASF4:
+ 604 0133 6C6F6E67 		.ascii	"long int\000"
+ 604      20696E74 
+ 604      00
+ 605              	.LASF25:
+ 606 013c 2E2E5C73 		.ascii	"..\\src\\Encoder_functions.c\000"
+ 606      72635C45 
+ 606      6E636F64 
+ 606      65725F66 
+ 606      756E6374 
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cczULO9j.s 			page 14
+
+
+ 607              	.LASF13:
+ 608 0157 646F7562 		.ascii	"double\000"
+ 608      6C6500
+ 609              	.LASF15:
+ 610 015e 6C6F6E67 		.ascii	"long double\000"
+ 610      20646F75 
+ 610      626C6500 
+ 611              	.LASF27:
+ 612 016a 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ 612      52784275 
+ 612      66666572 
+ 612      00
+ 613              	.LASF0:
+ 614 0177 7369676E 		.ascii	"signed char\000"
+ 614      65642063 
+ 614      68617200 
+ 615              	.LASF26:
+ 616 0183 433A5C55 		.ascii	"C:\\Users\\mgnocco\\Documents\\ControlloDiVersione\\"
+ 616      73657273 
+ 616      5C6D676E 
+ 616      6F63636F 
+ 616      5C446F63 
+ 617 01b2 57495348 		.ascii	"WISH_TOAST\\Scheda_Socket\\Air_Chambers_Haptic_Feed"
+ 617      5F544F41 
+ 617      53545C53 
+ 617      63686564 
+ 617      615F536F 
+ 618 01e3 6261636B 		.ascii	"back.cydsn\000"
+ 618      2E637964 
+ 618      736E00
+ 619              	.LASF18:
+ 620 01ee 496E6974 		.ascii	"InitEncoderGeneral\000"
+ 620      456E636F 
+ 620      64657247 
+ 620      656E6572 
+ 620      616C00
+ 621              	.LASF9:
+ 622 0201 5F5F696E 		.ascii	"__int32_t\000"
+ 622      7433325F 
+ 622      7400
+ 623              	.LASF21:
+ 624 020b 52656164 		.ascii	"ReadEncoderLine\000"
+ 624      456E636F 
+ 624      6465724C 
+ 624      696E6500 
+ 625              	.LASF12:
+ 626 021b 666C6F61 		.ascii	"float\000"
+ 626      7400
+ 627              	.LASF2:
+ 628 0221 73686F72 		.ascii	"short int\000"
+ 628      7420696E 
+ 628      7400
+ 629              	.LASF10:
+ 630 022b 696E7433 		.ascii	"int32_t\000"
+ 630      325F7400 
+ 631              	.LASF20:
+ 632 0233 496E6974 		.ascii	"InitEncoderLine\000"
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cczULO9j.s 			page 15
+
+
+ 632      456E636F 
+ 632      6465724C 
+ 632      696E6500 
+ 633              	.LASF16:
+ 634 0243 73697A65 		.ascii	"sizetype\000"
+ 634      74797065 
+ 634      00
+ 635              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

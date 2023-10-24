@@ -1,0 +1,6 @@
+C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES - Copia\FW_Socket - WISH+Dayton\WISH_VIBES_Socket.cydsn\WISH_VIBES_Socket.cyprj|947be467-3519-410b-8abe-f1bdcd4ae56e
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|9ab284e3-6a58-44cd-8c4d-e31cac954be1
+C:\Users\mgnocco\Documents\PSoC Creator\4.4\Downloads ( 4.4).cylib\Downloads ( 4.4).cyprj|94f2cc30-2195-4e2d-9eef-760a84875e6d
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|ea9ca63d-26b7-4ab7-a2dc-aee6da1919a0
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|2cd56e1d-1842-4b01-8950-2950afe34d58
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|80984a43-87e2-43bf-86fb-5ed7292d383e

@@ -1,0 +1,4197 @@
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccSCyeti.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 6
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.syntax unified
+  15              		.file	"main.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.section	.text.main,"ax",%progbits
+  20              		.align	2
+  21              		.global	main
+  22              		.thumb
+  23              		.thumb_func
+  24              		.type	main, %function
+  25              	main:
+  26              	.LFB64:
+  27              		.file 1 "..\\src\\main.c"
+   1:..\src/main.c **** // ----------------------------------------------------------------------------
+   2:..\src/main.c **** // BSD 3-Clause License
+   3:..\src/main.c **** 
+   4:..\src/main.c **** // Copyright (c) 2016, qbrobotics
+   5:..\src/main.c **** // Copyright (c) 2017-2020, Centro "E.Piaggio"
+   6:..\src/main.c **** // All rights reserved.
+   7:..\src/main.c **** 
+   8:..\src/main.c **** // Redistribution and use in source and binary forms, with or without
+   9:..\src/main.c **** // modification, are permitted provided that the following conditions are met:
+  10:..\src/main.c **** 
+  11:..\src/main.c **** // * Redistributions of source code must retain the above copyright notice, this
+  12:..\src/main.c **** //   list of conditions and the following disclaimer.
+  13:..\src/main.c **** 
+  14:..\src/main.c **** // * Redistributions in binary form must reproduce the above copyright notice,
+  15:..\src/main.c **** //   this list of conditions and the following disclaimer in the documentation
+  16:..\src/main.c **** //   and/or other materials provided with the distribution.
+  17:..\src/main.c **** 
+  18:..\src/main.c **** // * Neither the name of the copyright holder nor the names of its
+  19:..\src/main.c **** //   contributors may be used to endorse or promote products derived from
+  20:..\src/main.c **** //   this software without specific prior written permission.
+  21:..\src/main.c **** 
+  22:..\src/main.c **** // THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+  23:..\src/main.c **** // AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+  24:..\src/main.c **** // IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+  25:..\src/main.c **** // DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+  26:..\src/main.c **** // FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+  27:..\src/main.c **** // DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+  28:..\src/main.c **** // SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+  29:..\src/main.c **** // CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+  30:..\src/main.c **** // OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccSCyeti.s 			page 2
+
+
+  31:..\src/main.c **** // OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+  32:..\src/main.c **** // POSSIBILITY OF SUCH DAMAGE.
+  33:..\src/main.c **** // ----------------------------------------------------------------------------
+  34:..\src/main.c **** 
+  35:..\src/main.c **** /**
+  36:..\src/main.c **** * \file         main.c
+  37:..\src/main.c **** *
+  38:..\src/main.c **** * \brief        Firmware main file.
+  39:..\src/main.c **** * \date         March 20th, 2020
+  40:..\src/main.c **** * \author       _Centro "E.Piaggio"_
+  41:..\src/main.c **** * \copyright    (C) 2020 Centro "E.Piaggio". All rights reserved.
+  42:..\src/main.c **** * \mainpage     Firmware
+  43:..\src/main.c **** * \brief        This is the firmware of PSoC5 logic board.
+  44:..\src/main.c **** * \version      1.9.4
+  45:..\src/main.c **** *
+  46:..\src/main.c **** * \details      This is the firmware of PSoC5 logic board. Depending on the configuration, 
+  47:..\src/main.c **** *               it can control up to two motors and read its encoders. Also can read and
+  48:..\src/main.c **** *               convert analog measurements connected to the PSoC microcontroller.                
+  49:..\src/main.c **** *
+  50:..\src/main.c **** */
+  51:..\src/main.c **** 
+  52:..\src/main.c **** 
+  53:..\src/main.c **** // ----------------------------------------------------------------------------
+  54:..\src/main.c **** // This version changes:
+  55:..\src/main.c **** //      - not reported
+  56:..\src/main.c **** 
+  57:..\src/main.c **** 
+  58:..\src/main.c **** //=================================================================     includes
+  59:..\src/main.c **** 
+  60:..\src/main.c **** #include "device.h"
+  61:..\src/main.c **** #include "globals.h"
+  62:..\src/main.c **** #include "interruptions.h"
+  63:..\src/main.c **** #include "command_processing.h"
+  64:..\src/main.c **** #include "IMU_functions.h"
+  65:..\src/main.c **** #include "Encoder_functions.h"
+  66:..\src/main.c **** #include "SD_RTC_functions.h"
+  67:..\src/main.c **** #include "utils.h"
+  68:..\src/main.c **** #include "project.h"
+  69:..\src/main.c **** #include "FS.h"
+  70:..\src/main.c **** 
+  71:..\src/main.c **** //==============================================================================
+  72:..\src/main.c **** //                                                                 MAIN FUNCTION
+  73:..\src/main.c **** //==============================================================================
+  74:..\src/main.c **** 
+  75:..\src/main.c **** int main()
+  76:..\src/main.c **** {
+  28              		.loc 1 76 0
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 8
+  31              		@ frame_needed = 1, uses_anonymous_args = 0
+  32 0000 90B5     		push	{r4, r7, lr}
+  33              		.cfi_def_cfa_offset 12
+  34              		.cfi_offset 4, -12
+  35              		.cfi_offset 7, -8
+  36              		.cfi_offset 14, -4
+  37 0002 83B0     		sub	sp, sp, #12
+  38              		.cfi_def_cfa_offset 24
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccSCyeti.s 			page 3
+
+
+  39 0004 00AF     		add	r7, sp, #0
+  40              		.cfi_def_cfa_register 7
+  77:..\src/main.c ****     // Iterator    
+  78:..\src/main.c ****     uint8 i, j;
+  79:..\src/main.c ****     
+  80:..\src/main.c ****     // Variable declarations for DMA     
+  81:..\src/main.c ****     uint8 DMA_Chan;
+  82:..\src/main.c ****     uint8 DMA_TD[1];
+  83:..\src/main.c ****     
+  84:..\src/main.c ****     //================================     initializations - psoc and components
+  85:..\src/main.c **** 
+  86:..\src/main.c ****     // EEPROM
+  87:..\src/main.c ****     EEPROM_Start();
+  41              		.loc 1 87 0
+  42 0006 FFF7FEFF 		bl	EEPROM_Start
+  88:..\src/main.c ****     memRecall();                                        // Recall configuration.  
+  43              		.loc 1 88 0
+  44 000a FFF7FEFF 		bl	memRecall
+  89:..\src/main.c ****     
+  90:..\src/main.c ****     // FTDI chip enable
+  91:..\src/main.c ****     CyDelay(100);
+  45              		.loc 1 91 0
+  46 000e 6420     		movs	r0, #100
+  47 0010 FFF7FEFF 		bl	CyDelay
+  92:..\src/main.c ****     FTDI_ENABLE_Write(0x01);
+  48              		.loc 1 92 0
+  49 0014 0120     		movs	r0, #1
+  50 0016 FFF7FEFF 		bl	FTDI_ENABLE_Write
+  93:..\src/main.c ****     
+  94:..\src/main.c **** 	// LED Enable   
+  95:..\src/main.c ****     LED_control(1);     // Green fixed light
+  51              		.loc 1 95 0
+  52 001a 0120     		movs	r0, #1
+  53 001c FFF7FEFF 		bl	LED_control
+  96:..\src/main.c ****     BLINK_05HZ_Start();
+  54              		.loc 1 96 0
+  55 0020 FFF7FEFF 		bl	BLINK_05HZ_Start
+  97:..\src/main.c ****     BLINK_25HZ_Start();
+  56              		.loc 1 97 0
+  57 0024 FFF7FEFF 		bl	BLINK_25HZ_Start
+  98:..\src/main.c ****     BLINK_05HZ_WriteCompare(499);
+  58              		.loc 1 98 0
+  59 0028 40F2F310 		movw	r0, #499
+  60 002c FFF7FEFF 		bl	BLINK_05HZ_WriteCompare
+  99:..\src/main.c ****     BLINK_25HZ_WriteCompare(99);
+  61              		.loc 1 99 0
+  62 0030 6320     		movs	r0, #99
+  63 0032 FFF7FEFF 		bl	BLINK_25HZ_WriteCompare
+ 100:..\src/main.c ****     
+ 101:..\src/main.c ****     // RS485
+ 102:..\src/main.c ****     UART_RS485_Stop();
+  64              		.loc 1 102 0
+  65 0036 FFF7FEFF 		bl	UART_RS485_Stop
+ 103:..\src/main.c ****     UART_RS485_Start();
+  66              		.loc 1 103 0
+  67 003a FFF7FEFF 		bl	UART_RS485_Start
+ 104:..\src/main.c ****     UART_RS485_Init();
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccSCyeti.s 			page 4
+
+
+  68              		.loc 1 104 0
+  69 003e FFF7FEFF 		bl	UART_RS485_Init
+ 105:..\src/main.c ****     UART_RS485_ClearRxBuffer();
+  70              		.loc 1 105 0
+  71 0042 FFF7FEFF 		bl	UART_RS485_ClearRxBuffer
+ 106:..\src/main.c ****     UART_RS485_ClearTxBuffer();
+  72              		.loc 1 106 0
+  73 0046 FFF7FEFF 		bl	UART_RS485_ClearTxBuffer
+ 107:..\src/main.c ****     ISR_RS485_RX_StartEx(ISR_RS485_RX_ExInterrupt);
+  74              		.loc 1 107 0
+  75 004a AE48     		ldr	r0, .L42
+  76 004c FFF7FEFF 		bl	ISR_RS485_RX_StartEx
+ 108:..\src/main.c ****     
+ 109:..\src/main.c ****     // CYCLES TIMER   
+ 110:..\src/main.c ****     CYCLES_TIMER_Start();
+  77              		.loc 1 110 0
+  78 0050 FFF7FEFF 		bl	CYCLES_TIMER_Start
+ 111:..\src/main.c ****     ISR_CYCLES_StartEx(ISR_CYCLES_Handler);
+  79              		.loc 1 111 0
+  80 0054 AC48     		ldr	r0, .L42+4
+  81 0056 FFF7FEFF 		bl	ISR_CYCLES_StartEx
+ 112:..\src/main.c ****     
+ 113:..\src/main.c ****     // PWM
+ 114:..\src/main.c ****     PWM_MOTORS_Start();
+  82              		.loc 1 114 0
+  83 005a FFF7FEFF 		bl	PWM_MOTORS_Start
+ 115:..\src/main.c ****     PWM_MOTORS_WriteCompare1(0);
+  84              		.loc 1 115 0
+  85 005e 0020     		movs	r0, #0
+  86 0060 FFF7FEFF 		bl	PWM_MOTORS_WriteCompare1
+ 116:..\src/main.c ****     MOTOR_DIR_1_Write(0);
+  87              		.loc 1 116 0
+  88 0064 0020     		movs	r0, #0
+  89 0066 FFF7FEFF 		bl	MOTOR_DIR_1_Write
+ 117:..\src/main.c ****     enable_motor(0, 0x00);
+  90              		.loc 1 117 0
+  91 006a 0021     		movs	r1, #0
+  92 006c 0020     		movs	r0, #0
+  93 006e FFF7FEFF 		bl	enable_motor
+ 118:..\src/main.c ****     MOTOR_DIR_2_Write(0);
+  94              		.loc 1 118 0
+  95 0072 0020     		movs	r0, #0
+  96 0074 FFF7FEFF 		bl	MOTOR_DIR_2_Write
+ 119:..\src/main.c ****     enable_motor(1, 0x00);
+  97              		.loc 1 119 0
+  98 0078 0021     		movs	r1, #0
+  99 007a 0120     		movs	r0, #1
+ 100 007c FFF7FEFF 		bl	enable_motor
+ 120:..\src/main.c **** 
+ 121:..\src/main.c **** #ifdef AIR_CHAMBERS_FB_FW
+ 122:..\src/main.c ****     if (c_mem.dev.dev_type == AIR_CHAMBERS_FB){
+ 101              		.loc 1 122 0
+ 102 0080 A24B     		ldr	r3, .L42+8
+ 103 0082 93F8AC30 		ldrb	r3, [r3, #172]	@ zero_extendqisi2
+ 104 0086 022B     		cmp	r3, #2
+ 105 0088 02D1     		bne	.L2
+ 123:..\src/main.c ****         VALVE_Write(0);
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccSCyeti.s 			page 5
+
+
+ 106              		.loc 1 123 0
+ 107 008a 0020     		movs	r0, #0
+ 108 008c FFF7FEFF 		bl	VALVE_Write
+ 109              	.L2:
+ 124:..\src/main.c ****     }
+ 125:..\src/main.c **** #endif
+ 126:..\src/main.c **** 
+ 127:..\src/main.c ****     // Init AS5045 devices  
+ 128:..\src/main.c ****     COUNTER_ENC_Start();
+ 110              		.loc 1 128 0
+ 111 0090 FFF7FEFF 		bl	COUNTER_ENC_Start
+ 129:..\src/main.c ****     SHIFTREG_ENC_1_Start();
+ 112              		.loc 1 129 0
+ 113 0094 FFF7FEFF 		bl	SHIFTREG_ENC_1_Start
+ 130:..\src/main.c ****     SHIFTREG_ENC_2_Start();
+ 114              		.loc 1 130 0
+ 115 0098 FFF7FEFF 		bl	SHIFTREG_ENC_2_Start
+ 131:..\src/main.c ****     SHIFTREG_ENC_3_Start();
+ 116              		.loc 1 131 0
+ 117 009c FFF7FEFF 		bl	SHIFTREG_ENC_3_Start
+ 132:..\src/main.c **** 
+ 133:..\src/main.c ****     // ADC
+ 134:..\src/main.c ****     ADC_Set_N_Channels();           // Set right number of ADC channels to sample
+ 118              		.loc 1 134 0
+ 119 00a0 FFF7FEFF 		bl	ADC_Set_N_Channels
+ 135:..\src/main.c ****     ADC_Start();
+ 120              		.loc 1 135 0
+ 121 00a4 FFF7FEFF 		bl	ADC_Start
+ 136:..\src/main.c ****     ADC_SOC_Write(0x01);            // Force first read cycle.
+ 122              		.loc 1 136 0
+ 123 00a8 0120     		movs	r0, #1
+ 124 00aa FFF7FEFF 		bl	ADC_SOC_Write
+ 137:..\src/main.c **** 
+ 138:..\src/main.c ****     // ADC DMA    
+ 139:..\src/main.c ****     DMA_Chan = DMA_DmaInitialize(DMA_BYTES_PER_BURST, DMA_REQUEST_PER_BURST, HI16(DMA_SRC_BASE), HI
+ 125              		.loc 1 139 0
+ 126 00ae 41F6FF73 		movw	r3, #8191
+ 127 00b2 4FF48042 		mov	r2, #16384
+ 128 00b6 0121     		movs	r1, #1
+ 129 00b8 0220     		movs	r0, #2
+ 130 00ba FFF7FEFF 		bl	DMA_DmaInitialize
+ 131 00be 0346     		mov	r3, r0
+ 132 00c0 FB70     		strb	r3, [r7, #3]
+ 140:..\src/main.c ****     DMA_TD[0] = CyDmaTdAllocate();                                                                 
+ 133              		.loc 1 140 0
+ 134 00c2 FFF7FEFF 		bl	CyDmaTdAllocate
+ 135 00c6 0346     		mov	r3, r0
+ 136 00c8 3B70     		strb	r3, [r7]
+ 141:..\src/main.c ****     CyDmaTdSetConfiguration(DMA_TD[0], 2 * NUM_OF_ANALOG_INPUTS, DMA_TD[0], DMA__TD_TERMOUT_EN | TD
+ 137              		.loc 1 141 0
+ 138 00ca 3878     		ldrb	r0, [r7]	@ zero_extendqisi2
+ 139 00cc 904B     		ldr	r3, .L42+12
+ 140 00ce 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 141 00d0 9BB2     		uxth	r3, r3
+ 142 00d2 5B00     		lsls	r3, r3, #1
+ 143 00d4 99B2     		uxth	r1, r3
+ 144 00d6 3A78     		ldrb	r2, [r7]	@ zero_extendqisi2
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccSCyeti.s 			page 6
+
+
+ 145 00d8 0623     		movs	r3, #6
+ 146 00da FFF7FEFF 		bl	CyDmaTdSetConfiguration
+ 142:..\src/main.c ****     CyDmaTdSetAddress(DMA_TD[0], LO16((uint32)ADC_DEC_SAMP_PTR), LO16((uint32)ADC_buf));           
+ 147              		.loc 1 142 0
+ 148 00de 3B78     		ldrb	r3, [r7]	@ zero_extendqisi2
+ 149 00e0 8C4A     		ldr	r2, .L42+16
+ 150 00e2 92B2     		uxth	r2, r2
+ 151 00e4 44F61061 		movw	r1, #19984
+ 152 00e8 1846     		mov	r0, r3
+ 153 00ea FFF7FEFF 		bl	CyDmaTdSetAddress
+ 143:..\src/main.c ****     CyDmaChSetInitialTd(DMA_Chan, DMA_TD[0]);                                                      
+ 154              		.loc 1 143 0
+ 155 00ee 3A78     		ldrb	r2, [r7]	@ zero_extendqisi2
+ 156 00f0 FB78     		ldrb	r3, [r7, #3]	@ zero_extendqisi2
+ 157 00f2 1146     		mov	r1, r2
+ 158 00f4 1846     		mov	r0, r3
+ 159 00f6 FFF7FEFF 		bl	CyDmaChSetInitialTd
+ 144:..\src/main.c ****     CyDmaChEnable(DMA_Chan, 1);                                                                    
+ 160              		.loc 1 144 0
+ 161 00fa FB78     		ldrb	r3, [r7, #3]	@ zero_extendqisi2
+ 162 00fc 0121     		movs	r1, #1
+ 163 00fe 1846     		mov	r0, r3
+ 164 0100 FFF7FEFF 		bl	CyDmaChEnable
+ 145:..\src/main.c ****     
+ 146:..\src/main.c ****     // TIMER
+ 147:..\src/main.c ****     MY_TIMER_Start();           
+ 165              		.loc 1 147 0
+ 166 0104 FFF7FEFF 		bl	MY_TIMER_Start
+ 148:..\src/main.c ****     PACER_TIMER_Start();    
+ 167              		.loc 1 148 0
+ 168 0108 FFF7FEFF 		bl	PACER_TIMER_Start
+ 149:..\src/main.c ****     
+ 150:..\src/main.c ****     CYGlobalIntEnable;              // Enable interrupts.
+ 169              		.loc 1 150 0
+ 170              		.syntax unified
+ 171              	@ 150 "..\src\main.c" 1
+ 172 010c 62B6     		CPSIE   i
+ 173              	@ 0 "" 2
+ 151:..\src/main.c **** 
+ 152:..\src/main.c ****     // Init AS5045 devices
+ 153:..\src/main.c ****     InitEncoderGeneral();
+ 174              		.loc 1 153 0
+ 175              		.thumb
+ 176              		.syntax unified
+ 177 010e FFF7FEFF 		bl	InitEncoderGeneral
+ 154:..\src/main.c **** 
+ 155:..\src/main.c ****     //SPI IMU module
+ 156:..\src/main.c ****     if (c_mem.imu.read_imu_flag) {
+ 178              		.loc 1 156 0
+ 179 0112 7E4B     		ldr	r3, .L42+8
+ 180 0114 93F80032 		ldrb	r3, [r3, #512]	@ zero_extendqisi2
+ 181 0118 002B     		cmp	r3, #0
+ 182 011a 34D0     		beq	.L3
+ 157:..\src/main.c **** 
+ 158:..\src/main.c ****     	SPI_IMU_Start();
+ 183              		.loc 1 158 0
+ 184 011c FFF7FEFF 		bl	SPI_IMU_Start
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccSCyeti.s 			page 7
+
+
+ 159:..\src/main.c ****     	SPI_IMU_Init();
+ 185              		.loc 1 159 0
+ 186 0120 FFF7FEFF 		bl	SPI_IMU_Init
+ 160:..\src/main.c ****     	SPI_IMU_Enable();
+ 187              		.loc 1 160 0
+ 188 0124 FFF7FEFF 		bl	SPI_IMU_Enable
+ 161:..\src/main.c ****     	SPI_IMU_ClearRxBuffer();
+ 189              		.loc 1 161 0
+ 190 0128 FFF7FEFF 		bl	SPI_IMU_ClearRxBuffer
+ 162:..\src/main.c ****     	SPI_IMU_ClearTxBuffer();
+ 191              		.loc 1 162 0
+ 192 012c FFF7FEFF 		bl	SPI_IMU_ClearTxBuffer
+ 163:..\src/main.c ****     	SPI_IMU_ClearFIFO();							
+ 193              		.loc 1 163 0
+ 194 0130 FFF7FEFF 		bl	SPI_IMU_ClearFIFO
+ 164:..\src/main.c ****         CyDelay(10);
+ 195              		.loc 1 164 0
+ 196 0134 0A20     		movs	r0, #10
+ 197 0136 FFF7FEFF 		bl	CyDelay
+ 165:..\src/main.c ****         
+ 166:..\src/main.c ****         // Init MPU9250 devices
+ 167:..\src/main.c ****         InitIMUgeneral();
+ 198              		.loc 1 167 0
+ 199 013a FFF7FEFF 		bl	InitIMUgeneral
+ 168:..\src/main.c ****         
+ 169:..\src/main.c ****         // Initialize quaternion
+ 170:..\src/main.c ****         for (i = 0; i<N_IMU_MAX; i++) {
+ 200              		.loc 1 170 0
+ 201 013e 0023     		movs	r3, #0
+ 202 0140 FB71     		strb	r3, [r7, #7]
+ 203 0142 1DE0     		b	.L4
+ 204              	.L5:
+ 171:..\src/main.c ****             Quat[i][0] = 0.999;
+ 205              		.loc 1 171 0 discriminator 3
+ 206 0144 FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 207 0146 744A     		ldr	r2, .L42+20
+ 208 0148 1B01     		lsls	r3, r3, #4
+ 209 014a 1344     		add	r3, r3, r2
+ 210 014c 734A     		ldr	r2, .L42+24
+ 211 014e 1A60     		str	r2, [r3]	@ float
+ 172:..\src/main.c ****             Quat[i][1] = 0.01;
+ 212              		.loc 1 172 0 discriminator 3
+ 213 0150 FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 214 0152 714A     		ldr	r2, .L42+20
+ 215 0154 1B01     		lsls	r3, r3, #4
+ 216 0156 1344     		add	r3, r3, r2
+ 217 0158 0433     		adds	r3, r3, #4
+ 218 015a 714A     		ldr	r2, .L42+28
+ 219 015c 1A60     		str	r2, [r3]	@ float
+ 173:..\src/main.c ****             Quat[i][2] = 0.01;
+ 220              		.loc 1 173 0 discriminator 3
+ 221 015e FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 222 0160 6D4A     		ldr	r2, .L42+20
+ 223 0162 1B01     		lsls	r3, r3, #4
+ 224 0164 1344     		add	r3, r3, r2
+ 225 0166 0833     		adds	r3, r3, #8
+ 226 0168 6D4A     		ldr	r2, .L42+28
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccSCyeti.s 			page 8
+
+
+ 227 016a 1A60     		str	r2, [r3]	@ float
+ 174:..\src/main.c ****             Quat[i][3] = 0.01;
+ 228              		.loc 1 174 0 discriminator 3
+ 229 016c FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 230 016e 6A4A     		ldr	r2, .L42+20
+ 231 0170 1B01     		lsls	r3, r3, #4
+ 232 0172 1344     		add	r3, r3, r2
+ 233 0174 0C33     		adds	r3, r3, #12
+ 234 0176 6A4A     		ldr	r2, .L42+28
+ 235 0178 1A60     		str	r2, [r3]	@ float
+ 170:..\src/main.c ****             Quat[i][0] = 0.999;
+ 236              		.loc 1 170 0 discriminator 3
+ 237 017a FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 238 017c 0133     		adds	r3, r3, #1
+ 239 017e FB71     		strb	r3, [r7, #7]
+ 240              	.L4:
+ 170:..\src/main.c ****             Quat[i][0] = 0.999;
+ 241              		.loc 1 170 0 is_stmt 0 discriminator 1
+ 242 0180 FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 243 0182 042B     		cmp	r3, #4
+ 244 0184 DED9     		bls	.L5
+ 245              	.L3:
+ 175:..\src/main.c ****         }
+ 176:..\src/main.c ****     }
+ 177:..\src/main.c ****     
+ 178:..\src/main.c ****     //========================================     initializations - clean variables
+ 179:..\src/main.c ****     
+ 180:..\src/main.c ****     //---------------------------------------------------  Initialize filters structure 
+ 181:..\src/main.c ****     for(i=0;i<NUM_OF_MOTORS;i++) {
+ 246              		.loc 1 181 0 is_stmt 1
+ 247 0186 0023     		movs	r3, #0
+ 248 0188 FB71     		strb	r3, [r7, #7]
+ 249 018a 1AE0     		b	.L6
+ 250              	.L7:
+ 182:..\src/main.c ****         filt_i[i].gain = 32;    // Current filter constant.
+ 251              		.loc 1 182 0 discriminator 3
+ 252 018c FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 253 018e 654A     		ldr	r2, .L42+32
+ 254 0190 DB00     		lsls	r3, r3, #3
+ 255 0192 1344     		add	r3, r3, r2
+ 256 0194 2022     		movs	r2, #32
+ 257 0196 5A60     		str	r2, [r3, #4]
+ 183:..\src/main.c ****         filt_curr_diff[i].gain = 16;   // Current residual filter constant.       
+ 258              		.loc 1 183 0 discriminator 3
+ 259 0198 FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 260 019a 634A     		ldr	r2, .L42+36
+ 261 019c DB00     		lsls	r3, r3, #3
+ 262 019e 1344     		add	r3, r3, r2
+ 263 01a0 1022     		movs	r2, #16
+ 264 01a2 5A60     		str	r2, [r3, #4]
+ 184:..\src/main.c ****         filt_v[i].old_value    = 12000;// Initial voltage filter value.
+ 265              		.loc 1 184 0 discriminator 3
+ 266 01a4 FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 267 01a6 614A     		ldr	r2, .L42+40
+ 268 01a8 42F6E061 		movw	r1, #12000
+ 269 01ac 42F83310 		str	r1, [r2, r3, lsl #3]
+ 185:..\src/main.c ****         filt_v[i].gain         = 2;    // Voltage filter constant.
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccSCyeti.s 			page 9
+
+
+ 270              		.loc 1 185 0 discriminator 3
+ 271 01b0 FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 272 01b2 5E4A     		ldr	r2, .L42+40
+ 273 01b4 DB00     		lsls	r3, r3, #3
+ 274 01b6 1344     		add	r3, r3, r2
+ 275 01b8 0222     		movs	r2, #2
+ 276 01ba 5A60     		str	r2, [r3, #4]
+ 181:..\src/main.c ****         filt_i[i].gain = 32;    // Current filter constant.
+ 277              		.loc 1 181 0 discriminator 3
+ 278 01bc FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 279 01be 0133     		adds	r3, r3, #1
+ 280 01c0 FB71     		strb	r3, [r7, #7]
+ 281              	.L6:
+ 181:..\src/main.c ****         filt_i[i].gain = 32;    // Current filter constant.
+ 282              		.loc 1 181 0 is_stmt 0 discriminator 1
+ 283 01c2 FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 284 01c4 012B     		cmp	r3, #1
+ 285 01c6 E1D9     		bls	.L7
+ 186:..\src/main.c ****     }
+ 187:..\src/main.c ****     for(i=0;i<NUM_OF_SENSORS;i++) {
+ 286              		.loc 1 187 0 is_stmt 1
+ 287 01c8 0023     		movs	r3, #0
+ 288 01ca FB71     		strb	r3, [r7, #7]
+ 289 01cc 08E0     		b	.L8
+ 290              	.L9:
+ 188:..\src/main.c ****         filt_vel[i].gain = 128; // Velocity filters constant.
+ 291              		.loc 1 188 0 discriminator 3
+ 292 01ce FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 293 01d0 574A     		ldr	r2, .L42+44
+ 294 01d2 DB00     		lsls	r3, r3, #3
+ 295 01d4 1344     		add	r3, r3, r2
+ 296 01d6 8022     		movs	r2, #128
+ 297 01d8 5A60     		str	r2, [r3, #4]
+ 187:..\src/main.c ****         filt_vel[i].gain = 128; // Velocity filters constant.
+ 298              		.loc 1 187 0 discriminator 3
+ 299 01da FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 300 01dc 0133     		adds	r3, r3, #1
+ 301 01de FB71     		strb	r3, [r7, #7]
+ 302              	.L8:
+ 187:..\src/main.c ****         filt_vel[i].gain = 128; // Velocity filters constant.
+ 303              		.loc 1 187 0 is_stmt 0 discriminator 1
+ 304 01e0 FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 305 01e2 022B     		cmp	r3, #2
+ 306 01e4 F3D9     		bls	.L9
+ 189:..\src/main.c ****     }
+ 190:..\src/main.c ****     
+ 191:..\src/main.c ****     for(i=0;i<NUM_OF_INPUT_EMGS+NUM_OF_ADDITIONAL_EMGS;i++) {
+ 307              		.loc 1 191 0 is_stmt 1
+ 308 01e6 0023     		movs	r3, #0
+ 309 01e8 FB71     		strb	r3, [r7, #7]
+ 310 01ea 08E0     		b	.L10
+ 311              	.L11:
+ 192:..\src/main.c ****         filt_emg[i].gain      = 50;   // Emg channels filter constant.
+ 312              		.loc 1 192 0 discriminator 3
+ 313 01ec FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 314 01ee 514A     		ldr	r2, .L42+48
+ 315 01f0 DB00     		lsls	r3, r3, #3
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccSCyeti.s 			page 10
+
+
+ 316 01f2 1344     		add	r3, r3, r2
+ 317 01f4 3222     		movs	r2, #50
+ 318 01f6 5A60     		str	r2, [r3, #4]
+ 191:..\src/main.c ****         filt_emg[i].gain      = 50;   // Emg channels filter constant.
+ 319              		.loc 1 191 0 discriminator 3
+ 320 01f8 FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 321 01fa 0133     		adds	r3, r3, #1
+ 322 01fc FB71     		strb	r3, [r7, #7]
+ 323              	.L10:
+ 191:..\src/main.c ****         filt_emg[i].gain      = 50;   // Emg channels filter constant.
+ 324              		.loc 1 191 0 is_stmt 0 discriminator 1
+ 325 01fe FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 326 0200 072B     		cmp	r3, #7
+ 327 0202 F3D9     		bls	.L11
+ 193:..\src/main.c ****     }
+ 194:..\src/main.c ****     filt_detect_pc.gain = 500;    
+ 328              		.loc 1 194 0 is_stmt 1
+ 329 0204 4C4B     		ldr	r3, .L42+52
+ 330 0206 4FF4FA72 		mov	r2, #500
+ 331 020a 5A60     		str	r2, [r3, #4]
+ 195:..\src/main.c ****     
+ 196:..\src/main.c ****     //---------------------------------------------------  Initialize reference structure 
+ 197:..\src/main.c ****     for (i = 0; i< NUM_OF_MOTORS; i++) {
+ 332              		.loc 1 197 0
+ 333 020c 0023     		movs	r3, #0
+ 334 020e FB71     		strb	r3, [r7, #7]
+ 335 0210 08E0     		b	.L12
+ 336              	.L13:
+ 198:..\src/main.c ****         g_ref[i].pos = 0;
+ 337              		.loc 1 198 0 discriminator 3
+ 338 0212 FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 339 0214 494A     		ldr	r2, .L42+56
+ 340 0216 1B01     		lsls	r3, r3, #4
+ 341 0218 1344     		add	r3, r3, r2
+ 342 021a 0022     		movs	r2, #0
+ 343 021c 1A60     		str	r2, [r3]
+ 197:..\src/main.c ****         g_ref[i].pos = 0;
+ 344              		.loc 1 197 0 discriminator 3
+ 345 021e FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 346 0220 0133     		adds	r3, r3, #1
+ 347 0222 FB71     		strb	r3, [r7, #7]
+ 348              	.L12:
+ 197:..\src/main.c ****         g_ref[i].pos = 0;
+ 349              		.loc 1 197 0 is_stmt 0 discriminator 1
+ 350 0224 FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 351 0226 012B     		cmp	r3, #1
+ 352 0228 F3D9     		bls	.L13
+ 199:..\src/main.c ****     }
+ 200:..\src/main.c ****     
+ 201:..\src/main.c ****     //---------------------------------------------------  Initialize measurement structure
+ 202:..\src/main.c ****     for (j = 0; j< N_ENCODER_LINE_MAX; j++) { 
+ 353              		.loc 1 202 0 is_stmt 1
+ 354 022a 0023     		movs	r3, #0
+ 355 022c BB71     		strb	r3, [r7, #6]
+ 356 022e 22E0     		b	.L14
+ 357              	.L17:
+ 203:..\src/main.c ****         for (i = 0; i < NUM_OF_SENSORS; i++) { 
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccSCyeti.s 			page 11
+
+
+ 358              		.loc 1 203 0
+ 359 0230 0023     		movs	r3, #0
+ 360 0232 FB71     		strb	r3, [r7, #7]
+ 361 0234 19E0     		b	.L15
+ 362              	.L16:
+ 204:..\src/main.c ****             g_meas[j].pos[i] = 0;
+ 363              		.loc 1 204 0 discriminator 3
+ 364 0236 BA79     		ldrb	r2, [r7, #6]	@ zero_extendqisi2
+ 365 0238 F979     		ldrb	r1, [r7, #7]	@ zero_extendqisi2
+ 366 023a 4148     		ldr	r0, .L42+60
+ 367 023c 1346     		mov	r3, r2
+ 368 023e 5B00     		lsls	r3, r3, #1
+ 369 0240 1344     		add	r3, r3, r2
+ 370 0242 9B00     		lsls	r3, r3, #2
+ 371 0244 1344     		add	r3, r3, r2
+ 372 0246 0B44     		add	r3, r3, r1
+ 373 0248 0022     		movs	r2, #0
+ 374 024a 40F82320 		str	r2, [r0, r3, lsl #2]
+ 205:..\src/main.c ****             g_meas[j].rot[i] = (int8)0;
+ 375              		.loc 1 205 0 discriminator 3
+ 376 024e BA79     		ldrb	r2, [r7, #6]	@ zero_extendqisi2
+ 377 0250 FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 378 0252 3B49     		ldr	r1, .L42+60
+ 379 0254 3420     		movs	r0, #52
+ 380 0256 00FB02F2 		mul	r2, r0, r2
+ 381 025a 0A44     		add	r2, r2, r1
+ 382 025c 1344     		add	r3, r3, r2
+ 383 025e 1833     		adds	r3, r3, #24
+ 384 0260 0022     		movs	r2, #0
+ 385 0262 1A70     		strb	r2, [r3]
+ 203:..\src/main.c ****         for (i = 0; i < NUM_OF_SENSORS; i++) { 
+ 386              		.loc 1 203 0 discriminator 3
+ 387 0264 FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 388 0266 0133     		adds	r3, r3, #1
+ 389 0268 FB71     		strb	r3, [r7, #7]
+ 390              	.L15:
+ 203:..\src/main.c ****         for (i = 0; i < NUM_OF_SENSORS; i++) { 
+ 391              		.loc 1 203 0 is_stmt 0 discriminator 1
+ 392 026a FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 393 026c 022B     		cmp	r3, #2
+ 394 026e E2D9     		bls	.L16
+ 202:..\src/main.c ****         for (i = 0; i < NUM_OF_SENSORS; i++) { 
+ 395              		.loc 1 202 0 is_stmt 1 discriminator 2
+ 396 0270 BB79     		ldrb	r3, [r7, #6]	@ zero_extendqisi2
+ 397 0272 0133     		adds	r3, r3, #1
+ 398 0274 BB71     		strb	r3, [r7, #6]
+ 399              	.L14:
+ 202:..\src/main.c ****         for (i = 0; i < NUM_OF_SENSORS; i++) { 
+ 400              		.loc 1 202 0 is_stmt 0 discriminator 1
+ 401 0276 BB79     		ldrb	r3, [r7, #6]	@ zero_extendqisi2
+ 402 0278 012B     		cmp	r3, #1
+ 403 027a D9D9     		bls	.L17
+ 206:..\src/main.c ****         }
+ 207:..\src/main.c ****     }
+ 208:..\src/main.c **** 
+ 209:..\src/main.c ****     for (i = 0; i< NUM_OF_MOTORS; i++) {
+ 404              		.loc 1 209 0 is_stmt 1
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccSCyeti.s 			page 12
+
+
+ 405 027c 0023     		movs	r3, #0
+ 406 027e FB71     		strb	r3, [r7, #7]
+ 407 0280 0EE0     		b	.L18
+ 408              	.L19:
+ 210:..\src/main.c ****         g_refNew[i] = g_ref[i];                         // Initialize k+1 reference structure.
+ 409              		.loc 1 210 0 discriminator 3
+ 410 0282 FA79     		ldrb	r2, [r7, #7]	@ zero_extendqisi2
+ 411 0284 FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 412 0286 2F49     		ldr	r1, .L42+64
+ 413 0288 1201     		lsls	r2, r2, #4
+ 414 028a 1144     		add	r1, r1, r2
+ 415 028c 2B4A     		ldr	r2, .L42+56
+ 416 028e 1B01     		lsls	r3, r3, #4
+ 417 0290 1344     		add	r3, r3, r2
+ 418 0292 0C46     		mov	r4, r1
+ 419 0294 0FCB     		ldmia	r3, {r0, r1, r2, r3}
+ 420 0296 84E80F00 		stmia	r4, {r0, r1, r2, r3}
+ 209:..\src/main.c ****         g_refNew[i] = g_ref[i];                         // Initialize k+1 reference structure.
+ 421              		.loc 1 209 0 discriminator 3
+ 422 029a FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 423 029c 0133     		adds	r3, r3, #1
+ 424 029e FB71     		strb	r3, [r7, #7]
+ 425              	.L18:
+ 209:..\src/main.c ****         g_refNew[i] = g_ref[i];                         // Initialize k+1 reference structure.
+ 426              		.loc 1 209 0 is_stmt 0 discriminator 1
+ 427 02a0 FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 428 02a2 012B     		cmp	r3, #1
+ 429 02a4 EDD9     		bls	.L19
+ 211:..\src/main.c ****     }
+ 212:..\src/main.c ****     
+ 213:..\src/main.c ****     //---------------------------------------------------  Initialize emg structure
+ 214:..\src/main.c ****     g_adc_meas.emg[0] = 0;
+ 430              		.loc 1 214 0 is_stmt 1
+ 431 02a6 284B     		ldr	r3, .L42+68
+ 432 02a8 0022     		movs	r2, #0
+ 433 02aa 1A60     		str	r2, [r3]
+ 215:..\src/main.c ****     g_adc_meas.emg[1] = 0;
+ 434              		.loc 1 215 0
+ 435 02ac 264B     		ldr	r3, .L42+68
+ 436 02ae 0022     		movs	r2, #0
+ 437 02b0 5A60     		str	r2, [r3, #4]
+ 216:..\src/main.c ****     g_adc_meas.joystick[0] = 0;
+ 438              		.loc 1 216 0
+ 439 02b2 254B     		ldr	r3, .L42+68
+ 440 02b4 0022     		movs	r2, #0
+ 441 02b6 1A62     		str	r2, [r3, #32]
+ 217:..\src/main.c ****     g_adc_meas.joystick[1] = 0;
+ 442              		.loc 1 217 0
+ 443 02b8 234B     		ldr	r3, .L42+68
+ 444 02ba 0022     		movs	r2, #0
+ 445 02bc 5A62     		str	r2, [r3, #36]
+ 446              	.LBB2:
+ 218:..\src/main.c ****     for (uint16 k = 0; k<SAMPLES_FOR_EMG_HISTORY; k++){
+ 447              		.loc 1 218 0
+ 448 02be 0023     		movs	r3, #0
+ 449 02c0 BB80     		strh	r3, [r7, #4]	@ movhi
+ 450 02c2 13E0     		b	.L20
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccSCyeti.s 			page 13
+
+
+ 451              	.L23:
+ 219:..\src/main.c ****         for (j = 0; j<NUM_OF_INPUT_EMGS; j++){
+ 452              		.loc 1 219 0
+ 453 02c4 0023     		movs	r3, #0
+ 454 02c6 BB71     		strb	r3, [r7, #6]
+ 455 02c8 0AE0     		b	.L21
+ 456              	.L22:
+ 220:..\src/main.c ****             emg_history[k][j] = (uint16)0;
+ 457              		.loc 1 220 0 discriminator 3
+ 458 02ca BA88     		ldrh	r2, [r7, #4]
+ 459 02cc BB79     		ldrb	r3, [r7, #6]	@ zero_extendqisi2
+ 460 02ce 1F49     		ldr	r1, .L42+72
+ 461 02d0 5200     		lsls	r2, r2, #1
+ 462 02d2 1344     		add	r3, r3, r2
+ 463 02d4 0022     		movs	r2, #0
+ 464 02d6 21F81320 		strh	r2, [r1, r3, lsl #1]	@ movhi
+ 219:..\src/main.c ****         for (j = 0; j<NUM_OF_INPUT_EMGS; j++){
+ 465              		.loc 1 219 0 discriminator 3
+ 466 02da BB79     		ldrb	r3, [r7, #6]	@ zero_extendqisi2
+ 467 02dc 0133     		adds	r3, r3, #1
+ 468 02de BB71     		strb	r3, [r7, #6]
+ 469              	.L21:
+ 219:..\src/main.c ****         for (j = 0; j<NUM_OF_INPUT_EMGS; j++){
+ 470              		.loc 1 219 0 is_stmt 0 discriminator 1
+ 471 02e0 BB79     		ldrb	r3, [r7, #6]	@ zero_extendqisi2
+ 472 02e2 012B     		cmp	r3, #1
+ 473 02e4 F1D9     		bls	.L22
+ 218:..\src/main.c ****     for (uint16 k = 0; k<SAMPLES_FOR_EMG_HISTORY; k++){
+ 474              		.loc 1 218 0 is_stmt 1 discriminator 2
+ 475 02e6 BB88     		ldrh	r3, [r7, #4]
+ 476 02e8 0133     		adds	r3, r3, #1
+ 477 02ea BB80     		strh	r3, [r7, #4]	@ movhi
+ 478              	.L20:
+ 218:..\src/main.c ****     for (uint16 k = 0; k<SAMPLES_FOR_EMG_HISTORY; k++){
+ 479              		.loc 1 218 0 is_stmt 0 discriminator 1
+ 480 02ec BB88     		ldrh	r3, [r7, #4]
+ 481 02ee B3F5167F 		cmp	r3, #600
+ 482 02f2 E7D3     		bcc	.L23
+ 483              	.LBE2:
+ 221:..\src/main.c ****         }
+ 222:..\src/main.c ****     }
+ 223:..\src/main.c ****     emg_history_next_idx = 0;
+ 484              		.loc 1 223 0 is_stmt 1
+ 485 02f4 164B     		ldr	r3, .L42+76
+ 486 02f6 0022     		movs	r2, #0
+ 487 02f8 1A60     		str	r2, [r3]
+ 224:..\src/main.c ****     
+ 225:..\src/main.c ****     set_motor_driver_type();
+ 488              		.loc 1 225 0
+ 489 02fa FFF7FEFF 		bl	set_motor_driver_type
+ 226:..\src/main.c ****     
+ 227:..\src/main.c ****     for (i = 0; i< NUM_OF_MOTORS; i++) {
+ 490              		.loc 1 227 0
+ 491 02fe 0023     		movs	r3, #0
+ 492 0300 FB71     		strb	r3, [r7, #7]
+ 493 0302 DBE0     		b	.L24
+ 494              	.L43:
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccSCyeti.s 			page 14
+
+
+ 495              		.align	2
+ 496              	.L42:
+ 497 0304 00000000 		.word	ISR_RS485_RX_ExInterrupt
+ 498 0308 00000000 		.word	ISR_CYCLES_Handler
+ 499 030c 00000000 		.word	c_mem
+ 500 0310 00000000 		.word	NUM_OF_ANALOG_INPUTS
+ 501 0314 00000000 		.word	ADC_buf
+ 502 0318 00000000 		.word	Quat
+ 503 031c 77BE7F3F 		.word	1065336439
+ 504 0320 0AD7233C 		.word	1008981770
+ 505 0324 00000000 		.word	filt_i
+ 506 0328 00000000 		.word	filt_curr_diff
+ 507 032c 00000000 		.word	filt_v
+ 508 0330 00000000 		.word	filt_vel
+ 509 0334 00000000 		.word	filt_emg
+ 510 0338 00000000 		.word	filt_detect_pc
+ 511 033c 00000000 		.word	g_ref
+ 512 0340 00000000 		.word	g_meas
+ 513 0344 00000000 		.word	g_refNew
+ 514 0348 00000000 		.word	g_adc_meas
+ 515 034c 00000000 		.word	emg_history
+ 516 0350 00000000 		.word	emg_history_next_idx
+ 517              	.L32:
+ 228:..\src/main.c ****         if (c_mem.emg.emg_calibration_flag) {
+ 518              		.loc 1 228 0
+ 519 0354 944B     		ldr	r3, .L44
+ 520 0356 93F8FE31 		ldrb	r3, [r3, #510]	@ zero_extendqisi2
+ 521 035a 002B     		cmp	r3, #0
+ 522 035c 54D0     		beq	.L25
+ 229:..\src/main.c ****             if ((c_mem.motor[i].input_mode == INPUT_MODE_EMG_PROPORTIONAL) ||
+ 523              		.loc 1 229 0
+ 524 035e FA79     		ldrb	r2, [r7, #7]	@ zero_extendqisi2
+ 525 0360 9149     		ldr	r1, .L44
+ 526 0362 1346     		mov	r3, r2
+ 527 0364 DB00     		lsls	r3, r3, #3
+ 528 0366 9B1A     		subs	r3, r3, r2
+ 529 0368 1B01     		lsls	r3, r3, #4
+ 530 036a 0B44     		add	r3, r3, r1
+ 531 036c 03F58773 		add	r3, r3, #270
+ 532 0370 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 533 0372 022B     		cmp	r3, #2
+ 534 0374 2FD0     		beq	.L26
+ 230:..\src/main.c ****                 (c_mem.motor[i].input_mode == INPUT_MODE_EMG_INTEGRAL) ||
+ 535              		.loc 1 230 0 discriminator 1
+ 536 0376 FA79     		ldrb	r2, [r7, #7]	@ zero_extendqisi2
+ 537 0378 8B49     		ldr	r1, .L44
+ 538 037a 1346     		mov	r3, r2
+ 539 037c DB00     		lsls	r3, r3, #3
+ 540 037e 9B1A     		subs	r3, r3, r2
+ 541 0380 1B01     		lsls	r3, r3, #4
+ 542 0382 0B44     		add	r3, r3, r1
+ 543 0384 03F58773 		add	r3, r3, #270
+ 544 0388 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 229:..\src/main.c ****             if ((c_mem.motor[i].input_mode == INPUT_MODE_EMG_PROPORTIONAL) ||
+ 545              		.loc 1 229 0 discriminator 1
+ 546 038a 032B     		cmp	r3, #3
+ 547 038c 23D0     		beq	.L26
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccSCyeti.s 			page 15
+
+
+ 231:..\src/main.c ****                 (c_mem.motor[i].input_mode == INPUT_MODE_EMG_FCFS) ||
+ 548              		.loc 1 231 0
+ 549 038e FA79     		ldrb	r2, [r7, #7]	@ zero_extendqisi2
+ 550 0390 8549     		ldr	r1, .L44
+ 551 0392 1346     		mov	r3, r2
+ 552 0394 DB00     		lsls	r3, r3, #3
+ 553 0396 9B1A     		subs	r3, r3, r2
+ 554 0398 1B01     		lsls	r3, r3, #4
+ 555 039a 0B44     		add	r3, r3, r1
+ 556 039c 03F58773 		add	r3, r3, #270
+ 557 03a0 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 230:..\src/main.c ****                 (c_mem.motor[i].input_mode == INPUT_MODE_EMG_INTEGRAL) ||
+ 558              		.loc 1 230 0
+ 559 03a2 042B     		cmp	r3, #4
+ 560 03a4 17D0     		beq	.L26
+ 232:..\src/main.c ****                 (c_mem.motor[i].input_mode == INPUT_MODE_EMG_FCFS_ADV) ||
+ 561              		.loc 1 232 0
+ 562 03a6 FA79     		ldrb	r2, [r7, #7]	@ zero_extendqisi2
+ 563 03a8 7F49     		ldr	r1, .L44
+ 564 03aa 1346     		mov	r3, r2
+ 565 03ac DB00     		lsls	r3, r3, #3
+ 566 03ae 9B1A     		subs	r3, r3, r2
+ 567 03b0 1B01     		lsls	r3, r3, #4
+ 568 03b2 0B44     		add	r3, r3, r1
+ 569 03b4 03F58773 		add	r3, r3, #270
+ 570 03b8 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 231:..\src/main.c ****                 (c_mem.motor[i].input_mode == INPUT_MODE_EMG_FCFS) ||
+ 571              		.loc 1 231 0
+ 572 03ba 052B     		cmp	r3, #5
+ 573 03bc 0BD0     		beq	.L26
+ 233:..\src/main.c ****                 (c_mem.motor[i].input_mode == INPUT_MODE_EMG_PROPORTIONAL_NC))
+ 574              		.loc 1 233 0
+ 575 03be FA79     		ldrb	r2, [r7, #7]	@ zero_extendqisi2
+ 576 03c0 7949     		ldr	r1, .L44
+ 577 03c2 1346     		mov	r3, r2
+ 578 03c4 DB00     		lsls	r3, r3, #3
+ 579 03c6 9B1A     		subs	r3, r3, r2
+ 580 03c8 1B01     		lsls	r3, r3, #4
+ 581 03ca 0B44     		add	r3, r3, r1
+ 582 03cc 03F58773 		add	r3, r3, #270
+ 583 03d0 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 232:..\src/main.c ****                 (c_mem.motor[i].input_mode == INPUT_MODE_EMG_FCFS_ADV) ||
+ 584              		.loc 1 232 0
+ 585 03d2 072B     		cmp	r3, #7
+ 586 03d4 07D1     		bne	.L27
+ 587              	.L26:
+ 234:..\src/main.c ****                 g_ref[i].onoff = 0x00;
+ 588              		.loc 1 234 0
+ 589 03d6 FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 590 03d8 744A     		ldr	r2, .L44+4
+ 591 03da 1B01     		lsls	r3, r3, #4
+ 592 03dc 1344     		add	r3, r3, r2
+ 593 03de 0C33     		adds	r3, r3, #12
+ 594 03e0 0022     		movs	r2, #0
+ 595 03e2 1A70     		strb	r2, [r3]
+ 596 03e4 20E0     		b	.L29
+ 597              	.L27:
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccSCyeti.s 			page 16
+
+
+ 235:..\src/main.c ****             else
+ 236:..\src/main.c ****                 g_ref[i].onoff = c_mem.motor[i].activ;
+ 598              		.loc 1 236 0
+ 599 03e6 F979     		ldrb	r1, [r7, #7]	@ zero_extendqisi2
+ 600 03e8 FA79     		ldrb	r2, [r7, #7]	@ zero_extendqisi2
+ 601 03ea 6F48     		ldr	r0, .L44
+ 602 03ec 1346     		mov	r3, r2
+ 603 03ee DB00     		lsls	r3, r3, #3
+ 604 03f0 9B1A     		subs	r3, r3, r2
+ 605 03f2 1B01     		lsls	r3, r3, #4
+ 606 03f4 0344     		add	r3, r3, r0
+ 607 03f6 E033     		adds	r3, r3, #224
+ 608 03f8 1878     		ldrb	r0, [r3]	@ zero_extendqisi2
+ 609 03fa 6C4A     		ldr	r2, .L44+4
+ 610 03fc 0B01     		lsls	r3, r1, #4
+ 611 03fe 1344     		add	r3, r3, r2
+ 612 0400 0C33     		adds	r3, r3, #12
+ 613 0402 0246     		mov	r2, r0
+ 614 0404 1A70     		strb	r2, [r3]
+ 615 0406 0FE0     		b	.L29
+ 616              	.L25:
+ 237:..\src/main.c ****         } 
+ 238:..\src/main.c ****         else
+ 239:..\src/main.c ****             g_ref[i].onoff = c_mem.motor[i].activ;
+ 617              		.loc 1 239 0
+ 618 0408 F979     		ldrb	r1, [r7, #7]	@ zero_extendqisi2
+ 619 040a FA79     		ldrb	r2, [r7, #7]	@ zero_extendqisi2
+ 620 040c 6648     		ldr	r0, .L44
+ 621 040e 1346     		mov	r3, r2
+ 622 0410 DB00     		lsls	r3, r3, #3
+ 623 0412 9B1A     		subs	r3, r3, r2
+ 624 0414 1B01     		lsls	r3, r3, #4
+ 625 0416 0344     		add	r3, r3, r0
+ 626 0418 E033     		adds	r3, r3, #224
+ 627 041a 1878     		ldrb	r0, [r3]	@ zero_extendqisi2
+ 628 041c 634A     		ldr	r2, .L44+4
+ 629 041e 0B01     		lsls	r3, r1, #4
+ 630 0420 1344     		add	r3, r3, r2
+ 631 0422 0C33     		adds	r3, r3, #12
+ 632 0424 0246     		mov	r2, r0
+ 633 0426 1A70     		strb	r2, [r3]
+ 634              	.L29:
+ 240:..\src/main.c **** 
+ 241:..\src/main.c ****         if (!g_mem.enc[g_mem.motor[i].encoder_line].double_encoder_on_off) {
+ 635              		.loc 1 241 0
+ 636 0428 FA79     		ldrb	r2, [r7, #7]	@ zero_extendqisi2
+ 637 042a 6149     		ldr	r1, .L44+8
+ 638 042c 1346     		mov	r3, r2
+ 639 042e DB00     		lsls	r3, r3, #3
+ 640 0430 9B1A     		subs	r3, r3, r2
+ 641 0432 1B01     		lsls	r3, r3, #4
+ 642 0434 0B44     		add	r3, r3, r1
+ 643 0436 03F58873 		add	r3, r3, #272
+ 644 043a 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 645 043c 1946     		mov	r1, r3
+ 646 043e 5C4A     		ldr	r2, .L44+8
+ 647 0440 0B46     		mov	r3, r1
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccSCyeti.s 			page 17
+
+
+ 648 0442 5B00     		lsls	r3, r3, #1
+ 649 0444 0B44     		add	r3, r3, r1
+ 650 0446 1B01     		lsls	r3, r3, #4
+ 651 0448 1344     		add	r3, r3, r2
+ 652 044a 03F5D873 		add	r3, r3, #432
+ 653 044e 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 654 0450 002B     		cmp	r3, #0
+ 655 0452 10D1     		bne	.L30
+ 242:..\src/main.c ****             g_ref[i].onoff = c_mem.motor[i].activ;                          // Initialize Activatio
+ 656              		.loc 1 242 0
+ 657 0454 F979     		ldrb	r1, [r7, #7]	@ zero_extendqisi2
+ 658 0456 FA79     		ldrb	r2, [r7, #7]	@ zero_extendqisi2
+ 659 0458 5348     		ldr	r0, .L44
+ 660 045a 1346     		mov	r3, r2
+ 661 045c DB00     		lsls	r3, r3, #3
+ 662 045e 9B1A     		subs	r3, r3, r2
+ 663 0460 1B01     		lsls	r3, r3, #4
+ 664 0462 0344     		add	r3, r3, r0
+ 665 0464 E033     		adds	r3, r3, #224
+ 666 0466 1878     		ldrb	r0, [r3]	@ zero_extendqisi2
+ 667 0468 504A     		ldr	r2, .L44+4
+ 668 046a 0B01     		lsls	r3, r1, #4
+ 669 046c 1344     		add	r3, r3, r2
+ 670 046e 0C33     		adds	r3, r3, #12
+ 671 0470 0246     		mov	r2, r0
+ 672 0472 1A70     		strb	r2, [r3]
+ 673 0474 06E0     		b	.L31
+ 674              	.L30:
+ 243:..\src/main.c ****         } 
+ 244:..\src/main.c ****         else {
+ 245:..\src/main.c ****             // Do not activate motor until position reconstruction has finished
+ 246:..\src/main.c ****             g_ref[i].onoff = 0x00;
+ 675              		.loc 1 246 0
+ 676 0476 FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 677 0478 4C4A     		ldr	r2, .L44+4
+ 678 047a 1B01     		lsls	r3, r3, #4
+ 679 047c 1344     		add	r3, r3, r2
+ 680 047e 0C33     		adds	r3, r3, #12
+ 681 0480 0022     		movs	r2, #0
+ 682 0482 1A70     		strb	r2, [r3]
+ 683              	.L31:
+ 247:..\src/main.c ****         }
+ 248:..\src/main.c ****         enable_motor(i, g_ref[i].onoff); 
+ 684              		.loc 1 248 0 discriminator 2
+ 685 0484 FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 686 0486 494A     		ldr	r2, .L44+4
+ 687 0488 1B01     		lsls	r3, r3, #4
+ 688 048a 1344     		add	r3, r3, r2
+ 689 048c 0C33     		adds	r3, r3, #12
+ 690 048e 1A78     		ldrb	r2, [r3]	@ zero_extendqisi2
+ 691 0490 FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 692 0492 1146     		mov	r1, r2
+ 693 0494 1846     		mov	r0, r3
+ 694 0496 FFF7FEFF 		bl	enable_motor
+ 249:..\src/main.c ****         
+ 250:..\src/main.c ****         dev_pwm_limit[i] = dev_pwm_sat[i];              // Init PWM limit.
+ 695              		.loc 1 250 0 discriminator 2
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccSCyeti.s 			page 18
+
+
+ 696 049a FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 697 049c FA79     		ldrb	r2, [r7, #7]	@ zero_extendqisi2
+ 698 049e 4549     		ldr	r1, .L44+12
+ 699 04a0 31F81210 		ldrh	r1, [r1, r2, lsl #1]
+ 700 04a4 444A     		ldr	r2, .L44+16
+ 701 04a6 22F81310 		strh	r1, [r2, r3, lsl #1]	@ movhi
+ 251:..\src/main.c **** 	
+ 252:..\src/main.c ****         pow_tension[i] = 12000;                         // 12000 mV (12 V)
+ 702              		.loc 1 252 0 discriminator 2
+ 703 04aa FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 704 04ac 434A     		ldr	r2, .L44+20
+ 705 04ae 42F6E061 		movw	r1, #12000
+ 706 04b2 42F82310 		str	r1, [r2, r3, lsl #2]
+ 227:..\src/main.c ****         if (c_mem.emg.emg_calibration_flag) {
+ 707              		.loc 1 227 0 discriminator 2
+ 708 04b6 FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 709 04b8 0133     		adds	r3, r3, #1
+ 710 04ba FB71     		strb	r3, [r7, #7]
+ 711              	.L24:
+ 227:..\src/main.c ****         if (c_mem.emg.emg_calibration_flag) {
+ 712              		.loc 1 227 0 is_stmt 0 discriminator 1
+ 713 04bc FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 714 04be 012B     		cmp	r3, #1
+ 715 04c0 7FF648AF 		bls	.L32
+ 253:..\src/main.c ****     }
+ 254:..\src/main.c ****     
+ 255:..\src/main.c ****     tension_valid = FALSE;                              // Init tension_valid BIT.
+ 716              		.loc 1 255 0 is_stmt 1
+ 717 04c4 3E4B     		ldr	r3, .L44+24
+ 718 04c6 0022     		movs	r2, #0
+ 719 04c8 1A70     		strb	r2, [r3]
+ 256:..\src/main.c **** 
+ 257:..\src/main.c ****     for (j = 0; j< N_ENCODER_LINE_MAX; j++) { 
+ 720              		.loc 1 257 0
+ 721 04ca 0023     		movs	r3, #0
+ 722 04cc BB71     		strb	r3, [r7, #6]
+ 723 04ce 06E0     		b	.L33
+ 724              	.L34:
+ 258:..\src/main.c ****         reset_last_value_flag[j] = 0;                   // Do not reset encoder last value.
+ 725              		.loc 1 258 0 discriminator 3
+ 726 04d0 BB79     		ldrb	r3, [r7, #6]	@ zero_extendqisi2
+ 727 04d2 3C4A     		ldr	r2, .L44+28
+ 728 04d4 0021     		movs	r1, #0
+ 729 04d6 D154     		strb	r1, [r2, r3]
+ 257:..\src/main.c ****         reset_last_value_flag[j] = 0;                   // Do not reset encoder last value.
+ 730              		.loc 1 257 0 discriminator 3
+ 731 04d8 BB79     		ldrb	r3, [r7, #6]	@ zero_extendqisi2
+ 732 04da 0133     		adds	r3, r3, #1
+ 733 04dc BB71     		strb	r3, [r7, #6]
+ 734              	.L33:
+ 257:..\src/main.c ****         reset_last_value_flag[j] = 0;                   // Do not reset encoder last value.
+ 735              		.loc 1 257 0 is_stmt 0 discriminator 1
+ 736 04de BB79     		ldrb	r3, [r7, #6]	@ zero_extendqisi2
+ 737 04e0 012B     		cmp	r3, #1
+ 738 04e2 F5D9     		bls	.L34
+ 259:..\src/main.c ****     }
+ 260:..\src/main.c **** 
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccSCyeti.s 			page 19
+
+
+ 261:..\src/main.c ****     //------------------------------------------------- Initialize package on receive from RS485
+ 262:..\src/main.c ****     g_rx.length = 0;
+ 739              		.loc 1 262 0 is_stmt 1
+ 740 04e4 384B     		ldr	r3, .L44+32
+ 741 04e6 0022     		movs	r2, #0
+ 742 04e8 A3F88020 		strh	r2, [r3, #128]	@ movhi
+ 263:..\src/main.c ****     g_rx.ready  = 0;
+ 743              		.loc 1 263 0
+ 744 04ec 364B     		ldr	r3, .L44+32
+ 745 04ee 0022     		movs	r2, #0
+ 746 04f0 83F88420 		strb	r2, [r3, #132]
+ 264:..\src/main.c ****     
+ 265:..\src/main.c ****     //------------------------------------------------- Initialize rest position variables    
+ 266:..\src/main.c **** 	rest_enabled = 0;
+ 747              		.loc 1 266 0
+ 748 04f4 354B     		ldr	r3, .L44+36
+ 749 04f6 0022     		movs	r2, #0
+ 750 04f8 1A70     		strb	r2, [r3]
+ 267:..\src/main.c ****     forced_open = 0;
+ 751              		.loc 1 267 0
+ 752 04fa 354B     		ldr	r3, .L44+40
+ 753 04fc 0022     		movs	r2, #0
+ 754 04fe 1A70     		strb	r2, [r3]
+ 268:..\src/main.c ****     
+ 269:..\src/main.c ****     LED_control(5);     // Default - red light
+ 755              		.loc 1 269 0
+ 756 0500 0520     		movs	r0, #5
+ 757 0502 FFF7FEFF 		bl	LED_control
+ 270:..\src/main.c ****     
+ 271:..\src/main.c **** #ifdef MASTER_FW
+ 272:..\src/main.c ****     master_mode = 1;    // Default - activate master mode at startup
+ 758              		.loc 1 272 0
+ 759 0506 334B     		ldr	r3, .L44+44
+ 760 0508 0122     		movs	r2, #1
+ 761 050a 1A70     		strb	r2, [r3]
+ 273:..\src/main.c **** #endif
+ 274:..\src/main.c **** 
+ 275:..\src/main.c ****     //============================================================    check if maintenance is due
+ 276:..\src/main.c **** 
+ 277:..\src/main.c ****     if ( (g_mem.cnt.wire_disp/(((g_mem.motor[0].pos_lim_sup>>g_mem.enc[0].res[0]) - (g_mem.motor[0]
+ 762              		.loc 1 277 0
+ 763 050c 284B     		ldr	r3, .L44+8
+ 764 050e 5B6D     		ldr	r3, [r3, #84]
+ 765 0510 274A     		ldr	r2, .L44+8
+ 766 0512 D2F8E820 		ldr	r2, [r2, #232]
+ 767 0516 2649     		ldr	r1, .L44+8
+ 768 0518 91F89511 		ldrb	r1, [r1, #405]	@ zero_extendqisi2
+ 769 051c 42FA01F1 		asr	r1, r2, r1
+ 770 0520 234A     		ldr	r2, .L44+8
+ 771 0522 D2F8E420 		ldr	r2, [r2, #228]
+ 772 0526 2248     		ldr	r0, .L44+8
+ 773 0528 90F89501 		ldrb	r0, [r0, #405]	@ zero_extendqisi2
+ 774 052c 0241     		asrs	r2, r2, r0
+ 775 052e 8A1A     		subs	r2, r1, r2
+ 776 0530 5200     		lsls	r2, r2, #1
+ 777 0532 B3FBF2F3 		udiv	r3, r3, r2
+ 778 0536 284A     		ldr	r2, .L44+48
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccSCyeti.s 			page 20
+
+
+ 779 0538 9342     		cmp	r3, r2
+ 780 053a 02D9     		bls	.L35
+ 278:..\src/main.c ****         maintenance_flag = TRUE;    
+ 781              		.loc 1 278 0
+ 782 053c 274B     		ldr	r3, .L44+52
+ 783 053e 0122     		movs	r2, #1
+ 784 0540 1A70     		strb	r2, [r3]
+ 785              	.L35:
+ 279:..\src/main.c **** 
+ 280:..\src/main.c ****     if (g_mem.exp.read_exp_port_flag == EXP_SD_RTC) {
+ 786              		.loc 1 280 0
+ 787 0542 1B4B     		ldr	r3, .L44+8
+ 788 0544 93F82632 		ldrb	r3, [r3, #550]	@ zero_extendqisi2
+ 789 0548 012B     		cmp	r3, #1
+ 790 054a 03D1     		bne	.L36
+ 281:..\src/main.c ****         
+ 282:..\src/main.c ****         store_RTC_current_time();
+ 791              		.loc 1 282 0
+ 792 054c FFF7FEFF 		bl	store_RTC_current_time
+ 283:..\src/main.c ****         
+ 284:..\src/main.c ****         // SD file
+ 285:..\src/main.c ****         InitSD_FS();
+ 793              		.loc 1 285 0
+ 794 0550 FFF7FEFF 		bl	InitSD_FS
+ 795              	.L36:
+ 286:..\src/main.c ****     }
+ 287:..\src/main.c ****     
+ 288:..\src/main.c ****     //============================================================     main loop
+ 289:..\src/main.c ****     
+ 290:..\src/main.c ****     // All peripherals has started, now it is ok to start communication
+ 291:..\src/main.c ****     RS485_CTS_Write(0);             // Clear To Send on RS485.
+ 796              		.loc 1 291 0
+ 797 0554 0020     		movs	r0, #0
+ 798 0556 FFF7FEFF 		bl	RS485_CTS_Write
+ 799              	.L41:
+ 292:..\src/main.c **** 
+ 293:..\src/main.c ****     for(;;)
+ 294:..\src/main.c **** 
+ 295:..\src/main.c ****     {             
+ 296:..\src/main.c ****         // Put the FF reset pin to LOW
+ 297:..\src/main.c ****         RESET_FF_Write(0x00);
+ 800              		.loc 1 297 0
+ 801 055a 0020     		movs	r0, #0
+ 802 055c FFF7FEFF 		bl	RESET_FF_Write
+ 298:..\src/main.c **** 
+ 299:..\src/main.c ****         // Call function scheduler
+ 300:..\src/main.c ****         function_scheduler(); 
+ 803              		.loc 1 300 0
+ 804 0560 FFF7FEFF 		bl	function_scheduler
+ 301:..\src/main.c **** 
+ 302:..\src/main.c ****         //  Wait until the FF is set to 1
+ 303:..\src/main.c ****         while(FF_STATUS_Read() == 0){
+ 805              		.loc 1 303 0
+ 806 0564 08E0     		b	.L37
+ 807              	.L38:
+ 304:..\src/main.c ****             // On interrupt from RS485
+ 305:..\src/main.c ****             if (interrupt_flag){
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccSCyeti.s 			page 21
+
+
+ 808              		.loc 1 305 0
+ 809 0566 1E4B     		ldr	r3, .L44+56
+ 810 0568 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 811 056a 002B     		cmp	r3, #0
+ 812 056c 04D0     		beq	.L37
+ 306:..\src/main.c ****                 // Reset flags
+ 307:..\src/main.c ****                 interrupt_flag = FALSE;
+ 813              		.loc 1 307 0
+ 814 056e 1C4B     		ldr	r3, .L44+56
+ 815 0570 0022     		movs	r2, #0
+ 816 0572 1A70     		strb	r2, [r3]
+ 308:..\src/main.c ****                 
+ 309:..\src/main.c ****                 // Manage Interrupt on rs485
+ 310:..\src/main.c ****                 interrupt_manager();
+ 817              		.loc 1 310 0
+ 818 0574 FFF7FEFF 		bl	interrupt_manager
+ 819              	.L37:
+ 303:..\src/main.c ****             // On interrupt from RS485
+ 820              		.loc 1 303 0
+ 821 0578 FFF7FEFF 		bl	FF_STATUS_Read
+ 822 057c 0346     		mov	r3, r0
+ 823 057e 002B     		cmp	r3, #0
+ 824 0580 F1D0     		beq	.L38
+ 311:..\src/main.c ****             }
+ 312:..\src/main.c ****         };
+ 313:..\src/main.c **** 
+ 314:..\src/main.c ****         // Command a FF reset
+ 315:..\src/main.c ****         RESET_FF_Write(0x01);
+ 825              		.loc 1 315 0
+ 826 0582 0120     		movs	r0, #1
+ 827 0584 FFF7FEFF 		bl	RESET_FF_Write
+ 316:..\src/main.c **** 
+ 317:..\src/main.c ****         // Wait for FF to be reset
+ 318:..\src/main.c ****         while(FF_STATUS_Read() == 1);
+ 828              		.loc 1 318 0
+ 829 0588 00BF     		nop
+ 830              	.L39:
+ 831              		.loc 1 318 0 is_stmt 0 discriminator 1
+ 832 058a FFF7FEFF 		bl	FF_STATUS_Read
+ 833 058e 0346     		mov	r3, r0
+ 834 0590 012B     		cmp	r3, #1
+ 835 0592 FAD0     		beq	.L39
+ 319:..\src/main.c **** 
+ 320:..\src/main.c ****         if(UART_RS485_ReadRxStatus() & UART_RS485_RX_STS_SOFT_BUFF_OVER)
+ 836              		.loc 1 320 0 is_stmt 1
+ 837 0594 FFF7FEFF 		bl	UART_RS485_ReadRxStatus
+ 838 0598 0346     		mov	r3, r0
+ 839 059a 5BB2     		sxtb	r3, r3
+ 840 059c 002B     		cmp	r3, #0
+ 841 059e DCDA     		bge	.L41
+ 321:..\src/main.c ****             UART_RS485_ClearRxBuffer();
+ 842              		.loc 1 321 0
+ 843 05a0 FFF7FEFF 		bl	UART_RS485_ClearRxBuffer
+ 322:..\src/main.c ****     }
+ 844              		.loc 1 322 0
+ 845 05a4 D9E7     		b	.L41
+ 846              	.L45:
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccSCyeti.s 			page 22
+
+
+ 847 05a6 00BF     		.align	2
+ 848              	.L44:
+ 849 05a8 00000000 		.word	c_mem
+ 850 05ac 00000000 		.word	g_ref
+ 851 05b0 00000000 		.word	g_mem
+ 852 05b4 00000000 		.word	dev_pwm_sat
+ 853 05b8 00000000 		.word	dev_pwm_limit
+ 854 05bc 00000000 		.word	pow_tension
+ 855 05c0 00000000 		.word	tension_valid
+ 856 05c4 00000000 		.word	reset_last_value_flag
+ 857 05c8 00000000 		.word	g_rx
+ 858 05cc 00000000 		.word	rest_enabled
+ 859 05d0 00000000 		.word	forced_open
+ 860 05d4 00000000 		.word	master_mode
+ 861 05d8 400D0300 		.word	200000
+ 862 05dc 00000000 		.word	maintenance_flag
+ 863 05e0 00000000 		.word	interrupt_flag
+ 864              		.cfi_endproc
+ 865              	.LFE64:
+ 866              		.size	main, .-main
+ 867              		.text
+ 868              	.Letext0:
+ 869              		.file 2 "c:\\program files (x86)\\cypress\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.
+ 870              		.file 3 "c:\\program files (x86)\\cypress\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.
+ 871              		.file 4 "Generated_Source\\PSoC5/cytypes.h"
+ 872              		.file 5 "..\\src\\globals.h"
+ 873              		.file 6 "Generated_Source\\PSoC5/core_cm3.h"
+ 874              		.file 7 "..\\src\\commands.h"
+ 875              		.section	.debug_info,"",%progbits
+ 876              	.Ldebug_info0:
+ 877 0000 320D0000 		.4byte	0xd32
+ 878 0004 0400     		.2byte	0x4
+ 879 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 880 000a 04       		.byte	0x4
+ 881 000b 01       		.uleb128 0x1
+ 882 000c B5000000 		.4byte	.LASF178
+ 883 0010 0C       		.byte	0xc
+ 884 0011 C2040000 		.4byte	.LASF179
+ 885 0015 B9050000 		.4byte	.LASF180
+ 886 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 887 001d 00000000 		.4byte	0
+ 888 0021 00000000 		.4byte	.Ldebug_line0
+ 889 0025 02       		.uleb128 0x2
+ 890 0026 01       		.byte	0x1
+ 891 0027 06       		.byte	0x6
+ 892 0028 7A000000 		.4byte	.LASF0
+ 893 002c 02       		.uleb128 0x2
+ 894 002d 01       		.byte	0x1
+ 895 002e 08       		.byte	0x8
+ 896 002f C5060000 		.4byte	.LASF1
+ 897 0033 02       		.uleb128 0x2
+ 898 0034 02       		.byte	0x2
+ 899 0035 05       		.byte	0x5
+ 900 0036 15000000 		.4byte	.LASF2
+ 901 003a 02       		.uleb128 0x2
+ 902 003b 02       		.byte	0x2
+ 903 003c 07       		.byte	0x7
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccSCyeti.s 			page 23
+
+
+ 904 003d E6030000 		.4byte	.LASF3
+ 905 0041 03       		.uleb128 0x3
+ 906 0042 85040000 		.4byte	.LASF9
+ 907 0046 02       		.byte	0x2
+ 908 0047 3F       		.byte	0x3f
+ 909 0048 4C000000 		.4byte	0x4c
+ 910 004c 02       		.uleb128 0x2
+ 911 004d 04       		.byte	0x4
+ 912 004e 05       		.byte	0x5
+ 913 004f F8010000 		.4byte	.LASF4
+ 914 0053 02       		.uleb128 0x2
+ 915 0054 04       		.byte	0x4
+ 916 0055 07       		.byte	0x7
+ 917 0056 AE070000 		.4byte	.LASF5
+ 918 005a 02       		.uleb128 0x2
+ 919 005b 08       		.byte	0x8
+ 920 005c 05       		.byte	0x5
+ 921 005d C2010000 		.4byte	.LASF6
+ 922 0061 02       		.uleb128 0x2
+ 923 0062 08       		.byte	0x8
+ 924 0063 07       		.byte	0x7
+ 925 0064 54010000 		.4byte	.LASF7
+ 926 0068 04       		.uleb128 0x4
+ 927 0069 04       		.byte	0x4
+ 928 006a 05       		.byte	0x5
+ 929 006b 696E7400 		.ascii	"int\000"
+ 930 006f 02       		.uleb128 0x2
+ 931 0070 04       		.byte	0x4
+ 932 0071 07       		.byte	0x7
+ 933 0072 5F030000 		.4byte	.LASF8
+ 934 0076 03       		.uleb128 0x3
+ 935 0077 BD060000 		.4byte	.LASF10
+ 936 007b 03       		.byte	0x3
+ 937 007c 2C       		.byte	0x2c
+ 938 007d 41000000 		.4byte	0x41
+ 939 0081 05       		.uleb128 0x5
+ 940 0082 34070000 		.4byte	.LASF11
+ 941 0086 04       		.byte	0x4
+ 942 0087 E401     		.2byte	0x1e4
+ 943 0089 2C000000 		.4byte	0x2c
+ 944 008d 05       		.uleb128 0x5
+ 945 008e 01030000 		.4byte	.LASF12
+ 946 0092 04       		.byte	0x4
+ 947 0093 E501     		.2byte	0x1e5
+ 948 0095 3A000000 		.4byte	0x3a
+ 949 0099 05       		.uleb128 0x5
+ 950 009a BD020000 		.4byte	.LASF13
+ 951 009e 04       		.byte	0x4
+ 952 009f E601     		.2byte	0x1e6
+ 953 00a1 53000000 		.4byte	0x53
+ 954 00a5 05       		.uleb128 0x5
+ 955 00a6 13040000 		.4byte	.LASF14
+ 956 00aa 04       		.byte	0x4
+ 957 00ab E701     		.2byte	0x1e7
+ 958 00ad 25000000 		.4byte	0x25
+ 959 00b1 05       		.uleb128 0x5
+ 960 00b2 55070000 		.4byte	.LASF15
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccSCyeti.s 			page 24
+
+
+ 961 00b6 04       		.byte	0x4
+ 962 00b7 E801     		.2byte	0x1e8
+ 963 00b9 33000000 		.4byte	0x33
+ 964 00bd 05       		.uleb128 0x5
+ 965 00be F2010000 		.4byte	.LASF16
+ 966 00c2 04       		.byte	0x4
+ 967 00c3 E901     		.2byte	0x1e9
+ 968 00c5 4C000000 		.4byte	0x4c
+ 969 00c9 05       		.uleb128 0x5
+ 970 00ca 01050000 		.4byte	.LASF17
+ 971 00ce 04       		.byte	0x4
+ 972 00cf EA01     		.2byte	0x1ea
+ 973 00d1 D5000000 		.4byte	0xd5
+ 974 00d5 02       		.uleb128 0x2
+ 975 00d6 04       		.byte	0x4
+ 976 00d7 04       		.byte	0x4
+ 977 00d8 5D090000 		.4byte	.LASF18
+ 978 00dc 02       		.uleb128 0x2
+ 979 00dd 08       		.byte	0x8
+ 980 00de 04       		.byte	0x4
+ 981 00df E4090000 		.4byte	.LASF19
+ 982 00e3 02       		.uleb128 0x2
+ 983 00e4 01       		.byte	0x1
+ 984 00e5 08       		.byte	0x8
+ 985 00e6 C7070000 		.4byte	.LASF20
+ 986 00ea 05       		.uleb128 0x5
+ 987 00eb ED010000 		.4byte	.LASF21
+ 988 00ef 04       		.byte	0x4
+ 989 00f0 8E02     		.2byte	0x28e
+ 990 00f2 F6000000 		.4byte	0xf6
+ 991 00f6 06       		.uleb128 0x6
+ 992 00f7 81000000 		.4byte	0x81
+ 993 00fb 02       		.uleb128 0x2
+ 994 00fc 08       		.byte	0x8
+ 995 00fd 04       		.byte	0x4
+ 996 00fe 27050000 		.4byte	.LASF22
+ 997 0102 02       		.uleb128 0x2
+ 998 0103 04       		.byte	0x4
+ 999 0104 07       		.byte	0x7
+ 1000 0105 09050000 		.4byte	.LASF23
+ 1001 0109 07       		.uleb128 0x7
+ 1002 010a E3000000 		.4byte	0xe3
+ 1003 010e 19010000 		.4byte	0x119
+ 1004 0112 08       		.uleb128 0x8
+ 1005 0113 02010000 		.4byte	0x102
+ 1006 0117 07       		.byte	0x7
+ 1007 0118 00       		.byte	0
+ 1008 0119 09       		.uleb128 0x9
+ 1009 011a 18040000 		.4byte	.LASF181
+ 1010 011e 01       		.byte	0x1
+ 1011 011f 2C000000 		.4byte	0x2c
+ 1012 0123 07       		.byte	0x7
+ 1013 0124 8F       		.byte	0x8f
+ 1014 0125 5A010000 		.4byte	0x15a
+ 1015 0129 0A       		.uleb128 0xa
+ 1016 012a F2070000 		.4byte	.LASF24
+ 1017 012e 00       		.byte	0
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccSCyeti.s 			page 25
+
+
+ 1018 012f 0A       		.uleb128 0xa
+ 1019 0130 63040000 		.4byte	.LASF25
+ 1020 0134 01       		.byte	0x1
+ 1021 0135 0A       		.uleb128 0xa
+ 1022 0136 CE020000 		.4byte	.LASF26
+ 1023 013a 02       		.byte	0x2
+ 1024 013b 0A       		.uleb128 0xa
+ 1025 013c 22090000 		.4byte	.LASF27
+ 1026 0140 03       		.byte	0x3
+ 1027 0141 0A       		.uleb128 0xa
+ 1028 0142 99030000 		.4byte	.LASF28
+ 1029 0146 04       		.byte	0x4
+ 1030 0147 0A       		.uleb128 0xa
+ 1031 0148 94050000 		.4byte	.LASF29
+ 1032 014c 05       		.byte	0x5
+ 1033 014d 0A       		.uleb128 0xa
+ 1034 014e 13030000 		.4byte	.LASF30
+ 1035 0152 06       		.byte	0x6
+ 1036 0153 0A       		.uleb128 0xa
+ 1037 0154 FA080000 		.4byte	.LASF31
+ 1038 0158 07       		.byte	0x7
+ 1039 0159 00       		.byte	0
+ 1040 015a 0B       		.uleb128 0xb
+ 1041 015b 6C030000 		.4byte	.LASF34
+ 1042 015f 10       		.byte	0x10
+ 1043 0160 05       		.byte	0x5
+ 1044 0161 E5       		.byte	0xe5
+ 1045 0162 97010000 		.4byte	0x197
+ 1046 0166 0C       		.uleb128 0xc
+ 1047 0167 706F7300 		.ascii	"pos\000"
+ 1048 016b 05       		.byte	0x5
+ 1049 016c E6       		.byte	0xe6
+ 1050 016d BD000000 		.4byte	0xbd
+ 1051 0171 00       		.byte	0
+ 1052 0172 0D       		.uleb128 0xd
+ 1053 0173 D3060000 		.4byte	.LASF32
+ 1054 0177 05       		.byte	0x5
+ 1055 0178 E7       		.byte	0xe7
+ 1056 0179 BD000000 		.4byte	0xbd
+ 1057 017d 04       		.byte	0x4
+ 1058 017e 0C       		.uleb128 0xc
+ 1059 017f 70776D00 		.ascii	"pwm\000"
+ 1060 0183 05       		.byte	0x5
+ 1061 0184 E8       		.byte	0xe8
+ 1062 0185 BD000000 		.4byte	0xbd
+ 1063 0189 08       		.byte	0x8
+ 1064 018a 0D       		.uleb128 0xd
+ 1065 018b F5060000 		.4byte	.LASF33
+ 1066 018f 05       		.byte	0x5
+ 1067 0190 E9       		.byte	0xe9
+ 1068 0191 81000000 		.4byte	0x81
+ 1069 0195 0C       		.byte	0xc
+ 1070 0196 00       		.byte	0
+ 1071 0197 0B       		.uleb128 0xb
+ 1072 0198 32000000 		.4byte	.LASF35
+ 1073 019c 34       		.byte	0x34
+ 1074 019d 05       		.byte	0x5
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccSCyeti.s 			page 26
+
+
+ 1075 019e F0       		.byte	0xf0
+ 1076 019f F8010000 		.4byte	0x1f8
+ 1077 01a3 0C       		.uleb128 0xc
+ 1078 01a4 706F7300 		.ascii	"pos\000"
+ 1079 01a8 05       		.byte	0x5
+ 1080 01a9 F1       		.byte	0xf1
+ 1081 01aa F8010000 		.4byte	0x1f8
+ 1082 01ae 00       		.byte	0
+ 1083 01af 0D       		.uleb128 0xd
+ 1084 01b0 D3060000 		.4byte	.LASF32
+ 1085 01b4 05       		.byte	0x5
+ 1086 01b5 F2       		.byte	0xf2
+ 1087 01b6 BD000000 		.4byte	0xbd
+ 1088 01ba 0C       		.byte	0xc
+ 1089 01bb 0D       		.uleb128 0xd
+ 1090 01bc D6010000 		.4byte	.LASF36
+ 1091 01c0 05       		.byte	0x5
+ 1092 01c1 F3       		.byte	0xf3
+ 1093 01c2 BD000000 		.4byte	0xbd
+ 1094 01c6 10       		.byte	0x10
+ 1095 01c7 0D       		.uleb128 0xd
+ 1096 01c8 06020000 		.4byte	.LASF37
+ 1097 01cc 05       		.byte	0x5
+ 1098 01cd F4       		.byte	0xf4
+ 1099 01ce BD000000 		.4byte	0xbd
+ 1100 01d2 14       		.byte	0x14
+ 1101 01d3 0C       		.uleb128 0xc
+ 1102 01d4 726F7400 		.ascii	"rot\000"
+ 1103 01d8 05       		.byte	0x5
+ 1104 01d9 F5       		.byte	0xf5
+ 1105 01da 08020000 		.4byte	0x208
+ 1106 01de 18       		.byte	0x18
+ 1107 01df 0C       		.uleb128 0xc
+ 1108 01e0 76656C00 		.ascii	"vel\000"
+ 1109 01e4 05       		.byte	0x5
+ 1110 01e5 F6       		.byte	0xf6
+ 1111 01e6 F8010000 		.4byte	0x1f8
+ 1112 01ea 1C       		.byte	0x1c
+ 1113 01eb 0C       		.uleb128 0xc
+ 1114 01ec 61636300 		.ascii	"acc\000"
+ 1115 01f0 05       		.byte	0x5
+ 1116 01f1 F7       		.byte	0xf7
+ 1117 01f2 F8010000 		.4byte	0x1f8
+ 1118 01f6 28       		.byte	0x28
+ 1119 01f7 00       		.byte	0
+ 1120 01f8 07       		.uleb128 0x7
+ 1121 01f9 BD000000 		.4byte	0xbd
+ 1122 01fd 08020000 		.4byte	0x208
+ 1123 0201 08       		.uleb128 0x8
+ 1124 0202 02010000 		.4byte	0x102
+ 1125 0206 02       		.byte	0x2
+ 1126 0207 00       		.byte	0
+ 1127 0208 07       		.uleb128 0x7
+ 1128 0209 A5000000 		.4byte	0xa5
+ 1129 020d 18020000 		.4byte	0x218
+ 1130 0211 08       		.uleb128 0x8
+ 1131 0212 02010000 		.4byte	0x102
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccSCyeti.s 			page 27
+
+
+ 1132 0216 02       		.byte	0x2
+ 1133 0217 00       		.byte	0
+ 1134 0218 0B       		.uleb128 0xb
+ 1135 0219 6F070000 		.4byte	.LASF38
+ 1136 021d 28       		.byte	0x28
+ 1137 021e 05       		.byte	0x5
+ 1138 021f FA       		.byte	0xfa
+ 1139 0220 49020000 		.4byte	0x249
+ 1140 0224 0C       		.uleb128 0xc
+ 1141 0225 656D6700 		.ascii	"emg\000"
+ 1142 0229 05       		.byte	0x5
+ 1143 022a FB       		.byte	0xfb
+ 1144 022b 49020000 		.4byte	0x249
+ 1145 022f 00       		.byte	0
+ 1146 0230 0D       		.uleb128 0xd
+ 1147 0231 D0040000 		.4byte	.LASF39
+ 1148 0235 05       		.byte	0x5
+ 1149 0236 FC       		.byte	0xfc
+ 1150 0237 59020000 		.4byte	0x259
+ 1151 023b 08       		.byte	0x8
+ 1152 023c 0D       		.uleb128 0xd
+ 1153 023d 19090000 		.4byte	.LASF40
+ 1154 0241 05       		.byte	0x5
+ 1155 0242 FD       		.byte	0xfd
+ 1156 0243 49020000 		.4byte	0x249
+ 1157 0247 20       		.byte	0x20
+ 1158 0248 00       		.byte	0
+ 1159 0249 07       		.uleb128 0x7
+ 1160 024a BD000000 		.4byte	0xbd
+ 1161 024e 59020000 		.4byte	0x259
+ 1162 0252 08       		.uleb128 0x8
+ 1163 0253 02010000 		.4byte	0x102
+ 1164 0257 01       		.byte	0x1
+ 1165 0258 00       		.byte	0
+ 1166 0259 07       		.uleb128 0x7
+ 1167 025a BD000000 		.4byte	0xbd
+ 1168 025e 69020000 		.4byte	0x269
+ 1169 0262 08       		.uleb128 0x8
+ 1170 0263 02010000 		.4byte	0x102
+ 1171 0267 05       		.byte	0x5
+ 1172 0268 00       		.byte	0
+ 1173 0269 0E       		.uleb128 0xe
+ 1174 026a DB070000 		.4byte	.LASF41
+ 1175 026e 86       		.byte	0x86
+ 1176 026f 05       		.byte	0x5
+ 1177 0270 0801     		.2byte	0x108
+ 1178 0272 AB020000 		.4byte	0x2ab
+ 1179 0276 0F       		.uleb128 0xf
+ 1180 0277 2A080000 		.4byte	.LASF42
+ 1181 027b 05       		.byte	0x5
+ 1182 027c 0901     		.2byte	0x109
+ 1183 027e AB020000 		.4byte	0x2ab
+ 1184 0282 00       		.byte	0
+ 1185 0283 0F       		.uleb128 0xf
+ 1186 0284 C0070000 		.4byte	.LASF43
+ 1187 0288 05       		.byte	0x5
+ 1188 0289 0A01     		.2byte	0x10a
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccSCyeti.s 			page 28
+
+
+ 1189 028b B1000000 		.4byte	0xb1
+ 1190 028f 80       		.byte	0x80
+ 1191 0290 10       		.uleb128 0x10
+ 1192 0291 696E6400 		.ascii	"ind\000"
+ 1193 0295 05       		.byte	0x5
+ 1194 0296 0B01     		.2byte	0x10b
+ 1195 0298 B1000000 		.4byte	0xb1
+ 1196 029c 82       		.byte	0x82
+ 1197 029d 0F       		.uleb128 0xf
+ 1198 029e D0010000 		.4byte	.LASF44
+ 1199 02a2 05       		.byte	0x5
+ 1200 02a3 0C01     		.2byte	0x10c
+ 1201 02a5 81000000 		.4byte	0x81
+ 1202 02a9 84       		.byte	0x84
+ 1203 02aa 00       		.byte	0
+ 1204 02ab 07       		.uleb128 0x7
+ 1205 02ac 81000000 		.4byte	0x81
+ 1206 02b0 BB020000 		.4byte	0x2bb
+ 1207 02b4 08       		.uleb128 0x8
+ 1208 02b5 02010000 		.4byte	0x102
+ 1209 02b9 7F       		.byte	0x7f
+ 1210 02ba 00       		.byte	0
+ 1211 02bb 0E       		.uleb128 0xe
+ 1212 02bc 3A070000 		.4byte	.LASF45
+ 1213 02c0 70       		.byte	0x70
+ 1214 02c1 05       		.byte	0x5
+ 1215 02c2 1501     		.2byte	0x115
+ 1216 02c4 58030000 		.4byte	0x358
+ 1217 02c8 0F       		.uleb128 0xf
+ 1218 02c9 4D090000 		.4byte	.LASF46
+ 1219 02cd 05       		.byte	0x5
+ 1220 02ce 1601     		.2byte	0x116
+ 1221 02d0 58030000 		.4byte	0x358
+ 1222 02d4 00       		.byte	0
+ 1223 02d5 0F       		.uleb128 0xf
+ 1224 02d6 77040000 		.4byte	.LASF47
+ 1225 02da 05       		.byte	0x5
+ 1226 02db 1701     		.2byte	0x117
+ 1227 02dd 68030000 		.4byte	0x368
+ 1228 02e1 08       		.byte	0x8
+ 1229 02e2 0F       		.uleb128 0xf
+ 1230 02e3 AC050000 		.4byte	.LASF48
+ 1231 02e7 05       		.byte	0x5
+ 1232 02e8 1801     		.2byte	0x118
+ 1233 02ea 78030000 		.4byte	0x378
+ 1234 02ee 30       		.byte	0x30
+ 1235 02ef 0F       		.uleb128 0xf
+ 1236 02f0 A1070000 		.4byte	.LASF49
+ 1237 02f4 05       		.byte	0x5
+ 1238 02f5 1901     		.2byte	0x119
+ 1239 02f7 99000000 		.4byte	0x99
+ 1240 02fb 40       		.byte	0x40
+ 1241 02fc 0F       		.uleb128 0xf
+ 1242 02fd 51020000 		.4byte	.LASF50
+ 1243 0301 05       		.byte	0x5
+ 1244 0302 1A01     		.2byte	0x11a
+ 1245 0304 99000000 		.4byte	0x99
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccSCyeti.s 			page 29
+
+
+ 1246 0308 44       		.byte	0x44
+ 1247 0309 0F       		.uleb128 0xf
+ 1248 030a F3020000 		.4byte	.LASF51
+ 1249 030e 05       		.byte	0x5
+ 1250 030f 1B01     		.2byte	0x11b
+ 1251 0311 99000000 		.4byte	0x99
+ 1252 0315 48       		.byte	0x48
+ 1253 0316 0F       		.uleb128 0xf
+ 1254 0317 88070000 		.4byte	.LASF52
+ 1255 031b 05       		.byte	0x5
+ 1256 031c 1C01     		.2byte	0x11c
+ 1257 031e 99000000 		.4byte	0x99
+ 1258 0322 4C       		.byte	0x4c
+ 1259 0323 0F       		.uleb128 0xf
+ 1260 0324 B5040000 		.4byte	.LASF53
+ 1261 0328 05       		.byte	0x5
+ 1262 0329 1D01     		.2byte	0x11d
+ 1263 032b 99000000 		.4byte	0x99
+ 1264 032f 50       		.byte	0x50
+ 1265 0330 0F       		.uleb128 0xf
+ 1266 0331 61060000 		.4byte	.LASF54
+ 1267 0335 05       		.byte	0x5
+ 1268 0336 1E01     		.2byte	0x11e
+ 1269 0338 58030000 		.4byte	0x358
+ 1270 033c 54       		.byte	0x54
+ 1271 033d 0F       		.uleb128 0xf
+ 1272 033e E3070000 		.4byte	.LASF55
+ 1273 0342 05       		.byte	0x5
+ 1274 0343 1F01     		.2byte	0x11f
+ 1275 0345 58030000 		.4byte	0x358
+ 1276 0349 5C       		.byte	0x5c
+ 1277 034a 0F       		.uleb128 0xf
+ 1278 034b 44040000 		.4byte	.LASF56
+ 1279 034f 05       		.byte	0x5
+ 1280 0350 2001     		.2byte	0x120
+ 1281 0352 88030000 		.4byte	0x388
+ 1282 0356 64       		.byte	0x64
+ 1283 0357 00       		.byte	0
+ 1284 0358 07       		.uleb128 0x7
+ 1285 0359 99000000 		.4byte	0x99
+ 1286 035d 68030000 		.4byte	0x368
+ 1287 0361 08       		.uleb128 0x8
+ 1288 0362 02010000 		.4byte	0x102
+ 1289 0366 01       		.byte	0x1
+ 1290 0367 00       		.byte	0
+ 1291 0368 07       		.uleb128 0x7
+ 1292 0369 99000000 		.4byte	0x99
+ 1293 036d 78030000 		.4byte	0x378
+ 1294 0371 08       		.uleb128 0x8
+ 1295 0372 02010000 		.4byte	0x102
+ 1296 0376 09       		.byte	0x9
+ 1297 0377 00       		.byte	0
+ 1298 0378 07       		.uleb128 0x7
+ 1299 0379 99000000 		.4byte	0x99
+ 1300 037d 88030000 		.4byte	0x388
+ 1301 0381 08       		.uleb128 0x8
+ 1302 0382 02010000 		.4byte	0x102
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccSCyeti.s 			page 30
+
+
+ 1303 0386 03       		.byte	0x3
+ 1304 0387 00       		.byte	0
+ 1305 0388 07       		.uleb128 0x7
+ 1306 0389 81000000 		.4byte	0x81
+ 1307 038d 98030000 		.4byte	0x398
+ 1308 0391 08       		.uleb128 0x8
+ 1309 0392 02010000 		.4byte	0x102
+ 1310 0396 0B       		.byte	0xb
+ 1311 0397 00       		.byte	0
+ 1312 0398 0E       		.uleb128 0xe
+ 1313 0399 33050000 		.4byte	.LASF57
+ 1314 039d 10       		.byte	0x10
+ 1315 039e 05       		.byte	0x5
+ 1316 039f 2701     		.2byte	0x127
+ 1317 03a1 27040000 		.4byte	0x427
+ 1318 03a5 10       		.uleb128 0x10
+ 1319 03a6 696400   		.ascii	"id\000"
+ 1320 03a9 05       		.byte	0x5
+ 1321 03aa 2801     		.2byte	0x128
+ 1322 03ac 81000000 		.4byte	0x81
+ 1323 03b0 00       		.byte	0
+ 1324 03b1 0F       		.uleb128 0xf
+ 1325 03b2 8F040000 		.4byte	.LASF58
+ 1326 03b6 05       		.byte	0x5
+ 1327 03b7 2901     		.2byte	0x129
+ 1328 03b9 27040000 		.4byte	0x427
+ 1329 03bd 01       		.byte	0x1
+ 1330 03be 0F       		.uleb128 0xf
+ 1331 03bf 9D040000 		.4byte	.LASF59
+ 1332 03c3 05       		.byte	0x5
+ 1333 03c4 2A01     		.2byte	0x12a
+ 1334 03c6 27040000 		.4byte	0x427
+ 1335 03ca 04       		.byte	0x4
+ 1336 03cb 0F       		.uleb128 0xf
+ 1337 03cc 46020000 		.4byte	.LASF60
+ 1338 03d0 05       		.byte	0x5
+ 1339 03d1 2B01     		.2byte	0x12b
+ 1340 03d3 81000000 		.4byte	0x81
+ 1341 03d7 07       		.byte	0x7
+ 1342 03d8 0F       		.uleb128 0xf
+ 1343 03d9 39030000 		.4byte	.LASF61
+ 1344 03dd 05       		.byte	0x5
+ 1345 03de 2C01     		.2byte	0x12c
+ 1346 03e0 81000000 		.4byte	0x81
+ 1347 03e4 08       		.byte	0x8
+ 1348 03e5 0F       		.uleb128 0xf
+ 1349 03e6 1F000000 		.4byte	.LASF62
+ 1350 03ea 05       		.byte	0x5
+ 1351 03eb 2D01     		.2byte	0x12d
+ 1352 03ed 81000000 		.4byte	0x81
+ 1353 03f1 09       		.byte	0x9
+ 1354 03f2 0F       		.uleb128 0xf
+ 1355 03f3 6B010000 		.4byte	.LASF63
+ 1356 03f7 05       		.byte	0x5
+ 1357 03f8 2E01     		.2byte	0x12e
+ 1358 03fa 81000000 		.4byte	0x81
+ 1359 03fe 0A       		.byte	0xa
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccSCyeti.s 			page 31
+
+
+ 1360 03ff 0F       		.uleb128 0xf
+ 1361 0400 7B080000 		.4byte	.LASF64
+ 1362 0404 05       		.byte	0x5
+ 1363 0405 2F01     		.2byte	0x12f
+ 1364 0407 81000000 		.4byte	0x81
+ 1365 040b 0B       		.byte	0xb
+ 1366 040c 0F       		.uleb128 0xf
+ 1367 040d 56080000 		.4byte	.LASF65
+ 1368 0411 05       		.byte	0x5
+ 1369 0412 3001     		.2byte	0x130
+ 1370 0414 81000000 		.4byte	0x81
+ 1371 0418 0C       		.byte	0xc
+ 1372 0419 0F       		.uleb128 0xf
+ 1373 041a 44040000 		.4byte	.LASF56
+ 1374 041e 05       		.byte	0x5
+ 1375 041f 3101     		.2byte	0x131
+ 1376 0421 27040000 		.4byte	0x427
+ 1377 0425 0D       		.byte	0xd
+ 1378 0426 00       		.byte	0
+ 1379 0427 07       		.uleb128 0x7
+ 1380 0428 81000000 		.4byte	0x81
+ 1381 042c 37040000 		.4byte	0x437
+ 1382 0430 08       		.uleb128 0x8
+ 1383 0431 02010000 		.4byte	0x102
+ 1384 0435 02       		.byte	0x2
+ 1385 0436 00       		.byte	0
+ 1386 0437 0E       		.uleb128 0xe
+ 1387 0438 95080000 		.4byte	.LASF66
+ 1388 043c 70       		.byte	0x70
+ 1389 043d 05       		.byte	0x5
+ 1390 043e 3801     		.2byte	0x138
+ 1391 0440 B1050000 		.4byte	0x5b1
+ 1392 0444 10       		.uleb128 0x10
+ 1393 0445 6B5F7000 		.ascii	"k_p\000"
+ 1394 0449 05       		.byte	0x5
+ 1395 044a 3901     		.2byte	0x139
+ 1396 044c BD000000 		.4byte	0xbd
+ 1397 0450 00       		.byte	0
+ 1398 0451 10       		.uleb128 0x10
+ 1399 0452 6B5F6900 		.ascii	"k_i\000"
+ 1400 0456 05       		.byte	0x5
+ 1401 0457 3A01     		.2byte	0x13a
+ 1402 0459 BD000000 		.4byte	0xbd
+ 1403 045d 04       		.byte	0x4
+ 1404 045e 10       		.uleb128 0x10
+ 1405 045f 6B5F6400 		.ascii	"k_d\000"
+ 1406 0463 05       		.byte	0x5
+ 1407 0464 3B01     		.2byte	0x13b
+ 1408 0466 BD000000 		.4byte	0xbd
+ 1409 046a 08       		.byte	0x8
+ 1410 046b 0F       		.uleb128 0xf
+ 1411 046c 65050000 		.4byte	.LASF67
+ 1412 0470 05       		.byte	0x5
+ 1413 0471 3C01     		.2byte	0x13c
+ 1414 0473 BD000000 		.4byte	0xbd
+ 1415 0477 0C       		.byte	0xc
+ 1416 0478 0F       		.uleb128 0xf
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccSCyeti.s 			page 32
+
+
+ 1417 0479 B4090000 		.4byte	.LASF68
+ 1418 047d 05       		.byte	0x5
+ 1419 047e 3D01     		.2byte	0x13d
+ 1420 0480 BD000000 		.4byte	0xbd
+ 1421 0484 10       		.byte	0x10
+ 1422 0485 0F       		.uleb128 0xf
+ 1423 0486 B3080000 		.4byte	.LASF69
+ 1424 048a 05       		.byte	0x5
+ 1425 048b 3E01     		.2byte	0x13e
+ 1426 048d BD000000 		.4byte	0xbd
+ 1427 0491 14       		.byte	0x14
+ 1428 0492 0F       		.uleb128 0xf
+ 1429 0493 EB090000 		.4byte	.LASF70
+ 1430 0497 05       		.byte	0x5
+ 1431 0498 3F01     		.2byte	0x13f
+ 1432 049a BD000000 		.4byte	0xbd
+ 1433 049e 18       		.byte	0x18
+ 1434 049f 0F       		.uleb128 0xf
+ 1435 04a0 92030000 		.4byte	.LASF71
+ 1436 04a4 05       		.byte	0x5
+ 1437 04a5 4001     		.2byte	0x140
+ 1438 04a7 BD000000 		.4byte	0xbd
+ 1439 04ab 1C       		.byte	0x1c
+ 1440 04ac 0F       		.uleb128 0xf
+ 1441 04ad 32030000 		.4byte	.LASF72
+ 1442 04b1 05       		.byte	0x5
+ 1443 04b2 4101     		.2byte	0x141
+ 1444 04b4 BD000000 		.4byte	0xbd
+ 1445 04b8 20       		.byte	0x20
+ 1446 04b9 0F       		.uleb128 0xf
+ 1447 04ba EA020000 		.4byte	.LASF73
+ 1448 04be 05       		.byte	0x5
+ 1449 04bf 4201     		.2byte	0x142
+ 1450 04c1 BD000000 		.4byte	0xbd
+ 1451 04c5 24       		.byte	0x24
+ 1452 04c6 0F       		.uleb128 0xf
+ 1453 04c7 5F080000 		.4byte	.LASF74
+ 1454 04cb 05       		.byte	0x5
+ 1455 04cc 4301     		.2byte	0x143
+ 1456 04ce BD000000 		.4byte	0xbd
+ 1457 04d2 28       		.byte	0x28
+ 1458 04d3 0F       		.uleb128 0xf
+ 1459 04d4 44090000 		.4byte	.LASF75
+ 1460 04d8 05       		.byte	0x5
+ 1461 04d9 4401     		.2byte	0x144
+ 1462 04db BD000000 		.4byte	0xbd
+ 1463 04df 2C       		.byte	0x2c
+ 1464 04e0 0F       		.uleb128 0xf
+ 1465 04e1 7B060000 		.4byte	.LASF76
+ 1466 04e5 05       		.byte	0x5
+ 1467 04e6 4501     		.2byte	0x145
+ 1468 04e8 81000000 		.4byte	0x81
+ 1469 04ec 30       		.byte	0x30
+ 1470 04ed 0F       		.uleb128 0xf
+ 1471 04ee 76020000 		.4byte	.LASF77
+ 1472 04f2 05       		.byte	0x5
+ 1473 04f3 4601     		.2byte	0x146
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccSCyeti.s 			page 33
+
+
+ 1474 04f5 81000000 		.4byte	0x81
+ 1475 04f9 31       		.byte	0x31
+ 1476 04fa 0F       		.uleb128 0xf
+ 1477 04fb 26040000 		.4byte	.LASF78
+ 1478 04ff 05       		.byte	0x5
+ 1479 0500 4701     		.2byte	0x147
+ 1480 0502 81000000 		.4byte	0x81
+ 1481 0506 32       		.byte	0x32
+ 1482 0507 0F       		.uleb128 0xf
+ 1483 0508 5B070000 		.4byte	.LASF79
+ 1484 050c 05       		.byte	0x5
+ 1485 050d 4801     		.2byte	0x148
+ 1486 050f 81000000 		.4byte	0x81
+ 1487 0513 33       		.byte	0x33
+ 1488 0514 0F       		.uleb128 0xf
+ 1489 0515 38040000 		.4byte	.LASF80
+ 1490 0519 05       		.byte	0x5
+ 1491 051a 4901     		.2byte	0x149
+ 1492 051c BD000000 		.4byte	0xbd
+ 1493 0520 34       		.byte	0x34
+ 1494 0521 0F       		.uleb128 0xf
+ 1495 0522 88050000 		.4byte	.LASF81
+ 1496 0526 05       		.byte	0x5
+ 1497 0527 4A01     		.2byte	0x14a
+ 1498 0529 BD000000 		.4byte	0xbd
+ 1499 052d 38       		.byte	0x38
+ 1500 052e 0F       		.uleb128 0xf
+ 1501 052f AD030000 		.4byte	.LASF82
+ 1502 0533 05       		.byte	0x5
+ 1503 0534 4B01     		.2byte	0x14b
+ 1504 0536 BD000000 		.4byte	0xbd
+ 1505 053a 3C       		.byte	0x3c
+ 1506 053b 0F       		.uleb128 0xf
+ 1507 053c 7B070000 		.4byte	.LASF83
+ 1508 0540 05       		.byte	0x5
+ 1509 0541 4C01     		.2byte	0x14c
+ 1510 0543 BD000000 		.4byte	0xbd
+ 1511 0547 40       		.byte	0x40
+ 1512 0548 0F       		.uleb128 0xf
+ 1513 0549 CE080000 		.4byte	.LASF84
+ 1514 054d 05       		.byte	0x5
+ 1515 054e 4D01     		.2byte	0x14d
+ 1516 0550 B1050000 		.4byte	0x5b1
+ 1517 0554 44       		.byte	0x44
+ 1518 0555 0F       		.uleb128 0xf
+ 1519 0556 87060000 		.4byte	.LASF85
+ 1520 055a 05       		.byte	0x5
+ 1521 055b 4E01     		.2byte	0x14e
+ 1522 055d B1000000 		.4byte	0xb1
+ 1523 0561 5C       		.byte	0x5c
+ 1524 0562 0F       		.uleb128 0xf
+ 1525 0563 27030000 		.4byte	.LASF86
+ 1526 0567 05       		.byte	0x5
+ 1527 0568 4F01     		.2byte	0x14f
+ 1528 056a 81000000 		.4byte	0x81
+ 1529 056e 5E       		.byte	0x5e
+ 1530 056f 0F       		.uleb128 0xf
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccSCyeti.s 			page 34
+
+
+ 1531 0570 5B020000 		.4byte	.LASF87
+ 1532 0574 05       		.byte	0x5
+ 1533 0575 5001     		.2byte	0x150
+ 1534 0577 81000000 		.4byte	0x81
+ 1535 057b 5F       		.byte	0x5f
+ 1536 057c 0F       		.uleb128 0xf
+ 1537 057d 8C000000 		.4byte	.LASF88
+ 1538 0581 05       		.byte	0x5
+ 1539 0582 5101     		.2byte	0x151
+ 1540 0584 81000000 		.4byte	0x81
+ 1541 0588 60       		.byte	0x60
+ 1542 0589 0F       		.uleb128 0xf
+ 1543 058a F2090000 		.4byte	.LASF89
+ 1544 058e 05       		.byte	0x5
+ 1545 058f 5201     		.2byte	0x152
+ 1546 0591 81000000 		.4byte	0x81
+ 1547 0595 61       		.byte	0x61
+ 1548 0596 0F       		.uleb128 0xf
+ 1549 0597 28020000 		.4byte	.LASF90
+ 1550 059b 05       		.byte	0x5
+ 1551 059c 5301     		.2byte	0x153
+ 1552 059e 81000000 		.4byte	0x81
+ 1553 05a2 62       		.byte	0x62
+ 1554 05a3 0F       		.uleb128 0xf
+ 1555 05a4 44040000 		.4byte	.LASF56
+ 1556 05a8 05       		.byte	0x5
+ 1557 05a9 5401     		.2byte	0x154
+ 1558 05ab C1050000 		.4byte	0x5c1
+ 1559 05af 63       		.byte	0x63
+ 1560 05b0 00       		.byte	0
+ 1561 05b1 07       		.uleb128 0x7
+ 1562 05b2 D5000000 		.4byte	0xd5
+ 1563 05b6 C1050000 		.4byte	0x5c1
+ 1564 05ba 08       		.uleb128 0x8
+ 1565 05bb 02010000 		.4byte	0x102
+ 1566 05bf 05       		.byte	0x5
+ 1567 05c0 00       		.byte	0
+ 1568 05c1 07       		.uleb128 0x7
+ 1569 05c2 81000000 		.4byte	0x81
+ 1570 05c6 D1050000 		.4byte	0x5d1
+ 1571 05ca 08       		.uleb128 0x8
+ 1572 05cb 02010000 		.4byte	0x102
+ 1573 05cf 0C       		.byte	0xc
+ 1574 05d0 00       		.byte	0
+ 1575 05d1 0E       		.uleb128 0xe
+ 1576 05d2 1B070000 		.4byte	.LASF91
+ 1577 05d6 30       		.byte	0x30
+ 1578 05d7 05       		.byte	0x5
+ 1579 05d8 5B01     		.2byte	0x15b
+ 1580 05da 54060000 		.4byte	0x654
+ 1581 05de 0F       		.uleb128 0xf
+ 1582 05df 83080000 		.4byte	.LASF92
+ 1583 05e3 05       		.byte	0x5
+ 1584 05e4 5C01     		.2byte	0x15c
+ 1585 05e6 54060000 		.4byte	0x654
+ 1586 05ea 00       		.byte	0
+ 1587 05eb 10       		.uleb128 0x10
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccSCyeti.s 			page 35
+
+
+ 1588 05ec 72657300 		.ascii	"res\000"
+ 1589 05f0 05       		.byte	0x5
+ 1590 05f1 5D01     		.2byte	0x15d
+ 1591 05f3 27040000 		.4byte	0x427
+ 1592 05f7 05       		.byte	0x5
+ 1593 05f8 0F       		.uleb128 0xf
+ 1594 05f9 86000000 		.4byte	.LASF93
+ 1595 05fd 05       		.byte	0x5
+ 1596 05fe 5E01     		.2byte	0x15e
+ 1597 0600 F8010000 		.4byte	0x1f8
+ 1598 0604 08       		.byte	0x8
+ 1599 0605 0F       		.uleb128 0xf
+ 1600 0606 D8060000 		.4byte	.LASF94
+ 1601 060a 05       		.byte	0x5
+ 1602 060b 5F01     		.2byte	0x15f
+ 1603 060d 64060000 		.4byte	0x664
+ 1604 0611 14       		.byte	0x14
+ 1605 0612 0F       		.uleb128 0xf
+ 1606 0613 9E090000 		.4byte	.LASF95
+ 1607 0617 05       		.byte	0x5
+ 1608 0618 6001     		.2byte	0x160
+ 1609 061a 81000000 		.4byte	0x81
+ 1610 061e 20       		.byte	0x20
+ 1611 061f 0F       		.uleb128 0xf
+ 1612 0620 9B060000 		.4byte	.LASF96
+ 1613 0624 05       		.byte	0x5
+ 1614 0625 6101     		.2byte	0x161
+ 1615 0627 27040000 		.4byte	0x427
+ 1616 062b 21       		.byte	0x21
+ 1617 062c 0F       		.uleb128 0xf
+ 1618 062d 7F030000 		.4byte	.LASF97
+ 1619 0631 05       		.byte	0x5
+ 1620 0632 6201     		.2byte	0x162
+ 1621 0634 A5000000 		.4byte	0xa5
+ 1622 0638 24       		.byte	0x24
+ 1623 0639 0F       		.uleb128 0xf
+ 1624 063a 04070000 		.4byte	.LASF98
+ 1625 063e 05       		.byte	0x5
+ 1626 063f 6301     		.2byte	0x163
+ 1627 0641 08020000 		.4byte	0x208
+ 1628 0645 25       		.byte	0x25
+ 1629 0646 0F       		.uleb128 0xf
+ 1630 0647 44040000 		.4byte	.LASF56
+ 1631 064b 05       		.byte	0x5
+ 1632 064c 6401     		.2byte	0x164
+ 1633 064e 74060000 		.4byte	0x674
+ 1634 0652 28       		.byte	0x28
+ 1635 0653 00       		.byte	0
+ 1636 0654 07       		.uleb128 0x7
+ 1637 0655 81000000 		.4byte	0x81
+ 1638 0659 64060000 		.4byte	0x664
+ 1639 065d 08       		.uleb128 0x8
+ 1640 065e 02010000 		.4byte	0x102
+ 1641 0662 04       		.byte	0x4
+ 1642 0663 00       		.byte	0
+ 1643 0664 07       		.uleb128 0x7
+ 1644 0665 C9000000 		.4byte	0xc9
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccSCyeti.s 			page 36
+
+
+ 1645 0669 74060000 		.4byte	0x674
+ 1646 066d 08       		.uleb128 0x8
+ 1647 066e 02010000 		.4byte	0x102
+ 1648 0672 02       		.byte	0x2
+ 1649 0673 00       		.byte	0
+ 1650 0674 07       		.uleb128 0x7
+ 1651 0675 81000000 		.4byte	0x81
+ 1652 0679 84060000 		.4byte	0x684
+ 1653 067d 08       		.uleb128 0x8
+ 1654 067e 02010000 		.4byte	0x102
+ 1655 0682 07       		.byte	0x7
+ 1656 0683 00       		.byte	0
+ 1657 0684 0E       		.uleb128 0xe
+ 1658 0685 68070000 		.4byte	.LASF99
+ 1659 0689 10       		.byte	0x10
+ 1660 068a 05       		.byte	0x5
+ 1661 068b 6B01     		.2byte	0x16b
+ 1662 068d D3060000 		.4byte	0x6d3
+ 1663 0691 0F       		.uleb128 0xf
+ 1664 0692 B4010000 		.4byte	.LASF100
+ 1665 0696 05       		.byte	0x5
+ 1666 0697 6C01     		.2byte	0x16c
+ 1667 0699 D3060000 		.4byte	0x6d3
+ 1668 069d 00       		.byte	0
+ 1669 069e 0F       		.uleb128 0xf
+ 1670 069f 6C000000 		.4byte	.LASF101
+ 1671 06a3 05       		.byte	0x5
+ 1672 06a4 6D01     		.2byte	0x16d
+ 1673 06a6 58030000 		.4byte	0x358
+ 1674 06aa 04       		.byte	0x4
+ 1675 06ab 0F       		.uleb128 0xf
+ 1676 06ac 3A090000 		.4byte	.LASF102
+ 1677 06b0 05       		.byte	0x5
+ 1678 06b1 6E01     		.2byte	0x16e
+ 1679 06b3 E3060000 		.4byte	0x6e3
+ 1680 06b7 0C       		.byte	0xc
+ 1681 06b8 0F       		.uleb128 0xf
+ 1682 06b9 9E080000 		.4byte	.LASF103
+ 1683 06bd 05       		.byte	0x5
+ 1684 06be 6F01     		.2byte	0x16f
+ 1685 06c0 81000000 		.4byte	0x81
+ 1686 06c4 0E       		.byte	0xe
+ 1687 06c5 0F       		.uleb128 0xf
+ 1688 06c6 08030000 		.4byte	.LASF104
+ 1689 06ca 05       		.byte	0x5
+ 1690 06cb 7001     		.2byte	0x170
+ 1691 06cd 81000000 		.4byte	0x81
+ 1692 06d1 0F       		.byte	0xf
+ 1693 06d2 00       		.byte	0
+ 1694 06d3 07       		.uleb128 0x7
+ 1695 06d4 8D000000 		.4byte	0x8d
+ 1696 06d8 E3060000 		.4byte	0x6e3
+ 1697 06dc 08       		.uleb128 0x8
+ 1698 06dd 02010000 		.4byte	0x102
+ 1699 06e1 01       		.byte	0x1
+ 1700 06e2 00       		.byte	0
+ 1701 06e3 07       		.uleb128 0x7
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccSCyeti.s 			page 37
+
+
+ 1702 06e4 81000000 		.4byte	0x81
+ 1703 06e8 F3060000 		.4byte	0x6f3
+ 1704 06ec 08       		.uleb128 0x8
+ 1705 06ed 02010000 		.4byte	0x102
+ 1706 06f1 01       		.byte	0x1
+ 1707 06f2 00       		.byte	0
+ 1708 06f3 0E       		.uleb128 0xe
+ 1709 06f4 5E000000 		.4byte	.LASF105
+ 1710 06f8 20       		.byte	0x20
+ 1711 06f9 05       		.byte	0x5
+ 1712 06fa 7701     		.2byte	0x177
+ 1713 06fc 35070000 		.4byte	0x735
+ 1714 0700 0F       		.uleb128 0xf
+ 1715 0701 DA080000 		.4byte	.LASF106
+ 1716 0705 05       		.byte	0x5
+ 1717 0706 7801     		.2byte	0x178
+ 1718 0708 81000000 		.4byte	0x81
+ 1719 070c 00       		.byte	0
+ 1720 070d 0F       		.uleb128 0xf
+ 1721 070e 8D020000 		.4byte	.LASF107
+ 1722 0712 05       		.byte	0x5
+ 1723 0713 7901     		.2byte	0x179
+ 1724 0715 81000000 		.4byte	0x81
+ 1725 0719 01       		.byte	0x1
+ 1726 071a 0F       		.uleb128 0xf
+ 1727 071b E7040000 		.4byte	.LASF108
+ 1728 071f 05       		.byte	0x5
+ 1729 0720 7A01     		.2byte	0x17a
+ 1730 0722 35070000 		.4byte	0x735
+ 1731 0726 02       		.byte	0x2
+ 1732 0727 0F       		.uleb128 0xf
+ 1733 0728 44040000 		.4byte	.LASF56
+ 1734 072c 05       		.byte	0x5
+ 1735 072d 7B01     		.2byte	0x17b
+ 1736 072f 54060000 		.4byte	0x654
+ 1737 0733 1B       		.byte	0x1b
+ 1738 0734 00       		.byte	0
+ 1739 0735 07       		.uleb128 0x7
+ 1740 0736 81000000 		.4byte	0x81
+ 1741 073a 4B070000 		.4byte	0x74b
+ 1742 073e 08       		.uleb128 0x8
+ 1743 073f 02010000 		.4byte	0x102
+ 1744 0743 04       		.byte	0x4
+ 1745 0744 08       		.uleb128 0x8
+ 1746 0745 02010000 		.4byte	0x102
+ 1747 0749 04       		.byte	0x4
+ 1748 074a 00       		.byte	0
+ 1749 074b 0E       		.uleb128 0xe
+ 1750 074c 1D080000 		.4byte	.LASF109
+ 1751 0750 20       		.byte	0x20
+ 1752 0751 05       		.byte	0x5
+ 1753 0752 8201     		.2byte	0x182
+ 1754 0754 A7070000 		.4byte	0x7a7
+ 1755 0758 0F       		.uleb128 0xf
+ 1756 0759 57060000 		.4byte	.LASF110
+ 1757 075d 05       		.byte	0x5
+ 1758 075e 8301     		.2byte	0x183
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccSCyeti.s 			page 38
+
+
+ 1759 0760 A7070000 		.4byte	0x7a7
+ 1760 0764 00       		.byte	0
+ 1761 0765 0F       		.uleb128 0xf
+ 1762 0766 63090000 		.4byte	.LASF111
+ 1763 076a 05       		.byte	0x5
+ 1764 076b 8401     		.2byte	0x184
+ 1765 076d 81000000 		.4byte	0x81
+ 1766 0771 06       		.byte	0x6
+ 1767 0772 0F       		.uleb128 0xf
+ 1768 0773 BA030000 		.4byte	.LASF112
+ 1769 0777 05       		.byte	0x5
+ 1770 0778 8501     		.2byte	0x185
+ 1771 077a 81000000 		.4byte	0x81
+ 1772 077e 07       		.byte	0x7
+ 1773 077f 0F       		.uleb128 0xf
+ 1774 0780 FB060000 		.4byte	.LASF113
+ 1775 0784 05       		.byte	0x5
+ 1776 0785 8601     		.2byte	0x186
+ 1777 0787 88030000 		.4byte	0x388
+ 1778 078b 08       		.byte	0x8
+ 1779 078c 0F       		.uleb128 0xf
+ 1780 078d 31080000 		.4byte	.LASF114
+ 1781 0791 05       		.byte	0x5
+ 1782 0792 8701     		.2byte	0x187
+ 1783 0794 81000000 		.4byte	0x81
+ 1784 0798 14       		.byte	0x14
+ 1785 0799 0F       		.uleb128 0xf
+ 1786 079a 44040000 		.4byte	.LASF56
+ 1787 079e 05       		.byte	0x5
+ 1788 079f 8801     		.2byte	0x188
+ 1789 07a1 B7070000 		.4byte	0x7b7
+ 1790 07a5 15       		.byte	0x15
+ 1791 07a6 00       		.byte	0
+ 1792 07a7 07       		.uleb128 0x7
+ 1793 07a8 81000000 		.4byte	0x81
+ 1794 07ac B7070000 		.4byte	0x7b7
+ 1795 07b0 08       		.uleb128 0x8
+ 1796 07b1 02010000 		.4byte	0x102
+ 1797 07b5 05       		.byte	0x5
+ 1798 07b6 00       		.byte	0
+ 1799 07b7 07       		.uleb128 0x7
+ 1800 07b8 81000000 		.4byte	0x81
+ 1801 07bc C7070000 		.4byte	0x7c7
+ 1802 07c0 08       		.uleb128 0x8
+ 1803 07c1 02010000 		.4byte	0x102
+ 1804 07c5 0A       		.byte	0xa
+ 1805 07c6 00       		.byte	0
+ 1806 07c7 0E       		.uleb128 0xe
+ 1807 07c8 D5030000 		.4byte	.LASF115
+ 1808 07cc 20       		.byte	0x20
+ 1809 07cd 05       		.byte	0x5
+ 1810 07ce 8F01     		.2byte	0x18f
+ 1811 07d0 FC070000 		.4byte	0x7fc
+ 1812 07d4 0F       		.uleb128 0xf
+ 1813 07d5 F0040000 		.4byte	.LASF116
+ 1814 07d9 05       		.byte	0x5
+ 1815 07da 9001     		.2byte	0x190
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccSCyeti.s 			page 39
+
+
+ 1816 07dc 09010000 		.4byte	0x109
+ 1817 07e0 00       		.byte	0
+ 1818 07e1 0F       		.uleb128 0xf
+ 1819 07e2 DD030000 		.4byte	.LASF117
+ 1820 07e6 05       		.byte	0x5
+ 1821 07e7 9101     		.2byte	0x191
+ 1822 07e9 84060000 		.4byte	0x684
+ 1823 07ed 08       		.byte	0x8
+ 1824 07ee 0F       		.uleb128 0xf
+ 1825 07ef 44040000 		.4byte	.LASF56
+ 1826 07f3 05       		.byte	0x5
+ 1827 07f4 9201     		.2byte	0x192
+ 1828 07f6 74060000 		.4byte	0x674
+ 1829 07fa 18       		.byte	0x18
+ 1830 07fb 00       		.byte	0
+ 1831 07fc 0E       		.uleb128 0xe
+ 1832 07fd 76090000 		.4byte	.LASF118
+ 1833 0801 10       		.byte	0x10
+ 1834 0802 05       		.byte	0x5
+ 1835 0803 9901     		.2byte	0x199
+ 1836 0805 4B080000 		.4byte	0x84b
+ 1837 0809 0F       		.uleb128 0xf
+ 1838 080a 7F050000 		.4byte	.LASF119
+ 1839 080e 05       		.byte	0x5
+ 1840 080f 9A01     		.2byte	0x19a
+ 1841 0811 BD000000 		.4byte	0xbd
+ 1842 0815 00       		.byte	0
+ 1843 0816 0F       		.uleb128 0xf
+ 1844 0817 75010000 		.4byte	.LASF120
+ 1845 081b 05       		.byte	0x5
+ 1846 081c 9B01     		.2byte	0x19b
+ 1847 081e BD000000 		.4byte	0xbd
+ 1848 0822 04       		.byte	0x4
+ 1849 0823 0F       		.uleb128 0xf
+ 1850 0824 AB010000 		.4byte	.LASF121
+ 1851 0828 05       		.byte	0x5
+ 1852 0829 9C01     		.2byte	0x19c
+ 1853 082b BD000000 		.4byte	0xbd
+ 1854 082f 08       		.byte	0x8
+ 1855 0830 0F       		.uleb128 0xf
+ 1856 0831 68080000 		.4byte	.LASF122
+ 1857 0835 05       		.byte	0x5
+ 1858 0836 9D01     		.2byte	0x19d
+ 1859 0838 81000000 		.4byte	0x81
+ 1860 083c 0C       		.byte	0xc
+ 1861 083d 0F       		.uleb128 0xf
+ 1862 083e 44040000 		.4byte	.LASF56
+ 1863 0842 05       		.byte	0x5
+ 1864 0843 9E01     		.2byte	0x19e
+ 1865 0845 27040000 		.4byte	0x427
+ 1866 0849 0D       		.byte	0xd
+ 1867 084a 00       		.byte	0
+ 1868 084b 0E       		.uleb128 0xe
+ 1869 084c FE030000 		.4byte	.LASF123
+ 1870 0850 10       		.byte	0x10
+ 1871 0851 05       		.byte	0x5
+ 1872 0852 A501     		.2byte	0x1a5
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccSCyeti.s 			page 40
+
+
+ 1873 0854 8D080000 		.4byte	0x88d
+ 1874 0858 0F       		.uleb128 0xf
+ 1875 0859 48030000 		.4byte	.LASF124
+ 1876 085d 05       		.byte	0x5
+ 1877 085e A601     		.2byte	0x1a6
+ 1878 0860 8D000000 		.4byte	0x8d
+ 1879 0864 00       		.byte	0
+ 1880 0865 0F       		.uleb128 0xf
+ 1881 0866 4B000000 		.4byte	.LASF125
+ 1882 086a 05       		.byte	0x5
+ 1883 086b A701     		.2byte	0x1a7
+ 1884 086d B1000000 		.4byte	0xb1
+ 1885 0871 02       		.byte	0x2
+ 1886 0872 0F       		.uleb128 0xf
+ 1887 0873 BF090000 		.4byte	.LASF126
+ 1888 0877 05       		.byte	0x5
+ 1889 0878 A801     		.2byte	0x1a8
+ 1890 087a D3060000 		.4byte	0x6d3
+ 1891 087e 04       		.byte	0x4
+ 1892 087f 0F       		.uleb128 0xf
+ 1893 0880 44040000 		.4byte	.LASF56
+ 1894 0884 05       		.byte	0x5
+ 1895 0885 A901     		.2byte	0x1a9
+ 1896 0887 74060000 		.4byte	0x674
+ 1897 088b 08       		.byte	0x8
+ 1898 088c 00       		.byte	0
+ 1899 088d 0E       		.uleb128 0xe
+ 1900 088e 46070000 		.4byte	.LASF127
+ 1901 0892 10       		.byte	0x10
+ 1902 0893 05       		.byte	0x5
+ 1903 0894 B001     		.2byte	0x1b0
+ 1904 0896 C2080000 		.4byte	0x8c2
+ 1905 089a 0F       		.uleb128 0xf
+ 1906 089b 51040000 		.4byte	.LASF128
+ 1907 089f 05       		.byte	0x5
+ 1908 08a0 B101     		.2byte	0x1b1
+ 1909 08a2 81000000 		.4byte	0x81
+ 1910 08a6 00       		.byte	0
+ 1911 08a7 0F       		.uleb128 0xf
+ 1912 08a8 2B070000 		.4byte	.LASF129
+ 1913 08ac 05       		.byte	0x5
+ 1914 08ad B201     		.2byte	0x1b2
+ 1915 08af 81000000 		.4byte	0x81
+ 1916 08b3 01       		.byte	0x1
+ 1917 08b4 0F       		.uleb128 0xf
+ 1918 08b5 44040000 		.4byte	.LASF56
+ 1919 08b9 05       		.byte	0x5
+ 1920 08ba B301     		.2byte	0x1b3
+ 1921 08bc C2080000 		.4byte	0x8c2
+ 1922 08c0 02       		.byte	0x2
+ 1923 08c1 00       		.byte	0
+ 1924 08c2 07       		.uleb128 0x7
+ 1925 08c3 81000000 		.4byte	0x81
+ 1926 08c7 D2080000 		.4byte	0x8d2
+ 1927 08cb 08       		.uleb128 0x8
+ 1928 08cc 02010000 		.4byte	0x102
+ 1929 08d0 0D       		.byte	0xd
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccSCyeti.s 			page 41
+
+
+ 1930 08d1 00       		.byte	0
+ 1931 08d2 0E       		.uleb128 0xe
+ 1932 08d3 40000000 		.4byte	.LASF130
+ 1933 08d7 10       		.byte	0x10
+ 1934 08d8 05       		.byte	0x5
+ 1935 08d9 BA01     		.2byte	0x1ba
+ 1936 08db 14090000 		.4byte	0x914
+ 1937 08df 0F       		.uleb128 0xf
+ 1938 08e0 00000000 		.4byte	.LASF131
+ 1939 08e4 05       		.byte	0x5
+ 1940 08e5 BB01     		.2byte	0x1bb
+ 1941 08e7 BD000000 		.4byte	0xbd
+ 1942 08eb 00       		.byte	0
+ 1943 08ec 0F       		.uleb128 0xf
+ 1944 08ed 12050000 		.4byte	.LASF132
+ 1945 08f1 05       		.byte	0x5
+ 1946 08f2 BC01     		.2byte	0x1bc
+ 1947 08f4 D5000000 		.4byte	0xd5
+ 1948 08f8 04       		.byte	0x4
+ 1949 08f9 0F       		.uleb128 0xf
+ 1950 08fa 81090000 		.4byte	.LASF133
+ 1951 08fe 05       		.byte	0x5
+ 1952 08ff BD01     		.2byte	0x1bd
+ 1953 0901 D5000000 		.4byte	0xd5
+ 1954 0905 08       		.byte	0x8
+ 1955 0906 0F       		.uleb128 0xf
+ 1956 0907 44040000 		.4byte	.LASF56
+ 1957 090b 05       		.byte	0x5
+ 1958 090c BE01     		.2byte	0x1be
+ 1959 090e 14090000 		.4byte	0x914
+ 1960 0912 0C       		.byte	0xc
+ 1961 0913 00       		.byte	0
+ 1962 0914 07       		.uleb128 0x7
+ 1963 0915 81000000 		.4byte	0x81
+ 1964 0919 24090000 		.4byte	0x924
+ 1965 091d 08       		.uleb128 0x8
+ 1966 091e 02010000 		.4byte	0x102
+ 1967 0922 03       		.byte	0x3
+ 1968 0923 00       		.byte	0
+ 1969 0924 0E       		.uleb128 0xe
+ 1970 0925 74050000 		.4byte	.LASF134
+ 1971 0929 12       		.byte	0x12
+ 1972 092a 05       		.byte	0x5
+ 1973 092b C501     		.2byte	0x1c5
+ 1974 092d 66090000 		.4byte	0x966
+ 1975 0931 0F       		.uleb128 0xf
+ 1976 0932 80010000 		.4byte	.LASF135
+ 1977 0936 05       		.byte	0x5
+ 1978 0937 C601     		.2byte	0x1c6
+ 1979 0939 81000000 		.4byte	0x81
+ 1980 093d 00       		.byte	0
+ 1981 093e 0F       		.uleb128 0xf
+ 1982 093f AA020000 		.4byte	.LASF136
+ 1983 0943 05       		.byte	0x5
+ 1984 0944 C701     		.2byte	0x1c7
+ 1985 0946 D3060000 		.4byte	0x6d3
+ 1986 094a 02       		.byte	0x2
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccSCyeti.s 			page 42
+
+
+ 1987 094b 0F       		.uleb128 0xf
+ 1988 094c 99000000 		.4byte	.LASF137
+ 1989 0950 05       		.byte	0x5
+ 1990 0951 C801     		.2byte	0x1c8
+ 1991 0953 81000000 		.4byte	0x81
+ 1992 0957 06       		.byte	0x6
+ 1993 0958 0F       		.uleb128 0xf
+ 1994 0959 44040000 		.4byte	.LASF56
+ 1995 095d 05       		.byte	0x5
+ 1996 095e C901     		.2byte	0x1c9
+ 1997 0960 66090000 		.4byte	0x966
+ 1998 0964 07       		.byte	0x7
+ 1999 0965 00       		.byte	0
+ 2000 0966 07       		.uleb128 0x7
+ 2001 0967 81000000 		.4byte	0x81
+ 2002 096b 76090000 		.4byte	0x976
+ 2003 096f 08       		.uleb128 0x8
+ 2004 0970 02010000 		.4byte	0x102
+ 2005 0974 09       		.byte	0x9
+ 2006 0975 00       		.byte	0
+ 2007 0976 11       		.uleb128 0x11
+ 2008 0977 C4020000 		.4byte	.LASF138
+ 2009 097b F402     		.2byte	0x2f4
+ 2010 097d 05       		.byte	0x5
+ 2011 097e D201     		.2byte	0x1d2
+ 2012 0980 5B0A0000 		.4byte	0xa5b
+ 2013 0984 0F       		.uleb128 0xf
+ 2014 0985 26070000 		.4byte	.LASF139
+ 2015 0989 05       		.byte	0x5
+ 2016 098a D401     		.2byte	0x1d4
+ 2017 098c 81000000 		.4byte	0x81
+ 2018 0990 00       		.byte	0
+ 2019 0991 0F       		.uleb128 0xf
+ 2020 0992 44040000 		.4byte	.LASF56
+ 2021 0996 05       		.byte	0x5
+ 2022 0997 D501     		.2byte	0x1d5
+ 2023 0999 5B0A0000 		.4byte	0xa5b
+ 2024 099d 01       		.byte	0x1
+ 2025 099e 10       		.uleb128 0x10
+ 2026 099f 636E7400 		.ascii	"cnt\000"
+ 2027 09a3 05       		.byte	0x5
+ 2028 09a4 D601     		.2byte	0x1d6
+ 2029 09a6 BB020000 		.4byte	0x2bb
+ 2030 09aa 10       		.byte	0x10
+ 2031 09ab 0F       		.uleb128 0xf
+ 2032 09ac 68020000 		.4byte	.LASF140
+ 2033 09b0 05       		.byte	0x5
+ 2034 09b1 D701     		.2byte	0x1d7
+ 2035 09b3 6B0A0000 		.4byte	0xa6b
+ 2036 09b7 80       		.byte	0x80
+ 2037 09b8 10       		.uleb128 0x10
+ 2038 09b9 64657600 		.ascii	"dev\000"
+ 2039 09bd 05       		.byte	0x5
+ 2040 09be D801     		.2byte	0x1d8
+ 2041 09c0 98030000 		.4byte	0x398
+ 2042 09c4 A0       		.byte	0xa0
+ 2043 09c5 0F       		.uleb128 0xf
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccSCyeti.s 			page 43
+
+
+ 2044 09c6 81060000 		.4byte	.LASF141
+ 2045 09ca 05       		.byte	0x5
+ 2046 09cb D901     		.2byte	0x1d9
+ 2047 09cd 7B0A0000 		.4byte	0xa7b
+ 2048 09d1 B0       		.byte	0xb0
+ 2049 09d2 12       		.uleb128 0x12
+ 2050 09d3 656E6300 		.ascii	"enc\000"
+ 2051 09d7 05       		.byte	0x5
+ 2052 09d8 DA01     		.2byte	0x1da
+ 2053 09da 8B0A0000 		.4byte	0xa8b
+ 2054 09de 9001     		.2byte	0x190
+ 2055 09e0 12       		.uleb128 0x12
+ 2056 09e1 656D6700 		.ascii	"emg\000"
+ 2057 09e5 05       		.byte	0x5
+ 2058 09e6 DB01     		.2byte	0x1db
+ 2059 09e8 84060000 		.4byte	0x684
+ 2060 09ec F001     		.2byte	0x1f0
+ 2061 09ee 12       		.uleb128 0x12
+ 2062 09ef 696D7500 		.ascii	"imu\000"
+ 2063 09f3 05       		.byte	0x5
+ 2064 09f4 DC01     		.2byte	0x1dc
+ 2065 09f6 F3060000 		.4byte	0x6f3
+ 2066 09fa 0002     		.2byte	0x200
+ 2067 09fc 12       		.uleb128 0x12
+ 2068 09fd 65787000 		.ascii	"exp\000"
+ 2069 0a01 05       		.byte	0x5
+ 2070 0a02 DD01     		.2byte	0x1dd
+ 2071 0a04 4B070000 		.4byte	0x74b
+ 2072 0a08 2002     		.2byte	0x220
+ 2073 0a0a 13       		.uleb128 0x13
+ 2074 0a0b B3060000 		.4byte	.LASF142
+ 2075 0a0f 05       		.byte	0x5
+ 2076 0a10 DE01     		.2byte	0x1de
+ 2077 0a12 9B0A0000 		.4byte	0xa9b
+ 2078 0a16 4002     		.2byte	0x240
+ 2079 0a18 12       		.uleb128 0x12
+ 2080 0a19 534800   		.ascii	"SH\000"
+ 2081 0a1c 05       		.byte	0x5
+ 2082 0a1d E001     		.2byte	0x1e0
+ 2083 0a1f FC070000 		.4byte	0x7fc
+ 2084 0a23 A002     		.2byte	0x2a0
+ 2085 0a25 13       		.uleb128 0x13
+ 2086 0a26 E8080000 		.4byte	.LASF143
+ 2087 0a2a 05       		.byte	0x5
+ 2088 0a2b E101     		.2byte	0x1e1
+ 2089 0a2d 4B080000 		.4byte	0x84b
+ 2090 0a31 B002     		.2byte	0x2b0
+ 2091 0a33 12       		.uleb128 0x12
+ 2092 0a34 4D5300   		.ascii	"MS\000"
+ 2093 0a37 05       		.byte	0x5
+ 2094 0a38 E201     		.2byte	0x1e2
+ 2095 0a3a 8D080000 		.4byte	0x88d
+ 2096 0a3e C002     		.2byte	0x2c0
+ 2097 0a40 12       		.uleb128 0x12
+ 2098 0a41 464200   		.ascii	"FB\000"
+ 2099 0a44 05       		.byte	0x5
+ 2100 0a45 E301     		.2byte	0x1e3
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccSCyeti.s 			page 44
+
+
+ 2101 0a47 D2080000 		.4byte	0x8d2
+ 2102 0a4b D002     		.2byte	0x2d0
+ 2103 0a4d 12       		.uleb128 0x12
+ 2104 0a4e 575200   		.ascii	"WR\000"
+ 2105 0a51 05       		.byte	0x5
+ 2106 0a52 E401     		.2byte	0x1e4
+ 2107 0a54 24090000 		.4byte	0x924
+ 2108 0a58 E002     		.2byte	0x2e0
+ 2109 0a5a 00       		.byte	0
+ 2110 0a5b 07       		.uleb128 0x7
+ 2111 0a5c 81000000 		.4byte	0x81
+ 2112 0a60 6B0A0000 		.4byte	0xa6b
+ 2113 0a64 08       		.uleb128 0x8
+ 2114 0a65 02010000 		.4byte	0x102
+ 2115 0a69 0E       		.byte	0xe
+ 2116 0a6a 00       		.byte	0
+ 2117 0a6b 07       		.uleb128 0x7
+ 2118 0a6c 81000000 		.4byte	0x81
+ 2119 0a70 7B0A0000 		.4byte	0xa7b
+ 2120 0a74 08       		.uleb128 0x8
+ 2121 0a75 02010000 		.4byte	0x102
+ 2122 0a79 1F       		.byte	0x1f
+ 2123 0a7a 00       		.byte	0
+ 2124 0a7b 07       		.uleb128 0x7
+ 2125 0a7c 37040000 		.4byte	0x437
+ 2126 0a80 8B0A0000 		.4byte	0xa8b
+ 2127 0a84 08       		.uleb128 0x8
+ 2128 0a85 02010000 		.4byte	0x102
+ 2129 0a89 01       		.byte	0x1
+ 2130 0a8a 00       		.byte	0
+ 2131 0a8b 07       		.uleb128 0x7
+ 2132 0a8c D1050000 		.4byte	0x5d1
+ 2133 0a90 9B0A0000 		.4byte	0xa9b
+ 2134 0a94 08       		.uleb128 0x8
+ 2135 0a95 02010000 		.4byte	0x102
+ 2136 0a99 01       		.byte	0x1
+ 2137 0a9a 00       		.byte	0
+ 2138 0a9b 07       		.uleb128 0x7
+ 2139 0a9c C7070000 		.4byte	0x7c7
+ 2140 0aa0 AB0A0000 		.4byte	0xaab
+ 2141 0aa4 08       		.uleb128 0x8
+ 2142 0aa5 02010000 		.4byte	0x102
+ 2143 0aa9 02       		.byte	0x2
+ 2144 0aaa 00       		.byte	0
+ 2145 0aab 0E       		.uleb128 0xe
+ 2146 0aac 11070000 		.4byte	.LASF144
+ 2147 0ab0 08       		.byte	0x8
+ 2148 0ab1 05       		.byte	0x5
+ 2149 0ab2 FC01     		.2byte	0x1fc
+ 2150 0ab4 D30A0000 		.4byte	0xad3
+ 2151 0ab8 0F       		.uleb128 0xf
+ 2152 0ab9 1E020000 		.4byte	.LASF145
+ 2153 0abd 05       		.byte	0x5
+ 2154 0abe FD01     		.2byte	0x1fd
+ 2155 0ac0 BD000000 		.4byte	0xbd
+ 2156 0ac4 00       		.byte	0
+ 2157 0ac5 0F       		.uleb128 0xf
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccSCyeti.s 			page 45
+
+
+ 2158 0ac6 B8060000 		.4byte	.LASF146
+ 2159 0aca 05       		.byte	0x5
+ 2160 0acb FE01     		.2byte	0x1fe
+ 2161 0acd BD000000 		.4byte	0xbd
+ 2162 0ad1 04       		.byte	0x4
+ 2163 0ad2 00       		.byte	0
+ 2164 0ad3 14       		.uleb128 0x14
+ 2165 0ad4 BA090000 		.4byte	.LASF182
+ 2166 0ad8 01       		.byte	0x1
+ 2167 0ad9 4B       		.byte	0x4b
+ 2168 0ada 68000000 		.4byte	0x68
+ 2169 0ade 00000000 		.4byte	.LFB64
+ 2170 0ae2 E4050000 		.4byte	.LFE64-.LFB64
+ 2171 0ae6 01       		.uleb128 0x1
+ 2172 0ae7 9C       		.byte	0x9c
+ 2173 0ae8 370B0000 		.4byte	0xb37
+ 2174 0aec 15       		.uleb128 0x15
+ 2175 0aed 6900     		.ascii	"i\000"
+ 2176 0aef 01       		.byte	0x1
+ 2177 0af0 4E       		.byte	0x4e
+ 2178 0af1 81000000 		.4byte	0x81
+ 2179 0af5 02       		.uleb128 0x2
+ 2180 0af6 91       		.byte	0x91
+ 2181 0af7 6F       		.sleb128 -17
+ 2182 0af8 15       		.uleb128 0x15
+ 2183 0af9 6A00     		.ascii	"j\000"
+ 2184 0afb 01       		.byte	0x1
+ 2185 0afc 4E       		.byte	0x4e
+ 2186 0afd 81000000 		.4byte	0x81
+ 2187 0b01 02       		.uleb128 0x2
+ 2188 0b02 91       		.byte	0x91
+ 2189 0b03 6E       		.sleb128 -18
+ 2190 0b04 16       		.uleb128 0x16
+ 2191 0b05 6B050000 		.4byte	.LASF147
+ 2192 0b09 01       		.byte	0x1
+ 2193 0b0a 51       		.byte	0x51
+ 2194 0b0b 81000000 		.4byte	0x81
+ 2195 0b0f 02       		.uleb128 0x2
+ 2196 0b10 91       		.byte	0x91
+ 2197 0b11 6B       		.sleb128 -21
+ 2198 0b12 16       		.uleb128 0x16
+ 2199 0b13 CE090000 		.4byte	.LASF148
+ 2200 0b17 01       		.byte	0x1
+ 2201 0b18 52       		.byte	0x52
+ 2202 0b19 370B0000 		.4byte	0xb37
+ 2203 0b1d 02       		.uleb128 0x2
+ 2204 0b1e 91       		.byte	0x91
+ 2205 0b1f 68       		.sleb128 -24
+ 2206 0b20 17       		.uleb128 0x17
+ 2207 0b21 BE020000 		.4byte	.LBB2
+ 2208 0b25 36000000 		.4byte	.LBE2-.LBB2
+ 2209 0b29 15       		.uleb128 0x15
+ 2210 0b2a 6B00     		.ascii	"k\000"
+ 2211 0b2c 01       		.byte	0x1
+ 2212 0b2d DA       		.byte	0xda
+ 2213 0b2e 8D000000 		.4byte	0x8d
+ 2214 0b32 02       		.uleb128 0x2
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccSCyeti.s 			page 46
+
+
+ 2215 0b33 91       		.byte	0x91
+ 2216 0b34 6C       		.sleb128 -20
+ 2217 0b35 00       		.byte	0
+ 2218 0b36 00       		.byte	0
+ 2219 0b37 07       		.uleb128 0x7
+ 2220 0b38 81000000 		.4byte	0x81
+ 2221 0b3c 470B0000 		.4byte	0xb47
+ 2222 0b40 08       		.uleb128 0x8
+ 2223 0b41 02010000 		.4byte	0x102
+ 2224 0b45 00       		.byte	0
+ 2225 0b46 00       		.byte	0
+ 2226 0b47 18       		.uleb128 0x18
+ 2227 0b48 90010000 		.4byte	.LASF149
+ 2228 0b4c 06       		.byte	0x6
+ 2229 0b4d 1207     		.2byte	0x712
+ 2230 0b4f 530B0000 		.4byte	0xb53
+ 2231 0b53 06       		.uleb128 0x6
+ 2232 0b54 76000000 		.4byte	0x76
+ 2233 0b58 07       		.uleb128 0x7
+ 2234 0b59 5A010000 		.4byte	0x15a
+ 2235 0b5d 680B0000 		.4byte	0xb68
+ 2236 0b61 08       		.uleb128 0x8
+ 2237 0b62 02010000 		.4byte	0x102
+ 2238 0b66 01       		.byte	0x1
+ 2239 0b67 00       		.byte	0
+ 2240 0b68 18       		.uleb128 0x18
+ 2241 0b69 95060000 		.4byte	.LASF150
+ 2242 0b6d 05       		.byte	0x5
+ 2243 0b6e 2202     		.2byte	0x222
+ 2244 0b70 580B0000 		.4byte	0xb58
+ 2245 0b74 18       		.uleb128 0x18
+ 2246 0b75 0A040000 		.4byte	.LASF151
+ 2247 0b79 05       		.byte	0x5
+ 2248 0b7a 2202     		.2byte	0x222
+ 2249 0b7c 580B0000 		.4byte	0xb58
+ 2250 0b80 07       		.uleb128 0x7
+ 2251 0b81 97010000 		.4byte	0x197
+ 2252 0b85 900B0000 		.4byte	0xb90
+ 2253 0b89 08       		.uleb128 0x8
+ 2254 0b8a 02010000 		.4byte	0x102
+ 2255 0b8e 01       		.byte	0x1
+ 2256 0b8f 00       		.byte	0
+ 2257 0b90 18       		.uleb128 0x18
+ 2258 0b91 A4010000 		.4byte	.LASF152
+ 2259 0b95 05       		.byte	0x5
+ 2260 0b96 2302     		.2byte	0x223
+ 2261 0b98 800B0000 		.4byte	0xb80
+ 2262 0b9c 18       		.uleb128 0x18
+ 2263 0b9d 12080000 		.4byte	.LASF153
+ 2264 0ba1 05       		.byte	0x5
+ 2265 0ba2 2402     		.2byte	0x224
+ 2266 0ba4 18020000 		.4byte	0x218
+ 2267 0ba8 18       		.uleb128 0x18
+ 2268 0ba9 01020000 		.4byte	.LASF154
+ 2269 0bad 05       		.byte	0x5
+ 2270 0bae 2602     		.2byte	0x226
+ 2271 0bb0 69020000 		.4byte	0x269
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccSCyeti.s 			page 47
+
+
+ 2272 0bb4 18       		.uleb128 0x18
+ 2273 0bb5 4A050000 		.4byte	.LASF155
+ 2274 0bb9 05       		.byte	0x5
+ 2275 0bba 2702     		.2byte	0x227
+ 2276 0bbc 76090000 		.4byte	0x976
+ 2277 0bc0 18       		.uleb128 0x18
+ 2278 0bc1 3A000000 		.4byte	.LASF156
+ 2279 0bc5 05       		.byte	0x5
+ 2280 0bc6 2702     		.2byte	0x227
+ 2281 0bc8 76090000 		.4byte	0x976
+ 2282 0bcc 07       		.uleb128 0x7
+ 2283 0bcd AB0A0000 		.4byte	0xaab
+ 2284 0bd1 DC0B0000 		.4byte	0xbdc
+ 2285 0bd5 08       		.uleb128 0x8
+ 2286 0bd6 02010000 		.4byte	0x102
+ 2287 0bda 01       		.byte	0x1
+ 2288 0bdb 00       		.byte	0
+ 2289 0bdc 18       		.uleb128 0x18
+ 2290 0bdd 9D010000 		.4byte	.LASF157
+ 2291 0be1 05       		.byte	0x5
+ 2292 0be2 2902     		.2byte	0x229
+ 2293 0be4 CC0B0000 		.4byte	0xbcc
+ 2294 0be8 18       		.uleb128 0x18
+ 2295 0be9 D8040000 		.4byte	.LASF158
+ 2296 0bed 05       		.byte	0x5
+ 2297 0bee 2902     		.2byte	0x229
+ 2298 0bf0 CC0B0000 		.4byte	0xbcc
+ 2299 0bf4 18       		.uleb128 0x18
+ 2300 0bf5 65000000 		.4byte	.LASF159
+ 2301 0bf9 05       		.byte	0x5
+ 2302 0bfa 2902     		.2byte	0x229
+ 2303 0bfc CC0B0000 		.4byte	0xbcc
+ 2304 0c00 07       		.uleb128 0x7
+ 2305 0c01 AB0A0000 		.4byte	0xaab
+ 2306 0c05 100C0000 		.4byte	0xc10
+ 2307 0c09 08       		.uleb128 0x8
+ 2308 0c0a 02010000 		.4byte	0x102
+ 2309 0c0e 02       		.byte	0x2
+ 2310 0c0f 00       		.byte	0
+ 2311 0c10 18       		.uleb128 0x18
+ 2312 0c11 98070000 		.4byte	.LASF160
+ 2313 0c15 05       		.byte	0x5
+ 2314 0c16 2A02     		.2byte	0x22a
+ 2315 0c18 000C0000 		.4byte	0xc00
+ 2316 0c1c 07       		.uleb128 0x7
+ 2317 0c1d AB0A0000 		.4byte	0xaab
+ 2318 0c21 2C0C0000 		.4byte	0xc2c
+ 2319 0c25 08       		.uleb128 0x8
+ 2320 0c26 02010000 		.4byte	0x102
+ 2321 0c2a 07       		.byte	0x7
+ 2322 0c2b 00       		.byte	0
+ 2323 0c2c 18       		.uleb128 0x18
+ 2324 0c2d F1080000 		.4byte	.LASF161
+ 2325 0c31 05       		.byte	0x5
+ 2326 0c32 2B02     		.2byte	0x22b
+ 2327 0c34 1C0C0000 		.4byte	0xc1c
+ 2328 0c38 18       		.uleb128 0x18
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccSCyeti.s 			page 48
+
+
+ 2329 0c39 D5090000 		.4byte	.LASF162
+ 2330 0c3d 05       		.byte	0x5
+ 2331 0c3e 2C02     		.2byte	0x22c
+ 2332 0c40 AB0A0000 		.4byte	0xaab
+ 2333 0c44 18       		.uleb128 0x18
+ 2334 0c45 9C020000 		.4byte	.LASF163
+ 2335 0c49 05       		.byte	0x5
+ 2336 0c4a 3302     		.2byte	0x233
+ 2337 0c4c D3060000 		.4byte	0x6d3
+ 2338 0c50 18       		.uleb128 0x18
+ 2339 0c51 73030000 		.4byte	.LASF164
+ 2340 0c55 05       		.byte	0x5
+ 2341 0c56 3402     		.2byte	0x234
+ 2342 0c58 D3060000 		.4byte	0x6d3
+ 2343 0c5c 18       		.uleb128 0x18
+ 2344 0c5d 92090000 		.4byte	.LASF165
+ 2345 0c61 05       		.byte	0x5
+ 2346 0c62 3602     		.2byte	0x236
+ 2347 0c64 49020000 		.4byte	0x249
+ 2348 0c68 18       		.uleb128 0x18
+ 2349 0c69 DF060000 		.4byte	.LASF166
+ 2350 0c6d 05       		.byte	0x5
+ 2351 0c6e 4002     		.2byte	0x240
+ 2352 0c70 E3060000 		.4byte	0x6e3
+ 2353 0c74 18       		.uleb128 0x18
+ 2354 0c75 10020000 		.4byte	.LASF167
+ 2355 0c79 05       		.byte	0x5
+ 2356 0c7a 4102     		.2byte	0x241
+ 2357 0c7c 81000000 		.4byte	0x81
+ 2358 0c80 18       		.uleb128 0x18
+ 2359 0c81 CC070000 		.4byte	.LASF168
+ 2360 0c85 05       		.byte	0x5
+ 2361 0c86 4202     		.2byte	0x242
+ 2362 0c88 81000000 		.4byte	0x81
+ 2363 0c8c 18       		.uleb128 0x18
+ 2364 0c8d 43010000 		.4byte	.LASF169
+ 2365 0c91 05       		.byte	0x5
+ 2366 0c92 4402     		.2byte	0x244
+ 2367 0c94 81000000 		.4byte	0x81
+ 2368 0c98 18       		.uleb128 0x18
+ 2369 0c99 3D050000 		.4byte	.LASF170
+ 2370 0c9d 05       		.byte	0x5
+ 2371 0c9e 4602     		.2byte	0x246
+ 2372 0ca0 81000000 		.4byte	0x81
+ 2373 0ca4 18       		.uleb128 0x18
+ 2374 0ca5 E1010000 		.4byte	.LASF171
+ 2375 0ca9 05       		.byte	0x5
+ 2376 0caa 4702     		.2byte	0x247
+ 2377 0cac 81000000 		.4byte	0x81
+ 2378 0cb0 07       		.uleb128 0x7
+ 2379 0cb1 B1000000 		.4byte	0xb1
+ 2380 0cb5 C00C0000 		.4byte	0xcc0
+ 2381 0cb9 08       		.uleb128 0x8
+ 2382 0cba 02010000 		.4byte	0x102
+ 2383 0cbe 0B       		.byte	0xb
+ 2384 0cbf 00       		.byte	0
+ 2385 0cc0 18       		.uleb128 0x18
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccSCyeti.s 			page 49
+
+
+ 2386 0cc1 3E020000 		.4byte	.LASF172
+ 2387 0cc5 05       		.byte	0x5
+ 2388 0cc6 4D02     		.2byte	0x24d
+ 2389 0cc8 B00C0000 		.4byte	0xcb0
+ 2390 0ccc 18       		.uleb128 0x18
+ 2391 0ccd 50050000 		.4byte	.LASF173
+ 2392 0cd1 05       		.byte	0x5
+ 2393 0cd2 4E02     		.2byte	0x24e
+ 2394 0cd4 81000000 		.4byte	0x81
+ 2395 0cd8 07       		.uleb128 0x7
+ 2396 0cd9 D5000000 		.4byte	0xd5
+ 2397 0cdd EE0C0000 		.4byte	0xcee
+ 2398 0ce1 08       		.uleb128 0x8
+ 2399 0ce2 02010000 		.4byte	0x102
+ 2400 0ce6 04       		.byte	0x4
+ 2401 0ce7 08       		.uleb128 0x8
+ 2402 0ce8 02010000 		.4byte	0x102
+ 2403 0cec 03       		.byte	0x3
+ 2404 0ced 00       		.byte	0
+ 2405 0cee 18       		.uleb128 0x18
+ 2406 0cef F9030000 		.4byte	.LASF174
+ 2407 0cf3 05       		.byte	0x5
+ 2408 0cf4 7002     		.2byte	0x270
+ 2409 0cf6 D80C0000 		.4byte	0xcd8
+ 2410 0cfa 18       		.uleb128 0x18
+ 2411 0cfb 06080000 		.4byte	.LASF175
+ 2412 0cff 05       		.byte	0x5
+ 2413 0d00 7302     		.2byte	0x273
+ 2414 0d02 81000000 		.4byte	0x81
+ 2415 0d06 07       		.uleb128 0x7
+ 2416 0d07 8D000000 		.4byte	0x8d
+ 2417 0d0b 1D0D0000 		.4byte	0xd1d
+ 2418 0d0f 19       		.uleb128 0x19
+ 2419 0d10 02010000 		.4byte	0x102
+ 2420 0d14 5702     		.2byte	0x257
+ 2421 0d16 08       		.uleb128 0x8
+ 2422 0d17 02010000 		.4byte	0x102
+ 2423 0d1b 01       		.byte	0x1
+ 2424 0d1c 00       		.byte	0
+ 2425 0d1d 18       		.uleb128 0x18
+ 2426 0d1e 4A080000 		.4byte	.LASF176
+ 2427 0d22 05       		.byte	0x5
+ 2428 0d23 7602     		.2byte	0x276
+ 2429 0d25 060D0000 		.4byte	0xd06
+ 2430 0d29 18       		.uleb128 0x18
+ 2431 0d2a B9080000 		.4byte	.LASF177
+ 2432 0d2e 05       		.byte	0x5
+ 2433 0d2f 7702     		.2byte	0x277
+ 2434 0d31 99000000 		.4byte	0x99
+ 2435 0d35 00       		.byte	0
+ 2436              		.section	.debug_abbrev,"",%progbits
+ 2437              	.Ldebug_abbrev0:
+ 2438 0000 01       		.uleb128 0x1
+ 2439 0001 11       		.uleb128 0x11
+ 2440 0002 01       		.byte	0x1
+ 2441 0003 25       		.uleb128 0x25
+ 2442 0004 0E       		.uleb128 0xe
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccSCyeti.s 			page 50
+
+
+ 2443 0005 13       		.uleb128 0x13
+ 2444 0006 0B       		.uleb128 0xb
+ 2445 0007 03       		.uleb128 0x3
+ 2446 0008 0E       		.uleb128 0xe
+ 2447 0009 1B       		.uleb128 0x1b
+ 2448 000a 0E       		.uleb128 0xe
+ 2449 000b 55       		.uleb128 0x55
+ 2450 000c 17       		.uleb128 0x17
+ 2451 000d 11       		.uleb128 0x11
+ 2452 000e 01       		.uleb128 0x1
+ 2453 000f 10       		.uleb128 0x10
+ 2454 0010 17       		.uleb128 0x17
+ 2455 0011 00       		.byte	0
+ 2456 0012 00       		.byte	0
+ 2457 0013 02       		.uleb128 0x2
+ 2458 0014 24       		.uleb128 0x24
+ 2459 0015 00       		.byte	0
+ 2460 0016 0B       		.uleb128 0xb
+ 2461 0017 0B       		.uleb128 0xb
+ 2462 0018 3E       		.uleb128 0x3e
+ 2463 0019 0B       		.uleb128 0xb
+ 2464 001a 03       		.uleb128 0x3
+ 2465 001b 0E       		.uleb128 0xe
+ 2466 001c 00       		.byte	0
+ 2467 001d 00       		.byte	0
+ 2468 001e 03       		.uleb128 0x3
+ 2469 001f 16       		.uleb128 0x16
+ 2470 0020 00       		.byte	0
+ 2471 0021 03       		.uleb128 0x3
+ 2472 0022 0E       		.uleb128 0xe
+ 2473 0023 3A       		.uleb128 0x3a
+ 2474 0024 0B       		.uleb128 0xb
+ 2475 0025 3B       		.uleb128 0x3b
+ 2476 0026 0B       		.uleb128 0xb
+ 2477 0027 49       		.uleb128 0x49
+ 2478 0028 13       		.uleb128 0x13
+ 2479 0029 00       		.byte	0
+ 2480 002a 00       		.byte	0
+ 2481 002b 04       		.uleb128 0x4
+ 2482 002c 24       		.uleb128 0x24
+ 2483 002d 00       		.byte	0
+ 2484 002e 0B       		.uleb128 0xb
+ 2485 002f 0B       		.uleb128 0xb
+ 2486 0030 3E       		.uleb128 0x3e
+ 2487 0031 0B       		.uleb128 0xb
+ 2488 0032 03       		.uleb128 0x3
+ 2489 0033 08       		.uleb128 0x8
+ 2490 0034 00       		.byte	0
+ 2491 0035 00       		.byte	0
+ 2492 0036 05       		.uleb128 0x5
+ 2493 0037 16       		.uleb128 0x16
+ 2494 0038 00       		.byte	0
+ 2495 0039 03       		.uleb128 0x3
+ 2496 003a 0E       		.uleb128 0xe
+ 2497 003b 3A       		.uleb128 0x3a
+ 2498 003c 0B       		.uleb128 0xb
+ 2499 003d 3B       		.uleb128 0x3b
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccSCyeti.s 			page 51
+
+
+ 2500 003e 05       		.uleb128 0x5
+ 2501 003f 49       		.uleb128 0x49
+ 2502 0040 13       		.uleb128 0x13
+ 2503 0041 00       		.byte	0
+ 2504 0042 00       		.byte	0
+ 2505 0043 06       		.uleb128 0x6
+ 2506 0044 35       		.uleb128 0x35
+ 2507 0045 00       		.byte	0
+ 2508 0046 49       		.uleb128 0x49
+ 2509 0047 13       		.uleb128 0x13
+ 2510 0048 00       		.byte	0
+ 2511 0049 00       		.byte	0
+ 2512 004a 07       		.uleb128 0x7
+ 2513 004b 01       		.uleb128 0x1
+ 2514 004c 01       		.byte	0x1
+ 2515 004d 49       		.uleb128 0x49
+ 2516 004e 13       		.uleb128 0x13
+ 2517 004f 01       		.uleb128 0x1
+ 2518 0050 13       		.uleb128 0x13
+ 2519 0051 00       		.byte	0
+ 2520 0052 00       		.byte	0
+ 2521 0053 08       		.uleb128 0x8
+ 2522 0054 21       		.uleb128 0x21
+ 2523 0055 00       		.byte	0
+ 2524 0056 49       		.uleb128 0x49
+ 2525 0057 13       		.uleb128 0x13
+ 2526 0058 2F       		.uleb128 0x2f
+ 2527 0059 0B       		.uleb128 0xb
+ 2528 005a 00       		.byte	0
+ 2529 005b 00       		.byte	0
+ 2530 005c 09       		.uleb128 0x9
+ 2531 005d 04       		.uleb128 0x4
+ 2532 005e 01       		.byte	0x1
+ 2533 005f 03       		.uleb128 0x3
+ 2534 0060 0E       		.uleb128 0xe
+ 2535 0061 0B       		.uleb128 0xb
+ 2536 0062 0B       		.uleb128 0xb
+ 2537 0063 49       		.uleb128 0x49
+ 2538 0064 13       		.uleb128 0x13
+ 2539 0065 3A       		.uleb128 0x3a
+ 2540 0066 0B       		.uleb128 0xb
+ 2541 0067 3B       		.uleb128 0x3b
+ 2542 0068 0B       		.uleb128 0xb
+ 2543 0069 01       		.uleb128 0x1
+ 2544 006a 13       		.uleb128 0x13
+ 2545 006b 00       		.byte	0
+ 2546 006c 00       		.byte	0
+ 2547 006d 0A       		.uleb128 0xa
+ 2548 006e 28       		.uleb128 0x28
+ 2549 006f 00       		.byte	0
+ 2550 0070 03       		.uleb128 0x3
+ 2551 0071 0E       		.uleb128 0xe
+ 2552 0072 1C       		.uleb128 0x1c
+ 2553 0073 0B       		.uleb128 0xb
+ 2554 0074 00       		.byte	0
+ 2555 0075 00       		.byte	0
+ 2556 0076 0B       		.uleb128 0xb
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccSCyeti.s 			page 52
+
+
+ 2557 0077 13       		.uleb128 0x13
+ 2558 0078 01       		.byte	0x1
+ 2559 0079 03       		.uleb128 0x3
+ 2560 007a 0E       		.uleb128 0xe
+ 2561 007b 0B       		.uleb128 0xb
+ 2562 007c 0B       		.uleb128 0xb
+ 2563 007d 3A       		.uleb128 0x3a
+ 2564 007e 0B       		.uleb128 0xb
+ 2565 007f 3B       		.uleb128 0x3b
+ 2566 0080 0B       		.uleb128 0xb
+ 2567 0081 01       		.uleb128 0x1
+ 2568 0082 13       		.uleb128 0x13
+ 2569 0083 00       		.byte	0
+ 2570 0084 00       		.byte	0
+ 2571 0085 0C       		.uleb128 0xc
+ 2572 0086 0D       		.uleb128 0xd
+ 2573 0087 00       		.byte	0
+ 2574 0088 03       		.uleb128 0x3
+ 2575 0089 08       		.uleb128 0x8
+ 2576 008a 3A       		.uleb128 0x3a
+ 2577 008b 0B       		.uleb128 0xb
+ 2578 008c 3B       		.uleb128 0x3b
+ 2579 008d 0B       		.uleb128 0xb
+ 2580 008e 49       		.uleb128 0x49
+ 2581 008f 13       		.uleb128 0x13
+ 2582 0090 38       		.uleb128 0x38
+ 2583 0091 0B       		.uleb128 0xb
+ 2584 0092 00       		.byte	0
+ 2585 0093 00       		.byte	0
+ 2586 0094 0D       		.uleb128 0xd
+ 2587 0095 0D       		.uleb128 0xd
+ 2588 0096 00       		.byte	0
+ 2589 0097 03       		.uleb128 0x3
+ 2590 0098 0E       		.uleb128 0xe
+ 2591 0099 3A       		.uleb128 0x3a
+ 2592 009a 0B       		.uleb128 0xb
+ 2593 009b 3B       		.uleb128 0x3b
+ 2594 009c 0B       		.uleb128 0xb
+ 2595 009d 49       		.uleb128 0x49
+ 2596 009e 13       		.uleb128 0x13
+ 2597 009f 38       		.uleb128 0x38
+ 2598 00a0 0B       		.uleb128 0xb
+ 2599 00a1 00       		.byte	0
+ 2600 00a2 00       		.byte	0
+ 2601 00a3 0E       		.uleb128 0xe
+ 2602 00a4 13       		.uleb128 0x13
+ 2603 00a5 01       		.byte	0x1
+ 2604 00a6 03       		.uleb128 0x3
+ 2605 00a7 0E       		.uleb128 0xe
+ 2606 00a8 0B       		.uleb128 0xb
+ 2607 00a9 0B       		.uleb128 0xb
+ 2608 00aa 3A       		.uleb128 0x3a
+ 2609 00ab 0B       		.uleb128 0xb
+ 2610 00ac 3B       		.uleb128 0x3b
+ 2611 00ad 05       		.uleb128 0x5
+ 2612 00ae 01       		.uleb128 0x1
+ 2613 00af 13       		.uleb128 0x13
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccSCyeti.s 			page 53
+
+
+ 2614 00b0 00       		.byte	0
+ 2615 00b1 00       		.byte	0
+ 2616 00b2 0F       		.uleb128 0xf
+ 2617 00b3 0D       		.uleb128 0xd
+ 2618 00b4 00       		.byte	0
+ 2619 00b5 03       		.uleb128 0x3
+ 2620 00b6 0E       		.uleb128 0xe
+ 2621 00b7 3A       		.uleb128 0x3a
+ 2622 00b8 0B       		.uleb128 0xb
+ 2623 00b9 3B       		.uleb128 0x3b
+ 2624 00ba 05       		.uleb128 0x5
+ 2625 00bb 49       		.uleb128 0x49
+ 2626 00bc 13       		.uleb128 0x13
+ 2627 00bd 38       		.uleb128 0x38
+ 2628 00be 0B       		.uleb128 0xb
+ 2629 00bf 00       		.byte	0
+ 2630 00c0 00       		.byte	0
+ 2631 00c1 10       		.uleb128 0x10
+ 2632 00c2 0D       		.uleb128 0xd
+ 2633 00c3 00       		.byte	0
+ 2634 00c4 03       		.uleb128 0x3
+ 2635 00c5 08       		.uleb128 0x8
+ 2636 00c6 3A       		.uleb128 0x3a
+ 2637 00c7 0B       		.uleb128 0xb
+ 2638 00c8 3B       		.uleb128 0x3b
+ 2639 00c9 05       		.uleb128 0x5
+ 2640 00ca 49       		.uleb128 0x49
+ 2641 00cb 13       		.uleb128 0x13
+ 2642 00cc 38       		.uleb128 0x38
+ 2643 00cd 0B       		.uleb128 0xb
+ 2644 00ce 00       		.byte	0
+ 2645 00cf 00       		.byte	0
+ 2646 00d0 11       		.uleb128 0x11
+ 2647 00d1 13       		.uleb128 0x13
+ 2648 00d2 01       		.byte	0x1
+ 2649 00d3 03       		.uleb128 0x3
+ 2650 00d4 0E       		.uleb128 0xe
+ 2651 00d5 0B       		.uleb128 0xb
+ 2652 00d6 05       		.uleb128 0x5
+ 2653 00d7 3A       		.uleb128 0x3a
+ 2654 00d8 0B       		.uleb128 0xb
+ 2655 00d9 3B       		.uleb128 0x3b
+ 2656 00da 05       		.uleb128 0x5
+ 2657 00db 01       		.uleb128 0x1
+ 2658 00dc 13       		.uleb128 0x13
+ 2659 00dd 00       		.byte	0
+ 2660 00de 00       		.byte	0
+ 2661 00df 12       		.uleb128 0x12
+ 2662 00e0 0D       		.uleb128 0xd
+ 2663 00e1 00       		.byte	0
+ 2664 00e2 03       		.uleb128 0x3
+ 2665 00e3 08       		.uleb128 0x8
+ 2666 00e4 3A       		.uleb128 0x3a
+ 2667 00e5 0B       		.uleb128 0xb
+ 2668 00e6 3B       		.uleb128 0x3b
+ 2669 00e7 05       		.uleb128 0x5
+ 2670 00e8 49       		.uleb128 0x49
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccSCyeti.s 			page 54
+
+
+ 2671 00e9 13       		.uleb128 0x13
+ 2672 00ea 38       		.uleb128 0x38
+ 2673 00eb 05       		.uleb128 0x5
+ 2674 00ec 00       		.byte	0
+ 2675 00ed 00       		.byte	0
+ 2676 00ee 13       		.uleb128 0x13
+ 2677 00ef 0D       		.uleb128 0xd
+ 2678 00f0 00       		.byte	0
+ 2679 00f1 03       		.uleb128 0x3
+ 2680 00f2 0E       		.uleb128 0xe
+ 2681 00f3 3A       		.uleb128 0x3a
+ 2682 00f4 0B       		.uleb128 0xb
+ 2683 00f5 3B       		.uleb128 0x3b
+ 2684 00f6 05       		.uleb128 0x5
+ 2685 00f7 49       		.uleb128 0x49
+ 2686 00f8 13       		.uleb128 0x13
+ 2687 00f9 38       		.uleb128 0x38
+ 2688 00fa 05       		.uleb128 0x5
+ 2689 00fb 00       		.byte	0
+ 2690 00fc 00       		.byte	0
+ 2691 00fd 14       		.uleb128 0x14
+ 2692 00fe 2E       		.uleb128 0x2e
+ 2693 00ff 01       		.byte	0x1
+ 2694 0100 3F       		.uleb128 0x3f
+ 2695 0101 19       		.uleb128 0x19
+ 2696 0102 03       		.uleb128 0x3
+ 2697 0103 0E       		.uleb128 0xe
+ 2698 0104 3A       		.uleb128 0x3a
+ 2699 0105 0B       		.uleb128 0xb
+ 2700 0106 3B       		.uleb128 0x3b
+ 2701 0107 0B       		.uleb128 0xb
+ 2702 0108 49       		.uleb128 0x49
+ 2703 0109 13       		.uleb128 0x13
+ 2704 010a 11       		.uleb128 0x11
+ 2705 010b 01       		.uleb128 0x1
+ 2706 010c 12       		.uleb128 0x12
+ 2707 010d 06       		.uleb128 0x6
+ 2708 010e 40       		.uleb128 0x40
+ 2709 010f 18       		.uleb128 0x18
+ 2710 0110 9642     		.uleb128 0x2116
+ 2711 0112 19       		.uleb128 0x19
+ 2712 0113 01       		.uleb128 0x1
+ 2713 0114 13       		.uleb128 0x13
+ 2714 0115 00       		.byte	0
+ 2715 0116 00       		.byte	0
+ 2716 0117 15       		.uleb128 0x15
+ 2717 0118 34       		.uleb128 0x34
+ 2718 0119 00       		.byte	0
+ 2719 011a 03       		.uleb128 0x3
+ 2720 011b 08       		.uleb128 0x8
+ 2721 011c 3A       		.uleb128 0x3a
+ 2722 011d 0B       		.uleb128 0xb
+ 2723 011e 3B       		.uleb128 0x3b
+ 2724 011f 0B       		.uleb128 0xb
+ 2725 0120 49       		.uleb128 0x49
+ 2726 0121 13       		.uleb128 0x13
+ 2727 0122 02       		.uleb128 0x2
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccSCyeti.s 			page 55
+
+
+ 2728 0123 18       		.uleb128 0x18
+ 2729 0124 00       		.byte	0
+ 2730 0125 00       		.byte	0
+ 2731 0126 16       		.uleb128 0x16
+ 2732 0127 34       		.uleb128 0x34
+ 2733 0128 00       		.byte	0
+ 2734 0129 03       		.uleb128 0x3
+ 2735 012a 0E       		.uleb128 0xe
+ 2736 012b 3A       		.uleb128 0x3a
+ 2737 012c 0B       		.uleb128 0xb
+ 2738 012d 3B       		.uleb128 0x3b
+ 2739 012e 0B       		.uleb128 0xb
+ 2740 012f 49       		.uleb128 0x49
+ 2741 0130 13       		.uleb128 0x13
+ 2742 0131 02       		.uleb128 0x2
+ 2743 0132 18       		.uleb128 0x18
+ 2744 0133 00       		.byte	0
+ 2745 0134 00       		.byte	0
+ 2746 0135 17       		.uleb128 0x17
+ 2747 0136 0B       		.uleb128 0xb
+ 2748 0137 01       		.byte	0x1
+ 2749 0138 11       		.uleb128 0x11
+ 2750 0139 01       		.uleb128 0x1
+ 2751 013a 12       		.uleb128 0x12
+ 2752 013b 06       		.uleb128 0x6
+ 2753 013c 00       		.byte	0
+ 2754 013d 00       		.byte	0
+ 2755 013e 18       		.uleb128 0x18
+ 2756 013f 34       		.uleb128 0x34
+ 2757 0140 00       		.byte	0
+ 2758 0141 03       		.uleb128 0x3
+ 2759 0142 0E       		.uleb128 0xe
+ 2760 0143 3A       		.uleb128 0x3a
+ 2761 0144 0B       		.uleb128 0xb
+ 2762 0145 3B       		.uleb128 0x3b
+ 2763 0146 05       		.uleb128 0x5
+ 2764 0147 49       		.uleb128 0x49
+ 2765 0148 13       		.uleb128 0x13
+ 2766 0149 3F       		.uleb128 0x3f
+ 2767 014a 19       		.uleb128 0x19
+ 2768 014b 3C       		.uleb128 0x3c
+ 2769 014c 19       		.uleb128 0x19
+ 2770 014d 00       		.byte	0
+ 2771 014e 00       		.byte	0
+ 2772 014f 19       		.uleb128 0x19
+ 2773 0150 21       		.uleb128 0x21
+ 2774 0151 00       		.byte	0
+ 2775 0152 49       		.uleb128 0x49
+ 2776 0153 13       		.uleb128 0x13
+ 2777 0154 2F       		.uleb128 0x2f
+ 2778 0155 05       		.uleb128 0x5
+ 2779 0156 00       		.byte	0
+ 2780 0157 00       		.byte	0
+ 2781 0158 00       		.byte	0
+ 2782              		.section	.debug_aranges,"",%progbits
+ 2783 0000 1C000000 		.4byte	0x1c
+ 2784 0004 0200     		.2byte	0x2
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccSCyeti.s 			page 56
+
+
+ 2785 0006 00000000 		.4byte	.Ldebug_info0
+ 2786 000a 04       		.byte	0x4
+ 2787 000b 00       		.byte	0
+ 2788 000c 0000     		.2byte	0
+ 2789 000e 0000     		.2byte	0
+ 2790 0010 00000000 		.4byte	.LFB64
+ 2791 0014 E4050000 		.4byte	.LFE64-.LFB64
+ 2792 0018 00000000 		.4byte	0
+ 2793 001c 00000000 		.4byte	0
+ 2794              		.section	.debug_ranges,"",%progbits
+ 2795              	.Ldebug_ranges0:
+ 2796 0000 00000000 		.4byte	.LFB64
+ 2797 0004 E4050000 		.4byte	.LFE64
+ 2798 0008 00000000 		.4byte	0
+ 2799 000c 00000000 		.4byte	0
+ 2800              		.section	.debug_line,"",%progbits
+ 2801              	.Ldebug_line0:
+ 2802 0000 03030000 		.section	.debug_str,"MS",%progbits,1
+ 2802      02006E01 
+ 2802      00000201 
+ 2802      FB0E0D00 
+ 2802      01010101 
+ 2803              	.LASF131:
+ 2804 0000 6D61785F 		.ascii	"max_residual_current\000"
+ 2804      72657369 
+ 2804      6475616C 
+ 2804      5F637572 
+ 2804      72656E74 
+ 2805              	.LASF2:
+ 2806 0015 73686F72 		.ascii	"short int\000"
+ 2806      7420696E 
+ 2806      7400
+ 2807              	.LASF62:
+ 2808 001f 7573655F 		.ascii	"use_2nd_motor_flag\000"
+ 2808      326E645F 
+ 2808      6D6F746F 
+ 2808      725F666C 
+ 2808      616700
+ 2809              	.LASF35:
+ 2810 0032 73745F6D 		.ascii	"st_meas\000"
+ 2810      65617300 
+ 2811              	.LASF156:
+ 2812 003a 635F6D65 		.ascii	"c_mem\000"
+ 2812      6D00
+ 2813              	.LASF130:
+ 2814 0040 73745F46 		.ascii	"st_FB_spec\000"
+ 2814      425F7370 
+ 2814      656300
+ 2815              	.LASF125:
+ 2816 004b 6A6F7973 		.ascii	"joystick_threshold\000"
+ 2816      7469636B 
+ 2816      5F746872 
+ 2816      6573686F 
+ 2816      6C6400
+ 2817              	.LASF105:
+ 2818 005e 73745F69 		.ascii	"st_imu\000"
+ 2818      6D7500
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccSCyeti.s 			page 57
+
+
+ 2819              	.LASF159:
+ 2820 0065 66696C74 		.ascii	"filt_i\000"
+ 2820      5F6900
+ 2821              	.LASF101:
+ 2822 006c 656D675F 		.ascii	"emg_max_value\000"
+ 2822      6D61785F 
+ 2822      76616C75 
+ 2822      6500
+ 2823              	.LASF0:
+ 2824 007a 7369676E 		.ascii	"signed char\000"
+ 2824      65642063 
+ 2824      68617200 
+ 2825              	.LASF93:
+ 2826 0086 6D5F6F66 		.ascii	"m_off\000"
+ 2826      6600
+ 2827              	.LASF88:
+ 2828 008c 656E636F 		.ascii	"encoder_line\000"
+ 2828      6465725F 
+ 2828      6C696E65 
+ 2828      00
+ 2829              	.LASF137:
+ 2830 0099 77726973 		.ascii	"wrist_direction_association\000"
+ 2830      745F6469 
+ 2830      72656374 
+ 2830      696F6E5F 
+ 2830      6173736F 
+ 2831              	.LASF178:
+ 2832 00b5 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 2832      43313120 
+ 2832      352E342E 
+ 2832      31203230 
+ 2832      31363036 
+ 2833 00e8 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
+ 2833      20726576 
+ 2833      6973696F 
+ 2833      6E203233 
+ 2833      37373135 
+ 2834 011b 30202D66 		.ascii	"0 -ffunction-sections -ffat-lto-objects\000"
+ 2834      66756E63 
+ 2834      74696F6E 
+ 2834      2D736563 
+ 2834      74696F6E 
+ 2835              	.LASF169:
+ 2836 0143 6D61696E 		.ascii	"maintenance_flag\000"
+ 2836      74656E61 
+ 2836      6E63655F 
+ 2836      666C6167 
+ 2836      00
+ 2837              	.LASF7:
+ 2838 0154 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 2838      206C6F6E 
+ 2838      6720756E 
+ 2838      7369676E 
+ 2838      65642069 
+ 2839              	.LASF63:
+ 2840 016b 62617564 		.ascii	"baud_rate\000"
+ 2840      5F726174 
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccSCyeti.s 			page 58
+
+
+ 2840      6500
+ 2841              	.LASF120:
+ 2842 0175 72657374 		.ascii	"rest_delay\000"
+ 2842      5F64656C 
+ 2842      617900
+ 2843              	.LASF135:
+ 2844 0180 61637469 		.ascii	"activation_mode\000"
+ 2844      76617469 
+ 2844      6F6E5F6D 
+ 2844      6F646500 
+ 2845              	.LASF149:
+ 2846 0190 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ 2846      52784275 
+ 2846      66666572 
+ 2846      00
+ 2847              	.LASF157:
+ 2848 019d 66696C74 		.ascii	"filt_v\000"
+ 2848      5F7600
+ 2849              	.LASF152:
+ 2850 01a4 675F6D65 		.ascii	"g_meas\000"
+ 2850      617300
+ 2851              	.LASF121:
+ 2852 01ab 72657374 		.ascii	"rest_vel\000"
+ 2852      5F76656C 
+ 2852      00
+ 2853              	.LASF100:
+ 2854 01b4 656D675F 		.ascii	"emg_threshold\000"
+ 2854      74687265 
+ 2854      73686F6C 
+ 2854      6400
+ 2855              	.LASF6:
+ 2856 01c2 6C6F6E67 		.ascii	"long long int\000"
+ 2856      206C6F6E 
+ 2856      6720696E 
+ 2856      7400
+ 2857              	.LASF44:
+ 2858 01d0 72656164 		.ascii	"ready\000"
+ 2858      7900
+ 2859              	.LASF36:
+ 2860 01d6 65737469 		.ascii	"estim_curr\000"
+ 2860      6D5F6375 
+ 2860      727200
+ 2861              	.LASF171:
+ 2862 01e1 666F7263 		.ascii	"forced_open\000"
+ 2862      65645F6F 
+ 2862      70656E00 
+ 2863              	.LASF21:
+ 2864 01ed 72656738 		.ascii	"reg8\000"
+ 2864      00
+ 2865              	.LASF16:
+ 2866 01f2 696E7433 		.ascii	"int32\000"
+ 2866      3200
+ 2867              	.LASF4:
+ 2868 01f8 6C6F6E67 		.ascii	"long int\000"
+ 2868      20696E74 
+ 2868      00
+ 2869              	.LASF154:
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccSCyeti.s 			page 59
+
+
+ 2870 0201 675F7278 		.ascii	"g_rx\000"
+ 2870      00
+ 2871              	.LASF37:
+ 2872 0206 686F6C64 		.ascii	"hold_curr\000"
+ 2872      5F637572 
+ 2872      7200
+ 2873              	.LASF167:
+ 2874 0210 74656E73 		.ascii	"tension_valid\000"
+ 2874      696F6E5F 
+ 2874      76616C69 
+ 2874      6400
+ 2875              	.LASF145:
+ 2876 021e 6F6C645F 		.ascii	"old_value\000"
+ 2876      76616C75 
+ 2876      6500
+ 2877              	.LASF90:
+ 2878 0228 6E6F745F 		.ascii	"not_revers_motor_flag\000"
+ 2878      72657665 
+ 2878      72735F6D 
+ 2878      6F746F72 
+ 2878      5F666C61 
+ 2879              	.LASF172:
+ 2880 023e 4144435F 		.ascii	"ADC_buf\000"
+ 2880      62756600 
+ 2881              	.LASF60:
+ 2882 0246 72696768 		.ascii	"right_left\000"
+ 2882      745F6C65 
+ 2882      667400
+ 2883              	.LASF50:
+ 2884 0251 77697265 		.ascii	"wire_disp\000"
+ 2884      5F646973 
+ 2884      7000
+ 2885              	.LASF87:
+ 2886 025b 636F6E74 		.ascii	"control_mode\000"
+ 2886      726F6C5F 
+ 2886      6D6F6465 
+ 2886      00
+ 2887              	.LASF140:
+ 2888 0268 756E7573 		.ascii	"unused_bytes1\000"
+ 2888      65645F62 
+ 2888      79746573 
+ 2888      3100
+ 2889              	.LASF77:
+ 2890 0276 61637469 		.ascii	"activate_pwm_rescaling\000"
+ 2890      76617465 
+ 2890      5F70776D 
+ 2890      5F726573 
+ 2890      63616C69 
+ 2891              	.LASF107:
+ 2892 028d 5350495F 		.ascii	"SPI_read_delay\000"
+ 2892      72656164 
+ 2892      5F64656C 
+ 2892      617900
+ 2893              	.LASF163:
+ 2894 029c 6465765F 		.ascii	"dev_pwm_limit\000"
+ 2894      70776D5F 
+ 2894      6C696D69 
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccSCyeti.s 			page 60
+
+
+ 2894      7400
+ 2895              	.LASF136:
+ 2896 02aa 66617374 		.ascii	"fast_act_threshold\000"
+ 2896      5F616374 
+ 2896      5F746872 
+ 2896      6573686F 
+ 2896      6C6400
+ 2897              	.LASF13:
+ 2898 02bd 75696E74 		.ascii	"uint32\000"
+ 2898      333200
+ 2899              	.LASF138:
+ 2900 02c4 73745F65 		.ascii	"st_eeprom\000"
+ 2900      6570726F 
+ 2900      6D00
+ 2901              	.LASF26:
+ 2902 02ce 494E5055 		.ascii	"INPUT_MODE_EMG_PROPORTIONAL\000"
+ 2902      545F4D4F 
+ 2902      44455F45 
+ 2902      4D475F50 
+ 2902      524F504F 
+ 2903              	.LASF73:
+ 2904 02ea 6B5F705F 		.ascii	"k_p_c_dl\000"
+ 2904      635F646C 
+ 2904      00
+ 2905              	.LASF51:
+ 2906 02f3 746F7461 		.ascii	"total_runtime\000"
+ 2906      6C5F7275 
+ 2906      6E74696D 
+ 2906      6500
+ 2907              	.LASF12:
+ 2908 0301 75696E74 		.ascii	"uint16\000"
+ 2908      313600
+ 2909              	.LASF104:
+ 2910 0308 73776974 		.ascii	"switch_emg\000"
+ 2910      63685F65 
+ 2910      6D6700
+ 2911              	.LASF30:
+ 2912 0313 494E5055 		.ascii	"INPUT_MODE_JOYSTICK\000"
+ 2912      545F4D4F 
+ 2912      44455F4A 
+ 2912      4F595354 
+ 2912      49434B00 
+ 2913              	.LASF86:
+ 2914 0327 696E7075 		.ascii	"input_mode\000"
+ 2914      745F6D6F 
+ 2914      646500
+ 2915              	.LASF72:
+ 2916 0332 6B5F645F 		.ascii	"k_d_dl\000"
+ 2916      646C00
+ 2917              	.LASF61:
+ 2918 0339 72657365 		.ascii	"reset_counters\000"
+ 2918      745F636F 
+ 2918      756E7465 
+ 2918      727300
+ 2919              	.LASF124:
+ 2920 0348 6A6F7973 		.ascii	"joystick_closure_speed\000"
+ 2920      7469636B 
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccSCyeti.s 			page 61
+
+
+ 2920      5F636C6F 
+ 2920      73757265 
+ 2920      5F737065 
+ 2921              	.LASF8:
+ 2922 035f 756E7369 		.ascii	"unsigned int\000"
+ 2922      676E6564 
+ 2922      20696E74 
+ 2922      00
+ 2923              	.LASF34:
+ 2924 036c 73745F72 		.ascii	"st_ref\000"
+ 2924      656600
+ 2925              	.LASF164:
+ 2926 0373 6465765F 		.ascii	"dev_pwm_sat\000"
+ 2926      70776D5F 
+ 2926      73617400 
+ 2927              	.LASF97:
+ 2928 037f 6D6F746F 		.ascii	"motor_handle_ratio\000"
+ 2928      725F6861 
+ 2928      6E646C65 
+ 2928      5F726174 
+ 2928      696F00
+ 2929              	.LASF71:
+ 2930 0392 6B5F695F 		.ascii	"k_i_dl\000"
+ 2930      646C00
+ 2931              	.LASF28:
+ 2932 0399 494E5055 		.ascii	"INPUT_MODE_EMG_FCFS\000"
+ 2932      545F4D4F 
+ 2932      44455F45 
+ 2932      4D475F46 
+ 2932      43465300 
+ 2933              	.LASF82:
+ 2934 03ad 6D61785F 		.ascii	"max_step_neg\000"
+ 2934      73746570 
+ 2934      5F6E6567 
+ 2934      00
+ 2935              	.LASF112:
+ 2936 03ba 72656164 		.ascii	"read_ADC_sensors_port_flag\000"
+ 2936      5F414443 
+ 2936      5F73656E 
+ 2936      736F7273 
+ 2936      5F706F72 
+ 2937              	.LASF115:
+ 2938 03d5 73745F75 		.ascii	"st_user\000"
+ 2938      73657200 
+ 2939              	.LASF117:
+ 2940 03dd 75736572 		.ascii	"user_emg\000"
+ 2940      5F656D67 
+ 2940      00
+ 2941              	.LASF3:
+ 2942 03e6 73686F72 		.ascii	"short unsigned int\000"
+ 2942      7420756E 
+ 2942      7369676E 
+ 2942      65642069 
+ 2942      6E7400
+ 2943              	.LASF174:
+ 2944 03f9 51756174 		.ascii	"Quat\000"
+ 2944      00
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccSCyeti.s 			page 62
+
+
+ 2945              	.LASF123:
+ 2946 03fe 73745F4A 		.ascii	"st_JOY_spec\000"
+ 2946      4F595F73 
+ 2946      70656300 
+ 2947              	.LASF151:
+ 2948 040a 675F7265 		.ascii	"g_refNew\000"
+ 2948      664E6577 
+ 2948      00
+ 2949              	.LASF14:
+ 2950 0413 696E7438 		.ascii	"int8\000"
+ 2950      00
+ 2951              	.LASF181:
+ 2952 0418 53485F69 		.ascii	"SH_input_mode\000"
+ 2952      6E707574 
+ 2952      5F6D6F64 
+ 2952      6500
+ 2953              	.LASF78:
+ 2954 0426 6D6F746F 		.ascii	"motor_driver_type\000"
+ 2954      725F6472 
+ 2954      69766572 
+ 2954      5F747970 
+ 2954      6500
+ 2955              	.LASF80:
+ 2956 0438 706F735F 		.ascii	"pos_lim_inf\000"
+ 2956      6C696D5F 
+ 2956      696E6600 
+ 2957              	.LASF56:
+ 2958 0444 756E7573 		.ascii	"unused_bytes\000"
+ 2958      65645F62 
+ 2958      79746573 
+ 2958      00
+ 2959              	.LASF128:
+ 2960 0451 736C6176 		.ascii	"slave_comm_active\000"
+ 2960      655F636F 
+ 2960      6D6D5F61 
+ 2960      63746976 
+ 2960      6500
+ 2961              	.LASF25:
+ 2962 0463 494E5055 		.ascii	"INPUT_MODE_ENCODER3\000"
+ 2962      545F4D4F 
+ 2962      44455F45 
+ 2962      4E434F44 
+ 2962      45523300 
+ 2963              	.LASF47:
+ 2964 0477 706F7369 		.ascii	"position_hist\000"
+ 2964      74696F6E 
+ 2964      5F686973 
+ 2964      7400
+ 2965              	.LASF9:
+ 2966 0485 5F5F696E 		.ascii	"__int32_t\000"
+ 2966      7433325F 
+ 2966      7400
+ 2967              	.LASF58:
+ 2968 048f 68775F6D 		.ascii	"hw_maint_date\000"
+ 2968      61696E74 
+ 2968      5F646174 
+ 2968      6500
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccSCyeti.s 			page 63
+
+
+ 2969              	.LASF59:
+ 2970 049d 73746174 		.ascii	"stats_period_begin_date\000"
+ 2970      735F7065 
+ 2970      72696F64 
+ 2970      5F626567 
+ 2970      696E5F64 
+ 2971              	.LASF53:
+ 2972 04b5 706F7765 		.ascii	"power_cycles\000"
+ 2972      725F6379 
+ 2972      636C6573 
+ 2972      00
+ 2973              	.LASF179:
+ 2974 04c2 2E2E5C73 		.ascii	"..\\src\\main.c\000"
+ 2974      72635C6D 
+ 2974      61696E2E 
+ 2974      6300
+ 2975              	.LASF39:
+ 2976 04d0 6164645F 		.ascii	"add_emg\000"
+ 2976      656D6700 
+ 2977              	.LASF158:
+ 2978 04d8 66696C74 		.ascii	"filt_curr_diff\000"
+ 2978      5F637572 
+ 2978      725F6469 
+ 2978      666600
+ 2979              	.LASF108:
+ 2980 04e7 494D555F 		.ascii	"IMU_conf\000"
+ 2980      636F6E66 
+ 2980      00
+ 2981              	.LASF116:
+ 2982 04f0 75736572 		.ascii	"user_code_string\000"
+ 2982      5F636F64 
+ 2982      655F7374 
+ 2982      72696E67 
+ 2982      00
+ 2983              	.LASF17:
+ 2984 0501 666C6F61 		.ascii	"float32\000"
+ 2984      74333200 
+ 2985              	.LASF23:
+ 2986 0509 73697A65 		.ascii	"sizetype\000"
+ 2986      74797065 
+ 2986      00
+ 2987              	.LASF132:
+ 2988 0512 6D617869 		.ascii	"maximum_pressure_kPa\000"
+ 2988      6D756D5F 
+ 2988      70726573 
+ 2988      73757265 
+ 2988      5F6B5061 
+ 2989              	.LASF22:
+ 2990 0527 6C6F6E67 		.ascii	"long double\000"
+ 2990      20646F75 
+ 2990      626C6500 
+ 2991              	.LASF57:
+ 2992 0533 73745F64 		.ascii	"st_device\000"
+ 2992      65766963 
+ 2992      6500
+ 2993              	.LASF170:
+ 2994 053d 72657374 		.ascii	"rest_enabled\000"
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccSCyeti.s 			page 64
+
+
+ 2994      5F656E61 
+ 2994      626C6564 
+ 2994      00
+ 2995              	.LASF155:
+ 2996 054a 675F6D65 		.ascii	"g_mem\000"
+ 2996      6D00
+ 2997              	.LASF173:
+ 2998 0550 4E554D5F 		.ascii	"NUM_OF_ANALOG_INPUTS\000"
+ 2998      4F465F41 
+ 2998      4E414C4F 
+ 2998      475F494E 
+ 2998      50555453 
+ 2999              	.LASF67:
+ 3000 0565 6B5F705F 		.ascii	"k_p_c\000"
+ 3000      6300
+ 3001              	.LASF147:
+ 3002 056b 444D415F 		.ascii	"DMA_Chan\000"
+ 3002      4368616E 
+ 3002      00
+ 3003              	.LASF134:
+ 3004 0574 73745F57 		.ascii	"st_WR_spec\000"
+ 3004      525F7370 
+ 3004      656300
+ 3005              	.LASF119:
+ 3006 057f 72657374 		.ascii	"rest_pos\000"
+ 3006      5F706F73 
+ 3006      00
+ 3007              	.LASF81:
+ 3008 0588 706F735F 		.ascii	"pos_lim_sup\000"
+ 3008      6C696D5F 
+ 3008      73757000 
+ 3009              	.LASF29:
+ 3010 0594 494E5055 		.ascii	"INPUT_MODE_EMG_FCFS_ADV\000"
+ 3010      545F4D4F 
+ 3010      44455F45 
+ 3010      4D475F46 
+ 3010      4346535F 
+ 3011              	.LASF48:
+ 3012 05ac 63757272 		.ascii	"current_hist\000"
+ 3012      656E745F 
+ 3012      68697374 
+ 3012      00
+ 3013              	.LASF180:
+ 3014 05b9 433A5C55 		.ascii	"C:\\Users\\mgnocco\\OneDrive - Fondazione Istituto "
+ 3014      73657273 
+ 3014      5C6D676E 
+ 3014      6F63636F 
+ 3014      5C4F6E65 
+ 3015 05e9 4974616C 		.ascii	"Italiano Tecnologia\\Firmware\\Psoc5\\SoftHandPRO-a"
+ 3015      69616E6F 
+ 3015      20546563 
+ 3015      6E6F6C6F 
+ 3015      6769615C 
+ 3016 0619 6E642D47 		.ascii	"nd-Generic-FW-PSoC5-Master\\Air_Chambers_Haptic_Fee"
+ 3016      656E6572 
+ 3016      69632D46 
+ 3016      572D5053 
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccSCyeti.s 			page 65
+
+
+ 3016      6F43352D 
+ 3017 064b 64626163 		.ascii	"dback.cydsn\000"
+ 3017      6B2E6379 
+ 3017      64736E00 
+ 3018              	.LASF110:
+ 3019 0657 63757272 		.ascii	"curr_time\000"
+ 3019      5F74696D 
+ 3019      6500
+ 3020              	.LASF54:
+ 3021 0661 65786365 		.ascii	"excessive_signal_activity\000"
+ 3021      73736976 
+ 3021      655F7369 
+ 3021      676E616C 
+ 3021      5F616374 
+ 3022              	.LASF76:
+ 3023 067b 61637469 		.ascii	"activ\000"
+ 3023      7600
+ 3024              	.LASF141:
+ 3025 0681 6D6F746F 		.ascii	"motor\000"
+ 3025      7200
+ 3026              	.LASF85:
+ 3027 0687 63757272 		.ascii	"current_limit\000"
+ 3027      656E745F 
+ 3027      6C696D69 
+ 3027      7400
+ 3028              	.LASF150:
+ 3029 0695 675F7265 		.ascii	"g_ref\000"
+ 3029      6600
+ 3030              	.LASF96:
+ 3031 069b 456E635F 		.ascii	"Enc_idx_use_for_control\000"
+ 3031      6964785F 
+ 3031      7573655F 
+ 3031      666F725F 
+ 3031      636F6E74 
+ 3032              	.LASF142:
+ 3033 06b3 75736572 		.ascii	"user\000"
+ 3033      00
+ 3034              	.LASF146:
+ 3035 06b8 6761696E 		.ascii	"gain\000"
+ 3035      00
+ 3036              	.LASF10:
+ 3037 06bd 696E7433 		.ascii	"int32_t\000"
+ 3037      325F7400 
+ 3038              	.LASF1:
+ 3039 06c5 756E7369 		.ascii	"unsigned char\000"
+ 3039      676E6564 
+ 3039      20636861 
+ 3039      7200
+ 3040              	.LASF32:
+ 3041 06d3 63757272 		.ascii	"curr\000"
+ 3041      00
+ 3042              	.LASF94:
+ 3043 06d8 6D5F6D75 		.ascii	"m_mult\000"
+ 3043      6C7400
+ 3044              	.LASF166:
+ 3045 06df 72657365 		.ascii	"reset_last_value_flag\000"
+ 3045      745F6C61 
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccSCyeti.s 			page 66
+
+
+ 3045      73745F76 
+ 3045      616C7565 
+ 3045      5F666C61 
+ 3046              	.LASF33:
+ 3047 06f5 6F6E6F66 		.ascii	"onoff\000"
+ 3047      6600
+ 3048              	.LASF113:
+ 3049 06fb 4144435F 		.ascii	"ADC_conf\000"
+ 3049      636F6E66 
+ 3049      00
+ 3050              	.LASF98:
+ 3051 0704 67656172 		.ascii	"gears_params\000"
+ 3051      735F7061 
+ 3051      72616D73 
+ 3051      00
+ 3052              	.LASF144:
+ 3053 0711 73745F66 		.ascii	"st_filter\000"
+ 3053      696C7465 
+ 3053      7200
+ 3054              	.LASF91:
+ 3055 071b 73745F65 		.ascii	"st_encoder\000"
+ 3055      6E636F64 
+ 3055      657200
+ 3056              	.LASF139:
+ 3057 0726 666C6167 		.ascii	"flag\000"
+ 3057      00
+ 3058              	.LASF129:
+ 3059 072b 736C6176 		.ascii	"slave_ID\000"
+ 3059      655F4944 
+ 3059      00
+ 3060              	.LASF11:
+ 3061 0734 75696E74 		.ascii	"uint8\000"
+ 3061      3800
+ 3062              	.LASF45:
+ 3063 073a 73745F63 		.ascii	"st_counters\000"
+ 3063      6F756E74 
+ 3063      65727300 
+ 3064              	.LASF127:
+ 3065 0746 73745F4D 		.ascii	"st_MASTER_spec\000"
+ 3065      41535445 
+ 3065      525F7370 
+ 3065      656300
+ 3066              	.LASF15:
+ 3067 0755 696E7431 		.ascii	"int16\000"
+ 3067      3600
+ 3068              	.LASF79:
+ 3069 075b 706F735F 		.ascii	"pos_lim_flag\000"
+ 3069      6C696D5F 
+ 3069      666C6167 
+ 3069      00
+ 3070              	.LASF99:
+ 3071 0768 73745F65 		.ascii	"st_emg\000"
+ 3071      6D6700
+ 3072              	.LASF38:
+ 3073 076f 73745F61 		.ascii	"st_adc_meas\000"
+ 3073      64635F6D 
+ 3073      65617300 
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccSCyeti.s 			page 67
+
+
+ 3074              	.LASF83:
+ 3075 077b 6D61785F 		.ascii	"max_step_pos\000"
+ 3075      73746570 
+ 3075      5F706F73 
+ 3075      00
+ 3076              	.LASF52:
+ 3077 0788 746F7461 		.ascii	"total_time_rest\000"
+ 3077      6C5F7469 
+ 3077      6D655F72 
+ 3077      65737400 
+ 3078              	.LASF160:
+ 3079 0798 66696C74 		.ascii	"filt_vel\000"
+ 3079      5F76656C 
+ 3079      00
+ 3080              	.LASF49:
+ 3081 07a1 72657374 		.ascii	"rest_counter\000"
+ 3081      5F636F75 
+ 3081      6E746572 
+ 3081      00
+ 3082              	.LASF5:
+ 3083 07ae 6C6F6E67 		.ascii	"long unsigned int\000"
+ 3083      20756E73 
+ 3083      69676E65 
+ 3083      6420696E 
+ 3083      7400
+ 3084              	.LASF43:
+ 3085 07c0 6C656E67 		.ascii	"length\000"
+ 3085      746800
+ 3086              	.LASF20:
+ 3087 07c7 63686172 		.ascii	"char\000"
+ 3087      00
+ 3088              	.LASF168:
+ 3089 07cc 696E7465 		.ascii	"interrupt_flag\000"
+ 3089      72727570 
+ 3089      745F666C 
+ 3089      616700
+ 3090              	.LASF41:
+ 3091 07db 73745F64 		.ascii	"st_data\000"
+ 3091      61746100 
+ 3092              	.LASF55:
+ 3093 07e3 6D6F7469 		.ascii	"motion_counter\000"
+ 3093      6F6E5F63 
+ 3093      6F756E74 
+ 3093      657200
+ 3094              	.LASF24:
+ 3095 07f2 494E5055 		.ascii	"INPUT_MODE_EXTERNAL\000"
+ 3095      545F4D4F 
+ 3095      44455F45 
+ 3095      58544552 
+ 3095      4E414C00 
+ 3096              	.LASF175:
+ 3097 0806 6D617374 		.ascii	"master_mode\000"
+ 3097      65725F6D 
+ 3097      6F646500 
+ 3098              	.LASF153:
+ 3099 0812 675F6164 		.ascii	"g_adc_meas\000"
+ 3099      635F6D65 
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccSCyeti.s 			page 68
+
+
+ 3099      617300
+ 3100              	.LASF109:
+ 3101 081d 73745F65 		.ascii	"st_expansion\000"
+ 3101      7870616E 
+ 3101      73696F6E 
+ 3101      00
+ 3102              	.LASF42:
+ 3103 082a 62756666 		.ascii	"buffer\000"
+ 3103      657200
+ 3104              	.LASF114:
+ 3105 0831 7265636F 		.ascii	"record_EMG_history_on_SD\000"
+ 3105      72645F45 
+ 3105      4D475F68 
+ 3105      6973746F 
+ 3105      72795F6F 
+ 3106              	.LASF176:
+ 3107 084a 656D675F 		.ascii	"emg_history\000"
+ 3107      68697374 
+ 3107      6F727900 
+ 3108              	.LASF65:
+ 3109 0856 6465765F 		.ascii	"dev_type\000"
+ 3109      74797065 
+ 3109      00
+ 3110              	.LASF74:
+ 3111 085f 6B5F695F 		.ascii	"k_i_c_dl\000"
+ 3111      635F646C 
+ 3111      00
+ 3112              	.LASF122:
+ 3113 0868 72657374 		.ascii	"rest_position_flag\000"
+ 3113      5F706F73 
+ 3113      6974696F 
+ 3113      6E5F666C 
+ 3113      616700
+ 3114              	.LASF64:
+ 3115 087b 75736572 		.ascii	"user_id\000"
+ 3115      5F696400 
+ 3116              	.LASF92:
+ 3117 0883 456E635F 		.ascii	"Enc_raw_read_conf\000"
+ 3117      7261775F 
+ 3117      72656164 
+ 3117      5F636F6E 
+ 3117      6600
+ 3118              	.LASF66:
+ 3119 0895 73745F6D 		.ascii	"st_motor\000"
+ 3119      6F746F72 
+ 3119      00
+ 3120              	.LASF103:
+ 3121 089e 656D675F 		.ascii	"emg_calibration_flag\000"
+ 3121      63616C69 
+ 3121      62726174 
+ 3121      696F6E5F 
+ 3121      666C6167 
+ 3122              	.LASF69:
+ 3123 08b3 6B5F645F 		.ascii	"k_d_c\000"
+ 3123      6300
+ 3124              	.LASF177:
+ 3125 08b9 656D675F 		.ascii	"emg_history_next_idx\000"
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccSCyeti.s 			page 69
+
+
+ 3125      68697374 
+ 3125      6F72795F 
+ 3125      6E657874 
+ 3125      5F696478 
+ 3126              	.LASF84:
+ 3127 08ce 63757272 		.ascii	"curr_lookup\000"
+ 3127      5F6C6F6F 
+ 3127      6B757000 
+ 3128              	.LASF106:
+ 3129 08da 72656164 		.ascii	"read_imu_flag\000"
+ 3129      5F696D75 
+ 3129      5F666C61 
+ 3129      6700
+ 3130              	.LASF143:
+ 3131 08e8 4A4F595F 		.ascii	"JOY_spec\000"
+ 3131      73706563 
+ 3131      00
+ 3132              	.LASF161:
+ 3133 08f1 66696C74 		.ascii	"filt_emg\000"
+ 3133      5F656D67 
+ 3133      00
+ 3134              	.LASF31:
+ 3135 08fa 494E5055 		.ascii	"INPUT_MODE_EMG_PROPORTIONAL_NC\000"
+ 3135      545F4D4F 
+ 3135      44455F45 
+ 3135      4D475F50 
+ 3135      524F504F 
+ 3136              	.LASF40:
+ 3137 0919 6A6F7973 		.ascii	"joystick\000"
+ 3137      7469636B 
+ 3137      00
+ 3138              	.LASF27:
+ 3139 0922 494E5055 		.ascii	"INPUT_MODE_EMG_INTEGRAL\000"
+ 3139      545F4D4F 
+ 3139      44455F45 
+ 3139      4D475F49 
+ 3139      4E544547 
+ 3140              	.LASF102:
+ 3141 093a 656D675F 		.ascii	"emg_speed\000"
+ 3141      73706565 
+ 3141      6400
+ 3142              	.LASF75:
+ 3143 0944 6B5F645F 		.ascii	"k_d_c_dl\000"
+ 3143      635F646C 
+ 3143      00
+ 3144              	.LASF46:
+ 3145 094d 656D675F 		.ascii	"emg_act_counter\000"
+ 3145      6163745F 
+ 3145      636F756E 
+ 3145      74657200 
+ 3146              	.LASF18:
+ 3147 095d 666C6F61 		.ascii	"float\000"
+ 3147      7400
+ 3148              	.LASF111:
+ 3149 0963 72656164 		.ascii	"read_exp_port_flag\000"
+ 3149      5F657870 
+ 3149      5F706F72 
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccSCyeti.s 			page 70
+
+
+ 3149      745F666C 
+ 3149      616700
+ 3150              	.LASF118:
+ 3151 0976 73745F53 		.ascii	"st_SH_spec\000"
+ 3151      485F7370 
+ 3151      656300
+ 3152              	.LASF133:
+ 3153 0981 70726F70 		.ascii	"prop_err_fb_gain\000"
+ 3153      5F657272 
+ 3153      5F66625F 
+ 3153      6761696E 
+ 3153      00
+ 3154              	.LASF165:
+ 3155 0992 706F775F 		.ascii	"pow_tension\000"
+ 3155      74656E73 
+ 3155      696F6E00 
+ 3156              	.LASF95:
+ 3157 099e 646F7562 		.ascii	"double_encoder_on_off\000"
+ 3157      6C655F65 
+ 3157      6E636F64 
+ 3157      65725F6F 
+ 3157      6E5F6F66 
+ 3158              	.LASF68:
+ 3159 09b4 6B5F695F 		.ascii	"k_i_c\000"
+ 3159      6300
+ 3160              	.LASF182:
+ 3161 09ba 6D61696E 		.ascii	"main\000"
+ 3161      00
+ 3162              	.LASF126:
+ 3163 09bf 6A6F7973 		.ascii	"joystick_gains\000"
+ 3163      7469636B 
+ 3163      5F676169 
+ 3163      6E7300
+ 3164              	.LASF148:
+ 3165 09ce 444D415F 		.ascii	"DMA_TD\000"
+ 3165      544400
+ 3166              	.LASF162:
+ 3167 09d5 66696C74 		.ascii	"filt_detect_pc\000"
+ 3167      5F646574 
+ 3167      6563745F 
+ 3167      706300
+ 3168              	.LASF19:
+ 3169 09e4 646F7562 		.ascii	"double\000"
+ 3169      6C6500
+ 3170              	.LASF70:
+ 3171 09eb 6B5F705F 		.ascii	"k_p_dl\000"
+ 3171      646C00
+ 3172              	.LASF89:
+ 3173 09f2 70776D5F 		.ascii	"pwm_rate_limiter\000"
+ 3173      72617465 
+ 3173      5F6C696D 
+ 3173      69746572 
+ 3173      00
+ 3174              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

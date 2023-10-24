@@ -13,7 +13,7 @@
 <v>Output</v>
 </TreeKeys>
 <TreeStates>
-<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="SoftHand PRO PSoC5 firmware\Generic\Header Files\FIRMWARE_CONFIGURATION.h">
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="SoftHand PRO PSoC5 firmware\Generic">
 <ExpandedNodeIds>
 <v>SoftHand PRO PSoC5 firmware</v>
 <v>SoftHand PRO PSoC5 firmware\Air_Chambers_Haptic_Feedback\TopDesign</v>
@@ -151,21 +151,21 @@
 <v>SoftHand PRO PSoC5 firmware\SoftHand_Pro\Generated_Source\PSoC5</v>
 </ExpandedNodeIds>
 <VisibleNodeIds>
+<v>SoftHand PRO PSoC5 firmware</v>
+<v>SoftHand PRO PSoC5 firmware\Air_Chambers_Haptic_Feedback</v>
+<v>SoftHand PRO PSoC5 firmware\Generic</v>
+<v>SoftHand PRO PSoC5 firmware\Generic\TopDesign</v>
+<v>SoftHand PRO PSoC5 firmware\Generic\Generic.cydwr</v>
+<v>SoftHand PRO PSoC5 firmware\Generic\Generic.cydwr\Pins</v>
+<v>SoftHand PRO PSoC5 firmware\Generic\Generic.cydwr\Analog</v>
+<v>SoftHand PRO PSoC5 firmware\Generic\Generic.cydwr\Clocks</v>
+<v>SoftHand PRO PSoC5 firmware\Generic\Generic.cydwr\Interrupts</v>
+<v>SoftHand PRO PSoC5 firmware\Generic\Generic.cydwr\DMA</v>
+<v>SoftHand PRO PSoC5 firmware\Generic\Generic.cydwr\System</v>
+<v>SoftHand PRO PSoC5 firmware\Generic\Generic.cydwr\Directives</v>
 <v>SoftHand PRO PSoC5 firmware\Generic\Generic.cydwr\Flash Security</v>
 <v>SoftHand PRO PSoC5 firmware\Generic\Generic.cydwr\EEPROM</v>
 <v>SoftHand PRO PSoC5 firmware\Generic\Header Files</v>
-<v>SoftHand PRO PSoC5 firmware\Generic\Header Files\command_processing.h</v>
-<v>SoftHand PRO PSoC5 firmware\Generic\Header Files\commands.h</v>
-<v>SoftHand PRO PSoC5 firmware\Generic\Header Files\device.h</v>
-<v>SoftHand PRO PSoC5 firmware\Generic\Header Files\Encoder_functions.h</v>
-<v>SoftHand PRO PSoC5 firmware\Generic\Header Files\FIRMWARE_CONFIGURATION.h</v>
-<v>SoftHand PRO PSoC5 firmware\Generic\Header Files\globals.h</v>
-<v>SoftHand PRO PSoC5 firmware\Generic\Header Files\IMU_functions.h</v>
-<v>SoftHand PRO PSoC5 firmware\Generic\Header Files\interruptions.h</v>
-<v>SoftHand PRO PSoC5 firmware\Generic\Header Files\SD_RTC_functions.h</v>
-<v>SoftHand PRO PSoC5 firmware\Generic\Header Files\utils.h</v>
-<v>SoftHand PRO PSoC5 firmware\Generic\Header Files\vibrotactile_control.h</v>
-<v>SoftHand PRO PSoC5 firmware\Generic\Source Files</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 <CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
@@ -956,20 +956,7 @@
 </CyGuid_fdba8dfd-b15b-4469-9bbb-9e40c3e70997>
 <Unloaded />
 <OpenDocs>
-<name v=".\src\commands.h" />
-<name v=".\src\globals.c" />
-<name v=".\src\globals.h" />
-<name v=".\src\command_processing.h" />
 <name v=".\src\vibrotactile_control.c" />
-<name v=".\src\command_processing.c" />
-<name v=".\src\main.c" />
-<name v=".\src\interruptions.c" />
-<name v=".\src\IMU_functions.c" />
-<name v=".\src\IMU_functions.h" />
-<name v=".\src\vibrotactile_control.h" />
-<name v=".\src\interruptions.h" />
-<name v=".\Generic.cydsn\TopDesign\TopDesign.cysch" />
-<name v=".\src\FIRMWARE_CONFIGURATION.h" />
 </OpenDocs>
 <OpenDocsLayout><![CDATA[<?xml version="1.0"?><!--
 
@@ -977,7 +964,7 @@
   Copyright (c) 2001-2016 Actipro Software LLC.  All rights reserved.
   http://www.actiprosoftware.com
 
---><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="1002, 573" SelectedTabbedMdiWindow="9578eb41-1521-4e9c-a265-564621fcaa82"><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="e6c53592-2600-47bd-bb84-e80a1b9fa9d1" /><DocumentWindow Key="C:\Users\mgnocco\Documents\ControlloDiVersione\WISH_TOAST\Scheda_Mano\src\commands.h" Guid="be8f92ea-d869-4031-8c10-aaa4a5fe2068" /><DocumentWindow Key="C:\Users\mgnocco\Documents\ControlloDiVersione\WISH_TOAST\Scheda_Mano\src\globals.c" Guid="a9cc5ab6-ec06-4b39-adf8-802a252ec93d" /><DocumentWindow Key="C:\Users\mgnocco\Documents\ControlloDiVersione\WISH_TOAST\Scheda_Mano\src\globals.h" Guid="c113fe6a-f210-4c9e-a652-ebd1f3c7d51b" /><DocumentWindow Key="C:\Users\mgnocco\Documents\ControlloDiVersione\WISH_TOAST\Scheda_Mano\src\command_processing.h" Guid="72500c67-256e-444c-88e5-0bd694da1f67" /><DocumentWindow Key="C:\Users\mgnocco\Documents\ControlloDiVersione\WISH_TOAST\Scheda_Mano\src\vibrotactile_control.c" Guid="9b99770b-7607-4de4-bb6c-f27796ef785c" /><DocumentWindow Key="C:\Users\mgnocco\Documents\ControlloDiVersione\WISH_TOAST\Scheda_Mano\src\command_processing.c" Guid="a89cbf08-5000-4c3f-8762-3b4992fb7809" /><DocumentWindow Key="C:\Users\mgnocco\Documents\ControlloDiVersione\WISH_TOAST\Scheda_Mano\src\main.c" Guid="57e4b1c0-cdf5-4a09-b867-628a7501feac" /><DocumentWindow Key="C:\Users\mgnocco\Documents\ControlloDiVersione\WISH_TOAST\Scheda_Mano\src\interruptions.c" Guid="c5919173-7a88-4b5a-be6b-f3ee0ab36198" /><DocumentWindow Key="C:\Users\mgnocco\Documents\ControlloDiVersione\WISH_TOAST\Scheda_Mano\src\IMU_functions.c" Guid="1fae1971-f281-4006-a12e-84931692203b" /><DocumentWindow Key="C:\Users\mgnocco\Documents\ControlloDiVersione\WISH_TOAST\Scheda_Mano\src\IMU_functions.h" Guid="033d9dd1-48b1-4e88-8f20-b27bec5a76df" /><DocumentWindow Key="C:\Users\mgnocco\Documents\ControlloDiVersione\WISH_TOAST\Scheda_Mano\src\vibrotactile_control.h" Guid="99d1579d-30f7-4d32-9ee8-78cff08163de" /><DocumentWindow Key="C:\Users\mgnocco\Documents\ControlloDiVersione\WISH_TOAST\Scheda_Mano\src\interruptions.h" Guid="d59c871a-e6f7-4882-8d8a-9af27c81ccf7" /><DocumentWindow Key="C:\Users\mgnocco\Documents\ControlloDiVersione\WISH_TOAST\Scheda_Mano\Generic.cydsn\TopDesign\TopDesign.cysch" Guid="8236fd2a-67ef-4de4-8f6f-b9b24698d9e3" /><DocumentWindow Key="C:\Users\mgnocco\Documents\ControlloDiVersione\WISH_TOAST\Scheda_Mano\src\FIRMWARE_CONFIGURATION.h" Guid="9578eb41-1521-4e9c-a265-564621fcaa82" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
+--><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="977, 573" SelectedTabbedMdiWindow="300be8c5-3538-4324-a3bb-7cdee6929eb8"><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="e6c53592-2600-47bd-bb84-e80a1b9fa9d1" /><DocumentWindow Key="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_SH_ReversibleMotor\src\vibrotactile_control.c" Guid="300be8c5-3538-4324-a3bb-7cdee6929eb8" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
 <config v="Release" />
 <AutoUpdate v="true" />
 </CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21>

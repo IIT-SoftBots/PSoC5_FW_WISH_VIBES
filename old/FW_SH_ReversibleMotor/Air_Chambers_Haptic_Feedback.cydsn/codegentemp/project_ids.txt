@@ -1,0 +1,9 @@
+C:\Users\mgnocco\OneDrive - Fondazione Istituto Italiano Tecnologia\Firmware\Psoc5\SoftHandPRO-and-Generic-FW-PSoC5-Master\SoftHand_Pro.cydsn\SoftHand_Pro.cyprj|b2a63748-6302-4346-9884-005bdac23822
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|030885e8-9466-404c-a928-d28a73f9fcee
+C:\Users\mgnocco\Documents\PSoC Creator\4.4\Downloads ( 4.4).cylib\Downloads ( 4.4).cyprj|dc7da33c-0ac5-468e-b395-324cebd30ef7
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|b1081bf6-378a-4e50-8bb2-976f17f51225
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|83562e69-52cd-4cf4-9c47-88a7da737ea5
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|ac77af68-ffd0-4ada-b3d6-a99c307e8aa4
+C:\Users\mgnocco\OneDrive - Fondazione Istituto Italiano Tecnologia\Firmware\Psoc5\SoftHandPRO-and-Generic-FW-PSoC5-Master\Generic.cydsn\Generic.cyprj|bd8a7880-1439-48b0-95ef-4b58b1ecc41c
+C:\Users\mgnocco\OneDrive - Fondazione Istituto Italiano Tecnologia\Firmware\Psoc5\SoftHandPRO-and-Generic-FW-PSoC5-Master\Air_Chambers_Haptic_Feedback.cydsn\Air_Chambers_Haptic_Feedback.cyprj|609c4ce8-3e59-4920-8b3e-7e8e441a22b7
+C:\Users\mgnocco\OneDrive - Fondazione Istituto Italiano Tecnologia\Firmware\Psoc5\SoftHandPRO-and-Generic-FW-PSoC5-Master\Ottobock_Active_Wrist.cydsn\Ottobock_Active_Wrist.cyprj|12273b01-d825-43c1-b0a6-bb1bafbb0c83

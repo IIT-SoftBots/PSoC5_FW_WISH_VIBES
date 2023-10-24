@@ -1,0 +1,3737 @@
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZTBIsW.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 6
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.syntax unified
+  15              		.file	"vibrotactile_control.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.section	.text.memInitVibrotactile,"ax",%progbits
+  20              		.align	2
+  21              		.global	memInitVibrotactile
+  22              		.thumb
+  23              		.thumb_func
+  24              		.type	memInitVibrotactile, %function
+  25              	memInitVibrotactile:
+  26              	.LFB64:
+  27              		.file 1 "..\\src\\vibrotactile_control.c"
+   1:..\src/vibrotactile_control.c **** /* ========================================
+   2:..\src/vibrotactile_control.c ****  *
+   3:..\src/vibrotactile_control.c ****  * Copyright YOUR COMPANY, THE YEAR
+   4:..\src/vibrotactile_control.c ****  * All Rights Reserved
+   5:..\src/vibrotactile_control.c ****  * UNPUBLISHED, LICENSED SOFTWARE.
+   6:..\src/vibrotactile_control.c ****  *
+   7:..\src/vibrotactile_control.c ****  * CONFIDENTIAL AND PROPRIETARY INFORMATION
+   8:..\src/vibrotactile_control.c ****  * WHICH IS THE PROPERTY OF your company.
+   9:..\src/vibrotactile_control.c ****  *
+  10:..\src/vibrotactile_control.c ****  * ========================================
+  11:..\src/vibrotactile_control.c **** */
+  12:..\src/vibrotactile_control.c **** #include "vibrotactile_control.h"
+  13:..\src/vibrotactile_control.c **** #include <project.h>
+  14:..\src/vibrotactile_control.c **** #include "globals.h"
+  15:..\src/vibrotactile_control.c **** #include <math.h>
+  16:..\src/vibrotactile_control.c **** #include <stdlib.h>
+  17:..\src/vibrotactile_control.c **** #include <stdio.h>
+  18:..\src/vibrotactile_control.c **** #include "command_processing.h"
+  19:..\src/vibrotactile_control.c **** #include "utils.h"
+  20:..\src/vibrotactile_control.c **** 
+  21:..\src/vibrotactile_control.c **** 
+  22:..\src/vibrotactile_control.c **** /*******************************************************************************
+  23:..\src/vibrotactile_control.c **** * Function Name: memInitVibrotactile
+  24:..\src/vibrotactile_control.c **** *********************************************************************************/
+  25:..\src/vibrotactile_control.c **** 
+  26:..\src/vibrotactile_control.c **** void memInitVibrotactile(){
+  28              		.loc 1 26 0
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 8
+  31              		@ frame_needed = 1, uses_anonymous_args = 0
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZTBIsW.s 			page 2
+
+
+  32              		@ link register save eliminated.
+  33 0000 80B4     		push	{r7}
+  34              		.cfi_def_cfa_offset 4
+  35              		.cfi_offset 7, -4
+  36 0002 83B0     		sub	sp, sp, #12
+  37              		.cfi_def_cfa_offset 16
+  38 0004 00AF     		add	r7, sp, #0
+  39              		.cfi_def_cfa_register 7
+  27:..\src/vibrotactile_control.c ****     flag_vibrotactile = 0;
+  40              		.loc 1 27 0
+  41 0006 754B     		ldr	r3, .L6
+  42 0008 0022     		movs	r2, #0
+  43 000a 1A70     		strb	r2, [r3]
+  28:..\src/vibrotactile_control.c ****     uint8 i, j;
+  29:..\src/vibrotactile_control.c ****            conta_1 =0;
+  44              		.loc 1 29 0
+  45 000c 744B     		ldr	r3, .L6+4
+  46 000e 4FF00002 		mov	r2, #0
+  47 0012 1A60     		str	r2, [r3]	@ float
+  30:..\src/vibrotactile_control.c ****     for(i = 0;i < NUM_OF_EXTERNAL_IMU; i++)
+  48              		.loc 1 30 0
+  49 0014 0023     		movs	r3, #0
+  50 0016 FB71     		strb	r3, [r7, #7]
+  51 0018 D6E0     		b	.L2
+  52              	.L5:
+  31:..\src/vibrotactile_control.c ****     {
+  32:..\src/vibrotactile_control.c ****         for (j = 0; j < 3; j++)
+  53              		.loc 1 32 0
+  54 001a 0023     		movs	r3, #0
+  55 001c BB71     		strb	r3, [r7, #6]
+  56 001e B2E0     		b	.L3
+  57              	.L4:
+  33:..\src/vibrotactile_control.c ****         {     
+  34:..\src/vibrotactile_control.c ****             accelerometer_matrix[i][j]=0;
+  58              		.loc 1 34 0 discriminator 3
+  59 0020 FA79     		ldrb	r2, [r7, #7]	@ zero_extendqisi2
+  60 0022 B979     		ldrb	r1, [r7, #6]	@ zero_extendqisi2
+  61 0024 6F48     		ldr	r0, .L6+8
+  62 0026 1346     		mov	r3, r2
+  63 0028 5B00     		lsls	r3, r3, #1
+  64 002a 1344     		add	r3, r3, r2
+  65 002c 0B44     		add	r3, r3, r1
+  66 002e 4FF00002 		mov	r2, #0
+  67 0032 40F82320 		str	r2, [r0, r3, lsl #2]	@ float
+  35:..\src/vibrotactile_control.c ****             matrice_reco_mod[3*i+j]=0;
+  68              		.loc 1 35 0 discriminator 3
+  69 0036 FA79     		ldrb	r2, [r7, #7]	@ zero_extendqisi2
+  70 0038 1346     		mov	r3, r2
+  71 003a 5B00     		lsls	r3, r3, #1
+  72 003c 1A44     		add	r2, r2, r3
+  73 003e BB79     		ldrb	r3, [r7, #6]	@ zero_extendqisi2
+  74 0040 1344     		add	r3, r3, r2
+  75 0042 694A     		ldr	r2, .L6+12
+  76 0044 4FF00001 		mov	r1, #0
+  77 0048 42F82310 		str	r1, [r2, r3, lsl #2]	@ float
+  36:..\src/vibrotactile_control.c ****             acc_values_mod[i][j]=0;
+  78              		.loc 1 36 0 discriminator 3
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZTBIsW.s 			page 3
+
+
+  79 004c FA79     		ldrb	r2, [r7, #7]	@ zero_extendqisi2
+  80 004e B979     		ldrb	r1, [r7, #6]	@ zero_extendqisi2
+  81 0050 6648     		ldr	r0, .L6+16
+  82 0052 1346     		mov	r3, r2
+  83 0054 5B00     		lsls	r3, r3, #1
+  84 0056 1344     		add	r3, r3, r2
+  85 0058 0B44     		add	r3, r3, r1
+  86 005a 4FF00002 		mov	r2, #0
+  87 005e 40F82320 		str	r2, [r0, r3, lsl #2]	@ float
+  37:..\src/vibrotactile_control.c ****             matrice_completa[3*i+j]=0;
+  88              		.loc 1 37 0 discriminator 3
+  89 0062 FA79     		ldrb	r2, [r7, #7]	@ zero_extendqisi2
+  90 0064 1346     		mov	r3, r2
+  91 0066 5B00     		lsls	r3, r3, #1
+  92 0068 1A44     		add	r2, r2, r3
+  93 006a BB79     		ldrb	r3, [r7, #6]	@ zero_extendqisi2
+  94 006c 1344     		add	r3, r3, r2
+  95 006e 604A     		ldr	r2, .L6+20
+  96 0070 4FF00001 		mov	r1, #0
+  97 0074 42F82310 		str	r1, [r2, r3, lsl #2]	@ float
+  38:..\src/vibrotactile_control.c ****             matrice_reco[3*i+j]=0;
+  98              		.loc 1 38 0 discriminator 3
+  99 0078 FA79     		ldrb	r2, [r7, #7]	@ zero_extendqisi2
+ 100 007a 1346     		mov	r3, r2
+ 101 007c 5B00     		lsls	r3, r3, #1
+ 102 007e 1A44     		add	r2, r2, r3
+ 103 0080 BB79     		ldrb	r3, [r7, #6]	@ zero_extendqisi2
+ 104 0082 1344     		add	r3, r3, r2
+ 105 0084 5B4A     		ldr	r2, .L6+24
+ 106 0086 4FF00001 		mov	r1, #0
+ 107 008a 42F82310 		str	r1, [r2, r3, lsl #2]	@ float
+  39:..\src/vibrotactile_control.c ****             contatore[3*i+j]=0;
+ 108              		.loc 1 39 0 discriminator 3
+ 109 008e FA79     		ldrb	r2, [r7, #7]	@ zero_extendqisi2
+ 110 0090 1346     		mov	r3, r2
+ 111 0092 5B00     		lsls	r3, r3, #1
+ 112 0094 1A44     		add	r2, r2, r3
+ 113 0096 BB79     		ldrb	r3, [r7, #6]	@ zero_extendqisi2
+ 114 0098 1344     		add	r3, r3, r2
+ 115 009a 574A     		ldr	r2, .L6+28
+ 116 009c 4FF00001 		mov	r1, #0
+ 117 00a0 42F82310 		str	r1, [r2, r3, lsl #2]	@ float
+  40:..\src/vibrotactile_control.c ****             vect_acc_old4[i][j] = 0;
+ 118              		.loc 1 40 0 discriminator 3
+ 119 00a4 FA79     		ldrb	r2, [r7, #7]	@ zero_extendqisi2
+ 120 00a6 B979     		ldrb	r1, [r7, #6]	@ zero_extendqisi2
+ 121 00a8 5448     		ldr	r0, .L6+32
+ 122 00aa 1346     		mov	r3, r2
+ 123 00ac 5B00     		lsls	r3, r3, #1
+ 124 00ae 1344     		add	r3, r3, r2
+ 125 00b0 0B44     		add	r3, r3, r1
+ 126 00b2 4FF00002 		mov	r2, #0
+ 127 00b6 40F82320 		str	r2, [r0, r3, lsl #2]	@ float
+  41:..\src/vibrotactile_control.c ****             vect_acc_old3[i][j] = 0;
+ 128              		.loc 1 41 0 discriminator 3
+ 129 00ba FA79     		ldrb	r2, [r7, #7]	@ zero_extendqisi2
+ 130 00bc B979     		ldrb	r1, [r7, #6]	@ zero_extendqisi2
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZTBIsW.s 			page 4
+
+
+ 131 00be 5048     		ldr	r0, .L6+36
+ 132 00c0 1346     		mov	r3, r2
+ 133 00c2 5B00     		lsls	r3, r3, #1
+ 134 00c4 1344     		add	r3, r3, r2
+ 135 00c6 0B44     		add	r3, r3, r1
+ 136 00c8 4FF00002 		mov	r2, #0
+ 137 00cc 40F82320 		str	r2, [r0, r3, lsl #2]	@ float
+  42:..\src/vibrotactile_control.c ****             vect_acc_old2[i][j] = 0;
+ 138              		.loc 1 42 0 discriminator 3
+ 139 00d0 FA79     		ldrb	r2, [r7, #7]	@ zero_extendqisi2
+ 140 00d2 B979     		ldrb	r1, [r7, #6]	@ zero_extendqisi2
+ 141 00d4 4B48     		ldr	r0, .L6+40
+ 142 00d6 1346     		mov	r3, r2
+ 143 00d8 5B00     		lsls	r3, r3, #1
+ 144 00da 1344     		add	r3, r3, r2
+ 145 00dc 0B44     		add	r3, r3, r1
+ 146 00de 4FF00002 		mov	r2, #0
+ 147 00e2 40F82320 		str	r2, [r0, r3, lsl #2]	@ float
+  43:..\src/vibrotactile_control.c ****             vect_acc_old[i][j] = 0;
+ 148              		.loc 1 43 0 discriminator 3
+ 149 00e6 FA79     		ldrb	r2, [r7, #7]	@ zero_extendqisi2
+ 150 00e8 B979     		ldrb	r1, [r7, #6]	@ zero_extendqisi2
+ 151 00ea 4748     		ldr	r0, .L6+44
+ 152 00ec 1346     		mov	r3, r2
+ 153 00ee 5B00     		lsls	r3, r3, #1
+ 154 00f0 1344     		add	r3, r3, r2
+ 155 00f2 0B44     		add	r3, r3, r1
+ 156 00f4 4FF00002 		mov	r2, #0
+ 157 00f8 40F82320 		str	r2, [r0, r3, lsl #2]	@ float
+  44:..\src/vibrotactile_control.c ****             vect_acc_old4_filt[i][j] = 0;
+ 158              		.loc 1 44 0 discriminator 3
+ 159 00fc FA79     		ldrb	r2, [r7, #7]	@ zero_extendqisi2
+ 160 00fe B979     		ldrb	r1, [r7, #6]	@ zero_extendqisi2
+ 161 0100 4248     		ldr	r0, .L6+48
+ 162 0102 1346     		mov	r3, r2
+ 163 0104 5B00     		lsls	r3, r3, #1
+ 164 0106 1344     		add	r3, r3, r2
+ 165 0108 0B44     		add	r3, r3, r1
+ 166 010a 4FF00002 		mov	r2, #0
+ 167 010e 40F82320 		str	r2, [r0, r3, lsl #2]	@ float
+  45:..\src/vibrotactile_control.c ****             vect_acc_old3_filt[i][j] = 0;
+ 168              		.loc 1 45 0 discriminator 3
+ 169 0112 FA79     		ldrb	r2, [r7, #7]	@ zero_extendqisi2
+ 170 0114 B979     		ldrb	r1, [r7, #6]	@ zero_extendqisi2
+ 171 0116 3E48     		ldr	r0, .L6+52
+ 172 0118 1346     		mov	r3, r2
+ 173 011a 5B00     		lsls	r3, r3, #1
+ 174 011c 1344     		add	r3, r3, r2
+ 175 011e 0B44     		add	r3, r3, r1
+ 176 0120 4FF00002 		mov	r2, #0
+ 177 0124 40F82320 		str	r2, [r0, r3, lsl #2]	@ float
+  46:..\src/vibrotactile_control.c ****             vect_acc_old2_filt[i][j] = 0;
+ 178              		.loc 1 46 0 discriminator 3
+ 179 0128 FA79     		ldrb	r2, [r7, #7]	@ zero_extendqisi2
+ 180 012a B979     		ldrb	r1, [r7, #6]	@ zero_extendqisi2
+ 181 012c 3948     		ldr	r0, .L6+56
+ 182 012e 1346     		mov	r3, r2
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZTBIsW.s 			page 5
+
+
+ 183 0130 5B00     		lsls	r3, r3, #1
+ 184 0132 1344     		add	r3, r3, r2
+ 185 0134 0B44     		add	r3, r3, r1
+ 186 0136 4FF00002 		mov	r2, #0
+ 187 013a 40F82320 		str	r2, [r0, r3, lsl #2]	@ float
+  47:..\src/vibrotactile_control.c ****             vect_acc_old_filt[i][j] = 0;
+ 188              		.loc 1 47 0 discriminator 3
+ 189 013e FA79     		ldrb	r2, [r7, #7]	@ zero_extendqisi2
+ 190 0140 B979     		ldrb	r1, [r7, #6]	@ zero_extendqisi2
+ 191 0142 3548     		ldr	r0, .L6+60
+ 192 0144 1346     		mov	r3, r2
+ 193 0146 5B00     		lsls	r3, r3, #1
+ 194 0148 1344     		add	r3, r3, r2
+ 195 014a 0B44     		add	r3, r3, r1
+ 196 014c 4FF00002 		mov	r2, #0
+ 197 0150 40F82320 		str	r2, [r0, r3, lsl #2]	@ float
+  48:..\src/vibrotactile_control.c ****             vect_acc[i][j] = 0;
+ 198              		.loc 1 48 0 discriminator 3
+ 199 0154 FA79     		ldrb	r2, [r7, #7]	@ zero_extendqisi2
+ 200 0156 B979     		ldrb	r1, [r7, #6]	@ zero_extendqisi2
+ 201 0158 3048     		ldr	r0, .L6+64
+ 202 015a 1346     		mov	r3, r2
+ 203 015c 5B00     		lsls	r3, r3, #1
+ 204 015e 1344     		add	r3, r3, r2
+ 205 0160 0B44     		add	r3, r3, r1
+ 206 0162 4FF00002 		mov	r2, #0
+ 207 0166 40F82320 		str	r2, [r0, r3, lsl #2]	@ float
+  49:..\src/vibrotactile_control.c ****             vect_acc_filt[i][j] = 0; 
+ 208              		.loc 1 49 0 discriminator 3
+ 209 016a FA79     		ldrb	r2, [r7, #7]	@ zero_extendqisi2
+ 210 016c B979     		ldrb	r1, [r7, #6]	@ zero_extendqisi2
+ 211 016e 2C48     		ldr	r0, .L6+68
+ 212 0170 1346     		mov	r3, r2
+ 213 0172 5B00     		lsls	r3, r3, #1
+ 214 0174 1344     		add	r3, r3, r2
+ 215 0176 0B44     		add	r3, r3, r1
+ 216 0178 4FF00002 		mov	r2, #0
+ 217 017c 40F82320 		str	r2, [r0, r3, lsl #2]	@ float
+  32:..\src/vibrotactile_control.c ****         {     
+ 218              		.loc 1 32 0 discriminator 3
+ 219 0180 BB79     		ldrb	r3, [r7, #6]	@ zero_extendqisi2
+ 220 0182 0133     		adds	r3, r3, #1
+ 221 0184 BB71     		strb	r3, [r7, #6]
+ 222              	.L3:
+  32:..\src/vibrotactile_control.c ****         {     
+ 223              		.loc 1 32 0 is_stmt 0 discriminator 1
+ 224 0186 BB79     		ldrb	r3, [r7, #6]	@ zero_extendqisi2
+ 225 0188 022B     		cmp	r3, #2
+ 226 018a 7FF649AF 		bls	.L4
+  50:..\src/vibrotactile_control.c ****         }
+  51:..\src/vibrotactile_control.c ****         vect_acc_filt_sum[i] = 0; 
+ 227              		.loc 1 51 0 is_stmt 1 discriminator 2
+ 228 018e FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 229 0190 244A     		ldr	r2, .L6+72
+ 230 0192 4FF00001 		mov	r1, #0
+ 231 0196 42F82310 		str	r1, [r2, r3, lsl #2]	@ float
+  52:..\src/vibrotactile_control.c ****         input_act_old[i] = 0;
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZTBIsW.s 			page 6
+
+
+ 232              		.loc 1 52 0 discriminator 2
+ 233 019a FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 234 019c 224A     		ldr	r2, .L6+76
+ 235 019e 0021     		movs	r1, #0
+ 236 01a0 42F82310 		str	r1, [r2, r3, lsl #2]
+  53:..\src/vibrotactile_control.c ****         massimo[i]=0;
+ 237              		.loc 1 53 0 discriminator 2
+ 238 01a4 FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 239 01a6 214A     		ldr	r2, .L6+80
+ 240 01a8 0021     		movs	r1, #0
+ 241 01aa 42F82310 		str	r1, [r2, r3, lsl #2]
+  54:..\src/vibrotactile_control.c ****         conta_finestra[i]=5;
+ 242              		.loc 1 54 0 discriminator 2
+ 243 01ae FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 244 01b0 1F4A     		ldr	r2, .L6+84
+ 245 01b2 0521     		movs	r1, #5
+ 246 01b4 42F82310 		str	r1, [r2, r3, lsl #2]
+  55:..\src/vibrotactile_control.c ****         trovato[i]=0;
+ 247              		.loc 1 55 0 discriminator 2
+ 248 01b8 FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 249 01ba 1E4A     		ldr	r2, .L6+88
+ 250 01bc 0021     		movs	r1, #0
+ 251 01be 42F82310 		str	r1, [r2, r3, lsl #2]
+  30:..\src/vibrotactile_control.c ****     {
+ 252              		.loc 1 30 0 discriminator 2
+ 253 01c2 FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 254 01c4 0133     		adds	r3, r3, #1
+ 255 01c6 FB71     		strb	r3, [r7, #7]
+ 256              	.L2:
+  30:..\src/vibrotactile_control.c ****     {
+ 257              		.loc 1 30 0 is_stmt 0 discriminator 1
+ 258 01c8 FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 259 01ca 012B     		cmp	r3, #1
+ 260 01cc 7FF625AF 		bls	.L5
+  56:..\src/vibrotactile_control.c ****     }
+  57:..\src/vibrotactile_control.c **** }
+ 261              		.loc 1 57 0 is_stmt 1
+ 262 01d0 00BF     		nop
+ 263 01d2 0C37     		adds	r7, r7, #12
+ 264              		.cfi_def_cfa_offset 4
+ 265 01d4 BD46     		mov	sp, r7
+ 266              		.cfi_def_cfa_register 13
+ 267              		@ sp needed
+ 268 01d6 80BC     		pop	{r7}
+ 269              		.cfi_restore 7
+ 270              		.cfi_def_cfa_offset 0
+ 271 01d8 7047     		bx	lr
+ 272              	.L7:
+ 273 01da 00BF     		.align	2
+ 274              	.L6:
+ 275 01dc 00000000 		.word	flag_vibrotactile
+ 276 01e0 00000000 		.word	conta_1
+ 277 01e4 00000000 		.word	accelerometer_matrix
+ 278 01e8 00000000 		.word	matrice_reco_mod
+ 279 01ec 00000000 		.word	acc_values_mod
+ 280 01f0 00000000 		.word	matrice_completa
+ 281 01f4 00000000 		.word	matrice_reco
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZTBIsW.s 			page 7
+
+
+ 282 01f8 00000000 		.word	contatore
+ 283 01fc 00000000 		.word	vect_acc_old4
+ 284 0200 00000000 		.word	vect_acc_old3
+ 285 0204 00000000 		.word	vect_acc_old2
+ 286 0208 00000000 		.word	vect_acc_old
+ 287 020c 00000000 		.word	vect_acc_old4_filt
+ 288 0210 00000000 		.word	vect_acc_old3_filt
+ 289 0214 00000000 		.word	vect_acc_old2_filt
+ 290 0218 00000000 		.word	vect_acc_old_filt
+ 291 021c 00000000 		.word	vect_acc
+ 292 0220 00000000 		.word	vect_acc_filt
+ 293 0224 00000000 		.word	vect_acc_filt_sum
+ 294 0228 00000000 		.word	input_act_old
+ 295 022c 00000000 		.word	massimo
+ 296 0230 00000000 		.word	conta_finestra
+ 297 0234 00000000 		.word	trovato
+ 298              		.cfi_endproc
+ 299              	.LFE64:
+ 300              		.size	memInitVibrotactile, .-memInitVibrotactile
+ 301              		.global	__aeabi_fcmplt
+ 302              		.global	__aeabi_fcmpgt
+ 303              		.global	__aeabi_fsub
+ 304              		.global	__aeabi_f2d
+ 305              		.global	__aeabi_dcmpgt
+ 306              		.global	__aeabi_dcmplt
+ 307              		.global	__aeabi_fadd
+ 308              		.global	__aeabi_dcmple
+ 309              		.section	.text.OutliersDeletion,"ax",%progbits
+ 310              		.align	2
+ 311              		.global	OutliersDeletion
+ 312              		.thumb
+ 313              		.thumb_func
+ 314              		.type	OutliersDeletion, %function
+ 315              	OutliersDeletion:
+ 316              	.LFB65:
+  58:..\src/vibrotactile_control.c **** 
+  59:..\src/vibrotactile_control.c **** /*******************************************************************************
+  60:..\src/vibrotactile_control.c **** * Function Name: Outliers Deletion
+  61:..\src/vibrotactile_control.c **** *********************************************************************************/
+  62:..\src/vibrotactile_control.c **** 
+  63:..\src/vibrotactile_control.c **** void OutliersDeletion(uint8 i){
+ 317              		.loc 1 63 0
+ 318              		.cfi_startproc
+ 319              		@ args = 0, pretend = 0, frame = 8
+ 320              		@ frame_needed = 1, uses_anonymous_args = 0
+ 321 0000 90B5     		push	{r4, r7, lr}
+ 322              		.cfi_def_cfa_offset 12
+ 323              		.cfi_offset 4, -12
+ 324              		.cfi_offset 7, -8
+ 325              		.cfi_offset 14, -4
+ 326 0002 83B0     		sub	sp, sp, #12
+ 327              		.cfi_def_cfa_offset 24
+ 328 0004 00AF     		add	r7, sp, #0
+ 329              		.cfi_def_cfa_register 7
+ 330 0006 0346     		mov	r3, r0
+ 331 0008 FB71     		strb	r3, [r7, #7]
+  64:..\src/vibrotactile_control.c ****    
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZTBIsW.s 			page 8
+
+
+  65:..\src/vibrotactile_control.c ****     if (conta_1 < 2){	
+ 332              		.loc 1 65 0
+ 333 000a 9D4B     		ldr	r3, .L46+16
+ 334 000c 1B68     		ldr	r3, [r3]	@ float
+ 335 000e 4FF08041 		mov	r1, #1073741824
+ 336 0012 1846     		mov	r0, r3
+ 337 0014 FFF7FEFF 		bl	__aeabi_fcmplt
+ 338 0018 0346     		mov	r3, r0
+ 339 001a 002B     		cmp	r3, #0
+ 340 001c 34D0     		beq	.L39
+  66:..\src/vibrotactile_control.c **** 		acc_values_mod[i][0] = accelerometer_matrix[i][0];
+ 341              		.loc 1 66 0
+ 342 001e FA79     		ldrb	r2, [r7, #7]	@ zero_extendqisi2
+ 343 0020 F979     		ldrb	r1, [r7, #7]	@ zero_extendqisi2
+ 344 0022 9848     		ldr	r0, .L46+20
+ 345 0024 0B46     		mov	r3, r1
+ 346 0026 5B00     		lsls	r3, r3, #1
+ 347 0028 0B44     		add	r3, r3, r1
+ 348 002a 9B00     		lsls	r3, r3, #2
+ 349 002c 0344     		add	r3, r3, r0
+ 350 002e 1968     		ldr	r1, [r3]	@ float
+ 351 0030 9548     		ldr	r0, .L46+24
+ 352 0032 1346     		mov	r3, r2
+ 353 0034 5B00     		lsls	r3, r3, #1
+ 354 0036 1344     		add	r3, r3, r2
+ 355 0038 9B00     		lsls	r3, r3, #2
+ 356 003a 0344     		add	r3, r3, r0
+ 357 003c 1960     		str	r1, [r3]	@ float
+  67:..\src/vibrotactile_control.c **** 		acc_values_mod[i][1] = accelerometer_matrix[i][1];
+ 358              		.loc 1 67 0
+ 359 003e FA79     		ldrb	r2, [r7, #7]	@ zero_extendqisi2
+ 360 0040 F979     		ldrb	r1, [r7, #7]	@ zero_extendqisi2
+ 361 0042 9048     		ldr	r0, .L46+20
+ 362 0044 0B46     		mov	r3, r1
+ 363 0046 5B00     		lsls	r3, r3, #1
+ 364 0048 0B44     		add	r3, r3, r1
+ 365 004a 9B00     		lsls	r3, r3, #2
+ 366 004c 0344     		add	r3, r3, r0
+ 367 004e 0433     		adds	r3, r3, #4
+ 368 0050 1968     		ldr	r1, [r3]	@ float
+ 369 0052 8D48     		ldr	r0, .L46+24
+ 370 0054 1346     		mov	r3, r2
+ 371 0056 5B00     		lsls	r3, r3, #1
+ 372 0058 1344     		add	r3, r3, r2
+ 373 005a 9B00     		lsls	r3, r3, #2
+ 374 005c 0344     		add	r3, r3, r0
+ 375 005e 0433     		adds	r3, r3, #4
+ 376 0060 1960     		str	r1, [r3]	@ float
+  68:..\src/vibrotactile_control.c **** 		acc_values_mod[i][2] = accelerometer_matrix[i][2];
+ 377              		.loc 1 68 0
+ 378 0062 FA79     		ldrb	r2, [r7, #7]	@ zero_extendqisi2
+ 379 0064 F979     		ldrb	r1, [r7, #7]	@ zero_extendqisi2
+ 380 0066 8748     		ldr	r0, .L46+20
+ 381 0068 0B46     		mov	r3, r1
+ 382 006a 5B00     		lsls	r3, r3, #1
+ 383 006c 0B44     		add	r3, r3, r1
+ 384 006e 9B00     		lsls	r3, r3, #2
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZTBIsW.s 			page 9
+
+
+ 385 0070 0344     		add	r3, r3, r0
+ 386 0072 0833     		adds	r3, r3, #8
+ 387 0074 1968     		ldr	r1, [r3]	@ float
+ 388 0076 8448     		ldr	r0, .L46+24
+ 389 0078 1346     		mov	r3, r2
+ 390 007a 5B00     		lsls	r3, r3, #1
+ 391 007c 1344     		add	r3, r3, r2
+ 392 007e 9B00     		lsls	r3, r3, #2
+ 393 0080 0344     		add	r3, r3, r0
+ 394 0082 0833     		adds	r3, r3, #8
+ 395 0084 1960     		str	r1, [r3]	@ float
+ 396 0086 9FE2     		b	.L11
+ 397              	.L39:
+  69:..\src/vibrotactile_control.c **** 
+  70:..\src/vibrotactile_control.c **** 	}
+  71:..\src/vibrotactile_control.c **** 
+  72:..\src/vibrotactile_control.c **** 	else {
+  73:..\src/vibrotactile_control.c ****         
+  74:..\src/vibrotactile_control.c **** 		if (contatore[3*i+0] > 2)
+ 398              		.loc 1 74 0
+ 399 0088 FA79     		ldrb	r2, [r7, #7]	@ zero_extendqisi2
+ 400 008a 1346     		mov	r3, r2
+ 401 008c 5B00     		lsls	r3, r3, #1
+ 402 008e 1344     		add	r3, r3, r2
+ 403 0090 7E4A     		ldr	r2, .L46+28
+ 404 0092 52F82330 		ldr	r3, [r2, r3, lsl #2]	@ float
+ 405 0096 4FF08041 		mov	r1, #1073741824
+ 406 009a 1846     		mov	r0, r3
+ 407 009c FFF7FEFF 		bl	__aeabi_fcmpgt
+ 408 00a0 0346     		mov	r3, r0
+ 409 00a2 002B     		cmp	r3, #0
+ 410 00a4 19D0     		beq	.L40
+  75:..\src/vibrotactile_control.c **** 		{
+  76:..\src/vibrotactile_control.c **** 			acc_values_mod[i][0] = accelerometer_matrix[i][0];
+ 411              		.loc 1 76 0
+ 412 00a6 FA79     		ldrb	r2, [r7, #7]	@ zero_extendqisi2
+ 413 00a8 F979     		ldrb	r1, [r7, #7]	@ zero_extendqisi2
+ 414 00aa 7648     		ldr	r0, .L46+20
+ 415 00ac 0B46     		mov	r3, r1
+ 416 00ae 5B00     		lsls	r3, r3, #1
+ 417 00b0 0B44     		add	r3, r3, r1
+ 418 00b2 9B00     		lsls	r3, r3, #2
+ 419 00b4 0344     		add	r3, r3, r0
+ 420 00b6 1968     		ldr	r1, [r3]	@ float
+ 421 00b8 7348     		ldr	r0, .L46+24
+ 422 00ba 1346     		mov	r3, r2
+ 423 00bc 5B00     		lsls	r3, r3, #1
+ 424 00be 1344     		add	r3, r3, r2
+ 425 00c0 9B00     		lsls	r3, r3, #2
+ 426 00c2 0344     		add	r3, r3, r0
+ 427 00c4 1960     		str	r1, [r3]	@ float
+  77:..\src/vibrotactile_control.c **** 			contatore[3*i+0] = 0;
+ 428              		.loc 1 77 0
+ 429 00c6 FA79     		ldrb	r2, [r7, #7]	@ zero_extendqisi2
+ 430 00c8 1346     		mov	r3, r2
+ 431 00ca 5B00     		lsls	r3, r3, #1
+ 432 00cc 1344     		add	r3, r3, r2
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZTBIsW.s 			page 10
+
+
+ 433 00ce 6F4A     		ldr	r2, .L46+28
+ 434 00d0 4FF00001 		mov	r1, #0
+ 435 00d4 42F82310 		str	r1, [r2, r3, lsl #2]	@ float
+ 436 00d8 9DE0     		b	.L14
+ 437              	.L40:
+  78:..\src/vibrotactile_control.c **** 		}
+  79:..\src/vibrotactile_control.c **** 		else
+  80:..\src/vibrotactile_control.c **** 		{              
+  81:..\src/vibrotactile_control.c ****             
+  82:..\src/vibrotactile_control.c **** 			if ((fabs(accelerometer_matrix[i][0] - matrice_reco[3*i+0]) > SOGLIA )||( fabs(accelerometer_mat
+ 438              		.loc 1 82 0
+ 439 00da FA79     		ldrb	r2, [r7, #7]	@ zero_extendqisi2
+ 440 00dc 6949     		ldr	r1, .L46+20
+ 441 00de 1346     		mov	r3, r2
+ 442 00e0 5B00     		lsls	r3, r3, #1
+ 443 00e2 1344     		add	r3, r3, r2
+ 444 00e4 9B00     		lsls	r3, r3, #2
+ 445 00e6 0B44     		add	r3, r3, r1
+ 446 00e8 1868     		ldr	r0, [r3]	@ float
+ 447 00ea FA79     		ldrb	r2, [r7, #7]	@ zero_extendqisi2
+ 448 00ec 1346     		mov	r3, r2
+ 449 00ee 5B00     		lsls	r3, r3, #1
+ 450 00f0 1344     		add	r3, r3, r2
+ 451 00f2 674A     		ldr	r2, .L46+32
+ 452 00f4 52F82330 		ldr	r3, [r2, r3, lsl #2]	@ float
+ 453 00f8 1946     		mov	r1, r3
+ 454 00fa FFF7FEFF 		bl	__aeabi_fsub
+ 455 00fe 0346     		mov	r3, r0
+ 456 0100 23F00043 		bic	r3, r3, #-2147483648
+ 457 0104 1846     		mov	r0, r3
+ 458 0106 FFF7FEFF 		bl	__aeabi_f2d
+ 459 010a 59A3     		adr	r3, .L46
+ 460 010c D3E90023 		ldrd	r2, [r3]
+ 461 0110 FFF7FEFF 		bl	__aeabi_dcmpgt
+ 462 0114 0346     		mov	r3, r0
+ 463 0116 002B     		cmp	r3, #0
+ 464 0118 1FD1     		bne	.L15
+ 465              		.loc 1 82 0 is_stmt 0 discriminator 1
+ 466 011a FA79     		ldrb	r2, [r7, #7]	@ zero_extendqisi2
+ 467 011c 5949     		ldr	r1, .L46+20
+ 468 011e 1346     		mov	r3, r2
+ 469 0120 5B00     		lsls	r3, r3, #1
+ 470 0122 1344     		add	r3, r3, r2
+ 471 0124 9B00     		lsls	r3, r3, #2
+ 472 0126 0B44     		add	r3, r3, r1
+ 473 0128 1868     		ldr	r0, [r3]	@ float
+ 474 012a FA79     		ldrb	r2, [r7, #7]	@ zero_extendqisi2
+ 475 012c 1346     		mov	r3, r2
+ 476 012e 5B00     		lsls	r3, r3, #1
+ 477 0130 1344     		add	r3, r3, r2
+ 478 0132 574A     		ldr	r2, .L46+32
+ 479 0134 52F82330 		ldr	r3, [r2, r3, lsl #2]	@ float
+ 480 0138 1946     		mov	r1, r3
+ 481 013a FFF7FEFF 		bl	__aeabi_fsub
+ 482 013e 0346     		mov	r3, r0
+ 483 0140 23F00043 		bic	r3, r3, #-2147483648
+ 484 0144 1846     		mov	r0, r3
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZTBIsW.s 			page 11
+
+
+ 485 0146 FFF7FEFF 		bl	__aeabi_f2d
+ 486 014a 4BA3     		adr	r3, .L46+8
+ 487 014c D3E90023 		ldrd	r2, [r3]
+ 488 0150 FFF7FEFF 		bl	__aeabi_dcmplt
+ 489 0154 0346     		mov	r3, r0
+ 490 0156 002B     		cmp	r3, #0
+ 491 0158 24D0     		beq	.L41
+ 492              	.L15:
+  83:..\src/vibrotactile_control.c **** 			{
+  84:..\src/vibrotactile_control.c **** 				acc_values_mod[i][0] = matrice_reco_mod[3*i+0];
+ 493              		.loc 1 84 0 is_stmt 1
+ 494 015a FA79     		ldrb	r2, [r7, #7]	@ zero_extendqisi2
+ 495 015c F979     		ldrb	r1, [r7, #7]	@ zero_extendqisi2
+ 496 015e 0B46     		mov	r3, r1
+ 497 0160 5B00     		lsls	r3, r3, #1
+ 498 0162 0B44     		add	r3, r3, r1
+ 499 0164 4B49     		ldr	r1, .L46+36
+ 500 0166 51F82310 		ldr	r1, [r1, r3, lsl #2]	@ float
+ 501 016a 4748     		ldr	r0, .L46+24
+ 502 016c 1346     		mov	r3, r2
+ 503 016e 5B00     		lsls	r3, r3, #1
+ 504 0170 1344     		add	r3, r3, r2
+ 505 0172 9B00     		lsls	r3, r3, #2
+ 506 0174 0344     		add	r3, r3, r0
+ 507 0176 1960     		str	r1, [r3]	@ float
+  85:..\src/vibrotactile_control.c **** 				contatore[3*i+0] =contatore[3*i+0] + 1;
+ 508              		.loc 1 85 0
+ 509 0178 FA79     		ldrb	r2, [r7, #7]	@ zero_extendqisi2
+ 510 017a 1346     		mov	r3, r2
+ 511 017c 5B00     		lsls	r3, r3, #1
+ 512 017e 9C18     		adds	r4, r3, r2
+ 513 0180 FA79     		ldrb	r2, [r7, #7]	@ zero_extendqisi2
+ 514 0182 1346     		mov	r3, r2
+ 515 0184 5B00     		lsls	r3, r3, #1
+ 516 0186 1344     		add	r3, r3, r2
+ 517 0188 404A     		ldr	r2, .L46+28
+ 518 018a 52F82330 		ldr	r3, [r2, r3, lsl #2]	@ float
+ 519 018e 4FF07E51 		mov	r1, #1065353216
+ 520 0192 1846     		mov	r0, r3
+ 521 0194 FFF7FEFF 		bl	__aeabi_fadd
+ 522 0198 0346     		mov	r3, r0
+ 523 019a 1A46     		mov	r2, r3
+ 524 019c 3B4B     		ldr	r3, .L46+28
+ 525 019e 43F82420 		str	r2, [r3, r4, lsl #2]	@ float
+ 526 01a2 38E0     		b	.L14
+ 527              	.L41:
+  86:..\src/vibrotactile_control.c **** 			}
+  87:..\src/vibrotactile_control.c **** 			else if (fabs(accelerometer_matrix[i][0] - matrice_reco[3*i+0]) <= SOGLIA)
+ 528              		.loc 1 87 0
+ 529 01a4 FA79     		ldrb	r2, [r7, #7]	@ zero_extendqisi2
+ 530 01a6 3749     		ldr	r1, .L46+20
+ 531 01a8 1346     		mov	r3, r2
+ 532 01aa 5B00     		lsls	r3, r3, #1
+ 533 01ac 1344     		add	r3, r3, r2
+ 534 01ae 9B00     		lsls	r3, r3, #2
+ 535 01b0 0B44     		add	r3, r3, r1
+ 536 01b2 1868     		ldr	r0, [r3]	@ float
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZTBIsW.s 			page 12
+
+
+ 537 01b4 FA79     		ldrb	r2, [r7, #7]	@ zero_extendqisi2
+ 538 01b6 1346     		mov	r3, r2
+ 539 01b8 5B00     		lsls	r3, r3, #1
+ 540 01ba 1344     		add	r3, r3, r2
+ 541 01bc 344A     		ldr	r2, .L46+32
+ 542 01be 52F82330 		ldr	r3, [r2, r3, lsl #2]	@ float
+ 543 01c2 1946     		mov	r1, r3
+ 544 01c4 FFF7FEFF 		bl	__aeabi_fsub
+ 545 01c8 0346     		mov	r3, r0
+ 546 01ca 23F00043 		bic	r3, r3, #-2147483648
+ 547 01ce 1846     		mov	r0, r3
+ 548 01d0 FFF7FEFF 		bl	__aeabi_f2d
+ 549 01d4 26A3     		adr	r3, .L46
+ 550 01d6 D3E90023 		ldrd	r2, [r3]
+ 551 01da FFF7FEFF 		bl	__aeabi_dcmple
+ 552 01de 0346     		mov	r3, r0
+ 553 01e0 002B     		cmp	r3, #0
+ 554 01e2 18D0     		beq	.L14
+  88:..\src/vibrotactile_control.c **** 			{
+  89:..\src/vibrotactile_control.c **** 				acc_values_mod[i][0] = accelerometer_matrix[i][0];
+ 555              		.loc 1 89 0
+ 556 01e4 FA79     		ldrb	r2, [r7, #7]	@ zero_extendqisi2
+ 557 01e6 F979     		ldrb	r1, [r7, #7]	@ zero_extendqisi2
+ 558 01e8 2648     		ldr	r0, .L46+20
+ 559 01ea 0B46     		mov	r3, r1
+ 560 01ec 5B00     		lsls	r3, r3, #1
+ 561 01ee 0B44     		add	r3, r3, r1
+ 562 01f0 9B00     		lsls	r3, r3, #2
+ 563 01f2 0344     		add	r3, r3, r0
+ 564 01f4 1968     		ldr	r1, [r3]	@ float
+ 565 01f6 2448     		ldr	r0, .L46+24
+ 566 01f8 1346     		mov	r3, r2
+ 567 01fa 5B00     		lsls	r3, r3, #1
+ 568 01fc 1344     		add	r3, r3, r2
+ 569 01fe 9B00     		lsls	r3, r3, #2
+ 570 0200 0344     		add	r3, r3, r0
+ 571 0202 1960     		str	r1, [r3]	@ float
+  90:..\src/vibrotactile_control.c **** 				contatore[3*i+0] = 0;
+ 572              		.loc 1 90 0
+ 573 0204 FA79     		ldrb	r2, [r7, #7]	@ zero_extendqisi2
+ 574 0206 1346     		mov	r3, r2
+ 575 0208 5B00     		lsls	r3, r3, #1
+ 576 020a 1344     		add	r3, r3, r2
+ 577 020c 1F4A     		ldr	r2, .L46+28
+ 578 020e 4FF00001 		mov	r1, #0
+ 579 0212 42F82310 		str	r1, [r2, r3, lsl #2]	@ float
+ 580              	.L14:
+  91:..\src/vibrotactile_control.c **** 			}
+  92:..\src/vibrotactile_control.c **** 		}
+  93:..\src/vibrotactile_control.c **** 
+  94:..\src/vibrotactile_control.c **** 		if (contatore[3*i+1] > 2)
+ 581              		.loc 1 94 0
+ 582 0216 FA79     		ldrb	r2, [r7, #7]	@ zero_extendqisi2
+ 583 0218 1346     		mov	r3, r2
+ 584 021a 5B00     		lsls	r3, r3, #1
+ 585 021c 1344     		add	r3, r3, r2
+ 586 021e 0133     		adds	r3, r3, #1
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZTBIsW.s 			page 13
+
+
+ 587 0220 1A4A     		ldr	r2, .L46+28
+ 588 0222 52F82330 		ldr	r3, [r2, r3, lsl #2]	@ float
+ 589 0226 4FF08041 		mov	r1, #1073741824
+ 590 022a 1846     		mov	r0, r3
+ 591 022c FFF7FEFF 		bl	__aeabi_fcmpgt
+ 592 0230 0346     		mov	r3, r0
+ 593 0232 002B     		cmp	r3, #0
+ 594 0234 30D0     		beq	.L42
+  95:..\src/vibrotactile_control.c **** 		{
+  96:..\src/vibrotactile_control.c **** 			acc_values_mod[i][1] = accelerometer_matrix[i][1];
+ 595              		.loc 1 96 0
+ 596 0236 FA79     		ldrb	r2, [r7, #7]	@ zero_extendqisi2
+ 597 0238 F979     		ldrb	r1, [r7, #7]	@ zero_extendqisi2
+ 598 023a 1248     		ldr	r0, .L46+20
+ 599 023c 0B46     		mov	r3, r1
+ 600 023e 5B00     		lsls	r3, r3, #1
+ 601 0240 0B44     		add	r3, r3, r1
+ 602 0242 9B00     		lsls	r3, r3, #2
+ 603 0244 0344     		add	r3, r3, r0
+ 604 0246 0433     		adds	r3, r3, #4
+ 605 0248 1968     		ldr	r1, [r3]	@ float
+ 606 024a 0F48     		ldr	r0, .L46+24
+ 607 024c 1346     		mov	r3, r2
+ 608 024e 5B00     		lsls	r3, r3, #1
+ 609 0250 1344     		add	r3, r3, r2
+ 610 0252 9B00     		lsls	r3, r3, #2
+ 611 0254 0344     		add	r3, r3, r0
+ 612 0256 0433     		adds	r3, r3, #4
+ 613 0258 1960     		str	r1, [r3]	@ float
+  97:..\src/vibrotactile_control.c **** 			contatore[3*i+1] = 0;
+ 614              		.loc 1 97 0
+ 615 025a FA79     		ldrb	r2, [r7, #7]	@ zero_extendqisi2
+ 616 025c 1346     		mov	r3, r2
+ 617 025e 5B00     		lsls	r3, r3, #1
+ 618 0260 1344     		add	r3, r3, r2
+ 619 0262 0133     		adds	r3, r3, #1
+ 620 0264 094A     		ldr	r2, .L46+28
+ 621 0266 4FF00001 		mov	r1, #0
+ 622 026a 42F82310 		str	r1, [r2, r3, lsl #2]	@ float
+ 623 026e BEE0     		b	.L21
+ 624              	.L47:
+ 625              		.align	3
+ 626              	.L46:
+ 627 0270 7B14AE47 		.word	1202590843
+ 628 0274 E17AA43F 		.word	1067743969
+ 629 0278 8DEDB5A0 		.word	-1598689907
+ 630 027c F7C6B03E 		.word	1051772663
+ 631 0280 00000000 		.word	conta_1
+ 632 0284 00000000 		.word	accelerometer_matrix
+ 633 0288 00000000 		.word	acc_values_mod
+ 634 028c 00000000 		.word	contatore
+ 635 0290 00000000 		.word	matrice_reco
+ 636 0294 00000000 		.word	matrice_reco_mod
+ 637              	.L42:
+  98:..\src/vibrotactile_control.c **** 		}
+  99:..\src/vibrotactile_control.c **** 		else
+ 100:..\src/vibrotactile_control.c **** 		{
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZTBIsW.s 			page 14
+
+
+ 101:..\src/vibrotactile_control.c **** 			if (fabs(accelerometer_matrix[i][1] - matrice_reco[3 * i + 1]) > SOGLIA || fabs(accelerometer_ma
+ 638              		.loc 1 101 0
+ 639 0298 FA79     		ldrb	r2, [r7, #7]	@ zero_extendqisi2
+ 640 029a A749     		ldr	r1, .L48+16
+ 641 029c 1346     		mov	r3, r2
+ 642 029e 5B00     		lsls	r3, r3, #1
+ 643 02a0 1344     		add	r3, r3, r2
+ 644 02a2 9B00     		lsls	r3, r3, #2
+ 645 02a4 0B44     		add	r3, r3, r1
+ 646 02a6 0433     		adds	r3, r3, #4
+ 647 02a8 1868     		ldr	r0, [r3]	@ float
+ 648 02aa FA79     		ldrb	r2, [r7, #7]	@ zero_extendqisi2
+ 649 02ac 1346     		mov	r3, r2
+ 650 02ae 5B00     		lsls	r3, r3, #1
+ 651 02b0 1344     		add	r3, r3, r2
+ 652 02b2 0133     		adds	r3, r3, #1
+ 653 02b4 A14A     		ldr	r2, .L48+20
+ 654 02b6 52F82330 		ldr	r3, [r2, r3, lsl #2]	@ float
+ 655 02ba 1946     		mov	r1, r3
+ 656 02bc FFF7FEFF 		bl	__aeabi_fsub
+ 657 02c0 0346     		mov	r3, r0
+ 658 02c2 23F00043 		bic	r3, r3, #-2147483648
+ 659 02c6 1846     		mov	r0, r3
+ 660 02c8 FFF7FEFF 		bl	__aeabi_f2d
+ 661 02cc 96A3     		adr	r3, .L48
+ 662 02ce D3E90023 		ldrd	r2, [r3]
+ 663 02d2 FFF7FEFF 		bl	__aeabi_dcmpgt
+ 664 02d6 0346     		mov	r3, r0
+ 665 02d8 002B     		cmp	r3, #0
+ 666 02da 21D1     		bne	.L22
+ 667              		.loc 1 101 0 is_stmt 0 discriminator 1
+ 668 02dc FA79     		ldrb	r2, [r7, #7]	@ zero_extendqisi2
+ 669 02de 9649     		ldr	r1, .L48+16
+ 670 02e0 1346     		mov	r3, r2
+ 671 02e2 5B00     		lsls	r3, r3, #1
+ 672 02e4 1344     		add	r3, r3, r2
+ 673 02e6 9B00     		lsls	r3, r3, #2
+ 674 02e8 0B44     		add	r3, r3, r1
+ 675 02ea 0433     		adds	r3, r3, #4
+ 676 02ec 1868     		ldr	r0, [r3]	@ float
+ 677 02ee FA79     		ldrb	r2, [r7, #7]	@ zero_extendqisi2
+ 678 02f0 1346     		mov	r3, r2
+ 679 02f2 5B00     		lsls	r3, r3, #1
+ 680 02f4 1344     		add	r3, r3, r2
+ 681 02f6 0133     		adds	r3, r3, #1
+ 682 02f8 904A     		ldr	r2, .L48+20
+ 683 02fa 52F82330 		ldr	r3, [r2, r3, lsl #2]	@ float
+ 684 02fe 1946     		mov	r1, r3
+ 685 0300 FFF7FEFF 		bl	__aeabi_fsub
+ 686 0304 0346     		mov	r3, r0
+ 687 0306 23F00043 		bic	r3, r3, #-2147483648
+ 688 030a 1846     		mov	r0, r3
+ 689 030c FFF7FEFF 		bl	__aeabi_f2d
+ 690 0310 87A3     		adr	r3, .L48+8
+ 691 0312 D3E90023 		ldrd	r2, [r3]
+ 692 0316 FFF7FEFF 		bl	__aeabi_dcmplt
+ 693 031a 0346     		mov	r3, r0
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZTBIsW.s 			page 15
+
+
+ 694 031c 002B     		cmp	r3, #0
+ 695 031e 28D0     		beq	.L43
+ 696              	.L22:
+ 102:..\src/vibrotactile_control.c **** 			{
+ 103:..\src/vibrotactile_control.c **** 				acc_values_mod[i][1] = matrice_reco_mod[3 * i + 1];
+ 697              		.loc 1 103 0 is_stmt 1
+ 698 0320 FA79     		ldrb	r2, [r7, #7]	@ zero_extendqisi2
+ 699 0322 F979     		ldrb	r1, [r7, #7]	@ zero_extendqisi2
+ 700 0324 0B46     		mov	r3, r1
+ 701 0326 5B00     		lsls	r3, r3, #1
+ 702 0328 0B44     		add	r3, r3, r1
+ 703 032a 0133     		adds	r3, r3, #1
+ 704 032c 8449     		ldr	r1, .L48+24
+ 705 032e 51F82310 		ldr	r1, [r1, r3, lsl #2]	@ float
+ 706 0332 8448     		ldr	r0, .L48+28
+ 707 0334 1346     		mov	r3, r2
+ 708 0336 5B00     		lsls	r3, r3, #1
+ 709 0338 1344     		add	r3, r3, r2
+ 710 033a 9B00     		lsls	r3, r3, #2
+ 711 033c 0344     		add	r3, r3, r0
+ 712 033e 0433     		adds	r3, r3, #4
+ 713 0340 1960     		str	r1, [r3]	@ float
+ 104:..\src/vibrotactile_control.c **** 				contatore[3*i+1] += 1;
+ 714              		.loc 1 104 0
+ 715 0342 FA79     		ldrb	r2, [r7, #7]	@ zero_extendqisi2
+ 716 0344 1346     		mov	r3, r2
+ 717 0346 5B00     		lsls	r3, r3, #1
+ 718 0348 1344     		add	r3, r3, r2
+ 719 034a 5C1C     		adds	r4, r3, #1
+ 720 034c FA79     		ldrb	r2, [r7, #7]	@ zero_extendqisi2
+ 721 034e 1346     		mov	r3, r2
+ 722 0350 5B00     		lsls	r3, r3, #1
+ 723 0352 1344     		add	r3, r3, r2
+ 724 0354 0133     		adds	r3, r3, #1
+ 725 0356 7C4A     		ldr	r2, .L48+32
+ 726 0358 52F82330 		ldr	r3, [r2, r3, lsl #2]	@ float
+ 727 035c 4FF07E51 		mov	r1, #1065353216
+ 728 0360 1846     		mov	r0, r3
+ 729 0362 FFF7FEFF 		bl	__aeabi_fadd
+ 730 0366 0346     		mov	r3, r0
+ 731 0368 1A46     		mov	r2, r3
+ 732 036a 774B     		ldr	r3, .L48+32
+ 733 036c 43F82420 		str	r2, [r3, r4, lsl #2]	@ float
+ 734 0370 3DE0     		b	.L21
+ 735              	.L43:
+ 105:..\src/vibrotactile_control.c **** 			}
+ 106:..\src/vibrotactile_control.c **** 			else if (fabs(accelerometer_matrix[i][1] - matrice_reco[3 * i + 1]) <= SOGLIA)
+ 736              		.loc 1 106 0
+ 737 0372 FA79     		ldrb	r2, [r7, #7]	@ zero_extendqisi2
+ 738 0374 7049     		ldr	r1, .L48+16
+ 739 0376 1346     		mov	r3, r2
+ 740 0378 5B00     		lsls	r3, r3, #1
+ 741 037a 1344     		add	r3, r3, r2
+ 742 037c 9B00     		lsls	r3, r3, #2
+ 743 037e 0B44     		add	r3, r3, r1
+ 744 0380 0433     		adds	r3, r3, #4
+ 745 0382 1868     		ldr	r0, [r3]	@ float
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZTBIsW.s 			page 16
+
+
+ 746 0384 FA79     		ldrb	r2, [r7, #7]	@ zero_extendqisi2
+ 747 0386 1346     		mov	r3, r2
+ 748 0388 5B00     		lsls	r3, r3, #1
+ 749 038a 1344     		add	r3, r3, r2
+ 750 038c 0133     		adds	r3, r3, #1
+ 751 038e 6B4A     		ldr	r2, .L48+20
+ 752 0390 52F82330 		ldr	r3, [r2, r3, lsl #2]	@ float
+ 753 0394 1946     		mov	r1, r3
+ 754 0396 FFF7FEFF 		bl	__aeabi_fsub
+ 755 039a 0346     		mov	r3, r0
+ 756 039c 23F00043 		bic	r3, r3, #-2147483648
+ 757 03a0 1846     		mov	r0, r3
+ 758 03a2 FFF7FEFF 		bl	__aeabi_f2d
+ 759 03a6 60A3     		adr	r3, .L48
+ 760 03a8 D3E90023 		ldrd	r2, [r3]
+ 761 03ac FFF7FEFF 		bl	__aeabi_dcmple
+ 762 03b0 0346     		mov	r3, r0
+ 763 03b2 002B     		cmp	r3, #0
+ 764 03b4 1BD0     		beq	.L21
+ 107:..\src/vibrotactile_control.c **** 			{
+ 108:..\src/vibrotactile_control.c **** 				acc_values_mod[i][1] = accelerometer_matrix[i][1];
+ 765              		.loc 1 108 0
+ 766 03b6 FA79     		ldrb	r2, [r7, #7]	@ zero_extendqisi2
+ 767 03b8 F979     		ldrb	r1, [r7, #7]	@ zero_extendqisi2
+ 768 03ba 5F48     		ldr	r0, .L48+16
+ 769 03bc 0B46     		mov	r3, r1
+ 770 03be 5B00     		lsls	r3, r3, #1
+ 771 03c0 0B44     		add	r3, r3, r1
+ 772 03c2 9B00     		lsls	r3, r3, #2
+ 773 03c4 0344     		add	r3, r3, r0
+ 774 03c6 0433     		adds	r3, r3, #4
+ 775 03c8 1968     		ldr	r1, [r3]	@ float
+ 776 03ca 5E48     		ldr	r0, .L48+28
+ 777 03cc 1346     		mov	r3, r2
+ 778 03ce 5B00     		lsls	r3, r3, #1
+ 779 03d0 1344     		add	r3, r3, r2
+ 780 03d2 9B00     		lsls	r3, r3, #2
+ 781 03d4 0344     		add	r3, r3, r0
+ 782 03d6 0433     		adds	r3, r3, #4
+ 783 03d8 1960     		str	r1, [r3]	@ float
+ 109:..\src/vibrotactile_control.c **** 				contatore[3*i+1] = 0;
+ 784              		.loc 1 109 0
+ 785 03da FA79     		ldrb	r2, [r7, #7]	@ zero_extendqisi2
+ 786 03dc 1346     		mov	r3, r2
+ 787 03de 5B00     		lsls	r3, r3, #1
+ 788 03e0 1344     		add	r3, r3, r2
+ 789 03e2 0133     		adds	r3, r3, #1
+ 790 03e4 584A     		ldr	r2, .L48+32
+ 791 03e6 4FF00001 		mov	r1, #0
+ 792 03ea 42F82310 		str	r1, [r2, r3, lsl #2]	@ float
+ 793              	.L21:
+ 110:..\src/vibrotactile_control.c **** 			}
+ 111:..\src/vibrotactile_control.c **** 		}
+ 112:..\src/vibrotactile_control.c **** 
+ 113:..\src/vibrotactile_control.c **** 		if (contatore[3*i+2] > 2)
+ 794              		.loc 1 113 0
+ 795 03ee FA79     		ldrb	r2, [r7, #7]	@ zero_extendqisi2
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZTBIsW.s 			page 17
+
+
+ 796 03f0 1346     		mov	r3, r2
+ 797 03f2 5B00     		lsls	r3, r3, #1
+ 798 03f4 1344     		add	r3, r3, r2
+ 799 03f6 0233     		adds	r3, r3, #2
+ 800 03f8 534A     		ldr	r2, .L48+32
+ 801 03fa 52F82330 		ldr	r3, [r2, r3, lsl #2]	@ float
+ 802 03fe 4FF08041 		mov	r1, #1073741824
+ 803 0402 1846     		mov	r0, r3
+ 804 0404 FFF7FEFF 		bl	__aeabi_fcmpgt
+ 805 0408 0346     		mov	r3, r0
+ 806 040a 002B     		cmp	r3, #0
+ 807 040c 1CD0     		beq	.L44
+ 114:..\src/vibrotactile_control.c **** 		{
+ 115:..\src/vibrotactile_control.c **** 			acc_values_mod[i][2] = accelerometer_matrix[i][2];
+ 808              		.loc 1 115 0
+ 809 040e FA79     		ldrb	r2, [r7, #7]	@ zero_extendqisi2
+ 810 0410 F979     		ldrb	r1, [r7, #7]	@ zero_extendqisi2
+ 811 0412 4948     		ldr	r0, .L48+16
+ 812 0414 0B46     		mov	r3, r1
+ 813 0416 5B00     		lsls	r3, r3, #1
+ 814 0418 0B44     		add	r3, r3, r1
+ 815 041a 9B00     		lsls	r3, r3, #2
+ 816 041c 0344     		add	r3, r3, r0
+ 817 041e 0833     		adds	r3, r3, #8
+ 818 0420 1968     		ldr	r1, [r3]	@ float
+ 819 0422 4848     		ldr	r0, .L48+28
+ 820 0424 1346     		mov	r3, r2
+ 821 0426 5B00     		lsls	r3, r3, #1
+ 822 0428 1344     		add	r3, r3, r2
+ 823 042a 9B00     		lsls	r3, r3, #2
+ 824 042c 0344     		add	r3, r3, r0
+ 825 042e 0833     		adds	r3, r3, #8
+ 826 0430 1960     		str	r1, [r3]	@ float
+ 116:..\src/vibrotactile_control.c ****                 
+ 117:..\src/vibrotactile_control.c **** 
+ 118:..\src/vibrotactile_control.c **** 			contatore[3*i+2] = 0;
+ 827              		.loc 1 118 0
+ 828 0432 FA79     		ldrb	r2, [r7, #7]	@ zero_extendqisi2
+ 829 0434 1346     		mov	r3, r2
+ 830 0436 5B00     		lsls	r3, r3, #1
+ 831 0438 1344     		add	r3, r3, r2
+ 832 043a 0233     		adds	r3, r3, #2
+ 833 043c 424A     		ldr	r2, .L48+32
+ 834 043e 4FF00001 		mov	r1, #0
+ 835 0442 42F82310 		str	r1, [r2, r3, lsl #2]	@ float
+ 836 0446 BFE0     		b	.L11
+ 837              	.L44:
+ 119:..\src/vibrotactile_control.c ****             
+ 120:..\src/vibrotactile_control.c **** 		}
+ 121:..\src/vibrotactile_control.c **** 		else
+ 122:..\src/vibrotactile_control.c **** 		{
+ 123:..\src/vibrotactile_control.c **** 			if (fabs(accelerometer_matrix[i][2] - matrice_reco[3 * i + 2]) > SOGLIA || fabs(accelerometer_ma
+ 838              		.loc 1 123 0
+ 839 0448 FA79     		ldrb	r2, [r7, #7]	@ zero_extendqisi2
+ 840 044a 3B49     		ldr	r1, .L48+16
+ 841 044c 1346     		mov	r3, r2
+ 842 044e 5B00     		lsls	r3, r3, #1
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZTBIsW.s 			page 18
+
+
+ 843 0450 1344     		add	r3, r3, r2
+ 844 0452 9B00     		lsls	r3, r3, #2
+ 845 0454 0B44     		add	r3, r3, r1
+ 846 0456 0833     		adds	r3, r3, #8
+ 847 0458 1868     		ldr	r0, [r3]	@ float
+ 848 045a FA79     		ldrb	r2, [r7, #7]	@ zero_extendqisi2
+ 849 045c 1346     		mov	r3, r2
+ 850 045e 5B00     		lsls	r3, r3, #1
+ 851 0460 1344     		add	r3, r3, r2
+ 852 0462 0233     		adds	r3, r3, #2
+ 853 0464 354A     		ldr	r2, .L48+20
+ 854 0466 52F82330 		ldr	r3, [r2, r3, lsl #2]	@ float
+ 855 046a 1946     		mov	r1, r3
+ 856 046c FFF7FEFF 		bl	__aeabi_fsub
+ 857 0470 0346     		mov	r3, r0
+ 858 0472 23F00043 		bic	r3, r3, #-2147483648
+ 859 0476 1846     		mov	r0, r3
+ 860 0478 FFF7FEFF 		bl	__aeabi_f2d
+ 861 047c 2AA3     		adr	r3, .L48
+ 862 047e D3E90023 		ldrd	r2, [r3]
+ 863 0482 FFF7FEFF 		bl	__aeabi_dcmpgt
+ 864 0486 0346     		mov	r3, r0
+ 865 0488 002B     		cmp	r3, #0
+ 866 048a 21D1     		bne	.L28
+ 867              		.loc 1 123 0 is_stmt 0 discriminator 1
+ 868 048c FA79     		ldrb	r2, [r7, #7]	@ zero_extendqisi2
+ 869 048e 2A49     		ldr	r1, .L48+16
+ 870 0490 1346     		mov	r3, r2
+ 871 0492 5B00     		lsls	r3, r3, #1
+ 872 0494 1344     		add	r3, r3, r2
+ 873 0496 9B00     		lsls	r3, r3, #2
+ 874 0498 0B44     		add	r3, r3, r1
+ 875 049a 0833     		adds	r3, r3, #8
+ 876 049c 1868     		ldr	r0, [r3]	@ float
+ 877 049e FA79     		ldrb	r2, [r7, #7]	@ zero_extendqisi2
+ 878 04a0 1346     		mov	r3, r2
+ 879 04a2 5B00     		lsls	r3, r3, #1
+ 880 04a4 1344     		add	r3, r3, r2
+ 881 04a6 0233     		adds	r3, r3, #2
+ 882 04a8 244A     		ldr	r2, .L48+20
+ 883 04aa 52F82330 		ldr	r3, [r2, r3, lsl #2]	@ float
+ 884 04ae 1946     		mov	r1, r3
+ 885 04b0 FFF7FEFF 		bl	__aeabi_fsub
+ 886 04b4 0346     		mov	r3, r0
+ 887 04b6 23F00043 		bic	r3, r3, #-2147483648
+ 888 04ba 1846     		mov	r0, r3
+ 889 04bc FFF7FEFF 		bl	__aeabi_f2d
+ 890 04c0 1BA3     		adr	r3, .L48+8
+ 891 04c2 D3E90023 		ldrd	r2, [r3]
+ 892 04c6 FFF7FEFF 		bl	__aeabi_dcmplt
+ 893 04ca 0346     		mov	r3, r0
+ 894 04cc 002B     		cmp	r3, #0
+ 895 04ce 3DD0     		beq	.L45
+ 896              	.L28:
+ 124:..\src/vibrotactile_control.c **** 			{
+ 125:..\src/vibrotactile_control.c **** 				acc_values_mod[i][2] = matrice_reco_mod[3 * i + 2];
+ 897              		.loc 1 125 0 is_stmt 1
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZTBIsW.s 			page 19
+
+
+ 898 04d0 FA79     		ldrb	r2, [r7, #7]	@ zero_extendqisi2
+ 899 04d2 F979     		ldrb	r1, [r7, #7]	@ zero_extendqisi2
+ 900 04d4 0B46     		mov	r3, r1
+ 901 04d6 5B00     		lsls	r3, r3, #1
+ 902 04d8 0B44     		add	r3, r3, r1
+ 903 04da 0233     		adds	r3, r3, #2
+ 904 04dc 1849     		ldr	r1, .L48+24
+ 905 04de 51F82310 		ldr	r1, [r1, r3, lsl #2]	@ float
+ 906 04e2 1848     		ldr	r0, .L48+28
+ 907 04e4 1346     		mov	r3, r2
+ 908 04e6 5B00     		lsls	r3, r3, #1
+ 909 04e8 1344     		add	r3, r3, r2
+ 910 04ea 9B00     		lsls	r3, r3, #2
+ 911 04ec 0344     		add	r3, r3, r0
+ 912 04ee 0833     		adds	r3, r3, #8
+ 913 04f0 1960     		str	r1, [r3]	@ float
+ 126:..\src/vibrotactile_control.c ****                     
+ 127:..\src/vibrotactile_control.c **** 
+ 128:..\src/vibrotactile_control.c **** 				contatore[3*i+2] += 1;
+ 914              		.loc 1 128 0
+ 915 04f2 FA79     		ldrb	r2, [r7, #7]	@ zero_extendqisi2
+ 916 04f4 1346     		mov	r3, r2
+ 917 04f6 5B00     		lsls	r3, r3, #1
+ 918 04f8 1344     		add	r3, r3, r2
+ 919 04fa 9C1C     		adds	r4, r3, #2
+ 920 04fc FA79     		ldrb	r2, [r7, #7]	@ zero_extendqisi2
+ 921 04fe 1346     		mov	r3, r2
+ 922 0500 5B00     		lsls	r3, r3, #1
+ 923 0502 1344     		add	r3, r3, r2
+ 924 0504 0233     		adds	r3, r3, #2
+ 925 0506 104A     		ldr	r2, .L48+32
+ 926 0508 52F82330 		ldr	r3, [r2, r3, lsl #2]	@ float
+ 927 050c 4FF07E51 		mov	r1, #1065353216
+ 928 0510 1846     		mov	r0, r3
+ 929 0512 FFF7FEFF 		bl	__aeabi_fadd
+ 930 0516 0346     		mov	r3, r0
+ 931 0518 1A46     		mov	r2, r3
+ 932 051a 0B4B     		ldr	r3, .L48+32
+ 933 051c 43F82420 		str	r2, [r3, r4, lsl #2]	@ float
+ 934 0520 52E0     		b	.L11
+ 935              	.L49:
+ 936 0522 00BFAFF3 		.align	3
+ 936      0080
+ 937              	.L48:
+ 938 0528 7B14AE47 		.word	1202590843
+ 939 052c E17AA43F 		.word	1067743969
+ 940 0530 8DEDB5A0 		.word	-1598689907
+ 941 0534 F7C6B03E 		.word	1051772663
+ 942 0538 00000000 		.word	accelerometer_matrix
+ 943 053c 00000000 		.word	matrice_reco
+ 944 0540 00000000 		.word	matrice_reco_mod
+ 945 0544 00000000 		.word	acc_values_mod
+ 946 0548 00000000 		.word	contatore
+ 947              	.L45:
+ 129:..\src/vibrotactile_control.c **** 			}
+ 130:..\src/vibrotactile_control.c **** 			else if (fabs(accelerometer_matrix[i][2] - matrice_reco[3 * i + 2]) <= SOGLIA)
+ 948              		.loc 1 130 0
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZTBIsW.s 			page 20
+
+
+ 949 054c FA79     		ldrb	r2, [r7, #7]	@ zero_extendqisi2
+ 950 054e 5449     		ldr	r1, .L50+8
+ 951 0550 1346     		mov	r3, r2
+ 952 0552 5B00     		lsls	r3, r3, #1
+ 953 0554 1344     		add	r3, r3, r2
+ 954 0556 9B00     		lsls	r3, r3, #2
+ 955 0558 0B44     		add	r3, r3, r1
+ 956 055a 0833     		adds	r3, r3, #8
+ 957 055c 1868     		ldr	r0, [r3]	@ float
+ 958 055e FA79     		ldrb	r2, [r7, #7]	@ zero_extendqisi2
+ 959 0560 1346     		mov	r3, r2
+ 960 0562 5B00     		lsls	r3, r3, #1
+ 961 0564 1344     		add	r3, r3, r2
+ 962 0566 0233     		adds	r3, r3, #2
+ 963 0568 4E4A     		ldr	r2, .L50+12
+ 964 056a 52F82330 		ldr	r3, [r2, r3, lsl #2]	@ float
+ 965 056e 1946     		mov	r1, r3
+ 966 0570 FFF7FEFF 		bl	__aeabi_fsub
+ 967 0574 0346     		mov	r3, r0
+ 968 0576 23F00043 		bic	r3, r3, #-2147483648
+ 969 057a 1846     		mov	r0, r3
+ 970 057c FFF7FEFF 		bl	__aeabi_f2d
+ 971 0580 45A3     		adr	r3, .L50
+ 972 0582 D3E90023 		ldrd	r2, [r3]
+ 973 0586 FFF7FEFF 		bl	__aeabi_dcmple
+ 974 058a 0346     		mov	r3, r0
+ 975 058c 002B     		cmp	r3, #0
+ 976 058e 1BD0     		beq	.L11
+ 131:..\src/vibrotactile_control.c **** 			{
+ 132:..\src/vibrotactile_control.c **** 				acc_values_mod[i][2] = accelerometer_matrix[i][2];
+ 977              		.loc 1 132 0
+ 978 0590 FA79     		ldrb	r2, [r7, #7]	@ zero_extendqisi2
+ 979 0592 F979     		ldrb	r1, [r7, #7]	@ zero_extendqisi2
+ 980 0594 4248     		ldr	r0, .L50+8
+ 981 0596 0B46     		mov	r3, r1
+ 982 0598 5B00     		lsls	r3, r3, #1
+ 983 059a 0B44     		add	r3, r3, r1
+ 984 059c 9B00     		lsls	r3, r3, #2
+ 985 059e 0344     		add	r3, r3, r0
+ 986 05a0 0833     		adds	r3, r3, #8
+ 987 05a2 1968     		ldr	r1, [r3]	@ float
+ 988 05a4 4048     		ldr	r0, .L50+16
+ 989 05a6 1346     		mov	r3, r2
+ 990 05a8 5B00     		lsls	r3, r3, #1
+ 991 05aa 1344     		add	r3, r3, r2
+ 992 05ac 9B00     		lsls	r3, r3, #2
+ 993 05ae 0344     		add	r3, r3, r0
+ 994 05b0 0833     		adds	r3, r3, #8
+ 995 05b2 1960     		str	r1, [r3]	@ float
+ 133:..\src/vibrotactile_control.c ****                     
+ 134:..\src/vibrotactile_control.c **** 
+ 135:..\src/vibrotactile_control.c **** 				contatore[3*i+2] = 0;
+ 996              		.loc 1 135 0
+ 997 05b4 FA79     		ldrb	r2, [r7, #7]	@ zero_extendqisi2
+ 998 05b6 1346     		mov	r3, r2
+ 999 05b8 5B00     		lsls	r3, r3, #1
+ 1000 05ba 1344     		add	r3, r3, r2
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZTBIsW.s 			page 21
+
+
+ 1001 05bc 0233     		adds	r3, r3, #2
+ 1002 05be 3B4A     		ldr	r2, .L50+20
+ 1003 05c0 4FF00001 		mov	r1, #0
+ 1004 05c4 42F82310 		str	r1, [r2, r3, lsl #2]	@ float
+ 1005              	.L11:
+ 136:..\src/vibrotactile_control.c **** 			}
+ 137:..\src/vibrotactile_control.c **** 		}
+ 138:..\src/vibrotactile_control.c **** 			}
+ 139:..\src/vibrotactile_control.c **** 
+ 140:..\src/vibrotactile_control.c **** 			matrice_reco[3*i+0] = accelerometer_matrix[i][0];	
+ 1006              		.loc 1 140 0
+ 1007 05c8 FA79     		ldrb	r2, [r7, #7]	@ zero_extendqisi2
+ 1008 05ca 1346     		mov	r3, r2
+ 1009 05cc 5B00     		lsls	r3, r3, #1
+ 1010 05ce 9918     		adds	r1, r3, r2
+ 1011 05d0 FA79     		ldrb	r2, [r7, #7]	@ zero_extendqisi2
+ 1012 05d2 3348     		ldr	r0, .L50+8
+ 1013 05d4 1346     		mov	r3, r2
+ 1014 05d6 5B00     		lsls	r3, r3, #1
+ 1015 05d8 1344     		add	r3, r3, r2
+ 1016 05da 9B00     		lsls	r3, r3, #2
+ 1017 05dc 0344     		add	r3, r3, r0
+ 1018 05de 1B68     		ldr	r3, [r3]	@ float
+ 1019 05e0 304A     		ldr	r2, .L50+12
+ 1020 05e2 42F82130 		str	r3, [r2, r1, lsl #2]	@ float
+ 141:..\src/vibrotactile_control.c **** 			matrice_reco[3*i+1] = accelerometer_matrix[i][1];
+ 1021              		.loc 1 141 0
+ 1022 05e6 FA79     		ldrb	r2, [r7, #7]	@ zero_extendqisi2
+ 1023 05e8 1346     		mov	r3, r2
+ 1024 05ea 5B00     		lsls	r3, r3, #1
+ 1025 05ec 1344     		add	r3, r3, r2
+ 1026 05ee 591C     		adds	r1, r3, #1
+ 1027 05f0 FA79     		ldrb	r2, [r7, #7]	@ zero_extendqisi2
+ 1028 05f2 2B48     		ldr	r0, .L50+8
+ 1029 05f4 1346     		mov	r3, r2
+ 1030 05f6 5B00     		lsls	r3, r3, #1
+ 1031 05f8 1344     		add	r3, r3, r2
+ 1032 05fa 9B00     		lsls	r3, r3, #2
+ 1033 05fc 0344     		add	r3, r3, r0
+ 1034 05fe 0433     		adds	r3, r3, #4
+ 1035 0600 1B68     		ldr	r3, [r3]	@ float
+ 1036 0602 284A     		ldr	r2, .L50+12
+ 1037 0604 42F82130 		str	r3, [r2, r1, lsl #2]	@ float
+ 142:..\src/vibrotactile_control.c **** 			matrice_reco[3*i+2] = accelerometer_matrix[i][2];
+ 1038              		.loc 1 142 0
+ 1039 0608 FA79     		ldrb	r2, [r7, #7]	@ zero_extendqisi2
+ 1040 060a 1346     		mov	r3, r2
+ 1041 060c 5B00     		lsls	r3, r3, #1
+ 1042 060e 1344     		add	r3, r3, r2
+ 1043 0610 991C     		adds	r1, r3, #2
+ 1044 0612 FA79     		ldrb	r2, [r7, #7]	@ zero_extendqisi2
+ 1045 0614 2248     		ldr	r0, .L50+8
+ 1046 0616 1346     		mov	r3, r2
+ 1047 0618 5B00     		lsls	r3, r3, #1
+ 1048 061a 1344     		add	r3, r3, r2
+ 1049 061c 9B00     		lsls	r3, r3, #2
+ 1050 061e 0344     		add	r3, r3, r0
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZTBIsW.s 			page 22
+
+
+ 1051 0620 0833     		adds	r3, r3, #8
+ 1052 0622 1B68     		ldr	r3, [r3]	@ float
+ 1053 0624 1F4A     		ldr	r2, .L50+12
+ 1054 0626 42F82130 		str	r3, [r2, r1, lsl #2]	@ float
+ 143:..\src/vibrotactile_control.c **** 
+ 144:..\src/vibrotactile_control.c **** 			matrice_reco_mod[3*i+0] = acc_values_mod[i][0];
+ 1055              		.loc 1 144 0
+ 1056 062a FA79     		ldrb	r2, [r7, #7]	@ zero_extendqisi2
+ 1057 062c 1346     		mov	r3, r2
+ 1058 062e 5B00     		lsls	r3, r3, #1
+ 1059 0630 9918     		adds	r1, r3, r2
+ 1060 0632 FA79     		ldrb	r2, [r7, #7]	@ zero_extendqisi2
+ 1061 0634 1C48     		ldr	r0, .L50+16
+ 1062 0636 1346     		mov	r3, r2
+ 1063 0638 5B00     		lsls	r3, r3, #1
+ 1064 063a 1344     		add	r3, r3, r2
+ 1065 063c 9B00     		lsls	r3, r3, #2
+ 1066 063e 0344     		add	r3, r3, r0
+ 1067 0640 1B68     		ldr	r3, [r3]	@ float
+ 1068 0642 1B4A     		ldr	r2, .L50+24
+ 1069 0644 42F82130 		str	r3, [r2, r1, lsl #2]	@ float
+ 145:..\src/vibrotactile_control.c **** 			matrice_reco_mod[3*i+1] = acc_values_mod[i][1];
+ 1070              		.loc 1 145 0
+ 1071 0648 FA79     		ldrb	r2, [r7, #7]	@ zero_extendqisi2
+ 1072 064a 1346     		mov	r3, r2
+ 1073 064c 5B00     		lsls	r3, r3, #1
+ 1074 064e 1344     		add	r3, r3, r2
+ 1075 0650 591C     		adds	r1, r3, #1
+ 1076 0652 FA79     		ldrb	r2, [r7, #7]	@ zero_extendqisi2
+ 1077 0654 1448     		ldr	r0, .L50+16
+ 1078 0656 1346     		mov	r3, r2
+ 1079 0658 5B00     		lsls	r3, r3, #1
+ 1080 065a 1344     		add	r3, r3, r2
+ 1081 065c 9B00     		lsls	r3, r3, #2
+ 1082 065e 0344     		add	r3, r3, r0
+ 1083 0660 0433     		adds	r3, r3, #4
+ 1084 0662 1B68     		ldr	r3, [r3]	@ float
+ 1085 0664 124A     		ldr	r2, .L50+24
+ 1086 0666 42F82130 		str	r3, [r2, r1, lsl #2]	@ float
+ 146:..\src/vibrotactile_control.c **** 			matrice_reco_mod[3*i+2] = acc_values_mod[i][2];
+ 1087              		.loc 1 146 0
+ 1088 066a FA79     		ldrb	r2, [r7, #7]	@ zero_extendqisi2
+ 1089 066c 1346     		mov	r3, r2
+ 1090 066e 5B00     		lsls	r3, r3, #1
+ 1091 0670 1344     		add	r3, r3, r2
+ 1092 0672 991C     		adds	r1, r3, #2
+ 1093 0674 FA79     		ldrb	r2, [r7, #7]	@ zero_extendqisi2
+ 1094 0676 0C48     		ldr	r0, .L50+16
+ 1095 0678 1346     		mov	r3, r2
+ 1096 067a 5B00     		lsls	r3, r3, #1
+ 1097 067c 1344     		add	r3, r3, r2
+ 1098 067e 9B00     		lsls	r3, r3, #2
+ 1099 0680 0344     		add	r3, r3, r0
+ 1100 0682 0833     		adds	r3, r3, #8
+ 1101 0684 1B68     		ldr	r3, [r3]	@ float
+ 1102 0686 0A4A     		ldr	r2, .L50+24
+ 1103 0688 42F82130 		str	r3, [r2, r1, lsl #2]	@ float
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZTBIsW.s 			page 23
+
+
+ 147:..\src/vibrotactile_control.c ****        
+ 148:..\src/vibrotactile_control.c **** }
+ 1104              		.loc 1 148 0
+ 1105 068c 00BF     		nop
+ 1106 068e 0C37     		adds	r7, r7, #12
+ 1107              		.cfi_def_cfa_offset 12
+ 1108 0690 BD46     		mov	sp, r7
+ 1109              		.cfi_def_cfa_register 13
+ 1110              		@ sp needed
+ 1111 0692 90BD     		pop	{r4, r7, pc}
+ 1112              	.L51:
+ 1113 0694 AFF30080 		.align	3
+ 1114              	.L50:
+ 1115 0698 7B14AE47 		.word	1202590843
+ 1116 069c E17AA43F 		.word	1067743969
+ 1117 06a0 00000000 		.word	accelerometer_matrix
+ 1118 06a4 00000000 		.word	matrice_reco
+ 1119 06a8 00000000 		.word	acc_values_mod
+ 1120 06ac 00000000 		.word	contatore
+ 1121 06b0 00000000 		.word	matrice_reco_mod
+ 1122              		.cfi_endproc
+ 1123              	.LFE65:
+ 1124              		.size	OutliersDeletion, .-OutliersDeletion
+ 1125              		.section	.text.SignalFiltering,"ax",%progbits
+ 1126              		.align	2
+ 1127              		.global	SignalFiltering
+ 1128              		.thumb
+ 1129              		.thumb_func
+ 1130              		.type	SignalFiltering, %function
+ 1131              	SignalFiltering:
+ 1132              	.LFB66:
+ 149:..\src/vibrotactile_control.c **** 
+ 150:..\src/vibrotactile_control.c **** /*******************************************************************************
+ 151:..\src/vibrotactile_control.c **** * Function Name: Signal Filtering
+ 152:..\src/vibrotactile_control.c **** *********************************************************************************/
+ 153:..\src/vibrotactile_control.c **** 
+ 154:..\src/vibrotactile_control.c **** void SignalFiltering(uint8 i){
+ 1133              		.loc 1 154 0
+ 1134              		.cfi_startproc
+ 1135              		@ args = 0, pretend = 0, frame = 8
+ 1136              		@ frame_needed = 1, uses_anonymous_args = 0
+ 1137 0000 90B5     		push	{r4, r7, lr}
+ 1138              		.cfi_def_cfa_offset 12
+ 1139              		.cfi_offset 4, -12
+ 1140              		.cfi_offset 7, -8
+ 1141              		.cfi_offset 14, -4
+ 1142 0002 83B0     		sub	sp, sp, #12
+ 1143              		.cfi_def_cfa_offset 24
+ 1144 0004 00AF     		add	r7, sp, #0
+ 1145              		.cfi_def_cfa_register 7
+ 1146 0006 0346     		mov	r3, r0
+ 1147 0008 FB71     		strb	r3, [r7, #7]
+ 155:..\src/vibrotactile_control.c ****     
+ 156:..\src/vibrotactile_control.c ****     /*vect_filt[i][0] =acc_values_mod[i][0];
+ 157:..\src/vibrotactile_control.c ****     vect_filt[i][1] =acc_values_mod[i][0];
+ 158:..\src/vibrotactile_control.c ****     vect_filt[i][2] =acc_values_mod[i][0];
+ 159:..\src/vibrotactile_control.c ****      */   
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZTBIsW.s 			page 24
+
+
+ 160:..\src/vibrotactile_control.c ****     vect_filt[i][0] = BandPassFilter(acc_values_mod[i][0], i, 0);
+ 1148              		.loc 1 160 0
+ 1149 000a FC79     		ldrb	r4, [r7, #7]	@ zero_extendqisi2
+ 1150 000c FA79     		ldrb	r2, [r7, #7]	@ zero_extendqisi2
+ 1151 000e 3C49     		ldr	r1, .L53
+ 1152 0010 1346     		mov	r3, r2
+ 1153 0012 5B00     		lsls	r3, r3, #1
+ 1154 0014 1344     		add	r3, r3, r2
+ 1155 0016 9B00     		lsls	r3, r3, #2
+ 1156 0018 0B44     		add	r3, r3, r1
+ 1157 001a 1B68     		ldr	r3, [r3]	@ float
+ 1158 001c F979     		ldrb	r1, [r7, #7]	@ zero_extendqisi2
+ 1159 001e 0022     		movs	r2, #0
+ 1160 0020 1846     		mov	r0, r3
+ 1161 0022 FFF7FEFF 		bl	BandPassFilter
+ 1162 0026 0146     		mov	r1, r0
+ 1163 0028 364A     		ldr	r2, .L53+4
+ 1164 002a 2346     		mov	r3, r4
+ 1165 002c 5B00     		lsls	r3, r3, #1
+ 1166 002e 2344     		add	r3, r3, r4
+ 1167 0030 9B00     		lsls	r3, r3, #2
+ 1168 0032 1344     		add	r3, r3, r2
+ 1169 0034 1960     		str	r1, [r3]	@ float
+ 161:..\src/vibrotactile_control.c **** 	vect_filt[i][1] = BandPassFilter(acc_values_mod[i][1], i, 1);
+ 1170              		.loc 1 161 0
+ 1171 0036 FC79     		ldrb	r4, [r7, #7]	@ zero_extendqisi2
+ 1172 0038 FA79     		ldrb	r2, [r7, #7]	@ zero_extendqisi2
+ 1173 003a 3149     		ldr	r1, .L53
+ 1174 003c 1346     		mov	r3, r2
+ 1175 003e 5B00     		lsls	r3, r3, #1
+ 1176 0040 1344     		add	r3, r3, r2
+ 1177 0042 9B00     		lsls	r3, r3, #2
+ 1178 0044 0B44     		add	r3, r3, r1
+ 1179 0046 0433     		adds	r3, r3, #4
+ 1180 0048 1B68     		ldr	r3, [r3]	@ float
+ 1181 004a F979     		ldrb	r1, [r7, #7]	@ zero_extendqisi2
+ 1182 004c 0122     		movs	r2, #1
+ 1183 004e 1846     		mov	r0, r3
+ 1184 0050 FFF7FEFF 		bl	BandPassFilter
+ 1185 0054 0146     		mov	r1, r0
+ 1186 0056 2B4A     		ldr	r2, .L53+4
+ 1187 0058 2346     		mov	r3, r4
+ 1188 005a 5B00     		lsls	r3, r3, #1
+ 1189 005c 2344     		add	r3, r3, r4
+ 1190 005e 9B00     		lsls	r3, r3, #2
+ 1191 0060 1344     		add	r3, r3, r2
+ 1192 0062 0433     		adds	r3, r3, #4
+ 1193 0064 1960     		str	r1, [r3]	@ float
+ 162:..\src/vibrotactile_control.c **** 	vect_filt[i][2] = BandPassFilter(acc_values_mod[i][2], i, 2);
+ 1194              		.loc 1 162 0
+ 1195 0066 FC79     		ldrb	r4, [r7, #7]	@ zero_extendqisi2
+ 1196 0068 FA79     		ldrb	r2, [r7, #7]	@ zero_extendqisi2
+ 1197 006a 2549     		ldr	r1, .L53
+ 1198 006c 1346     		mov	r3, r2
+ 1199 006e 5B00     		lsls	r3, r3, #1
+ 1200 0070 1344     		add	r3, r3, r2
+ 1201 0072 9B00     		lsls	r3, r3, #2
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZTBIsW.s 			page 25
+
+
+ 1202 0074 0B44     		add	r3, r3, r1
+ 1203 0076 0833     		adds	r3, r3, #8
+ 1204 0078 1B68     		ldr	r3, [r3]	@ float
+ 1205 007a F979     		ldrb	r1, [r7, #7]	@ zero_extendqisi2
+ 1206 007c 0222     		movs	r2, #2
+ 1207 007e 1846     		mov	r0, r3
+ 1208 0080 FFF7FEFF 		bl	BandPassFilter
+ 1209 0084 0146     		mov	r1, r0
+ 1210 0086 1F4A     		ldr	r2, .L53+4
+ 1211 0088 2346     		mov	r3, r4
+ 1212 008a 5B00     		lsls	r3, r3, #1
+ 1213 008c 2344     		add	r3, r3, r4
+ 1214 008e 9B00     		lsls	r3, r3, #2
+ 1215 0090 1344     		add	r3, r3, r2
+ 1216 0092 0833     		adds	r3, r3, #8
+ 1217 0094 1960     		str	r1, [r3]	@ float
+ 163:..\src/vibrotactile_control.c **** 		   		
+ 164:..\src/vibrotactile_control.c **** 	matrice_completa[3*i+0] = vect_filt[i][0];
+ 1218              		.loc 1 164 0
+ 1219 0096 FA79     		ldrb	r2, [r7, #7]	@ zero_extendqisi2
+ 1220 0098 1346     		mov	r3, r2
+ 1221 009a 5B00     		lsls	r3, r3, #1
+ 1222 009c 9918     		adds	r1, r3, r2
+ 1223 009e FA79     		ldrb	r2, [r7, #7]	@ zero_extendqisi2
+ 1224 00a0 1848     		ldr	r0, .L53+4
+ 1225 00a2 1346     		mov	r3, r2
+ 1226 00a4 5B00     		lsls	r3, r3, #1
+ 1227 00a6 1344     		add	r3, r3, r2
+ 1228 00a8 9B00     		lsls	r3, r3, #2
+ 1229 00aa 0344     		add	r3, r3, r0
+ 1230 00ac 1B68     		ldr	r3, [r3]	@ float
+ 1231 00ae 164A     		ldr	r2, .L53+8
+ 1232 00b0 42F82130 		str	r3, [r2, r1, lsl #2]	@ float
+ 165:..\src/vibrotactile_control.c **** 	matrice_completa[3*i+1] = vect_filt[i][1];
+ 1233              		.loc 1 165 0
+ 1234 00b4 FA79     		ldrb	r2, [r7, #7]	@ zero_extendqisi2
+ 1235 00b6 1346     		mov	r3, r2
+ 1236 00b8 5B00     		lsls	r3, r3, #1
+ 1237 00ba 1344     		add	r3, r3, r2
+ 1238 00bc 591C     		adds	r1, r3, #1
+ 1239 00be FA79     		ldrb	r2, [r7, #7]	@ zero_extendqisi2
+ 1240 00c0 1048     		ldr	r0, .L53+4
+ 1241 00c2 1346     		mov	r3, r2
+ 1242 00c4 5B00     		lsls	r3, r3, #1
+ 1243 00c6 1344     		add	r3, r3, r2
+ 1244 00c8 9B00     		lsls	r3, r3, #2
+ 1245 00ca 0344     		add	r3, r3, r0
+ 1246 00cc 0433     		adds	r3, r3, #4
+ 1247 00ce 1B68     		ldr	r3, [r3]	@ float
+ 1248 00d0 0D4A     		ldr	r2, .L53+8
+ 1249 00d2 42F82130 		str	r3, [r2, r1, lsl #2]	@ float
+ 166:..\src/vibrotactile_control.c **** 	matrice_completa[3*i+2] = vect_filt[i][2];
+ 1250              		.loc 1 166 0
+ 1251 00d6 FA79     		ldrb	r2, [r7, #7]	@ zero_extendqisi2
+ 1252 00d8 1346     		mov	r3, r2
+ 1253 00da 5B00     		lsls	r3, r3, #1
+ 1254 00dc 1344     		add	r3, r3, r2
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZTBIsW.s 			page 26
+
+
+ 1255 00de 991C     		adds	r1, r3, #2
+ 1256 00e0 FA79     		ldrb	r2, [r7, #7]	@ zero_extendqisi2
+ 1257 00e2 0848     		ldr	r0, .L53+4
+ 1258 00e4 1346     		mov	r3, r2
+ 1259 00e6 5B00     		lsls	r3, r3, #1
+ 1260 00e8 1344     		add	r3, r3, r2
+ 1261 00ea 9B00     		lsls	r3, r3, #2
+ 1262 00ec 0344     		add	r3, r3, r0
+ 1263 00ee 0833     		adds	r3, r3, #8
+ 1264 00f0 1B68     		ldr	r3, [r3]	@ float
+ 1265 00f2 054A     		ldr	r2, .L53+8
+ 1266 00f4 42F82130 		str	r3, [r2, r1, lsl #2]	@ float
+ 167:..\src/vibrotactile_control.c **** }
+ 1267              		.loc 1 167 0
+ 1268 00f8 00BF     		nop
+ 1269 00fa 0C37     		adds	r7, r7, #12
+ 1270              		.cfi_def_cfa_offset 12
+ 1271 00fc BD46     		mov	sp, r7
+ 1272              		.cfi_def_cfa_register 13
+ 1273              		@ sp needed
+ 1274 00fe 90BD     		pop	{r4, r7, pc}
+ 1275              	.L54:
+ 1276              		.align	2
+ 1277              	.L53:
+ 1278 0100 00000000 		.word	acc_values_mod
+ 1279 0104 00000000 		.word	vect_filt
+ 1280 0108 00000000 		.word	matrice_completa
+ 1281              		.cfi_endproc
+ 1282              	.LFE66:
+ 1283              		.size	SignalFiltering, .-SignalFiltering
+ 1284              		.global	__aeabi_dadd
+ 1285              		.global	__aeabi_d2f
+ 1286              		.section	.text.SingleAxisMapping,"ax",%progbits
+ 1287              		.align	2
+ 1288              		.global	SingleAxisMapping
+ 1289              		.thumb
+ 1290              		.thumb_func
+ 1291              		.type	SingleAxisMapping, %function
+ 1292              	SingleAxisMapping:
+ 1293              	.LFB67:
+ 168:..\src/vibrotactile_control.c **** 
+ 169:..\src/vibrotactile_control.c **** /*******************************************************************************
+ 170:..\src/vibrotactile_control.c **** * Function Name: Single Axis Mapping
+ 171:..\src/vibrotactile_control.c **** *********************************************************************************/
+ 172:..\src/vibrotactile_control.c **** 
+ 173:..\src/vibrotactile_control.c **** void SingleAxisMapping (uint8 i){
+ 1294              		.loc 1 173 0
+ 1295              		.cfi_startproc
+ 1296              		@ args = 0, pretend = 0, frame = 8
+ 1297              		@ frame_needed = 1, uses_anonymous_args = 0
+ 1298 0000 F0B5     		push	{r4, r5, r6, r7, lr}
+ 1299              		.cfi_def_cfa_offset 20
+ 1300              		.cfi_offset 4, -20
+ 1301              		.cfi_offset 5, -16
+ 1302              		.cfi_offset 6, -12
+ 1303              		.cfi_offset 7, -8
+ 1304              		.cfi_offset 14, -4
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZTBIsW.s 			page 27
+
+
+ 1305 0002 83B0     		sub	sp, sp, #12
+ 1306              		.cfi_def_cfa_offset 32
+ 1307 0004 00AF     		add	r7, sp, #0
+ 1308              		.cfi_def_cfa_register 7
+ 1309 0006 0346     		mov	r3, r0
+ 1310 0008 FB71     		strb	r3, [r7, #7]
+ 174:..\src/vibrotactile_control.c ****         
+ 175:..\src/vibrotactile_control.c ****     vect_acc_filt_sum[i] = fabs(matrice_completa[3*i+0]) + fabs(matrice_completa[3*i+1]) + fabs(mat
+ 1311              		.loc 1 175 0
+ 1312 000a FC79     		ldrb	r4, [r7, #7]	@ zero_extendqisi2
+ 1313 000c FA79     		ldrb	r2, [r7, #7]	@ zero_extendqisi2
+ 1314 000e 1346     		mov	r3, r2
+ 1315 0010 5B00     		lsls	r3, r3, #1
+ 1316 0012 1344     		add	r3, r3, r2
+ 1317 0014 204A     		ldr	r2, .L56
+ 1318 0016 52F82330 		ldr	r3, [r2, r3, lsl #2]	@ float
+ 1319 001a 23F00043 		bic	r3, r3, #-2147483648
+ 1320 001e 1846     		mov	r0, r3
+ 1321 0020 FFF7FEFF 		bl	__aeabi_f2d
+ 1322 0024 0546     		mov	r5, r0
+ 1323 0026 0E46     		mov	r6, r1
+ 1324 0028 FA79     		ldrb	r2, [r7, #7]	@ zero_extendqisi2
+ 1325 002a 1346     		mov	r3, r2
+ 1326 002c 5B00     		lsls	r3, r3, #1
+ 1327 002e 1344     		add	r3, r3, r2
+ 1328 0030 0133     		adds	r3, r3, #1
+ 1329 0032 194A     		ldr	r2, .L56
+ 1330 0034 52F82330 		ldr	r3, [r2, r3, lsl #2]	@ float
+ 1331 0038 23F00043 		bic	r3, r3, #-2147483648
+ 1332 003c 1846     		mov	r0, r3
+ 1333 003e FFF7FEFF 		bl	__aeabi_f2d
+ 1334 0042 0246     		mov	r2, r0
+ 1335 0044 0B46     		mov	r3, r1
+ 1336 0046 2846     		mov	r0, r5
+ 1337 0048 3146     		mov	r1, r6
+ 1338 004a FFF7FEFF 		bl	__aeabi_dadd
+ 1339 004e 0246     		mov	r2, r0
+ 1340 0050 0B46     		mov	r3, r1
+ 1341 0052 1546     		mov	r5, r2
+ 1342 0054 1E46     		mov	r6, r3
+ 1343 0056 FA79     		ldrb	r2, [r7, #7]	@ zero_extendqisi2
+ 1344 0058 1346     		mov	r3, r2
+ 1345 005a 5B00     		lsls	r3, r3, #1
+ 1346 005c 1344     		add	r3, r3, r2
+ 1347 005e 0233     		adds	r3, r3, #2
+ 1348 0060 0D4A     		ldr	r2, .L56
+ 1349 0062 52F82330 		ldr	r3, [r2, r3, lsl #2]	@ float
+ 1350 0066 23F00043 		bic	r3, r3, #-2147483648
+ 1351 006a 1846     		mov	r0, r3
+ 1352 006c FFF7FEFF 		bl	__aeabi_f2d
+ 1353 0070 0246     		mov	r2, r0
+ 1354 0072 0B46     		mov	r3, r1
+ 1355 0074 2846     		mov	r0, r5
+ 1356 0076 3146     		mov	r1, r6
+ 1357 0078 FFF7FEFF 		bl	__aeabi_dadd
+ 1358 007c 0246     		mov	r2, r0
+ 1359 007e 0B46     		mov	r3, r1
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZTBIsW.s 			page 28
+
+
+ 1360 0080 1046     		mov	r0, r2
+ 1361 0082 1946     		mov	r1, r3
+ 1362 0084 FFF7FEFF 		bl	__aeabi_d2f
+ 1363 0088 0246     		mov	r2, r0
+ 1364 008a 044B     		ldr	r3, .L56+4
+ 1365 008c 43F82420 		str	r2, [r3, r4, lsl #2]	@ float
+ 176:..\src/vibrotactile_control.c **** 
+ 177:..\src/vibrotactile_control.c **** }
+ 1366              		.loc 1 177 0
+ 1367 0090 00BF     		nop
+ 1368 0092 0C37     		adds	r7, r7, #12
+ 1369              		.cfi_def_cfa_offset 20
+ 1370 0094 BD46     		mov	sp, r7
+ 1371              		.cfi_def_cfa_register 13
+ 1372              		@ sp needed
+ 1373 0096 F0BD     		pop	{r4, r5, r6, r7, pc}
+ 1374              	.L57:
+ 1375              		.align	2
+ 1376              	.L56:
+ 1377 0098 00000000 		.word	matrice_completa
+ 1378 009c 00000000 		.word	vect_acc_filt_sum
+ 1379              		.cfi_endproc
+ 1380              	.LFE67:
+ 1381              		.size	SingleAxisMapping, .-SingleAxisMapping
+ 1382              		.section	.text.ActuatorsInputComputation,"ax",%progbits
+ 1383              		.align	2
+ 1384              		.global	ActuatorsInputComputation
+ 1385              		.thumb
+ 1386              		.thumb_func
+ 1387              		.type	ActuatorsInputComputation, %function
+ 1388              	ActuatorsInputComputation:
+ 1389              	.LFB68:
+ 178:..\src/vibrotactile_control.c **** 
+ 179:..\src/vibrotactile_control.c **** /*******************************************************************************
+ 180:..\src/vibrotactile_control.c **** * Function Name: Actuators input computation
+ 181:..\src/vibrotactile_control.c **** *********************************************************************************/
+ 182:..\src/vibrotactile_control.c **** 
+ 183:..\src/vibrotactile_control.c **** void ActuatorsInputComputation (uint8 i){
+ 1390              		.loc 1 183 0
+ 1391              		.cfi_startproc
+ 1392              		@ args = 0, pretend = 0, frame = 8
+ 1393              		@ frame_needed = 1, uses_anonymous_args = 0
+ 1394 0000 90B5     		push	{r4, r7, lr}
+ 1395              		.cfi_def_cfa_offset 12
+ 1396              		.cfi_offset 4, -12
+ 1397              		.cfi_offset 7, -8
+ 1398              		.cfi_offset 14, -4
+ 1399 0002 83B0     		sub	sp, sp, #12
+ 1400              		.cfi_def_cfa_offset 24
+ 1401 0004 00AF     		add	r7, sp, #0
+ 1402              		.cfi_def_cfa_register 7
+ 1403 0006 0346     		mov	r3, r0
+ 1404 0008 FB71     		strb	r3, [r7, #7]
+ 184:..\src/vibrotactile_control.c ****    input_act_sent[i]= GeneratePWMValue(vect_acc_filt_sum[i]); //vect_acc_filt_sum -> NO STANDARD SC
+ 1405              		.loc 1 184 0
+ 1406 000a FC79     		ldrb	r4, [r7, #7]	@ zero_extendqisi2
+ 1407 000c FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZTBIsW.s 			page 29
+
+
+ 1408 000e 074A     		ldr	r2, .L59
+ 1409 0010 52F82330 		ldr	r3, [r2, r3, lsl #2]	@ float
+ 1410 0014 1846     		mov	r0, r3
+ 1411 0016 FFF7FEFF 		bl	GeneratePWMValue
+ 1412 001a 0246     		mov	r2, r0
+ 1413 001c 044B     		ldr	r3, .L59+4
+ 1414 001e 43F82420 		str	r2, [r3, r4, lsl #2]
+ 185:..\src/vibrotactile_control.c **** }
+ 1415              		.loc 1 185 0
+ 1416 0022 00BF     		nop
+ 1417 0024 0C37     		adds	r7, r7, #12
+ 1418              		.cfi_def_cfa_offset 12
+ 1419 0026 BD46     		mov	sp, r7
+ 1420              		.cfi_def_cfa_register 13
+ 1421              		@ sp needed
+ 1422 0028 90BD     		pop	{r4, r7, pc}
+ 1423              	.L60:
+ 1424 002a 00BF     		.align	2
+ 1425              	.L59:
+ 1426 002c 00000000 		.word	vect_acc_filt_sum
+ 1427 0030 00000000 		.word	input_act_sent
+ 1428              		.cfi_endproc
+ 1429              	.LFE68:
+ 1430              		.size	ActuatorsInputComputation, .-ActuatorsInputComputation
+ 1431              		.global	__aeabi_fmul
+ 1432              		.section	.text.BandPassFilter,"ax",%progbits
+ 1433              		.align	2
+ 1434              		.global	BandPassFilter
+ 1435              		.thumb
+ 1436              		.thumb_func
+ 1437              		.type	BandPassFilter, %function
+ 1438              	BandPassFilter:
+ 1439              	.LFB69:
+ 186:..\src/vibrotactile_control.c **** 
+ 187:..\src/vibrotactile_control.c **** /*******************************************************************************
+ 188:..\src/vibrotactile_control.c **** * Function Name: BandPassFilter
+ 189:..\src/vibrotactile_control.c **** *********************************************************************************/
+ 190:..\src/vibrotactile_control.c **** float BandPassFilter(float new_value, int idx, int dir){
+ 1440              		.loc 1 190 0
+ 1441              		.cfi_startproc
+ 1442              		@ args = 0, pretend = 0, frame = 16
+ 1443              		@ frame_needed = 1, uses_anonymous_args = 0
+ 1444 0000 80B5     		push	{r7, lr}
+ 1445              		.cfi_def_cfa_offset 8
+ 1446              		.cfi_offset 7, -8
+ 1447              		.cfi_offset 14, -4
+ 1448 0002 84B0     		sub	sp, sp, #16
+ 1449              		.cfi_def_cfa_offset 24
+ 1450 0004 00AF     		add	r7, sp, #0
+ 1451              		.cfi_def_cfa_register 7
+ 1452 0006 F860     		str	r0, [r7, #12]	@ float
+ 1453 0008 B960     		str	r1, [r7, #8]
+ 1454 000a 7A60     		str	r2, [r7, #4]
+ 191:..\src/vibrotactile_control.c **** 
+ 192:..\src/vibrotactile_control.c ****     vect_acc_old4[idx][dir] = vect_acc_old3[idx][dir];
+ 1455              		.loc 1 192 0
+ 1456 000c AB49     		ldr	r1, .L63
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZTBIsW.s 			page 30
+
+
+ 1457 000e BA68     		ldr	r2, [r7, #8]
+ 1458 0010 1346     		mov	r3, r2
+ 1459 0012 5B00     		lsls	r3, r3, #1
+ 1460 0014 1344     		add	r3, r3, r2
+ 1461 0016 7A68     		ldr	r2, [r7, #4]
+ 1462 0018 1344     		add	r3, r3, r2
+ 1463 001a 51F82310 		ldr	r1, [r1, r3, lsl #2]	@ float
+ 1464 001e A848     		ldr	r0, .L63+4
+ 1465 0020 BA68     		ldr	r2, [r7, #8]
+ 1466 0022 1346     		mov	r3, r2
+ 1467 0024 5B00     		lsls	r3, r3, #1
+ 1468 0026 1344     		add	r3, r3, r2
+ 1469 0028 7A68     		ldr	r2, [r7, #4]
+ 1470 002a 1344     		add	r3, r3, r2
+ 1471 002c 40F82310 		str	r1, [r0, r3, lsl #2]	@ float
+ 193:..\src/vibrotactile_control.c ****     vect_acc_old3[idx][dir] = vect_acc_old2[idx][dir];
+ 1472              		.loc 1 193 0
+ 1473 0030 A449     		ldr	r1, .L63+8
+ 1474 0032 BA68     		ldr	r2, [r7, #8]
+ 1475 0034 1346     		mov	r3, r2
+ 1476 0036 5B00     		lsls	r3, r3, #1
+ 1477 0038 1344     		add	r3, r3, r2
+ 1478 003a 7A68     		ldr	r2, [r7, #4]
+ 1479 003c 1344     		add	r3, r3, r2
+ 1480 003e 51F82310 		ldr	r1, [r1, r3, lsl #2]	@ float
+ 1481 0042 9E48     		ldr	r0, .L63
+ 1482 0044 BA68     		ldr	r2, [r7, #8]
+ 1483 0046 1346     		mov	r3, r2
+ 1484 0048 5B00     		lsls	r3, r3, #1
+ 1485 004a 1344     		add	r3, r3, r2
+ 1486 004c 7A68     		ldr	r2, [r7, #4]
+ 1487 004e 1344     		add	r3, r3, r2
+ 1488 0050 40F82310 		str	r1, [r0, r3, lsl #2]	@ float
+ 194:..\src/vibrotactile_control.c ****     vect_acc_old2[idx][dir] = vect_acc_old[idx][dir];
+ 1489              		.loc 1 194 0
+ 1490 0054 9C49     		ldr	r1, .L63+12
+ 1491 0056 BA68     		ldr	r2, [r7, #8]
+ 1492 0058 1346     		mov	r3, r2
+ 1493 005a 5B00     		lsls	r3, r3, #1
+ 1494 005c 1344     		add	r3, r3, r2
+ 1495 005e 7A68     		ldr	r2, [r7, #4]
+ 1496 0060 1344     		add	r3, r3, r2
+ 1497 0062 51F82310 		ldr	r1, [r1, r3, lsl #2]	@ float
+ 1498 0066 9748     		ldr	r0, .L63+8
+ 1499 0068 BA68     		ldr	r2, [r7, #8]
+ 1500 006a 1346     		mov	r3, r2
+ 1501 006c 5B00     		lsls	r3, r3, #1
+ 1502 006e 1344     		add	r3, r3, r2
+ 1503 0070 7A68     		ldr	r2, [r7, #4]
+ 1504 0072 1344     		add	r3, r3, r2
+ 1505 0074 40F82310 		str	r1, [r0, r3, lsl #2]	@ float
+ 195:..\src/vibrotactile_control.c ****     vect_acc_old[idx][dir] = vect_acc[idx][dir];
+ 1506              		.loc 1 195 0
+ 1507 0078 9449     		ldr	r1, .L63+16
+ 1508 007a BA68     		ldr	r2, [r7, #8]
+ 1509 007c 1346     		mov	r3, r2
+ 1510 007e 5B00     		lsls	r3, r3, #1
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZTBIsW.s 			page 31
+
+
+ 1511 0080 1344     		add	r3, r3, r2
+ 1512 0082 7A68     		ldr	r2, [r7, #4]
+ 1513 0084 1344     		add	r3, r3, r2
+ 1514 0086 51F82310 		ldr	r1, [r1, r3, lsl #2]	@ float
+ 1515 008a 8F48     		ldr	r0, .L63+12
+ 1516 008c BA68     		ldr	r2, [r7, #8]
+ 1517 008e 1346     		mov	r3, r2
+ 1518 0090 5B00     		lsls	r3, r3, #1
+ 1519 0092 1344     		add	r3, r3, r2
+ 1520 0094 7A68     		ldr	r2, [r7, #4]
+ 1521 0096 1344     		add	r3, r3, r2
+ 1522 0098 40F82310 		str	r1, [r0, r3, lsl #2]	@ float
+ 196:..\src/vibrotactile_control.c ****     
+ 197:..\src/vibrotactile_control.c ****     vect_acc_old4_filt[idx][dir] = vect_acc_old3_filt[idx][dir];
+ 1523              		.loc 1 197 0
+ 1524 009c 8C49     		ldr	r1, .L63+20
+ 1525 009e BA68     		ldr	r2, [r7, #8]
+ 1526 00a0 1346     		mov	r3, r2
+ 1527 00a2 5B00     		lsls	r3, r3, #1
+ 1528 00a4 1344     		add	r3, r3, r2
+ 1529 00a6 7A68     		ldr	r2, [r7, #4]
+ 1530 00a8 1344     		add	r3, r3, r2
+ 1531 00aa 51F82310 		ldr	r1, [r1, r3, lsl #2]	@ float
+ 1532 00ae 8948     		ldr	r0, .L63+24
+ 1533 00b0 BA68     		ldr	r2, [r7, #8]
+ 1534 00b2 1346     		mov	r3, r2
+ 1535 00b4 5B00     		lsls	r3, r3, #1
+ 1536 00b6 1344     		add	r3, r3, r2
+ 1537 00b8 7A68     		ldr	r2, [r7, #4]
+ 1538 00ba 1344     		add	r3, r3, r2
+ 1539 00bc 40F82310 		str	r1, [r0, r3, lsl #2]	@ float
+ 198:..\src/vibrotactile_control.c ****     vect_acc_old3_filt[idx][dir] = vect_acc_old2_filt[idx][dir];
+ 1540              		.loc 1 198 0
+ 1541 00c0 8549     		ldr	r1, .L63+28
+ 1542 00c2 BA68     		ldr	r2, [r7, #8]
+ 1543 00c4 1346     		mov	r3, r2
+ 1544 00c6 5B00     		lsls	r3, r3, #1
+ 1545 00c8 1344     		add	r3, r3, r2
+ 1546 00ca 7A68     		ldr	r2, [r7, #4]
+ 1547 00cc 1344     		add	r3, r3, r2
+ 1548 00ce 51F82310 		ldr	r1, [r1, r3, lsl #2]	@ float
+ 1549 00d2 7F48     		ldr	r0, .L63+20
+ 1550 00d4 BA68     		ldr	r2, [r7, #8]
+ 1551 00d6 1346     		mov	r3, r2
+ 1552 00d8 5B00     		lsls	r3, r3, #1
+ 1553 00da 1344     		add	r3, r3, r2
+ 1554 00dc 7A68     		ldr	r2, [r7, #4]
+ 1555 00de 1344     		add	r3, r3, r2
+ 1556 00e0 40F82310 		str	r1, [r0, r3, lsl #2]	@ float
+ 199:..\src/vibrotactile_control.c ****     vect_acc_old2_filt[idx][dir] = vect_acc_old_filt[idx][dir];
+ 1557              		.loc 1 199 0
+ 1558 00e4 7D49     		ldr	r1, .L63+32
+ 1559 00e6 BA68     		ldr	r2, [r7, #8]
+ 1560 00e8 1346     		mov	r3, r2
+ 1561 00ea 5B00     		lsls	r3, r3, #1
+ 1562 00ec 1344     		add	r3, r3, r2
+ 1563 00ee 7A68     		ldr	r2, [r7, #4]
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZTBIsW.s 			page 32
+
+
+ 1564 00f0 1344     		add	r3, r3, r2
+ 1565 00f2 51F82310 		ldr	r1, [r1, r3, lsl #2]	@ float
+ 1566 00f6 7848     		ldr	r0, .L63+28
+ 1567 00f8 BA68     		ldr	r2, [r7, #8]
+ 1568 00fa 1346     		mov	r3, r2
+ 1569 00fc 5B00     		lsls	r3, r3, #1
+ 1570 00fe 1344     		add	r3, r3, r2
+ 1571 0100 7A68     		ldr	r2, [r7, #4]
+ 1572 0102 1344     		add	r3, r3, r2
+ 1573 0104 40F82310 		str	r1, [r0, r3, lsl #2]	@ float
+ 200:..\src/vibrotactile_control.c ****     vect_acc_old_filt[idx][dir] = vect_acc_filt[idx][dir];
+ 1574              		.loc 1 200 0
+ 1575 0108 7549     		ldr	r1, .L63+36
+ 1576 010a BA68     		ldr	r2, [r7, #8]
+ 1577 010c 1346     		mov	r3, r2
+ 1578 010e 5B00     		lsls	r3, r3, #1
+ 1579 0110 1344     		add	r3, r3, r2
+ 1580 0112 7A68     		ldr	r2, [r7, #4]
+ 1581 0114 1344     		add	r3, r3, r2
+ 1582 0116 51F82310 		ldr	r1, [r1, r3, lsl #2]	@ float
+ 1583 011a 7048     		ldr	r0, .L63+32
+ 1584 011c BA68     		ldr	r2, [r7, #8]
+ 1585 011e 1346     		mov	r3, r2
+ 1586 0120 5B00     		lsls	r3, r3, #1
+ 1587 0122 1344     		add	r3, r3, r2
+ 1588 0124 7A68     		ldr	r2, [r7, #4]
+ 1589 0126 1344     		add	r3, r3, r2
+ 1590 0128 40F82310 		str	r1, [r0, r3, lsl #2]	@ float
+ 201:..\src/vibrotactile_control.c ****   
+ 202:..\src/vibrotactile_control.c ****     vect_acc[idx][dir] = new_value;
+ 1591              		.loc 1 202 0
+ 1592 012c 6749     		ldr	r1, .L63+16
+ 1593 012e BA68     		ldr	r2, [r7, #8]
+ 1594 0130 1346     		mov	r3, r2
+ 1595 0132 5B00     		lsls	r3, r3, #1
+ 1596 0134 1344     		add	r3, r3, r2
+ 1597 0136 7A68     		ldr	r2, [r7, #4]
+ 1598 0138 1344     		add	r3, r3, r2
+ 1599 013a FA68     		ldr	r2, [r7, #12]	@ float
+ 1600 013c 41F82320 		str	r2, [r1, r3, lsl #2]	@ float
+ 203:..\src/vibrotactile_control.c **** 
+ 204:..\src/vibrotactile_control.c ****     s1 = ( B_0 ) * ( vect_acc[idx][dir] );
+ 1601              		.loc 1 204 0
+ 1602 0140 6249     		ldr	r1, .L63+16
+ 1603 0142 BA68     		ldr	r2, [r7, #8]
+ 1604 0144 1346     		mov	r3, r2
+ 1605 0146 5B00     		lsls	r3, r3, #1
+ 1606 0148 1344     		add	r3, r3, r2
+ 1607 014a 7A68     		ldr	r2, [r7, #4]
+ 1608 014c 1344     		add	r3, r3, r2
+ 1609 014e 51F82320 		ldr	r2, [r1, r3, lsl #2]	@ float
+ 1610 0152 644B     		ldr	r3, .L63+40
+ 1611 0154 1B68     		ldr	r3, [r3]	@ float
+ 1612 0156 1946     		mov	r1, r3
+ 1613 0158 1046     		mov	r0, r2
+ 1614 015a FFF7FEFF 		bl	__aeabi_fmul
+ 1615 015e 0346     		mov	r3, r0
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZTBIsW.s 			page 33
+
+
+ 1616 0160 1A46     		mov	r2, r3
+ 1617 0162 614B     		ldr	r3, .L63+44
+ 1618 0164 1A60     		str	r2, [r3]	@ float
+ 205:..\src/vibrotactile_control.c ****     s2 = ( B1 ) * ( vect_acc_old[idx][dir] );
+ 1619              		.loc 1 205 0
+ 1620 0166 5849     		ldr	r1, .L63+12
+ 1621 0168 BA68     		ldr	r2, [r7, #8]
+ 1622 016a 1346     		mov	r3, r2
+ 1623 016c 5B00     		lsls	r3, r3, #1
+ 1624 016e 1344     		add	r3, r3, r2
+ 1625 0170 7A68     		ldr	r2, [r7, #4]
+ 1626 0172 1344     		add	r3, r3, r2
+ 1627 0174 51F82320 		ldr	r2, [r1, r3, lsl #2]	@ float
+ 1628 0178 5C4B     		ldr	r3, .L63+48
+ 1629 017a 1B68     		ldr	r3, [r3]	@ float
+ 1630 017c 1946     		mov	r1, r3
+ 1631 017e 1046     		mov	r0, r2
+ 1632 0180 FFF7FEFF 		bl	__aeabi_fmul
+ 1633 0184 0346     		mov	r3, r0
+ 1634 0186 1A46     		mov	r2, r3
+ 1635 0188 594B     		ldr	r3, .L63+52
+ 1636 018a 1A60     		str	r2, [r3]	@ float
+ 206:..\src/vibrotactile_control.c ****     s3 = ( B2 ) * ( vect_acc_old2[idx][dir] );
+ 1637              		.loc 1 206 0
+ 1638 018c 4D49     		ldr	r1, .L63+8
+ 1639 018e BA68     		ldr	r2, [r7, #8]
+ 1640 0190 1346     		mov	r3, r2
+ 1641 0192 5B00     		lsls	r3, r3, #1
+ 1642 0194 1344     		add	r3, r3, r2
+ 1643 0196 7A68     		ldr	r2, [r7, #4]
+ 1644 0198 1344     		add	r3, r3, r2
+ 1645 019a 51F82320 		ldr	r2, [r1, r3, lsl #2]	@ float
+ 1646 019e 554B     		ldr	r3, .L63+56
+ 1647 01a0 1B68     		ldr	r3, [r3]	@ float
+ 1648 01a2 1946     		mov	r1, r3
+ 1649 01a4 1046     		mov	r0, r2
+ 1650 01a6 FFF7FEFF 		bl	__aeabi_fmul
+ 1651 01aa 0346     		mov	r3, r0
+ 1652 01ac 1A46     		mov	r2, r3
+ 1653 01ae 524B     		ldr	r3, .L63+60
+ 1654 01b0 1A60     		str	r2, [r3]	@ float
+ 207:..\src/vibrotactile_control.c ****     s4 = ( B3 ) * ( vect_acc_old3[idx][dir] );
+ 1655              		.loc 1 207 0
+ 1656 01b2 4249     		ldr	r1, .L63
+ 1657 01b4 BA68     		ldr	r2, [r7, #8]
+ 1658 01b6 1346     		mov	r3, r2
+ 1659 01b8 5B00     		lsls	r3, r3, #1
+ 1660 01ba 1344     		add	r3, r3, r2
+ 1661 01bc 7A68     		ldr	r2, [r7, #4]
+ 1662 01be 1344     		add	r3, r3, r2
+ 1663 01c0 51F82320 		ldr	r2, [r1, r3, lsl #2]	@ float
+ 1664 01c4 4D4B     		ldr	r3, .L63+64
+ 1665 01c6 1B68     		ldr	r3, [r3]	@ float
+ 1666 01c8 1946     		mov	r1, r3
+ 1667 01ca 1046     		mov	r0, r2
+ 1668 01cc FFF7FEFF 		bl	__aeabi_fmul
+ 1669 01d0 0346     		mov	r3, r0
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZTBIsW.s 			page 34
+
+
+ 1670 01d2 1A46     		mov	r2, r3
+ 1671 01d4 4A4B     		ldr	r3, .L63+68
+ 1672 01d6 1A60     		str	r2, [r3]	@ float
+ 208:..\src/vibrotactile_control.c ****     s5 = ( B4 ) * ( vect_acc_old4[idx][dir] );
+ 1673              		.loc 1 208 0
+ 1674 01d8 3949     		ldr	r1, .L63+4
+ 1675 01da BA68     		ldr	r2, [r7, #8]
+ 1676 01dc 1346     		mov	r3, r2
+ 1677 01de 5B00     		lsls	r3, r3, #1
+ 1678 01e0 1344     		add	r3, r3, r2
+ 1679 01e2 7A68     		ldr	r2, [r7, #4]
+ 1680 01e4 1344     		add	r3, r3, r2
+ 1681 01e6 51F82320 		ldr	r2, [r1, r3, lsl #2]	@ float
+ 1682 01ea 464B     		ldr	r3, .L63+72
+ 1683 01ec 1B68     		ldr	r3, [r3]	@ float
+ 1684 01ee 1946     		mov	r1, r3
+ 1685 01f0 1046     		mov	r0, r2
+ 1686 01f2 FFF7FEFF 		bl	__aeabi_fmul
+ 1687 01f6 0346     		mov	r3, r0
+ 1688 01f8 1A46     		mov	r2, r3
+ 1689 01fa 434B     		ldr	r3, .L63+76
+ 1690 01fc 1A60     		str	r2, [r3]	@ float
+ 209:..\src/vibrotactile_control.c ****     s7 = ( A1 ) * ( vect_acc_old_filt[idx][dir] );
+ 1691              		.loc 1 209 0
+ 1692 01fe 3749     		ldr	r1, .L63+32
+ 1693 0200 BA68     		ldr	r2, [r7, #8]
+ 1694 0202 1346     		mov	r3, r2
+ 1695 0204 5B00     		lsls	r3, r3, #1
+ 1696 0206 1344     		add	r3, r3, r2
+ 1697 0208 7A68     		ldr	r2, [r7, #4]
+ 1698 020a 1344     		add	r3, r3, r2
+ 1699 020c 51F82320 		ldr	r2, [r1, r3, lsl #2]	@ float
+ 1700 0210 3E4B     		ldr	r3, .L63+80
+ 1701 0212 1B68     		ldr	r3, [r3]	@ float
+ 1702 0214 1946     		mov	r1, r3
+ 1703 0216 1046     		mov	r0, r2
+ 1704 0218 FFF7FEFF 		bl	__aeabi_fmul
+ 1705 021c 0346     		mov	r3, r0
+ 1706 021e 1A46     		mov	r2, r3
+ 1707 0220 3B4B     		ldr	r3, .L63+84
+ 1708 0222 1A60     		str	r2, [r3]	@ float
+ 210:..\src/vibrotactile_control.c ****     s8 = ( A2 ) * ( vect_acc_old2_filt[idx][dir] );
+ 1709              		.loc 1 210 0
+ 1710 0224 2C49     		ldr	r1, .L63+28
+ 1711 0226 BA68     		ldr	r2, [r7, #8]
+ 1712 0228 1346     		mov	r3, r2
+ 1713 022a 5B00     		lsls	r3, r3, #1
+ 1714 022c 1344     		add	r3, r3, r2
+ 1715 022e 7A68     		ldr	r2, [r7, #4]
+ 1716 0230 1344     		add	r3, r3, r2
+ 1717 0232 51F82320 		ldr	r2, [r1, r3, lsl #2]	@ float
+ 1718 0236 374B     		ldr	r3, .L63+88
+ 1719 0238 1B68     		ldr	r3, [r3]	@ float
+ 1720 023a 1946     		mov	r1, r3
+ 1721 023c 1046     		mov	r0, r2
+ 1722 023e FFF7FEFF 		bl	__aeabi_fmul
+ 1723 0242 0346     		mov	r3, r0
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZTBIsW.s 			page 35
+
+
+ 1724 0244 1A46     		mov	r2, r3
+ 1725 0246 344B     		ldr	r3, .L63+92
+ 1726 0248 1A60     		str	r2, [r3]	@ float
+ 211:..\src/vibrotactile_control.c ****     s9 = ( A3 ) * ( vect_acc_old3_filt[idx][dir] );
+ 1727              		.loc 1 211 0
+ 1728 024a 2149     		ldr	r1, .L63+20
+ 1729 024c BA68     		ldr	r2, [r7, #8]
+ 1730 024e 1346     		mov	r3, r2
+ 1731 0250 5B00     		lsls	r3, r3, #1
+ 1732 0252 1344     		add	r3, r3, r2
+ 1733 0254 7A68     		ldr	r2, [r7, #4]
+ 1734 0256 1344     		add	r3, r3, r2
+ 1735 0258 51F82320 		ldr	r2, [r1, r3, lsl #2]	@ float
+ 1736 025c 2F4B     		ldr	r3, .L63+96
+ 1737 025e 1B68     		ldr	r3, [r3]	@ float
+ 1738 0260 1946     		mov	r1, r3
+ 1739 0262 1046     		mov	r0, r2
+ 1740 0264 FFF7FEFF 		bl	__aeabi_fmul
+ 1741 0268 0346     		mov	r3, r0
+ 1742 026a 1A46     		mov	r2, r3
+ 1743 026c 2C4B     		ldr	r3, .L63+100
+ 1744 026e 1A60     		str	r2, [r3]	@ float
+ 212:..\src/vibrotactile_control.c ****     s10 = ( A4 ) * ( vect_acc_old4_filt[idx][dir] );
+ 1745              		.loc 1 212 0
+ 1746 0270 1849     		ldr	r1, .L63+24
+ 1747 0272 BA68     		ldr	r2, [r7, #8]
+ 1748 0274 1346     		mov	r3, r2
+ 1749 0276 5B00     		lsls	r3, r3, #1
+ 1750 0278 1344     		add	r3, r3, r2
+ 1751 027a 7A68     		ldr	r2, [r7, #4]
+ 1752 027c 1344     		add	r3, r3, r2
+ 1753 027e 51F82320 		ldr	r2, [r1, r3, lsl #2]	@ float
+ 1754 0282 284B     		ldr	r3, .L63+104
+ 1755 0284 1B68     		ldr	r3, [r3]	@ float
+ 1756 0286 1946     		mov	r1, r3
+ 1757 0288 1046     		mov	r0, r2
+ 1758 028a FFF7FEFF 		bl	__aeabi_fmul
+ 1759 028e 0346     		mov	r3, r0
+ 1760 0290 1A46     		mov	r2, r3
+ 1761 0292 254B     		ldr	r3, .L63+108
+ 1762 0294 1A60     		str	r2, [r3]	@ float
+ 213:..\src/vibrotactile_control.c **** 
+ 214:..\src/vibrotactile_control.c ****     vect_acc_filt[idx][dir] = ( s1 + s2 + s3 + s4 + s5 -s7 -s8 -s9 - s10 ); 
+ 1763              		.loc 1 214 0
+ 1764 0296 144B     		ldr	r3, .L63+44
+ 1765 0298 1A68     		ldr	r2, [r3]	@ float
+ 1766 029a 154B     		ldr	r3, .L63+52
+ 1767 029c 1B68     		ldr	r3, [r3]	@ float
+ 1768 029e 1946     		mov	r1, r3
+ 1769 02a0 1046     		mov	r0, r2
+ 1770 02a2 FFF7FEFF 		bl	__aeabi_fadd
+ 1771 02a6 0346     		mov	r3, r0
+ 1772 02a8 1A46     		mov	r2, r3
+ 1773 02aa 134B     		ldr	r3, .L63+60
+ 1774 02ac 1B68     		ldr	r3, [r3]	@ float
+ 1775 02ae 1946     		mov	r1, r3
+ 1776 02b0 1046     		mov	r0, r2
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZTBIsW.s 			page 36
+
+
+ 1777 02b2 FFF7FEFF 		bl	__aeabi_fadd
+ 1778 02b6 0346     		mov	r3, r0
+ 1779 02b8 1A46     		mov	r2, r3
+ 1780 02ba 37E0     		b	.L64
+ 1781              	.L65:
+ 1782              		.align	2
+ 1783              	.L63:
+ 1784 02bc 00000000 		.word	vect_acc_old3
+ 1785 02c0 00000000 		.word	vect_acc_old4
+ 1786 02c4 00000000 		.word	vect_acc_old2
+ 1787 02c8 00000000 		.word	vect_acc_old
+ 1788 02cc 00000000 		.word	vect_acc
+ 1789 02d0 00000000 		.word	vect_acc_old3_filt
+ 1790 02d4 00000000 		.word	vect_acc_old4_filt
+ 1791 02d8 00000000 		.word	vect_acc_old2_filt
+ 1792 02dc 00000000 		.word	vect_acc_old_filt
+ 1793 02e0 00000000 		.word	vect_acc_filt
+ 1794 02e4 00000000 		.word	B_0
+ 1795 02e8 00000000 		.word	s1
+ 1796 02ec 00000000 		.word	B1
+ 1797 02f0 00000000 		.word	s2
+ 1798 02f4 00000000 		.word	B2
+ 1799 02f8 00000000 		.word	s3
+ 1800 02fc 00000000 		.word	B3
+ 1801 0300 00000000 		.word	s4
+ 1802 0304 00000000 		.word	B4
+ 1803 0308 00000000 		.word	s5
+ 1804 030c 00000000 		.word	A1
+ 1805 0310 00000000 		.word	s7
+ 1806 0314 00000000 		.word	A2
+ 1807 0318 00000000 		.word	s8
+ 1808 031c 00000000 		.word	A3
+ 1809 0320 00000000 		.word	s9
+ 1810 0324 00000000 		.word	A4
+ 1811 0328 00000000 		.word	s10
+ 1812              	.L64:
+ 1813 032c 224B     		ldr	r3, .L66
+ 1814 032e 1B68     		ldr	r3, [r3]	@ float
+ 1815 0330 1946     		mov	r1, r3
+ 1816 0332 1046     		mov	r0, r2
+ 1817 0334 FFF7FEFF 		bl	__aeabi_fadd
+ 1818 0338 0346     		mov	r3, r0
+ 1819 033a 1A46     		mov	r2, r3
+ 1820 033c 1F4B     		ldr	r3, .L66+4
+ 1821 033e 1B68     		ldr	r3, [r3]	@ float
+ 1822 0340 1946     		mov	r1, r3
+ 1823 0342 1046     		mov	r0, r2
+ 1824 0344 FFF7FEFF 		bl	__aeabi_fadd
+ 1825 0348 0346     		mov	r3, r0
+ 1826 034a 1A46     		mov	r2, r3
+ 1827 034c 1C4B     		ldr	r3, .L66+8
+ 1828 034e 1B68     		ldr	r3, [r3]	@ float
+ 1829 0350 1946     		mov	r1, r3
+ 1830 0352 1046     		mov	r0, r2
+ 1831 0354 FFF7FEFF 		bl	__aeabi_fsub
+ 1832 0358 0346     		mov	r3, r0
+ 1833 035a 1A46     		mov	r2, r3
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZTBIsW.s 			page 37
+
+
+ 1834 035c 194B     		ldr	r3, .L66+12
+ 1835 035e 1B68     		ldr	r3, [r3]	@ float
+ 1836 0360 1946     		mov	r1, r3
+ 1837 0362 1046     		mov	r0, r2
+ 1838 0364 FFF7FEFF 		bl	__aeabi_fsub
+ 1839 0368 0346     		mov	r3, r0
+ 1840 036a 1A46     		mov	r2, r3
+ 1841 036c 164B     		ldr	r3, .L66+16
+ 1842 036e 1B68     		ldr	r3, [r3]	@ float
+ 1843 0370 1946     		mov	r1, r3
+ 1844 0372 1046     		mov	r0, r2
+ 1845 0374 FFF7FEFF 		bl	__aeabi_fsub
+ 1846 0378 0346     		mov	r3, r0
+ 1847 037a 1A46     		mov	r2, r3
+ 1848 037c 134B     		ldr	r3, .L66+20
+ 1849 037e 1B68     		ldr	r3, [r3]	@ float
+ 1850 0380 1946     		mov	r1, r3
+ 1851 0382 1046     		mov	r0, r2
+ 1852 0384 FFF7FEFF 		bl	__aeabi_fsub
+ 1853 0388 0346     		mov	r3, r0
+ 1854 038a 1846     		mov	r0, r3
+ 1855 038c 1049     		ldr	r1, .L66+24
+ 1856 038e BA68     		ldr	r2, [r7, #8]
+ 1857 0390 1346     		mov	r3, r2
+ 1858 0392 5B00     		lsls	r3, r3, #1
+ 1859 0394 1344     		add	r3, r3, r2
+ 1860 0396 7A68     		ldr	r2, [r7, #4]
+ 1861 0398 1344     		add	r3, r3, r2
+ 1862 039a 41F82300 		str	r0, [r1, r3, lsl #2]	@ float
+ 215:..\src/vibrotactile_control.c **** 
+ 216:..\src/vibrotactile_control.c ****     return (vect_acc_filt[idx][dir]); 
+ 1863              		.loc 1 216 0
+ 1864 039e 0C49     		ldr	r1, .L66+24
+ 1865 03a0 BA68     		ldr	r2, [r7, #8]
+ 1866 03a2 1346     		mov	r3, r2
+ 1867 03a4 5B00     		lsls	r3, r3, #1
+ 1868 03a6 1344     		add	r3, r3, r2
+ 1869 03a8 7A68     		ldr	r2, [r7, #4]
+ 1870 03aa 1344     		add	r3, r3, r2
+ 1871 03ac 51F82330 		ldr	r3, [r1, r3, lsl #2]	@ float
+ 217:..\src/vibrotactile_control.c ****      
+ 218:..\src/vibrotactile_control.c **** }
+ 1872              		.loc 1 218 0
+ 1873 03b0 1846     		mov	r0, r3
+ 1874 03b2 1037     		adds	r7, r7, #16
+ 1875              		.cfi_def_cfa_offset 8
+ 1876 03b4 BD46     		mov	sp, r7
+ 1877              		.cfi_def_cfa_register 13
+ 1878              		@ sp needed
+ 1879 03b6 80BD     		pop	{r7, pc}
+ 1880              	.L67:
+ 1881              		.align	2
+ 1882              	.L66:
+ 1883 03b8 00000000 		.word	s4
+ 1884 03bc 00000000 		.word	s5
+ 1885 03c0 00000000 		.word	s7
+ 1886 03c4 00000000 		.word	s8
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZTBIsW.s 			page 38
+
+
+ 1887 03c8 00000000 		.word	s9
+ 1888 03cc 00000000 		.word	s10
+ 1889 03d0 00000000 		.word	vect_acc_filt
+ 1890              		.cfi_endproc
+ 1891              	.LFE69:
+ 1892              		.size	BandPassFilter, .-BandPassFilter
+ 1893              		.global	__aeabi_f2iz
+ 1894              		.section	.text.GeneratePWMValue,"ax",%progbits
+ 1895              		.align	2
+ 1896              		.global	GeneratePWMValue
+ 1897              		.thumb
+ 1898              		.thumb_func
+ 1899              		.type	GeneratePWMValue, %function
+ 1900              	GeneratePWMValue:
+ 1901              	.LFB70:
+ 219:..\src/vibrotactile_control.c **** 
+ 220:..\src/vibrotactile_control.c **** /*******************************************************************************
+ 221:..\src/vibrotactile_control.c **** * Function Name: Generate PWM Value
+ 222:..\src/vibrotactile_control.c **** *********************************************************************************/
+ 223:..\src/vibrotactile_control.c **** 
+ 224:..\src/vibrotactile_control.c **** int32 GeneratePWMValue(float acc_filt_sum){ 
+ 1902              		.loc 1 224 0
+ 1903              		.cfi_startproc
+ 1904              		@ args = 0, pretend = 0, frame = 16
+ 1905              		@ frame_needed = 1, uses_anonymous_args = 0
+ 1906 0000 80B5     		push	{r7, lr}
+ 1907              		.cfi_def_cfa_offset 8
+ 1908              		.cfi_offset 7, -8
+ 1909              		.cfi_offset 14, -4
+ 1910 0002 84B0     		sub	sp, sp, #16
+ 1911              		.cfi_def_cfa_offset 24
+ 1912 0004 00AF     		add	r7, sp, #0
+ 1913              		.cfi_def_cfa_register 7
+ 1914 0006 7860     		str	r0, [r7, #4]	@ float
+ 225:..\src/vibrotactile_control.c ****     int32 pwm_hapt;
+ 226:..\src/vibrotactile_control.c ****     pwm_hapt = (int32)(SCALA * acc_filt_sum );
+ 1915              		.loc 1 226 0
+ 1916 0008 0749     		ldr	r1, .L70
+ 1917 000a 7868     		ldr	r0, [r7, #4]	@ float
+ 1918 000c FFF7FEFF 		bl	__aeabi_fmul
+ 1919 0010 0346     		mov	r3, r0
+ 1920 0012 1846     		mov	r0, r3
+ 1921 0014 FFF7FEFF 		bl	__aeabi_f2iz
+ 1922 0018 0346     		mov	r3, r0
+ 1923 001a FB60     		str	r3, [r7, #12]
+ 227:..\src/vibrotactile_control.c ****     return pwm_hapt;
+ 1924              		.loc 1 227 0
+ 1925 001c FB68     		ldr	r3, [r7, #12]
+ 228:..\src/vibrotactile_control.c **** }
+ 1926              		.loc 1 228 0
+ 1927 001e 1846     		mov	r0, r3
+ 1928 0020 1037     		adds	r7, r7, #16
+ 1929              		.cfi_def_cfa_offset 8
+ 1930 0022 BD46     		mov	sp, r7
+ 1931              		.cfi_def_cfa_register 13
+ 1932              		@ sp needed
+ 1933 0024 80BD     		pop	{r7, pc}
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZTBIsW.s 			page 39
+
+
+ 1934              	.L71:
+ 1935 0026 00BF     		.align	2
+ 1936              	.L70:
+ 1937 0028 0000F041 		.word	1106247680
+ 1938              		.cfi_endproc
+ 1939              	.LFE70:
+ 1940              		.size	GeneratePWMValue, .-GeneratePWMValue
+ 1941              		.section	.text.driveVibrotactileFeedback,"ax",%progbits
+ 1942              		.align	2
+ 1943              		.global	driveVibrotactileFeedback
+ 1944              		.thumb
+ 1945              		.thumb_func
+ 1946              		.type	driveVibrotactileFeedback, %function
+ 1947              	driveVibrotactileFeedback:
+ 1948              	.LFB71:
+ 229:..\src/vibrotactile_control.c **** 
+ 230:..\src/vibrotactile_control.c **** 
+ 231:..\src/vibrotactile_control.c **** void driveVibrotactileFeedback(){
+ 1949              		.loc 1 231 0
+ 1950              		.cfi_startproc
+ 1951              		@ args = 0, pretend = 0, frame = 8
+ 1952              		@ frame_needed = 1, uses_anonymous_args = 0
+ 1953 0000 80B5     		push	{r7, lr}
+ 1954              		.cfi_def_cfa_offset 8
+ 1955              		.cfi_offset 7, -8
+ 1956              		.cfi_offset 14, -4
+ 1957 0002 82B0     		sub	sp, sp, #8
+ 1958              		.cfi_def_cfa_offset 16
+ 1959 0004 00AF     		add	r7, sp, #0
+ 1960              		.cfi_def_cfa_register 7
+ 232:..\src/vibrotactile_control.c ****     uint8 i;
+ 233:..\src/vibrotactile_control.c **** 
+ 234:..\src/vibrotactile_control.c ****         for (i = 0; i < NUM_OF_EXTERNAL_IMU; i++) 
+ 1961              		.loc 1 234 0
+ 1962 0006 0023     		movs	r3, #0
+ 1963 0008 FB71     		strb	r3, [r7, #7]
+ 1964 000a 27E0     		b	.L73
+ 1965              	.L75:
+ 235:..\src/vibrotactile_control.c ****         {         
+ 236:..\src/vibrotactile_control.c ****             OutliersDeletion(i);
+ 1966              		.loc 1 236 0
+ 1967 000c FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 1968 000e 1846     		mov	r0, r3
+ 1969 0010 FFF7FEFF 		bl	OutliersDeletion
+ 237:..\src/vibrotactile_control.c ****             SignalFiltering(i);
+ 1970              		.loc 1 237 0
+ 1971 0014 FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 1972 0016 1846     		mov	r0, r3
+ 1973 0018 FFF7FEFF 		bl	SignalFiltering
+ 238:..\src/vibrotactile_control.c ****             SingleAxisMapping(i);  
+ 1974              		.loc 1 238 0
+ 1975 001c FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 1976 001e 1846     		mov	r0, r3
+ 1977 0020 FFF7FEFF 		bl	SingleAxisMapping
+ 239:..\src/vibrotactile_control.c ****             ActuatorsInputComputation(i);
+ 1978              		.loc 1 239 0
+ 1979 0024 FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZTBIsW.s 			page 40
+
+
+ 1980 0026 1846     		mov	r0, r3
+ 1981 0028 FFF7FEFF 		bl	ActuatorsInputComputation
+ 240:..\src/vibrotactile_control.c ****     
+ 241:..\src/vibrotactile_control.c ****             if (input_act_sent[i] < 10)
+ 1982              		.loc 1 241 0
+ 1983 002c FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 1984 002e 144A     		ldr	r2, .L76
+ 1985 0030 52F82330 		ldr	r3, [r2, r3, lsl #2]
+ 1986 0034 092B     		cmp	r3, #9
+ 1987 0036 04DC     		bgt	.L74
+ 242:..\src/vibrotactile_control.c ****                 input_act_sent[i] = 0;
+ 1988              		.loc 1 242 0
+ 1989 0038 FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 1990 003a 114A     		ldr	r2, .L76
+ 1991 003c 0021     		movs	r1, #0
+ 1992 003e 42F82310 		str	r1, [r2, r3, lsl #2]
+ 1993              	.L74:
+ 243:..\src/vibrotactile_control.c ****     
+ 244:..\src/vibrotactile_control.c ****             g_refNew_vibrotactile[i].pwm = (int16)input_act_sent[i] ;
+ 1994              		.loc 1 244 0 discriminator 2
+ 1995 0042 FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 1996 0044 FA79     		ldrb	r2, [r7, #7]	@ zero_extendqisi2
+ 1997 0046 0E49     		ldr	r1, .L76
+ 1998 0048 51F82220 		ldr	r2, [r1, r2, lsl #2]
+ 1999 004c 12B2     		sxth	r2, r2
+ 2000 004e 1146     		mov	r1, r2
+ 2001 0050 0C4A     		ldr	r2, .L76+4
+ 2002 0052 42F82310 		str	r1, [r2, r3, lsl #2]
+ 234:..\src/vibrotactile_control.c ****         {         
+ 2003              		.loc 1 234 0 discriminator 2
+ 2004 0056 FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 2005 0058 0133     		adds	r3, r3, #1
+ 2006 005a FB71     		strb	r3, [r7, #7]
+ 2007              	.L73:
+ 234:..\src/vibrotactile_control.c ****         {         
+ 2008              		.loc 1 234 0 is_stmt 0 discriminator 1
+ 2009 005c FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 2010 005e 012B     		cmp	r3, #1
+ 2011 0060 D4D9     		bls	.L75
+ 245:..\src/vibrotactile_control.c **** 
+ 246:..\src/vibrotactile_control.c ****         }
+ 247:..\src/vibrotactile_control.c **** 
+ 248:..\src/vibrotactile_control.c ****           conta_1 = conta_1 + 1;        
+ 2012              		.loc 1 248 0 is_stmt 1
+ 2013 0062 094B     		ldr	r3, .L76+8
+ 2014 0064 1B68     		ldr	r3, [r3]	@ float
+ 2015 0066 4FF07E51 		mov	r1, #1065353216
+ 2016 006a 1846     		mov	r0, r3
+ 2017 006c FFF7FEFF 		bl	__aeabi_fadd
+ 2018 0070 0346     		mov	r3, r0
+ 2019 0072 1A46     		mov	r2, r3
+ 2020 0074 044B     		ldr	r3, .L76+8
+ 2021 0076 1A60     		str	r2, [r3]	@ float
+ 249:..\src/vibrotactile_control.c ****   
+ 250:..\src/vibrotactile_control.c **** }
+ 2022              		.loc 1 250 0
+ 2023 0078 00BF     		nop
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZTBIsW.s 			page 41
+
+
+ 2024 007a 0837     		adds	r7, r7, #8
+ 2025              		.cfi_def_cfa_offset 8
+ 2026 007c BD46     		mov	sp, r7
+ 2027              		.cfi_def_cfa_register 13
+ 2028              		@ sp needed
+ 2029 007e 80BD     		pop	{r7, pc}
+ 2030              	.L77:
+ 2031              		.align	2
+ 2032              	.L76:
+ 2033 0080 00000000 		.word	input_act_sent
+ 2034 0084 00000000 		.word	g_refNew_vibrotactile
+ 2035 0088 00000000 		.word	conta_1
+ 2036              		.cfi_endproc
+ 2037              	.LFE71:
+ 2038              		.size	driveVibrotactileFeedback, .-driveVibrotactileFeedback
+ 2039              		.text
+ 2040              	.Letext0:
+ 2041              		.file 2 "c:\\program files (x86)\\cypress\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.
+ 2042              		.file 3 "c:\\program files (x86)\\cypress\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.
+ 2043              		.file 4 "Generated_Source\\PSoC5/cytypes.h"
+ 2044              		.file 5 "Generated_Source\\PSoC5/core_cm3.h"
+ 2045              		.file 6 "..\\src\\globals.h"
+ 2046              		.section	.debug_info,"",%progbits
+ 2047              	.Ldebug_info0:
+ 2048 0000 A9040000 		.4byte	0x4a9
+ 2049 0004 0400     		.2byte	0x4
+ 2050 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 2051 000a 04       		.byte	0x4
+ 2052 000b 01       		.uleb128 0x1
+ 2053 000c 7F000000 		.4byte	.LASF57
+ 2054 0010 0C       		.byte	0xc
+ 2055 0011 9F010000 		.4byte	.LASF58
+ 2056 0015 A6030000 		.4byte	.LASF59
+ 2057 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 2058 001d 00000000 		.4byte	0
+ 2059 0021 00000000 		.4byte	.Ldebug_line0
+ 2060 0025 02       		.uleb128 0x2
+ 2061 0026 01       		.byte	0x1
+ 2062 0027 06       		.byte	0x6
+ 2063 0028 40020000 		.4byte	.LASF0
+ 2064 002c 02       		.uleb128 0x2
+ 2065 002d 01       		.byte	0x1
+ 2066 002e 08       		.byte	0x8
+ 2067 002f 0B020000 		.4byte	.LASF1
+ 2068 0033 02       		.uleb128 0x2
+ 2069 0034 02       		.byte	0x2
+ 2070 0035 05       		.byte	0x5
+ 2071 0036 6C000000 		.4byte	.LASF2
+ 2072 003a 02       		.uleb128 0x2
+ 2073 003b 02       		.byte	0x2
+ 2074 003c 07       		.byte	0x7
+ 2075 003d 9E020000 		.4byte	.LASF3
+ 2076 0041 03       		.uleb128 0x3
+ 2077 0042 49030000 		.4byte	.LASF9
+ 2078 0046 02       		.byte	0x2
+ 2079 0047 3F       		.byte	0x3f
+ 2080 0048 4C000000 		.4byte	0x4c
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZTBIsW.s 			page 42
+
+
+ 2081 004c 02       		.uleb128 0x2
+ 2082 004d 04       		.byte	0x4
+ 2083 004e 05       		.byte	0x5
+ 2084 004f 8C010000 		.4byte	.LASF4
+ 2085 0053 02       		.uleb128 0x2
+ 2086 0054 04       		.byte	0x4
+ 2087 0055 07       		.byte	0x7
+ 2088 0056 D7020000 		.4byte	.LASF5
+ 2089 005a 02       		.uleb128 0x2
+ 2090 005b 08       		.byte	0x8
+ 2091 005c 05       		.byte	0x5
+ 2092 005d 70010000 		.4byte	.LASF6
+ 2093 0061 02       		.uleb128 0x2
+ 2094 0062 08       		.byte	0x8
+ 2095 0063 07       		.byte	0x7
+ 2096 0064 4C020000 		.4byte	.LASF7
+ 2097 0068 04       		.uleb128 0x4
+ 2098 0069 04       		.byte	0x4
+ 2099 006a 05       		.byte	0x5
+ 2100 006b 696E7400 		.ascii	"int\000"
+ 2101 006f 02       		.uleb128 0x2
+ 2102 0070 04       		.byte	0x4
+ 2103 0071 07       		.byte	0x7
+ 2104 0072 82020000 		.4byte	.LASF8
+ 2105 0076 03       		.uleb128 0x3
+ 2106 0077 B6020000 		.4byte	.LASF10
+ 2107 007b 03       		.byte	0x3
+ 2108 007c 2C       		.byte	0x2c
+ 2109 007d 41000000 		.4byte	0x41
+ 2110 0081 05       		.uleb128 0x5
+ 2111 0082 49010000 		.4byte	.LASF11
+ 2112 0086 04       		.byte	0x4
+ 2113 0087 E401     		.2byte	0x1e4
+ 2114 0089 2C000000 		.4byte	0x2c
+ 2115 008d 05       		.uleb128 0x5
+ 2116 008e 7E010000 		.4byte	.LASF12
+ 2117 0092 04       		.byte	0x4
+ 2118 0093 E801     		.2byte	0x1e8
+ 2119 0095 33000000 		.4byte	0x33
+ 2120 0099 05       		.uleb128 0x5
+ 2121 009a E9020000 		.4byte	.LASF13
+ 2122 009e 04       		.byte	0x4
+ 2123 009f E901     		.2byte	0x1e9
+ 2124 00a1 4C000000 		.4byte	0x4c
+ 2125 00a5 02       		.uleb128 0x2
+ 2126 00a6 04       		.byte	0x4
+ 2127 00a7 04       		.byte	0x4
+ 2128 00a8 BE020000 		.4byte	.LASF14
+ 2129 00ac 02       		.uleb128 0x2
+ 2130 00ad 08       		.byte	0x8
+ 2131 00ae 04       		.byte	0x4
+ 2132 00af EF020000 		.4byte	.LASF15
+ 2133 00b3 02       		.uleb128 0x2
+ 2134 00b4 01       		.byte	0x1
+ 2135 00b5 08       		.byte	0x8
+ 2136 00b6 B1020000 		.4byte	.LASF16
+ 2137 00ba 02       		.uleb128 0x2
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZTBIsW.s 			page 43
+
+
+ 2138 00bb 08       		.byte	0x8
+ 2139 00bc 04       		.byte	0x4
+ 2140 00bd FF010000 		.4byte	.LASF17
+ 2141 00c1 02       		.uleb128 0x2
+ 2142 00c2 04       		.byte	0x4
+ 2143 00c3 07       		.byte	0x7
+ 2144 00c4 76000000 		.4byte	.LASF18
+ 2145 00c8 06       		.uleb128 0x6
+ 2146 00c9 99000000 		.4byte	0x99
+ 2147 00cd D8000000 		.4byte	0xd8
+ 2148 00d1 07       		.uleb128 0x7
+ 2149 00d2 C1000000 		.4byte	0xc1
+ 2150 00d6 01       		.byte	0x1
+ 2151 00d7 00       		.byte	0
+ 2152 00d8 06       		.uleb128 0x6
+ 2153 00d9 A5000000 		.4byte	0xa5
+ 2154 00dd E8000000 		.4byte	0xe8
+ 2155 00e1 07       		.uleb128 0x7
+ 2156 00e2 C1000000 		.4byte	0xc1
+ 2157 00e6 05       		.byte	0x5
+ 2158 00e7 00       		.byte	0
+ 2159 00e8 08       		.uleb128 0x8
+ 2160 00e9 23000000 		.4byte	.LASF60
+ 2161 00ed 04       		.byte	0x4
+ 2162 00ee 06       		.byte	0x6
+ 2163 00ef 1202     		.2byte	0x212
+ 2164 00f1 03010000 		.4byte	0x103
+ 2165 00f5 09       		.uleb128 0x9
+ 2166 00f6 70776D00 		.ascii	"pwm\000"
+ 2167 00fa 06       		.byte	0x6
+ 2168 00fb 1302     		.2byte	0x213
+ 2169 00fd 99000000 		.4byte	0x99
+ 2170 0101 00       		.byte	0
+ 2171 0102 00       		.byte	0
+ 2172 0103 0A       		.uleb128 0xa
+ 2173 0104 CD010000 		.4byte	.LASF28
+ 2174 0108 01       		.byte	0x1
+ 2175 0109 1A       		.byte	0x1a
+ 2176 010a 00000000 		.4byte	.LFB64
+ 2177 010e 38020000 		.4byte	.LFE64-.LFB64
+ 2178 0112 01       		.uleb128 0x1
+ 2179 0113 9C       		.byte	0x9c
+ 2180 0114 31010000 		.4byte	0x131
+ 2181 0118 0B       		.uleb128 0xb
+ 2182 0119 6900     		.ascii	"i\000"
+ 2183 011b 01       		.byte	0x1
+ 2184 011c 1C       		.byte	0x1c
+ 2185 011d 81000000 		.4byte	0x81
+ 2186 0121 02       		.uleb128 0x2
+ 2187 0122 91       		.byte	0x91
+ 2188 0123 77       		.sleb128 -9
+ 2189 0124 0B       		.uleb128 0xb
+ 2190 0125 6A00     		.ascii	"j\000"
+ 2191 0127 01       		.byte	0x1
+ 2192 0128 1C       		.byte	0x1c
+ 2193 0129 81000000 		.4byte	0x81
+ 2194 012d 02       		.uleb128 0x2
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZTBIsW.s 			page 44
+
+
+ 2195 012e 91       		.byte	0x91
+ 2196 012f 76       		.sleb128 -10
+ 2197 0130 00       		.byte	0
+ 2198 0131 0C       		.uleb128 0xc
+ 2199 0132 71020000 		.4byte	.LASF19
+ 2200 0136 01       		.byte	0x1
+ 2201 0137 3F       		.byte	0x3f
+ 2202 0138 00000000 		.4byte	.LFB65
+ 2203 013c B4060000 		.4byte	.LFE65-.LFB65
+ 2204 0140 01       		.uleb128 0x1
+ 2205 0141 9C       		.byte	0x9c
+ 2206 0142 53010000 		.4byte	0x153
+ 2207 0146 0D       		.uleb128 0xd
+ 2208 0147 6900     		.ascii	"i\000"
+ 2209 0149 01       		.byte	0x1
+ 2210 014a 3F       		.byte	0x3f
+ 2211 014b 81000000 		.4byte	0x81
+ 2212 014f 02       		.uleb128 0x2
+ 2213 0150 91       		.byte	0x91
+ 2214 0151 6F       		.sleb128 -17
+ 2215 0152 00       		.byte	0
+ 2216 0153 0C       		.uleb128 0xc
+ 2217 0154 BD010000 		.4byte	.LASF20
+ 2218 0158 01       		.byte	0x1
+ 2219 0159 9A       		.byte	0x9a
+ 2220 015a 00000000 		.4byte	.LFB66
+ 2221 015e 0C010000 		.4byte	.LFE66-.LFB66
+ 2222 0162 01       		.uleb128 0x1
+ 2223 0163 9C       		.byte	0x9c
+ 2224 0164 75010000 		.4byte	0x175
+ 2225 0168 0D       		.uleb128 0xd
+ 2226 0169 6900     		.ascii	"i\000"
+ 2227 016b 01       		.byte	0x1
+ 2228 016c 9A       		.byte	0x9a
+ 2229 016d 81000000 		.4byte	0x81
+ 2230 0171 02       		.uleb128 0x2
+ 2231 0172 91       		.byte	0x91
+ 2232 0173 6F       		.sleb128 -17
+ 2233 0174 00       		.byte	0
+ 2234 0175 0C       		.uleb128 0xc
+ 2235 0176 1A030000 		.4byte	.LASF21
+ 2236 017a 01       		.byte	0x1
+ 2237 017b AD       		.byte	0xad
+ 2238 017c 00000000 		.4byte	.LFB67
+ 2239 0180 A0000000 		.4byte	.LFE67-.LFB67
+ 2240 0184 01       		.uleb128 0x1
+ 2241 0185 9C       		.byte	0x9c
+ 2242 0186 97010000 		.4byte	0x197
+ 2243 018a 0D       		.uleb128 0xd
+ 2244 018b 6900     		.ascii	"i\000"
+ 2245 018d 01       		.byte	0x1
+ 2246 018e AD       		.byte	0xad
+ 2247 018f 81000000 		.4byte	0x81
+ 2248 0193 02       		.uleb128 0x2
+ 2249 0194 91       		.byte	0x91
+ 2250 0195 67       		.sleb128 -25
+ 2251 0196 00       		.byte	0
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZTBIsW.s 			page 45
+
+
+ 2252 0197 0C       		.uleb128 0xc
+ 2253 0198 53030000 		.4byte	.LASF22
+ 2254 019c 01       		.byte	0x1
+ 2255 019d B7       		.byte	0xb7
+ 2256 019e 00000000 		.4byte	.LFB68
+ 2257 01a2 34000000 		.4byte	.LFE68-.LFB68
+ 2258 01a6 01       		.uleb128 0x1
+ 2259 01a7 9C       		.byte	0x9c
+ 2260 01a8 B9010000 		.4byte	0x1b9
+ 2261 01ac 0D       		.uleb128 0xd
+ 2262 01ad 6900     		.ascii	"i\000"
+ 2263 01af 01       		.byte	0x1
+ 2264 01b0 B7       		.byte	0xb7
+ 2265 01b1 81000000 		.4byte	0x81
+ 2266 01b5 02       		.uleb128 0x2
+ 2267 01b6 91       		.byte	0x91
+ 2268 01b7 6F       		.sleb128 -17
+ 2269 01b8 00       		.byte	0
+ 2270 01b9 0E       		.uleb128 0xe
+ 2271 01ba 3A030000 		.4byte	.LASF24
+ 2272 01be 01       		.byte	0x1
+ 2273 01bf BE       		.byte	0xbe
+ 2274 01c0 A5000000 		.4byte	0xa5
+ 2275 01c4 00000000 		.4byte	.LFB69
+ 2276 01c8 D4030000 		.4byte	.LFE69-.LFB69
+ 2277 01cc 01       		.uleb128 0x1
+ 2278 01cd 9C       		.byte	0x9c
+ 2279 01ce FD010000 		.4byte	0x1fd
+ 2280 01d2 0F       		.uleb128 0xf
+ 2281 01d3 6D030000 		.4byte	.LASF23
+ 2282 01d7 01       		.byte	0x1
+ 2283 01d8 BE       		.byte	0xbe
+ 2284 01d9 A5000000 		.4byte	0xa5
+ 2285 01dd 02       		.uleb128 0x2
+ 2286 01de 91       		.byte	0x91
+ 2287 01df 74       		.sleb128 -12
+ 2288 01e0 0D       		.uleb128 0xd
+ 2289 01e1 69647800 		.ascii	"idx\000"
+ 2290 01e5 01       		.byte	0x1
+ 2291 01e6 BE       		.byte	0xbe
+ 2292 01e7 68000000 		.4byte	0x68
+ 2293 01eb 02       		.uleb128 0x2
+ 2294 01ec 91       		.byte	0x91
+ 2295 01ed 70       		.sleb128 -16
+ 2296 01ee 0D       		.uleb128 0xd
+ 2297 01ef 64697200 		.ascii	"dir\000"
+ 2298 01f3 01       		.byte	0x1
+ 2299 01f4 BE       		.byte	0xbe
+ 2300 01f5 68000000 		.4byte	0x68
+ 2301 01f9 02       		.uleb128 0x2
+ 2302 01fa 91       		.byte	0x91
+ 2303 01fb 6C       		.sleb128 -20
+ 2304 01fc 00       		.byte	0
+ 2305 01fd 0E       		.uleb128 0xe
+ 2306 01fe 12000000 		.4byte	.LASF25
+ 2307 0202 01       		.byte	0x1
+ 2308 0203 E0       		.byte	0xe0
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZTBIsW.s 			page 46
+
+
+ 2309 0204 99000000 		.4byte	0x99
+ 2310 0208 00000000 		.4byte	.LFB70
+ 2311 020c 2C000000 		.4byte	.LFE70-.LFB70
+ 2312 0210 01       		.uleb128 0x1
+ 2313 0211 9C       		.byte	0x9c
+ 2314 0212 33020000 		.4byte	0x233
+ 2315 0216 0F       		.uleb128 0xf
+ 2316 0217 0D010000 		.4byte	.LASF26
+ 2317 021b 01       		.byte	0x1
+ 2318 021c E0       		.byte	0xe0
+ 2319 021d A5000000 		.4byte	0xa5
+ 2320 0221 02       		.uleb128 0x2
+ 2321 0222 91       		.byte	0x91
+ 2322 0223 6C       		.sleb128 -20
+ 2323 0224 10       		.uleb128 0x10
+ 2324 0225 93030000 		.4byte	.LASF27
+ 2325 0229 01       		.byte	0x1
+ 2326 022a E1       		.byte	0xe1
+ 2327 022b 99000000 		.4byte	0x99
+ 2328 022f 02       		.uleb128 0x2
+ 2329 0230 91       		.byte	0x91
+ 2330 0231 74       		.sleb128 -12
+ 2331 0232 00       		.byte	0
+ 2332 0233 11       		.uleb128 0x11
+ 2333 0234 07040000 		.4byte	.LASF29
+ 2334 0238 01       		.byte	0x1
+ 2335 0239 E7       		.byte	0xe7
+ 2336 023a 00000000 		.4byte	.LFB71
+ 2337 023e 8C000000 		.4byte	.LFE71-.LFB71
+ 2338 0242 01       		.uleb128 0x1
+ 2339 0243 9C       		.byte	0x9c
+ 2340 0244 55020000 		.4byte	0x255
+ 2341 0248 0B       		.uleb128 0xb
+ 2342 0249 6900     		.ascii	"i\000"
+ 2343 024b 01       		.byte	0x1
+ 2344 024c E8       		.byte	0xe8
+ 2345 024d 81000000 		.4byte	0x81
+ 2346 0251 02       		.uleb128 0x2
+ 2347 0252 91       		.byte	0x91
+ 2348 0253 77       		.sleb128 -9
+ 2349 0254 00       		.byte	0
+ 2350 0255 12       		.uleb128 0x12
+ 2351 0256 FA030000 		.4byte	.LASF30
+ 2352 025a 05       		.byte	0x5
+ 2353 025b 1207     		.2byte	0x712
+ 2354 025d 61020000 		.4byte	0x261
+ 2355 0261 13       		.uleb128 0x13
+ 2356 0262 76000000 		.4byte	0x76
+ 2357 0266 06       		.uleb128 0x6
+ 2358 0267 E8000000 		.4byte	0xe8
+ 2359 026b 76020000 		.4byte	0x276
+ 2360 026f 07       		.uleb128 0x7
+ 2361 0270 C1000000 		.4byte	0xc1
+ 2362 0274 01       		.byte	0x1
+ 2363 0275 00       		.byte	0
+ 2364 0276 12       		.uleb128 0x12
+ 2365 0277 37000000 		.4byte	.LASF31
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZTBIsW.s 			page 47
+
+
+ 2366 027b 06       		.byte	0x6
+ 2367 027c 2B02     		.2byte	0x22b
+ 2368 027e 66020000 		.4byte	0x266
+ 2369 0282 12       		.uleb128 0x12
+ 2370 0283 4D000000 		.4byte	.LASF32
+ 2371 0287 06       		.byte	0x6
+ 2372 0288 8902     		.2byte	0x289
+ 2373 028a 81000000 		.4byte	0x81
+ 2374 028e 14       		.uleb128 0x14
+ 2375 028f 413100   		.ascii	"A1\000"
+ 2376 0292 06       		.byte	0x6
+ 2377 0293 8B02     		.2byte	0x28b
+ 2378 0295 A5000000 		.4byte	0xa5
+ 2379 0299 14       		.uleb128 0x14
+ 2380 029a 413200   		.ascii	"A2\000"
+ 2381 029d 06       		.byte	0x6
+ 2382 029e 8C02     		.2byte	0x28c
+ 2383 02a0 A5000000 		.4byte	0xa5
+ 2384 02a4 14       		.uleb128 0x14
+ 2385 02a5 413300   		.ascii	"A3\000"
+ 2386 02a8 06       		.byte	0x6
+ 2387 02a9 8D02     		.2byte	0x28d
+ 2388 02ab A5000000 		.4byte	0xa5
+ 2389 02af 14       		.uleb128 0x14
+ 2390 02b0 413400   		.ascii	"A4\000"
+ 2391 02b3 06       		.byte	0x6
+ 2392 02b4 8E02     		.2byte	0x28e
+ 2393 02b6 A5000000 		.4byte	0xa5
+ 2394 02ba 14       		.uleb128 0x14
+ 2395 02bb 425F3000 		.ascii	"B_0\000"
+ 2396 02bf 06       		.byte	0x6
+ 2397 02c0 8F02     		.2byte	0x28f
+ 2398 02c2 A5000000 		.4byte	0xa5
+ 2399 02c6 14       		.uleb128 0x14
+ 2400 02c7 423100   		.ascii	"B1\000"
+ 2401 02ca 06       		.byte	0x6
+ 2402 02cb 9002     		.2byte	0x290
+ 2403 02cd A5000000 		.4byte	0xa5
+ 2404 02d1 14       		.uleb128 0x14
+ 2405 02d2 423200   		.ascii	"B2\000"
+ 2406 02d5 06       		.byte	0x6
+ 2407 02d6 9102     		.2byte	0x291
+ 2408 02d8 A5000000 		.4byte	0xa5
+ 2409 02dc 14       		.uleb128 0x14
+ 2410 02dd 423300   		.ascii	"B3\000"
+ 2411 02e0 06       		.byte	0x6
+ 2412 02e1 9202     		.2byte	0x292
+ 2413 02e3 A5000000 		.4byte	0xa5
+ 2414 02e7 14       		.uleb128 0x14
+ 2415 02e8 423400   		.ascii	"B4\000"
+ 2416 02eb 06       		.byte	0x6
+ 2417 02ec 9302     		.2byte	0x293
+ 2418 02ee A5000000 		.4byte	0xa5
+ 2419 02f2 06       		.uleb128 0x6
+ 2420 02f3 A5000000 		.4byte	0xa5
+ 2421 02f7 08030000 		.4byte	0x308
+ 2422 02fb 07       		.uleb128 0x7
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZTBIsW.s 			page 48
+
+
+ 2423 02fc C1000000 		.4byte	0xc1
+ 2424 0300 01       		.byte	0x1
+ 2425 0301 07       		.uleb128 0x7
+ 2426 0302 C1000000 		.4byte	0xc1
+ 2427 0306 02       		.byte	0x2
+ 2428 0307 00       		.byte	0
+ 2429 0308 12       		.uleb128 0x12
+ 2430 0309 19020000 		.4byte	.LASF33
+ 2431 030d 06       		.byte	0x6
+ 2432 030e 9702     		.2byte	0x297
+ 2433 0310 F2020000 		.4byte	0x2f2
+ 2434 0314 12       		.uleb128 0x12
+ 2435 0315 EE010000 		.4byte	.LASF34
+ 2436 0319 06       		.byte	0x6
+ 2437 031a 9802     		.2byte	0x298
+ 2438 031c D8000000 		.4byte	0xd8
+ 2439 0320 12       		.uleb128 0x12
+ 2440 0321 31010000 		.4byte	.LASF35
+ 2441 0325 06       		.byte	0x6
+ 2442 0326 9902     		.2byte	0x299
+ 2443 0328 F2020000 		.4byte	0x2f2
+ 2444 032c 12       		.uleb128 0x12
+ 2445 032d F6020000 		.4byte	.LASF36
+ 2446 0331 06       		.byte	0x6
+ 2447 0332 9A02     		.2byte	0x29a
+ 2448 0334 D8000000 		.4byte	0xd8
+ 2449 0338 06       		.uleb128 0x6
+ 2450 0339 A5000000 		.4byte	0xa5
+ 2451 033d 48030000 		.4byte	0x348
+ 2452 0341 07       		.uleb128 0x7
+ 2453 0342 C1000000 		.4byte	0xc1
+ 2454 0346 01       		.byte	0x1
+ 2455 0347 00       		.byte	0
+ 2456 0348 12       		.uleb128 0x12
+ 2457 0349 2E020000 		.4byte	.LASF37
+ 2458 034d 06       		.byte	0x6
+ 2459 034e 9C02     		.2byte	0x29c
+ 2460 0350 38030000 		.4byte	0x338
+ 2461 0354 12       		.uleb128 0x12
+ 2462 0355 1A010000 		.4byte	.LASF38
+ 2463 0359 06       		.byte	0x6
+ 2464 035a 9D02     		.2byte	0x29d
+ 2465 035c C8000000 		.4byte	0xc8
+ 2466 0360 12       		.uleb128 0x12
+ 2467 0361 5F000000 		.4byte	.LASF39
+ 2468 0365 06       		.byte	0x6
+ 2469 0366 9F02     		.2byte	0x29f
+ 2470 0368 D8000000 		.4byte	0xd8
+ 2471 036c 12       		.uleb128 0x12
+ 2472 036d 9C030000 		.4byte	.LASF40
+ 2473 0371 06       		.byte	0x6
+ 2474 0372 A002     		.2byte	0x2a0
+ 2475 0374 D8000000 		.4byte	0xd8
+ 2476 0378 12       		.uleb128 0x12
+ 2477 0379 63020000 		.4byte	.LASF41
+ 2478 037d 06       		.byte	0x6
+ 2479 037e A202     		.2byte	0x2a2
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZTBIsW.s 			page 49
+
+
+ 2480 0380 C8000000 		.4byte	0xc8
+ 2481 0384 06       		.uleb128 0x6
+ 2482 0385 68000000 		.4byte	0x68
+ 2483 0389 94030000 		.4byte	0x394
+ 2484 038d 07       		.uleb128 0x7
+ 2485 038e C1000000 		.4byte	0xc1
+ 2486 0392 01       		.byte	0x1
+ 2487 0393 00       		.byte	0
+ 2488 0394 12       		.uleb128 0x12
+ 2489 0395 84010000 		.4byte	.LASF42
+ 2490 0399 06       		.byte	0x6
+ 2491 039a A302     		.2byte	0x2a3
+ 2492 039c 84030000 		.4byte	0x384
+ 2493 03a0 12       		.uleb128 0x12
+ 2494 03a1 29010000 		.4byte	.LASF43
+ 2495 03a5 06       		.byte	0x6
+ 2496 03a6 A402     		.2byte	0x2a4
+ 2497 03a8 84030000 		.4byte	0x384
+ 2498 03ac 12       		.uleb128 0x12
+ 2499 03ad 8F020000 		.4byte	.LASF44
+ 2500 03b1 06       		.byte	0x6
+ 2501 03b2 A502     		.2byte	0x2a5
+ 2502 03b4 84030000 		.4byte	0x384
+ 2503 03b8 12       		.uleb128 0x12
+ 2504 03b9 21040000 		.4byte	.LASF45
+ 2505 03bd 06       		.byte	0x6
+ 2506 03be A802     		.2byte	0x2a8
+ 2507 03c0 A5000000 		.4byte	0xa5
+ 2508 03c4 14       		.uleb128 0x14
+ 2509 03c5 733100   		.ascii	"s1\000"
+ 2510 03c8 06       		.byte	0x6
+ 2511 03c9 AB02     		.2byte	0x2ab
+ 2512 03cb A5000000 		.4byte	0xa5
+ 2513 03cf 14       		.uleb128 0x14
+ 2514 03d0 733200   		.ascii	"s2\000"
+ 2515 03d3 06       		.byte	0x6
+ 2516 03d4 AB02     		.2byte	0x2ab
+ 2517 03d6 A5000000 		.4byte	0xa5
+ 2518 03da 14       		.uleb128 0x14
+ 2519 03db 733300   		.ascii	"s3\000"
+ 2520 03de 06       		.byte	0x6
+ 2521 03df AB02     		.2byte	0x2ab
+ 2522 03e1 A5000000 		.4byte	0xa5
+ 2523 03e5 14       		.uleb128 0x14
+ 2524 03e6 733400   		.ascii	"s4\000"
+ 2525 03e9 06       		.byte	0x6
+ 2526 03ea AB02     		.2byte	0x2ab
+ 2527 03ec A5000000 		.4byte	0xa5
+ 2528 03f0 14       		.uleb128 0x14
+ 2529 03f1 733500   		.ascii	"s5\000"
+ 2530 03f4 06       		.byte	0x6
+ 2531 03f5 AB02     		.2byte	0x2ab
+ 2532 03f7 A5000000 		.4byte	0xa5
+ 2533 03fb 14       		.uleb128 0x14
+ 2534 03fc 733700   		.ascii	"s7\000"
+ 2535 03ff 06       		.byte	0x6
+ 2536 0400 AB02     		.2byte	0x2ab
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZTBIsW.s 			page 50
+
+
+ 2537 0402 A5000000 		.4byte	0xa5
+ 2538 0406 14       		.uleb128 0x14
+ 2539 0407 733800   		.ascii	"s8\000"
+ 2540 040a 06       		.byte	0x6
+ 2541 040b AB02     		.2byte	0x2ab
+ 2542 040d A5000000 		.4byte	0xa5
+ 2543 0411 14       		.uleb128 0x14
+ 2544 0412 733900   		.ascii	"s9\000"
+ 2545 0415 06       		.byte	0x6
+ 2546 0416 AB02     		.2byte	0x2ab
+ 2547 0418 A5000000 		.4byte	0xa5
+ 2548 041c 14       		.uleb128 0x14
+ 2549 041d 73313000 		.ascii	"s10\000"
+ 2550 0421 06       		.byte	0x6
+ 2551 0422 AB02     		.2byte	0x2ab
+ 2552 0424 A5000000 		.4byte	0xa5
+ 2553 0428 12       		.uleb128 0x12
+ 2554 0429 40010000 		.4byte	.LASF46
+ 2555 042d 06       		.byte	0x6
+ 2556 042e AE02     		.2byte	0x2ae
+ 2557 0430 F2020000 		.4byte	0x2f2
+ 2558 0434 12       		.uleb128 0x12
+ 2559 0435 E1010000 		.4byte	.LASF47
+ 2560 0439 06       		.byte	0x6
+ 2561 043a AF02     		.2byte	0x2af
+ 2562 043c F2020000 		.4byte	0x2f2
+ 2563 0440 12       		.uleb128 0x12
+ 2564 0441 2C030000 		.4byte	.LASF48
+ 2565 0445 06       		.byte	0x6
+ 2566 0446 B002     		.2byte	0x2b0
+ 2567 0448 F2020000 		.4byte	0x2f2
+ 2568 044c 12       		.uleb128 0x12
+ 2569 044d 77030000 		.4byte	.LASF49
+ 2570 0451 06       		.byte	0x6
+ 2571 0452 B102     		.2byte	0x2b1
+ 2572 0454 F2020000 		.4byte	0x2f2
+ 2573 0458 12       		.uleb128 0x12
+ 2574 0459 85030000 		.4byte	.LASF50
+ 2575 045d 06       		.byte	0x6
+ 2576 045e B202     		.2byte	0x2b2
+ 2577 0460 F2020000 		.4byte	0x2f2
+ 2578 0464 12       		.uleb128 0x12
+ 2579 0465 62010000 		.4byte	.LASF51
+ 2580 0469 06       		.byte	0x6
+ 2581 046a B402     		.2byte	0x2b4
+ 2582 046c F2020000 		.4byte	0x2f2
+ 2583 0470 12       		.uleb128 0x12
+ 2584 0471 00000000 		.4byte	.LASF52
+ 2585 0475 06       		.byte	0x6
+ 2586 0476 B502     		.2byte	0x2b5
+ 2587 0478 F2020000 		.4byte	0x2f2
+ 2588 047c 12       		.uleb128 0x12
+ 2589 047d 4F010000 		.4byte	.LASF53
+ 2590 0481 06       		.byte	0x6
+ 2591 0482 B602     		.2byte	0x2b6
+ 2592 0484 F2020000 		.4byte	0x2f2
+ 2593 0488 12       		.uleb128 0x12
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZTBIsW.s 			page 51
+
+
+ 2594 0489 07030000 		.4byte	.LASF54
+ 2595 048d 06       		.byte	0x6
+ 2596 048e B702     		.2byte	0x2b7
+ 2597 0490 F2020000 		.4byte	0x2f2
+ 2598 0494 12       		.uleb128 0x12
+ 2599 0495 C4020000 		.4byte	.LASF55
+ 2600 0499 06       		.byte	0x6
+ 2601 049a B802     		.2byte	0x2b8
+ 2602 049c F2020000 		.4byte	0x2f2
+ 2603 04a0 12       		.uleb128 0x12
+ 2604 04a1 95010000 		.4byte	.LASF56
+ 2605 04a5 06       		.byte	0x6
+ 2606 04a6 B902     		.2byte	0x2b9
+ 2607 04a8 F2020000 		.4byte	0x2f2
+ 2608 04ac 00       		.byte	0
+ 2609              		.section	.debug_abbrev,"",%progbits
+ 2610              	.Ldebug_abbrev0:
+ 2611 0000 01       		.uleb128 0x1
+ 2612 0001 11       		.uleb128 0x11
+ 2613 0002 01       		.byte	0x1
+ 2614 0003 25       		.uleb128 0x25
+ 2615 0004 0E       		.uleb128 0xe
+ 2616 0005 13       		.uleb128 0x13
+ 2617 0006 0B       		.uleb128 0xb
+ 2618 0007 03       		.uleb128 0x3
+ 2619 0008 0E       		.uleb128 0xe
+ 2620 0009 1B       		.uleb128 0x1b
+ 2621 000a 0E       		.uleb128 0xe
+ 2622 000b 55       		.uleb128 0x55
+ 2623 000c 17       		.uleb128 0x17
+ 2624 000d 11       		.uleb128 0x11
+ 2625 000e 01       		.uleb128 0x1
+ 2626 000f 10       		.uleb128 0x10
+ 2627 0010 17       		.uleb128 0x17
+ 2628 0011 00       		.byte	0
+ 2629 0012 00       		.byte	0
+ 2630 0013 02       		.uleb128 0x2
+ 2631 0014 24       		.uleb128 0x24
+ 2632 0015 00       		.byte	0
+ 2633 0016 0B       		.uleb128 0xb
+ 2634 0017 0B       		.uleb128 0xb
+ 2635 0018 3E       		.uleb128 0x3e
+ 2636 0019 0B       		.uleb128 0xb
+ 2637 001a 03       		.uleb128 0x3
+ 2638 001b 0E       		.uleb128 0xe
+ 2639 001c 00       		.byte	0
+ 2640 001d 00       		.byte	0
+ 2641 001e 03       		.uleb128 0x3
+ 2642 001f 16       		.uleb128 0x16
+ 2643 0020 00       		.byte	0
+ 2644 0021 03       		.uleb128 0x3
+ 2645 0022 0E       		.uleb128 0xe
+ 2646 0023 3A       		.uleb128 0x3a
+ 2647 0024 0B       		.uleb128 0xb
+ 2648 0025 3B       		.uleb128 0x3b
+ 2649 0026 0B       		.uleb128 0xb
+ 2650 0027 49       		.uleb128 0x49
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZTBIsW.s 			page 52
+
+
+ 2651 0028 13       		.uleb128 0x13
+ 2652 0029 00       		.byte	0
+ 2653 002a 00       		.byte	0
+ 2654 002b 04       		.uleb128 0x4
+ 2655 002c 24       		.uleb128 0x24
+ 2656 002d 00       		.byte	0
+ 2657 002e 0B       		.uleb128 0xb
+ 2658 002f 0B       		.uleb128 0xb
+ 2659 0030 3E       		.uleb128 0x3e
+ 2660 0031 0B       		.uleb128 0xb
+ 2661 0032 03       		.uleb128 0x3
+ 2662 0033 08       		.uleb128 0x8
+ 2663 0034 00       		.byte	0
+ 2664 0035 00       		.byte	0
+ 2665 0036 05       		.uleb128 0x5
+ 2666 0037 16       		.uleb128 0x16
+ 2667 0038 00       		.byte	0
+ 2668 0039 03       		.uleb128 0x3
+ 2669 003a 0E       		.uleb128 0xe
+ 2670 003b 3A       		.uleb128 0x3a
+ 2671 003c 0B       		.uleb128 0xb
+ 2672 003d 3B       		.uleb128 0x3b
+ 2673 003e 05       		.uleb128 0x5
+ 2674 003f 49       		.uleb128 0x49
+ 2675 0040 13       		.uleb128 0x13
+ 2676 0041 00       		.byte	0
+ 2677 0042 00       		.byte	0
+ 2678 0043 06       		.uleb128 0x6
+ 2679 0044 01       		.uleb128 0x1
+ 2680 0045 01       		.byte	0x1
+ 2681 0046 49       		.uleb128 0x49
+ 2682 0047 13       		.uleb128 0x13
+ 2683 0048 01       		.uleb128 0x1
+ 2684 0049 13       		.uleb128 0x13
+ 2685 004a 00       		.byte	0
+ 2686 004b 00       		.byte	0
+ 2687 004c 07       		.uleb128 0x7
+ 2688 004d 21       		.uleb128 0x21
+ 2689 004e 00       		.byte	0
+ 2690 004f 49       		.uleb128 0x49
+ 2691 0050 13       		.uleb128 0x13
+ 2692 0051 2F       		.uleb128 0x2f
+ 2693 0052 0B       		.uleb128 0xb
+ 2694 0053 00       		.byte	0
+ 2695 0054 00       		.byte	0
+ 2696 0055 08       		.uleb128 0x8
+ 2697 0056 13       		.uleb128 0x13
+ 2698 0057 01       		.byte	0x1
+ 2699 0058 03       		.uleb128 0x3
+ 2700 0059 0E       		.uleb128 0xe
+ 2701 005a 0B       		.uleb128 0xb
+ 2702 005b 0B       		.uleb128 0xb
+ 2703 005c 3A       		.uleb128 0x3a
+ 2704 005d 0B       		.uleb128 0xb
+ 2705 005e 3B       		.uleb128 0x3b
+ 2706 005f 05       		.uleb128 0x5
+ 2707 0060 01       		.uleb128 0x1
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZTBIsW.s 			page 53
+
+
+ 2708 0061 13       		.uleb128 0x13
+ 2709 0062 00       		.byte	0
+ 2710 0063 00       		.byte	0
+ 2711 0064 09       		.uleb128 0x9
+ 2712 0065 0D       		.uleb128 0xd
+ 2713 0066 00       		.byte	0
+ 2714 0067 03       		.uleb128 0x3
+ 2715 0068 08       		.uleb128 0x8
+ 2716 0069 3A       		.uleb128 0x3a
+ 2717 006a 0B       		.uleb128 0xb
+ 2718 006b 3B       		.uleb128 0x3b
+ 2719 006c 05       		.uleb128 0x5
+ 2720 006d 49       		.uleb128 0x49
+ 2721 006e 13       		.uleb128 0x13
+ 2722 006f 38       		.uleb128 0x38
+ 2723 0070 0B       		.uleb128 0xb
+ 2724 0071 00       		.byte	0
+ 2725 0072 00       		.byte	0
+ 2726 0073 0A       		.uleb128 0xa
+ 2727 0074 2E       		.uleb128 0x2e
+ 2728 0075 01       		.byte	0x1
+ 2729 0076 3F       		.uleb128 0x3f
+ 2730 0077 19       		.uleb128 0x19
+ 2731 0078 03       		.uleb128 0x3
+ 2732 0079 0E       		.uleb128 0xe
+ 2733 007a 3A       		.uleb128 0x3a
+ 2734 007b 0B       		.uleb128 0xb
+ 2735 007c 3B       		.uleb128 0x3b
+ 2736 007d 0B       		.uleb128 0xb
+ 2737 007e 11       		.uleb128 0x11
+ 2738 007f 01       		.uleb128 0x1
+ 2739 0080 12       		.uleb128 0x12
+ 2740 0081 06       		.uleb128 0x6
+ 2741 0082 40       		.uleb128 0x40
+ 2742 0083 18       		.uleb128 0x18
+ 2743 0084 9742     		.uleb128 0x2117
+ 2744 0086 19       		.uleb128 0x19
+ 2745 0087 01       		.uleb128 0x1
+ 2746 0088 13       		.uleb128 0x13
+ 2747 0089 00       		.byte	0
+ 2748 008a 00       		.byte	0
+ 2749 008b 0B       		.uleb128 0xb
+ 2750 008c 34       		.uleb128 0x34
+ 2751 008d 00       		.byte	0
+ 2752 008e 03       		.uleb128 0x3
+ 2753 008f 08       		.uleb128 0x8
+ 2754 0090 3A       		.uleb128 0x3a
+ 2755 0091 0B       		.uleb128 0xb
+ 2756 0092 3B       		.uleb128 0x3b
+ 2757 0093 0B       		.uleb128 0xb
+ 2758 0094 49       		.uleb128 0x49
+ 2759 0095 13       		.uleb128 0x13
+ 2760 0096 02       		.uleb128 0x2
+ 2761 0097 18       		.uleb128 0x18
+ 2762 0098 00       		.byte	0
+ 2763 0099 00       		.byte	0
+ 2764 009a 0C       		.uleb128 0xc
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZTBIsW.s 			page 54
+
+
+ 2765 009b 2E       		.uleb128 0x2e
+ 2766 009c 01       		.byte	0x1
+ 2767 009d 3F       		.uleb128 0x3f
+ 2768 009e 19       		.uleb128 0x19
+ 2769 009f 03       		.uleb128 0x3
+ 2770 00a0 0E       		.uleb128 0xe
+ 2771 00a1 3A       		.uleb128 0x3a
+ 2772 00a2 0B       		.uleb128 0xb
+ 2773 00a3 3B       		.uleb128 0x3b
+ 2774 00a4 0B       		.uleb128 0xb
+ 2775 00a5 27       		.uleb128 0x27
+ 2776 00a6 19       		.uleb128 0x19
+ 2777 00a7 11       		.uleb128 0x11
+ 2778 00a8 01       		.uleb128 0x1
+ 2779 00a9 12       		.uleb128 0x12
+ 2780 00aa 06       		.uleb128 0x6
+ 2781 00ab 40       		.uleb128 0x40
+ 2782 00ac 18       		.uleb128 0x18
+ 2783 00ad 9642     		.uleb128 0x2116
+ 2784 00af 19       		.uleb128 0x19
+ 2785 00b0 01       		.uleb128 0x1
+ 2786 00b1 13       		.uleb128 0x13
+ 2787 00b2 00       		.byte	0
+ 2788 00b3 00       		.byte	0
+ 2789 00b4 0D       		.uleb128 0xd
+ 2790 00b5 05       		.uleb128 0x5
+ 2791 00b6 00       		.byte	0
+ 2792 00b7 03       		.uleb128 0x3
+ 2793 00b8 08       		.uleb128 0x8
+ 2794 00b9 3A       		.uleb128 0x3a
+ 2795 00ba 0B       		.uleb128 0xb
+ 2796 00bb 3B       		.uleb128 0x3b
+ 2797 00bc 0B       		.uleb128 0xb
+ 2798 00bd 49       		.uleb128 0x49
+ 2799 00be 13       		.uleb128 0x13
+ 2800 00bf 02       		.uleb128 0x2
+ 2801 00c0 18       		.uleb128 0x18
+ 2802 00c1 00       		.byte	0
+ 2803 00c2 00       		.byte	0
+ 2804 00c3 0E       		.uleb128 0xe
+ 2805 00c4 2E       		.uleb128 0x2e
+ 2806 00c5 01       		.byte	0x1
+ 2807 00c6 3F       		.uleb128 0x3f
+ 2808 00c7 19       		.uleb128 0x19
+ 2809 00c8 03       		.uleb128 0x3
+ 2810 00c9 0E       		.uleb128 0xe
+ 2811 00ca 3A       		.uleb128 0x3a
+ 2812 00cb 0B       		.uleb128 0xb
+ 2813 00cc 3B       		.uleb128 0x3b
+ 2814 00cd 0B       		.uleb128 0xb
+ 2815 00ce 27       		.uleb128 0x27
+ 2816 00cf 19       		.uleb128 0x19
+ 2817 00d0 49       		.uleb128 0x49
+ 2818 00d1 13       		.uleb128 0x13
+ 2819 00d2 11       		.uleb128 0x11
+ 2820 00d3 01       		.uleb128 0x1
+ 2821 00d4 12       		.uleb128 0x12
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZTBIsW.s 			page 55
+
+
+ 2822 00d5 06       		.uleb128 0x6
+ 2823 00d6 40       		.uleb128 0x40
+ 2824 00d7 18       		.uleb128 0x18
+ 2825 00d8 9642     		.uleb128 0x2116
+ 2826 00da 19       		.uleb128 0x19
+ 2827 00db 01       		.uleb128 0x1
+ 2828 00dc 13       		.uleb128 0x13
+ 2829 00dd 00       		.byte	0
+ 2830 00de 00       		.byte	0
+ 2831 00df 0F       		.uleb128 0xf
+ 2832 00e0 05       		.uleb128 0x5
+ 2833 00e1 00       		.byte	0
+ 2834 00e2 03       		.uleb128 0x3
+ 2835 00e3 0E       		.uleb128 0xe
+ 2836 00e4 3A       		.uleb128 0x3a
+ 2837 00e5 0B       		.uleb128 0xb
+ 2838 00e6 3B       		.uleb128 0x3b
+ 2839 00e7 0B       		.uleb128 0xb
+ 2840 00e8 49       		.uleb128 0x49
+ 2841 00e9 13       		.uleb128 0x13
+ 2842 00ea 02       		.uleb128 0x2
+ 2843 00eb 18       		.uleb128 0x18
+ 2844 00ec 00       		.byte	0
+ 2845 00ed 00       		.byte	0
+ 2846 00ee 10       		.uleb128 0x10
+ 2847 00ef 34       		.uleb128 0x34
+ 2848 00f0 00       		.byte	0
+ 2849 00f1 03       		.uleb128 0x3
+ 2850 00f2 0E       		.uleb128 0xe
+ 2851 00f3 3A       		.uleb128 0x3a
+ 2852 00f4 0B       		.uleb128 0xb
+ 2853 00f5 3B       		.uleb128 0x3b
+ 2854 00f6 0B       		.uleb128 0xb
+ 2855 00f7 49       		.uleb128 0x49
+ 2856 00f8 13       		.uleb128 0x13
+ 2857 00f9 02       		.uleb128 0x2
+ 2858 00fa 18       		.uleb128 0x18
+ 2859 00fb 00       		.byte	0
+ 2860 00fc 00       		.byte	0
+ 2861 00fd 11       		.uleb128 0x11
+ 2862 00fe 2E       		.uleb128 0x2e
+ 2863 00ff 01       		.byte	0x1
+ 2864 0100 3F       		.uleb128 0x3f
+ 2865 0101 19       		.uleb128 0x19
+ 2866 0102 03       		.uleb128 0x3
+ 2867 0103 0E       		.uleb128 0xe
+ 2868 0104 3A       		.uleb128 0x3a
+ 2869 0105 0B       		.uleb128 0xb
+ 2870 0106 3B       		.uleb128 0x3b
+ 2871 0107 0B       		.uleb128 0xb
+ 2872 0108 11       		.uleb128 0x11
+ 2873 0109 01       		.uleb128 0x1
+ 2874 010a 12       		.uleb128 0x12
+ 2875 010b 06       		.uleb128 0x6
+ 2876 010c 40       		.uleb128 0x40
+ 2877 010d 18       		.uleb128 0x18
+ 2878 010e 9642     		.uleb128 0x2116
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZTBIsW.s 			page 56
+
+
+ 2879 0110 19       		.uleb128 0x19
+ 2880 0111 01       		.uleb128 0x1
+ 2881 0112 13       		.uleb128 0x13
+ 2882 0113 00       		.byte	0
+ 2883 0114 00       		.byte	0
+ 2884 0115 12       		.uleb128 0x12
+ 2885 0116 34       		.uleb128 0x34
+ 2886 0117 00       		.byte	0
+ 2887 0118 03       		.uleb128 0x3
+ 2888 0119 0E       		.uleb128 0xe
+ 2889 011a 3A       		.uleb128 0x3a
+ 2890 011b 0B       		.uleb128 0xb
+ 2891 011c 3B       		.uleb128 0x3b
+ 2892 011d 05       		.uleb128 0x5
+ 2893 011e 49       		.uleb128 0x49
+ 2894 011f 13       		.uleb128 0x13
+ 2895 0120 3F       		.uleb128 0x3f
+ 2896 0121 19       		.uleb128 0x19
+ 2897 0122 3C       		.uleb128 0x3c
+ 2898 0123 19       		.uleb128 0x19
+ 2899 0124 00       		.byte	0
+ 2900 0125 00       		.byte	0
+ 2901 0126 13       		.uleb128 0x13
+ 2902 0127 35       		.uleb128 0x35
+ 2903 0128 00       		.byte	0
+ 2904 0129 49       		.uleb128 0x49
+ 2905 012a 13       		.uleb128 0x13
+ 2906 012b 00       		.byte	0
+ 2907 012c 00       		.byte	0
+ 2908 012d 14       		.uleb128 0x14
+ 2909 012e 34       		.uleb128 0x34
+ 2910 012f 00       		.byte	0
+ 2911 0130 03       		.uleb128 0x3
+ 2912 0131 08       		.uleb128 0x8
+ 2913 0132 3A       		.uleb128 0x3a
+ 2914 0133 0B       		.uleb128 0xb
+ 2915 0134 3B       		.uleb128 0x3b
+ 2916 0135 05       		.uleb128 0x5
+ 2917 0136 49       		.uleb128 0x49
+ 2918 0137 13       		.uleb128 0x13
+ 2919 0138 3F       		.uleb128 0x3f
+ 2920 0139 19       		.uleb128 0x19
+ 2921 013a 3C       		.uleb128 0x3c
+ 2922 013b 19       		.uleb128 0x19
+ 2923 013c 00       		.byte	0
+ 2924 013d 00       		.byte	0
+ 2925 013e 00       		.byte	0
+ 2926              		.section	.debug_aranges,"",%progbits
+ 2927 0000 54000000 		.4byte	0x54
+ 2928 0004 0200     		.2byte	0x2
+ 2929 0006 00000000 		.4byte	.Ldebug_info0
+ 2930 000a 04       		.byte	0x4
+ 2931 000b 00       		.byte	0
+ 2932 000c 0000     		.2byte	0
+ 2933 000e 0000     		.2byte	0
+ 2934 0010 00000000 		.4byte	.LFB64
+ 2935 0014 38020000 		.4byte	.LFE64-.LFB64
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZTBIsW.s 			page 57
+
+
+ 2936 0018 00000000 		.4byte	.LFB65
+ 2937 001c B4060000 		.4byte	.LFE65-.LFB65
+ 2938 0020 00000000 		.4byte	.LFB66
+ 2939 0024 0C010000 		.4byte	.LFE66-.LFB66
+ 2940 0028 00000000 		.4byte	.LFB67
+ 2941 002c A0000000 		.4byte	.LFE67-.LFB67
+ 2942 0030 00000000 		.4byte	.LFB68
+ 2943 0034 34000000 		.4byte	.LFE68-.LFB68
+ 2944 0038 00000000 		.4byte	.LFB69
+ 2945 003c D4030000 		.4byte	.LFE69-.LFB69
+ 2946 0040 00000000 		.4byte	.LFB70
+ 2947 0044 2C000000 		.4byte	.LFE70-.LFB70
+ 2948 0048 00000000 		.4byte	.LFB71
+ 2949 004c 8C000000 		.4byte	.LFE71-.LFB71
+ 2950 0050 00000000 		.4byte	0
+ 2951 0054 00000000 		.4byte	0
+ 2952              		.section	.debug_ranges,"",%progbits
+ 2953              	.Ldebug_ranges0:
+ 2954 0000 00000000 		.4byte	.LFB64
+ 2955 0004 38020000 		.4byte	.LFE64
+ 2956 0008 00000000 		.4byte	.LFB65
+ 2957 000c B4060000 		.4byte	.LFE65
+ 2958 0010 00000000 		.4byte	.LFB66
+ 2959 0014 0C010000 		.4byte	.LFE66
+ 2960 0018 00000000 		.4byte	.LFB67
+ 2961 001c A0000000 		.4byte	.LFE67
+ 2962 0020 00000000 		.4byte	.LFB68
+ 2963 0024 34000000 		.4byte	.LFE68
+ 2964 0028 00000000 		.4byte	.LFB69
+ 2965 002c D4030000 		.4byte	.LFE69
+ 2966 0030 00000000 		.4byte	.LFB70
+ 2967 0034 2C000000 		.4byte	.LFE70
+ 2968 0038 00000000 		.4byte	.LFB71
+ 2969 003c 8C000000 		.4byte	.LFE71
+ 2970 0040 00000000 		.4byte	0
+ 2971 0044 00000000 		.4byte	0
+ 2972              		.section	.debug_line,"",%progbits
+ 2973              	.Ldebug_line0:
+ 2974 0000 39030000 		.section	.debug_str,"MS",%progbits,1
+ 2974      02007001 
+ 2974      00000201 
+ 2974      FB0E0D00 
+ 2974      01010101 
+ 2975              	.LASF52:
+ 2976 0000 76656374 		.ascii	"vect_acc_old_filt\000"
+ 2976      5F616363 
+ 2976      5F6F6C64 
+ 2976      5F66696C 
+ 2976      7400
+ 2977              	.LASF25:
+ 2978 0012 47656E65 		.ascii	"GeneratePWMValue\000"
+ 2978      72617465 
+ 2978      50574D56 
+ 2978      616C7565 
+ 2978      00
+ 2979              	.LASF60:
+ 2980 0023 73745F72 		.ascii	"st_ref_vibrotactile\000"
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZTBIsW.s 			page 58
+
+
+ 2980      65665F76 
+ 2980      6962726F 
+ 2980      74616374 
+ 2980      696C6500 
+ 2981              	.LASF31:
+ 2982 0037 675F7265 		.ascii	"g_refNew_vibrotactile\000"
+ 2982      664E6577 
+ 2982      5F766962 
+ 2982      726F7461 
+ 2982      6374696C 
+ 2983              	.LASF32:
+ 2984 004d 666C6167 		.ascii	"flag_vibrotactile\000"
+ 2984      5F766962 
+ 2984      726F7461 
+ 2984      6374696C 
+ 2984      6500
+ 2985              	.LASF39:
+ 2986 005f 6D617472 		.ascii	"matrice_reco\000"
+ 2986      6963655F 
+ 2986      7265636F 
+ 2986      00
+ 2987              	.LASF2:
+ 2988 006c 73686F72 		.ascii	"short int\000"
+ 2988      7420696E 
+ 2988      7400
+ 2989              	.LASF18:
+ 2990 0076 73697A65 		.ascii	"sizetype\000"
+ 2990      74797065 
+ 2990      00
+ 2991              	.LASF57:
+ 2992 007f 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 2992      43313120 
+ 2992      352E342E 
+ 2992      31203230 
+ 2992      31363036 
+ 2993 00b2 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
+ 2993      20726576 
+ 2993      6973696F 
+ 2993      6E203233 
+ 2993      37373135 
+ 2994 00e5 30202D66 		.ascii	"0 -ffunction-sections -ffat-lto-objects\000"
+ 2994      66756E63 
+ 2994      74696F6E 
+ 2994      2D736563 
+ 2994      74696F6E 
+ 2995              	.LASF26:
+ 2996 010d 6163635F 		.ascii	"acc_filt_sum\000"
+ 2996      66696C74 
+ 2996      5F73756D 
+ 2996      00
+ 2997              	.LASF38:
+ 2998 011a 696E7075 		.ascii	"input_act_sent\000"
+ 2998      745F6163 
+ 2998      745F7365 
+ 2998      6E7400
+ 2999              	.LASF43:
+ 3000 0129 6D617373 		.ascii	"massimo\000"
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZTBIsW.s 			page 59
+
+
+ 3000      696D6F00 
+ 3001              	.LASF35:
+ 3002 0131 6163635F 		.ascii	"acc_values_mod\000"
+ 3002      76616C75 
+ 3002      65735F6D 
+ 3002      6F6400
+ 3003              	.LASF46:
+ 3004 0140 76656374 		.ascii	"vect_acc\000"
+ 3004      5F616363 
+ 3004      00
+ 3005              	.LASF11:
+ 3006 0149 75696E74 		.ascii	"uint8\000"
+ 3006      3800
+ 3007              	.LASF53:
+ 3008 014f 76656374 		.ascii	"vect_acc_old2_filt\000"
+ 3008      5F616363 
+ 3008      5F6F6C64 
+ 3008      325F6669 
+ 3008      6C7400
+ 3009              	.LASF51:
+ 3010 0162 76656374 		.ascii	"vect_acc_filt\000"
+ 3010      5F616363 
+ 3010      5F66696C 
+ 3010      7400
+ 3011              	.LASF6:
+ 3012 0170 6C6F6E67 		.ascii	"long long int\000"
+ 3012      206C6F6E 
+ 3012      6720696E 
+ 3012      7400
+ 3013              	.LASF12:
+ 3014 017e 696E7431 		.ascii	"int16\000"
+ 3014      3600
+ 3015              	.LASF42:
+ 3016 0184 74726F76 		.ascii	"trovato\000"
+ 3016      61746F00 
+ 3017              	.LASF4:
+ 3018 018c 6C6F6E67 		.ascii	"long int\000"
+ 3018      20696E74 
+ 3018      00
+ 3019              	.LASF56:
+ 3020 0195 76656374 		.ascii	"vect_filt\000"
+ 3020      5F66696C 
+ 3020      7400
+ 3021              	.LASF58:
+ 3022 019f 2E2E5C73 		.ascii	"..\\src\\vibrotactile_control.c\000"
+ 3022      72635C76 
+ 3022      6962726F 
+ 3022      74616374 
+ 3022      696C655F 
+ 3023              	.LASF20:
+ 3024 01bd 5369676E 		.ascii	"SignalFiltering\000"
+ 3024      616C4669 
+ 3024      6C746572 
+ 3024      696E6700 
+ 3025              	.LASF28:
+ 3026 01cd 6D656D49 		.ascii	"memInitVibrotactile\000"
+ 3026      6E697456 
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZTBIsW.s 			page 60
+
+
+ 3026      6962726F 
+ 3026      74616374 
+ 3026      696C6500 
+ 3027              	.LASF47:
+ 3028 01e1 76656374 		.ascii	"vect_acc_old\000"
+ 3028      5F616363 
+ 3028      5F6F6C64 
+ 3028      00
+ 3029              	.LASF34:
+ 3030 01ee 6D617472 		.ascii	"matrice_reco_mod\000"
+ 3030      6963655F 
+ 3030      7265636F 
+ 3030      5F6D6F64 
+ 3030      00
+ 3031              	.LASF17:
+ 3032 01ff 6C6F6E67 		.ascii	"long double\000"
+ 3032      20646F75 
+ 3032      626C6500 
+ 3033              	.LASF1:
+ 3034 020b 756E7369 		.ascii	"unsigned char\000"
+ 3034      676E6564 
+ 3034      20636861 
+ 3034      7200
+ 3035              	.LASF33:
+ 3036 0219 61636365 		.ascii	"accelerometer_matrix\000"
+ 3036      6C65726F 
+ 3036      6D657465 
+ 3036      725F6D61 
+ 3036      74726978 
+ 3037              	.LASF37:
+ 3038 022e 76656374 		.ascii	"vect_acc_filt_sum\000"
+ 3038      5F616363 
+ 3038      5F66696C 
+ 3038      745F7375 
+ 3038      6D00
+ 3039              	.LASF0:
+ 3040 0240 7369676E 		.ascii	"signed char\000"
+ 3040      65642063 
+ 3040      68617200 
+ 3041              	.LASF7:
+ 3042 024c 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 3042      206C6F6E 
+ 3042      6720756E 
+ 3042      7369676E 
+ 3042      65642069 
+ 3043              	.LASF41:
+ 3044 0263 696E7075 		.ascii	"input_act_old\000"
+ 3044      745F6163 
+ 3044      745F6F6C 
+ 3044      6400
+ 3045              	.LASF19:
+ 3046 0271 4F75746C 		.ascii	"OutliersDeletion\000"
+ 3046      69657273 
+ 3046      44656C65 
+ 3046      74696F6E 
+ 3046      00
+ 3047              	.LASF8:
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZTBIsW.s 			page 61
+
+
+ 3048 0282 756E7369 		.ascii	"unsigned int\000"
+ 3048      676E6564 
+ 3048      20696E74 
+ 3048      00
+ 3049              	.LASF44:
+ 3050 028f 636F6E74 		.ascii	"conta_finestra\000"
+ 3050      615F6669 
+ 3050      6E657374 
+ 3050      726100
+ 3051              	.LASF3:
+ 3052 029e 73686F72 		.ascii	"short unsigned int\000"
+ 3052      7420756E 
+ 3052      7369676E 
+ 3052      65642069 
+ 3052      6E7400
+ 3053              	.LASF16:
+ 3054 02b1 63686172 		.ascii	"char\000"
+ 3054      00
+ 3055              	.LASF10:
+ 3056 02b6 696E7433 		.ascii	"int32_t\000"
+ 3056      325F7400 
+ 3057              	.LASF14:
+ 3058 02be 666C6F61 		.ascii	"float\000"
+ 3058      7400
+ 3059              	.LASF55:
+ 3060 02c4 76656374 		.ascii	"vect_acc_old4_filt\000"
+ 3060      5F616363 
+ 3060      5F6F6C64 
+ 3060      345F6669 
+ 3060      6C7400
+ 3061              	.LASF5:
+ 3062 02d7 6C6F6E67 		.ascii	"long unsigned int\000"
+ 3062      20756E73 
+ 3062      69676E65 
+ 3062      6420696E 
+ 3062      7400
+ 3063              	.LASF13:
+ 3064 02e9 696E7433 		.ascii	"int32\000"
+ 3064      3200
+ 3065              	.LASF15:
+ 3066 02ef 646F7562 		.ascii	"double\000"
+ 3066      6C6500
+ 3067              	.LASF36:
+ 3068 02f6 6D617472 		.ascii	"matrice_completa\000"
+ 3068      6963655F 
+ 3068      636F6D70 
+ 3068      6C657461 
+ 3068      00
+ 3069              	.LASF54:
+ 3070 0307 76656374 		.ascii	"vect_acc_old3_filt\000"
+ 3070      5F616363 
+ 3070      5F6F6C64 
+ 3070      335F6669 
+ 3070      6C7400
+ 3071              	.LASF21:
+ 3072 031a 53696E67 		.ascii	"SingleAxisMapping\000"
+ 3072      6C654178 
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZTBIsW.s 			page 62
+
+
+ 3072      69734D61 
+ 3072      7070696E 
+ 3072      6700
+ 3073              	.LASF48:
+ 3074 032c 76656374 		.ascii	"vect_acc_old2\000"
+ 3074      5F616363 
+ 3074      5F6F6C64 
+ 3074      3200
+ 3075              	.LASF24:
+ 3076 033a 42616E64 		.ascii	"BandPassFilter\000"
+ 3076      50617373 
+ 3076      46696C74 
+ 3076      657200
+ 3077              	.LASF9:
+ 3078 0349 5F5F696E 		.ascii	"__int32_t\000"
+ 3078      7433325F 
+ 3078      7400
+ 3079              	.LASF22:
+ 3080 0353 41637475 		.ascii	"ActuatorsInputComputation\000"
+ 3080      61746F72 
+ 3080      73496E70 
+ 3080      7574436F 
+ 3080      6D707574 
+ 3081              	.LASF23:
+ 3082 036d 6E65775F 		.ascii	"new_value\000"
+ 3082      76616C75 
+ 3082      6500
+ 3083              	.LASF49:
+ 3084 0377 76656374 		.ascii	"vect_acc_old3\000"
+ 3084      5F616363 
+ 3084      5F6F6C64 
+ 3084      3300
+ 3085              	.LASF50:
+ 3086 0385 76656374 		.ascii	"vect_acc_old4\000"
+ 3086      5F616363 
+ 3086      5F6F6C64 
+ 3086      3400
+ 3087              	.LASF27:
+ 3088 0393 70776D5F 		.ascii	"pwm_hapt\000"
+ 3088      68617074 
+ 3088      00
+ 3089              	.LASF40:
+ 3090 039c 636F6E74 		.ascii	"contatore\000"
+ 3090      61746F72 
+ 3090      6500
+ 3091              	.LASF59:
+ 3092 03a6 433A5C55 		.ascii	"C:\\Users\\mgnocco\\Documents\\ControlloDiVersione\\"
+ 3092      73657273 
+ 3092      5C6D676E 
+ 3092      6F63636F 
+ 3092      5C446F63 
+ 3093 03d5 57495348 		.ascii	"WISH_TOAST\\Scheda_Mano\\Generic.cydsn\000"
+ 3093      5F544F41 
+ 3093      53545C53 
+ 3093      63686564 
+ 3093      615F4D61 
+ 3094              	.LASF30:
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccZTBIsW.s 			page 63
+
+
+ 3095 03fa 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ 3095      52784275 
+ 3095      66666572 
+ 3095      00
+ 3096              	.LASF29:
+ 3097 0407 64726976 		.ascii	"driveVibrotactileFeedback\000"
+ 3097      65566962 
+ 3097      726F7461 
+ 3097      6374696C 
+ 3097      65466565 
+ 3098              	.LASF45:
+ 3099 0421 636F6E74 		.ascii	"conta_1\000"
+ 3099      615F3100 
+ 3100              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran
