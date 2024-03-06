@@ -1,6 +1,6 @@
 // ======================================================================
 // WISH_VIBES_Socket.v generated from TopDesign.cysch
-// 02/20/2024 at 13:40
+// 03/05/2024 at 17:20
 // This file is auto generated. ANY EDITS YOU MAKE MAY BE LOST WHEN THIS FILE IS REGENERATED!!!
 // ======================================================================
 
@@ -1700,6 +1700,8 @@ module top ;
           wire  Net_10377;
           wire  Net_10376;
           wire  Net_10375;
+          wire  Net_10755;
+          wire  Net_10749;
           wire  Net_10373;
           wire  Net_10372;
           wire  Net_10371;
@@ -1721,6 +1723,7 @@ module top ;
           wire  Net_10443;
           wire  Net_10442;
           wire  Net_10441;
+          wire  Net_10747;
           wire  Net_8144;
           wire  Net_8142;
           wire  Net_8141;
@@ -1929,6 +1932,7 @@ module top ;
     electrical  Net_6722;
     electrical  Net_6721;
     electrical  Net_6720;
+          wire  Net_10763;
           wire  Net_10313;
           wire  Net_10337;
           wire  Net_2334;
@@ -1943,10 +1947,6 @@ module top ;
           wire  Net_9969;
           wire  Net_2982;
           wire  Net_10350;
-          wire  Net_10661;
-          wire  Net_10660;
-          wire  Net_10659;
-          wire  Net_10658;
           wire  Net_10359;
           wire  Net_10374;
           wire  Net_10358;
@@ -5014,7 +5014,7 @@ module top ;
 		  .input_buffer_sel(2'b00))
 		VT_1A
 		 (.oe(tmpOE__VT_1A_net),
-		  .y({Net_10659}),
+		  .y({Net_10747}),
 		  .fb({tmpFB_0__VT_1A_net[0:0]}),
 		  .io({tmpIO_0__VT_1A_net[0:0]}),
 		  .siovref(tmpSIOVREF__VT_1A_net),
@@ -5109,7 +5109,7 @@ module top ;
 		  .input_buffer_sel(2'b00))
 		VT_1B
 		 (.oe(tmpOE__VT_1B_net),
-		  .y({Net_10658}),
+		  .y({Net_10763}),
 		  .fb({tmpFB_0__VT_1B_net[0:0]}),
 		  .io({tmpIO_0__VT_1B_net[0:0]}),
 		  .siovref(tmpSIOVREF__VT_1B_net),
@@ -5148,10 +5148,10 @@ module top ;
     defparam VT1_DIR.NumOutputs = 1;
 
 
-    assign Net_10659 = Net_10358 & Net_10364;
+    assign Net_10747 = Net_10358 & Net_10364;
 
 
-    assign Net_10658 = Net_10358 & Net_10373;
+    assign Net_10763 = Net_10358 & Net_10373;
 
 
     assign Net_10373 = ~Net_10364;
@@ -5217,7 +5217,7 @@ module top ;
 		  .input_buffer_sel(2'b00))
 		VT_2A
 		 (.oe(tmpOE__VT_2A_net),
-		  .y({Net_10661}),
+		  .y({Net_10749}),
 		  .fb({tmpFB_0__VT_2A_net[0:0]}),
 		  .io({tmpIO_0__VT_2A_net[0:0]}),
 		  .siovref(tmpSIOVREF__VT_2A_net),
@@ -5292,7 +5292,7 @@ module top ;
 		  .input_buffer_sel(2'b00))
 		VT_2B
 		 (.oe(tmpOE__VT_2B_net),
-		  .y({Net_10660}),
+		  .y({Net_10755}),
 		  .fb({tmpFB_0__VT_2B_net[0:0]}),
 		  .io({tmpIO_0__VT_2B_net[0:0]}),
 		  .siovref(tmpSIOVREF__VT_2B_net),
@@ -5307,10 +5307,10 @@ module top ;
 	assign tmpOE__VT_2B_net = (`CYDEV_CHIP_MEMBER_USED == `CYDEV_CHIP_MEMBER_3A && `CYDEV_CHIP_REVISION_USED < `CYDEV_CHIP_REVISION_3A_ES3) ? ~{1'b1} : {1'b1};
 
 
-    assign Net_10661 = Net_10359 & Net_10374;
+    assign Net_10749 = Net_10359 & Net_10374;
 
 
-    assign Net_10660 = Net_10359 & Net_10375;
+    assign Net_10755 = Net_10359 & Net_10375;
 
 
     assign Net_10375 = ~Net_10374;

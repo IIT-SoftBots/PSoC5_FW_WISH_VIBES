@@ -3681,7 +3681,8 @@ void cmd_get_currents(){
     }
     else {
         // Send pressure times 100 here instead of current (Simulink use)
-        aux_int16 = (int16)(g_fb_meas.pressure*100.0); //Pressure
+       // aux_int16 = (int16)(g_fb_meas.pressure*100.0); //Pressure
+        aux_int16 = (int16)(flag_master); //Pressure
     }
     packet_data[2] = ((char*)(&aux_int16))[0];
     packet_data[1] = ((char*)(&aux_int16))[1];

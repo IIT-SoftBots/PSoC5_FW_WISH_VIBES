@@ -120,10 +120,11 @@ int main()
     
     PWM_VT_Start();
     PWM_VT_WriteCompare1(0);
+    PWM_VT_WriteCompare2(0);    
     VT1_DIR_Write(0);
-    VT1_DIR_Write(0);
+    VT2_DIR_Write(0);
     
-    VALVE_Write(CLOSED);
+    //VALVE_Write(CLOSED);
     flag_master = 0;  //Master Mode disabled
 
     // ADC

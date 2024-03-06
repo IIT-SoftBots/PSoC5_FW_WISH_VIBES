@@ -286,6 +286,7 @@ void function_scheduler(void) {
         interrupt_flag = FALSE;
         interrupt_manager();
     }
+   
             // if master_mode parameter is set to 1
             if (g_mem.MS.master_mode_active){  
                 
@@ -296,7 +297,7 @@ void function_scheduler(void) {
                 if (flag_master < 2000)       // if voltage is LOW, exit master mode
                     master_mode = 0;
                 
-                else if (flag_master > 2000)  // if voltage is LOW, enter master mode
+                else if (flag_master > 2000)  // if voltage is HIGH, enter master mode
                     master_mode = 1;
             }
             
@@ -370,6 +371,7 @@ void function_scheduler(void) {
                 interrupt_flag = FALSE;
                 interrupt_manager();
             }
+    
            
     //---------------------------------- Read conversion buffer - LOCK function
 
@@ -1916,7 +1918,7 @@ void analog_read_end() {
     }
 #endif
  
-flag_master =  ((int32)(ADC_buf[1] - 1621) * 1990) >> 7;
+flag_master =  (int32)((ADC_buf[1]/4096.0)*5000);
     
     // Read also 2nd power tension (if necessary)
     if (NUM_OF_ANALOG_INPUTS > 4) {

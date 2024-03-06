@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccUGzmYm.s 			page 1
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccItB3FZ.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccUGzmYm.s 			page 1
   28:..\src/main.c **** // SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
   29:..\src/main.c **** // CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
   30:..\src/main.c **** // OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccUGzmYm.s 			page 2
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccItB3FZ.s 			page 2
 
 
   31:..\src/main.c **** // OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccUGzmYm.s 			page 1
   36              		.cfi_offset 14, -4
   37 0002 83B0     		sub	sp, sp, #12
   38              		.cfi_def_cfa_offset 24
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccUGzmYm.s 			page 3
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccItB3FZ.s 			page 3
 
 
   39 0004 00AF     		add	r7, sp, #0
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccUGzmYm.s 			page 1
   66              		.loc 1 103 0
   67 003a FFF7FEFF 		bl	UART_RS485_Start
  104:..\src/main.c ****     UART_RS485_Init();
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccUGzmYm.s 			page 4
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccItB3FZ.s 			page 4
 
 
   68              		.loc 1 104 0
@@ -237,43 +237,44 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccUGzmYm.s 			page 1
  103              		.loc 1 122 0
  104 0084 0020     		movs	r0, #0
  105 0086 FFF7FEFF 		bl	PWM_VT_WriteCompare1
- 123:..\src/main.c ****     VT1_DIR_Write(0);
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccUGzmYm.s 			page 5
+ 123:..\src/main.c ****     PWM_VT_WriteCompare2(0);    
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccItB3FZ.s 			page 5
 
 
  106              		.loc 1 123 0
  107 008a 0020     		movs	r0, #0
- 108 008c FFF7FEFF 		bl	VT1_DIR_Write
+ 108 008c FFF7FEFF 		bl	PWM_VT_WriteCompare2
  124:..\src/main.c ****     VT1_DIR_Write(0);
  109              		.loc 1 124 0
  110 0090 0020     		movs	r0, #0
  111 0092 FFF7FEFF 		bl	VT1_DIR_Write
- 125:..\src/main.c ****     
- 126:..\src/main.c ****     VALVE_Write(CLOSED);
- 112              		.loc 1 126 0
- 113 0096 0120     		movs	r0, #1
- 114 0098 FFF7FEFF 		bl	VALVE_Write
- 127:..\src/main.c ****     flag_master = 0;  //Master Mode disabled
- 115              		.loc 1 127 0
+ 125:..\src/main.c ****     VT2_DIR_Write(0);
+ 112              		.loc 1 125 0
+ 113 0096 0020     		movs	r0, #0
+ 114 0098 FFF7FEFF 		bl	VT2_DIR_Write
+ 126:..\src/main.c ****     
+ 127:..\src/main.c ****     //VALVE_Write(CLOSED);
+ 128:..\src/main.c ****     flag_master = 0;  //Master Mode disabled
+ 115              		.loc 1 128 0
  116 009c A24B     		ldr	r3, .L38+8
  117 009e 0022     		movs	r2, #0
  118 00a0 1A60     		str	r2, [r3]
- 128:..\src/main.c **** 
- 129:..\src/main.c ****     // ADC
- 130:..\src/main.c ****     ADC_Set_N_Channels();           // Set right number of ADC channels to sample
- 119              		.loc 1 130 0
+ 129:..\src/main.c **** 
+ 130:..\src/main.c ****     // ADC
+ 131:..\src/main.c ****     ADC_Set_N_Channels();           // Set right number of ADC channels to sample
+ 119              		.loc 1 131 0
  120 00a2 FFF7FEFF 		bl	ADC_Set_N_Channels
- 131:..\src/main.c ****     ADC_Start();
- 121              		.loc 1 131 0
+ 132:..\src/main.c ****     ADC_Start();
+ 121              		.loc 1 132 0
  122 00a6 FFF7FEFF 		bl	ADC_Start
- 132:..\src/main.c ****     ADC_SOC_Write(0x01);            // Force first read cycle.
- 123              		.loc 1 132 0
+ 133:..\src/main.c ****     ADC_SOC_Write(0x01);            // Force first read cycle.
+ 123              		.loc 1 133 0
  124 00aa 0120     		movs	r0, #1
  125 00ac FFF7FEFF 		bl	ADC_SOC_Write
- 133:..\src/main.c **** 
- 134:..\src/main.c ****     // ADC DMA    
- 135:..\src/main.c ****     DMA_Chan = DMA_DmaInitialize(DMA_BYTES_PER_BURST, DMA_REQUEST_PER_BURST, HI16(DMA_SRC_BASE), HI
- 126              		.loc 1 135 0
+ 134:..\src/main.c **** 
+ 135:..\src/main.c ****     // ADC DMA    
+ 136:..\src/main.c ****     DMA_Chan = DMA_DmaInitialize(DMA_BYTES_PER_BURST, DMA_REQUEST_PER_BURST, HI16(DMA_SRC_BASE), HI
+ 126              		.loc 1 136 0
  127 00b0 41F6FF73 		movw	r3, #8191
  128 00b4 4FF48042 		mov	r2, #16384
  129 00b8 0121     		movs	r1, #1
@@ -281,13 +282,13 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccUGzmYm.s 			page 1
  131 00bc FFF7FEFF 		bl	DMA_DmaInitialize
  132 00c0 0346     		mov	r3, r0
  133 00c2 FB70     		strb	r3, [r7, #3]
- 136:..\src/main.c ****     DMA_TD[0] = CyDmaTdAllocate();                                                                 
- 134              		.loc 1 136 0
+ 137:..\src/main.c ****     DMA_TD[0] = CyDmaTdAllocate();                                                                 
+ 134              		.loc 1 137 0
  135 00c4 FFF7FEFF 		bl	CyDmaTdAllocate
  136 00c8 0346     		mov	r3, r0
  137 00ca 3B70     		strb	r3, [r7]
- 137:..\src/main.c ****     CyDmaTdSetConfiguration(DMA_TD[0], 2 * NUM_OF_ANALOG_INPUTS, DMA_TD[0], DMA__TD_TERMOUT_EN | TD
- 138              		.loc 1 137 0
+ 138:..\src/main.c ****     CyDmaTdSetConfiguration(DMA_TD[0], 2 * NUM_OF_ANALOG_INPUTS, DMA_TD[0], DMA__TD_TERMOUT_EN | TD
+ 138              		.loc 1 138 0
  139 00cc 3878     		ldrb	r0, [r7]	@ zero_extendqisi2
  140 00ce 974B     		ldr	r3, .L38+12
  141 00d0 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
@@ -297,234 +298,234 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccUGzmYm.s 			page 1
  145 00d8 3A78     		ldrb	r2, [r7]	@ zero_extendqisi2
  146 00da 0623     		movs	r3, #6
  147 00dc FFF7FEFF 		bl	CyDmaTdSetConfiguration
- 138:..\src/main.c ****     CyDmaTdSetAddress(DMA_TD[0], LO16((uint32)ADC_DEC_SAMP_PTR), LO16((uint32)ADC_buf));           
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccUGzmYm.s 			page 6
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccItB3FZ.s 			page 6
 
 
- 148              		.loc 1 138 0
+ 139:..\src/main.c ****     CyDmaTdSetAddress(DMA_TD[0], LO16((uint32)ADC_DEC_SAMP_PTR), LO16((uint32)ADC_buf));           
+ 148              		.loc 1 139 0
  149 00e0 3B78     		ldrb	r3, [r7]	@ zero_extendqisi2
  150 00e2 934A     		ldr	r2, .L38+16
  151 00e4 92B2     		uxth	r2, r2
  152 00e6 44F61061 		movw	r1, #19984
  153 00ea 1846     		mov	r0, r3
  154 00ec FFF7FEFF 		bl	CyDmaTdSetAddress
- 139:..\src/main.c ****     CyDmaChSetInitialTd(DMA_Chan, DMA_TD[0]);                                                      
- 155              		.loc 1 139 0
+ 140:..\src/main.c ****     CyDmaChSetInitialTd(DMA_Chan, DMA_TD[0]);                                                      
+ 155              		.loc 1 140 0
  156 00f0 3A78     		ldrb	r2, [r7]	@ zero_extendqisi2
  157 00f2 FB78     		ldrb	r3, [r7, #3]	@ zero_extendqisi2
  158 00f4 1146     		mov	r1, r2
  159 00f6 1846     		mov	r0, r3
  160 00f8 FFF7FEFF 		bl	CyDmaChSetInitialTd
- 140:..\src/main.c ****     CyDmaChEnable(DMA_Chan, 1);                                                                    
- 161              		.loc 1 140 0
+ 141:..\src/main.c ****     CyDmaChEnable(DMA_Chan, 1);                                                                    
+ 161              		.loc 1 141 0
  162 00fc FB78     		ldrb	r3, [r7, #3]	@ zero_extendqisi2
  163 00fe 0121     		movs	r1, #1
  164 0100 1846     		mov	r0, r3
  165 0102 FFF7FEFF 		bl	CyDmaChEnable
- 141:..\src/main.c ****     
- 142:..\src/main.c ****     // TIMER
- 143:..\src/main.c ****     MY_TIMER_Start();           
- 166              		.loc 1 143 0
+ 142:..\src/main.c ****     
+ 143:..\src/main.c ****     // TIMER
+ 144:..\src/main.c ****     MY_TIMER_Start();           
+ 166              		.loc 1 144 0
  167 0106 FFF7FEFF 		bl	MY_TIMER_Start
- 144:..\src/main.c ****     PACER_TIMER_Start();    
- 168              		.loc 1 144 0
+ 145:..\src/main.c ****     PACER_TIMER_Start();    
+ 168              		.loc 1 145 0
  169 010a FFF7FEFF 		bl	PACER_TIMER_Start
- 145:..\src/main.c ****     
- 146:..\src/main.c ****     CYGlobalIntEnable;              // Enable interrupts.
- 170              		.loc 1 146 0
+ 146:..\src/main.c ****     
+ 147:..\src/main.c ****     CYGlobalIntEnable;              // Enable interrupts.
+ 170              		.loc 1 147 0
  171              		.syntax unified
- 172              	@ 146 "..\src\main.c" 1
+ 172              	@ 147 "..\src\main.c" 1
  173 010e 62B6     		CPSIE   i
  174              	@ 0 "" 2
- 147:..\src/main.c **** 
  148:..\src/main.c **** 
- 149:..\src/main.c ****     //SPI IMU module
- 150:..\src/main.c ****     if (c_mem.imu.read_imu_flag) {
- 151:..\src/main.c **** /*
- 152:..\src/main.c ****     	SPI_IMU_Start();
- 153:..\src/main.c ****     	SPI_IMU_Init();
- 154:..\src/main.c ****     	SPI_IMU_Enable();
- 155:..\src/main.c ****     	SPI_IMU_ClearRxBuffer();
- 156:..\src/main.c ****     	SPI_IMU_ClearTxBuffer();
- 157:..\src/main.c ****     	SPI_IMU_ClearFIFO();							
- 158:..\src/main.c ****         CyDelay(10);
- 159:..\src/main.c ****         
- 160:..\src/main.c ****         // Init MPU9250 devices
- 161:..\src/main.c ****         InitIMUgeneral();
- 162:..\src/main.c ****         
- 163:..\src/main.c ****         // Initialize quaternion
- 164:..\src/main.c ****         for (i = 0; i<N_IMU_MAX; i++) {
- 165:..\src/main.c ****             Quat[i][0] = 0.999;
- 166:..\src/main.c ****             Quat[i][1] = 0.01;
- 167:..\src/main.c ****             Quat[i][2] = 0.01;
- 168:..\src/main.c ****             Quat[i][3] = 0.01;
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccUGzmYm.s 			page 7
+ 149:..\src/main.c **** 
+ 150:..\src/main.c ****     //SPI IMU module
+ 151:..\src/main.c ****     if (c_mem.imu.read_imu_flag) {
+ 152:..\src/main.c **** /*
+ 153:..\src/main.c ****     	SPI_IMU_Start();
+ 154:..\src/main.c ****     	SPI_IMU_Init();
+ 155:..\src/main.c ****     	SPI_IMU_Enable();
+ 156:..\src/main.c ****     	SPI_IMU_ClearRxBuffer();
+ 157:..\src/main.c ****     	SPI_IMU_ClearTxBuffer();
+ 158:..\src/main.c ****     	SPI_IMU_ClearFIFO();							
+ 159:..\src/main.c ****         CyDelay(10);
+ 160:..\src/main.c ****         
+ 161:..\src/main.c ****         // Init MPU9250 devices
+ 162:..\src/main.c ****         InitIMUgeneral();
+ 163:..\src/main.c ****         
+ 164:..\src/main.c ****         // Initialize quaternion
+ 165:..\src/main.c ****         for (i = 0; i<N_IMU_MAX; i++) {
+ 166:..\src/main.c ****             Quat[i][0] = 0.999;
+ 167:..\src/main.c ****             Quat[i][1] = 0.01;
+ 168:..\src/main.c ****             Quat[i][2] = 0.01;
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccItB3FZ.s 			page 7
 
 
- 169:..\src/main.c ****         }
- 170:..\src/main.c ****    */ }
- 171:..\src/main.c ****     
- 172:..\src/main.c ****     //========================================     initializations - clean variables
- 173:..\src/main.c ****     
- 174:..\src/main.c ****     //---------------------------------------------------  Initialize filters structure 
- 175:..\src/main.c ****     for(i=0;i<NUM_OF_MOTORS;i++) {
- 175              		.loc 1 175 0
+ 169:..\src/main.c ****             Quat[i][3] = 0.01;
+ 170:..\src/main.c ****         }
+ 171:..\src/main.c ****    */ }
+ 172:..\src/main.c ****     
+ 173:..\src/main.c ****     //========================================     initializations - clean variables
+ 174:..\src/main.c ****     
+ 175:..\src/main.c ****     //---------------------------------------------------  Initialize filters structure 
+ 176:..\src/main.c ****     for(i=0;i<NUM_OF_MOTORS;i++) {
+ 175              		.loc 1 176 0
  176              		.thumb
  177              		.syntax unified
  178 0110 0023     		movs	r3, #0
  179 0112 FB71     		strb	r3, [r7, #7]
  180 0114 1AE0     		b	.L2
  181              	.L3:
- 176:..\src/main.c ****         filt_i[i].gain = 32;    // Current filter constant.
- 182              		.loc 1 176 0 discriminator 3
+ 177:..\src/main.c ****         filt_i[i].gain = 32;    // Current filter constant.
+ 182              		.loc 1 177 0 discriminator 3
  183 0116 FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
  184 0118 864A     		ldr	r2, .L38+20
  185 011a DB00     		lsls	r3, r3, #3
  186 011c 1344     		add	r3, r3, r2
  187 011e 2022     		movs	r2, #32
  188 0120 5A60     		str	r2, [r3, #4]
- 177:..\src/main.c ****         filt_curr_diff[i].gain = 16;   // Current residual filter constant.       
- 189              		.loc 1 177 0 discriminator 3
+ 178:..\src/main.c ****         filt_curr_diff[i].gain = 16;   // Current residual filter constant.       
+ 189              		.loc 1 178 0 discriminator 3
  190 0122 FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
  191 0124 844A     		ldr	r2, .L38+24
  192 0126 DB00     		lsls	r3, r3, #3
  193 0128 1344     		add	r3, r3, r2
  194 012a 1022     		movs	r2, #16
  195 012c 5A60     		str	r2, [r3, #4]
- 178:..\src/main.c ****         filt_v[i].old_value    = 12000;// Initial voltage filter value.
- 196              		.loc 1 178 0 discriminator 3
+ 179:..\src/main.c ****         filt_v[i].old_value    = 12000;// Initial voltage filter value.
+ 196              		.loc 1 179 0 discriminator 3
  197 012e FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
  198 0130 824A     		ldr	r2, .L38+28
  199 0132 42F6E061 		movw	r1, #12000
  200 0136 42F83310 		str	r1, [r2, r3, lsl #3]
- 179:..\src/main.c ****         filt_v[i].gain         = 2;    // Voltage filter constant.
- 201              		.loc 1 179 0 discriminator 3
+ 180:..\src/main.c ****         filt_v[i].gain         = 2;    // Voltage filter constant.
+ 201              		.loc 1 180 0 discriminator 3
  202 013a FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
  203 013c 7F4A     		ldr	r2, .L38+28
  204 013e DB00     		lsls	r3, r3, #3
  205 0140 1344     		add	r3, r3, r2
  206 0142 0222     		movs	r2, #2
  207 0144 5A60     		str	r2, [r3, #4]
- 175:..\src/main.c ****         filt_i[i].gain = 32;    // Current filter constant.
- 208              		.loc 1 175 0 discriminator 3
+ 176:..\src/main.c ****         filt_i[i].gain = 32;    // Current filter constant.
+ 208              		.loc 1 176 0 discriminator 3
  209 0146 FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
  210 0148 0133     		adds	r3, r3, #1
  211 014a FB71     		strb	r3, [r7, #7]
  212              	.L2:
- 175:..\src/main.c ****         filt_i[i].gain = 32;    // Current filter constant.
- 213              		.loc 1 175 0 is_stmt 0 discriminator 1
+ 176:..\src/main.c ****         filt_i[i].gain = 32;    // Current filter constant.
+ 213              		.loc 1 176 0 is_stmt 0 discriminator 1
  214 014c FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
  215 014e 012B     		cmp	r3, #1
  216 0150 E1D9     		bls	.L3
- 180:..\src/main.c ****     }
- 181:..\src/main.c ****     for(i=0;i<NUM_OF_SENSORS;i++) {
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccUGzmYm.s 			page 8
+ 181:..\src/main.c ****     }
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccItB3FZ.s 			page 8
 
 
- 217              		.loc 1 181 0 is_stmt 1
+ 182:..\src/main.c ****     for(i=0;i<NUM_OF_SENSORS;i++) {
+ 217              		.loc 1 182 0 is_stmt 1
  218 0152 0023     		movs	r3, #0
  219 0154 FB71     		strb	r3, [r7, #7]
  220 0156 08E0     		b	.L4
  221              	.L5:
- 182:..\src/main.c ****         filt_vel[i].gain = 128; // Velocity filters constant.
- 222              		.loc 1 182 0 discriminator 3
+ 183:..\src/main.c ****         filt_vel[i].gain = 128; // Velocity filters constant.
+ 222              		.loc 1 183 0 discriminator 3
  223 0158 FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
  224 015a 794A     		ldr	r2, .L38+32
  225 015c DB00     		lsls	r3, r3, #3
  226 015e 1344     		add	r3, r3, r2
  227 0160 8022     		movs	r2, #128
  228 0162 5A60     		str	r2, [r3, #4]
- 181:..\src/main.c ****         filt_vel[i].gain = 128; // Velocity filters constant.
- 229              		.loc 1 181 0 discriminator 3
+ 182:..\src/main.c ****         filt_vel[i].gain = 128; // Velocity filters constant.
+ 229              		.loc 1 182 0 discriminator 3
  230 0164 FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
  231 0166 0133     		adds	r3, r3, #1
  232 0168 FB71     		strb	r3, [r7, #7]
  233              	.L4:
- 181:..\src/main.c ****         filt_vel[i].gain = 128; // Velocity filters constant.
- 234              		.loc 1 181 0 is_stmt 0 discriminator 1
+ 182:..\src/main.c ****         filt_vel[i].gain = 128; // Velocity filters constant.
+ 234              		.loc 1 182 0 is_stmt 0 discriminator 1
  235 016a FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
  236 016c 022B     		cmp	r3, #2
  237 016e F3D9     		bls	.L5
- 183:..\src/main.c ****     }
- 184:..\src/main.c ****     
- 185:..\src/main.c ****     for(i=0;i<NUM_OF_INPUT_EMGS+NUM_OF_ADDITIONAL_EMGS;i++) {
- 238              		.loc 1 185 0 is_stmt 1
+ 184:..\src/main.c ****     }
+ 185:..\src/main.c ****     
+ 186:..\src/main.c ****     for(i=0;i<NUM_OF_INPUT_EMGS+NUM_OF_ADDITIONAL_EMGS;i++) {
+ 238              		.loc 1 186 0 is_stmt 1
  239 0170 0023     		movs	r3, #0
  240 0172 FB71     		strb	r3, [r7, #7]
  241 0174 08E0     		b	.L6
  242              	.L7:
- 186:..\src/main.c ****         filt_emg[i].gain      = 50;   // Emg channels filter constant.
- 243              		.loc 1 186 0 discriminator 3
+ 187:..\src/main.c ****         filt_emg[i].gain      = 50;   // Emg channels filter constant.
+ 243              		.loc 1 187 0 discriminator 3
  244 0176 FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
  245 0178 724A     		ldr	r2, .L38+36
  246 017a DB00     		lsls	r3, r3, #3
  247 017c 1344     		add	r3, r3, r2
  248 017e 3222     		movs	r2, #50
  249 0180 5A60     		str	r2, [r3, #4]
- 185:..\src/main.c ****         filt_emg[i].gain      = 50;   // Emg channels filter constant.
- 250              		.loc 1 185 0 discriminator 3
+ 186:..\src/main.c ****         filt_emg[i].gain      = 50;   // Emg channels filter constant.
+ 250              		.loc 1 186 0 discriminator 3
  251 0182 FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
  252 0184 0133     		adds	r3, r3, #1
  253 0186 FB71     		strb	r3, [r7, #7]
  254              	.L6:
- 185:..\src/main.c ****         filt_emg[i].gain      = 50;   // Emg channels filter constant.
- 255              		.loc 1 185 0 is_stmt 0 discriminator 1
+ 186:..\src/main.c ****         filt_emg[i].gain      = 50;   // Emg channels filter constant.
+ 255              		.loc 1 186 0 is_stmt 0 discriminator 1
  256 0188 FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
  257 018a 072B     		cmp	r3, #7
  258 018c F3D9     		bls	.L7
- 187:..\src/main.c ****     }
- 188:..\src/main.c ****     filt_detect_pc.gain = 500;    
- 259              		.loc 1 188 0 is_stmt 1
+ 188:..\src/main.c ****     }
+ 189:..\src/main.c ****     filt_detect_pc.gain = 500;    
+ 259              		.loc 1 189 0 is_stmt 1
  260 018e 6E4B     		ldr	r3, .L38+40
  261 0190 4FF4FA72 		mov	r2, #500
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccItB3FZ.s 			page 9
+
+
  262 0194 5A60     		str	r2, [r3, #4]
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccUGzmYm.s 			page 9
-
-
- 189:..\src/main.c ****     
- 190:..\src/main.c ****     //---------------------------------------------------  Initialize reference structure 
- 191:..\src/main.c ****     for (i = 0; i< NUM_OF_MOTORS; i++) {
- 263              		.loc 1 191 0
+ 190:..\src/main.c ****     
+ 191:..\src/main.c ****     //---------------------------------------------------  Initialize reference structure 
+ 192:..\src/main.c ****     for (i = 0; i< NUM_OF_MOTORS; i++) {
+ 263              		.loc 1 192 0
  264 0196 0023     		movs	r3, #0
  265 0198 FB71     		strb	r3, [r7, #7]
  266 019a 08E0     		b	.L8
  267              	.L9:
- 192:..\src/main.c ****         g_ref[i].pos = 0;
- 268              		.loc 1 192 0 discriminator 3
+ 193:..\src/main.c ****         g_ref[i].pos = 0;
+ 268              		.loc 1 193 0 discriminator 3
  269 019c FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
  270 019e 6B4A     		ldr	r2, .L38+44
  271 01a0 1B01     		lsls	r3, r3, #4
  272 01a2 1344     		add	r3, r3, r2
  273 01a4 0022     		movs	r2, #0
  274 01a6 1A60     		str	r2, [r3]
- 191:..\src/main.c ****         g_ref[i].pos = 0;
- 275              		.loc 1 191 0 discriminator 3
+ 192:..\src/main.c ****         g_ref[i].pos = 0;
+ 275              		.loc 1 192 0 discriminator 3
  276 01a8 FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
  277 01aa 0133     		adds	r3, r3, #1
  278 01ac FB71     		strb	r3, [r7, #7]
  279              	.L8:
- 191:..\src/main.c ****         g_ref[i].pos = 0;
- 280              		.loc 1 191 0 is_stmt 0 discriminator 1
+ 192:..\src/main.c ****         g_ref[i].pos = 0;
+ 280              		.loc 1 192 0 is_stmt 0 discriminator 1
  281 01ae FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
  282 01b0 012B     		cmp	r3, #1
  283 01b2 F3D9     		bls	.L9
- 193:..\src/main.c ****     }
- 194:..\src/main.c ****     
- 195:..\src/main.c ****     //---------------------------------------------------  Initialize measurement structure
- 196:..\src/main.c ****     for (j = 0; j< N_ENCODER_LINE_MAX; j++) { 
- 284              		.loc 1 196 0 is_stmt 1
+ 194:..\src/main.c ****     }
+ 195:..\src/main.c ****     
+ 196:..\src/main.c ****     //---------------------------------------------------  Initialize measurement structure
+ 197:..\src/main.c ****     for (j = 0; j< N_ENCODER_LINE_MAX; j++) { 
+ 284              		.loc 1 197 0 is_stmt 1
  285 01b4 0023     		movs	r3, #0
  286 01b6 BB71     		strb	r3, [r7, #6]
  287 01b8 22E0     		b	.L10
  288              	.L13:
- 197:..\src/main.c ****         for (i = 0; i < NUM_OF_SENSORS; i++) { 
- 289              		.loc 1 197 0
+ 198:..\src/main.c ****         for (i = 0; i < NUM_OF_SENSORS; i++) { 
+ 289              		.loc 1 198 0
  290 01ba 0023     		movs	r3, #0
  291 01bc FB71     		strb	r3, [r7, #7]
  292 01be 19E0     		b	.L11
  293              	.L12:
- 198:..\src/main.c ****             g_meas[j].pos[i] = 0;
- 294              		.loc 1 198 0 discriminator 3
+ 199:..\src/main.c ****             g_meas[j].pos[i] = 0;
+ 294              		.loc 1 199 0 discriminator 3
  295 01c0 BA79     		ldrb	r2, [r7, #6]	@ zero_extendqisi2
  296 01c2 F979     		ldrb	r1, [r7, #7]	@ zero_extendqisi2
  297 01c4 6248     		ldr	r0, .L38+48
@@ -536,11 +537,11 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccUGzmYm.s 			page 1
  303 01d0 0B44     		add	r3, r3, r1
  304 01d2 0022     		movs	r2, #0
  305 01d4 40F82320 		str	r2, [r0, r3, lsl #2]
- 199:..\src/main.c ****             g_meas[j].rot[i] = (int8)0;
- 306              		.loc 1 199 0 discriminator 3
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccUGzmYm.s 			page 10
+ 200:..\src/main.c ****             g_meas[j].rot[i] = (int8)0;
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccItB3FZ.s 			page 10
 
 
+ 306              		.loc 1 200 0 discriminator 3
  307 01d8 BA79     		ldrb	r2, [r7, #6]	@ zero_extendqisi2
  308 01da FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
  309 01dc 5C49     		ldr	r1, .L38+48
@@ -551,39 +552,39 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccUGzmYm.s 			page 1
  314 01e8 1833     		adds	r3, r3, #24
  315 01ea 0022     		movs	r2, #0
  316 01ec 1A70     		strb	r2, [r3]
- 197:..\src/main.c ****         for (i = 0; i < NUM_OF_SENSORS; i++) { 
- 317              		.loc 1 197 0 discriminator 3
+ 198:..\src/main.c ****         for (i = 0; i < NUM_OF_SENSORS; i++) { 
+ 317              		.loc 1 198 0 discriminator 3
  318 01ee FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
  319 01f0 0133     		adds	r3, r3, #1
  320 01f2 FB71     		strb	r3, [r7, #7]
  321              	.L11:
- 197:..\src/main.c ****         for (i = 0; i < NUM_OF_SENSORS; i++) { 
- 322              		.loc 1 197 0 is_stmt 0 discriminator 1
+ 198:..\src/main.c ****         for (i = 0; i < NUM_OF_SENSORS; i++) { 
+ 322              		.loc 1 198 0 is_stmt 0 discriminator 1
  323 01f4 FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
  324 01f6 022B     		cmp	r3, #2
  325 01f8 E2D9     		bls	.L12
- 196:..\src/main.c ****         for (i = 0; i < NUM_OF_SENSORS; i++) { 
- 326              		.loc 1 196 0 is_stmt 1 discriminator 2
+ 197:..\src/main.c ****         for (i = 0; i < NUM_OF_SENSORS; i++) { 
+ 326              		.loc 1 197 0 is_stmt 1 discriminator 2
  327 01fa BB79     		ldrb	r3, [r7, #6]	@ zero_extendqisi2
  328 01fc 0133     		adds	r3, r3, #1
  329 01fe BB71     		strb	r3, [r7, #6]
  330              	.L10:
- 196:..\src/main.c ****         for (i = 0; i < NUM_OF_SENSORS; i++) { 
- 331              		.loc 1 196 0 is_stmt 0 discriminator 1
+ 197:..\src/main.c ****         for (i = 0; i < NUM_OF_SENSORS; i++) { 
+ 331              		.loc 1 197 0 is_stmt 0 discriminator 1
  332 0200 BB79     		ldrb	r3, [r7, #6]	@ zero_extendqisi2
  333 0202 012B     		cmp	r3, #1
  334 0204 D9D9     		bls	.L13
- 200:..\src/main.c ****         }
- 201:..\src/main.c ****     }
- 202:..\src/main.c **** 
- 203:..\src/main.c ****     for (i = 0; i< NUM_OF_MOTORS; i++) {
- 335              		.loc 1 203 0 is_stmt 1
+ 201:..\src/main.c ****         }
+ 202:..\src/main.c ****     }
+ 203:..\src/main.c **** 
+ 204:..\src/main.c ****     for (i = 0; i< NUM_OF_MOTORS; i++) {
+ 335              		.loc 1 204 0 is_stmt 1
  336 0206 0023     		movs	r3, #0
  337 0208 FB71     		strb	r3, [r7, #7]
  338 020a 0EE0     		b	.L14
  339              	.L15:
- 204:..\src/main.c ****         g_refNew[i] = g_ref[i];                         // Initialize k+1 reference structure.
- 340              		.loc 1 204 0 discriminator 3
+ 205:..\src/main.c ****         g_refNew[i] = g_ref[i];                         // Initialize k+1 reference structure.
+ 340              		.loc 1 205 0 discriminator 3
  341 020c FA79     		ldrb	r2, [r7, #7]	@ zero_extendqisi2
  342 020e FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
  343 0210 5049     		ldr	r1, .L38+52
@@ -595,58 +596,58 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccUGzmYm.s 			page 1
  349 021c 0C46     		mov	r4, r1
  350 021e 0FCB     		ldmia	r3, {r0, r1, r2, r3}
  351 0220 84E80F00 		stmia	r4, {r0, r1, r2, r3}
- 203:..\src/main.c ****         g_refNew[i] = g_ref[i];                         // Initialize k+1 reference structure.
- 352              		.loc 1 203 0 discriminator 3
+ 204:..\src/main.c ****         g_refNew[i] = g_ref[i];                         // Initialize k+1 reference structure.
+ 352              		.loc 1 204 0 discriminator 3
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccItB3FZ.s 			page 11
+
+
  353 0224 FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccUGzmYm.s 			page 11
-
-
  354 0226 0133     		adds	r3, r3, #1
  355 0228 FB71     		strb	r3, [r7, #7]
  356              	.L14:
- 203:..\src/main.c ****         g_refNew[i] = g_ref[i];                         // Initialize k+1 reference structure.
- 357              		.loc 1 203 0 is_stmt 0 discriminator 1
+ 204:..\src/main.c ****         g_refNew[i] = g_ref[i];                         // Initialize k+1 reference structure.
+ 357              		.loc 1 204 0 is_stmt 0 discriminator 1
  358 022a FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
  359 022c 012B     		cmp	r3, #1
  360 022e EDD9     		bls	.L15
- 205:..\src/main.c ****     }
- 206:..\src/main.c ****     
- 207:..\src/main.c ****     //---------------------------------------------------  Initialize emg structure
- 208:..\src/main.c ****     g_adc_meas.emg[0] = 0;
- 361              		.loc 1 208 0 is_stmt 1
+ 206:..\src/main.c ****     }
+ 207:..\src/main.c ****     
+ 208:..\src/main.c ****     //---------------------------------------------------  Initialize emg structure
+ 209:..\src/main.c ****     g_adc_meas.emg[0] = 0;
+ 361              		.loc 1 209 0 is_stmt 1
  362 0230 494B     		ldr	r3, .L38+56
  363 0232 0022     		movs	r2, #0
  364 0234 1A60     		str	r2, [r3]
- 209:..\src/main.c ****     g_adc_meas.emg[1] = 0;
- 365              		.loc 1 209 0
+ 210:..\src/main.c ****     g_adc_meas.emg[1] = 0;
+ 365              		.loc 1 210 0
  366 0236 484B     		ldr	r3, .L38+56
  367 0238 0022     		movs	r2, #0
  368 023a 5A60     		str	r2, [r3, #4]
- 210:..\src/main.c ****     g_adc_meas.joystick[0] = 0;
- 369              		.loc 1 210 0
+ 211:..\src/main.c ****     g_adc_meas.joystick[0] = 0;
+ 369              		.loc 1 211 0
  370 023c 464B     		ldr	r3, .L38+56
  371 023e 0022     		movs	r2, #0
  372 0240 1A62     		str	r2, [r3, #32]
- 211:..\src/main.c ****     g_adc_meas.joystick[1] = 0;
- 373              		.loc 1 211 0
+ 212:..\src/main.c ****     g_adc_meas.joystick[1] = 0;
+ 373              		.loc 1 212 0
  374 0242 454B     		ldr	r3, .L38+56
  375 0244 0022     		movs	r2, #0
  376 0246 5A62     		str	r2, [r3, #36]
  377              	.LBB2:
- 212:..\src/main.c ****     for (uint16 k = 0; k<SAMPLES_FOR_EMG_HISTORY; k++){
- 378              		.loc 1 212 0
+ 213:..\src/main.c ****     for (uint16 k = 0; k<SAMPLES_FOR_EMG_HISTORY; k++){
+ 378              		.loc 1 213 0
  379 0248 0023     		movs	r3, #0
  380 024a BB80     		strh	r3, [r7, #4]	@ movhi
  381 024c 13E0     		b	.L16
  382              	.L19:
- 213:..\src/main.c ****         for (j = 0; j<NUM_OF_INPUT_EMGS; j++){
- 383              		.loc 1 213 0
+ 214:..\src/main.c ****         for (j = 0; j<NUM_OF_INPUT_EMGS; j++){
+ 383              		.loc 1 214 0
  384 024e 0023     		movs	r3, #0
  385 0250 BB71     		strb	r3, [r7, #6]
  386 0252 0AE0     		b	.L17
  387              	.L18:
- 214:..\src/main.c ****             emg_history[k][j] = (uint16)0;
- 388              		.loc 1 214 0 discriminator 3
+ 215:..\src/main.c ****             emg_history[k][j] = (uint16)0;
+ 388              		.loc 1 215 0 discriminator 3
  389 0254 BA88     		ldrh	r2, [r7, #4]
  390 0256 BB79     		ldrb	r3, [r7, #6]	@ zero_extendqisi2
  391 0258 4049     		ldr	r1, .L38+60
@@ -654,58 +655,58 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccUGzmYm.s 			page 1
  393 025c 1344     		add	r3, r3, r2
  394 025e 0022     		movs	r2, #0
  395 0260 21F81320 		strh	r2, [r1, r3, lsl #1]	@ movhi
- 213:..\src/main.c ****         for (j = 0; j<NUM_OF_INPUT_EMGS; j++){
- 396              		.loc 1 213 0 discriminator 3
+ 214:..\src/main.c ****         for (j = 0; j<NUM_OF_INPUT_EMGS; j++){
+ 396              		.loc 1 214 0 discriminator 3
  397 0264 BB79     		ldrb	r3, [r7, #6]	@ zero_extendqisi2
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccItB3FZ.s 			page 12
+
+
  398 0266 0133     		adds	r3, r3, #1
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccUGzmYm.s 			page 12
-
-
  399 0268 BB71     		strb	r3, [r7, #6]
  400              	.L17:
- 213:..\src/main.c ****         for (j = 0; j<NUM_OF_INPUT_EMGS; j++){
- 401              		.loc 1 213 0 is_stmt 0 discriminator 1
+ 214:..\src/main.c ****         for (j = 0; j<NUM_OF_INPUT_EMGS; j++){
+ 401              		.loc 1 214 0 is_stmt 0 discriminator 1
  402 026a BB79     		ldrb	r3, [r7, #6]	@ zero_extendqisi2
  403 026c 012B     		cmp	r3, #1
  404 026e F1D9     		bls	.L18
- 212:..\src/main.c ****     for (uint16 k = 0; k<SAMPLES_FOR_EMG_HISTORY; k++){
- 405              		.loc 1 212 0 is_stmt 1 discriminator 2
+ 213:..\src/main.c ****     for (uint16 k = 0; k<SAMPLES_FOR_EMG_HISTORY; k++){
+ 405              		.loc 1 213 0 is_stmt 1 discriminator 2
  406 0270 BB88     		ldrh	r3, [r7, #4]
  407 0272 0133     		adds	r3, r3, #1
  408 0274 BB80     		strh	r3, [r7, #4]	@ movhi
  409              	.L16:
- 212:..\src/main.c ****     for (uint16 k = 0; k<SAMPLES_FOR_EMG_HISTORY; k++){
- 410              		.loc 1 212 0 is_stmt 0 discriminator 1
+ 213:..\src/main.c ****     for (uint16 k = 0; k<SAMPLES_FOR_EMG_HISTORY; k++){
+ 410              		.loc 1 213 0 is_stmt 0 discriminator 1
  411 0276 BB88     		ldrh	r3, [r7, #4]
  412 0278 B3F5167F 		cmp	r3, #600
  413 027c E7D3     		bcc	.L19
  414              	.LBE2:
- 215:..\src/main.c ****         }
- 216:..\src/main.c ****     }
- 217:..\src/main.c ****     emg_history_next_idx = 0;
- 415              		.loc 1 217 0 is_stmt 1
+ 216:..\src/main.c ****         }
+ 217:..\src/main.c ****     }
+ 218:..\src/main.c ****     emg_history_next_idx = 0;
+ 415              		.loc 1 218 0 is_stmt 1
  416 027e 384B     		ldr	r3, .L38+64
  417 0280 0022     		movs	r2, #0
  418 0282 1A60     		str	r2, [r3]
- 218:..\src/main.c ****     
- 219:..\src/main.c ****     set_motor_driver_type();
- 419              		.loc 1 219 0
+ 219:..\src/main.c ****     
+ 220:..\src/main.c ****     set_motor_driver_type();
+ 419              		.loc 1 220 0
  420 0284 FFF7FEFF 		bl	set_motor_driver_type
- 220:..\src/main.c ****     
- 221:..\src/main.c ****     for (i = 0; i< NUM_OF_MOTORS; i++) {
- 421              		.loc 1 221 0
+ 221:..\src/main.c ****     
+ 222:..\src/main.c ****     for (i = 0; i< NUM_OF_MOTORS; i++) {
+ 421              		.loc 1 222 0
  422 0288 0023     		movs	r3, #0
  423 028a FB71     		strb	r3, [r7, #7]
  424 028c D7E0     		b	.L20
  425              	.L28:
- 222:..\src/main.c ****         if (c_mem.emg.emg_calibration_flag) {
- 426              		.loc 1 222 0
+ 223:..\src/main.c ****         if (c_mem.emg.emg_calibration_flag) {
+ 426              		.loc 1 223 0
  427 028e 354B     		ldr	r3, .L38+68
  428 0290 93F8FE31 		ldrb	r3, [r3, #510]	@ zero_extendqisi2
  429 0294 002B     		cmp	r3, #0
  430 0296 78D0     		beq	.L21
- 223:..\src/main.c ****             if ((c_mem.motor[i].input_mode == INPUT_MODE_EMG_PROPORTIONAL) ||
- 431              		.loc 1 223 0
+ 224:..\src/main.c ****             if ((c_mem.motor[i].input_mode == INPUT_MODE_EMG_PROPORTIONAL) ||
+ 431              		.loc 1 224 0
  432 0298 FA79     		ldrb	r2, [r7, #7]	@ zero_extendqisi2
  433 029a 3249     		ldr	r1, .L38+68
  434 029c 1346     		mov	r3, r2
@@ -717,11 +718,11 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccUGzmYm.s 			page 1
  440 02aa 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
  441 02ac 022B     		cmp	r3, #2
  442 02ae 2FD0     		beq	.L22
- 224:..\src/main.c ****                 (c_mem.motor[i].input_mode == INPUT_MODE_EMG_INTEGRAL) ||
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccUGzmYm.s 			page 13
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccItB3FZ.s 			page 13
 
 
- 443              		.loc 1 224 0 discriminator 1
+ 225:..\src/main.c ****                 (c_mem.motor[i].input_mode == INPUT_MODE_EMG_INTEGRAL) ||
+ 443              		.loc 1 225 0 discriminator 1
  444 02b0 FA79     		ldrb	r2, [r7, #7]	@ zero_extendqisi2
  445 02b2 2C49     		ldr	r1, .L38+68
  446 02b4 1346     		mov	r3, r2
@@ -731,12 +732,12 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccUGzmYm.s 			page 1
  450 02bc 0B44     		add	r3, r3, r1
  451 02be 03F58773 		add	r3, r3, #270
  452 02c2 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
- 223:..\src/main.c ****             if ((c_mem.motor[i].input_mode == INPUT_MODE_EMG_PROPORTIONAL) ||
- 453              		.loc 1 223 0 discriminator 1
+ 224:..\src/main.c ****             if ((c_mem.motor[i].input_mode == INPUT_MODE_EMG_PROPORTIONAL) ||
+ 453              		.loc 1 224 0 discriminator 1
  454 02c4 032B     		cmp	r3, #3
  455 02c6 23D0     		beq	.L22
- 225:..\src/main.c ****                 (c_mem.motor[i].input_mode == INPUT_MODE_EMG_FCFS) ||
- 456              		.loc 1 225 0
+ 226:..\src/main.c ****                 (c_mem.motor[i].input_mode == INPUT_MODE_EMG_FCFS) ||
+ 456              		.loc 1 226 0
  457 02c8 FA79     		ldrb	r2, [r7, #7]	@ zero_extendqisi2
  458 02ca 2649     		ldr	r1, .L38+68
  459 02cc 1346     		mov	r3, r2
@@ -746,12 +747,12 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccUGzmYm.s 			page 1
  463 02d4 0B44     		add	r3, r3, r1
  464 02d6 03F58773 		add	r3, r3, #270
  465 02da 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
- 224:..\src/main.c ****                 (c_mem.motor[i].input_mode == INPUT_MODE_EMG_INTEGRAL) ||
- 466              		.loc 1 224 0
+ 225:..\src/main.c ****                 (c_mem.motor[i].input_mode == INPUT_MODE_EMG_INTEGRAL) ||
+ 466              		.loc 1 225 0
  467 02dc 042B     		cmp	r3, #4
  468 02de 17D0     		beq	.L22
- 226:..\src/main.c ****                 (c_mem.motor[i].input_mode == INPUT_MODE_EMG_FCFS_ADV) ||
- 469              		.loc 1 226 0
+ 227:..\src/main.c ****                 (c_mem.motor[i].input_mode == INPUT_MODE_EMG_FCFS_ADV) ||
+ 469              		.loc 1 227 0
  470 02e0 FA79     		ldrb	r2, [r7, #7]	@ zero_extendqisi2
  471 02e2 2049     		ldr	r1, .L38+68
  472 02e4 1346     		mov	r3, r2
@@ -761,12 +762,12 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccUGzmYm.s 			page 1
  476 02ec 0B44     		add	r3, r3, r1
  477 02ee 03F58773 		add	r3, r3, #270
  478 02f2 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
- 225:..\src/main.c ****                 (c_mem.motor[i].input_mode == INPUT_MODE_EMG_FCFS) ||
- 479              		.loc 1 225 0
+ 226:..\src/main.c ****                 (c_mem.motor[i].input_mode == INPUT_MODE_EMG_FCFS) ||
+ 479              		.loc 1 226 0
  480 02f4 052B     		cmp	r3, #5
  481 02f6 0BD0     		beq	.L22
- 227:..\src/main.c ****                 (c_mem.motor[i].input_mode == INPUT_MODE_EMG_PROPORTIONAL_NC))
- 482              		.loc 1 227 0
+ 228:..\src/main.c ****                 (c_mem.motor[i].input_mode == INPUT_MODE_EMG_PROPORTIONAL_NC))
+ 482              		.loc 1 228 0
  483 02f8 FA79     		ldrb	r2, [r7, #7]	@ zero_extendqisi2
  484 02fa 1A49     		ldr	r1, .L38+68
  485 02fc 1346     		mov	r3, r2
@@ -776,16 +777,16 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccUGzmYm.s 			page 1
  489 0304 0B44     		add	r3, r3, r1
  490 0306 03F58773 		add	r3, r3, #270
  491 030a 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
- 226:..\src/main.c ****                 (c_mem.motor[i].input_mode == INPUT_MODE_EMG_FCFS_ADV) ||
- 492              		.loc 1 226 0
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccUGzmYm.s 			page 14
+ 227:..\src/main.c ****                 (c_mem.motor[i].input_mode == INPUT_MODE_EMG_FCFS_ADV) ||
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccItB3FZ.s 			page 14
 
 
+ 492              		.loc 1 227 0
  493 030c 072B     		cmp	r3, #7
  494 030e 2BD1     		bne	.L23
  495              	.L22:
- 228:..\src/main.c ****                 g_ref[i].onoff = 0x00;
- 496              		.loc 1 228 0
+ 229:..\src/main.c ****                 g_ref[i].onoff = 0x00;
+ 496              		.loc 1 229 0
  497 0310 FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
  498 0312 0E4A     		ldr	r2, .L38+44
  499 0314 1B01     		lsls	r3, r3, #4
@@ -816,9 +817,9 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccUGzmYm.s 			page 1
  524 0360 00000000 		.word	emg_history_next_idx
  525 0364 00000000 		.word	c_mem
  526              	.L23:
- 229:..\src/main.c ****             else
- 230:..\src/main.c ****                 g_ref[i].onoff = c_mem.motor[i].activ;
- 527              		.loc 1 230 0
+ 230:..\src/main.c ****             else
+ 231:..\src/main.c ****                 g_ref[i].onoff = c_mem.motor[i].activ;
+ 527              		.loc 1 231 0
  528 0368 F979     		ldrb	r1, [r7, #7]	@ zero_extendqisi2
  529 036a FA79     		ldrb	r2, [r7, #7]	@ zero_extendqisi2
  530 036c 6E48     		ldr	r0, .L40
@@ -837,13 +838,13 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccUGzmYm.s 			page 1
  543 0386 1A70     		strb	r2, [r3]
  544 0388 0FE0     		b	.L25
  545              	.L21:
- 231:..\src/main.c ****         } 
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccUGzmYm.s 			page 15
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccItB3FZ.s 			page 15
 
 
- 232:..\src/main.c ****         else
- 233:..\src/main.c ****             g_ref[i].onoff = c_mem.motor[i].activ;
- 546              		.loc 1 233 0
+ 232:..\src/main.c ****         } 
+ 233:..\src/main.c ****         else
+ 234:..\src/main.c ****             g_ref[i].onoff = c_mem.motor[i].activ;
+ 546              		.loc 1 234 0
  547 038a F979     		ldrb	r1, [r7, #7]	@ zero_extendqisi2
  548 038c FA79     		ldrb	r2, [r7, #7]	@ zero_extendqisi2
  549 038e 6648     		ldr	r0, .L40
@@ -861,9 +862,9 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccUGzmYm.s 			page 1
  561 03a6 0246     		mov	r2, r0
  562 03a8 1A70     		strb	r2, [r3]
  563              	.L25:
- 234:..\src/main.c **** 
- 235:..\src/main.c ****         if (!g_mem.enc[g_mem.motor[i].encoder_line].double_encoder_on_off) {
- 564              		.loc 1 235 0
+ 235:..\src/main.c **** 
+ 236:..\src/main.c ****         if (!g_mem.enc[g_mem.motor[i].encoder_line].double_encoder_on_off) {
+ 564              		.loc 1 236 0
  565 03aa FA79     		ldrb	r2, [r7, #7]	@ zero_extendqisi2
  566 03ac 6049     		ldr	r1, .L40+8
  567 03ae 1346     		mov	r3, r2
@@ -884,8 +885,8 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccUGzmYm.s 			page 1
  582 03d0 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
  583 03d2 002B     		cmp	r3, #0
  584 03d4 10D1     		bne	.L26
- 236:..\src/main.c ****             g_ref[i].onoff = c_mem.motor[i].activ;                          // Initialize Activatio
- 585              		.loc 1 236 0
+ 237:..\src/main.c ****             g_ref[i].onoff = c_mem.motor[i].activ;                          // Initialize Activatio
+ 585              		.loc 1 237 0
  586 03d6 F979     		ldrb	r1, [r7, #7]	@ zero_extendqisi2
  587 03d8 FA79     		ldrb	r2, [r7, #7]	@ zero_extendqisi2
  588 03da 5348     		ldr	r0, .L40
@@ -897,21 +898,21 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccUGzmYm.s 			page 1
  594 03e6 E033     		adds	r3, r3, #224
  595 03e8 1878     		ldrb	r0, [r3]	@ zero_extendqisi2
  596 03ea 504A     		ldr	r2, .L40+4
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccItB3FZ.s 			page 16
+
+
  597 03ec 0B01     		lsls	r3, r1, #4
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccUGzmYm.s 			page 16
-
-
  598 03ee 1344     		add	r3, r3, r2
  599 03f0 0C33     		adds	r3, r3, #12
  600 03f2 0246     		mov	r2, r0
  601 03f4 1A70     		strb	r2, [r3]
  602 03f6 06E0     		b	.L27
  603              	.L26:
- 237:..\src/main.c ****         } 
- 238:..\src/main.c ****         else {
- 239:..\src/main.c ****             // Do not activate motor until position reconstruction has finished
- 240:..\src/main.c ****             g_ref[i].onoff = 0x00;
- 604              		.loc 1 240 0
+ 238:..\src/main.c ****         } 
+ 239:..\src/main.c ****         else {
+ 240:..\src/main.c ****             // Do not activate motor until position reconstruction has finished
+ 241:..\src/main.c ****             g_ref[i].onoff = 0x00;
+ 604              		.loc 1 241 0
  605 03f8 FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
  606 03fa 4C4A     		ldr	r2, .L40+4
  607 03fc 1B01     		lsls	r3, r3, #4
@@ -920,9 +921,9 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccUGzmYm.s 			page 1
  610 0402 0022     		movs	r2, #0
  611 0404 1A70     		strb	r2, [r3]
  612              	.L27:
- 241:..\src/main.c ****         }
- 242:..\src/main.c ****         enable_motor(i, g_ref[i].onoff); 
- 613              		.loc 1 242 0 discriminator 2
+ 242:..\src/main.c ****         }
+ 243:..\src/main.c ****         enable_motor(i, g_ref[i].onoff); 
+ 613              		.loc 1 243 0 discriminator 2
  614 0406 FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
  615 0408 484A     		ldr	r2, .L40+4
  616 040a 1B01     		lsls	r3, r3, #4
@@ -933,113 +934,113 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccUGzmYm.s 			page 1
  621 0414 1146     		mov	r1, r2
  622 0416 1846     		mov	r0, r3
  623 0418 FFF7FEFF 		bl	enable_motor
- 243:..\src/main.c ****         
- 244:..\src/main.c ****         dev_pwm_limit[i] = dev_pwm_sat[i];              // Init PWM limit.
- 624              		.loc 1 244 0 discriminator 2
+ 244:..\src/main.c ****         
+ 245:..\src/main.c ****         dev_pwm_limit[i] = dev_pwm_sat[i];              // Init PWM limit.
+ 624              		.loc 1 245 0 discriminator 2
  625 041c FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
  626 041e FA79     		ldrb	r2, [r7, #7]	@ zero_extendqisi2
  627 0420 4449     		ldr	r1, .L40+12
  628 0422 31F81210 		ldrh	r1, [r1, r2, lsl #1]
  629 0426 444A     		ldr	r2, .L40+16
  630 0428 22F81310 		strh	r1, [r2, r3, lsl #1]	@ movhi
- 245:..\src/main.c **** 	
- 246:..\src/main.c ****         pow_tension[i] = 12000;                         // 12000 mV (12 V)
- 631              		.loc 1 246 0 discriminator 2
+ 246:..\src/main.c **** 	
+ 247:..\src/main.c ****         pow_tension[i] = 12000;                         // 12000 mV (12 V)
+ 631              		.loc 1 247 0 discriminator 2
  632 042c FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
  633 042e 434A     		ldr	r2, .L40+20
  634 0430 42F6E061 		movw	r1, #12000
  635 0434 42F82310 		str	r1, [r2, r3, lsl #2]
- 221:..\src/main.c ****         if (c_mem.emg.emg_calibration_flag) {
- 636              		.loc 1 221 0 discriminator 2
+ 222:..\src/main.c ****         if (c_mem.emg.emg_calibration_flag) {
+ 636              		.loc 1 222 0 discriminator 2
  637 0438 FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
  638 043a 0133     		adds	r3, r3, #1
  639 043c FB71     		strb	r3, [r7, #7]
  640              	.L20:
- 221:..\src/main.c ****         if (c_mem.emg.emg_calibration_flag) {
- 641              		.loc 1 221 0 is_stmt 0 discriminator 1
+ 222:..\src/main.c ****         if (c_mem.emg.emg_calibration_flag) {
+ 641              		.loc 1 222 0 is_stmt 0 discriminator 1
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccItB3FZ.s 			page 17
+
+
  642 043e FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccUGzmYm.s 			page 17
-
-
  643 0440 012B     		cmp	r3, #1
  644 0442 7FF624AF 		bls	.L28
- 247:..\src/main.c ****     }
- 248:..\src/main.c ****     
- 249:..\src/main.c ****     tension_valid = FALSE;                              // Init tension_valid BIT.
- 645              		.loc 1 249 0 is_stmt 1
+ 248:..\src/main.c ****     }
+ 249:..\src/main.c ****     
+ 250:..\src/main.c ****     tension_valid = FALSE;                              // Init tension_valid BIT.
+ 645              		.loc 1 250 0 is_stmt 1
  646 0446 3E4B     		ldr	r3, .L40+24
  647 0448 0022     		movs	r2, #0
  648 044a 1A70     		strb	r2, [r3]
- 250:..\src/main.c **** 
- 251:..\src/main.c ****     for (j = 0; j< N_ENCODER_LINE_MAX; j++) { 
- 649              		.loc 1 251 0
+ 251:..\src/main.c **** 
+ 252:..\src/main.c ****     for (j = 0; j< N_ENCODER_LINE_MAX; j++) { 
+ 649              		.loc 1 252 0
  650 044c 0023     		movs	r3, #0
  651 044e BB71     		strb	r3, [r7, #6]
  652 0450 06E0     		b	.L29
  653              	.L30:
- 252:..\src/main.c ****         reset_last_value_flag[j] = 0;                   // Do not reset encoder last value.
- 654              		.loc 1 252 0 discriminator 3
+ 253:..\src/main.c ****         reset_last_value_flag[j] = 0;                   // Do not reset encoder last value.
+ 654              		.loc 1 253 0 discriminator 3
  655 0452 BB79     		ldrb	r3, [r7, #6]	@ zero_extendqisi2
  656 0454 3B4A     		ldr	r2, .L40+28
  657 0456 0021     		movs	r1, #0
  658 0458 D154     		strb	r1, [r2, r3]
- 251:..\src/main.c ****         reset_last_value_flag[j] = 0;                   // Do not reset encoder last value.
- 659              		.loc 1 251 0 discriminator 3
+ 252:..\src/main.c ****         reset_last_value_flag[j] = 0;                   // Do not reset encoder last value.
+ 659              		.loc 1 252 0 discriminator 3
  660 045a BB79     		ldrb	r3, [r7, #6]	@ zero_extendqisi2
  661 045c 0133     		adds	r3, r3, #1
  662 045e BB71     		strb	r3, [r7, #6]
  663              	.L29:
- 251:..\src/main.c ****         reset_last_value_flag[j] = 0;                   // Do not reset encoder last value.
- 664              		.loc 1 251 0 is_stmt 0 discriminator 1
+ 252:..\src/main.c ****         reset_last_value_flag[j] = 0;                   // Do not reset encoder last value.
+ 664              		.loc 1 252 0 is_stmt 0 discriminator 1
  665 0460 BB79     		ldrb	r3, [r7, #6]	@ zero_extendqisi2
  666 0462 012B     		cmp	r3, #1
  667 0464 F5D9     		bls	.L30
- 253:..\src/main.c ****     }
- 254:..\src/main.c **** 
- 255:..\src/main.c ****     //------------------------------------------------- Initialize package on receive from RS485
- 256:..\src/main.c ****     g_rx.length = 0;
- 668              		.loc 1 256 0 is_stmt 1
+ 254:..\src/main.c ****     }
+ 255:..\src/main.c **** 
+ 256:..\src/main.c ****     //------------------------------------------------- Initialize package on receive from RS485
+ 257:..\src/main.c ****     g_rx.length = 0;
+ 668              		.loc 1 257 0 is_stmt 1
  669 0466 384B     		ldr	r3, .L40+32
  670 0468 0022     		movs	r2, #0
  671 046a A3F88020 		strh	r2, [r3, #128]	@ movhi
- 257:..\src/main.c ****     g_rx.ready  = 0;
- 672              		.loc 1 257 0
+ 258:..\src/main.c ****     g_rx.ready  = 0;
+ 672              		.loc 1 258 0
  673 046e 364B     		ldr	r3, .L40+32
  674 0470 0022     		movs	r2, #0
  675 0472 83F88420 		strb	r2, [r3, #132]
- 258:..\src/main.c ****     
- 259:..\src/main.c ****     //------------------------------------------------- Initialize rest position variables    
- 260:..\src/main.c **** 	rest_enabled = 0;
- 676              		.loc 1 260 0
+ 259:..\src/main.c ****     
+ 260:..\src/main.c ****     //------------------------------------------------- Initialize rest position variables    
+ 261:..\src/main.c **** 	rest_enabled = 0;
+ 676              		.loc 1 261 0
  677 0476 354B     		ldr	r3, .L40+36
  678 0478 0022     		movs	r2, #0
  679 047a 1A70     		strb	r2, [r3]
- 261:..\src/main.c ****     forced_open = 0;
- 680              		.loc 1 261 0
+ 262:..\src/main.c ****     forced_open = 0;
+ 680              		.loc 1 262 0
  681 047c 344B     		ldr	r3, .L40+40
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccItB3FZ.s 			page 18
+
+
  682 047e 0022     		movs	r2, #0
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccUGzmYm.s 			page 18
-
-
  683 0480 1A70     		strb	r2, [r3]
- 262:..\src/main.c ****     
- 263:..\src/main.c ****     LED_control(5);     // Default - red light
- 684              		.loc 1 263 0
+ 263:..\src/main.c ****     
+ 264:..\src/main.c ****     LED_control(5);     // Default - red light
+ 684              		.loc 1 264 0
  685 0482 0520     		movs	r0, #5
  686 0484 FFF7FEFF 		bl	LED_control
- 264:..\src/main.c ****     
- 265:..\src/main.c **** #ifdef MASTER_FW
- 266:..\src/main.c ****     master_mode = 1;    // Default - activate master mode at startup
- 687              		.loc 1 266 0
+ 265:..\src/main.c ****     
+ 266:..\src/main.c **** #ifdef MASTER_FW
+ 267:..\src/main.c ****     master_mode = 1;    // Default - activate master mode at startup
+ 687              		.loc 1 267 0
  688 0488 324B     		ldr	r3, .L40+44
  689 048a 0122     		movs	r2, #1
  690 048c 1A70     		strb	r2, [r3]
- 267:..\src/main.c **** #endif
- 268:..\src/main.c **** 
- 269:..\src/main.c ****     //============================================================    check if maintenance is due
- 270:..\src/main.c **** 
- 271:..\src/main.c ****     if ( (g_mem.cnt.wire_disp/(((g_mem.motor[0].pos_lim_sup>>g_mem.enc[0].res[0]) - (g_mem.motor[0]
- 691              		.loc 1 271 0
+ 268:..\src/main.c **** #endif
+ 269:..\src/main.c **** 
+ 270:..\src/main.c ****     //============================================================    check if maintenance is due
+ 271:..\src/main.c **** 
+ 272:..\src/main.c ****     if ( (g_mem.cnt.wire_disp/(((g_mem.motor[0].pos_lim_sup>>g_mem.enc[0].res[0]) - (g_mem.motor[0]
+ 691              		.loc 1 272 0
  692 048e 284B     		ldr	r3, .L40+8
  693 0490 5B6D     		ldr	r3, [r3, #84]
  694 0492 274A     		ldr	r2, .L40+8
@@ -1058,122 +1059,122 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccUGzmYm.s 			page 1
  707 04b8 274A     		ldr	r2, .L40+48
  708 04ba 9342     		cmp	r3, r2
  709 04bc 02D9     		bls	.L31
- 272:..\src/main.c ****         maintenance_flag = TRUE;    
- 710              		.loc 1 272 0
+ 273:..\src/main.c ****         maintenance_flag = TRUE;    
+ 710              		.loc 1 273 0
  711 04be 274B     		ldr	r3, .L40+52
  712 04c0 0122     		movs	r2, #1
  713 04c2 1A70     		strb	r2, [r3]
  714              	.L31:
- 273:..\src/main.c **** 
- 274:..\src/main.c ****     if (g_mem.exp.read_exp_port_flag == EXP_SD_RTC) {
- 715              		.loc 1 274 0
+ 274:..\src/main.c **** 
+ 275:..\src/main.c ****     if (g_mem.exp.read_exp_port_flag == EXP_SD_RTC) {
+ 715              		.loc 1 275 0
  716 04c4 1A4B     		ldr	r3, .L40+8
  717 04c6 93F82632 		ldrb	r3, [r3, #550]	@ zero_extendqisi2
  718 04ca 012B     		cmp	r3, #1
  719 04cc 03D1     		bne	.L32
- 275:..\src/main.c ****         
- 276:..\src/main.c ****         store_RTC_current_time();
- 720              		.loc 1 276 0
+ 276:..\src/main.c ****         
+ 277:..\src/main.c ****         store_RTC_current_time();
+ 720              		.loc 1 277 0
  721 04ce FFF7FEFF 		bl	store_RTC_current_time
- 277:..\src/main.c ****         
- 278:..\src/main.c ****         // SD file
- 279:..\src/main.c ****         InitSD_FS();
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccUGzmYm.s 			page 19
+ 278:..\src/main.c ****         
+ 279:..\src/main.c ****         // SD file
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccItB3FZ.s 			page 19
 
 
- 722              		.loc 1 279 0
+ 280:..\src/main.c ****         InitSD_FS();
+ 722              		.loc 1 280 0
  723 04d2 FFF7FEFF 		bl	InitSD_FS
  724              	.L32:
- 280:..\src/main.c ****     }
- 281:..\src/main.c ****     
- 282:..\src/main.c ****     //============================================================     main loop
- 283:..\src/main.c ****     
- 284:..\src/main.c ****     // All peripherals has started, now it is ok to start communication
- 285:..\src/main.c ****     RS485_CTS_Write(0);             // Clear To Send on RS485.
- 725              		.loc 1 285 0
+ 281:..\src/main.c ****     }
+ 282:..\src/main.c ****     
+ 283:..\src/main.c ****     //============================================================     main loop
+ 284:..\src/main.c ****     
+ 285:..\src/main.c ****     // All peripherals has started, now it is ok to start communication
+ 286:..\src/main.c ****     RS485_CTS_Write(0);             // Clear To Send on RS485.
+ 725              		.loc 1 286 0
  726 04d6 0020     		movs	r0, #0
  727 04d8 FFF7FEFF 		bl	RS485_CTS_Write
  728              	.L37:
- 286:..\src/main.c **** 
- 287:..\src/main.c ****     for(;;)
- 288:..\src/main.c **** 
- 289:..\src/main.c ****     {             
- 290:..\src/main.c ****         // Put the FF reset pin to LOW
- 291:..\src/main.c ****         RESET_FF_Write(0x00);
- 729              		.loc 1 291 0
+ 287:..\src/main.c **** 
+ 288:..\src/main.c ****     for(;;)
+ 289:..\src/main.c **** 
+ 290:..\src/main.c ****     {             
+ 291:..\src/main.c ****         // Put the FF reset pin to LOW
+ 292:..\src/main.c ****         RESET_FF_Write(0x00);
+ 729              		.loc 1 292 0
  730 04dc 0020     		movs	r0, #0
  731 04de FFF7FEFF 		bl	RESET_FF_Write
- 292:..\src/main.c **** 
- 293:..\src/main.c ****         // Call function scheduler
- 294:..\src/main.c ****         function_scheduler(); 
- 732              		.loc 1 294 0
+ 293:..\src/main.c **** 
+ 294:..\src/main.c ****         // Call function scheduler
+ 295:..\src/main.c ****         function_scheduler(); 
+ 732              		.loc 1 295 0
  733 04e2 FFF7FEFF 		bl	function_scheduler
- 295:..\src/main.c **** 
- 296:..\src/main.c ****         //  Wait until the FF is set to 1
- 297:..\src/main.c ****         while(FF_STATUS_Read() == 0){
- 734              		.loc 1 297 0
+ 296:..\src/main.c **** 
+ 297:..\src/main.c ****         //  Wait until the FF is set to 1
+ 298:..\src/main.c ****         while(FF_STATUS_Read() == 0){
+ 734              		.loc 1 298 0
  735 04e6 08E0     		b	.L33
  736              	.L34:
- 298:..\src/main.c ****             // On interrupt from RS485
- 299:..\src/main.c ****             if (interrupt_flag){
- 737              		.loc 1 299 0
+ 299:..\src/main.c ****             // On interrupt from RS485
+ 300:..\src/main.c ****             if (interrupt_flag){
+ 737              		.loc 1 300 0
  738 04e8 1D4B     		ldr	r3, .L40+56
  739 04ea 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
  740 04ec 002B     		cmp	r3, #0
  741 04ee 04D0     		beq	.L33
- 300:..\src/main.c ****                 // Reset flags
- 301:..\src/main.c ****                 interrupt_flag = FALSE;
- 742              		.loc 1 301 0
+ 301:..\src/main.c ****                 // Reset flags
+ 302:..\src/main.c ****                 interrupt_flag = FALSE;
+ 742              		.loc 1 302 0
  743 04f0 1B4B     		ldr	r3, .L40+56
  744 04f2 0022     		movs	r2, #0
  745 04f4 1A70     		strb	r2, [r3]
- 302:..\src/main.c ****                 
- 303:..\src/main.c ****                 // Manage Interrupt on rs485
- 304:..\src/main.c ****                 interrupt_manager();
- 746              		.loc 1 304 0
+ 303:..\src/main.c ****                 
+ 304:..\src/main.c ****                 // Manage Interrupt on rs485
+ 305:..\src/main.c ****                 interrupt_manager();
+ 746              		.loc 1 305 0
  747 04f6 FFF7FEFF 		bl	interrupt_manager
  748              	.L33:
- 297:..\src/main.c ****             // On interrupt from RS485
- 749              		.loc 1 297 0
+ 298:..\src/main.c ****             // On interrupt from RS485
+ 749              		.loc 1 298 0
  750 04fa FFF7FEFF 		bl	FF_STATUS_Read
  751 04fe 0346     		mov	r3, r0
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccItB3FZ.s 			page 20
+
+
  752 0500 002B     		cmp	r3, #0
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccUGzmYm.s 			page 20
-
-
  753 0502 F1D0     		beq	.L34
- 305:..\src/main.c ****             }
- 306:..\src/main.c ****         };
- 307:..\src/main.c **** 
- 308:..\src/main.c ****         // Command a FF reset
- 309:..\src/main.c ****         RESET_FF_Write(0x01);
- 754              		.loc 1 309 0
+ 306:..\src/main.c ****             }
+ 307:..\src/main.c ****         };
+ 308:..\src/main.c **** 
+ 309:..\src/main.c ****         // Command a FF reset
+ 310:..\src/main.c ****         RESET_FF_Write(0x01);
+ 754              		.loc 1 310 0
  755 0504 0120     		movs	r0, #1
  756 0506 FFF7FEFF 		bl	RESET_FF_Write
- 310:..\src/main.c **** 
- 311:..\src/main.c ****         // Wait for FF to be reset
- 312:..\src/main.c ****         while(FF_STATUS_Read() == 1);
- 757              		.loc 1 312 0
+ 311:..\src/main.c **** 
+ 312:..\src/main.c ****         // Wait for FF to be reset
+ 313:..\src/main.c ****         while(FF_STATUS_Read() == 1);
+ 757              		.loc 1 313 0
  758 050a 00BF     		nop
  759              	.L35:
- 760              		.loc 1 312 0 is_stmt 0 discriminator 1
+ 760              		.loc 1 313 0 is_stmt 0 discriminator 1
  761 050c FFF7FEFF 		bl	FF_STATUS_Read
  762 0510 0346     		mov	r3, r0
  763 0512 012B     		cmp	r3, #1
  764 0514 FAD0     		beq	.L35
- 313:..\src/main.c **** 
- 314:..\src/main.c ****         if(UART_RS485_ReadRxStatus() & UART_RS485_RX_STS_SOFT_BUFF_OVER)
- 765              		.loc 1 314 0 is_stmt 1
+ 314:..\src/main.c **** 
+ 315:..\src/main.c ****         if(UART_RS485_ReadRxStatus() & UART_RS485_RX_STS_SOFT_BUFF_OVER)
+ 765              		.loc 1 315 0 is_stmt 1
  766 0516 FFF7FEFF 		bl	UART_RS485_ReadRxStatus
  767 051a 0346     		mov	r3, r0
  768 051c 5BB2     		sxtb	r3, r3
  769 051e 002B     		cmp	r3, #0
  770 0520 DCDA     		bge	.L37
- 315:..\src/main.c ****             UART_RS485_ClearRxBuffer();
- 771              		.loc 1 315 0
+ 316:..\src/main.c ****             UART_RS485_ClearRxBuffer();
+ 771              		.loc 1 316 0
  772 0522 FFF7FEFF 		bl	UART_RS485_ClearRxBuffer
- 316:..\src/main.c ****     }
- 773              		.loc 1 316 0
+ 317:..\src/main.c ****     }
+ 773              		.loc 1 317 0
  774 0526 D9E7     		b	.L37
  775              	.L41:
  776              		.align	2
@@ -1197,10 +1198,10 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccUGzmYm.s 			page 1
  794              	.LFE64:
  795              		.size	main, .-main
  796              		.text
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccItB3FZ.s 			page 21
+
+
  797              	.Letext0:
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccUGzmYm.s 			page 21
-
-
  798              		.file 2 "c:\\program files (x86)\\cypress\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.
  799              		.file 3 "c:\\program files (x86)\\cypress\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.
  800              		.file 4 "Generated_Source\\PSoC5/cytypes.h"
@@ -1257,10 +1258,10 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccUGzmYm.s 			page 1
  851 0061 02       		.uleb128 0x2
  852 0062 08       		.byte	0x8
  853 0063 07       		.byte	0x7
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccItB3FZ.s 			page 22
+
+
  854 0064 54010000 		.4byte	.LASF7
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccUGzmYm.s 			page 22
-
-
  855 0068 04       		.uleb128 0x4
  856 0069 04       		.byte	0x4
  857 006a 05       		.byte	0x5
@@ -1317,10 +1318,10 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccUGzmYm.s 			page 1
  908 00dd 08       		.byte	0x8
  909 00de 04       		.byte	0x4
  910 00df FB090000 		.4byte	.LASF19
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccItB3FZ.s 			page 23
+
+
  911 00e3 02       		.uleb128 0x2
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccUGzmYm.s 			page 23
-
-
  912 00e4 01       		.byte	0x1
  913 00e5 08       		.byte	0x8
  914 00e6 C3070000 		.4byte	.LASF20
@@ -1377,10 +1378,10 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccUGzmYm.s 			page 1
  965 0153 0A       		.uleb128 0xa
  966 0154 F6080000 		.4byte	.LASF31
  967 0158 07       		.byte	0x7
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccItB3FZ.s 			page 24
+
+
  968 0159 00       		.byte	0
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccUGzmYm.s 			page 24
-
-
  969 015a 0B       		.uleb128 0xb
  970 015b 8B030000 		.4byte	.LASF34
  971 015f 10       		.byte	0x10
@@ -1437,10 +1438,10 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccUGzmYm.s 			page 1
  1022 01c6 BD000000 		.4byte	0xbd
  1023 01ca 10       		.byte	0x10
  1024 01cb 10       		.uleb128 0x10
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccItB3FZ.s 			page 25
+
+
  1025 01cc 12020000 		.4byte	.LASF37
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccUGzmYm.s 			page 25
-
-
  1026 01d0 05       		.byte	0x5
  1027 01d1 0401     		.2byte	0x104
  1028 01d3 BD000000 		.4byte	0xbd
@@ -1497,10 +1498,10 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccUGzmYm.s 			page 1
  1079 0242 65020000 		.4byte	0x265
  1080 0246 08       		.byte	0x8
  1081 0247 10       		.uleb128 0x10
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccItB3FZ.s 			page 26
+
+
  1082 0248 15090000 		.4byte	.LASF40
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccUGzmYm.s 			page 26
-
-
  1083 024c 05       		.byte	0x5
  1084 024d 0D01     		.2byte	0x10d
  1085 024f 55020000 		.4byte	0x255
@@ -1557,10 +1558,10 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccUGzmYm.s 			page 1
  1136 02c0 08       		.uleb128 0x8
  1137 02c1 02010000 		.4byte	0x102
  1138 02c5 7F       		.byte	0x7f
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccItB3FZ.s 			page 27
+
+
  1139 02c6 00       		.byte	0
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccUGzmYm.s 			page 27
-
-
  1140 02c7 0E       		.uleb128 0xe
  1141 02c8 36070000 		.4byte	.LASF45
  1142 02cc 70       		.byte	0x70
@@ -1617,10 +1618,10 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccUGzmYm.s 			page 1
  1193 033b 50       		.byte	0x50
  1194 033c 10       		.uleb128 0x10
  1195 033d 5D060000 		.4byte	.LASF54
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccItB3FZ.s 			page 28
+
+
  1196 0341 05       		.byte	0x5
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccUGzmYm.s 			page 28
-
-
  1197 0342 2E01     		.2byte	0x12e
  1198 0344 64030000 		.4byte	0x364
  1199 0348 54       		.byte	0x54
@@ -1677,10 +1678,10 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccUGzmYm.s 			page 1
  1250 03b6 3801     		.2byte	0x138
  1251 03b8 81000000 		.4byte	0x81
  1252 03bc 00       		.byte	0
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccItB3FZ.s 			page 29
+
+
  1253 03bd 10       		.uleb128 0x10
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccUGzmYm.s 			page 29
-
-
  1254 03be 29050000 		.4byte	.LASF58
  1255 03c2 05       		.byte	0x5
  1256 03c3 3901     		.2byte	0x139
@@ -1737,10 +1738,10 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccUGzmYm.s 			page 1
  1307 0432 00       		.byte	0
  1308 0433 07       		.uleb128 0x7
  1309 0434 81000000 		.4byte	0x81
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccItB3FZ.s 			page 30
+
+
  1310 0438 43040000 		.4byte	0x443
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccUGzmYm.s 			page 30
-
-
  1311 043c 08       		.uleb128 0x8
  1312 043d 02010000 		.4byte	0x102
  1313 0441 02       		.byte	0x2
@@ -1797,10 +1798,10 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccUGzmYm.s 			page 1
  1364 04ac B1030000 		.4byte	.LASF71
  1365 04b0 05       		.byte	0x5
  1366 04b1 5001     		.2byte	0x150
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccItB3FZ.s 			page 31
+
+
  1367 04b3 BD000000 		.4byte	0xbd
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccUGzmYm.s 			page 31
-
-
  1368 04b7 1C       		.byte	0x1c
  1369 04b8 10       		.uleb128 0x10
  1370 04b9 C9020000 		.4byte	.LASF72
@@ -1857,10 +1858,10 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccUGzmYm.s 			page 1
  1421 0528 BD000000 		.4byte	0xbd
  1422 052c 34       		.byte	0x34
  1423 052d 10       		.uleb128 0x10
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccItB3FZ.s 			page 32
+
+
  1424 052e 22060000 		.4byte	.LASF81
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccUGzmYm.s 			page 32
-
-
  1425 0532 05       		.byte	0x5
  1426 0533 5A01     		.2byte	0x15a
  1427 0535 BD000000 		.4byte	0xbd
@@ -1917,10 +1918,10 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccUGzmYm.s 			page 1
  1478 05a3 34020000 		.4byte	.LASF90
  1479 05a7 05       		.byte	0x5
  1480 05a8 6301     		.2byte	0x163
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccItB3FZ.s 			page 33
+
+
  1481 05aa 81000000 		.4byte	0x81
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccUGzmYm.s 			page 33
-
-
  1482 05ae 62       		.byte	0x62
  1483 05af 10       		.uleb128 0x10
  1484 05b0 D3040000 		.4byte	.LASF56
@@ -1977,10 +1978,10 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccUGzmYm.s 			page 1
  1535 061f B5090000 		.4byte	.LASF95
  1536 0623 05       		.byte	0x5
  1537 0624 7001     		.2byte	0x170
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccItB3FZ.s 			page 34
+
+
  1538 0626 81000000 		.4byte	0x81
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccUGzmYm.s 			page 34
-
-
  1539 062a 20       		.byte	0x20
  1540 062b 10       		.uleb128 0x10
  1541 062c 97060000 		.4byte	.LASF96
@@ -2037,10 +2038,10 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccUGzmYm.s 			page 1
  1592 069d 10       		.uleb128 0x10
  1593 069e B4010000 		.4byte	.LASF100
  1594 06a2 05       		.byte	0x5
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccItB3FZ.s 			page 35
+
+
  1595 06a3 7C01     		.2byte	0x17c
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccUGzmYm.s 			page 35
-
-
  1596 06a5 DF060000 		.4byte	0x6df
  1597 06a9 00       		.byte	0
  1598 06aa 10       		.uleb128 0x10
@@ -2097,10 +2098,10 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccUGzmYm.s 			page 1
  1649 0719 10       		.uleb128 0x10
  1650 071a 99020000 		.4byte	.LASF107
  1651 071e 05       		.byte	0x5
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccItB3FZ.s 			page 36
+
+
  1652 071f 8901     		.2byte	0x189
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccUGzmYm.s 			page 36
-
-
  1653 0721 81000000 		.4byte	0x81
  1654 0725 01       		.byte	0x1
  1655 0726 10       		.uleb128 0x10
@@ -2157,10 +2158,10 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccUGzmYm.s 			page 1
  1706 0793 94030000 		.4byte	0x394
  1707 0797 08       		.byte	0x8
  1708 0798 10       		.uleb128 0x10
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccItB3FZ.s 			page 37
+
+
  1709 0799 2D080000 		.4byte	.LASF114
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccUGzmYm.s 			page 37
-
-
  1710 079d 05       		.byte	0x5
  1711 079e 9701     		.2byte	0x197
  1712 07a0 81000000 		.4byte	0x81
@@ -2217,10 +2218,10 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccUGzmYm.s 			page 1
  1763 080e 05       		.byte	0x5
  1764 080f A901     		.2byte	0x1a9
  1765 0811 57080000 		.4byte	0x857
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccItB3FZ.s 			page 38
+
+
  1766 0815 10       		.uleb128 0x10
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccUGzmYm.s 			page 38
-
-
  1767 0816 19060000 		.4byte	.LASF119
  1768 081a 05       		.byte	0x5
  1769 081b AA01     		.2byte	0x1aa
@@ -2277,10 +2278,10 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccUGzmYm.s 			page 1
  1820 088a 04       		.byte	0x4
  1821 088b 10       		.uleb128 0x10
  1822 088c D3040000 		.4byte	.LASF56
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccItB3FZ.s 			page 39
+
+
  1823 0890 05       		.byte	0x5
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccUGzmYm.s 			page 39
-
-
  1824 0891 B901     		.2byte	0x1b9
  1825 0893 80060000 		.4byte	0x680
  1826 0897 08       		.byte	0x8
@@ -2337,10 +2338,10 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccUGzmYm.s 			page 1
  1877 0904 04       		.byte	0x4
  1878 0905 10       		.uleb128 0x10
  1879 0906 98090000 		.4byte	.LASF133
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccItB3FZ.s 			page 40
+
+
  1880 090a 05       		.byte	0x5
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccUGzmYm.s 			page 40
-
-
  1881 090b CE01     		.2byte	0x1ce
  1882 090d D5000000 		.4byte	0xd5
  1883 0911 08       		.byte	0x8
@@ -2397,10 +2398,10 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccUGzmYm.s 			page 1
  1934 097c 07       		.uleb128 0x7
  1935 097d 81000000 		.4byte	0x81
  1936 0981 8C090000 		.4byte	0x98c
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccItB3FZ.s 			page 41
+
+
  1937 0985 08       		.uleb128 0x8
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccUGzmYm.s 			page 41
-
-
  1938 0986 02010000 		.4byte	0x102
  1939 098a 09       		.byte	0x9
  1940 098b 00       		.byte	0
@@ -2457,10 +2458,10 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccUGzmYm.s 			page 1
  1991 09fb 05       		.byte	0x5
  1992 09fc F101     		.2byte	0x1f1
  1993 09fe 90060000 		.4byte	0x690
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccItB3FZ.s 			page 42
+
+
  1994 0a02 F001     		.2byte	0x1f0
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccUGzmYm.s 			page 42
-
-
  1995 0a04 12       		.uleb128 0x12
  1996 0a05 696D7500 		.ascii	"imu\000"
  1997 0a09 05       		.byte	0x5
@@ -2517,10 +2518,10 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccUGzmYm.s 			page 1
  2048 0a7b 02010000 		.4byte	0x102
  2049 0a7f 0E       		.byte	0xe
  2050 0a80 00       		.byte	0
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccItB3FZ.s 			page 43
+
+
  2051 0a81 07       		.uleb128 0x7
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccUGzmYm.s 			page 43
-
-
  2052 0a82 81000000 		.4byte	0x81
  2053 0a86 910A0000 		.4byte	0xa91
  2054 0a8a 08       		.uleb128 0x8
@@ -2577,10 +2578,10 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccUGzmYm.s 			page 1
  2105 0afc 01       		.uleb128 0x1
  2106 0afd 9C       		.byte	0x9c
  2107 0afe 4D0B0000 		.4byte	0xb4d
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccItB3FZ.s 			page 44
+
+
  2108 0b02 15       		.uleb128 0x15
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccUGzmYm.s 			page 44
-
-
  2109 0b03 6900     		.ascii	"i\000"
  2110 0b05 01       		.byte	0x1
  2111 0b06 4E       		.byte	0x4e
@@ -2618,7 +2619,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccUGzmYm.s 			page 1
  2143 0b3f 15       		.uleb128 0x15
  2144 0b40 6B00     		.ascii	"k\000"
  2145 0b42 01       		.byte	0x1
- 2146 0b43 D4       		.byte	0xd4
+ 2146 0b43 D5       		.byte	0xd5
  2147 0b44 8D000000 		.4byte	0x8d
  2148 0b48 02       		.uleb128 0x2
  2149 0b49 91       		.byte	0x91
@@ -2637,10 +2638,10 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccUGzmYm.s 			page 1
  2162 0b62 06       		.byte	0x6
  2163 0b63 1207     		.2byte	0x712
  2164 0b65 690B0000 		.4byte	0xb69
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccItB3FZ.s 			page 45
+
+
  2165 0b69 06       		.uleb128 0x6
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccUGzmYm.s 			page 45
-
-
  2166 0b6a 76000000 		.4byte	0x76
  2167 0b6e 07       		.uleb128 0x7
  2168 0b6f 5A010000 		.4byte	0x15a
@@ -2697,10 +2698,10 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccUGzmYm.s 			page 1
  2219 0beb 08       		.uleb128 0x8
  2220 0bec 02010000 		.4byte	0x102
  2221 0bf0 01       		.byte	0x1
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccItB3FZ.s 			page 46
+
+
  2222 0bf1 00       		.byte	0
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccUGzmYm.s 			page 46
-
-
  2223 0bf2 18       		.uleb128 0x18
  2224 0bf3 9D010000 		.4byte	.LASF159
  2225 0bf7 05       		.byte	0x5
@@ -2757,10 +2758,10 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccUGzmYm.s 			page 1
  2276 0c6e DF060000 		.4byte	0x6df
  2277 0c72 18       		.uleb128 0x18
  2278 0c73 92030000 		.4byte	.LASF167
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccItB3FZ.s 			page 47
+
+
  2279 0c77 05       		.byte	0x5
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccUGzmYm.s 			page 47
-
-
  2280 0c78 4C02     		.2byte	0x24c
  2281 0c7a DF060000 		.4byte	0x6df
  2282 0c7e 18       		.uleb128 0x18
@@ -2817,10 +2818,10 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccUGzmYm.s 			page 1
  2333 0cf6 81000000 		.4byte	0x81
  2334 0cfa 18       		.uleb128 0x18
  2335 0cfb 02080000 		.4byte	.LASF177
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccItB3FZ.s 			page 48
+
+
  2336 0cff 05       		.byte	0x5
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccUGzmYm.s 			page 48
-
-
  2337 0d00 8B02     		.2byte	0x28b
  2338 0d02 81000000 		.4byte	0x81
  2339 0d06 07       		.uleb128 0x7
@@ -2877,10 +2878,10 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccUGzmYm.s 			page 1
  2390 001c 00       		.byte	0
  2391 001d 00       		.byte	0
  2392 001e 03       		.uleb128 0x3
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccItB3FZ.s 			page 49
+
+
  2393 001f 16       		.uleb128 0x16
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccUGzmYm.s 			page 49
-
-
  2394 0020 00       		.byte	0
  2395 0021 03       		.uleb128 0x3
  2396 0022 0E       		.uleb128 0xe
@@ -2937,10 +2938,10 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccUGzmYm.s 			page 1
  2447 0055 00       		.byte	0
  2448 0056 49       		.uleb128 0x49
  2449 0057 13       		.uleb128 0x13
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccItB3FZ.s 			page 50
+
+
  2450 0058 2F       		.uleb128 0x2f
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccUGzmYm.s 			page 50
-
-
  2451 0059 0B       		.uleb128 0xb
  2452 005a 00       		.byte	0
  2453 005b 00       		.byte	0
@@ -2997,10 +2998,10 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccUGzmYm.s 			page 1
  2504 008e 49       		.uleb128 0x49
  2505 008f 13       		.uleb128 0x13
  2506 0090 38       		.uleb128 0x38
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccItB3FZ.s 			page 51
+
+
  2507 0091 0B       		.uleb128 0xb
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccUGzmYm.s 			page 51
-
-
  2508 0092 00       		.byte	0
  2509 0093 00       		.byte	0
  2510 0094 0D       		.uleb128 0xd
@@ -3057,10 +3058,10 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccUGzmYm.s 			page 1
  2561 00c7 0B       		.uleb128 0xb
  2562 00c8 3B       		.uleb128 0x3b
  2563 00c9 05       		.uleb128 0x5
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccItB3FZ.s 			page 52
+
+
  2564 00ca 49       		.uleb128 0x49
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccUGzmYm.s 			page 52
-
-
  2565 00cb 13       		.uleb128 0x13
  2566 00cc 38       		.uleb128 0x38
  2567 00cd 0B       		.uleb128 0xb
@@ -3117,10 +3118,10 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccUGzmYm.s 			page 1
  2618 0100 3F       		.uleb128 0x3f
  2619 0101 19       		.uleb128 0x19
  2620 0102 03       		.uleb128 0x3
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccItB3FZ.s 			page 53
+
+
  2621 0103 0E       		.uleb128 0xe
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccUGzmYm.s 			page 53
-
-
  2622 0104 3A       		.uleb128 0x3a
  2623 0105 0B       		.uleb128 0xb
  2624 0106 3B       		.uleb128 0x3b
@@ -3177,10 +3178,10 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccUGzmYm.s 			page 1
  2675 013a 12       		.uleb128 0x12
  2676 013b 06       		.uleb128 0x6
  2677 013c 00       		.byte	0
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccItB3FZ.s 			page 54
+
+
  2678 013d 00       		.byte	0
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccUGzmYm.s 			page 54
-
-
  2679 013e 18       		.uleb128 0x18
  2680 013f 34       		.uleb128 0x34
  2681 0140 00       		.byte	0
@@ -3237,10 +3238,10 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccUGzmYm.s 			page 1
  2728 0000 6D61785F 		.ascii	"max_residual_current\000"
  2728      72657369 
  2728      6475616C 
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccItB3FZ.s 			page 55
+
+
  2728      5F637572 
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccUGzmYm.s 			page 55
-
-
  2728      72656E74 
  2729              	.LASF2:
  2730 0015 73686F72 		.ascii	"short int\000"
@@ -3297,10 +3298,10 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccUGzmYm.s 			page 1
  2754      72656374 
  2754      696F6E5F 
  2754      6173736F 
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccItB3FZ.s 			page 56
+
+
  2755              	.LASF180:
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccUGzmYm.s 			page 56
-
-
  2756 00b5 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
  2756      43313120 
  2756      352E342E 
@@ -3357,10 +3358,10 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccUGzmYm.s 			page 1
  2776      5F76656C 
  2776      00
  2777              	.LASF100:
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccItB3FZ.s 			page 57
+
+
  2778 01b4 656D675F 		.ascii	"emg_threshold\000"
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccUGzmYm.s 			page 57
-
-
  2778      74687265 
  2778      73686F6C 
  2778      6400
@@ -3417,10 +3418,10 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccUGzmYm.s 			page 1
  2804      6F746F72 
  2804      5F666C61 
  2805              	.LASF175:
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccItB3FZ.s 			page 58
+
+
  2806 024a 4144435F 		.ascii	"ADC_buf\000"
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccUGzmYm.s 			page 58
-
-
  2806      62756600 
  2807              	.LASF60:
  2808 0252 72696768 		.ascii	"right_left\000"
@@ -3477,10 +3478,10 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccUGzmYm.s 			page 1
  2830      545F4D4F 
  2830      44455F45 
  2830      4D475F50 
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccItB3FZ.s 			page 59
+
+
  2830      524F504F 
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccUGzmYm.s 			page 59
-
-
  2831              	.LASF73:
  2832 02fd 6B5F705F 		.ascii	"k_p_c_dl\000"
  2832      635F646C 
@@ -3537,10 +3538,10 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccUGzmYm.s 			page 1
  2854      70776D5F 
  2854      73617400 
  2855              	.LASF97:
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccItB3FZ.s 			page 60
+
+
  2856 039e 6D6F746F 		.ascii	"motor_handle_ratio\000"
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccUGzmYm.s 			page 60
-
-
  2856      725F6861 
  2856      6E646C65 
  2856      5F726174 
@@ -3597,10 +3598,10 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccUGzmYm.s 			page 1
  2879              	.LASF182:
  2880 0440 433A5C55 		.ascii	"C:\\Users\\mgnocco\\Documents\\Git\\PSoC5\\PSoC5_FW"
  2880      73657273 
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccItB3FZ.s 			page 61
+
+
  2880      5C6D676E 
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccUGzmYm.s 			page 61
-
-
  2880      6F63636F 
  2880      5C446F63 
  2881 046d 5F574953 		.ascii	"_WISH_VIBES\\FW_WearableHealtySubj - WISH+Dayton\\W"
@@ -3657,10 +3658,10 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccUGzmYm.s 			page 1
  2899              	.LASF59:
  2900 0537 73746174 		.ascii	"stats_period_begin_date\000"
  2900      735F7065 
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccItB3FZ.s 			page 62
+
+
  2900      72696F64 
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccUGzmYm.s 			page 62
-
-
  2900      5F626567 
  2900      696E5F64 
  2901              	.LASF53:
@@ -3717,10 +3718,10 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccUGzmYm.s 			page 1
  2924      5F656E61 
  2924      626C6564 
  2924      00
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccItB3FZ.s 			page 63
+
+
  2925              	.LASF157:
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccUGzmYm.s 			page 63
-
-
  2926 05e4 675F6D65 		.ascii	"g_mem\000"
  2926      6D00
  2927              	.LASF176:
@@ -3777,10 +3778,10 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccUGzmYm.s 			page 1
  2950      7200
  2951              	.LASF85:
  2952 0683 63757272 		.ascii	"current_limit\000"
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccItB3FZ.s 			page 64
+
+
  2952      656E745F 
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccUGzmYm.s 			page 64
-
-
  2952      6C696D69 
  2952      7400
  2953              	.LASF152:
@@ -3837,10 +3838,10 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccUGzmYm.s 			page 1
  2979              	.LASF91:
  2980 0717 73745F65 		.ascii	"st_encoder\000"
  2980      6E636F64 
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccItB3FZ.s 			page 65
+
+
  2980      657200
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccUGzmYm.s 			page 65
-
-
  2981              	.LASF141:
  2982 0722 666C6167 		.ascii	"flag\000"
  2982      00
@@ -3897,10 +3898,10 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccUGzmYm.s 			page 1
  3007              	.LASF5:
  3008 07aa 6C6F6E67 		.ascii	"long unsigned int\000"
  3008      20756E73 
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccItB3FZ.s 			page 66
+
+
  3008      69676E65 
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccUGzmYm.s 			page 66
-
-
  3008      6420696E 
  3008      7400
  3009              	.LASF43:
@@ -3957,10 +3958,10 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccUGzmYm.s 			page 1
  3033              	.LASF65:
  3034 0852 6465765F 		.ascii	"dev_type\000"
  3034      74797065 
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccItB3FZ.s 			page 67
+
+
  3034      00
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccUGzmYm.s 			page 67
-
-
  3035              	.LASF74:
  3036 085b 6B5F695F 		.ascii	"k_i_c_dl\000"
  3036      635F646C 
@@ -4017,10 +4018,10 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccUGzmYm.s 			page 1
  3058      5F656D67 
  3058      00
  3059              	.LASF31:
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccItB3FZ.s 			page 68
+
+
  3060 08f6 494E5055 		.ascii	"INPUT_MODE_EMG_PROPORTIONAL_NC\000"
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccUGzmYm.s 			page 68
-
-
  3060      545F4D4F 
  3060      44455F45 
  3060      4D475F50 
@@ -4077,10 +4078,10 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccUGzmYm.s 			page 1
  3082 09a9 706F775F 		.ascii	"pow_tension\000"
  3082      74656E73 
  3082      696F6E00 
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccItB3FZ.s 			page 69
+
+
  3083              	.LASF95:
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccUGzmYm.s 			page 69
-
-
  3084 09b5 646F7562 		.ascii	"double_encoder_on_off\000"
  3084      6C655F65 
  3084      6E636F64 

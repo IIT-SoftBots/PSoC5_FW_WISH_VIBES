@@ -1,5 +1,5 @@
 -- Project:   WISH_VIBES_Socket
--- Generated: 02/20/2024 13:41:09
+-- Generated: 03/05/2024 17:21:00
 -- PSoC Creator  4.4
 
 ENTITY WISH_VIBES_Socket IS
@@ -104,10 +104,10 @@ ARCHITECTURE __DEFAULT__ OF WISH_VIBES_Socket IS
     SIGNAL Net_10359 : bit;
     SIGNAL Net_10364 : bit;
     SIGNAL Net_10374 : bit;
-    SIGNAL Net_10658 : bit;
-    SIGNAL Net_10659 : bit;
-    SIGNAL Net_10660 : bit;
-    SIGNAL Net_10661 : bit;
+    SIGNAL Net_10747 : bit;
+    SIGNAL Net_10749 : bit;
+    SIGNAL Net_10755 : bit;
+    SIGNAL Net_10763 : bit;
     SIGNAL Net_124 : bit;
     ATTRIBUTE udbclken_assigned OF Net_124 : SIGNAL IS "True";
     ATTRIBUTE global_signal OF Net_124 : SIGNAL IS true;
@@ -553,10 +553,10 @@ ARCHITECTURE __DEFAULT__ OF WISH_VIBES_Socket IS
     ATTRIBUTE lib_model OF Net_9774 : LABEL IS "macrocell20";
     ATTRIBUTE lib_model OF Net_7353 : LABEL IS "macrocell21";
     ATTRIBUTE lib_model OF Net_7325 : LABEL IS "macrocell22";
-    ATTRIBUTE lib_model OF Net_10659 : LABEL IS "macrocell23";
-    ATTRIBUTE lib_model OF Net_10658 : LABEL IS "macrocell24";
-    ATTRIBUTE lib_model OF Net_10661 : LABEL IS "macrocell25";
-    ATTRIBUTE lib_model OF Net_10660 : LABEL IS "macrocell26";
+    ATTRIBUTE lib_model OF Net_10747 : LABEL IS "macrocell23";
+    ATTRIBUTE lib_model OF Net_10763 : LABEL IS "macrocell24";
+    ATTRIBUTE lib_model OF Net_10749 : LABEL IS "macrocell25";
+    ATTRIBUTE lib_model OF Net_10755 : LABEL IS "macrocell26";
     ATTRIBUTE lib_model OF \MOTOR_ON_OFF_2:Sync:ctrl_reg\ : LABEL IS "controlcell1";
     ATTRIBUTE lib_model OF \MOTOR_DRIVER_TYPE:Sync:ctrl_reg\ : LABEL IS "controlcell2";
     ATTRIBUTE lib_model OF \MOTOR_DIR_2:Sync:ctrl_reg\ : LABEL IS "controlcell3";
@@ -4200,7 +4200,7 @@ BEGIN
         PORT MAP(
             pa_out => VT_1A(0)__PA,
             oe => open,
-            pin_input => Net_10659,
+            pin_input => Net_10747,
             pad_out => VT_1A(0)_PAD,
             pad_in => VT_1A(0)_PAD,
             in_clock => open,
@@ -4292,7 +4292,7 @@ BEGIN
         PORT MAP(
             pa_out => VT_1B(0)__PA,
             oe => open,
-            pin_input => Net_10658,
+            pin_input => Net_10763,
             pad_out => VT_1B(0)_PAD,
             pad_in => VT_1B(0)_PAD,
             in_clock => open,
@@ -4384,7 +4384,7 @@ BEGIN
         PORT MAP(
             pa_out => VT_2A(0)__PA,
             oe => open,
-            pin_input => Net_10661,
+            pin_input => Net_10749,
             pad_out => VT_2A(0)_PAD,
             pad_in => VT_2A(0)_PAD,
             in_clock => open,
@@ -4476,7 +4476,7 @@ BEGIN
         PORT MAP(
             pa_out => VT_2B(0)__PA,
             oe => open,
-            pin_input => Net_10660,
+            pin_input => Net_10755,
             pad_out => VT_2B(0)_PAD,
             pad_in => VT_2B(0)_PAD,
             in_clock => open,
@@ -4738,43 +4738,43 @@ BEGIN
             out => Net_6196_SYNCOUT,
             clock => ClockBlock_BUS_CLK);
 
-    Net_10659:macrocell
+    Net_10747:macrocell
         GENERIC MAP(
             eqn_main => "(main_0 * main_1)",
             regmode => 0,
             clken_mode => 1)
         PORT MAP(
-            q => Net_10659,
+            q => Net_10747,
             main_0 => Net_10358,
             main_1 => Net_10364);
 
-    Net_10658:macrocell
+    Net_10763:macrocell
         GENERIC MAP(
             eqn_main => "(main_0 * !main_1)",
             regmode => 0,
             clken_mode => 1)
         PORT MAP(
-            q => Net_10658,
+            q => Net_10763,
             main_0 => Net_10358,
             main_1 => Net_10364);
 
-    Net_10661:macrocell
+    Net_10749:macrocell
         GENERIC MAP(
             eqn_main => "(main_0 * main_1)",
             regmode => 0,
             clken_mode => 1)
         PORT MAP(
-            q => Net_10661,
+            q => Net_10749,
             main_0 => Net_10359,
             main_1 => Net_10374);
 
-    Net_10660:macrocell
+    Net_10755:macrocell
         GENERIC MAP(
             eqn_main => "(main_0 * !main_1)",
             regmode => 0,
             clken_mode => 1)
         PORT MAP(
-            q => Net_10660,
+            q => Net_10755,
             main_0 => Net_10359,
             main_1 => Net_10374);
 
