@@ -44,11 +44,6 @@
 
 #include "IMU_functions.h"
 
-extern uint8 Accel[N_IMU_MAX][6];
-extern uint8 Gyro[N_IMU_MAX][6];
-extern uint8 Mag[N_IMU_MAX][6];
-extern uint8 MagCal[N_IMU_MAX][3];
-
 /*******************************************************************************
 * Function Name: Imus Reset
 *********************************************************************************/	

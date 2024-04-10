@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccsctOHr.s 			page 1
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc8mUdP4.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccsctOHr.s 			page 1
   28:..\src/IMU_functions.c **** // SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
   29:..\src/IMU_functions.c **** // CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
   30:..\src/IMU_functions.c **** // OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccsctOHr.s 			page 2
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc8mUdP4.s 			page 2
 
 
   31:..\src/IMU_functions.c **** // OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
@@ -77,16 +77,11 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccsctOHr.s 			page 1
   44:..\src/IMU_functions.c **** 
   45:..\src/IMU_functions.c **** #include "IMU_functions.h"
   46:..\src/IMU_functions.c **** 
-  47:..\src/IMU_functions.c **** extern uint8 Accel[N_IMU_MAX][6];
-  48:..\src/IMU_functions.c **** extern uint8 Gyro[N_IMU_MAX][6];
-  49:..\src/IMU_functions.c **** extern uint8 Mag[N_IMU_MAX][6];
-  50:..\src/IMU_functions.c **** extern uint8 MagCal[N_IMU_MAX][3];
-  51:..\src/IMU_functions.c **** 
-  52:..\src/IMU_functions.c **** /*******************************************************************************
-  53:..\src/IMU_functions.c **** * Function Name: Imus Reset
-  54:..\src/IMU_functions.c **** *********************************************************************************/	
-  55:..\src/IMU_functions.c **** void ImusReset() {
-  28              		.loc 1 55 0
+  47:..\src/IMU_functions.c **** /*******************************************************************************
+  48:..\src/IMU_functions.c **** * Function Name: Imus Reset
+  49:..\src/IMU_functions.c **** *********************************************************************************/	
+  50:..\src/IMU_functions.c **** void ImusReset() {
+  28              		.loc 1 50 0
   29              		.cfi_startproc
   30              		@ args = 0, pretend = 0, frame = 0
   31              		@ frame_needed = 1, uses_anonymous_args = 0
@@ -96,36 +91,36 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccsctOHr.s 			page 1
   35              		.cfi_offset 7, -4
   36 0002 00AF     		add	r7, sp, #0
   37              		.cfi_def_cfa_register 7
-  56:..\src/IMU_functions.c ****     /*
-  57:..\src/IMU_functions.c ****     uint8 i;
+  51:..\src/IMU_functions.c ****     /*
+  52:..\src/IMU_functions.c ****     uint8 i;
+  53:..\src/IMU_functions.c ****     
+  54:..\src/IMU_functions.c ****     CyDelay(10);
+  55:..\src/IMU_functions.c ****     InitIMUgeneral();
+  56:..\src/IMU_functions.c **** 
+  57:..\src/IMU_functions.c ****     CyDelay(10);
   58:..\src/IMU_functions.c ****     
-  59:..\src/IMU_functions.c ****     CyDelay(10);
-  60:..\src/IMU_functions.c ****     InitIMUgeneral();
-  61:..\src/IMU_functions.c **** 
-  62:..\src/IMU_functions.c ****     CyDelay(10);
-  63:..\src/IMU_functions.c ****     
-  64:..\src/IMU_functions.c ****     // Initialize quaternion
-  65:..\src/IMU_functions.c ****     for (i = 0; i<N_IMU_MAX; i++) {
-  66:..\src/IMU_functions.c ****         Quat[i][0] = 0.999;
-  67:..\src/IMU_functions.c ****         Quat[i][1] = 0.01;
-  68:..\src/IMU_functions.c ****         Quat[i][2] = 0.01;
-  69:..\src/IMU_functions.c ****         Quat[i][3] = 0.01;
-  70:..\src/IMU_functions.c ****     }
-  71:..\src/IMU_functions.c ****     */
-  72:..\src/IMU_functions.c **** }
-  38              		.loc 1 72 0
+  59:..\src/IMU_functions.c ****     // Initialize quaternion
+  60:..\src/IMU_functions.c ****     for (i = 0; i<N_IMU_MAX; i++) {
+  61:..\src/IMU_functions.c ****         Quat[i][0] = 0.999;
+  62:..\src/IMU_functions.c ****         Quat[i][1] = 0.01;
+  63:..\src/IMU_functions.c ****         Quat[i][2] = 0.01;
+  64:..\src/IMU_functions.c ****         Quat[i][3] = 0.01;
+  65:..\src/IMU_functions.c ****     }
+  66:..\src/IMU_functions.c ****     */
+  67:..\src/IMU_functions.c **** }
+  38              		.loc 1 67 0
   39 0004 00BF     		nop
   40 0006 BD46     		mov	sp, r7
   41              		.cfi_def_cfa_register 13
   42              		@ sp needed
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccsctOHr.s 			page 3
-
-
   43 0008 80BC     		pop	{r7}
   44              		.cfi_restore 7
   45              		.cfi_def_cfa_offset 0
   46 000a 7047     		bx	lr
   47              		.cfi_endproc
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc8mUdP4.s 			page 3
+
+
   48              	.LFE64:
   49              		.size	ImusReset, .-ImusReset
   50              		.section	.text.InitIMU,"ax",%progbits
@@ -136,12 +131,12 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccsctOHr.s 			page 1
   55              		.type	InitIMU, %function
   56              	InitIMU:
   57              	.LFB65:
-  73:..\src/IMU_functions.c **** 
-  74:..\src/IMU_functions.c **** /*******************************************************************************
-  75:..\src/IMU_functions.c **** * Function Name: IMU Initialization
-  76:..\src/IMU_functions.c **** *********************************************************************************/
-  77:..\src/IMU_functions.c **** void InitIMU(){	
-  58              		.loc 1 77 0
+  68:..\src/IMU_functions.c **** 
+  69:..\src/IMU_functions.c **** /*******************************************************************************
+  70:..\src/IMU_functions.c **** * Function Name: IMU Initialization
+  71:..\src/IMU_functions.c **** *********************************************************************************/
+  72:..\src/IMU_functions.c **** void InitIMU(){	
+  58              		.loc 1 72 0
   59              		.cfi_startproc
   60              		@ args = 0, pretend = 0, frame = 0
   61              		@ frame_needed = 1, uses_anonymous_args = 0
@@ -151,50 +146,50 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccsctOHr.s 			page 1
   65              		.cfi_offset 7, -4
   66 0002 00AF     		add	r7, sp, #0
   67              		.cfi_def_cfa_register 7
-  78:..\src/IMU_functions.c ****     /*
-  79:..\src/IMU_functions.c **** 	WriteControlRegisterIMU(MPU9250_PWR_MGMT_1, 0x10); 
-  80:..\src/IMU_functions.c **** 	CyDelay(10);	
-  81:..\src/IMU_functions.c **** 	WriteControlRegisterIMU(MPU9250_USER_CTRL, 0x20);  //I2C master enable - disable I2C (prima 0x30)
-  82:..\src/IMU_functions.c **** 	CyDelay(10);
-  83:..\src/IMU_functions.c ****     WriteControlRegisterIMU(MPU9250_CONFIG, 0x06); //Gyro & Temp Low Pass Filter 0x01 = 184Hz, 0x02
-  84:..\src/IMU_functions.c ****     CyDelay(10);	
-  85:..\src/IMU_functions.c **** 	WriteControlRegisterIMU(MPU9250_GYRO_CONFIG , GYRO_SF_2000); //Gyro full scale select 0x00=250°/s
-  86:..\src/IMU_functions.c **** 	CyDelay(10);
-  87:..\src/IMU_functions.c ****     WriteControlRegisterIMU(MPU9250_ACCEL_CONFIG, ACC_SF_2G); // Acc full scale select 0x00 = 2g 0x
-  88:..\src/IMU_functions.c ****     CyDelay(10);
-  89:..\src/IMU_functions.c ****    // WriteControlRegisterIMU(MPU9250_ACCEL_CONFIG2, LP_ACC_FREQ_10);   
-  90:..\src/IMU_functions.c ****     WriteControlRegisterIMU(MPU9250_ACCEL_CONFIG2, NO_ACC_FIL);   
-  91:..\src/IMU_functions.c ****     CyDelay(10);
-  92:..\src/IMU_functions.c **** 	//mag register
-  93:..\src/IMU_functions.c **** 	WriteControlRegisterIMU(MPU9250_I2C_MST_CTRL, 0x0D); //set slave I2C speed
-  94:..\src/IMU_functions.c **** 	CyDelay(10);
-  95:..\src/IMU_functions.c **** 	//SLV0 (use to write)
-  96:..\src/IMU_functions.c **** 	WriteControlRegisterIMU(MPU9250_I2C_SLV0_ADDR, 0x0C); //set compass address
-  97:..\src/IMU_functions.c **** 	CyDelay(10);			
-  98:..\src/IMU_functions.c **** 	WriteControlRegisterIMU(MPU9250_I2C_SLV0_REG, AK8936_CNTL); //compass mode register
-  99:..\src/IMU_functions.c **** 	CyDelay(10);	
- 100:..\src/IMU_functions.c **** 	// Istruction used to read Compass
- 101:..\src/IMU_functions.c **** 	WriteControlRegisterIMU(MPU9250_I2C_SLV0_D0, 0x16); //0x12 continuous mode1  0x16 continuous mode2
+  73:..\src/IMU_functions.c ****     /*
+  74:..\src/IMU_functions.c **** 	WriteControlRegisterIMU(MPU9250_PWR_MGMT_1, 0x10); 
+  75:..\src/IMU_functions.c **** 	CyDelay(10);	
+  76:..\src/IMU_functions.c **** 	WriteControlRegisterIMU(MPU9250_USER_CTRL, 0x20);  //I2C master enable - disable I2C (prima 0x30)
+  77:..\src/IMU_functions.c **** 	CyDelay(10);
+  78:..\src/IMU_functions.c ****     WriteControlRegisterIMU(MPU9250_CONFIG, 0x06); //Gyro & Temp Low Pass Filter 0x01 = 184Hz, 0x02
+  79:..\src/IMU_functions.c ****     CyDelay(10);	
+  80:..\src/IMU_functions.c **** 	WriteControlRegisterIMU(MPU9250_GYRO_CONFIG , GYRO_SF_2000); //Gyro full scale select 0x00=250°/s
+  81:..\src/IMU_functions.c **** 	CyDelay(10);
+  82:..\src/IMU_functions.c ****     WriteControlRegisterIMU(MPU9250_ACCEL_CONFIG, ACC_SF_2G); // Acc full scale select 0x00 = 2g 0x
+  83:..\src/IMU_functions.c ****     CyDelay(10);
+  84:..\src/IMU_functions.c ****    // WriteControlRegisterIMU(MPU9250_ACCEL_CONFIG2, LP_ACC_FREQ_10);   
+  85:..\src/IMU_functions.c ****     WriteControlRegisterIMU(MPU9250_ACCEL_CONFIG2, NO_ACC_FIL);   
+  86:..\src/IMU_functions.c ****     CyDelay(10);
+  87:..\src/IMU_functions.c **** 	//mag register
+  88:..\src/IMU_functions.c **** 	WriteControlRegisterIMU(MPU9250_I2C_MST_CTRL, 0x0D); //set slave I2C speed
+  89:..\src/IMU_functions.c **** 	CyDelay(10);
+  90:..\src/IMU_functions.c **** 	//SLV0 (use to write)
+  91:..\src/IMU_functions.c **** 	WriteControlRegisterIMU(MPU9250_I2C_SLV0_ADDR, 0x0C); //set compass address
+  92:..\src/IMU_functions.c **** 	CyDelay(10);			
+  93:..\src/IMU_functions.c **** 	WriteControlRegisterIMU(MPU9250_I2C_SLV0_REG, AK8936_CNTL); //compass mode register
+  94:..\src/IMU_functions.c **** 	CyDelay(10);	
+  95:..\src/IMU_functions.c **** 	// Istruction used to read Compass
+  96:..\src/IMU_functions.c **** 	WriteControlRegisterIMU(MPU9250_I2C_SLV0_D0, 0x16); //0x12 continuous mode1  0x16 continuous mode2
+  97:..\src/IMU_functions.c **** 	CyDelay(10);
+  98:..\src/IMU_functions.c **** 	WriteControlRegisterIMU(MPU9250_I2C_SLV0_CTRL, 0x81); //enable data from register + 1 bit to write
+  99:..\src/IMU_functions.c **** 	CyDelay(10);
+ 100:..\src/IMU_functions.c **** 	//SLV0 (use to read)
+ 101:..\src/IMU_functions.c **** 	WriteControlRegisterIMU(MPU9250_I2C_SLV0_ADDR, 0x8C); // RCR  | AK8963_address (0x0C) 
  102:..\src/IMU_functions.c **** 	CyDelay(10);
- 103:..\src/IMU_functions.c **** 	WriteControlRegisterIMU(MPU9250_I2C_SLV0_CTRL, 0x81); //enable data from register + 1 bit to write
- 104:..\src/IMU_functions.c **** 	CyDelay(10);
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccsctOHr.s 			page 4
+ 103:..\src/IMU_functions.c **** 	// Istruction used to read Compass
+ 104:..\src/IMU_functions.c **** 	WriteControlRegisterIMU(MPU9250_I2C_SLV0_REG, 0x03); // 0x03:start from Xout Low in case of calibr
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc8mUdP4.s 			page 4
 
 
- 105:..\src/IMU_functions.c **** 	//SLV0 (use to read)
- 106:..\src/IMU_functions.c **** 	WriteControlRegisterIMU(MPU9250_I2C_SLV0_ADDR, 0x8C); // RCR  | AK8963_address (0x0C) 
- 107:..\src/IMU_functions.c **** 	CyDelay(10);
- 108:..\src/IMU_functions.c **** 	// Istruction used to read Compass
- 109:..\src/IMU_functions.c **** 	WriteControlRegisterIMU(MPU9250_I2C_SLV0_REG, 0x03); // 0x03:start from Xout Low in case of calibr
- 110:..\src/IMU_functions.c **** 	CyDelay(10);
- 111:..\src/IMU_functions.c **** 	// Istruction used to read Compass
- 112:..\src/IMU_functions.c **** 	WriteControlRegisterIMU(MPU9250_I2C_SLV0_CTRL, 0x8D); //How many bits read  SEMPRE DISPARI 0x8D er
- 113:..\src/IMU_functions.c **** 	CyDelay(10);
- 114:..\src/IMU_functions.c **** 	WriteControlRegisterIMU(MPU9250_PWR_MGMT_1, 0x00); 
- 115:..\src/IMU_functions.c **** 	CyDelay(20);
- 116:..\src/IMU_functions.c ****     */
- 117:..\src/IMU_functions.c **** }	
-  68              		.loc 1 117 0
+ 105:..\src/IMU_functions.c **** 	CyDelay(10);
+ 106:..\src/IMU_functions.c **** 	// Istruction used to read Compass
+ 107:..\src/IMU_functions.c **** 	WriteControlRegisterIMU(MPU9250_I2C_SLV0_CTRL, 0x8D); //How many bits read  SEMPRE DISPARI 0x8D er
+ 108:..\src/IMU_functions.c **** 	CyDelay(10);
+ 109:..\src/IMU_functions.c **** 	WriteControlRegisterIMU(MPU9250_PWR_MGMT_1, 0x00); 
+ 110:..\src/IMU_functions.c **** 	CyDelay(20);
+ 111:..\src/IMU_functions.c ****     */
+ 112:..\src/IMU_functions.c **** }	
+  68              		.loc 1 112 0
   69 0004 00BF     		nop
   70 0006 BD46     		mov	sp, r7
   71              		.cfi_def_cfa_register 13
@@ -214,12 +209,12 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccsctOHr.s 			page 1
   85              		.type	InitIMUMagCal, %function
   86              	InitIMUMagCal:
   87              	.LFB66:
- 118:..\src/IMU_functions.c **** 
- 119:..\src/IMU_functions.c **** /*******************************************************************************
- 120:..\src/IMU_functions.c **** * Function Name: IMU Mag Cal Initialization
- 121:..\src/IMU_functions.c **** *********************************************************************************/
- 122:..\src/IMU_functions.c **** void InitIMUMagCal(){	
-  88              		.loc 1 122 0
+ 113:..\src/IMU_functions.c **** 
+ 114:..\src/IMU_functions.c **** /*******************************************************************************
+ 115:..\src/IMU_functions.c **** * Function Name: IMU Mag Cal Initialization
+ 116:..\src/IMU_functions.c **** *********************************************************************************/
+ 117:..\src/IMU_functions.c **** void InitIMUMagCal(){	
+  88              		.loc 1 117 0
   89              		.cfi_startproc
   90              		@ args = 0, pretend = 0, frame = 0
   91              		@ frame_needed = 1, uses_anonymous_args = 0
@@ -229,46 +224,46 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccsctOHr.s 			page 1
   95              		.cfi_offset 7, -4
   96 0002 00AF     		add	r7, sp, #0
   97              		.cfi_def_cfa_register 7
- 123:..\src/IMU_functions.c ****     /*
- 124:..\src/IMU_functions.c **** 	WriteControlRegisterIMU(MPU9250_PWR_MGMT_1, 0x10); 
- 125:..\src/IMU_functions.c **** 	CyDelay(10);	
- 126:..\src/IMU_functions.c **** 	WriteControlRegisterIMU(MPU9250_USER_CTRL, 0x20);  //I2C master enable - disable I2C (prima 0x30)
- 127:..\src/IMU_functions.c **** 	CyDelay(10);
- 128:..\src/IMU_functions.c ****     WriteControlRegisterIMU(MPU9250_CONFIG, 0x06); //Gyro & Temp Low Pass Filter 0x01 = 184Hz, 0x02
- 129:..\src/IMU_functions.c ****     CyDelay(10);	
- 130:..\src/IMU_functions.c **** 	WriteControlRegisterIMU(MPU9250_GYRO_CONFIG , GYRO_SF_2000); //Gyro full scale select 0x00=250°/s
- 131:..\src/IMU_functions.c **** 	CyDelay(10);
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccsctOHr.s 			page 5
+ 118:..\src/IMU_functions.c ****     /*
+ 119:..\src/IMU_functions.c **** 	WriteControlRegisterIMU(MPU9250_PWR_MGMT_1, 0x10); 
+ 120:..\src/IMU_functions.c **** 	CyDelay(10);	
+ 121:..\src/IMU_functions.c **** 	WriteControlRegisterIMU(MPU9250_USER_CTRL, 0x20);  //I2C master enable - disable I2C (prima 0x30)
+ 122:..\src/IMU_functions.c **** 	CyDelay(10);
+ 123:..\src/IMU_functions.c ****     WriteControlRegisterIMU(MPU9250_CONFIG, 0x06); //Gyro & Temp Low Pass Filter 0x01 = 184Hz, 0x02
+ 124:..\src/IMU_functions.c ****     CyDelay(10);	
+ 125:..\src/IMU_functions.c **** 	WriteControlRegisterIMU(MPU9250_GYRO_CONFIG , GYRO_SF_2000); //Gyro full scale select 0x00=250°/s
+ 126:..\src/IMU_functions.c **** 	CyDelay(10);
+ 127:..\src/IMU_functions.c ****     WriteControlRegisterIMU(MPU9250_ACCEL_CONFIG, ACC_SF_2G); // Acc full scale select 0x00 = 2g 0x
+ 128:..\src/IMU_functions.c ****     CyDelay(10);
+ 129:..\src/IMU_functions.c ****     WriteControlRegisterIMU(MPU9250_ACCEL_CONFIG2, 0x05);
+ 130:..\src/IMU_functions.c ****     CyDelay(10);
+ 131:..\src/IMU_functions.c **** 	//mag register
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc8mUdP4.s 			page 5
 
 
- 132:..\src/IMU_functions.c ****     WriteControlRegisterIMU(MPU9250_ACCEL_CONFIG, ACC_SF_2G); // Acc full scale select 0x00 = 2g 0x
- 133:..\src/IMU_functions.c ****     CyDelay(10);
- 134:..\src/IMU_functions.c ****     WriteControlRegisterIMU(MPU9250_ACCEL_CONFIG2, 0x05);
- 135:..\src/IMU_functions.c ****     CyDelay(10);
- 136:..\src/IMU_functions.c **** 	//mag register
- 137:..\src/IMU_functions.c **** 	WriteControlRegisterIMU(MPU9250_I2C_MST_CTRL, 0x0D); //set slave I2C speed
- 138:..\src/IMU_functions.c **** 	CyDelay(10);
- 139:..\src/IMU_functions.c **** 	//SLV0 (use to write)
- 140:..\src/IMU_functions.c **** 	WriteControlRegisterIMU(MPU9250_I2C_SLV0_ADDR, 0x0C); //set compass address
- 141:..\src/IMU_functions.c **** 	CyDelay(10);			
- 142:..\src/IMU_functions.c **** 	WriteControlRegisterIMU(MPU9250_I2C_SLV0_REG, AK8936_CNTL); //compass mode register
- 143:..\src/IMU_functions.c **** 	CyDelay(10);	
- 144:..\src/IMU_functions.c **** 	WriteControlRegisterIMU(MPU9250_I2C_SLV0_D0, 0x1F); //0x1F ROM access
+ 132:..\src/IMU_functions.c **** 	WriteControlRegisterIMU(MPU9250_I2C_MST_CTRL, 0x0D); //set slave I2C speed
+ 133:..\src/IMU_functions.c **** 	CyDelay(10);
+ 134:..\src/IMU_functions.c **** 	//SLV0 (use to write)
+ 135:..\src/IMU_functions.c **** 	WriteControlRegisterIMU(MPU9250_I2C_SLV0_ADDR, 0x0C); //set compass address
+ 136:..\src/IMU_functions.c **** 	CyDelay(10);			
+ 137:..\src/IMU_functions.c **** 	WriteControlRegisterIMU(MPU9250_I2C_SLV0_REG, AK8936_CNTL); //compass mode register
+ 138:..\src/IMU_functions.c **** 	CyDelay(10);	
+ 139:..\src/IMU_functions.c **** 	WriteControlRegisterIMU(MPU9250_I2C_SLV0_D0, 0x1F); //0x1F ROM access
+ 140:..\src/IMU_functions.c **** 	CyDelay(10);
+ 141:..\src/IMU_functions.c **** 	WriteControlRegisterIMU(MPU9250_I2C_SLV0_CTRL, 0x81); //enable data from register + 1 bit to write
+ 142:..\src/IMU_functions.c **** 	CyDelay(10);
+ 143:..\src/IMU_functions.c **** 	//SLV0 (use to read)
+ 144:..\src/IMU_functions.c **** 	WriteControlRegisterIMU(MPU9250_I2C_SLV0_ADDR, 0x8C); // RCR  | AK8963_address (0x0C) 
  145:..\src/IMU_functions.c **** 	CyDelay(10);
- 146:..\src/IMU_functions.c **** 	WriteControlRegisterIMU(MPU9250_I2C_SLV0_CTRL, 0x81); //enable data from register + 1 bit to write
+ 146:..\src/IMU_functions.c **** 	WriteControlRegisterIMU(MPU9250_I2C_SLV0_REG, 0x10); // 0x10:start from ASAX
  147:..\src/IMU_functions.c **** 	CyDelay(10);
- 148:..\src/IMU_functions.c **** 	//SLV0 (use to read)
- 149:..\src/IMU_functions.c **** 	WriteControlRegisterIMU(MPU9250_I2C_SLV0_ADDR, 0x8C); // RCR  | AK8963_address (0x0C) 
- 150:..\src/IMU_functions.c **** 	CyDelay(10);
- 151:..\src/IMU_functions.c **** 	WriteControlRegisterIMU(MPU9250_I2C_SLV0_REG, 0x10); // 0x10:start from ASAX
- 152:..\src/IMU_functions.c **** 	CyDelay(10);
- 153:..\src/IMU_functions.c **** 	WriteControlRegisterIMU(MPU9250_I2C_SLV0_CTRL, 0x83);
- 154:..\src/IMU_functions.c **** 	CyDelay(10);
- 155:..\src/IMU_functions.c **** 	WriteControlRegisterIMU(MPU9250_PWR_MGMT_1, 0x00); 
- 156:..\src/IMU_functions.c **** 	CyDelay(20);
- 157:..\src/IMU_functions.c ****     */
- 158:..\src/IMU_functions.c **** }
-  98              		.loc 1 158 0
+ 148:..\src/IMU_functions.c **** 	WriteControlRegisterIMU(MPU9250_I2C_SLV0_CTRL, 0x83);
+ 149:..\src/IMU_functions.c **** 	CyDelay(10);
+ 150:..\src/IMU_functions.c **** 	WriteControlRegisterIMU(MPU9250_PWR_MGMT_1, 0x00); 
+ 151:..\src/IMU_functions.c **** 	CyDelay(20);
+ 152:..\src/IMU_functions.c ****     */
+ 153:..\src/IMU_functions.c **** }
+  98              		.loc 1 153 0
   99 0004 00BF     		nop
  100 0006 BD46     		mov	sp, r7
  101              		.cfi_def_cfa_register 13
@@ -288,34 +283,34 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccsctOHr.s 			page 1
  115              		.type	ChipSelectorIMU, %function
  116              	ChipSelectorIMU:
  117              	.LFB67:
- 159:..\src/IMU_functions.c **** 
- 160:..\src/IMU_functions.c **** /********************************************************************************
- 161:..\src/IMU_functions.c **** * Function Name: ChipSelectorIMU                                                   *
- 162:..\src/IMU_functions.c **** *********************************************************************************/
- 163:..\src/IMU_functions.c **** void ChipSelectorIMU(int n)
- 164:..\src/IMU_functions.c **** {
- 118              		.loc 1 164 0
+ 154:..\src/IMU_functions.c **** 
+ 155:..\src/IMU_functions.c **** /********************************************************************************
+ 156:..\src/IMU_functions.c **** * Function Name: ChipSelectorIMU                                                   *
+ 157:..\src/IMU_functions.c **** *********************************************************************************/
+ 158:..\src/IMU_functions.c **** void ChipSelectorIMU(int n)
+ 159:..\src/IMU_functions.c **** {
+ 118              		.loc 1 159 0
  119              		.cfi_startproc
  120              		@ args = 0, pretend = 0, frame = 8
  121              		@ frame_needed = 1, uses_anonymous_args = 0
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccsctOHr.s 			page 6
-
-
  122              		@ link register save eliminated.
  123 0000 80B4     		push	{r7}
  124              		.cfi_def_cfa_offset 4
  125              		.cfi_offset 7, -4
  126 0002 83B0     		sub	sp, sp, #12
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc8mUdP4.s 			page 6
+
+
  127              		.cfi_def_cfa_offset 16
  128 0004 00AF     		add	r7, sp, #0
  129              		.cfi_def_cfa_register 7
  130 0006 7860     		str	r0, [r7, #4]
- 165:..\src/IMU_functions.c ****    /* Chip_Select_IMU_Write(7);
- 166:..\src/IMU_functions.c ****     
- 167:..\src/IMU_functions.c ****     Chip_Select_IMU_Write(n);
- 168:..\src/IMU_functions.c ****     */
- 169:..\src/IMU_functions.c **** }
- 131              		.loc 1 169 0
+ 160:..\src/IMU_functions.c ****    /* Chip_Select_IMU_Write(7);
+ 161:..\src/IMU_functions.c ****     
+ 162:..\src/IMU_functions.c ****     Chip_Select_IMU_Write(n);
+ 163:..\src/IMU_functions.c ****     */
+ 164:..\src/IMU_functions.c **** }
+ 131              		.loc 1 164 0
  132 0008 00BF     		nop
  133 000a 0C37     		adds	r7, r7, #12
  134              		.cfi_def_cfa_offset 4
@@ -337,13 +332,13 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccsctOHr.s 			page 1
  150              		.type	InitIMUgeneral, %function
  151              	InitIMUgeneral:
  152              	.LFB68:
- 170:..\src/IMU_functions.c **** 
- 171:..\src/IMU_functions.c **** /********************************************************************************
- 172:..\src/IMU_functions.c **** * Function Name: InitIMUGeneral                                                 *
- 173:..\src/IMU_functions.c **** *********************************************************************************/
- 174:..\src/IMU_functions.c **** void InitIMUgeneral()
- 175:..\src/IMU_functions.c **** {
- 153              		.loc 1 175 0
+ 165:..\src/IMU_functions.c **** 
+ 166:..\src/IMU_functions.c **** /********************************************************************************
+ 167:..\src/IMU_functions.c **** * Function Name: InitIMUGeneral                                                 *
+ 168:..\src/IMU_functions.c **** *********************************************************************************/
+ 169:..\src/IMU_functions.c **** void InitIMUgeneral()
+ 170:..\src/IMU_functions.c **** {
+ 153              		.loc 1 170 0
  154              		.cfi_startproc
  155              		@ args = 0, pretend = 0, frame = 0
  156              		@ frame_needed = 1, uses_anonymous_args = 0
@@ -353,104 +348,104 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccsctOHr.s 			page 1
  160              		.cfi_offset 7, -4
  161 0002 00AF     		add	r7, sp, #0
  162              		.cfi_def_cfa_register 7
- 176:..\src/IMU_functions.c ****     /*uint8 k_imu;
- 177:..\src/IMU_functions.c ****     uint8 count = 0;
- 178:..\src/IMU_functions.c ****     int IMU_ack;
- 179:..\src/IMU_functions.c ****     int tmp[N_IMU_MAX];
- 180:..\src/IMU_functions.c ****     
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccsctOHr.s 			page 7
+ 171:..\src/IMU_functions.c ****     /*uint8 k_imu;
+ 172:..\src/IMU_functions.c ****     uint8 count = 0;
+ 173:..\src/IMU_functions.c ****     int IMU_ack;
+ 174:..\src/IMU_functions.c ****     int tmp[N_IMU_MAX];
+ 175:..\src/IMU_functions.c ****     
+ 176:..\src/IMU_functions.c ****     // Initialize Memory Structure 
+ 177:..\src/IMU_functions.c ****     memset(&g_imu, 0, sizeof(struct st_imu));
+ 178:..\src/IMU_functions.c ****     memset(&IMU_connected, 0, sizeof(IMU_connected));
+ 179:..\src/IMU_functions.c **** 
+ 180:..\src/IMU_functions.c ****     // Initialize IMU to Read MagCal Parameters
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc8mUdP4.s 			page 7
 
 
- 181:..\src/IMU_functions.c ****     // Initialize Memory Structure 
- 182:..\src/IMU_functions.c ****     memset(&g_imu, 0, sizeof(struct st_imu));
- 183:..\src/IMU_functions.c ****     memset(&IMU_connected, 0, sizeof(IMU_connected));
- 184:..\src/IMU_functions.c **** 
- 185:..\src/IMU_functions.c ****     // Initialize IMU to Read MagCal Parameters
- 186:..\src/IMU_functions.c ****     for (k_imu=0; k_imu < N_IMU_MAX; k_imu++) 
- 187:..\src/IMU_functions.c ****     {	
- 188:..\src/IMU_functions.c **** 	    ChipSelectorIMU(k_imu);
- 189:..\src/IMU_functions.c **** 	    CyDelay(10);
- 190:..\src/IMU_functions.c **** 	    InitIMUMagCal();
- 191:..\src/IMU_functions.c **** 	    CyDelay(10); 
- 192:..\src/IMU_functions.c ****     }
- 193:..\src/IMU_functions.c ****     
- 194:..\src/IMU_functions.c ****     // Reading of MagCal Parameters
- 195:..\src/IMU_functions.c ****     CyDelay(50);
- 196:..\src/IMU_functions.c ****     for (k_imu = 0; k_imu < N_IMU_MAX; k_imu++){
- 197:..\src/IMU_functions.c ****         ChipSelectorIMU(k_imu);
- 198:..\src/IMU_functions.c ****         CyDelay(10);
- 199:..\src/IMU_functions.c ****         ReadMagCal(k_imu);  
- 200:..\src/IMU_functions.c ****         CyDelay(10);
- 201:..\src/IMU_functions.c ****     }
- 202:..\src/IMU_functions.c **** 
- 203:..\src/IMU_functions.c ****     ChipSelectorIMU(0); // Read again first IMU MagCal Parameters
- 204:..\src/IMU_functions.c ****     CyDelay(10);
- 205:..\src/IMU_functions.c ****     ReadMagCal(0);  
- 206:..\src/IMU_functions.c ****     CyDelay(10);
- 207:..\src/IMU_functions.c ****         
- 208:..\src/IMU_functions.c ****     // First ping to be sure to wakeup IMUs
- 209:..\src/IMU_functions.c ****     for (k_imu=0; k_imu < N_IMU_MAX; k_imu++) 
- 210:..\src/IMU_functions.c ****     {	
- 211:..\src/IMU_functions.c **** 	    ChipSelectorIMU(k_imu);
- 212:..\src/IMU_functions.c **** 	    CyDelay(10);
- 213:..\src/IMU_functions.c **** 	    ReadControlRegisterIMU(MPU9250_WHO_AM_I);
- 214:..\src/IMU_functions.c ****     }
- 215:..\src/IMU_functions.c ****     
- 216:..\src/IMU_functions.c ****     // Identify IMU connected
- 217:..\src/IMU_functions.c ****     ChipSelectorIMU(0);
- 218:..\src/IMU_functions.c ****     CyDelay(10);
- 219:..\src/IMU_functions.c ****     IMU_ack = ReadControlRegisterIMU(MPU9250_WHO_AM_I);
- 220:..\src/IMU_functions.c ****     IMU_ack = 0;
- 221:..\src/IMU_functions.c ****     N_IMU_Connected = 0;    
- 222:..\src/IMU_functions.c ****     for (k_imu = 0; k_imu < NUM_DEV_IMU; k_imu++) 
- 223:..\src/IMU_functions.c ****     {      
- 224:..\src/IMU_functions.c ****     	ChipSelectorIMU(k_imu);
- 225:..\src/IMU_functions.c ****         CyDelay(10);
- 226:..\src/IMU_functions.c ****         IMU_ack = ReadControlRegisterIMU(MPU9250_WHO_AM_I);
- 227:..\src/IMU_functions.c ****         if (IMU_ack == 0x71) 
- 228:..\src/IMU_functions.c ****         {
- 229:..\src/IMU_functions.c ****             N_IMU_Connected++;
- 230:..\src/IMU_functions.c ****             IMU_ack = 0;
- 231:..\src/IMU_functions.c ****             tmp[k_imu] = 1;
- 232:..\src/IMU_functions.c ****         }
- 233:..\src/IMU_functions.c ****         else
- 234:..\src/IMU_functions.c ****             tmp[k_imu] = 0;
- 235:..\src/IMU_functions.c ****     }
- 236:..\src/IMU_functions.c **** 
- 237:..\src/IMU_functions.c ****     for(k_imu = 0; k_imu < N_IMU_MAX; k_imu++)
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccsctOHr.s 			page 8
+ 181:..\src/IMU_functions.c ****     for (k_imu=0; k_imu < N_IMU_MAX; k_imu++) 
+ 182:..\src/IMU_functions.c ****     {	
+ 183:..\src/IMU_functions.c **** 	    ChipSelectorIMU(k_imu);
+ 184:..\src/IMU_functions.c **** 	    CyDelay(10);
+ 185:..\src/IMU_functions.c **** 	    InitIMUMagCal();
+ 186:..\src/IMU_functions.c **** 	    CyDelay(10); 
+ 187:..\src/IMU_functions.c ****     }
+ 188:..\src/IMU_functions.c ****     
+ 189:..\src/IMU_functions.c ****     // Reading of MagCal Parameters
+ 190:..\src/IMU_functions.c ****     CyDelay(50);
+ 191:..\src/IMU_functions.c ****     for (k_imu = 0; k_imu < N_IMU_MAX; k_imu++){
+ 192:..\src/IMU_functions.c ****         ChipSelectorIMU(k_imu);
+ 193:..\src/IMU_functions.c ****         CyDelay(10);
+ 194:..\src/IMU_functions.c ****         ReadMagCal(k_imu);  
+ 195:..\src/IMU_functions.c ****         CyDelay(10);
+ 196:..\src/IMU_functions.c ****     }
+ 197:..\src/IMU_functions.c **** 
+ 198:..\src/IMU_functions.c ****     ChipSelectorIMU(0); // Read again first IMU MagCal Parameters
+ 199:..\src/IMU_functions.c ****     CyDelay(10);
+ 200:..\src/IMU_functions.c ****     ReadMagCal(0);  
+ 201:..\src/IMU_functions.c ****     CyDelay(10);
+ 202:..\src/IMU_functions.c ****         
+ 203:..\src/IMU_functions.c ****     // First ping to be sure to wakeup IMUs
+ 204:..\src/IMU_functions.c ****     for (k_imu=0; k_imu < N_IMU_MAX; k_imu++) 
+ 205:..\src/IMU_functions.c ****     {	
+ 206:..\src/IMU_functions.c **** 	    ChipSelectorIMU(k_imu);
+ 207:..\src/IMU_functions.c **** 	    CyDelay(10);
+ 208:..\src/IMU_functions.c **** 	    ReadControlRegisterIMU(MPU9250_WHO_AM_I);
+ 209:..\src/IMU_functions.c ****     }
+ 210:..\src/IMU_functions.c ****     
+ 211:..\src/IMU_functions.c ****     // Identify IMU connected
+ 212:..\src/IMU_functions.c ****     ChipSelectorIMU(0);
+ 213:..\src/IMU_functions.c ****     CyDelay(10);
+ 214:..\src/IMU_functions.c ****     IMU_ack = ReadControlRegisterIMU(MPU9250_WHO_AM_I);
+ 215:..\src/IMU_functions.c ****     IMU_ack = 0;
+ 216:..\src/IMU_functions.c ****     N_IMU_Connected = 0;    
+ 217:..\src/IMU_functions.c ****     for (k_imu = 0; k_imu < NUM_DEV_IMU; k_imu++) 
+ 218:..\src/IMU_functions.c ****     {      
+ 219:..\src/IMU_functions.c ****     	ChipSelectorIMU(k_imu);
+ 220:..\src/IMU_functions.c ****         CyDelay(10);
+ 221:..\src/IMU_functions.c ****         IMU_ack = ReadControlRegisterIMU(MPU9250_WHO_AM_I);
+ 222:..\src/IMU_functions.c ****         if (IMU_ack == 0x71) 
+ 223:..\src/IMU_functions.c ****         {
+ 224:..\src/IMU_functions.c ****             N_IMU_Connected++;
+ 225:..\src/IMU_functions.c ****             IMU_ack = 0;
+ 226:..\src/IMU_functions.c ****             tmp[k_imu] = 1;
+ 227:..\src/IMU_functions.c ****         }
+ 228:..\src/IMU_functions.c ****         else
+ 229:..\src/IMU_functions.c ****             tmp[k_imu] = 0;
+ 230:..\src/IMU_functions.c ****     }
+ 231:..\src/IMU_functions.c **** 
+ 232:..\src/IMU_functions.c ****     for(k_imu = 0; k_imu < N_IMU_MAX; k_imu++)
+ 233:..\src/IMU_functions.c ****     {
+ 234:..\src/IMU_functions.c ****         if(tmp[k_imu] == 1)
+ 235:..\src/IMU_functions.c ****         {
+ 236:..\src/IMU_functions.c ****             IMU_connected[count] = k_imu;
+ 237:..\src/IMU_functions.c ****             count++;
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc8mUdP4.s 			page 8
 
 
- 238:..\src/IMU_functions.c ****     {
- 239:..\src/IMU_functions.c ****         if(tmp[k_imu] == 1)
- 240:..\src/IMU_functions.c ****         {
- 241:..\src/IMU_functions.c ****             IMU_connected[count] = k_imu;
- 242:..\src/IMU_functions.c ****             count++;
- 243:..\src/IMU_functions.c ****         }
- 244:..\src/IMU_functions.c ****     }
- 245:..\src/IMU_functions.c ****             
- 246:..\src/IMU_functions.c ****     // Standard Initialization of the IMU
- 247:..\src/IMU_functions.c ****     CyDelay(10);
- 248:..\src/IMU_functions.c ****     for (k_imu=0; k_imu < N_IMU_MAX; k_imu++) 
- 249:..\src/IMU_functions.c ****     {	
- 250:..\src/IMU_functions.c **** 	    ChipSelectorIMU(k_imu);
- 251:..\src/IMU_functions.c **** 	    CyDelay(10);
- 252:..\src/IMU_functions.c **** 	    InitIMU();
- 253:..\src/IMU_functions.c **** 	    CyDelay(10); 
- 254:..\src/IMU_functions.c ****     }
- 255:..\src/IMU_functions.c ****     CyDelay(50);
- 256:..\src/IMU_functions.c ****     
- 257:..\src/IMU_functions.c ****     // Set Standard Read for the IMU
- 258:..\src/IMU_functions.c ****     memset(&single_imu_size, 0, sizeof(single_imu_size));
- 259:..\src/IMU_functions.c ****     imus_data_size = 1; //header    
- 260:..\src/IMU_functions.c ****     for (k_imu = 0; k_imu < N_IMU_Connected; k_imu++)
- 261:..\src/IMU_functions.c ****     {
- 262:..\src/IMU_functions.c ****         single_imu_size[IMU_connected[k_imu]] = 1 + 6*c_mem.imu.IMU_conf[IMU_connected[k_imu]][0] +
- 263:..\src/IMU_functions.c ****         imus_data_size = imus_data_size + single_imu_size[IMU_connected[k_imu]];
- 264:..\src/IMU_functions.c ****     }
- 265:..\src/IMU_functions.c ****     imus_data_size = imus_data_size + 1;    //checksum*/
- 266:..\src/IMU_functions.c **** }
- 163              		.loc 1 266 0
+ 238:..\src/IMU_functions.c ****         }
+ 239:..\src/IMU_functions.c ****     }
+ 240:..\src/IMU_functions.c ****             
+ 241:..\src/IMU_functions.c ****     // Standard Initialization of the IMU
+ 242:..\src/IMU_functions.c ****     CyDelay(10);
+ 243:..\src/IMU_functions.c ****     for (k_imu=0; k_imu < N_IMU_MAX; k_imu++) 
+ 244:..\src/IMU_functions.c ****     {	
+ 245:..\src/IMU_functions.c **** 	    ChipSelectorIMU(k_imu);
+ 246:..\src/IMU_functions.c **** 	    CyDelay(10);
+ 247:..\src/IMU_functions.c **** 	    InitIMU();
+ 248:..\src/IMU_functions.c **** 	    CyDelay(10); 
+ 249:..\src/IMU_functions.c ****     }
+ 250:..\src/IMU_functions.c ****     CyDelay(50);
+ 251:..\src/IMU_functions.c ****     
+ 252:..\src/IMU_functions.c ****     // Set Standard Read for the IMU
+ 253:..\src/IMU_functions.c ****     memset(&single_imu_size, 0, sizeof(single_imu_size));
+ 254:..\src/IMU_functions.c ****     imus_data_size = 1; //header    
+ 255:..\src/IMU_functions.c ****     for (k_imu = 0; k_imu < N_IMU_Connected; k_imu++)
+ 256:..\src/IMU_functions.c ****     {
+ 257:..\src/IMU_functions.c ****         single_imu_size[IMU_connected[k_imu]] = 1 + 6*c_mem.imu.IMU_conf[IMU_connected[k_imu]][0] +
+ 258:..\src/IMU_functions.c ****         imus_data_size = imus_data_size + single_imu_size[IMU_connected[k_imu]];
+ 259:..\src/IMU_functions.c ****     }
+ 260:..\src/IMU_functions.c ****     imus_data_size = imus_data_size + 1;    //checksum*/
+ 261:..\src/IMU_functions.c **** }
+ 163              		.loc 1 261 0
  164 0004 00BF     		nop
  165 0006 BD46     		mov	sp, r7
  166              		.cfi_def_cfa_register 13
@@ -470,36 +465,36 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccsctOHr.s 			page 1
  180              		.type	ReadIMU, %function
  181              	ReadIMU:
  182              	.LFB69:
- 267:..\src/IMU_functions.c **** 
- 268:..\src/IMU_functions.c **** /*******************************************************************************
- 269:..\src/IMU_functions.c **** * Function Name: IMU Read
- 270:..\src/IMU_functions.c **** *********************************************************************************/	
- 271:..\src/IMU_functions.c **** void ReadIMU(int n)
- 272:..\src/IMU_functions.c **** {/*
- 183              		.loc 1 272 0
+ 262:..\src/IMU_functions.c **** 
+ 263:..\src/IMU_functions.c **** /*******************************************************************************
+ 264:..\src/IMU_functions.c **** * Function Name: IMU Read
+ 265:..\src/IMU_functions.c **** *********************************************************************************/	
+ 266:..\src/IMU_functions.c **** void ReadIMU(int n)
+ 267:..\src/IMU_functions.c **** {/*
+ 183              		.loc 1 267 0
  184              		.cfi_startproc
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccsctOHr.s 			page 9
-
-
  185              		@ args = 0, pretend = 0, frame = 8
  186              		@ frame_needed = 1, uses_anonymous_args = 0
  187              		@ link register save eliminated.
  188 0000 80B4     		push	{r7}
  189              		.cfi_def_cfa_offset 4
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc8mUdP4.s 			page 9
+
+
  190              		.cfi_offset 7, -4
  191 0002 83B0     		sub	sp, sp, #12
  192              		.cfi_def_cfa_offset 16
  193 0004 00AF     		add	r7, sp, #0
  194              		.cfi_def_cfa_register 7
  195 0006 7860     		str	r0, [r7, #4]
- 273:..\src/IMU_functions.c ****     if (c_mem.imu.IMU_conf[n][0]) ReadAcc(n);
- 274:..\src/IMU_functions.c ****     if (c_mem.imu.IMU_conf[n][1]) ReadGyro(n);
- 275:..\src/IMU_functions.c ****     if (c_mem.imu.IMU_conf[n][2]) ReadMag(n);
- 276:..\src/IMU_functions.c ****     if (c_mem.imu.IMU_conf[n][3]) ReadQuat(n);
- 277:..\src/IMU_functions.c ****     if (c_mem.imu.IMU_conf[n][4]) ReadTemp(n);
- 278:..\src/IMU_functions.c ****     */
- 279:..\src/IMU_functions.c **** }
- 196              		.loc 1 279 0
+ 268:..\src/IMU_functions.c ****     if (c_mem.imu.IMU_conf[n][0]) ReadAcc(n);
+ 269:..\src/IMU_functions.c ****     if (c_mem.imu.IMU_conf[n][1]) ReadGyro(n);
+ 270:..\src/IMU_functions.c ****     if (c_mem.imu.IMU_conf[n][2]) ReadMag(n);
+ 271:..\src/IMU_functions.c ****     if (c_mem.imu.IMU_conf[n][3]) ReadQuat(n);
+ 272:..\src/IMU_functions.c ****     if (c_mem.imu.IMU_conf[n][4]) ReadTemp(n);
+ 273:..\src/IMU_functions.c ****     */
+ 274:..\src/IMU_functions.c **** }
+ 196              		.loc 1 274 0
  197 0008 00BF     		nop
  198 000a 0C37     		adds	r7, r7, #12
  199              		.cfi_def_cfa_offset 4
@@ -521,13 +516,13 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccsctOHr.s 			page 1
  215              		.type	ReadAcc, %function
  216              	ReadAcc:
  217              	.LFB70:
- 280:..\src/IMU_functions.c **** 
- 281:..\src/IMU_functions.c **** /*******************************************************************************
- 282:..\src/IMU_functions.c **** * Function Name: Read Acc's Data of IMU n
- 283:..\src/IMU_functions.c **** *********************************************************************************/
- 284:..\src/IMU_functions.c **** void ReadAcc(int n)
- 285:..\src/IMU_functions.c **** {/*
- 218              		.loc 1 285 0
+ 275:..\src/IMU_functions.c **** 
+ 276:..\src/IMU_functions.c **** /*******************************************************************************
+ 277:..\src/IMU_functions.c **** * Function Name: Read Acc's Data of IMU n
+ 278:..\src/IMU_functions.c **** *********************************************************************************/
+ 279:..\src/IMU_functions.c **** void ReadAcc(int n)
+ 280:..\src/IMU_functions.c **** {/*
+ 218              		.loc 1 280 0
  219              		.cfi_startproc
  220              		@ args = 0, pretend = 0, frame = 8
  221              		@ frame_needed = 1, uses_anonymous_args = 0
@@ -538,47 +533,47 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccsctOHr.s 			page 1
  226 0002 83B0     		sub	sp, sp, #12
  227              		.cfi_def_cfa_offset 16
  228 0004 00AF     		add	r7, sp, #0
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccsctOHr.s 			page 10
-
-
  229              		.cfi_def_cfa_register 7
  230 0006 7860     		str	r0, [r7, #4]
- 286:..\src/IMU_functions.c **** 	uint8 low=0, high=0;
- 287:..\src/IMU_functions.c **** 	
- 288:..\src/IMU_functions.c **** 	int row = n;
- 289:..\src/IMU_functions.c **** 	
- 290:..\src/IMU_functions.c **** 	//read X
- 291:..\src/IMU_functions.c ****     low=ReadControlRegisterIMU(MPU9250_ACCEL_XOUT_L);
- 292:..\src/IMU_functions.c ****     SPI_delay();
- 293:..\src/IMU_functions.c ****     high=ReadControlRegisterIMU(MPU9250_ACCEL_XOUT_H);
- 294:..\src/IMU_functions.c ****     SPI_delay();
- 295:..\src/IMU_functions.c ****     
- 296:..\src/IMU_functions.c **** 	Accel[row][0] = high; 
- 297:..\src/IMU_functions.c **** 	Accel[row][1] = low; 
- 298:..\src/IMU_functions.c **** 	low=0, high=0;
- 299:..\src/IMU_functions.c **** 			
- 300:..\src/IMU_functions.c **** 	//read Y
- 301:..\src/IMU_functions.c ****     low=ReadControlRegisterIMU(MPU9250_ACCEL_YOUT_L);
- 302:..\src/IMU_functions.c ****     SPI_delay();
- 303:..\src/IMU_functions.c **** 	high=ReadControlRegisterIMU(MPU9250_ACCEL_YOUT_H);
- 304:..\src/IMU_functions.c ****     SPI_delay();
- 305:..\src/IMU_functions.c **** 
- 306:..\src/IMU_functions.c **** 	Accel[row][2] = high; 
- 307:..\src/IMU_functions.c **** 	Accel[row][3] = low; 
- 308:..\src/IMU_functions.c **** 	low=0, high=0;
- 309:..\src/IMU_functions.c **** 		
- 310:..\src/IMU_functions.c **** 	//read Z
- 311:..\src/IMU_functions.c ****     low=ReadControlRegisterIMU(MPU9250_ACCEL_ZOUT_L);
- 312:..\src/IMU_functions.c ****     SPI_delay();
- 313:..\src/IMU_functions.c ****     high=ReadControlRegisterIMU(MPU9250_ACCEL_ZOUT_H);
- 314:..\src/IMU_functions.c ****     SPI_delay();
- 315:..\src/IMU_functions.c ****     
- 316:..\src/IMU_functions.c **** 	Accel[row][4] = high; 
- 317:..\src/IMU_functions.c **** 	Accel[row][5] = low;
- 318:..\src/IMU_functions.c **** 	low=0, high=0;
- 319:..\src/IMU_functions.c ****     */
- 320:..\src/IMU_functions.c **** }
- 231              		.loc 1 320 0
+ 281:..\src/IMU_functions.c **** 	uint8 low=0, high=0;
+ 282:..\src/IMU_functions.c **** 	
+ 283:..\src/IMU_functions.c **** 	int row = n;
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc8mUdP4.s 			page 10
+
+
+ 284:..\src/IMU_functions.c **** 	
+ 285:..\src/IMU_functions.c **** 	//read X
+ 286:..\src/IMU_functions.c ****     low=ReadControlRegisterIMU(MPU9250_ACCEL_XOUT_L);
+ 287:..\src/IMU_functions.c ****     SPI_delay();
+ 288:..\src/IMU_functions.c ****     high=ReadControlRegisterIMU(MPU9250_ACCEL_XOUT_H);
+ 289:..\src/IMU_functions.c ****     SPI_delay();
+ 290:..\src/IMU_functions.c ****     
+ 291:..\src/IMU_functions.c **** 	Accel[row][0] = high; 
+ 292:..\src/IMU_functions.c **** 	Accel[row][1] = low; 
+ 293:..\src/IMU_functions.c **** 	low=0, high=0;
+ 294:..\src/IMU_functions.c **** 			
+ 295:..\src/IMU_functions.c **** 	//read Y
+ 296:..\src/IMU_functions.c ****     low=ReadControlRegisterIMU(MPU9250_ACCEL_YOUT_L);
+ 297:..\src/IMU_functions.c ****     SPI_delay();
+ 298:..\src/IMU_functions.c **** 	high=ReadControlRegisterIMU(MPU9250_ACCEL_YOUT_H);
+ 299:..\src/IMU_functions.c ****     SPI_delay();
+ 300:..\src/IMU_functions.c **** 
+ 301:..\src/IMU_functions.c **** 	Accel[row][2] = high; 
+ 302:..\src/IMU_functions.c **** 	Accel[row][3] = low; 
+ 303:..\src/IMU_functions.c **** 	low=0, high=0;
+ 304:..\src/IMU_functions.c **** 		
+ 305:..\src/IMU_functions.c **** 	//read Z
+ 306:..\src/IMU_functions.c ****     low=ReadControlRegisterIMU(MPU9250_ACCEL_ZOUT_L);
+ 307:..\src/IMU_functions.c ****     SPI_delay();
+ 308:..\src/IMU_functions.c ****     high=ReadControlRegisterIMU(MPU9250_ACCEL_ZOUT_H);
+ 309:..\src/IMU_functions.c ****     SPI_delay();
+ 310:..\src/IMU_functions.c ****     
+ 311:..\src/IMU_functions.c **** 	Accel[row][4] = high; 
+ 312:..\src/IMU_functions.c **** 	Accel[row][5] = low;
+ 313:..\src/IMU_functions.c **** 	low=0, high=0;
+ 314:..\src/IMU_functions.c ****     */
+ 315:..\src/IMU_functions.c **** }
+ 231              		.loc 1 315 0
  232 0008 00BF     		nop
  233 000a 0C37     		adds	r7, r7, #12
  234              		.cfi_def_cfa_offset 4
@@ -598,17 +593,17 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccsctOHr.s 			page 1
  248              		.thumb
  249              		.thumb_func
  250              		.type	ReadGyro, %function
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccsctOHr.s 			page 11
-
-
  251              	ReadGyro:
  252              	.LFB71:
- 321:..\src/IMU_functions.c **** 
- 322:..\src/IMU_functions.c **** /*******************************************************************************
- 323:..\src/IMU_functions.c **** * Function Name: Read Gyro's Data of IMU n
- 324:..\src/IMU_functions.c **** *********************************************************************************/
- 325:..\src/IMU_functions.c **** void ReadGyro(int n){
- 253              		.loc 1 325 0
+ 316:..\src/IMU_functions.c **** 
+ 317:..\src/IMU_functions.c **** /*******************************************************************************
+ 318:..\src/IMU_functions.c **** * Function Name: Read Gyro's Data of IMU n
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc8mUdP4.s 			page 11
+
+
+ 319:..\src/IMU_functions.c **** *********************************************************************************/
+ 320:..\src/IMU_functions.c **** void ReadGyro(int n){
+ 253              		.loc 1 320 0
  254              		.cfi_startproc
  255              		@ args = 0, pretend = 0, frame = 8
  256              		@ frame_needed = 1, uses_anonymous_args = 0
@@ -621,51 +616,51 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccsctOHr.s 			page 1
  263 0004 00AF     		add	r7, sp, #0
  264              		.cfi_def_cfa_register 7
  265 0006 7860     		str	r0, [r7, #4]
- 326:..\src/IMU_functions.c ****     /*
- 327:..\src/IMU_functions.c **** 	uint8 low=0, high=0;
- 328:..\src/IMU_functions.c ****  
- 329:..\src/IMU_functions.c **** 	int row = n;
- 330:..\src/IMU_functions.c **** 	
- 331:..\src/IMU_functions.c **** 	//read X
- 332:..\src/IMU_functions.c **** 	low=ReadControlRegisterIMU(MPU9250_GYRO_XOUT_L);
- 333:..\src/IMU_functions.c ****     SPI_delay();
- 334:..\src/IMU_functions.c **** 	high=ReadControlRegisterIMU(MPU9250_GYRO_XOUT_H);
- 335:..\src/IMU_functions.c ****     SPI_delay();
- 336:..\src/IMU_functions.c ****     
- 337:..\src/IMU_functions.c **** 	Gyro[row][0] = high; 
- 338:..\src/IMU_functions.c **** 	Gyro[row][1] = low;
- 339:..\src/IMU_functions.c **** 	low=0, high=0;
- 340:..\src/IMU_functions.c ****     
- 341:..\src/IMU_functions.c **** 	//read Y
- 342:..\src/IMU_functions.c **** 	low=ReadControlRegisterIMU(MPU9250_GYRO_YOUT_L);
- 343:..\src/IMU_functions.c ****     SPI_delay();
- 344:..\src/IMU_functions.c **** 	high=ReadControlRegisterIMU(MPU9250_GYRO_YOUT_H);
- 345:..\src/IMU_functions.c ****     SPI_delay();
- 346:..\src/IMU_functions.c ****     
- 347:..\src/IMU_functions.c **** 	Gyro[row][2] = high; 
- 348:..\src/IMU_functions.c **** 	Gyro[row][3] = low;
- 349:..\src/IMU_functions.c **** 	low=0, high=0;
- 350:..\src/IMU_functions.c **** 
- 351:..\src/IMU_functions.c **** 	//read Z
- 352:..\src/IMU_functions.c ****     low=ReadControlRegisterIMU(MPU9250_GYRO_ZOUT_L);
- 353:..\src/IMU_functions.c ****     SPI_delay();
- 354:..\src/IMU_functions.c **** 	high=ReadControlRegisterIMU(MPU9250_GYRO_ZOUT_H);
- 355:..\src/IMU_functions.c ****     SPI_delay();
- 356:..\src/IMU_functions.c ****     
- 357:..\src/IMU_functions.c **** 	Gyro[row][4] = high; 
- 358:..\src/IMU_functions.c **** 	Gyro[row][5] = low;        
- 359:..\src/IMU_functions.c **** 
- 360:..\src/IMU_functions.c **** 	low=0, high=0;
- 361:..\src/IMU_functions.c ****     */
- 362:..\src/IMU_functions.c **** }
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccsctOHr.s 			page 12
-
-
- 266              		.loc 1 362 0
+ 321:..\src/IMU_functions.c ****     /*
+ 322:..\src/IMU_functions.c **** 	uint8 low=0, high=0;
+ 323:..\src/IMU_functions.c ****  
+ 324:..\src/IMU_functions.c **** 	int row = n;
+ 325:..\src/IMU_functions.c **** 	
+ 326:..\src/IMU_functions.c **** 	//read X
+ 327:..\src/IMU_functions.c **** 	low=ReadControlRegisterIMU(MPU9250_GYRO_XOUT_L);
+ 328:..\src/IMU_functions.c ****     SPI_delay();
+ 329:..\src/IMU_functions.c **** 	high=ReadControlRegisterIMU(MPU9250_GYRO_XOUT_H);
+ 330:..\src/IMU_functions.c ****     SPI_delay();
+ 331:..\src/IMU_functions.c ****     
+ 332:..\src/IMU_functions.c **** 	Gyro[row][0] = high; 
+ 333:..\src/IMU_functions.c **** 	Gyro[row][1] = low;
+ 334:..\src/IMU_functions.c **** 	low=0, high=0;
+ 335:..\src/IMU_functions.c ****     
+ 336:..\src/IMU_functions.c **** 	//read Y
+ 337:..\src/IMU_functions.c **** 	low=ReadControlRegisterIMU(MPU9250_GYRO_YOUT_L);
+ 338:..\src/IMU_functions.c ****     SPI_delay();
+ 339:..\src/IMU_functions.c **** 	high=ReadControlRegisterIMU(MPU9250_GYRO_YOUT_H);
+ 340:..\src/IMU_functions.c ****     SPI_delay();
+ 341:..\src/IMU_functions.c ****     
+ 342:..\src/IMU_functions.c **** 	Gyro[row][2] = high; 
+ 343:..\src/IMU_functions.c **** 	Gyro[row][3] = low;
+ 344:..\src/IMU_functions.c **** 	low=0, high=0;
+ 345:..\src/IMU_functions.c **** 
+ 346:..\src/IMU_functions.c **** 	//read Z
+ 347:..\src/IMU_functions.c ****     low=ReadControlRegisterIMU(MPU9250_GYRO_ZOUT_L);
+ 348:..\src/IMU_functions.c ****     SPI_delay();
+ 349:..\src/IMU_functions.c **** 	high=ReadControlRegisterIMU(MPU9250_GYRO_ZOUT_H);
+ 350:..\src/IMU_functions.c ****     SPI_delay();
+ 351:..\src/IMU_functions.c ****     
+ 352:..\src/IMU_functions.c **** 	Gyro[row][4] = high; 
+ 353:..\src/IMU_functions.c **** 	Gyro[row][5] = low;        
+ 354:..\src/IMU_functions.c **** 
+ 355:..\src/IMU_functions.c **** 	low=0, high=0;
+ 356:..\src/IMU_functions.c ****     */
+ 357:..\src/IMU_functions.c **** }
+ 266              		.loc 1 357 0
  267 0008 00BF     		nop
  268 000a 0C37     		adds	r7, r7, #12
  269              		.cfi_def_cfa_offset 4
  270 000c BD46     		mov	sp, r7
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc8mUdP4.s 			page 12
+
+
  271              		.cfi_def_cfa_register 13
  272              		@ sp needed
  273 000e 80BC     		pop	{r7}
@@ -683,12 +678,12 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccsctOHr.s 			page 1
  285              		.type	ReadMag, %function
  286              	ReadMag:
  287              	.LFB72:
- 363:..\src/IMU_functions.c **** 
- 364:..\src/IMU_functions.c **** /*******************************************************************************
- 365:..\src/IMU_functions.c **** * Function Name: Read Compas' Data of IMU n
- 366:..\src/IMU_functions.c **** *********************************************************************************/
- 367:..\src/IMU_functions.c **** void ReadMag(int n){
- 288              		.loc 1 367 0
+ 358:..\src/IMU_functions.c **** 
+ 359:..\src/IMU_functions.c **** /*******************************************************************************
+ 360:..\src/IMU_functions.c **** * Function Name: Read Compas' Data of IMU n
+ 361:..\src/IMU_functions.c **** *********************************************************************************/
+ 362:..\src/IMU_functions.c **** void ReadMag(int n){
+ 288              		.loc 1 362 0
  289              		.cfi_startproc
  290              		@ args = 0, pretend = 0, frame = 8
  291              		@ frame_needed = 1, uses_anonymous_args = 0
@@ -701,45 +696,45 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccsctOHr.s 			page 1
  298 0004 00AF     		add	r7, sp, #0
  299              		.cfi_def_cfa_register 7
  300 0006 7860     		str	r0, [r7, #4]
- 368:..\src/IMU_functions.c ****     /*
- 369:..\src/IMU_functions.c **** 	
- 370:..\src/IMU_functions.c **** 	uint8 low, high;
- 371:..\src/IMU_functions.c **** 	int row = n;	
- 372:..\src/IMU_functions.c **** 	//read X
- 373:..\src/IMU_functions.c **** 	low = ReadControlRegisterIMU(MPU9250_EXT_SENS_DATA_00);
- 374:..\src/IMU_functions.c ****     SPI_delay();
- 375:..\src/IMU_functions.c **** 	high = ReadControlRegisterIMU(MPU9250_EXT_SENS_DATA_01);		
- 376:..\src/IMU_functions.c ****     SPI_delay();
- 377:..\src/IMU_functions.c ****     
- 378:..\src/IMU_functions.c **** 	Mag[row][0] = high; 
- 379:..\src/IMU_functions.c **** 	Mag[row][1] = low;
- 380:..\src/IMU_functions.c **** 	low=0, high=0;
- 381:..\src/IMU_functions.c ****     
- 382:..\src/IMU_functions.c **** 	//read Y
- 383:..\src/IMU_functions.c **** 	low = ReadControlRegisterIMU(MPU9250_EXT_SENS_DATA_02);
- 384:..\src/IMU_functions.c ****     SPI_delay();
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccsctOHr.s 			page 13
+ 363:..\src/IMU_functions.c ****     /*
+ 364:..\src/IMU_functions.c **** 	
+ 365:..\src/IMU_functions.c **** 	uint8 low, high;
+ 366:..\src/IMU_functions.c **** 	int row = n;	
+ 367:..\src/IMU_functions.c **** 	//read X
+ 368:..\src/IMU_functions.c **** 	low = ReadControlRegisterIMU(MPU9250_EXT_SENS_DATA_00);
+ 369:..\src/IMU_functions.c ****     SPI_delay();
+ 370:..\src/IMU_functions.c **** 	high = ReadControlRegisterIMU(MPU9250_EXT_SENS_DATA_01);		
+ 371:..\src/IMU_functions.c ****     SPI_delay();
+ 372:..\src/IMU_functions.c ****     
+ 373:..\src/IMU_functions.c **** 	Mag[row][0] = high; 
+ 374:..\src/IMU_functions.c **** 	Mag[row][1] = low;
+ 375:..\src/IMU_functions.c **** 	low=0, high=0;
+ 376:..\src/IMU_functions.c ****     
+ 377:..\src/IMU_functions.c **** 	//read Y
+ 378:..\src/IMU_functions.c **** 	low = ReadControlRegisterIMU(MPU9250_EXT_SENS_DATA_02);
+ 379:..\src/IMU_functions.c ****     SPI_delay();
+ 380:..\src/IMU_functions.c **** 	high = ReadControlRegisterIMU(MPU9250_EXT_SENS_DATA_03);		
+ 381:..\src/IMU_functions.c ****     SPI_delay();
+ 382:..\src/IMU_functions.c ****     
+ 383:..\src/IMU_functions.c **** 	Mag[row][2] = high; 
+ 384:..\src/IMU_functions.c **** 	Mag[row][3] = low;
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc8mUdP4.s 			page 13
 
 
- 385:..\src/IMU_functions.c **** 	high = ReadControlRegisterIMU(MPU9250_EXT_SENS_DATA_03);		
- 386:..\src/IMU_functions.c ****     SPI_delay();
- 387:..\src/IMU_functions.c ****     
- 388:..\src/IMU_functions.c **** 	Mag[row][2] = high; 
- 389:..\src/IMU_functions.c **** 	Mag[row][3] = low;
- 390:..\src/IMU_functions.c **** 	low=0, high=0;
- 391:..\src/IMU_functions.c ****     
- 392:..\src/IMU_functions.c **** 	//read Z
- 393:..\src/IMU_functions.c **** 	low = ReadControlRegisterIMU(MPU9250_EXT_SENS_DATA_04);
- 394:..\src/IMU_functions.c ****     SPI_delay();
- 395:..\src/IMU_functions.c **** 	high = ReadControlRegisterIMU(MPU9250_EXT_SENS_DATA_05);
- 396:..\src/IMU_functions.c ****     SPI_delay();
- 397:..\src/IMU_functions.c **** 		
- 398:..\src/IMU_functions.c **** 	Mag[row][4] = high; 
- 399:..\src/IMU_functions.c **** 	Mag[row][5] = low;
- 400:..\src/IMU_functions.c **** 	low=0, high=0;
- 401:..\src/IMU_functions.c ****     */
- 402:..\src/IMU_functions.c **** }
- 301              		.loc 1 402 0
+ 385:..\src/IMU_functions.c **** 	low=0, high=0;
+ 386:..\src/IMU_functions.c ****     
+ 387:..\src/IMU_functions.c **** 	//read Z
+ 388:..\src/IMU_functions.c **** 	low = ReadControlRegisterIMU(MPU9250_EXT_SENS_DATA_04);
+ 389:..\src/IMU_functions.c ****     SPI_delay();
+ 390:..\src/IMU_functions.c **** 	high = ReadControlRegisterIMU(MPU9250_EXT_SENS_DATA_05);
+ 391:..\src/IMU_functions.c ****     SPI_delay();
+ 392:..\src/IMU_functions.c **** 		
+ 393:..\src/IMU_functions.c **** 	Mag[row][4] = high; 
+ 394:..\src/IMU_functions.c **** 	Mag[row][5] = low;
+ 395:..\src/IMU_functions.c **** 	low=0, high=0;
+ 396:..\src/IMU_functions.c ****     */
+ 397:..\src/IMU_functions.c **** }
+ 301              		.loc 1 397 0
  302 0008 00BF     		nop
  303 000a 0C37     		adds	r7, r7, #12
  304              		.cfi_def_cfa_offset 4
@@ -761,12 +756,12 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccsctOHr.s 			page 1
  320              		.type	ReadMagCal, %function
  321              	ReadMagCal:
  322              	.LFB73:
- 403:..\src/IMU_functions.c **** 
- 404:..\src/IMU_functions.c **** /********************************************************************************
- 405:..\src/IMU_functions.c **** * Function Name: ReadMagCal
- 406:..\src/IMU_functions.c **** *********************************************************************************/
- 407:..\src/IMU_functions.c **** void ReadMagCal(int n){
- 323              		.loc 1 407 0
+ 398:..\src/IMU_functions.c **** 
+ 399:..\src/IMU_functions.c **** /********************************************************************************
+ 400:..\src/IMU_functions.c **** * Function Name: ReadMagCal
+ 401:..\src/IMU_functions.c **** *********************************************************************************/
+ 402:..\src/IMU_functions.c **** void ReadMagCal(int n){
+ 323              		.loc 1 402 0
  324              		.cfi_startproc
  325              		@ args = 0, pretend = 0, frame = 8
  326              		@ frame_needed = 1, uses_anonymous_args = 0
@@ -778,30 +773,30 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccsctOHr.s 			page 1
  332              		.cfi_def_cfa_offset 16
  333 0004 00AF     		add	r7, sp, #0
  334              		.cfi_def_cfa_register 7
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccsctOHr.s 			page 14
-
-
  335 0006 7860     		str	r0, [r7, #4]
- 408:..\src/IMU_functions.c **** 	/*
- 409:..\src/IMU_functions.c ****     uint8 read = 0; 
- 410:..\src/IMU_functions.c **** 	int row = n;	
- 411:..\src/IMU_functions.c **** 	//read X
- 412:..\src/IMU_functions.c **** 	read = ReadControlRegisterIMU(MPU9250_EXT_SENS_DATA_00);
- 413:..\src/IMU_functions.c ****     MagCal[row][0] = read; 
- 414:..\src/IMU_functions.c ****     read = 0;
+ 403:..\src/IMU_functions.c **** 	/*
+ 404:..\src/IMU_functions.c ****     uint8 read = 0; 
+ 405:..\src/IMU_functions.c **** 	int row = n;	
+ 406:..\src/IMU_functions.c **** 	//read X
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc8mUdP4.s 			page 14
+
+
+ 407:..\src/IMU_functions.c **** 	read = ReadControlRegisterIMU(MPU9250_EXT_SENS_DATA_00);
+ 408:..\src/IMU_functions.c ****     MagCal[row][0] = read; 
+ 409:..\src/IMU_functions.c ****     read = 0;
+ 410:..\src/IMU_functions.c ****     
+ 411:..\src/IMU_functions.c **** 	//read Y
+ 412:..\src/IMU_functions.c **** 	read = ReadControlRegisterIMU(MPU9250_EXT_SENS_DATA_01);			
+ 413:..\src/IMU_functions.c **** 	MagCal[row][1] = read; 
+ 414:..\src/IMU_functions.c **** 	read = 0;
  415:..\src/IMU_functions.c ****     
- 416:..\src/IMU_functions.c **** 	//read Y
- 417:..\src/IMU_functions.c **** 	read = ReadControlRegisterIMU(MPU9250_EXT_SENS_DATA_01);			
- 418:..\src/IMU_functions.c **** 	MagCal[row][1] = read; 
+ 416:..\src/IMU_functions.c **** 	//read Z
+ 417:..\src/IMU_functions.c **** 	read = ReadControlRegisterIMU(MPU9250_EXT_SENS_DATA_02);			
+ 418:..\src/IMU_functions.c **** 	MagCal[row][2] = read; 
  419:..\src/IMU_functions.c **** 	read = 0;
- 420:..\src/IMU_functions.c ****     
- 421:..\src/IMU_functions.c **** 	//read Z
- 422:..\src/IMU_functions.c **** 	read = ReadControlRegisterIMU(MPU9250_EXT_SENS_DATA_02);			
- 423:..\src/IMU_functions.c **** 	MagCal[row][2] = read; 
- 424:..\src/IMU_functions.c **** 	read = 0;
- 425:..\src/IMU_functions.c ****     */
- 426:..\src/IMU_functions.c **** }
- 336              		.loc 1 426 0
+ 420:..\src/IMU_functions.c ****     */
+ 421:..\src/IMU_functions.c **** }
+ 336              		.loc 1 421 0
  337 0008 00BF     		nop
  338 000a 0C37     		adds	r7, r7, #12
  339              		.cfi_def_cfa_offset 4
@@ -823,13 +818,13 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccsctOHr.s 			page 1
  355              		.type	ReadQuat, %function
  356              	ReadQuat:
  357              	.LFB74:
- 427:..\src/IMU_functions.c ****     
- 428:..\src/IMU_functions.c **** /*******************************************************************************
- 429:..\src/IMU_functions.c **** * Function Name: Read Quaternion of IMU n
- 430:..\src/IMU_functions.c **** *********************************************************************************/
- 431:..\src/IMU_functions.c **** void ReadQuat(int n)
- 432:..\src/IMU_functions.c **** {/*
- 358              		.loc 1 432 0
+ 422:..\src/IMU_functions.c ****     
+ 423:..\src/IMU_functions.c **** /*******************************************************************************
+ 424:..\src/IMU_functions.c **** * Function Name: Read Quaternion of IMU n
+ 425:..\src/IMU_functions.c **** *********************************************************************************/
+ 426:..\src/IMU_functions.c **** void ReadQuat(int n)
+ 427:..\src/IMU_functions.c **** {/*
+ 358              		.loc 1 427 0
  359              		.cfi_startproc
  360              		@ args = 0, pretend = 0, frame = 8
  361              		@ frame_needed = 1, uses_anonymous_args = 0
@@ -838,90 +833,90 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccsctOHr.s 			page 1
  364              		.cfi_def_cfa_offset 4
  365              		.cfi_offset 7, -4
  366 0002 83B0     		sub	sp, sp, #12
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccsctOHr.s 			page 15
-
-
  367              		.cfi_def_cfa_offset 16
  368 0004 00AF     		add	r7, sp, #0
  369              		.cfi_def_cfa_register 7
  370 0006 7860     		str	r0, [r7, #4]
- 433:..\src/IMU_functions.c ****     int16 var_h;
- 434:..\src/IMU_functions.c ****     float qd0,qd1,qd2,qd3;        
- 435:..\src/IMU_functions.c ****     float aP[3]; //, fa[3];
- 436:..\src/IMU_functions.c ****     float Napla[4],g[4],qL[4];
- 437:..\src/IMU_functions.c **** 
- 438:..\src/IMU_functions.c ****     if (!c_mem.imu.IMU_conf[n][0]) ReadAcc(n);
- 439:..\src/IMU_functions.c ****     if (!c_mem.imu.IMU_conf[n][1]) ReadGyro(n);
- 440:..\src/IMU_functions.c ****     
- 441:..\src/IMU_functions.c ****     // assume cycle time is the same of last function_scheduler execution,
- 442:..\src/IMU_functions.c ****     // without adding another counter
- 443:..\src/IMU_functions.c ****     
- 444:..\src/IMU_functions.c ****     // how N sees P; N is 'Earth' equivalent, P is for sensor
- 445:..\src/IMU_functions.c ****     // e.g. N = imu1, P = imu0, how imu1 sees imu0
- 446:..\src/IMU_functions.c **** 
- 447:..\src/IMU_functions.c ****     var_h = Accel[n][0];
- 448:..\src/IMU_functions.c ****     aP[0] = (int16_t)(var_h << 8 | Accel[n][1])*TICK2ACC; 
- 449:..\src/IMU_functions.c ****     var_h = Accel[n][2];
- 450:..\src/IMU_functions.c ****     aP[1] = (int16_t)(var_h << 8 | Accel[n][3])*TICK2ACC; 
- 451:..\src/IMU_functions.c ****     var_h = Accel[n][4];
- 452:..\src/IMU_functions.c ****     aP[2] = (int16_t)(var_h << 8 | Accel[n][5])*TICK2ACC;
- 453:..\src/IMU_functions.c ****     
- 454:..\src/IMU_functions.c ****     g[0] = 0;
- 455:..\src/IMU_functions.c ****     var_h = Gyro[n][0];
- 456:..\src/IMU_functions.c ****     g[1] = ((int16)(var_h << 8 | Gyro[n][1]))*TICK2GYRO;
- 457:..\src/IMU_functions.c ****     if ( fabs(g[1]) < GYRO_THR ) g[1] = 0;
- 458:..\src/IMU_functions.c ****     var_h = Gyro[n][2];
- 459:..\src/IMU_functions.c ****     g[2] = ((int16)(var_h << 8 | Gyro[n][3]))*TICK2GYRO; 
- 460:..\src/IMU_functions.c ****     if ( fabs(g[2]) < GYRO_THR ) g[2] = 0;
- 461:..\src/IMU_functions.c ****     var_h = Gyro[n][4];
- 462:..\src/IMU_functions.c ****     g[3] = ((int16)(var_h << 8 | Gyro[n][5]))*TICK2GYRO;
- 463:..\src/IMU_functions.c ****     if ( fabs(g[3]) < GYRO_THR ) g[3] = 0;
- 464:..\src/IMU_functions.c ****     
- 465:..\src/IMU_functions.c ****     // Normalize to 1
- 466:..\src/IMU_functions.c ****     v3_normalize(aP);
- 467:..\src/IMU_functions.c ****     
- 468:..\src/IMU_functions.c ****     // Current quaternion assignment
- 469:..\src/IMU_functions.c ****     qL[0] = Quat[n][0];
- 470:..\src/IMU_functions.c ****     qL[1] = Quat[n][1];
- 471:..\src/IMU_functions.c ****     qL[2] = Quat[n][2];
- 472:..\src/IMU_functions.c ****     qL[3] = Quat[n][3];   
- 473:..\src/IMU_functions.c ****     
- 474:..\src/IMU_functions.c ****     // Napla computation
- 475:..\src/IMU_functions.c ****     Napla[0] = (-qL[2]*((2*(qL[1]*qL[3]-qL[0]*qL[2]) - aP[0])) + qL[1]*((2*(qL[0]*qL[1] + qL[2]*qL[
- 476:..\src/IMU_functions.c ****     Napla[1] = (qL[3]*((2*(qL[1]*qL[3]-qL[0]*qL[2]) - aP[0])) + qL[0]*((2*(qL[0]*qL[1] + qL[2]*qL[3
- 477:..\src/IMU_functions.c ****     Napla[2] = (-qL[0]*((2*(qL[1]*qL[3]-qL[0]*qL[2]) - aP[0])) +qL[3]*((2*(qL[0]*qL[1] + qL[2]*qL[3
- 478:..\src/IMU_functions.c ****     Napla[3] = (qL[1]*((2*(qL[1]*qL[3]-qL[0]*qL[2]) - aP[0])) + qL[2]*((2*(qL[0]*qL[1] + qL[2]*qL[3
- 479:..\src/IMU_functions.c ****     
- 480:..\src/IMU_functions.c ****     qd0 = 0.5*(-(qL[1]*g[1] + qL[2]*g[2] + qL[3]*g[3])) - Napla[0];
- 481:..\src/IMU_functions.c ****     qd1 = 0.5*(qL[0]*g[1] + (qL[2]*g[3] - qL[3]*g[2])) - Napla[1];
- 482:..\src/IMU_functions.c ****     qd2 = 0.5*(qL[0]*g[2] + (qL[3]*g[1] - qL[1]*g[3])) - Napla[2];
- 483:..\src/IMU_functions.c ****     qd3 = 0.5*(qL[0]*g[3] + (qL[1]*g[2] - qL[2]*g[1])) - Napla[3];
- 484:..\src/IMU_functions.c ****             
- 485:..\src/IMU_functions.c ****     qL[0] = qL[0] + qd0*cycle_time;
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccsctOHr.s 			page 16
+ 428:..\src/IMU_functions.c ****     int16 var_h;
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc8mUdP4.s 			page 15
 
 
- 486:..\src/IMU_functions.c ****     qL[1] = qL[1] + qd1*cycle_time;
- 487:..\src/IMU_functions.c ****     qL[2] = qL[2] + qd2*cycle_time;
- 488:..\src/IMU_functions.c ****     qL[3] = qL[3] + qd3*cycle_time;
- 489:..\src/IMU_functions.c ****     
- 490:..\src/IMU_functions.c ****     if (sqrt(qL[0]*qL[0] + qL[1]*qL[1] + qL[2]*qL[2] + qL[3]*qL[3]) == 0) {
- 491:..\src/IMU_functions.c **** 	    qL[0] = Quat[n][0];
- 492:..\src/IMU_functions.c **** 	    qL[1] = Quat[n][1];
- 493:..\src/IMU_functions.c **** 	    qL[2] = Quat[n][2];
- 494:..\src/IMU_functions.c **** 	    qL[3] = Quat[n][3];
- 495:..\src/IMU_functions.c ****     }
- 496:..\src/IMU_functions.c ****         
- 497:..\src/IMU_functions.c ****     v4_normalize(qL);
- 498:..\src/IMU_functions.c ****     
- 499:..\src/IMU_functions.c ****     // Quaternion update      
- 500:..\src/IMU_functions.c ****     Quat[n][0] = qL[0];
- 501:..\src/IMU_functions.c ****     Quat[n][1] = qL[1];
- 502:..\src/IMU_functions.c ****     Quat[n][2] = qL[2];
- 503:..\src/IMU_functions.c ****     Quat[n][3] = qL[3];
- 504:..\src/IMU_functions.c ****     */
- 505:..\src/IMU_functions.c **** }
- 371              		.loc 1 505 0
+ 429:..\src/IMU_functions.c ****     float qd0,qd1,qd2,qd3;        
+ 430:..\src/IMU_functions.c ****     float aP[3]; //, fa[3];
+ 431:..\src/IMU_functions.c ****     float Napla[4],g[4],qL[4];
+ 432:..\src/IMU_functions.c **** 
+ 433:..\src/IMU_functions.c ****     if (!c_mem.imu.IMU_conf[n][0]) ReadAcc(n);
+ 434:..\src/IMU_functions.c ****     if (!c_mem.imu.IMU_conf[n][1]) ReadGyro(n);
+ 435:..\src/IMU_functions.c ****     
+ 436:..\src/IMU_functions.c ****     // assume cycle time is the same of last function_scheduler execution,
+ 437:..\src/IMU_functions.c ****     // without adding another counter
+ 438:..\src/IMU_functions.c ****     
+ 439:..\src/IMU_functions.c ****     // how N sees P; N is 'Earth' equivalent, P is for sensor
+ 440:..\src/IMU_functions.c ****     // e.g. N = imu1, P = imu0, how imu1 sees imu0
+ 441:..\src/IMU_functions.c **** 
+ 442:..\src/IMU_functions.c ****     var_h = Accel[n][0];
+ 443:..\src/IMU_functions.c ****     aP[0] = (int16_t)(var_h << 8 | Accel[n][1])*TICK2ACC; 
+ 444:..\src/IMU_functions.c ****     var_h = Accel[n][2];
+ 445:..\src/IMU_functions.c ****     aP[1] = (int16_t)(var_h << 8 | Accel[n][3])*TICK2ACC; 
+ 446:..\src/IMU_functions.c ****     var_h = Accel[n][4];
+ 447:..\src/IMU_functions.c ****     aP[2] = (int16_t)(var_h << 8 | Accel[n][5])*TICK2ACC;
+ 448:..\src/IMU_functions.c ****     
+ 449:..\src/IMU_functions.c ****     g[0] = 0;
+ 450:..\src/IMU_functions.c ****     var_h = Gyro[n][0];
+ 451:..\src/IMU_functions.c ****     g[1] = ((int16)(var_h << 8 | Gyro[n][1]))*TICK2GYRO;
+ 452:..\src/IMU_functions.c ****     if ( fabs(g[1]) < GYRO_THR ) g[1] = 0;
+ 453:..\src/IMU_functions.c ****     var_h = Gyro[n][2];
+ 454:..\src/IMU_functions.c ****     g[2] = ((int16)(var_h << 8 | Gyro[n][3]))*TICK2GYRO; 
+ 455:..\src/IMU_functions.c ****     if ( fabs(g[2]) < GYRO_THR ) g[2] = 0;
+ 456:..\src/IMU_functions.c ****     var_h = Gyro[n][4];
+ 457:..\src/IMU_functions.c ****     g[3] = ((int16)(var_h << 8 | Gyro[n][5]))*TICK2GYRO;
+ 458:..\src/IMU_functions.c ****     if ( fabs(g[3]) < GYRO_THR ) g[3] = 0;
+ 459:..\src/IMU_functions.c ****     
+ 460:..\src/IMU_functions.c ****     // Normalize to 1
+ 461:..\src/IMU_functions.c ****     v3_normalize(aP);
+ 462:..\src/IMU_functions.c ****     
+ 463:..\src/IMU_functions.c ****     // Current quaternion assignment
+ 464:..\src/IMU_functions.c ****     qL[0] = Quat[n][0];
+ 465:..\src/IMU_functions.c ****     qL[1] = Quat[n][1];
+ 466:..\src/IMU_functions.c ****     qL[2] = Quat[n][2];
+ 467:..\src/IMU_functions.c ****     qL[3] = Quat[n][3];   
+ 468:..\src/IMU_functions.c ****     
+ 469:..\src/IMU_functions.c ****     // Napla computation
+ 470:..\src/IMU_functions.c ****     Napla[0] = (-qL[2]*((2*(qL[1]*qL[3]-qL[0]*qL[2]) - aP[0])) + qL[1]*((2*(qL[0]*qL[1] + qL[2]*qL[
+ 471:..\src/IMU_functions.c ****     Napla[1] = (qL[3]*((2*(qL[1]*qL[3]-qL[0]*qL[2]) - aP[0])) + qL[0]*((2*(qL[0]*qL[1] + qL[2]*qL[3
+ 472:..\src/IMU_functions.c ****     Napla[2] = (-qL[0]*((2*(qL[1]*qL[3]-qL[0]*qL[2]) - aP[0])) +qL[3]*((2*(qL[0]*qL[1] + qL[2]*qL[3
+ 473:..\src/IMU_functions.c ****     Napla[3] = (qL[1]*((2*(qL[1]*qL[3]-qL[0]*qL[2]) - aP[0])) + qL[2]*((2*(qL[0]*qL[1] + qL[2]*qL[3
+ 474:..\src/IMU_functions.c ****     
+ 475:..\src/IMU_functions.c ****     qd0 = 0.5*(-(qL[1]*g[1] + qL[2]*g[2] + qL[3]*g[3])) - Napla[0];
+ 476:..\src/IMU_functions.c ****     qd1 = 0.5*(qL[0]*g[1] + (qL[2]*g[3] - qL[3]*g[2])) - Napla[1];
+ 477:..\src/IMU_functions.c ****     qd2 = 0.5*(qL[0]*g[2] + (qL[3]*g[1] - qL[1]*g[3])) - Napla[2];
+ 478:..\src/IMU_functions.c ****     qd3 = 0.5*(qL[0]*g[3] + (qL[1]*g[2] - qL[2]*g[1])) - Napla[3];
+ 479:..\src/IMU_functions.c ****             
+ 480:..\src/IMU_functions.c ****     qL[0] = qL[0] + qd0*cycle_time;
+ 481:..\src/IMU_functions.c ****     qL[1] = qL[1] + qd1*cycle_time;
+ 482:..\src/IMU_functions.c ****     qL[2] = qL[2] + qd2*cycle_time;
+ 483:..\src/IMU_functions.c ****     qL[3] = qL[3] + qd3*cycle_time;
+ 484:..\src/IMU_functions.c ****     
+ 485:..\src/IMU_functions.c ****     if (sqrt(qL[0]*qL[0] + qL[1]*qL[1] + qL[2]*qL[2] + qL[3]*qL[3]) == 0) {
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc8mUdP4.s 			page 16
+
+
+ 486:..\src/IMU_functions.c **** 	    qL[0] = Quat[n][0];
+ 487:..\src/IMU_functions.c **** 	    qL[1] = Quat[n][1];
+ 488:..\src/IMU_functions.c **** 	    qL[2] = Quat[n][2];
+ 489:..\src/IMU_functions.c **** 	    qL[3] = Quat[n][3];
+ 490:..\src/IMU_functions.c ****     }
+ 491:..\src/IMU_functions.c ****         
+ 492:..\src/IMU_functions.c ****     v4_normalize(qL);
+ 493:..\src/IMU_functions.c ****     
+ 494:..\src/IMU_functions.c ****     // Quaternion update      
+ 495:..\src/IMU_functions.c ****     Quat[n][0] = qL[0];
+ 496:..\src/IMU_functions.c ****     Quat[n][1] = qL[1];
+ 497:..\src/IMU_functions.c ****     Quat[n][2] = qL[2];
+ 498:..\src/IMU_functions.c ****     Quat[n][3] = qL[3];
+ 499:..\src/IMU_functions.c ****     */
+ 500:..\src/IMU_functions.c **** }
+ 371              		.loc 1 500 0
  372 0008 00BF     		nop
  373 000a 0C37     		adds	r7, r7, #12
  374              		.cfi_def_cfa_offset 4
@@ -943,12 +938,12 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccsctOHr.s 			page 1
  390              		.type	ReadAllIMUs, %function
  391              	ReadAllIMUs:
  392              	.LFB75:
- 506:..\src/IMU_functions.c **** 
- 507:..\src/IMU_functions.c **** /********************************************************************************
- 508:..\src/IMU_functions.c **** * Function Name: ReadAllIMUs
- 509:..\src/IMU_functions.c **** *********************************************************************************/
- 510:..\src/IMU_functions.c **** void ReadAllIMUs(){
- 393              		.loc 1 510 0
+ 501:..\src/IMU_functions.c **** 
+ 502:..\src/IMU_functions.c **** /********************************************************************************
+ 503:..\src/IMU_functions.c **** * Function Name: ReadAllIMUs
+ 504:..\src/IMU_functions.c **** *********************************************************************************/
+ 505:..\src/IMU_functions.c **** void ReadAllIMUs(){
+ 393              		.loc 1 505 0
  394              		.cfi_startproc
  395              		@ args = 0, pretend = 0, frame = 0
  396              		@ frame_needed = 1, uses_anonymous_args = 0
@@ -958,43 +953,43 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccsctOHr.s 			page 1
  400              		.cfi_offset 7, -4
  401 0002 00AF     		add	r7, sp, #0
  402              		.cfi_def_cfa_register 7
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccsctOHr.s 			page 17
+ 506:..\src/IMU_functions.c ****     /*
+ 507:..\src/IMU_functions.c ****     static uint8 k_imu = 0;
+ 508:..\src/IMU_functions.c ****     uint16 tmp = 0, j = 0;
+ 509:..\src/IMU_functions.c **** 
+ 510:..\src/IMU_functions.c ****     for (k_imu = 0; k_imu < N_IMU_Connected; k_imu++){ 
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc8mUdP4.s 			page 17
 
 
- 511:..\src/IMU_functions.c ****     /*
- 512:..\src/IMU_functions.c ****     static uint8 k_imu = 0;
- 513:..\src/IMU_functions.c ****     uint16 tmp = 0, j = 0;
- 514:..\src/IMU_functions.c **** 
- 515:..\src/IMU_functions.c ****     for (k_imu = 0; k_imu < N_IMU_Connected; k_imu++){ 
- 516:..\src/IMU_functions.c ****         // Read k_imu IMU
- 517:..\src/IMU_functions.c ****         ChipSelectorIMU(IMU_connected[k_imu]);
- 518:..\src/IMU_functions.c ****         ReadIMU(IMU_connected[k_imu]);
+ 511:..\src/IMU_functions.c ****         // Read k_imu IMU
+ 512:..\src/IMU_functions.c ****         ChipSelectorIMU(IMU_connected[k_imu]);
+ 513:..\src/IMU_functions.c ****         ReadIMU(IMU_connected[k_imu]);
+ 514:..\src/IMU_functions.c ****         
+ 515:..\src/IMU_functions.c ****         for (j = 0; j < 3; j++) {
+ 516:..\src/IMU_functions.c ****             tmp = Accel[IMU_connected[k_imu]][2*j];
+ 517:..\src/IMU_functions.c ****             g_imuNew[k_imu].accel_value[j] = (int16)(tmp<<8 | Accel[IMU_connected[k_imu]][2*j + 1])
+ 518:..\src/IMU_functions.c ****         }
  519:..\src/IMU_functions.c ****         
  520:..\src/IMU_functions.c ****         for (j = 0; j < 3; j++) {
- 521:..\src/IMU_functions.c ****             tmp = Accel[IMU_connected[k_imu]][2*j];
- 522:..\src/IMU_functions.c ****             g_imuNew[k_imu].accel_value[j] = (int16)(tmp<<8 | Accel[IMU_connected[k_imu]][2*j + 1])
+ 521:..\src/IMU_functions.c ****             tmp = Gyro[IMU_connected[k_imu]][2*j];
+ 522:..\src/IMU_functions.c ****             g_imuNew[k_imu].gyro_value[j] = (int16)(tmp<<8 | Gyro[IMU_connected[k_imu]][2*j + 1]);
  523:..\src/IMU_functions.c ****         }
- 524:..\src/IMU_functions.c ****         
+ 524:..\src/IMU_functions.c ****                 
  525:..\src/IMU_functions.c ****         for (j = 0; j < 3; j++) {
- 526:..\src/IMU_functions.c ****             tmp = Gyro[IMU_connected[k_imu]][2*j];
- 527:..\src/IMU_functions.c ****             g_imuNew[k_imu].gyro_value[j] = (int16)(tmp<<8 | Gyro[IMU_connected[k_imu]][2*j + 1]);
- 528:..\src/IMU_functions.c ****         }
- 529:..\src/IMU_functions.c ****                 
- 530:..\src/IMU_functions.c ****         for (j = 0; j < 3; j++) {
- 531:..\src/IMU_functions.c ****             tmp = Mag[IMU_connected[k_imu]][2*j];
- 532:..\src/IMU_functions.c ****             g_imuNew[k_imu].mag_value[j] = (int16)(tmp<<8 | Mag[IMU_connected[k_imu]][2*j + 1]);
- 533:..\src/IMU_functions.c ****         }  
- 534:..\src/IMU_functions.c **** 
- 535:..\src/IMU_functions.c ****         for (j = 0; j < 4; j++) {
- 536:..\src/IMU_functions.c ****             g_imuNew[k_imu].quat_value[j] = (float)(Quat[IMU_connected[k_imu]][j]);
- 537:..\src/IMU_functions.c ****         }
- 538:..\src/IMU_functions.c ****         
- 539:..\src/IMU_functions.c ****         tmp = Temp[IMU_connected[k_imu]][0];
- 540:..\src/IMU_functions.c ****         g_imuNew[k_imu].temp_value = (int16)(tmp<<8 | Temp[IMU_connected[k_imu]][1]);
- 541:..\src/IMU_functions.c ****     }
- 542:..\src/IMU_functions.c ****     */
- 543:..\src/IMU_functions.c **** }
- 403              		.loc 1 543 0
+ 526:..\src/IMU_functions.c ****             tmp = Mag[IMU_connected[k_imu]][2*j];
+ 527:..\src/IMU_functions.c ****             g_imuNew[k_imu].mag_value[j] = (int16)(tmp<<8 | Mag[IMU_connected[k_imu]][2*j + 1]);
+ 528:..\src/IMU_functions.c ****         }  
+ 529:..\src/IMU_functions.c **** 
+ 530:..\src/IMU_functions.c ****         for (j = 0; j < 4; j++) {
+ 531:..\src/IMU_functions.c ****             g_imuNew[k_imu].quat_value[j] = (float)(Quat[IMU_connected[k_imu]][j]);
+ 532:..\src/IMU_functions.c ****         }
+ 533:..\src/IMU_functions.c ****         
+ 534:..\src/IMU_functions.c ****         tmp = Temp[IMU_connected[k_imu]][0];
+ 535:..\src/IMU_functions.c ****         g_imuNew[k_imu].temp_value = (int16)(tmp<<8 | Temp[IMU_connected[k_imu]][1]);
+ 536:..\src/IMU_functions.c ****     }
+ 537:..\src/IMU_functions.c ****     */
+ 538:..\src/IMU_functions.c **** }
+ 403              		.loc 1 538 0
  404 0004 00BF     		nop
  405 0006 BD46     		mov	sp, r7
  406              		.cfi_def_cfa_register 13
@@ -1014,18 +1009,18 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccsctOHr.s 			page 1
  420              		.type	ReadTemp, %function
  421              	ReadTemp:
  422              	.LFB76:
- 544:..\src/IMU_functions.c **** 
- 545:..\src/IMU_functions.c **** /*******************************************************************************
- 546:..\src/IMU_functions.c **** * Function Name: Read Temperature Data of IMU n
- 547:..\src/IMU_functions.c **** *********************************************************************************/
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccsctOHr.s 			page 18
-
-
- 548:..\src/IMU_functions.c **** void ReadTemp(int n)
- 549:..\src/IMU_functions.c **** {/*
- 423              		.loc 1 549 0
+ 539:..\src/IMU_functions.c **** 
+ 540:..\src/IMU_functions.c **** /*******************************************************************************
+ 541:..\src/IMU_functions.c **** * Function Name: Read Temperature Data of IMU n
+ 542:..\src/IMU_functions.c **** *********************************************************************************/
+ 543:..\src/IMU_functions.c **** void ReadTemp(int n)
+ 544:..\src/IMU_functions.c **** {/*
+ 423              		.loc 1 544 0
  424              		.cfi_startproc
  425              		@ args = 0, pretend = 0, frame = 8
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc8mUdP4.s 			page 18
+
+
  426              		@ frame_needed = 1, uses_anonymous_args = 0
  427              		@ link register save eliminated.
  428 0000 80B4     		push	{r7}
@@ -1036,21 +1031,21 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccsctOHr.s 			page 1
  433 0004 00AF     		add	r7, sp, #0
  434              		.cfi_def_cfa_register 7
  435 0006 7860     		str	r0, [r7, #4]
- 550:..\src/IMU_functions.c **** 	uint8 low=0, high=0;	
- 551:..\src/IMU_functions.c **** 	int row = n;
- 552:..\src/IMU_functions.c **** 	
- 553:..\src/IMU_functions.c **** 	//read X
- 554:..\src/IMU_functions.c ****     low=ReadControlRegisterIMU(MPU9250_TEMP_OUT_L);
- 555:..\src/IMU_functions.c ****     SPI_delay();
- 556:..\src/IMU_functions.c **** 	high=ReadControlRegisterIMU(MPU9250_TEMP_OUT_H);
- 557:..\src/IMU_functions.c ****     SPI_delay();
- 558:..\src/IMU_functions.c **** 
- 559:..\src/IMU_functions.c **** 	Temp[row][0] = high; 
- 560:..\src/IMU_functions.c **** 	Temp[row][1] = low; 
- 561:..\src/IMU_functions.c **** 	low=0, high=0;
- 562:..\src/IMU_functions.c ****     */
- 563:..\src/IMU_functions.c **** }
- 436              		.loc 1 563 0
+ 545:..\src/IMU_functions.c **** 	uint8 low=0, high=0;	
+ 546:..\src/IMU_functions.c **** 	int row = n;
+ 547:..\src/IMU_functions.c **** 	
+ 548:..\src/IMU_functions.c **** 	//read X
+ 549:..\src/IMU_functions.c ****     low=ReadControlRegisterIMU(MPU9250_TEMP_OUT_L);
+ 550:..\src/IMU_functions.c ****     SPI_delay();
+ 551:..\src/IMU_functions.c **** 	high=ReadControlRegisterIMU(MPU9250_TEMP_OUT_H);
+ 552:..\src/IMU_functions.c ****     SPI_delay();
+ 553:..\src/IMU_functions.c **** 
+ 554:..\src/IMU_functions.c **** 	Temp[row][0] = high; 
+ 555:..\src/IMU_functions.c **** 	Temp[row][1] = low; 
+ 556:..\src/IMU_functions.c **** 	low=0, high=0;
+ 557:..\src/IMU_functions.c ****     */
+ 558:..\src/IMU_functions.c **** }
+ 436              		.loc 1 558 0
  437 0008 00BF     		nop
  438 000a 0C37     		adds	r7, r7, #12
  439              		.cfi_def_cfa_offset 4
@@ -1072,20 +1067,20 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccsctOHr.s 			page 1
  455              		.type	WriteControlRegisterIMU, %function
  456              	WriteControlRegisterIMU:
  457              	.LFB77:
- 564:..\src/IMU_functions.c **** 
- 565:..\src/IMU_functions.c **** /********************************** *********************************************
- 566:..\src/IMU_functions.c **** * Function Name: Write Control Register
- 567:..\src/IMU_functions.c **** *********************************************************************************/
- 568:..\src/IMU_functions.c **** void WriteControlRegisterIMU(uint8 address, uint8 dta){
- 458              		.loc 1 568 0
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccsctOHr.s 			page 19
-
-
+ 559:..\src/IMU_functions.c **** 
+ 560:..\src/IMU_functions.c **** /********************************** *********************************************
+ 561:..\src/IMU_functions.c **** * Function Name: Write Control Register
+ 562:..\src/IMU_functions.c **** *********************************************************************************/
+ 563:..\src/IMU_functions.c **** void WriteControlRegisterIMU(uint8 address, uint8 dta){
+ 458              		.loc 1 563 0
  459              		.cfi_startproc
  460              		@ args = 0, pretend = 0, frame = 8
  461              		@ frame_needed = 1, uses_anonymous_args = 0
  462              		@ link register save eliminated.
  463 0000 80B4     		push	{r7}
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc8mUdP4.s 			page 19
+
+
  464              		.cfi_def_cfa_offset 4
  465              		.cfi_offset 7, -4
  466 0002 83B0     		sub	sp, sp, #12
@@ -1097,17 +1092,17 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccsctOHr.s 			page 1
  472 000a FB71     		strb	r3, [r7, #7]
  473 000c 1346     		mov	r3, r2
  474 000e BB71     		strb	r3, [r7, #6]
- 569:..\src/IMU_functions.c **** 	/*
- 570:..\src/IMU_functions.c **** 	SPI_IMU_ClearRxBuffer();
- 571:..\src/IMU_functions.c **** 	SPI_IMU_ClearTxBuffer();
- 572:..\src/IMU_functions.c **** 	SPI_IMU_ClearFIFO();
- 573:..\src/IMU_functions.c **** 	SPI_IMU_WriteByte(MPU9250_WCR | address);
- 574:..\src/IMU_functions.c **** 	while(!( SPI_IMU_ReadStatus() & SPI_IMU_STS_TX_FIFO_EMPTY));		
- 575:..\src/IMU_functions.c **** 	SPI_IMU_WriteByte(dta);
- 576:..\src/IMU_functions.c **** 	while(!( SPI_IMU_ReadStatus() & SPI_IMU_STS_TX_FIFO_EMPTY));
- 577:..\src/IMU_functions.c ****     */
- 578:..\src/IMU_functions.c **** }
- 475              		.loc 1 578 0
+ 564:..\src/IMU_functions.c **** 	/*
+ 565:..\src/IMU_functions.c **** 	SPI_IMU_ClearRxBuffer();
+ 566:..\src/IMU_functions.c **** 	SPI_IMU_ClearTxBuffer();
+ 567:..\src/IMU_functions.c **** 	SPI_IMU_ClearFIFO();
+ 568:..\src/IMU_functions.c **** 	SPI_IMU_WriteByte(MPU9250_WCR | address);
+ 569:..\src/IMU_functions.c **** 	while(!( SPI_IMU_ReadStatus() & SPI_IMU_STS_TX_FIFO_EMPTY));		
+ 570:..\src/IMU_functions.c **** 	SPI_IMU_WriteByte(dta);
+ 571:..\src/IMU_functions.c **** 	while(!( SPI_IMU_ReadStatus() & SPI_IMU_STS_TX_FIFO_EMPTY));
+ 572:..\src/IMU_functions.c ****     */
+ 573:..\src/IMU_functions.c **** }
+ 475              		.loc 1 573 0
  476 0010 00BF     		nop
  477 0012 0C37     		adds	r7, r7, #12
  478              		.cfi_def_cfa_offset 4
@@ -1129,43 +1124,43 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccsctOHr.s 			page 1
  494              		.type	ReadControlRegisterIMU, %function
  495              	ReadControlRegisterIMU:
  496              	.LFB78:
- 579:..\src/IMU_functions.c **** 
- 580:..\src/IMU_functions.c **** /*******************************************************************************
- 581:..\src/IMU_functions.c **** * Function Name: Read Control Register
- 582:..\src/IMU_functions.c **** *********************************************************************************/
- 583:..\src/IMU_functions.c **** uint8 ReadControlRegisterIMU(uint8 address){
- 497              		.loc 1 583 0
+ 574:..\src/IMU_functions.c **** 
+ 575:..\src/IMU_functions.c **** /*******************************************************************************
+ 576:..\src/IMU_functions.c **** * Function Name: Read Control Register
+ 577:..\src/IMU_functions.c **** *********************************************************************************/
+ 578:..\src/IMU_functions.c **** uint8 ReadControlRegisterIMU(uint8 address){
+ 497              		.loc 1 578 0
  498              		.cfi_startproc
  499              		@ args = 0, pretend = 0, frame = 8
  500              		@ frame_needed = 1, uses_anonymous_args = 0
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccsctOHr.s 			page 20
-
-
  501              		@ link register save eliminated.
  502 0000 80B4     		push	{r7}
  503              		.cfi_def_cfa_offset 4
  504              		.cfi_offset 7, -4
  505 0002 83B0     		sub	sp, sp, #12
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc8mUdP4.s 			page 20
+
+
  506              		.cfi_def_cfa_offset 16
  507 0004 00AF     		add	r7, sp, #0
  508              		.cfi_def_cfa_register 7
  509 0006 0346     		mov	r3, r0
  510 0008 FB71     		strb	r3, [r7, #7]
- 584:..\src/IMU_functions.c ****     /*
- 585:..\src/IMU_functions.c **** 	uint8 controlreg = 0;
- 586:..\src/IMU_functions.c **** 	
- 587:..\src/IMU_functions.c **** 	SPI_IMU_WriteByte(MPU9250_RCR | address);
- 588:..\src/IMU_functions.c ****     while(!( SPI_IMU_ReadStatus() & SPI_IMU_STS_TX_FIFO_EMPTY));
- 589:..\src/IMU_functions.c ****     SPI_IMU_WriteByte(0x00);
- 590:..\src/IMU_functions.c **** 	while(!( SPI_IMU_ReadStatus() & SPI_IMU_STS_SPI_DONE));
- 591:..\src/IMU_functions.c **** 	controlreg = SPI_IMU_ReadByte();        //real data
- 592:..\src/IMU_functions.c **** 	return controlreg;
- 593:..\src/IMU_functions.c ****     */
- 594:..\src/IMU_functions.c ****     return 0;
- 511              		.loc 1 594 0
+ 579:..\src/IMU_functions.c ****     /*
+ 580:..\src/IMU_functions.c **** 	uint8 controlreg = 0;
+ 581:..\src/IMU_functions.c **** 	
+ 582:..\src/IMU_functions.c **** 	SPI_IMU_WriteByte(MPU9250_RCR | address);
+ 583:..\src/IMU_functions.c ****     while(!( SPI_IMU_ReadStatus() & SPI_IMU_STS_TX_FIFO_EMPTY));
+ 584:..\src/IMU_functions.c ****     SPI_IMU_WriteByte(0x00);
+ 585:..\src/IMU_functions.c **** 	while(!( SPI_IMU_ReadStatus() & SPI_IMU_STS_SPI_DONE));
+ 586:..\src/IMU_functions.c **** 	controlreg = SPI_IMU_ReadByte();        //real data
+ 587:..\src/IMU_functions.c **** 	return controlreg;
+ 588:..\src/IMU_functions.c ****     */
+ 589:..\src/IMU_functions.c ****     return 0;
+ 511              		.loc 1 589 0
  512 000a 0023     		movs	r3, #0
- 595:..\src/IMU_functions.c **** }
- 513              		.loc 1 595 0
+ 590:..\src/IMU_functions.c **** }
+ 513              		.loc 1 590 0
  514 000c 1846     		mov	r0, r3
  515 000e 0C37     		adds	r7, r7, #12
  516              		.cfi_def_cfa_offset 4
@@ -1187,38 +1182,38 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccsctOHr.s 			page 1
  532              		.type	SPI_delay, %function
  533              	SPI_delay:
  534              	.LFB79:
- 596:..\src/IMU_functions.c **** 
- 597:..\src/IMU_functions.c **** /*******************************************************************************
- 598:..\src/IMU_functions.c **** * Function Name: SPI delay
- 599:..\src/IMU_functions.c **** *********************************************************************************/
- 600:..\src/IMU_functions.c **** void SPI_delay(){
- 535              		.loc 1 600 0
+ 591:..\src/IMU_functions.c **** 
+ 592:..\src/IMU_functions.c **** /*******************************************************************************
+ 593:..\src/IMU_functions.c **** * Function Name: SPI delay
+ 594:..\src/IMU_functions.c **** *********************************************************************************/
+ 595:..\src/IMU_functions.c **** void SPI_delay(){
+ 535              		.loc 1 595 0
  536              		.cfi_startproc
  537              		@ args = 0, pretend = 0, frame = 0
  538              		@ frame_needed = 1, uses_anonymous_args = 0
  539              		@ link register save eliminated.
  540 0000 80B4     		push	{r7}
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccsctOHr.s 			page 21
-
-
  541              		.cfi_def_cfa_offset 4
  542              		.cfi_offset 7, -4
  543 0002 00AF     		add	r7, sp, #0
  544              		.cfi_def_cfa_register 7
- 601:..\src/IMU_functions.c ****     /*
- 602:..\src/IMU_functions.c ****     switch( c_mem.imu.SPI_read_delay ) {
- 603:..\src/IMU_functions.c ****         case 1:     // Low
- 604:..\src/IMU_functions.c ****             CyDelayUs((uint16)SPI_DELAY_LOW);
+ 596:..\src/IMU_functions.c ****     /*
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc8mUdP4.s 			page 21
+
+
+ 597:..\src/IMU_functions.c ****     switch( c_mem.imu.SPI_read_delay ) {
+ 598:..\src/IMU_functions.c ****         case 1:     // Low
+ 599:..\src/IMU_functions.c ****             CyDelayUs((uint16)SPI_DELAY_LOW);
+ 600:..\src/IMU_functions.c ****             break;
+ 601:..\src/IMU_functions.c ****         case 2:     // High
+ 602:..\src/IMU_functions.c ****             CyDelayUs((uint16)SPI_DELAY_HIGH);
+ 603:..\src/IMU_functions.c ****             break;
+ 604:..\src/IMU_functions.c ****         default:    // None
  605:..\src/IMU_functions.c ****             break;
- 606:..\src/IMU_functions.c ****         case 2:     // High
- 607:..\src/IMU_functions.c ****             CyDelayUs((uint16)SPI_DELAY_HIGH);
- 608:..\src/IMU_functions.c ****             break;
- 609:..\src/IMU_functions.c ****         default:    // None
- 610:..\src/IMU_functions.c ****             break;
- 611:..\src/IMU_functions.c ****     }
- 612:..\src/IMU_functions.c ****     */
- 613:..\src/IMU_functions.c **** }...
- 545              		.loc 1 613 0
+ 606:..\src/IMU_functions.c ****     }
+ 607:..\src/IMU_functions.c ****     */
+ 608:..\src/IMU_functions.c **** }...
+ 545              		.loc 1 608 0
  546 0004 00BF     		nop
  547 0006 BD46     		mov	sp, r7
  548              		.cfi_def_cfa_register 13
@@ -1258,14 +1253,14 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccsctOHr.s 			page 1
  582 002d 01       		.byte	0x1
  583 002e 08       		.byte	0x8
  584 002f F8000000 		.4byte	.LASF1
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccsctOHr.s 			page 22
-
-
  585 0033 02       		.uleb128 0x2
  586 0034 02       		.byte	0x2
  587 0035 05       		.byte	0x5
  588 0036 D6010000 		.4byte	.LASF2
  589 003a 02       		.uleb128 0x2
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc8mUdP4.s 			page 22
+
+
  590 003b 02       		.byte	0x2
  591 003c 07       		.byte	0x7
  592 003d AF000000 		.4byte	.LASF3
@@ -1318,14 +1313,14 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccsctOHr.s 			page 1
  639 0097 CF010000 		.4byte	.LASF13
  640 009b 02       		.uleb128 0x2
  641 009c 01       		.byte	0x1
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccsctOHr.s 			page 23
-
-
  642 009d 08       		.byte	0x8
  643 009e 0C020000 		.4byte	.LASF14
  644 00a2 02       		.uleb128 0x2
  645 00a3 08       		.byte	0x8
  646 00a4 04       		.byte	0x4
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc8mUdP4.s 			page 23
+
+
  647 00a5 9C020000 		.4byte	.LASF15
  648 00a9 02       		.uleb128 0x2
  649 00aa 04       		.byte	0x4
@@ -1334,7 +1329,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccsctOHr.s 			page 1
  652 00b0 06       		.uleb128 0x6
  653 00b1 11020000 		.4byte	.LASF17
  654 00b5 01       		.byte	0x1
- 655 00b6 37       		.byte	0x37
+ 655 00b6 32       		.byte	0x32
  656 00b7 00000000 		.4byte	.LFB64
  657 00bb 0C000000 		.4byte	.LFE64-.LFB64
  658 00bf 01       		.uleb128 0x1
@@ -1342,7 +1337,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccsctOHr.s 			page 1
  660 00c1 06       		.uleb128 0x6
  661 00c2 D9000000 		.4byte	.LASF18
  662 00c6 01       		.byte	0x1
- 663 00c7 4D       		.byte	0x4d
+ 663 00c7 48       		.byte	0x48
  664 00c8 00000000 		.4byte	.LFB65
  665 00cc 0C000000 		.4byte	.LFE65-.LFB65
  666 00d0 01       		.uleb128 0x1
@@ -1350,7 +1345,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccsctOHr.s 			page 1
  668 00d2 06       		.uleb128 0x6
  669 00d3 97000000 		.4byte	.LASF19
  670 00d7 01       		.byte	0x1
- 671 00d8 7A       		.byte	0x7a
+ 671 00d8 75       		.byte	0x75
  672 00d9 00000000 		.4byte	.LFB66
  673 00dd 0C000000 		.4byte	.LFE66-.LFB66
  674 00e1 01       		.uleb128 0x1
@@ -1358,7 +1353,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccsctOHr.s 			page 1
  676 00e3 07       		.uleb128 0x7
  677 00e4 5B020000 		.4byte	.LASF21
  678 00e8 01       		.byte	0x1
- 679 00e9 A3       		.byte	0xa3
+ 679 00e9 9E       		.byte	0x9e
  680 00ea 00000000 		.4byte	.LFB67
  681 00ee 12000000 		.4byte	.LFE67-.LFB67
  682 00f2 01       		.uleb128 0x1
@@ -1367,7 +1362,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccsctOHr.s 			page 1
  685 00f8 08       		.uleb128 0x8
  686 00f9 6E00     		.ascii	"n\000"
  687 00fb 01       		.byte	0x1
- 688 00fc A3       		.byte	0xa3
+ 688 00fc 9E       		.byte	0x9e
  689 00fd 68000000 		.4byte	0x68
  690 0101 02       		.uleb128 0x2
  691 0102 91       		.byte	0x91
@@ -1376,18 +1371,18 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccsctOHr.s 			page 1
  694 0105 06       		.uleb128 0x6
  695 0106 2C020000 		.4byte	.LASF20
  696 010a 01       		.byte	0x1
- 697 010b AE       		.byte	0xae
+ 697 010b A9       		.byte	0xa9
  698 010c 00000000 		.4byte	.LFB68
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccsctOHr.s 			page 24
-
-
  699 0110 0C000000 		.4byte	.LFE68-.LFB68
  700 0114 01       		.uleb128 0x1
  701 0115 9C       		.byte	0x9c
  702 0116 09       		.uleb128 0x9
  703 0117 80020000 		.4byte	.LASF22
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc8mUdP4.s 			page 24
+
+
  704 011b 01       		.byte	0x1
- 705 011c 0F01     		.2byte	0x10f
+ 705 011c 0A01     		.2byte	0x10a
  706 011e 00000000 		.4byte	.LFB69
  707 0122 12000000 		.4byte	.LFE69-.LFB69
  708 0126 01       		.uleb128 0x1
@@ -1396,7 +1391,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccsctOHr.s 			page 1
  711 012c 0A       		.uleb128 0xa
  712 012d 6E00     		.ascii	"n\000"
  713 012f 01       		.byte	0x1
- 714 0130 0F01     		.2byte	0x10f
+ 714 0130 0A01     		.2byte	0x10a
  715 0132 68000000 		.4byte	0x68
  716 0136 02       		.uleb128 0x2
  717 0137 91       		.byte	0x91
@@ -1405,7 +1400,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccsctOHr.s 			page 1
  720 013a 09       		.uleb128 0x9
  721 013b 49020000 		.4byte	.LASF23
  722 013f 01       		.byte	0x1
- 723 0140 1C01     		.2byte	0x11c
+ 723 0140 1701     		.2byte	0x117
  724 0142 00000000 		.4byte	.LFB70
  725 0146 12000000 		.4byte	.LFE70-.LFB70
  726 014a 01       		.uleb128 0x1
@@ -1414,7 +1409,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccsctOHr.s 			page 1
  729 0150 0A       		.uleb128 0xa
  730 0151 6E00     		.ascii	"n\000"
  731 0153 01       		.byte	0x1
- 732 0154 1C01     		.2byte	0x11c
+ 732 0154 1701     		.2byte	0x117
  733 0156 68000000 		.4byte	0x68
  734 015a 02       		.uleb128 0x2
  735 015b 91       		.byte	0x91
@@ -1423,7 +1418,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccsctOHr.s 			page 1
  738 015e 09       		.uleb128 0x9
  739 015f 00000000 		.4byte	.LASF24
  740 0163 01       		.byte	0x1
- 741 0164 4501     		.2byte	0x145
+ 741 0164 4001     		.2byte	0x140
  742 0166 00000000 		.4byte	.LFB71
  743 016a 12000000 		.4byte	.LFE71-.LFB71
  744 016e 01       		.uleb128 0x1
@@ -1432,20 +1427,20 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccsctOHr.s 			page 1
  747 0174 0A       		.uleb128 0xa
  748 0175 6E00     		.ascii	"n\000"
  749 0177 01       		.byte	0x1
- 750 0178 4501     		.2byte	0x145
+ 750 0178 4001     		.2byte	0x140
  751 017a 68000000 		.4byte	0x68
  752 017e 02       		.uleb128 0x2
  753 017f 91       		.byte	0x91
  754 0180 74       		.sleb128 -12
  755 0181 00       		.byte	0
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccsctOHr.s 			page 25
-
-
  756 0182 09       		.uleb128 0x9
  757 0183 C2000000 		.4byte	.LASF25
  758 0187 01       		.byte	0x1
- 759 0188 6F01     		.2byte	0x16f
+ 759 0188 6A01     		.2byte	0x16a
  760 018a 00000000 		.4byte	.LFB72
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc8mUdP4.s 			page 25
+
+
  761 018e 12000000 		.4byte	.LFE72-.LFB72
  762 0192 01       		.uleb128 0x1
  763 0193 9C       		.byte	0x9c
@@ -1453,7 +1448,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccsctOHr.s 			page 1
  765 0198 0A       		.uleb128 0xa
  766 0199 6E00     		.ascii	"n\000"
  767 019b 01       		.byte	0x1
- 768 019c 6F01     		.2byte	0x16f
+ 768 019c 6A01     		.2byte	0x16a
  769 019e 68000000 		.4byte	0x68
  770 01a2 02       		.uleb128 0x2
  771 01a3 91       		.byte	0x91
@@ -1462,7 +1457,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccsctOHr.s 			page 1
  774 01a6 09       		.uleb128 0x9
  775 01a7 88020000 		.4byte	.LASF26
  776 01ab 01       		.byte	0x1
- 777 01ac 9701     		.2byte	0x197
+ 777 01ac 9201     		.2byte	0x192
  778 01ae 00000000 		.4byte	.LFB73
  779 01b2 12000000 		.4byte	.LFE73-.LFB73
  780 01b6 01       		.uleb128 0x1
@@ -1471,7 +1466,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccsctOHr.s 			page 1
  783 01bc 0A       		.uleb128 0xa
  784 01bd 6E00     		.ascii	"n\000"
  785 01bf 01       		.byte	0x1
- 786 01c0 9701     		.2byte	0x197
+ 786 01c0 9201     		.2byte	0x192
  787 01c2 68000000 		.4byte	0x68
  788 01c6 02       		.uleb128 0x2
  789 01c7 91       		.byte	0x91
@@ -1480,7 +1475,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccsctOHr.s 			page 1
  792 01ca 09       		.uleb128 0x9
  793 01cb 77020000 		.4byte	.LASF27
  794 01cf 01       		.byte	0x1
- 795 01d0 AF01     		.2byte	0x1af
+ 795 01d0 AA01     		.2byte	0x1aa
  796 01d2 00000000 		.4byte	.LFB74
  797 01d6 12000000 		.4byte	.LFE74-.LFB74
  798 01da 01       		.uleb128 0x1
@@ -1489,7 +1484,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccsctOHr.s 			page 1
  801 01e0 0A       		.uleb128 0xa
  802 01e1 6E00     		.ascii	"n\000"
  803 01e3 01       		.byte	0x1
- 804 01e4 AF01     		.2byte	0x1af
+ 804 01e4 AA01     		.2byte	0x1aa
  805 01e6 68000000 		.4byte	0x68
  806 01ea 02       		.uleb128 0x2
  807 01eb 91       		.byte	0x91
@@ -1498,18 +1493,18 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccsctOHr.s 			page 1
  810 01ee 0B       		.uleb128 0xb
  811 01ef 6B020000 		.4byte	.LASF28
  812 01f3 01       		.byte	0x1
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccsctOHr.s 			page 26
-
-
- 813 01f4 FE01     		.2byte	0x1fe
+ 813 01f4 F901     		.2byte	0x1f9
  814 01f6 00000000 		.4byte	.LFB75
  815 01fa 0C000000 		.4byte	.LFE75-.LFB75
  816 01fe 01       		.uleb128 0x1
  817 01ff 9C       		.byte	0x9c
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc8mUdP4.s 			page 26
+
+
  818 0200 09       		.uleb128 0x9
  819 0201 CA000000 		.4byte	.LASF29
  820 0205 01       		.byte	0x1
- 821 0206 2402     		.2byte	0x224
+ 821 0206 1F02     		.2byte	0x21f
  822 0208 00000000 		.4byte	.LFB76
  823 020c 12000000 		.4byte	.LFE76-.LFB76
  824 0210 01       		.uleb128 0x1
@@ -1518,7 +1513,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccsctOHr.s 			page 1
  827 0216 0A       		.uleb128 0xa
  828 0217 6E00     		.ascii	"n\000"
  829 0219 01       		.byte	0x1
- 830 021a 2402     		.2byte	0x224
+ 830 021a 1F02     		.2byte	0x21f
  831 021c 68000000 		.4byte	0x68
  832 0220 02       		.uleb128 0x2
  833 0221 91       		.byte	0x91
@@ -1527,7 +1522,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccsctOHr.s 			page 1
  836 0224 09       		.uleb128 0x9
  837 0225 8D010000 		.4byte	.LASF30
  838 0229 01       		.byte	0x1
- 839 022a 3802     		.2byte	0x238
+ 839 022a 3302     		.2byte	0x233
  840 022c 00000000 		.4byte	.LFB77
  841 0230 1A000000 		.4byte	.LFE77-.LFB77
  842 0234 01       		.uleb128 0x1
@@ -1536,7 +1531,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccsctOHr.s 			page 1
  845 023a 0C       		.uleb128 0xc
  846 023b 04020000 		.4byte	.LASF31
  847 023f 01       		.byte	0x1
- 848 0240 3802     		.2byte	0x238
+ 848 0240 3302     		.2byte	0x233
  849 0242 81000000 		.4byte	0x81
  850 0246 02       		.uleb128 0x2
  851 0247 91       		.byte	0x91
@@ -1544,7 +1539,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccsctOHr.s 			page 1
  853 0249 0A       		.uleb128 0xa
  854 024a 64746100 		.ascii	"dta\000"
  855 024e 01       		.byte	0x1
- 856 024f 3802     		.2byte	0x238
+ 856 024f 3302     		.2byte	0x233
  857 0251 81000000 		.4byte	0x81
  858 0255 02       		.uleb128 0x2
  859 0256 91       		.byte	0x91
@@ -1553,20 +1548,20 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccsctOHr.s 			page 1
  862 0259 0D       		.uleb128 0xd
  863 025a ED010000 		.4byte	.LASF36
  864 025e 01       		.byte	0x1
- 865 025f 4702     		.2byte	0x247
+ 865 025f 4202     		.2byte	0x242
  866 0261 81000000 		.4byte	0x81
  867 0265 00000000 		.4byte	.LFB78
  868 0269 16000000 		.4byte	.LFE78-.LFB78
  869 026d 01       		.uleb128 0x1
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccsctOHr.s 			page 27
-
-
  870 026e 9C       		.byte	0x9c
  871 026f 83020000 		.4byte	0x283
  872 0273 0C       		.uleb128 0xc
  873 0274 04020000 		.4byte	.LASF31
  874 0278 01       		.byte	0x1
- 875 0279 4702     		.2byte	0x247
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc8mUdP4.s 			page 27
+
+
+ 875 0279 4202     		.2byte	0x242
  876 027b 81000000 		.4byte	0x81
  877 027f 02       		.uleb128 0x2
  878 0280 91       		.byte	0x91
@@ -1575,7 +1570,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccsctOHr.s 			page 1
  881 0283 0B       		.uleb128 0xb
  882 0284 51020000 		.4byte	.LASF32
  883 0288 01       		.byte	0x1
- 884 0289 5802     		.2byte	0x258
+ 884 0289 5302     		.2byte	0x253
  885 028b 00000000 		.4byte	.LFB79
  886 028f 0C000000 		.4byte	.LFE79-.LFB79
  887 0293 01       		.uleb128 0x1
@@ -1618,14 +1613,14 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccsctOHr.s 			page 1
  924 0019 0B       		.uleb128 0xb
  925 001a 03       		.uleb128 0x3
  926 001b 0E       		.uleb128 0xe
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccsctOHr.s 			page 28
-
-
  927 001c 00       		.byte	0
  928 001d 00       		.byte	0
  929 001e 03       		.uleb128 0x3
  930 001f 16       		.uleb128 0x16
  931 0020 00       		.byte	0
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc8mUdP4.s 			page 28
+
+
  932 0021 03       		.uleb128 0x3
  933 0022 0E       		.uleb128 0xe
  934 0023 3A       		.uleb128 0x3a
@@ -1678,14 +1673,14 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccsctOHr.s 			page 1
  981 0052 40       		.uleb128 0x40
  982 0053 18       		.uleb128 0x18
  983 0054 9742     		.uleb128 0x2117
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccsctOHr.s 			page 29
-
-
  984 0056 19       		.uleb128 0x19
  985 0057 00       		.byte	0
  986 0058 00       		.byte	0
  987 0059 07       		.uleb128 0x7
  988 005a 2E       		.uleb128 0x2e
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc8mUdP4.s 			page 29
+
+
  989 005b 01       		.byte	0x1
  990 005c 3F       		.uleb128 0x3f
  991 005d 19       		.uleb128 0x19
@@ -1738,14 +1733,14 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccsctOHr.s 			page 1
  1038 008d 27       		.uleb128 0x27
  1039 008e 19       		.uleb128 0x19
  1040 008f 11       		.uleb128 0x11
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccsctOHr.s 			page 30
-
-
  1041 0090 01       		.uleb128 0x1
  1042 0091 12       		.uleb128 0x12
  1043 0092 06       		.uleb128 0x6
  1044 0093 40       		.uleb128 0x40
  1045 0094 18       		.uleb128 0x18
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc8mUdP4.s 			page 30
+
+
  1046 0095 9742     		.uleb128 0x2117
  1047 0097 19       		.uleb128 0x19
  1048 0098 01       		.uleb128 0x1
@@ -1798,14 +1793,14 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccsctOHr.s 			page 1
  1095 00c8 3B       		.uleb128 0x3b
  1096 00c9 05       		.uleb128 0x5
  1097 00ca 49       		.uleb128 0x49
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccsctOHr.s 			page 31
-
-
  1098 00cb 13       		.uleb128 0x13
  1099 00cc 02       		.uleb128 0x2
  1100 00cd 18       		.uleb128 0x18
  1101 00ce 00       		.byte	0
  1102 00cf 00       		.byte	0
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc8mUdP4.s 			page 31
+
+
  1103 00d0 0D       		.uleb128 0xd
  1104 00d1 2E       		.uleb128 0x2e
  1105 00d2 01       		.byte	0x1
@@ -1858,14 +1853,14 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccsctOHr.s 			page 1
  1152 0102 00       		.byte	0
  1153 0103 00       		.byte	0
  1154 0104 00       		.byte	0
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccsctOHr.s 			page 32
-
-
  1155              		.section	.debug_aranges,"",%progbits
  1156 0000 94000000 		.4byte	0x94
  1157 0004 0200     		.2byte	0x2
  1158 0006 00000000 		.4byte	.Ldebug_info0
  1159 000a 04       		.byte	0x4
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc8mUdP4.s 			page 32
+
+
  1160 000b 00       		.byte	0
  1161 000c 0000     		.2byte	0
  1162 000e 0000     		.2byte	0
@@ -1918,14 +1913,14 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccsctOHr.s 			page 1
  1209 0028 00000000 		.4byte	.LFB69
  1210 002c 12000000 		.4byte	.LFE69
  1211 0030 00000000 		.4byte	.LFB70
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccsctOHr.s 			page 33
-
-
  1212 0034 12000000 		.4byte	.LFE70
  1213 0038 00000000 		.4byte	.LFB71
  1214 003c 12000000 		.4byte	.LFE71
  1215 0040 00000000 		.4byte	.LFB72
  1216 0044 12000000 		.4byte	.LFE72
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc8mUdP4.s 			page 33
+
+
  1217 0048 00000000 		.4byte	.LFB73
  1218 004c 12000000 		.4byte	.LFE73
  1219 0050 00000000 		.4byte	.LFB74
@@ -1978,14 +1973,14 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccsctOHr.s 			page 1
  1245 00a5 5F5F696E 		.ascii	"__int32_t\000"
  1245      7433325F 
  1245      7400
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccsctOHr.s 			page 34
-
-
  1246              	.LASF3:
  1247 00af 73686F72 		.ascii	"short unsigned int\000"
  1247      7420756E 
  1247      7369676E 
  1247      65642069 
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc8mUdP4.s 			page 34
+
+
  1247      6E7400
  1248              	.LASF25:
  1249 00c2 52656164 		.ascii	"ReadMag\000"
@@ -2038,14 +2033,14 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccsctOHr.s 			page 1
  1267      65436F6E 
  1267      74726F6C 
  1267      52656769 
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccsctOHr.s 			page 35
-
-
  1267      73746572 
  1268              	.LASF11:
  1269 01a5 75696E74 		.ascii	"uint8\000"
  1269      3800
  1270              	.LASF37:
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc8mUdP4.s 			page 35
+
+
  1271 01ab 49544D5F 		.ascii	"ITM_RxBuffer\000"
  1271      52784275 
  1271      66666572 
@@ -2098,14 +2093,14 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccsctOHr.s 			page 1
  1293      616C00
  1294              	.LASF6:
  1295 023b 6C6F6E67 		.ascii	"long long int\000"
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccsctOHr.s 			page 36
-
-
  1295      206C6F6E 
  1295      6720696E 
  1295      7400
  1296              	.LASF23:
  1297 0249 52656164 		.ascii	"ReadAcc\000"
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc8mUdP4.s 			page 36
+
+
  1297      41636300 
  1298              	.LASF32:
  1299 0251 5350495F 		.ascii	"SPI_delay\000"

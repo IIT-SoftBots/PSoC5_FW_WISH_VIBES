@@ -227,31 +227,7 @@ void commProcess(void){
 //============================================================     CMD_HAND_CALIBRATE
 
         case CMD_HAND_CALIBRATE:
-            calib.speed = (int16)(g_rx.buffer[1]<<8 | g_rx.buffer[2]);
-            calib.repetitions = (int16)(g_rx.buffer[3]<<8 | g_rx.buffer[4]);
-            
-            if(calib.speed == -1 && calib.repetitions == -1) {
-                calib.enabled = FALSE;
-                calib.speed = 0;
-                calib.repetitions = 0;
-                break;
-            }
-            // Speed & repetitions saturations
-            if (calib.speed < 0) {
-                calib.speed = 0;
-            } else if (calib.speed > 200) {
-                calib.speed = 200;
-            }
-            if (calib.repetitions < 0) {
-                calib.repetitions = 0;
-            } else if (calib.repetitions > 32767) {
-                calib.repetitions = 32767;
-            }
-            
-            g_refNew[0].pos = 0;                    // SoftHand is on motor 1
-            calib.enabled = TRUE;
-         
-            sendAcknowledgment(ACK_OK);
+           
             break;
             
 //=====================================================     CMD_GET_IMU_READINGS
@@ -1410,7 +1386,7 @@ void air_chambers_control() {
     if (pressure_reference > c_mem.FB.maximum_pressure_kPa)
         pressure_reference = c_mem.FB.maximum_pressure_kPa;
     
-    pressure_value = (int32)g_fb_meas.pressure;
+    pressure_value = (int32)g_adc_meas.pressure;
     err_pressure = pressure_reference - pressure_value;       // error in kPa
 
     if (x_value <= 0){
@@ -1426,15 +1402,15 @@ void air_chambers_control() {
     
     // Pump control*/
    
-    g_refNew[0].pwm = (int32)(c_mem.FB.prop_err_fb_gain*err_pressure);
+    Pump_refNew = (int32)(c_mem.FB.prop_err_fb_gain*err_pressure);
 
     //c_mem.FB.prop_err_fb_gain default 1.0 gain since, max err_pressure is 25 and pwm range is approx. 25 ticks [45=2V,70=3V]
     
     // Limit output voltage
-    if (g_refNew[0].pwm > 80) // 80 (3.5V) 80% of 4.3V (5V - 1 diode)
-        g_refNew[0].pwm = 80; // 80
-    if (g_refNew[0].pwm < 20)
-        g_refNew[0].pwm = 0;
+    if (Pump_refNew > 80) // 80 (3.5V) 80% of 4.3V (5V - 1 diode)
+        Pump_refNew = 80; // 80
+    if (Pump_refNew < 20)
+        Pump_refNew = 0;
         
     VALVE_Write(valve_command);
     
@@ -1538,12 +1514,34 @@ void otbk_act_wrist_control(int slave_motor_idx) {
 //                                                                   DRIVE SLAVE
 //==============================================================================
  
+//==============================================================================
+//                                                                   DRIVE SLAVE
+//==============================================================================
  
-void drive_slave(uint8 slave_motor_idx, uint8 slave_ID) {
+ 
+void drive_slave( uint8 slave_ID) {
+
+    uint8 packet_data[6];
+    uint8 packet_length;
+    int16 aux_int16;
+
+       
+    //Sends a Set inputs command to a second board
+    packet_data[0] = CMD_SET_INPUTS;
+    
+ //aux_int16 = (int16) motor_idx;
+   aux_int16 = (int16) (SH_ref >> g_mem.SH_config.res);
+    packet_data[2] = ((char*)(&aux_int16))[0];
+    packet_data[1] = ((char*)(&aux_int16))[1];
+    *((int16 *) &packet_data[3]) = 0;
+  //  packet_data[3] = (char*)0;
+   // packet_data[4] = (char*)0;
+    packet_length = 6;
+    packet_data[packet_length - 1] = LCRChecksum(packet_data,packet_length - 1);
+    commWriteID(packet_data, packet_length, slave_ID);
 
 
 }
-
 //==============================================================================
 //                                                            STOP MASTER DEVICE
 //==============================================================================
@@ -1551,7 +1549,7 @@ void drive_slave(uint8 slave_motor_idx, uint8 slave_ID) {
 void stop_master_device() {
     
         // Stop pump and open valve
-        g_refNew[0].pwm = 0;    
+        Pump_ref = 0;    
         VALVE_Write(OPEN);
         master_mode = 0; 
         g_mem.MS.master_mode_active = FALSE;

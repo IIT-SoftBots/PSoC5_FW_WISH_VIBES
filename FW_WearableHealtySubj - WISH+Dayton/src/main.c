@@ -133,43 +133,10 @@ int main()
     CYGlobalIntEnable;              // Enable interrupts.
 
 
-    //SPI IMU module
-   
-    //========================================     initializations - clean variables
-    
-    //---------------------------------------------------  Initialize filters structure 
-    for(i=0;i<NUM_OF_MOTORS;i++) {
-        filt_i[i].gain = 32;    // Current filter constant.
-        filt_curr_diff[i].gain = 16;   // Current residual filter constant.       
-        filt_v[i].old_value    = 12000;// Initial voltage filter value.
-        filt_v[i].gain         = 2;    // Voltage filter constant.
-    }
-    for(i=0;i<NUM_OF_SENSORS;i++) {
-        filt_vel[i].gain = 128; // Velocity filters constant.
-    }
-    
-    for(i=0;i<NUM_OF_INPUT_EMGS+NUM_OF_ADDITIONAL_EMGS;i++) {
-        filt_emg[i].gain      = 50;   // Emg channels filter constant.
-    }
     filt_detect_pc.gain = 500;    
     
-    //---------------------------------------------------  Initialize reference structure 
-    for (i = 0; i< NUM_OF_MOTORS; i++) {
-        g_ref[i].pos = 0;
-    }
     
-    //---------------------------------------------------  Initialize measurement structure
-    for (j = 0; j< N_ENCODER_LINE_MAX; j++) { 
-        for (i = 0; i < NUM_OF_SENSORS; i++) { 
-            g_meas[j].pos[i] = 0;
-            g_meas[j].rot[i] = (int8)0;
-        }
-    }
-
-    for (i = 0; i< NUM_OF_MOTORS; i++) {
-        g_refNew[i] = g_ref[i];                         // Initialize k+1 reference structure.
-    }
-    
+   
     //---------------------------------------------------  Initialize emg structure
     g_adc_meas.emg[0] = 0;
     g_adc_meas.emg[1] = 0;
@@ -186,9 +153,7 @@ int main()
     
     tension_valid = FALSE;                              // Init tension_valid BIT.
 
-    for (j = 0; j< N_ENCODER_LINE_MAX; j++) { 
-        reset_last_value_flag[j] = 0;                   // Do not reset encoder last value.
-    }
+   
 
     //------------------------------------------------- Initialize package on receive from RS485
     g_rx.length = 0;

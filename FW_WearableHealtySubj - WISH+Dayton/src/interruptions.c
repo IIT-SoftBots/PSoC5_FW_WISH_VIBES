@@ -266,16 +266,10 @@ void interrupt_manager(){
 //==============================================================================
 
 void function_scheduler(void) {
- 
-    static uint16 counter_calibration = DIV_INIT_VALUE;
-    static uint16 counter_tension_func = DIV_INIT_VALUE;
-    char info_[2500] = "";
-    
-    uint8 MOTOR_IDX = 0;
-    uint8 SECOND_MOTOR_IDX = 1;
-    
+      
+
     MY_TIMER_REG_Write(0x00);
-    timer_value0 = (uint32)MY_TIMER_ReadCounter();
+    timer_value0 = (uint32)MY_TIMER_ReadCounter();/*
     // Start ADC Conversion, SOC = 1
 
     ADC_SOC_Write(0x01); 
@@ -309,9 +303,7 @@ void function_scheduler(void) {
                 
                 //-------------------------------------------------------------- Air Chamber and Vibrotactile control
                 if (g_mem.FB.vibrotactile_feedback_active && g_mem.FB.airchamber_feedback_active){    
-                    
-                    
-                                    
+                                     
                     air_chambers_control();
                     vibrotactile_control();
                   
@@ -340,9 +332,9 @@ void function_scheduler(void) {
                     interrupt_manager();
                 }
                     
-                motor_control_generic(SECOND_MOTOR_IDX); // Compute reference for the SH starting from EMG values
+            //    motor_control_generic(SECOND_MOTOR_IDX); // Compute reference for the SH starting from EMG values
                     
-                drive_slave(SECOND_MOTOR_IDX, c_mem.MS.slave_ID); // Send reference to the SH calling cmd_set_inputs
+                drive_slave(c_mem.MS.slave_ID); // Send reference to the SH calling cmd_set_inputs
                     
                 if (interrupt_flag){
                     interrupt_flag = FALSE;
@@ -363,7 +355,7 @@ void function_scheduler(void) {
                 } 
             }
             
-            motor_control_generic(MOTOR_IDX);  // Compute references and drive air pump
+          //  motor_control_generic(MOTOR_IDX);  // Compute references and drive air pump
     
             if (interrupt_flag){
                 interrupt_flag = FALSE;
@@ -391,40 +383,12 @@ void function_scheduler(void) {
         interrupt_manager();
     }
 
-    //---------------------------------- Calibration 
-
-    // Divider 10, freq = 500 Hz
-    if (calib.enabled == TRUE) {
-        if (counter_calibration == CALIBRATION_DIV) {
-            calibration();
-            counter_calibration = 0;
-        }
-        counter_calibration++;
-    }
-
-    // Check Interrupt 
-    
-    if (interrupt_flag){
-        interrupt_flag = FALSE;
-        interrupt_manager();
-    }
-    
+  
 
     
      
 
     
-    //---------------------------------- Control Cycles Counter
-
-    // Check Cycles Interrupt 
-    
-        
-        
-        // Deactivate the motor just for the time data are written in the EEPROM
-        
-        
-    
-    
     // Check Interrupt 
     
     if (interrupt_flag){
@@ -432,40 +396,26 @@ void function_scheduler(void) {
         interrupt_manager();
     }
     
-    
-    //---------------------------------- Check battery
-
-    // Divider 10, freq = 500 Hz
-    if (counter_tension_func == CALIBRATION_DIV) {
-        battery_management();   
-        counter_tension_func = 0;
-    }
-    counter_tension_func++;
-
-    // Check Interrupt 
-    
-    if (interrupt_flag){
-        interrupt_flag = FALSE;
-        interrupt_manager();
-    }
-
+   
    
     //---------------------------------- Update States
     
     // Load k-1 state
     memcpy( &g_adc_measOld, &g_adc_meas, sizeof(g_adc_meas) );
-    memcpy( &g_measOld, &g_meas, sizeof(g_meas) );
-    memcpy( &g_refOld, &g_ref, sizeof(g_ref) );
-
+    memcpy( &SH_refOld, &SH_ref, sizeof(SH_ref) );
+    memcpy( &VT_refOld, &VT_ref, sizeof(VT_ref) );
+    memcpy( &Pump_refOld, &Pump_ref, sizeof(Pump_ref) );
+    
     // Load k+1 state        
-    memcpy( &g_ref, &g_refNew, sizeof(g_ref) );
-    memcpy( &g_imu, &g_imuNew, sizeof(g_imu) );
-                    
+    memcpy( &SH_ref, &SH_refNew, sizeof(SH_ref) );   
+    memcpy( &VT_ref, &VT_refNew, sizeof(VT_ref) );
+    memcpy( &Pump_ref, &Pump_refNew, sizeof(Pump_ref) );
+    
     if (interrupt_flag){
         interrupt_flag = FALSE;
         interrupt_manager();
     }
-
+*/
     timer_value = (uint16)MY_TIMER_ReadCounter();
     cycle_time = ((float)(timer_value0 - timer_value)/1000000.0);
     MY_TIMER_REG_Write(0x01);   // reset timer
@@ -475,46 +425,144 @@ void function_scheduler(void) {
 //==============================================================================
 //                                                       COMPUTE MOTOR REFERENCE
 //==============================================================================
-void compute_reference(uint8 motor_idx, struct st_ref* st_ref_p, struct st_ref* st_refOld_p) {
+
+void compute_SH_reference() {
     
-}
-
-
-//==============================================================================
-//                                  COMPUTE SOFTHAND 2 MOTORS JOYSTICK REFERENCE
-//==============================================================================
-void compute_SoftHand_2_motors_joystick_reference(uint8 motor_idx, struct st_ref* st_ref_p, struct st_ref* st_refOld_p){
-           
-}
-
-
-//==============================================================================
-//                                       COMPUTE SOFTHAND 2 MOTORS EMG REFERENCE
-//==============================================================================
-void compute_SoftHand_2_motors_emg_reference(uint8 motor_idx, struct st_ref* st_ref_p, struct st_ref* st_refOld_p,
-    int32 err_emg_1, int32 err_emg_2) {
+    int32 CYDATA err_emg_1, err_emg_2;
+    struct st_slave* SH = &c_mem.SH_config;      // SoftHand default motor
     
-}
-
-//==============================================================================
-//                                                        MOTOR CONTROL SOFTHAND
-//==============================================================================
-void motor_control_SH() {
-
+    static uint8 current_emg = 0;   // 0 NONE // 1 EMG 1 // 2 EMG 2                                                    
+                                                                                                        
+    err_emg_1 = g_adc_meas.emg[0] - c_mem.emg.emg_threshold[0];
+    err_emg_2 = g_adc_meas.emg[1] - c_mem.emg.emg_threshold[1];
     
-}
+     // =========================== POSITION INPUT ==============================            
+    switch(SH->input_mode) {
+            
+        case INPUT_MODE_EMG_PROPORTIONAL:
+            if (err_emg_1 > 0)
+                SH_ref = (err_emg_1 * g_mem.SH_config.pos_lim_sup) / (1024 - c_mem.emg.emg_threshold[0]);
+            else
+                SH_ref = 0;
+            break;
+        
+        case INPUT_MODE_EMG_PROPORTIONAL_NC:
+            if (err_emg_1 > 0)
+                SH_ref = g_mem.SH_config.pos_lim_sup - (err_emg_1 * g_mem.SH_config.pos_lim_sup) / (1024 - c_mem.emg.emg_threshold[0]);
+            else
+                SH_ref = g_mem.SH_config.pos_lim_sup;
+            break;
 
-//==============================================================================
-//                                                         MOTOR CONTROL GENERIC
-//==============================================================================
-void motor_control_generic(uint8 idx) {
-   
+        case INPUT_MODE_EMG_INTEGRAL:
+            SH_ref = SH_refOld;
+            if (err_emg_1 > 0) {
+                SH_ref = SH_refOld + (err_emg_1 * (int)g_mem.emg.emg_speed[0] * 2) / (1024 - c_mem.emg.emg_threshold[0]);
+            }
+            if (err_emg_2 > 0) {
+                SH_ref = SH_refOld - (err_emg_2 * (int)g_mem.emg.emg_speed[1] * 2) / (1024 - c_mem.emg.emg_threshold[1]);
+            }
+            break;
 
-    // ======================= UPDATE MOTOR REFERENCE ==========================            
-    compute_reference(idx, &g_ref[idx], &g_refOld[idx]);
+        case INPUT_MODE_EMG_FCFS:
+            SH_ref= SH_refOld;
+            
+                switch (current_emg) {
+                    case 0:
+                        // Look for the first EMG passing the threshold
+                        if (err_emg_1 > 0 && err_emg_1 > err_emg_2) {
+                            current_emg= 1;
+                            break;
+                        }
+                        if (err_emg_2 > 0 && err_emg_2 > err_emg_1) {
+                            current_emg = 2;
+                            break;
+                        }
+                        break;
 
+                    case 1:
+                        // EMG 1 is first
+                        if (err_emg_1 < 0) {
+                            current_emg = 0;
+                            break;
+                        }
+                       SH_ref= SH_refOld + (err_emg_1 * g_mem.emg.emg_speed[0] << 2) / (1024 - c_mem.emg.emg_threshold[0]);
+                        break;
+
+                    case 2:
+                        // EMG 2 is first
+                        if (err_emg_2 < 0) {
+                            current_emg = 0;
+                            break;
+                        }
+                        SH_ref = SH_refOld - (err_emg_2 * g_mem.emg.emg_speed[1] << 2) / (1024 - c_mem.emg.emg_threshold[1]);
+                        break;
+
+                    default:
+                        break;
+                }
+            
+            break;
+
+        case INPUT_MODE_EMG_FCFS_ADV:
+            SH_ref = SH_refOld;
+            switch (current_emg) {
+                // Look for the first EMG passing the threshold
+                case 0:
+                    if (err_emg_1 > 0 && err_emg_1 > err_emg_2) {
+                        current_emg = 1;
+                        break;
+                    }
+                    if (err_emg_2 > 0 && err_emg_2 > err_emg_1) {
+                        current_emg = 2;
+                        break;
+                    }
+                    break;
+
+                // EMG 1 is first
+                case 1:
+                    // If both signals are under threshold go back to status 0
+                    if ((err_emg_1 < 0) && (err_emg_2 < 0)) {
+                        current_emg = 0;
+                        break;
+                    }
+                    // but if the current signal come back over threshold, continue using it
+                    if (err_emg_1 > 0) 
+                        SH_ref = SH_refOld + (err_emg_1 * g_mem.emg.emg_speed[0] << 2) / (1024 - c_mem.emg.emg_threshold[0]);                    
+                    break;
+
+                // EMG 2 is first
+                case 2:
+                    // If both signals are under threshold go back to status 0
+                    if ((err_emg_1 < 0) && (err_emg_2 < 0)) {
+                        current_emg = 0;
+                        break;
+                    }
+                    // but if the current signal come back over threshold, continue using it
+                    if (err_emg_2 > 0) {
+                        SH_ref = SH_refOld - (err_emg_2 * c_mem.emg.emg_speed[1] << 2) / (1024 - c_mem.emg.emg_threshold[1]);
+                    }
+                    break;
+
+                default:
+                    break;
+            }
+            break;
+
+        default:
+            break;
+    }
+
+    // Position limit saturation
     
+        if (SH_ref < SH->pos_lim_inf) 
+            SH_ref = SH->pos_lim_inf;
+        if (SH_ref > SH->pos_lim_sup) 
+            SH_ref = SH->pos_lim_sup;
+
 }
+
+
+
 
 //==============================================================================
 //                                                  VIBROTACTILE CONTROL GENERIC
@@ -580,6 +628,87 @@ void encoder_reading_SPI(uint8 n_line, uint8 assoc_motor) {
 
 void analog_read_end() {
 
+    /* =========================================================================
+    /   Ideal formulation to calculate tension and current
+    /
+    /   tension = ((read_value_mV - offset) * 101) / gain -> [mV]
+    /   current = ((read_value_mV - offset) * 375) / (gain * resistor) -> [mA]
+    /
+    /   Definition:
+    /   read_value_mV = counts_read / 0.819 -> conversion from counts to mV
+    /   offset = 2000 -> hardware amplifier bias in mV
+    /   gain = 8.086 -> amplifier gain
+    /   resistor = 18 -> resistor of voltage divider in KOhm 
+    /
+    /   Real formulation: tradeoff in good performance and accurancy, ADC_buf[] 
+    /   and offset unit of measurement is counts, instead dev_tension and
+    /   g_meas.curr[] are converted in properly unit.
+    /  =========================================================================
+    */
+
+    int32 CYDATA i_aux;
+    static uint8 idx = 0;
+    
+    // Wait for conversion end
+    
+    while(!ADC_STATUS_Read()){
+        
+        if (interrupt_flag){
+            interrupt_flag = FALSE;
+            interrupt_manager();
+        }
+    }
+
+        // Read pressure in any case
+        pressure_value  = (int32)(ADC_buf[0] );    //0 - 4096  
+        pressure_value = (((float)pressure_value/4096.0)/0.002421)-101.325;       // datasheet transfer function ticks->kPa sensor MPXH6400A
+        if (pressure_value < 0) pressure_value = 0;
+    
+        flag_master =  (int32)((ADC_buf[1]/4096.0)*5000);
+
+        // Reset emg
+        for (idx = 0; idx < NUM_OF_INPUT_EMGS; idx++){
+            g_adc_meas.emg[idx] = 0;
+        }
+
+        i_aux = (int32)(ADC_buf[1 + c_mem.emg.switch_emg]);
+        if (i_aux < 0) 
+            i_aux = 0;
+        i_aux = filter(i_aux, &filt_emg[0]);
+        i_aux = (i_aux << 10) / g_mem.emg.emg_max_value[0];
+
+        if (interrupt_flag){
+            interrupt_flag = FALSE;
+            interrupt_manager();
+        }
+        //Saturation
+        if (i_aux < 0)
+            i_aux = 0;
+        else 
+            if (i_aux > 1024) 
+                i_aux = 1024;
+        
+        g_adc_meas.emg[0] = i_aux;
+            
+        i_aux = (int32)(ADC_buf[2 - c_mem.emg.switch_emg]);
+
+        if (i_aux < 0)
+            i_aux = 0;
+        i_aux = filter(i_aux, &filt_emg[1]);
+        i_aux = (i_aux << 10) / g_mem.emg.emg_max_value[1];
+
+        if (interrupt_flag){
+            interrupt_flag = FALSE;
+            interrupt_manager();
+        }
+        
+        if (i_aux < 0) 
+            i_aux = 0;
+        else 
+            if (i_aux > 1024)
+                i_aux = 1024;
+        
+        g_adc_meas.emg[1] = i_aux;
     
 }
 

@@ -489,13 +489,11 @@ void commReadIMUFromSH();
  *
 **/
 int16 commReadResCurrFromSH();
-
 //=====================================================     drive_slave
 /** This function is used to create a package and send it to another device, only
  *  if the actual board is in master mode.
 **/
-void drive_slave(uint8 motor_idx, uint8 slave_ID);
-
+void drive_slave(uint8 slave_ID);
 //=====================================================     stop_master_device
 /** This function is used to deactivate master device motors when occurred.
 **/

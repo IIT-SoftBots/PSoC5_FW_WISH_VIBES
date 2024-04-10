@@ -70,16 +70,12 @@ struct st_data      g_rx;                       // Income data.
 CYBIT reset_PSoC_flag = FALSE;              /*!< This flag is set when a board fw reset is necessary.*/
 
 
-struct st_ref       g_ref[NUM_OF_MOTORS], g_refNew[NUM_OF_MOTORS], g_refOld[NUM_OF_MOTORS], g_ref_Toast[NUM_OF_HAPTIC_ACTUATORS], g_refOld_Toast[NUM_OF_HAPTIC_ACTUATORS];  // Motor reference variables.
-struct st_meas      g_meas[N_ENCODER_LINE_MAX], g_measOld[N_ENCODER_LINE_MAX];          // Measurements.
+
+struct st_filter    filt_emg[NUM_OF_INPUT_EMGS];                // EMG filter variables.
 struct st_adc_meas  g_adc_meas, g_adc_measOld;  // EMG Measurements.
-struct st_fb_meas   g_fb_meas;                  // Haptic Feedback Measurements.
+
 struct st_data      g_rx;                       // Income data.
 struct st_eeprom    g_mem, c_mem;               // Memory variables.
-struct st_calib     calib;                      // Calibration variables.
-struct st_filter    filt_v[NUM_OF_MOTORS], filt_curr_diff[NUM_OF_MOTORS], filt_i[NUM_OF_MOTORS];     // Voltage and current filter variables.
-struct st_filter    filt_vel[NUM_OF_SENSORS];                // Velocity filter variables.
-struct st_filter    filt_emg[NUM_OF_INPUT_EMGS+NUM_OF_ADDITIONAL_EMGS];                // EMG filter variables.
 struct st_filter    filt_detect_pc;             // Battery tension filter to detect a new power cycle.
 
 
@@ -90,22 +86,13 @@ float   cycle_time;
 
 // Device Data
 int32 flag_master;
-int32   dev_tension[NUM_OF_MOTORS];         /*!< Power supply tension.*/
-uint16  dev_pwm_limit[NUM_OF_MOTORS];       /*!< Device pwm limit. It may change during execution.*/
-uint16  dev_pwm_sat[NUM_OF_MOTORS];         /*!< Device pwm saturation. By default the saturation value must not exceed 100.*/
-int32   dev_tension_f[NUM_OF_MOTORS];       /*!< Filtered power supply tension.*/
-int32   pow_tension[NUM_OF_MOTORS];         /*!< Computed power supply tension.*/
 int32   detect_power_cycle = 0;             /*!< Variable used to detect a new power cycle.*/
 
 counter_status CYDATA cycles_status = NONE;     /*!< Cycles counter state machine status.*/
-adc_status CYDATA emg_1_status = RESET;         /*!< First EMG sensor status.*/
-adc_status CYDATA emg_2_status = RESET;         /*!< Second EMG sensor status.*/   
-adc_status CYDATA joy_UD_status = RESET;        /*!< Joystick UP/DOWN status.*/
-adc_status CYDATA joy_LR_status = RESET;        /*!< Joystick LEFT/RIGHT status.*/
 
     
 // Bit Flag
-CYBIT reset_last_value_flag[N_ENCODER_LINE_MAX]; /*!< This flag is set when the encoders last values must be resetted.*/
+
 CYBIT tension_valid;                        /*!< Tension validation bit.*/
 
 CYBIT cycles_interrupt_flag = FALSE;        /*!< Cycles timer interrupt flag enabler.*/
@@ -121,16 +108,6 @@ uint8 change_ext_ref_flag = FALSE;          /*!< This flag is set when an extern
 
 
 
-// PWM value
-int8 pwm_sign[NUM_OF_MOTORS];               /*!< Sign of pwm driven. Used to obtain current sign.*/
-
-// Encoder variables
-uint32 data_encoder_raw[N_ENCODER_LINE_MAX][N_ENCODERS_PER_LINE_MAX];
-uint8 N_Encoder_Line_Connected[N_ENCODER_LINE_MAX]; // Used to map how many encoders are connected to each CS pin, there are N_ENCODER_LINE_MAX CS on the board and each of them can contain N_ENCODERS_PER_LINE_MAX encoders
-uint16 Encoder_Value[N_ENCODER_LINE_MAX][N_ENCODERS_PER_LINE_MAX];
-uint8 Encoder_Check[N_ENCODER_LINE_MAX][N_ENCODERS_PER_LINE_MAX];
-CYBIT pos_reconstruct[N_ENCODER_LINE_MAX] = {FALSE, FALSE};
-
 // Rest Position variables
 int32 rest_pos_curr_ref;                     /*!< Rest position current reference.*/
 
@@ -142,19 +119,6 @@ FS_FILE * pEMGHFile;
 char sdEMGHFile[100] = "\\EMG_History.csv";
 char sdR01File[100] = "\\R01_Summary.csv";
 
-// IMU variables
-uint8 N_IMU_Connected;
-uint8 IMU_connected[N_IMU_MAX];
-int imus_data_size;
-int single_imu_size[N_IMU_MAX];
-struct st_imu_data g_imu[N_IMU_MAX];
-struct st_imu_data g_imuNew[N_IMU_MAX];
-uint8 Accel[N_IMU_MAX][6];
-uint8 Gyro[N_IMU_MAX][6];
-uint8 Mag[N_IMU_MAX][6];
-uint8 MagCal[N_IMU_MAX][3];
-uint8 Temp[N_IMU_MAX][2];
-float Quat[N_IMU_MAX][4];
 
 // MASTER variables
 uint8 master_mode;               /*!< Flag used to set/unset master mode to send messages to other boards.*/
