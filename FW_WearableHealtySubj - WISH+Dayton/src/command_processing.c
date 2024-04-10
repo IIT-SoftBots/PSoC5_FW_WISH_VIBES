@@ -171,7 +171,7 @@ void commProcess(void){
 //============================================================     CMD_GET_PARAM
 
         case CMD_GET_PARAM_LIST:
-            manage_param_list( __REV16(*((uint16 *) &g_rx.buffer[1])),1 );
+            manage_param_list( __REV16(*((uint16 *) &g_rx.buffer[1])),TRUE );
             break;
 
 //=================================================================     CMD_PING
@@ -669,7 +669,119 @@ void setZeros()
 //==============================================================================
 
 void prepare_generic_info(char *info_string)
-{
+{  int i;
+
+    struct st_eeprom* MEM_P = &c_mem; 
+    
+    if(c_mem.dev.id != 250){                //To avoid dummy board ping
+        char str[100];
+        strcpy(info_string, "");
+        strcat(info_string, "\r\n");
+        strcat(info_string, "Firmware version: ");
+        strcat(info_string, VERSION);
+        strcat(info_string, ".\r\n\r\n");      
+
+        strcat(info_string, "DEVICE INFO\r\n");
+        sprintf(str, "ID: %d\r\n", (int) MEM_P->dev.id);
+        strcat(info_string, str);
+
+        strcat(info_string, "Device: PULSE\r\n");
+           
+        strcat(info_string, "\r\n");  
+        
+       
+
+            switch(MEM_P->SH_config.input_mode) {
+                case INPUT_MODE_EXTERNAL:
+                    strcat(info_string, "Input mode: USB\r\n");
+                    break;
+                case INPUT_MODE_ENCODER3:
+                    strcat(info_string, "Input mode: Handle\r\n");
+                    break;
+                case INPUT_MODE_EMG_PROPORTIONAL:
+                    strcat(info_string, "Input mode: EMG proportional\r\n");
+                    break;
+                case INPUT_MODE_EMG_INTEGRAL:
+                    strcat(info_string, "Input mode: EMG integral\r\n");
+                    break;
+                case INPUT_MODE_EMG_FCFS:
+                    strcat(info_string, "Input mode: EMG FCFS\r\n");
+                    break;
+                case INPUT_MODE_EMG_FCFS_ADV:
+                    strcat(info_string, "Input mode: EMG FCFS ADV\r\n");
+                    break;
+                case INPUT_MODE_JOYSTICK:
+                    strcat(info_string, "Input mode: Joystick\r\n");
+                    break;
+                case INPUT_MODE_EMG_PROPORTIONAL_NC:
+                    strcat(info_string, "Input mode: EMG proportional Normally Closed\r\n");
+                    break;
+            }
+
+
+            strcat(info_string, "SoftHand sensor resolution: ");
+            
+                sprintf(str, "%d\r\n", (int) MEM_P->SH_config.res);
+                strcat(info_string, str);
+                
+
+            sprintf(str, "Position limit SoftHand: inf -> %ld  ", (int32)MEM_P->SH_config.pos_lim_inf >> MEM_P->SH_config.res);
+            strcat(info_string, str);
+            sprintf(str, "sup -> %ld\r\n", (int32)MEM_P->SH_config.pos_lim_sup >> MEM_P->SH_config.res);
+            strcat(info_string, str);
+
+         
+      
+        strcat(info_string, "EMG CONFIGURATION\r\n");
+        sprintf(str, "EMG thresholds [0 - 1024]: %u, %u", MEM_P->emg.emg_threshold[0], MEM_P->emg.emg_threshold[1]);
+        strcat(info_string, str);
+        strcat(info_string, "\r\n");
+
+        sprintf(str, "EMG max values [0 - 4096]: %lu, %lu", MEM_P->emg.emg_max_value[0], MEM_P->emg.emg_max_value[1]);
+        strcat(info_string, str);
+        strcat(info_string, "\r\n");
+
+        if (MEM_P->emg.switch_emg)
+            strcat(info_string, "EMG inversion: YES\r\n");
+        else
+            strcat(info_string, "EMG inversion: NO\r\n");
+        
+
+        sprintf(str, "EMG max speed: %d %d", (int)MEM_P->emg.emg_speed[0], (int)MEM_P->emg.emg_speed[1]);
+        strcat(info_string, str);
+        strcat(info_string, "\r\n");
+
+            for (i = 0; i < NUM_OF_INPUT_EMGS; ++i) {
+                sprintf(str,"EMG input %d -> %d", (int)(i + 1), (int) g_adc_meas.emg[i]);
+                strcat(info_string, str);
+                strcat(info_string,"\r\n");
+            }
+         
+
+        if (MEM_P->MS.master_mode_active)
+            strcat(info_string, "Master Mode active: YES\r\n");
+        else
+            strcat(info_string, "Master Mode active: NO\r\n");
+
+        sprintf(str, "Slave ID: %d\r\n", (int)MEM_P->MS.slave_ID);
+        strcat(info_string, str);
+
+        if (MEM_P->FB.airchamber_feedback_active)
+            strcat(info_string, "Airchamber FB active: YES\r\n");
+        else
+            strcat(info_string, "Airchamber FB active: NO\r\n");
+            
+        if (MEM_P->FB.vibrotactile_feedback_active)
+            strcat(info_string, "Vibrotactile FB active: YES\r\n");
+        else
+            strcat(info_string, "Vibrotactile FB active: NO\r\n");
+
+
+        sprintf(str, "Last FW cycle time: %u us\r\n", (uint16)timer_value0 - (uint16)timer_value);
+        strcat(info_string, str);
+  
+        strcat(info_string, "\r\n\0");      // End of info_string
+    }
 }
 
 //==============================================================================
