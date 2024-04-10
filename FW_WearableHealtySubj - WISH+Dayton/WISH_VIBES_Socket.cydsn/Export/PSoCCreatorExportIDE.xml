@@ -74,24 +74,6 @@
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\cyfitteriar.inc</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\cyfitter.h</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\cydisabledsheets.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\CURRENT_SENSE_2_aliases.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\CURRENT_SENSE_2.c</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\CURRENT_SENSE_2.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\VOLTAGE_SENSE_2_aliases.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\VOLTAGE_SENSE_2.c</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\VOLTAGE_SENSE_2.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\EMG_6_aliases.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\EMG_6.c</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\EMG_6.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\EMG_5_aliases.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\EMG_5.c</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\EMG_5.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\EMG_4_aliases.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\EMG_4.c</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\EMG_4.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\EMG_3_aliases.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\EMG_3.c</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\EMG_3.h</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\EMG_1_aliases.h</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\EMG_1.c</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\EMG_1.h</File>
@@ -101,15 +83,6 @@
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\PRESSURE_SENSOR_aliases.h</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\PRESSURE_SENSOR.c</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\PRESSURE_SENSOR.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\EMG_B_aliases.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\EMG_B.c</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\EMG_B.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\EMG_A_aliases.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\EMG_A.c</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\EMG_A.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\MOTOR_DIR_1.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\MOTOR_DIR_1.c</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\MOTOR_DIR_1_PM.c</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\EEPROM.c</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\EEPROM.h</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\FTDI_ENABLE_aliases.h</File>
@@ -118,11 +91,6 @@
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\RS485_CTS_aliases.h</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\RS485_CTS.c</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\RS485_CTS.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\CLOCK_PWM.c</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\CLOCK_PWM.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\PWM_MOTORS.c</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\PWM_MOTORS.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\PWM_MOTORS_PM.c</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\PACER_TIMER.c</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\PACER_TIMER.h</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\PACER_TIMER_PM.c</File>
@@ -173,27 +141,6 @@
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\MISO_RTC_aliases.h</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\MISO_RTC.c</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\MISO_RTC.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\MOTOR_DIR_2.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\MOTOR_DIR_2.c</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\MOTOR_DIR_2_PM.c</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\LED_RED_aliases.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\LED_RED.c</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\LED_RED.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\BLINK_05HZ.c</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\BLINK_05HZ.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\BLINK_05HZ_PM.c</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\LED_CTRL.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\LED_CTRL.c</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\LED_CTRL_PM.c</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\BLINK_CTRL_EN.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\BLINK_CTRL_EN.c</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\BLINK_CTRL_EN_PM.c</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\LED_GREEN_aliases.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\LED_GREEN.c</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\LED_GREEN.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\BLINK_25HZ.c</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\BLINK_25HZ.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\BLINK_25HZ_PM.c</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\ADC_SOC.h</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\ADC_SOC.c</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\ADC_SOC_PM.c</File>
@@ -205,35 +152,12 @@
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\ADC.h</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\ADC_PM.c</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\ADC_INT.c</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\CLOCK_PWM_BLINK.c</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\CLOCK_PWM_BLINK.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\MOTOR_2A_aliases.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\MOTOR_2A.c</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\MOTOR_2A.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\MOTOR_2B_aliases.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\MOTOR_2B.c</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\MOTOR_2B.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\MOTOR_EN_1_aliases.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\MOTOR_EN_1.c</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\MOTOR_EN_1.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\MOTOR_ON_OFF_1.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\MOTOR_ON_OFF_1.c</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\MOTOR_ON_OFF_1_PM.c</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\MOTOR_EN_2_aliases.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\MOTOR_EN_2.c</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\MOTOR_EN_2.h</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\ADC_N_CHANNELS_USED.h</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\ADC_N_CHANNELS_USED.c</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\ADC_N_CHANNELS_USED_PM.c</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\MY_TIMER_REG.h</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\MY_TIMER_REG.c</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\MY_TIMER_REG_PM.c</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\MOTOR_DRIVER_TYPE.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\MOTOR_DRIVER_TYPE.c</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\MOTOR_DRIVER_TYPE_PM.c</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\MOTOR_ON_OFF_2.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\MOTOR_ON_OFF_2.c</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\MOTOR_ON_OFF_2_PM.c</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\VALVE_aliases.h</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\VALVE.c</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\VALVE.h</File>
@@ -323,9 +247,18 @@
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\VT2_DIR_PM.c</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\CLOCK_VT.c</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\CLOCK_VT.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\MASTER_MODE_VOLTAGE_aliases.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\MASTER_MODE_VOLTAGE.c</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\MASTER_MODE_VOLTAGE.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\LED_GREEN_1_aliases.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\LED_GREEN_1.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\LED_GREEN_1.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\PWM_PUMP.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\PWM_PUMP.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\PWM_PUMP_PM.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\MASTER_MODE_FLAG_aliases.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\MASTER_MODE_FLAG.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\MASTER_MODE_FLAG.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\LED_CONTROL.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\LED_CONTROL.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\LED_CONTROL_PM.c</File>
         </Files>
       </Folder>
       <Folder BuildType="STRICT" Path="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\WISH_VIBES_Socket.cydsn\Export\ARM_GCC_Generic">

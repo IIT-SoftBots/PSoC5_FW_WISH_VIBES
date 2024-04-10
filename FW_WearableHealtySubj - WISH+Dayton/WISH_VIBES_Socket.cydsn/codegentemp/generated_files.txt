@@ -20,51 +20,24 @@
   <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\WISH_VIBES_Socket.cydsn\codegentemp\cyfitteriar.inc" value="HEADER;;;;;" />
   <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\WISH_VIBES_Socket.cydsn\codegentemp\cyfitter.h" value="HEADER;;;;;" />
   <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\WISH_VIBES_Socket.cydsn\codegentemp\cydisabledsheets.h" value="HEADER;;;;;" />
-  <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\WISH_VIBES_Socket.cydsn\codegentemp\CURRENT_SENSE_2_aliases.h" value="HEADER;;;;;CURRENT_SENSE_2" />
-  <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\WISH_VIBES_Socket.cydsn\codegentemp\CURRENT_SENSE_2.c" value="SOURCE_C;CortexM3;;;;CURRENT_SENSE_2" />
-  <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\WISH_VIBES_Socket.cydsn\codegentemp\CURRENT_SENSE_2.h" value="HEADER;;;;;CURRENT_SENSE_2" />
-  <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\WISH_VIBES_Socket.cydsn\codegentemp\VOLTAGE_SENSE_2_aliases.h" value="HEADER;;;;;VOLTAGE_SENSE_2" />
-  <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\WISH_VIBES_Socket.cydsn\codegentemp\VOLTAGE_SENSE_2.c" value="SOURCE_C;CortexM3;;;;VOLTAGE_SENSE_2" />
-  <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\WISH_VIBES_Socket.cydsn\codegentemp\VOLTAGE_SENSE_2.h" value="HEADER;;;;;VOLTAGE_SENSE_2" />
-  <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\WISH_VIBES_Socket.cydsn\codegentemp\EMG_6_aliases.h" value="HEADER;;;;;EMG_6" />
-  <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\WISH_VIBES_Socket.cydsn\codegentemp\EMG_6.c" value="SOURCE_C;CortexM3;;;;EMG_6" />
-  <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\WISH_VIBES_Socket.cydsn\codegentemp\EMG_6.h" value="HEADER;;;;;EMG_6" />
-  <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\WISH_VIBES_Socket.cydsn\codegentemp\EMG_5_aliases.h" value="HEADER;;;;;EMG_5" />
-  <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\WISH_VIBES_Socket.cydsn\codegentemp\EMG_5.c" value="SOURCE_C;CortexM3;;;;EMG_5" />
-  <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\WISH_VIBES_Socket.cydsn\codegentemp\EMG_5.h" value="HEADER;;;;;EMG_5" />
-  <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\WISH_VIBES_Socket.cydsn\codegentemp\EMG_4_aliases.h" value="HEADER;;;;;EMG_4" />
-  <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\WISH_VIBES_Socket.cydsn\codegentemp\EMG_4.c" value="SOURCE_C;CortexM3;;;;EMG_4" />
-  <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\WISH_VIBES_Socket.cydsn\codegentemp\EMG_4.h" value="HEADER;;;;;EMG_4" />
-  <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\WISH_VIBES_Socket.cydsn\codegentemp\EMG_3_aliases.h" value="HEADER;;;;;EMG_3" />
-  <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\WISH_VIBES_Socket.cydsn\codegentemp\EMG_3.c" value="SOURCE_C;CortexM3;;;;EMG_3" />
-  <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\WISH_VIBES_Socket.cydsn\codegentemp\EMG_3.h" value="HEADER;;;;;EMG_3" />
-  <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\WISH_VIBES_Socket.cydsn\codegentemp\EMG_1_aliases.h" value="HEADER;;;;;EMG_1" />
-  <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\WISH_VIBES_Socket.cydsn\codegentemp\EMG_1.c" value="SOURCE_C;CortexM3;;;;EMG_1" />
-  <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\WISH_VIBES_Socket.cydsn\codegentemp\EMG_1.h" value="HEADER;;;;;EMG_1" />
+  <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\WISH_VIBES_Socket.cydsn\codegentemp\LED_CONTROL.h" value="HEADER;;;;;LED_CONTROL" />
+  <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\WISH_VIBES_Socket.cydsn\codegentemp\LED_CONTROL.c" value="SOURCE_C;CortexM3;;;;LED_CONTROL" />
+  <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\WISH_VIBES_Socket.cydsn\codegentemp\LED_CONTROL_PM.c" value="SOURCE_C;CortexM3;;;;LED_CONTROL" />
+  <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\WISH_VIBES_Socket.cydsn\codegentemp\LED_GREEN_1_aliases.h" value="HEADER;;;;;LED_GREEN_1" />
+  <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\WISH_VIBES_Socket.cydsn\codegentemp\LED_GREEN_1.c" value="SOURCE_C;CortexM3;;;;LED_GREEN_1" />
+  <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\WISH_VIBES_Socket.cydsn\codegentemp\LED_GREEN_1.h" value="HEADER;;;;;LED_GREEN_1" />
   <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\WISH_VIBES_Socket.cydsn\codegentemp\EMG_2_aliases.h" value="HEADER;;;;;EMG_2" />
   <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\WISH_VIBES_Socket.cydsn\codegentemp\EMG_2.c" value="SOURCE_C;CortexM3;;;;EMG_2" />
   <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\WISH_VIBES_Socket.cydsn\codegentemp\EMG_2.h" value="HEADER;;;;;EMG_2" />
+  <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\WISH_VIBES_Socket.cydsn\codegentemp\EMG_1_aliases.h" value="HEADER;;;;;EMG_1" />
+  <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\WISH_VIBES_Socket.cydsn\codegentemp\EMG_1.c" value="SOURCE_C;CortexM3;;;;EMG_1" />
+  <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\WISH_VIBES_Socket.cydsn\codegentemp\EMG_1.h" value="HEADER;;;;;EMG_1" />
   <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\WISH_VIBES_Socket.cydsn\codegentemp\PRESSURE_SENSOR_aliases.h" value="HEADER;;;;;PRESSURE_SENSOR" />
   <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\WISH_VIBES_Socket.cydsn\codegentemp\PRESSURE_SENSOR.c" value="SOURCE_C;CortexM3;;;;PRESSURE_SENSOR" />
   <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\WISH_VIBES_Socket.cydsn\codegentemp\PRESSURE_SENSOR.h" value="HEADER;;;;;PRESSURE_SENSOR" />
-  <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\WISH_VIBES_Socket.cydsn\codegentemp\MASTER_MODE_VOLTAGE_aliases.h" value="HEADER;;;;;MASTER_MODE_VOLTAGE" />
-  <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\WISH_VIBES_Socket.cydsn\codegentemp\MASTER_MODE_VOLTAGE.c" value="SOURCE_C;CortexM3;;;;MASTER_MODE_VOLTAGE" />
-  <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\WISH_VIBES_Socket.cydsn\codegentemp\MASTER_MODE_VOLTAGE.h" value="HEADER;;;;;MASTER_MODE_VOLTAGE" />
-  <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\WISH_VIBES_Socket.cydsn\codegentemp\EMG_B_aliases.h" value="HEADER;;;;;EMG_B" />
-  <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\WISH_VIBES_Socket.cydsn\codegentemp\EMG_B.c" value="SOURCE_C;CortexM3;;;;EMG_B" />
-  <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\WISH_VIBES_Socket.cydsn\codegentemp\EMG_B.h" value="HEADER;;;;;EMG_B" />
-  <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\WISH_VIBES_Socket.cydsn\codegentemp\EMG_A_aliases.h" value="HEADER;;;;;EMG_A" />
-  <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\WISH_VIBES_Socket.cydsn\codegentemp\EMG_A.c" value="SOURCE_C;CortexM3;;;;EMG_A" />
-  <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\WISH_VIBES_Socket.cydsn\codegentemp\EMG_A.h" value="HEADER;;;;;EMG_A" />
-  <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\WISH_VIBES_Socket.cydsn\codegentemp\PUMP_aliases.h" value="HEADER;;;;;PUMP" />
-  <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\WISH_VIBES_Socket.cydsn\codegentemp\PUMP.c" value="SOURCE_C;CortexM3;;;;PUMP" />
-  <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\WISH_VIBES_Socket.cydsn\codegentemp\PUMP.h" value="HEADER;;;;;PUMP" />
-  <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\WISH_VIBES_Socket.cydsn\codegentemp\MOTOR_ON_OFF_2.h" value="HEADER;;;;;MOTOR_ON_OFF_2" />
-  <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\WISH_VIBES_Socket.cydsn\codegentemp\MOTOR_ON_OFF_2.c" value="SOURCE_C;CortexM3;;;;MOTOR_ON_OFF_2" />
-  <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\WISH_VIBES_Socket.cydsn\codegentemp\MOTOR_ON_OFF_2_PM.c" value="SOURCE_C;CortexM3;;;;MOTOR_ON_OFF_2" />
-  <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\WISH_VIBES_Socket.cydsn\codegentemp\MOTOR_DRIVER_TYPE.h" value="HEADER;;;;;MOTOR_DRIVER_TYPE" />
-  <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\WISH_VIBES_Socket.cydsn\codegentemp\MOTOR_DRIVER_TYPE.c" value="SOURCE_C;CortexM3;;;;MOTOR_DRIVER_TYPE" />
-  <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\WISH_VIBES_Socket.cydsn\codegentemp\MOTOR_DRIVER_TYPE_PM.c" value="SOURCE_C;CortexM3;;;;MOTOR_DRIVER_TYPE" />
+  <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\WISH_VIBES_Socket.cydsn\codegentemp\ADC_N_CHANNELS_USED.h" value="HEADER;;;;;ADC_N_CHANNELS_USED" />
+  <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\WISH_VIBES_Socket.cydsn\codegentemp\ADC_N_CHANNELS_USED.c" value="SOURCE_C;CortexM3;;;;ADC_N_CHANNELS_USED" />
+  <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\WISH_VIBES_Socket.cydsn\codegentemp\ADC_N_CHANNELS_USED_PM.c" value="SOURCE_C;CortexM3;;;;ADC_N_CHANNELS_USED" />
   <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\WISH_VIBES_Socket.cydsn\codegentemp\EEPROM.c" value="SOURCE_C;CortexM3;;;;EEPROM" />
   <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\WISH_VIBES_Socket.cydsn\codegentemp\EEPROM.h" value="HEADER;;;;;EEPROM" />
   <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\WISH_VIBES_Socket.cydsn\codegentemp\FTDI_ENABLE_aliases.h" value="HEADER;;;;;FTDI_ENABLE" />
@@ -73,9 +46,6 @@
   <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\WISH_VIBES_Socket.cydsn\codegentemp\RS485_CTS_aliases.h" value="HEADER;;;;;RS485_CTS" />
   <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\WISH_VIBES_Socket.cydsn\codegentemp\RS485_CTS.c" value="SOURCE_C;CortexM3;;;;RS485_CTS" />
   <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\WISH_VIBES_Socket.cydsn\codegentemp\RS485_CTS.h" value="HEADER;;;;;RS485_CTS" />
-  <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\WISH_VIBES_Socket.cydsn\codegentemp\MOTOR_DIR_2.h" value="HEADER;;;;;MOTOR_DIR_2" />
-  <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\WISH_VIBES_Socket.cydsn\codegentemp\MOTOR_DIR_2.c" value="SOURCE_C;CortexM3;;;;MOTOR_DIR_2" />
-  <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\WISH_VIBES_Socket.cydsn\codegentemp\MOTOR_DIR_2_PM.c" value="SOURCE_C;CortexM3;;;;MOTOR_DIR_2" />
   <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\WISH_VIBES_Socket.cydsn\codegentemp\PACER_TIMER.c" value="SOURCE_C;CortexM3;;;;PACER_TIMER" />
   <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\WISH_VIBES_Socket.cydsn\codegentemp\PACER_TIMER.h" value="HEADER;;;;;PACER_TIMER" />
   <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\WISH_VIBES_Socket.cydsn\codegentemp\PACER_TIMER_PM.c" value="SOURCE_C;CortexM3;;;;PACER_TIMER" />
@@ -126,33 +96,6 @@
   <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\WISH_VIBES_Socket.cydsn\codegentemp\MISO_RTC_aliases.h" value="HEADER;;;;;MISO_RTC" />
   <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\WISH_VIBES_Socket.cydsn\codegentemp\MISO_RTC.c" value="SOURCE_C;CortexM3;;;;MISO_RTC" />
   <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\WISH_VIBES_Socket.cydsn\codegentemp\MISO_RTC.h" value="HEADER;;;;;MISO_RTC" />
-  <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\WISH_VIBES_Socket.cydsn\codegentemp\MOTOR_EN_2_aliases.h" value="HEADER;;;;;MOTOR_EN_2" />
-  <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\WISH_VIBES_Socket.cydsn\codegentemp\MOTOR_EN_2.c" value="SOURCE_C;CortexM3;;;;MOTOR_EN_2" />
-  <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\WISH_VIBES_Socket.cydsn\codegentemp\MOTOR_EN_2.h" value="HEADER;;;;;MOTOR_EN_2" />
-  <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\WISH_VIBES_Socket.cydsn\codegentemp\MOTOR_ON_OFF_1.h" value="HEADER;;;;;MOTOR_ON_OFF_1" />
-  <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\WISH_VIBES_Socket.cydsn\codegentemp\MOTOR_ON_OFF_1.c" value="SOURCE_C;CortexM3;;;;MOTOR_ON_OFF_1" />
-  <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\WISH_VIBES_Socket.cydsn\codegentemp\MOTOR_ON_OFF_1_PM.c" value="SOURCE_C;CortexM3;;;;MOTOR_ON_OFF_1" />
-  <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\WISH_VIBES_Socket.cydsn\codegentemp\MOTOR_EN_1_aliases.h" value="HEADER;;;;;MOTOR_EN_1" />
-  <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\WISH_VIBES_Socket.cydsn\codegentemp\MOTOR_EN_1.c" value="SOURCE_C;CortexM3;;;;MOTOR_EN_1" />
-  <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\WISH_VIBES_Socket.cydsn\codegentemp\MOTOR_EN_1.h" value="HEADER;;;;;MOTOR_EN_1" />
-  <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\WISH_VIBES_Socket.cydsn\codegentemp\LED_RED_aliases.h" value="HEADER;;;;;LED_RED" />
-  <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\WISH_VIBES_Socket.cydsn\codegentemp\LED_RED.c" value="SOURCE_C;CortexM3;;;;LED_RED" />
-  <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\WISH_VIBES_Socket.cydsn\codegentemp\LED_RED.h" value="HEADER;;;;;LED_RED" />
-  <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\WISH_VIBES_Socket.cydsn\codegentemp\BLINK_05HZ.c" value="SOURCE_C;CortexM3;;;;BLINK_05HZ" />
-  <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\WISH_VIBES_Socket.cydsn\codegentemp\BLINK_05HZ.h" value="HEADER;;;;;BLINK_05HZ" />
-  <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\WISH_VIBES_Socket.cydsn\codegentemp\BLINK_05HZ_PM.c" value="SOURCE_C;CortexM3;;;;BLINK_05HZ" />
-  <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\WISH_VIBES_Socket.cydsn\codegentemp\LED_CTRL.h" value="HEADER;;;;;LED_CTRL" />
-  <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\WISH_VIBES_Socket.cydsn\codegentemp\LED_CTRL.c" value="SOURCE_C;CortexM3;;;;LED_CTRL" />
-  <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\WISH_VIBES_Socket.cydsn\codegentemp\LED_CTRL_PM.c" value="SOURCE_C;CortexM3;;;;LED_CTRL" />
-  <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\WISH_VIBES_Socket.cydsn\codegentemp\BLINK_CTRL_EN.h" value="HEADER;;;;;BLINK_CTRL_EN" />
-  <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\WISH_VIBES_Socket.cydsn\codegentemp\BLINK_CTRL_EN.c" value="SOURCE_C;CortexM3;;;;BLINK_CTRL_EN" />
-  <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\WISH_VIBES_Socket.cydsn\codegentemp\BLINK_CTRL_EN_PM.c" value="SOURCE_C;CortexM3;;;;BLINK_CTRL_EN" />
-  <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\WISH_VIBES_Socket.cydsn\codegentemp\LED_GREEN_aliases.h" value="HEADER;;;;;LED_GREEN" />
-  <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\WISH_VIBES_Socket.cydsn\codegentemp\LED_GREEN.c" value="SOURCE_C;CortexM3;;;;LED_GREEN" />
-  <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\WISH_VIBES_Socket.cydsn\codegentemp\LED_GREEN.h" value="HEADER;;;;;LED_GREEN" />
-  <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\WISH_VIBES_Socket.cydsn\codegentemp\BLINK_25HZ.c" value="SOURCE_C;CortexM3;;;;BLINK_25HZ" />
-  <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\WISH_VIBES_Socket.cydsn\codegentemp\BLINK_25HZ.h" value="HEADER;;;;;BLINK_25HZ" />
-  <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\WISH_VIBES_Socket.cydsn\codegentemp\BLINK_25HZ_PM.c" value="SOURCE_C;CortexM3;;;;BLINK_25HZ" />
   <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\WISH_VIBES_Socket.cydsn\codegentemp\ADC_SOC.h" value="HEADER;;;;;ADC_SOC" />
   <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\WISH_VIBES_Socket.cydsn\codegentemp\ADC_SOC.c" value="SOURCE_C;CortexM3;;;;ADC_SOC" />
   <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\WISH_VIBES_Socket.cydsn\codegentemp\ADC_SOC_PM.c" value="SOURCE_C;CortexM3;;;;ADC_SOC" />
@@ -160,29 +103,19 @@
   <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\WISH_VIBES_Socket.cydsn\codegentemp\DMA_dma.h" value="HEADER;;;;;DMA" />
   <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\WISH_VIBES_Socket.cydsn\codegentemp\ADC_STATUS.c" value="SOURCE_C;CortexM3;;;;ADC_STATUS" />
   <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\WISH_VIBES_Socket.cydsn\codegentemp\ADC_STATUS.h" value="HEADER;;;;;ADC_STATUS" />
+  <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\WISH_VIBES_Socket.cydsn\codegentemp\PUMP_aliases.h" value="HEADER;;;;;PUMP" />
+  <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\WISH_VIBES_Socket.cydsn\codegentemp\PUMP.c" value="SOURCE_C;CortexM3;;;;PUMP" />
+  <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\WISH_VIBES_Socket.cydsn\codegentemp\PUMP.h" value="HEADER;;;;;PUMP" />
+  <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\WISH_VIBES_Socket.cydsn\codegentemp\MASTER_MODE_FLAG_aliases.h" value="HEADER;;;;;MASTER_MODE_FLAG" />
+  <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\WISH_VIBES_Socket.cydsn\codegentemp\MASTER_MODE_FLAG.c" value="SOURCE_C;CortexM3;;;;MASTER_MODE_FLAG" />
+  <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\WISH_VIBES_Socket.cydsn\codegentemp\MASTER_MODE_FLAG.h" value="HEADER;;;;;MASTER_MODE_FLAG" />
+  <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\WISH_VIBES_Socket.cydsn\codegentemp\PWM_PUMP.c" value="SOURCE_C;CortexM3;;;;PWM_PUMP" />
+  <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\WISH_VIBES_Socket.cydsn\codegentemp\PWM_PUMP.h" value="HEADER;;;;;PWM_PUMP" />
+  <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\WISH_VIBES_Socket.cydsn\codegentemp\PWM_PUMP_PM.c" value="SOURCE_C;CortexM3;;;;PWM_PUMP" />
   <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\WISH_VIBES_Socket.cydsn\codegentemp\ADC.c" value="SOURCE_C;CortexM3;;;;ADC" />
   <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\WISH_VIBES_Socket.cydsn\codegentemp\ADC.h" value="HEADER;;;;;ADC" />
   <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\WISH_VIBES_Socket.cydsn\codegentemp\ADC_PM.c" value="SOURCE_C;CortexM3;;;;ADC" />
   <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\WISH_VIBES_Socket.cydsn\codegentemp\ADC_INT.c" value="SOURCE_C;CortexM3;;;;ADC" />
-  <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\WISH_VIBES_Socket.cydsn\codegentemp\CLOCK_PWM_BLINK.c" value="SOURCE_C;CortexM3;;;;CLOCK_PWM_BLINK" />
-  <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\WISH_VIBES_Socket.cydsn\codegentemp\CLOCK_PWM_BLINK.h" value="HEADER;;;;;CLOCK_PWM_BLINK" />
-  <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\WISH_VIBES_Socket.cydsn\codegentemp\MOTOR_2B_aliases.h" value="HEADER;;;;;MOTOR_2B" />
-  <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\WISH_VIBES_Socket.cydsn\codegentemp\MOTOR_2B.c" value="SOURCE_C;CortexM3;;;;MOTOR_2B" />
-  <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\WISH_VIBES_Socket.cydsn\codegentemp\MOTOR_2B.h" value="HEADER;;;;;MOTOR_2B" />
-  <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\WISH_VIBES_Socket.cydsn\codegentemp\MOTOR_2A_aliases.h" value="HEADER;;;;;MOTOR_2A" />
-  <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\WISH_VIBES_Socket.cydsn\codegentemp\MOTOR_2A.c" value="SOURCE_C;CortexM3;;;;MOTOR_2A" />
-  <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\WISH_VIBES_Socket.cydsn\codegentemp\MOTOR_2A.h" value="HEADER;;;;;MOTOR_2A" />
-  <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\WISH_VIBES_Socket.cydsn\codegentemp\MOTOR_DIR_1.h" value="HEADER;;;;;MOTOR_DIR_1" />
-  <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\WISH_VIBES_Socket.cydsn\codegentemp\MOTOR_DIR_1.c" value="SOURCE_C;CortexM3;;;;MOTOR_DIR_1" />
-  <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\WISH_VIBES_Socket.cydsn\codegentemp\MOTOR_DIR_1_PM.c" value="SOURCE_C;CortexM3;;;;MOTOR_DIR_1" />
-  <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\WISH_VIBES_Socket.cydsn\codegentemp\CLOCK_PWM.c" value="SOURCE_C;CortexM3;;;;CLOCK_PWM" />
-  <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\WISH_VIBES_Socket.cydsn\codegentemp\CLOCK_PWM.h" value="HEADER;;;;;CLOCK_PWM" />
-  <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\WISH_VIBES_Socket.cydsn\codegentemp\PWM_MOTORS.c" value="SOURCE_C;CortexM3;;;;PWM_MOTORS" />
-  <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\WISH_VIBES_Socket.cydsn\codegentemp\PWM_MOTORS.h" value="HEADER;;;;;PWM_MOTORS" />
-  <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\WISH_VIBES_Socket.cydsn\codegentemp\PWM_MOTORS_PM.c" value="SOURCE_C;CortexM3;;;;PWM_MOTORS" />
-  <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\WISH_VIBES_Socket.cydsn\codegentemp\ADC_N_CHANNELS_USED.h" value="HEADER;;;;;ADC_N_CHANNELS_USED" />
-  <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\WISH_VIBES_Socket.cydsn\codegentemp\ADC_N_CHANNELS_USED.c" value="SOURCE_C;CortexM3;;;;ADC_N_CHANNELS_USED" />
-  <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\WISH_VIBES_Socket.cydsn\codegentemp\ADC_N_CHANNELS_USED_PM.c" value="SOURCE_C;CortexM3;;;;ADC_N_CHANNELS_USED" />
   <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\WISH_VIBES_Socket.cydsn\codegentemp\MY_TIMER_REG.h" value="HEADER;;;;;MY_TIMER_REG" />
   <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\WISH_VIBES_Socket.cydsn\codegentemp\MY_TIMER_REG.c" value="SOURCE_C;CortexM3;;;;MY_TIMER_REG" />
   <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\WISH_VIBES_Socket.cydsn\codegentemp\MY_TIMER_REG_PM.c" value="SOURCE_C;CortexM3;;;;MY_TIMER_REG" />

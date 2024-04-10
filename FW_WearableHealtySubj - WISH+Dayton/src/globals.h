@@ -232,7 +232,10 @@
 #define LOOKUP_DIM              6           /*!< Dimension of the current lookup table.*/
 #define PREREVISION_CYCLES      400000      /*!< Number of SoftHand Pro cycles before maintenance.*/    
 #define SAMPLES_FOR_EMG_HISTORY 600 /*!< Number of EMG history values ( 5 smpls/sec. x 120 secs = 600 smpls / channel ).*/
-//==============================================================================
+
+ #define NUM_OF_VT_ACTUATORS 2   
+    
+    //==============================================================================
 //                                                        structures definitions
 //==============================================================================
 
@@ -263,11 +266,6 @@ struct st_meas {
     int32 acc[NUM_OF_SENSORS];      /*!< Encoder rotational acceleration.*/
 };
 
-struct st_adc_meas {
-    int32 emg[NUM_OF_INPUT_EMGS];           /*!< EMG sensors values.*/
-    int32 add_emg[NUM_OF_ADDITIONAL_EMGS];  /*!< Additional EMG sensors values.*/
-    int32 joystick[NUM_OF_MOTORS];          /*!< Joystick measurements.*/
-};
 
 struct st_fb_meas {
     float pressure;                 /*!< Pressure sensor measurements.*/
@@ -290,87 +288,30 @@ struct st_data{
 /** \brief Usage counters structure
  *
 **/ 
-struct st_counters{
-    uint32  emg_act_counter[2];         /*!< Counter for EMG activation - both channels.*/                  //8
-    uint32  position_hist[10];          /*!< Positions histogram - 10 zones.*/                              //40
-    uint32  current_hist[4];            /*!< Current histogram - 4 zones.*/                                 //16
-    uint32  rest_counter;               /*!< Counter for rest position occurrences.*/                       //4
-    uint32  wire_disp;                  /*!< Counter for total wire displacement measurement.*/             //4
-    uint32  total_runtime;              /*!< Total time of system power (in seconds).*/                     //4
-    uint32  total_time_rest;            /*!< Total time of system while rest position is maintained.*/      //4    
-    uint32  power_cycles;               /*!< Number of times the board has benne switched on since reset.*/ //4
-    uint32  excessive_signal_activity[2];  /*!< Number of times the EMG signals saturate for a long time.*/ //8
-    uint32  motion_counter[2];          /*!< Counter for close/open motion.*/                               //8
-    uint8   unused_bytes[12];           /*!< Unused bytes to fill row.*/                                    //12
-};                                                                                                          // TOTAL: 112 bytes
 
 //=================================================     Device
 /** \brief Device related parameters structure
  *
 **/ 
 struct st_device{
-    uint8   id;                         /*!< Device id.*/                                                   //1    
-    uint8   hw_maint_date[3];           /*!< Date of last hardware maintenance.*/                           //3
-    uint8   stats_period_begin_date[3]; /*!< Date of begin of usage statistics period.*/                    //3
-    uint8   right_left;                 /*!< Right/Left hand.*/   	                                        //1
-    uint8   reset_counters;             /*!< Reset counters flag.*/                                         //1
-    uint8   use_2nd_motor_flag;         /*!< Use 2nd motor (2 powers).*/                                    //1
-    uint8   baud_rate;                  /*!< Baud Rate setted.*/                                            //1
-    uint8   user_id;                    /*!< User identificator (if usual user).*/                          //1
-    uint8   dev_type;                   /*!< Device type identificator.*/                                   //1
-    uint8   unused_bytes[3];            /*!< Unused bytes to fill row.*/                                    //3
-};                                                                                                          // TOTAL: 16 BYTES
+    uint8   id;    
+    uint8 baud_rate; /*!< Device id.*/  
+    uint8   unused_bytes[14];            /*!< Unused bytes to fill row.*/                                    //3
+}; 
 
 //=================================================     Motor
 /** \brief Motor related parameters structure
  *
 **/ 
-struct st_motor{
-    int32   k_p;                        /*!< Position controller proportional constant.*/                   //4
-    int32   k_i;                        /*!< Position controller integrative constant.*/                    //4
-    int32   k_d;                        /*!< Position controller derivative constant.*/                     //4
-    int32   k_p_c;                      /*!< Current controller proportional constant.*/                    //4
-    int32   k_i_c;                      /*!< Current controller integrative constant.*/                     //4
-    int32   k_d_c;                      /*!< Current controller derivative constant.*/                      //4 
-    int32   k_p_dl;                     /*!< Double loop position controller prop. constant.*/              //4
-    int32   k_i_dl;                     /*!< Double loop position controller integr. constant.*/            //4     
-    int32   k_d_dl;                     /*!< Double loop position controller deriv. constant.*/             //4
-    int32   k_p_c_dl;                   /*!< Double loop current controller prop. constant.*/               //4
-    int32   k_i_c_dl;                   /*!< Double loop current controller integr. constant.*/             //4
-    int32   k_d_c_dl;                   /*!< Double loop current controller deriv. constant.*/              //4     
-    uint8   activ;                      /*!< Startup activation.*/                                          //1
-    uint8   activate_pwm_rescaling;     /*!< Activation of PWM rescaling for 12V motor.*/                   //1
-    uint8   motor_driver_type;          /*!< Specify motor type.*/                                          //1
-    uint8   pos_lim_flag;               /*!< Position limit active/inactive.*/                              //1
+struct st_slave{    
+    
     int32   pos_lim_inf;                /*!< Inferior position limit for motor.*/                           //4     
-    int32   pos_lim_sup;                /*!< Superior position limit for motor[0].*/                           //4
-    int32   max_step_neg;               /*!< Maximum number of steps per cycle for negative positions.*/    //4
-    int32   max_step_pos;               /*!< Maximum number of steps per cycle for positive positions.*/    //4          
-    float   curr_lookup[LOOKUP_DIM];    /*!< Table of values to get estimated curr.*/                       //24
-    int16   current_limit;              /*!< Limit for absorbed current.*/                                  //2
+    int32   pos_lim_sup;                /*!< Superior position limit for motor[0].*/                           //4                           //2
     uint8   input_mode;                 /*!< Motor Input mode.*/                                            //1 
-    uint8   control_mode;               /*!< Motor Control mode.*/                                          //1
-    uint8   encoder_line;               /*!< Encoder line associated to the motor control.*/                //1
-    uint8   pwm_rate_limiter;           /*!< PWM rate limiter max asscoaited to the motor.*/                //1
-    uint8   not_revers_motor_flag;      /*!< Flag to know if the motor is reversible or not.*/              //1 
-    uint8   unused_bytes[13];           /*!< Unused bytes to fill row.*/                                    //13
-};                                                                                                          // TOTAL: 112 BYTES
+    uint8   res;//
+    uint8   unused_bytes[6];           /*!< Unused bytes to fill row.*/                                    //13
+};  
 
-//=================================================     Encoder
-/** \brief Encoder related parameters structure
- *
-**/ 
-struct st_encoder{
-    uint8   Enc_raw_read_conf[N_ENCODERS_PER_LINE_MAX]; /*!< Encoder configuration flags for raw reading.*/ //5
-    uint8   res[NUM_OF_SENSORS];        /*!< Angle resolution.*/                                            //3
-    int32   m_off[NUM_OF_SENSORS];      /*!< Measurement offset.*/                                          //12 
-    float32 m_mult[NUM_OF_SENSORS];     /*!< Measurement multiplier.*/                                      //12
-    uint8   double_encoder_on_off;      /*!< Double encoder ON/OFF.*/                                       //1
-    uint8   Enc_idx_use_for_control[NUM_OF_SENSORS]; /*!< Indices of encoder used for motor control.*/      //3
-    int8    motor_handle_ratio;         /*!< Discrete multiplier for handle device.*/                       //1
-    int8    gears_params[3];            /*!< Number of teeth of first and second gear and related invariant.*/  //3
-    uint8   unused_bytes[8];            /*!< Unused bytes to fill row.*/                                    //8
-};                                                                                                          // TOTAL: 48 BYTES
 
 //=================================================     EMG
 /** \brief EMG related parameters structure
@@ -380,71 +321,14 @@ struct st_emg{
     uint16  emg_threshold[NUM_OF_INPUT_EMGS]; /*!< Minimum value for activation of EMG control.*/           //4
     uint32  emg_max_value[NUM_OF_INPUT_EMGS]; /*!< Maximum value for EMG.*/                                 //8     
     uint8   emg_speed[NUM_OF_INPUT_EMGS];     /*!< Maximum closure speed when using EMG.*/                  //2    
-    uint8   emg_calibration_flag;       /*!< Enable emg calibration on startup.*/                           //1  
     uint8   switch_emg;                 /*!< EMG opening/closure switch.*/                                  //1
-};                                                                                                          // TOTAL: 16 BYTES                                                                                                         // TOTAL: 32 BYTES
-
-//=================================================     IMU
-/** \brief IMU related parameters structure
- *
-**/ 
-struct st_imu{
-    uint8   read_imu_flag;              /*!< Enable IMU reading feature.*/                                  //1
-    uint8   SPI_read_delay;             /*!< Delay on SPI reading.*/                                        //1
-    uint8   IMU_conf[N_IMU_MAX][NUM_OF_IMU_DATA];   /*!< IMUs configuration flags.*/                        //25
-    uint8   unused_bytes[5];            /*!< Unused bytes to fill row.*/                                    //5
-};                                                                                                          // TOTAL: 32 BYTES
-
-//=================================================     Expansion
-/** \brief Expansion board related parameters structure
- *
-**/ 
-struct st_expansion{
-    uint8   curr_time[6];               /*!< Current time from RTC (DD/MM/YY HH:MM:SS).*/                   //6 
-    uint8   read_exp_port_flag;         /*!< Enable Expansion Port.*/                                       //1
-    uint8   read_ADC_sensors_port_flag; /*!< Enable ADC sensors Port.*/                                     //1
-    uint8   ADC_conf[NUM_OF_ADC_CHANNELS_MAX];  /*!< ADC configuration flags.*/                             //12
-    uint8   record_EMG_history_on_SD;   /*!< Enable EMG recording on SD Card.*/                             //1
-    uint8   unused_bytes[11];           /*!< Unused bytes to fill row.*/                                    //11
-};                                                                                                          // TOTAL: 32 BYTES
-
-//=================================================     User
-/** \brief User related parameters structure
- *
-**/ 
-struct st_user{
-    char    user_code_string[8];        /*!< User code string.*/                                            //8
-    struct  st_emg user_emg;            /*!< st_emg structure to store user emg values.*/                   //16
-    uint8   unused_bytes[8];            /*!< Unused bytes to fill row.*/                                    //8
-};                                                                                                          // TOTAL: 32 BYTES
-
-//=================================================     SoftHand specific
-/** \brief SoftHand specific related parameters structure
- *
-**/ 
-struct st_SH_spec{
-    int32   rest_pos;                   /*!< Hand rest position while in EMG mode.*/                        //4
-    int32   rest_delay;                 /*!< Hand rest position delay while in EMG mode.*/                  //4
-    int32   rest_vel;                   /*!< Hand velocity closure for rest position reaching.*/            //4
-    uint8   rest_position_flag;         /*!< Enable rest position feature.*/                                //1
-    uint8   unused_bytes[3];            /*!< Unused bytes to fill row.*/                                    //3
-};                                                                                                          // TOTAL: 16 BYTES                                                                                                         // TOTAL: 80 BYTES
-
-//=================================================     Joystick specific
-/** \brief Joystick specific parameters structure
- *
-**/ 
-struct st_JOY_spec{
-    uint16  joystick_closure_speed;     /*!< Joystick closure speed.*/                                      //2 
-    int16   joystick_threshold;         /*!< Joystick threshold.*/                                          //2
-    uint16  joystick_gains[2];          /*!< Joystick measurements gains.*/                                 //4
-    uint8   unused_bytes[8];            /*!< Unused bytes to fill row.*/                                    //8
-};  
+    uint8   unused_bytes[1];           /*!< Unused bytes to fill row.*/                                    //13
+};    
 
 //=================================================     Master specific
 /** \brief Master mode specific parameters structure
  *
-**/ 
+**/
 struct st_MASTER_spec{
     uint8   master_mode_active;          /*!< Slave communication active flag.*/                             //1
     uint8   slave_ID;                   /*!< Slave ID.*/                                                    //1
@@ -455,8 +339,7 @@ struct st_MASTER_spec{
 /** \brief Feedback mode specific parameters structure
  *
 **/ 
-struct st_FB_spec{
-    
+struct st_FB_spec{    
     int32   max_residual_current;           /*!< Maximum slave residual current.*/                              //4
     float   maximum_pressure_kPa;           /*!< Maximum pressure for feedback (in kPa).*/                      //4
     float   prop_err_fb_gain;               /*!< Gain for proportional error fo rfeedback.*/                    //4
@@ -465,19 +348,6 @@ struct st_FB_spec{
     uint8   unused_bytes[2];                /*!< Unused bytes to fill row.*/                                    //2
 };                                                                                                          // TOTAL: 16 BYTES 
  
-struct st_ref_vibrotactile{
-    int16 pwm;
-};
-//=================================================     Wrist specific
-/** \brief Wrist specific parameters structure
- *
-**/ 
-struct st_WR_spec{
-    uint8   activation_mode;              /*!< Activation mode. Fast or slow activation for emg movement.*/ //1
-    uint16  fast_act_threshold[NUM_OF_INPUT_EMGS]; /*!< Minimum value for fast activation of EMG control.*/ //4
-    uint8   wrist_direction_association;           /*!< Wrist direction movement (CW or CCW).*/             //1
-    uint8   unused_bytes[10];                      /*!< Unused bytes to fill row.*/                         //10
-};                                                                                                          // TOTAL: 16 BYTES 
                                                                                                        // TOTAL: 16 BYTES 
 
 //-------------------------------------------- MEMORY VARIABLES ---------------------------------------------// 
@@ -486,28 +356,13 @@ struct st_WR_spec{
 **/ 
 // Since PSOC5 ARM memory is 4-bytes aligned, st_mem structure variables are not contiguous
 struct st_eeprom {
-    
     uint8  flag;                        /*!< If checked the device has been configured.*/                   //1 byte
     uint8  unused_bytes[15];            /*!< Leave bytes to align structures to memory rows.*/              //1 row     (End of row 1)
-    struct st_counters cnt;             /*!< Statistics Counters.*/                                         //6 rows    (End of row 7)
-    uint8  unused_bytes1[EEPROM_BYTES_ROW*EEPROM_AFTER_CNT_FREE_ROWS]; /*!< Rows free for further uses.*/   //3 rows    (End of row 10)
-    struct st_device dev;               /*!< Device information.*/                                          //1 row     (End of row 11)
-    struct st_motor motor[NUM_OF_MOTORS];       /*!< Motor variables.*/                                     //7*2 rows  (End of row 25)
-    struct st_encoder enc[N_ENCODER_LINE_MAX];  /*!< Encoder variables (1 line).*/                          //3*2 rows  (End of row 31)
-    struct st_emg emg;                  /*!< EMG variables.*/                                               //1 row     (End of row 32)
-    struct st_imu imu;                  /*!< IMU general variables.*/                                       //2 rows    (End of row 34)
-    struct st_expansion exp;            /*!< SD and ADC variables.*/                                        //2 rows    (End of row 36)  
-    struct st_user user[NUM_OF_USERS];  /*!< User variables.*/                                              //2*3 rows  (End of row 42)
-    
-    struct st_SH_spec SH;               /*!< SoftHand specific variables.*/                                 //1 row     (End of row 43)
-    struct st_JOY_spec JOY_spec;        /*!< Joystick specific variables.*/                                 //1 row     (End of row 44)
+    struct st_device dev;
+    struct st_slave SH_config;          /*!< Motor variables.*/                                     //7*2 rows  (End of row 25)
+    struct st_emg emg;                  /*!< EMG variables.*/                                               //1 row     (End of row 32)                               //1 row     (End of row 44)
     struct st_MASTER_spec MS;           /*!< Master specific variables.*/                                   //1 row     (End of row 45)
-    struct st_FB_spec FB;               /*!< Feedback specific variables.*/                                 //1 row     (End of row 46)
-    struct st_WR_spec WR;               /*!< Wrist specific variables.*/                                    //1 row     (End of row 47)
-
-    #ifdef GENERIC_FW
-    //struct st_CUFF_spec CUFF_spec;
-#endif    
+    struct st_FB_spec FB;               /*!< Feedback specific variables.*/                                 //1 row     (End of row 46) 
 };
 
 //=================================================     IMU variables
@@ -565,7 +420,7 @@ typedef enum {
 
 //====================================      external global variables definition
 
-extern struct st_ref_vibrotactile    g_ref_vibrotactile[NUM_OF_EXTERNAL_IMU];            /*!< Reference variables.*/
+
 extern struct st_ref    g_ref[NUM_OF_MOTORS], g_refNew[NUM_OF_MOTORS], g_refOld[NUM_OF_MOTORS], g_ref_Toast[NUM_OF_HAPTIC_ACTUATORS], g_refOld_Toast[NUM_OF_HAPTIC_ACTUATORS]; /*!< Reference variables.*/
 extern struct st_meas   g_meas[N_ENCODER_LINE_MAX], g_measOld[N_ENCODER_LINE_MAX];              /*!< Measurements.*/
 extern struct st_adc_meas g_adc_meas, g_adc_measOld;/*!< EMG Measurements.*/
@@ -610,7 +465,7 @@ extern uint8 change_ext_ref_flag;                   /*!< This flag is set when a
 extern CYBIT reset_PSoC_flag;                       /*!< This flag is set when a board fw reset is necessary.*/
 
 // ADC Buffer
-extern int16 ADC_buf[NUM_OF_ADC_CHANNELS_MAX];      /*! ADC measurements buffer (sizeof buffer equal to maximum number of ADC channels).*/
+extern int16 ADC_buf[3];      /*! ADC measurements buffer (sizeof buffer equal to maximum number of ADC channels).*/
 extern uint8 NUM_OF_ANALOG_INPUTS;                  /*! ADC currently configured channels.*/
 
 // PWM value
@@ -653,6 +508,83 @@ extern uint8 master_mode;               /*!< Flag used to set/unset master mode 
 // EMG HISTORY    
 extern uint16 emg_history[SAMPLES_FOR_EMG_HISTORY][NUM_OF_INPUT_EMGS];   /*!< EMG data with the history of last activity.*/
 extern uint32 emg_history_next_idx;    /*!< Vector index of last (newest) element.*/
+
+struct menu{
+    uint8 name;
+    uint8 reset;           /*!< Data buffer [CMD | DATA | CHECKSUM].*/
+    const char* choice[10];
+};
+
+struct parameter{
+    uint8* VAR_P;            /*!< Data buffer [CMD | DATA | CHECKSUM].*/
+    uint8 TYPES;                 /*!< Data buffer length.*/
+    uint8 NUM_ITEMS;                    /*!< Data buffer index.*/
+    const char* PARAM_STR;                  /*!< Data buffer flag to see if the data is ready.*/
+    uint8 MENU;
+    uint8 NUM_STR;
+    uint8 custom;
+};
+//=================================================     filter variables
+/** \brief Filter structure
+ *
+**/ 
+
+extern const struct menu MENU_LIST[];
+extern struct parameter param_type;
+extern const struct parameter PARAM_LIST[];
+extern struct menu menu_type;
+// -----------------------------------------------------------------------------
+
+extern int32 SH_ref, SH_refOld, SH_refNew ;                          /*!< Motor position reference for SH.*/
+extern uint8 VT_ref[NUM_OF_VT_ACTUATORS], VT_refOld[NUM_OF_VT_ACTUATORS], VT_refNew[NUM_OF_VT_ACTUATORS];
+extern uint8 Pump_ref, Pump_refOld, Pump_refNew ;
+extern uint8 ValveState, ValveStateOld,ValveStateNew;
+extern int16 PWM_IMU_1;     
+extern int16 PWM_IMU_2;  
+
+
+struct st_adc_meas {
+    int32 emg[NUM_OF_INPUT_EMGS];           /*!< EMG sensors values.*/
+    float pressure;  /*!< Additional EMG sensors values.*/   
+};
+
+
+// ADC Buffer
+
+extern uint8 NUM_OF_ANALOG_INPUTS;                  /*! ADC currently configured channels.*/
+
+
+
+extern int32 SH_ref, SH_refOld, SH_refNew ;                          /*!< Motor position reference for SH.*/
+extern uint8 VT_ref[NUM_OF_VT_ACTUATORS], VT_refOld[NUM_OF_VT_ACTUATORS], VT_refNew[NUM_OF_VT_ACTUATORS];
+extern uint8 Pump_ref, Pump_refOld, Pump_refNew ;
+extern uint8 ValveState, ValveStateOld,ValveStateNew;
+
+extern struct st_data   g_rx;                       /*!< Incoming/Outcoming data.*/
+extern CYBIT interrupt_flag;                        /*!< Interrupt flag enabler.*/
+extern CYBIT reset_PSoC_flag;                       /*!< This flag is set when a board fw reset is necessary.*/
+extern int32 flag_master;
+extern uint8 master_mode;   
+extern int32 pressure_value; /*!< Flag used to set/unset master mode to send messages to other boards.*/
+extern struct st_eeprom g_mem, c_mem;               /*!< Memory parameters.*/
+extern struct st_adc_meas g_adc_meas, g_adc_measOld;/*!< EMG Measurements.*/
+extern uint16 timer_value;                          /*!< End time of the firmware main loop.*/
+extern uint16 timer_value0;                         /*!< Start time of the firmware main loop.*/
+extern float cycle_time;							/*!< Variable used to calculate how much time a cycle takes.*/
+
+// PWM value
+extern int8 pwm_sign[NUM_OF_VT_ACTUATORS];                /*!< Sign of pwm driven. Used to obtain current sign.*/
+
+
+//=================================================     filter variables
+/** \brief Filter structure
+ *
+**/ 
+
+extern const struct menu MENU_LIST[];
+extern struct parameter param_type;
+extern const struct parameter PARAM_LIST[];
+extern struct menu menu_type;
 
 // -----------------------------------------------------------------------------
 extern int16 PWM_IMU_1;     

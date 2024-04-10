@@ -61,9 +61,6 @@
 #include "globals.h"
 #include "interruptions.h"
 #include "command_processing.h"
-#include "IMU_functions.h"
-
-#include "SD_RTC_functions.h"
 #include "utils.h"
 #include "project.h"
 #include "FS.h"
@@ -92,11 +89,6 @@ int main()
     FTDI_ENABLE_Write(0x01);
     
 	// LED Enable   
-    LED_control(1);     // Green fixed light
-    BLINK_05HZ_Start();
-    BLINK_25HZ_Start();
-    BLINK_05HZ_WriteCompare(499);
-    BLINK_25HZ_WriteCompare(99);
     
     // RS485
     UART_RS485_Stop();
@@ -110,13 +102,7 @@ int main()
     CYCLES_TIMER_Start();
     ISR_CYCLES_StartEx(ISR_CYCLES_Handler);
     
-    // PWM
-    PWM_MOTORS_Start();
-    PWM_MOTORS_WriteCompare1(0);
-    MOTOR_DIR_1_Write(0);
-    enable_motor(0, 0x00);
-    MOTOR_DIR_2_Write(0);
-    enable_motor(1, 0x00);
+    
     
     PWM_VT_Start();
     PWM_VT_WriteCompare1(0);
@@ -148,28 +134,7 @@ int main()
 
 
     //SPI IMU module
-    if (c_mem.imu.read_imu_flag) {
-/*
-    	SPI_IMU_Start();
-    	SPI_IMU_Init();
-    	SPI_IMU_Enable();
-    	SPI_IMU_ClearRxBuffer();
-    	SPI_IMU_ClearTxBuffer();
-    	SPI_IMU_ClearFIFO();							
-        CyDelay(10);
-        
-        // Init MPU9250 devices
-        InitIMUgeneral();
-        
-        // Initialize quaternion
-        for (i = 0; i<N_IMU_MAX; i++) {
-            Quat[i][0] = 0.999;
-            Quat[i][1] = 0.01;
-            Quat[i][2] = 0.01;
-            Quat[i][3] = 0.01;
-        }
-   */ }
-    
+   
     //========================================     initializations - clean variables
     
     //---------------------------------------------------  Initialize filters structure 
@@ -208,8 +173,7 @@ int main()
     //---------------------------------------------------  Initialize emg structure
     g_adc_meas.emg[0] = 0;
     g_adc_meas.emg[1] = 0;
-    g_adc_meas.joystick[0] = 0;
-    g_adc_meas.joystick[1] = 0;
+   
     for (uint16 k = 0; k<SAMPLES_FOR_EMG_HISTORY; k++){
         for (j = 0; j<NUM_OF_INPUT_EMGS; j++){
             emg_history[k][j] = (uint16)0;
@@ -219,33 +183,6 @@ int main()
     
     set_motor_driver_type();
     
-    for (i = 0; i< NUM_OF_MOTORS; i++) {
-        if (c_mem.emg.emg_calibration_flag) {
-            if ((c_mem.motor[i].input_mode == INPUT_MODE_EMG_PROPORTIONAL) ||
-                (c_mem.motor[i].input_mode == INPUT_MODE_EMG_INTEGRAL) ||
-                (c_mem.motor[i].input_mode == INPUT_MODE_EMG_FCFS) ||
-                (c_mem.motor[i].input_mode == INPUT_MODE_EMG_FCFS_ADV) ||
-                (c_mem.motor[i].input_mode == INPUT_MODE_EMG_PROPORTIONAL_NC))
-                g_ref[i].onoff = 0x00;
-            else
-                g_ref[i].onoff = c_mem.motor[i].activ;
-        } 
-        else
-            g_ref[i].onoff = c_mem.motor[i].activ;
-
-        if (!g_mem.enc[g_mem.motor[i].encoder_line].double_encoder_on_off) {
-            g_ref[i].onoff = c_mem.motor[i].activ;                          // Initialize Activation.
-        } 
-        else {
-            // Do not activate motor until position reconstruction has finished
-            g_ref[i].onoff = 0x00;
-        }
-        enable_motor(i, g_ref[i].onoff); 
-        
-        dev_pwm_limit[i] = dev_pwm_sat[i];              // Init PWM limit.
-	
-        pow_tension[i] = 12000;                         // 12000 mV (12 V)
-    }
     
     tension_valid = FALSE;                              // Init tension_valid BIT.
 
@@ -260,8 +197,7 @@ int main()
     //------------------------------------------------- Initialize rest position variables    
 	rest_enabled = 0;
     forced_open = 0;
-    
-    LED_control(5);     // Default - red light
+     LED_CONTROL_Write(1);     // Default - red light
     
 #ifdef MASTER_FW
     master_mode = 1;    // Default - activate master mode at startup
@@ -269,17 +205,6 @@ int main()
 
     //============================================================    check if maintenance is due
 
-    if ( (g_mem.cnt.wire_disp/(((g_mem.motor[0].pos_lim_sup>>g_mem.enc[0].res[0]) - (g_mem.motor[0].pos_lim_inf>>g_mem.enc[0].res[0]))*2)) > (uint32)(PREREVISION_CYCLES/2) )   // 50 %
-        maintenance_flag = TRUE;    
-
-    if (g_mem.exp.read_exp_port_flag == EXP_SD_RTC) {
-        
-        store_RTC_current_time();
-        
-        // SD file
-        InitSD_FS();
-    }
-    
     //============================================================     main loop
     
     // All peripherals has started, now it is ok to start communication
@@ -287,7 +212,7 @@ int main()
 
     for(;;)
 
-    {             
+    {         
         // Put the FF reset pin to LOW
         RESET_FF_Write(0x00);
 

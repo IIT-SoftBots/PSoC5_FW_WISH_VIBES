@@ -63,6 +63,44 @@
  * \{
 **/
 
+//==============================================    custom parameters
+enum custom_param {    
+    CUSTOM_POS_PID          = 1,
+    CUSTOM_CURR_PID         = 2,
+    CUSTOM_INPUT            = 3,  
+    CUSTOM_MEAS_OFF         = 4,
+    CUSTOM_POS_LIM          = 5,
+    CUSTOM_REST_POS         = 6,
+    CUSTOM_REST_POS_DELAY   = 7,
+    CUSTOM_HAND_SIDE        = 8,
+    CUSTOM_RESET_COUNT      = 9,
+    CUSTOM_LAST_CHECKED_t   = 10,
+    CUSTOM_DRIVER           = 11, 
+    CUSTOM_POS_PID_2        = 12,
+    CUSTOM_CURR_PID_2       = 13,
+    CUSTOM_INPUT_2          = 14,  
+    CUSTOM_MEAS_OFF_2       = 15,
+    CUSTOM_POS_LIM_2        = 16,
+    CUSTOM_DRIVER_2         = 17,
+    CUSTOM_DEV_TYPE         = 18    
+};
+
+//==============================================    menu name enumeration
+
+enum menu_type {    
+    MENU_INPUT      = 1,   
+    MENU_CTRL       = 2,
+    MENU_Y_N        = 3,
+    MENU_R_L        = 4,
+    MENU_ON_OFF     = 5,
+    MENU_EXP        = 6,  
+    MENU_SPI        = 7,
+    MENU_USER       = 8,
+    MENU_DRIVER     = 9, 
+    MENU_DEVICE     = 10,
+    MENU_FSM        = 11,
+    MENU_WRIST      = 12
+};
 enum SH_command
 {
 

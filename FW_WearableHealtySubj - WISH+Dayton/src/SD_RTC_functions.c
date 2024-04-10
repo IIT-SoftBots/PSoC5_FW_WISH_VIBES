@@ -105,137 +105,17 @@ void shiftOut_RTC(uint8 val)
 }
 
 void store_RTC_current_time(){
-    uint8 rtc_data;
     
-    // Update current time
-    rtc_data = DS1302_read(DS1302_DATE_RD);
-    g_mem.exp.curr_time[0] = (rtc_data/16) * 10 + rtc_data%16;
-    rtc_data = DS1302_read(DS1302_MONTH_RD);
-    g_mem.exp.curr_time[1] = (rtc_data/16) * 10 + rtc_data%16;
-    rtc_data = DS1302_read(DS1302_YEAR_RD);
-    g_mem.exp.curr_time[2] = (rtc_data/16) * 10 + rtc_data%16;
-
-
-    rtc_data = DS1302_read(DS1302_HOUR_RD);
-    g_mem.exp.curr_time[3] = (rtc_data/16) * 10 + rtc_data%16;
-    rtc_data = DS1302_read(DS1302_MINUTES_RD);
-    g_mem.exp.curr_time[4] = (rtc_data/16) * 10 + rtc_data%16;
-    rtc_data = DS1302_read(DS1302_SECONDS_RD);
-    g_mem.exp.curr_time[5] = (rtc_data/16) * 10 + rtc_data%16;
 }
 
 void set_RTC_time(){
-    DS1302_write(DS1302_DATE_WR, (((g_mem.exp.curr_time[0] / 10)*16) + (g_mem.exp.curr_time[0] % 10)));
-    DS1302_write(DS1302_MONTH_WR, (((g_mem.exp.curr_time[1] / 10)*16) + (g_mem.exp.curr_time[1] % 10)));
-    DS1302_write(DS1302_YEAR_WR, (((g_mem.exp.curr_time[2] / 10)*16) + (g_mem.exp.curr_time[2] % 10)));
-    DS1302_write(DS1302_HOUR_WR, (((g_mem.exp.curr_time[3] / 10)*16) + (g_mem.exp.curr_time[3] % 10)));
-    DS1302_write(DS1302_MINUTES_WR, (((g_mem.exp.curr_time[4] / 10)*16) + (g_mem.exp.curr_time[4] % 10)));
-    DS1302_write(DS1302_SECONDS_WR, (((g_mem.exp.curr_time[5] / 10)*16) + (g_mem.exp.curr_time[5] % 10)));
-}
+   }
 
 /*******************************************************************************
 * Function Name: Init SD Filesystem
 *********************************************************************************/
 void InitSD_FS()
-{
-    //char sdFile[12] = "";              // No long file name (LFN) support enabled. Max 12 chars for file name
-
-    char sdDir[100] = "";
-    char lastsdParam[100] = "";
-    char info_[2500] = "";
-    char info_read_[2500] = "";
-    char Data_filename[10] = "UseStats";
-    char Param_filename[7] = "Param";
-    uint8 Write_new_info = TRUE;
-    uint8 num_files = 0;
-    FS_FILE* pParam;
-    FS_FILE* pFile_read;
-    FS_DIR *pDir;
-    uint32 i = 0;
-    
-    FS_Init();
-    FS_FAT_SupportLFN();
-        
-    // Create Filesystem with USER\YYYY\MM\DD folder
-    sprintf(sdDir, "\\%s", g_mem.user[g_mem.dev.user_id].user_code_string); 
-    FS_MkDir(sdDir);
-    sprintf(sdDir, "%s\\20%02d", sdDir, g_mem.exp.curr_time[2]); 
-    FS_MkDir(sdDir);
-    sprintf(sdDir, "%s\\%02d", sdDir, g_mem.exp.curr_time[1]);
-    FS_MkDir(sdDir);
-    sprintf(sdDir, "%s\\%02d", sdDir, g_mem.exp.curr_time[0]);
-    FS_MkDir(sdDir);
-    
-    // Create param info
-    prepare_SD_param_info(info_);
-            
-    // Open folder and count the number of files, it should be even (1 param and 1 data file)
-    pDir = FS_OpenDir(sdDir);
-    num_files = FS_GetNumFiles(pDir);    
-
-    // Prepare filenames
-
-    if (num_files != 0) {
-        // The directory is not empty
-         
-        // Decide whether to create new param and data files or not
-        sprintf(lastsdParam, "%s\\%s_%d.csv", sdDir, Param_filename, (num_files/2) - 1);
-
-        pFile_read = FS_FOpen(lastsdParam, "r"); 
-        if (pFile_read != 0) {
-            i = FS_FRead(info_read_, 1, sizeof(info_read_) - 1, pFile_read);
-            info_read_[i] = 0;
-            if (strcmp(info_, info_read_)) {    // if different
-                Write_new_info = TRUE;
-                sprintf(sdParam, "%s\\%s_%d.csv", sdDir, Param_filename, num_files/2);  // new param filename
-                sprintf(sdFile, "%s\\%s_%d.csv", sdDir, Data_filename, num_files/2);    // new data filename
-            }
-            else {
-                sprintf(sdParam, "%s\\%s_%d.csv", sdDir, Param_filename, (num_files/2)-1);  // last param filename
-                sprintf(sdFile, "%s\\%s_%d.csv", sdDir, Data_filename, (num_files/2)-1);    // last data filename
-                Write_new_info = FALSE;
-            }
-        }
-        FS_FClose(pFile_read);
-    } 
-    else {
-        // The directory is empty
-        sprintf(sdParam, "%s\\%s_%d.csv", sdDir, Param_filename, 0);  // first param filename
-        sprintf(sdFile, "%s\\%s_%d.csv", sdDir, Data_filename, 0);    //first data filename
-        Write_new_info = TRUE;
-    } 
-    FS_CloseDir(pDir);
-    
-    // Write chosen data in SD card        
-    if (Write_new_info) {            
-        pParam = FS_FOpen(sdParam, "a");
-        //info_ string has been already created
-        FS_Write(pParam, info_, strlen(info_));
-        FS_FClose(pParam);
-    }
-    
-    // Open chosen data file in append mode
-    pFile = FS_FOpen(sdFile, "a");
-    if (Write_new_info) { 
-        // The file doesn't exist, so write legend info inside
-        prepare_SD_legend(info_);
-        FS_Write(pFile, info_, strlen(info_));
-    }
-    //FS_FClose(pFile); 
-     
-    // Open file for EMG History in write mode (create it if it does not exist)
-    if (c_mem.exp.record_EMG_history_on_SD){
-        pEMGHFile = FS_FOpen(sdEMGHFile, "w");
-        prepare_SD_EMG_History_legend(info_);
-        FS_Write(pEMGHFile, info_, strlen(info_));
-    }
-    
-    //Write updated data on R01 project
-    FS_FILE* pR01File = FS_FOpen(sdR01File, "w");
-    prepare_R01_info(info_);
-    FS_Write(pR01File, info_, strlen(info_));
-    FS_FClose(pR01File);
-}
+{}
 
 /*******************************************************************************
 * Function Name: Write SD Param File

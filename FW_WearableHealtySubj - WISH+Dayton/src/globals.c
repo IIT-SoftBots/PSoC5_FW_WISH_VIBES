@@ -47,7 +47,29 @@
 
 //=============================================      global variables definition
 
-struct st_ref_vibrotactile g_ref_vibrotactile[NUM_OF_EXTERNAL_IMU];
+
+ int32 SH_ref, SH_refOld, SH_refNew ;                          /*!< Motor position reference for SH.*/
+ uint8 VT_ref[NUM_OF_VT_ACTUATORS], VT_refOld[NUM_OF_VT_ACTUATORS], VT_refNew[NUM_OF_VT_ACTUATORS];
+ uint8 Pump_ref, Pump_refOld, Pump_refNew ;
+ uint8 ValveState,ValveStateOld,ValveStateNew;;
+
+int16 ADC_buf[3];     /*! ADC measurements buffer.*/
+uint8 NUM_OF_ANALOG_INPUTS = 3;             /*! ADC currently configured channels.*/
+struct st_eeprom    g_mem, c_mem;               // Memory variables.
+ struct st_adc_meas g_adc_meas, g_adc_measOld;/*!< EMG Measurements.*/
+int32 pressure_value;
+CYBIT interrupt_flag = FALSE;               /*!< Interrupt flag enabler.*/
+int32 flag_master;
+uint8 master_mode;               /*!< Flag used to set/unset master mode to send messages to other boards.*/
+ uint16 timer_value;                          /*!< End time of the firmware main loop.*/
+ uint16 timer_value0;                         /*!< Start time of the firmware main loop.*/
+ float cycle_time;							/*!< Variable used to calculate how much time a cycle takes.*/
+struct st_data      g_rx;                       // Income data.
+ int16 PWM_IMU_1;     
+ int16 PWM_IMU_2;  
+CYBIT reset_PSoC_flag = FALSE;              /*!< This flag is set when a board fw reset is necessary.*/
+
+
 struct st_ref       g_ref[NUM_OF_MOTORS], g_refNew[NUM_OF_MOTORS], g_refOld[NUM_OF_MOTORS], g_ref_Toast[NUM_OF_HAPTIC_ACTUATORS], g_refOld_Toast[NUM_OF_HAPTIC_ACTUATORS];  // Motor reference variables.
 struct st_meas      g_meas[N_ENCODER_LINE_MAX], g_measOld[N_ENCODER_LINE_MAX];          // Measurements.
 struct st_adc_meas  g_adc_meas, g_adc_measOld;  // EMG Measurements.
@@ -85,7 +107,7 @@ adc_status CYDATA joy_LR_status = RESET;        /*!< Joystick LEFT/RIGHT status.
 // Bit Flag
 CYBIT reset_last_value_flag[N_ENCODER_LINE_MAX]; /*!< This flag is set when the encoders last values must be resetted.*/
 CYBIT tension_valid;                        /*!< Tension validation bit.*/
-CYBIT interrupt_flag = FALSE;               /*!< Interrupt flag enabler.*/
+
 CYBIT cycles_interrupt_flag = FALSE;        /*!< Cycles timer interrupt flag enabler.*/
 uint8 maintenance_flag = FALSE;             /*!< Maintenance flag.*/
 CYBIT can_write = TRUE;                     /*!< Write to EEPROM flag.*/
@@ -93,11 +115,11 @@ uint8 rest_enabled;                         /*!< Rest position flag.*/
 uint8 forced_open;                          /*!< Forced open flag (used in position with rest position control).*/                               
 uint8 battery_low_SoC = FALSE;              /*!< Battery low State of Charge flag (re-open terminal device when active).*/
 uint8 change_ext_ref_flag = FALSE;          /*!< This flag is set when an external reference command is received.*/
-CYBIT reset_PSoC_flag = FALSE;              /*!< This flag is set when a board fw reset is necessary.*/
+
 
 // ADC Buffer
-int16 ADC_buf[NUM_OF_ADC_CHANNELS_MAX];     /*! ADC measurements buffer.*/
-uint8 NUM_OF_ANALOG_INPUTS = 4;             /*! ADC currently configured channels.*/
+
+
 
 // PWM value
 int8 pwm_sign[NUM_OF_MOTORS];               /*!< Sign of pwm driven. Used to obtain current sign.*/

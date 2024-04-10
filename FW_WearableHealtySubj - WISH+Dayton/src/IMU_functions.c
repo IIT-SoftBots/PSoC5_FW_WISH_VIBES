@@ -591,6 +591,7 @@ uint8 ReadControlRegisterIMU(uint8 address){
 	controlreg = SPI_IMU_ReadByte();        //real data
 	return controlreg;
     */
+    return 0;
 }
 
 /*******************************************************************************
