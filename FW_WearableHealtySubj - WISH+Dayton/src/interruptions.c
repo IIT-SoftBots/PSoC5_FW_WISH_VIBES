@@ -267,7 +267,6 @@ void interrupt_manager(){
 
 void function_scheduler(void) {
       
-
     MY_TIMER_REG_Write(0x00);
     timer_value0 = (uint32)MY_TIMER_ReadCounter();/*
     // Start ADC Conversion, SOC = 1
@@ -399,7 +398,7 @@ void function_scheduler(void) {
    
    
     //---------------------------------- Update States
-    
+*/    
     // Load k-1 state
     memcpy( &g_adc_measOld, &g_adc_meas, sizeof(g_adc_meas) );
     memcpy( &SH_refOld, &SH_ref, sizeof(SH_ref) );
@@ -415,7 +414,7 @@ void function_scheduler(void) {
         interrupt_flag = FALSE;
         interrupt_manager();
     }
-*/
+
     timer_value = (uint16)MY_TIMER_ReadCounter();
     cycle_time = ((float)(timer_value0 - timer_value)/1000000.0);
     MY_TIMER_REG_Write(0x01);   // reset timer

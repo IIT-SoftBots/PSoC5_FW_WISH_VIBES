@@ -529,7 +529,7 @@ void manage_param_list(uint16 index, uint8 sendToDevice) {
     const struct parameter PARAM_LIST[]=
     {
     //  {VAR_P                                              , TYPES           , NUM_ITEMS , PARAM_STR                               , MENU,         , STRUCTURE         , CUSTOM            }
-        {(uint8*)&(MEM_P->dev.id)                         , TYPE_UINT8      , 1         , "Device ID:"                            , 0             , ST_DEVICE         , 0                 },      
+        {(uint8*)&(MEM_P->dev.id)                           , TYPE_UINT8      , 1         , "Device ID:"                            , 0             , ST_DEVICE         , 0                 },      
         {(uint8*)&(MEM_P->emg.emg_threshold[0])             , TYPE_UINT16     , 2         , "EMG thresholds:"                       , 0             , ST_EMG            , 0                 },
         {(uint8*)&(MEM_P->emg.emg_max_value[0])             , TYPE_UINT32     , 2         , "EMG max values:"                       , 0             , ST_EMG            , 0                 },
         {(uint8*)&(MEM_P->emg.emg_speed[0])                 , TYPE_UINT8      , 2         , "EMG max speeds:"                       , 0             , ST_EMG            , 0                 },
@@ -574,7 +574,7 @@ void manage_param_list(uint16 index, uint8 sendToDevice) {
             set_custom_param(PARAM_IDX, PARAM_LIST);
         }
         
-        
+       
         // Perform chip reset if needed
         for (i=0; i< NUM_MENUs;i++){
             if ((MENU_LIST[i].name == PARAM_LIST[PARAM_IDX].MENU) & (MENU_LIST[i].reset == TRUE)){
@@ -1045,7 +1045,7 @@ uint8 memInit(void)
     
     // MASTER_SLAVE STRUCT
     g_mem.MS.master_mode_active = FALSE;
-    g_mem.MS.master_mode_active = 1;
+    
     
     //FEEDBACK STRUCT
     g_mem.FB.max_residual_current = 450;
@@ -1053,6 +1053,9 @@ uint8 memInit(void)
     g_mem.FB.prop_err_fb_gain = 1.0;
     g_mem.FB.vibrotactile_feedback_active = FALSE;
     g_mem.FB.airchamber_feedback_active = FALSE;
+    
+    // set the initialized flag to show EEPROM has been populated
+    g_mem.flag = TRUE;
     
     //write that configuration to EEPROM
     return ( memStore(0) && memStore(DEFAULT_EEPROM_DISPLACEMENT) );}
@@ -1244,7 +1247,37 @@ void cmd_get_inputs(){
 }
 
 void cmd_store_params(){
-  
+    
+    uint8 CYDATA packet_length = 2;
+    uint8 CYDATA packet_data[2];
+    uint8 CYDATA old_id;
+      
+    // Store params 
+
+    if (c_mem.dev.id != g_mem.dev.id) {     //If a new id is going to be set we will lose communication 
+        old_id = c_mem.dev.id;          //after the memstore(0) and the ACK won't be recognised
+        if(memStore(0)) {
+            packet_data[0] = ACK_OK;
+            packet_data[1] = ACK_OK;
+            commWrite_old_id(packet_data, packet_length, old_id);
+        }    
+        else{
+            packet_data[0] = ACK_ERROR;
+            packet_data[1] = ACK_ERROR;
+            commWrite_old_id(packet_data, packet_length, old_id);
+        }
+    }    
+    else {
+        if(memStore(0))
+            sendAcknowledgment(ACK_OK);
+        else
+            sendAcknowledgment(ACK_ERROR);
+    }
+    
+    // FW reset (if necessary)
+    if (reset_PSoC_flag == TRUE) {
+        CySoftwareReset();
+    }
 }
 
 void cmd_get_emg(){
