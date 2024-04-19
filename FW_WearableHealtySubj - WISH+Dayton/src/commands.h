@@ -87,7 +87,8 @@ enum custom_param {
 
 //==============================================    menu name enumeration
 
-enum menu_type {    
+enum menu_type {
+    MENU_NO_MENU    = 0,
     MENU_INPUT      = 1,   
     MENU_CTRL       = 2,
     MENU_Y_N        = 3,

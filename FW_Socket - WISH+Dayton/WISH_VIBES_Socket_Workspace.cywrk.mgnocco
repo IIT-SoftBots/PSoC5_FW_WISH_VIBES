@@ -372,6 +372,10 @@
 <Unloaded />
 <OpenDocs>
 <name v=".\src\interruptions.c" />
+<name v=".\src\command_processing.c" />
+<name v=".\src\command_processing.h" />
+<name v=".\src\globals.h" />
+<name v=".\src\main.c" />
 </OpenDocs>
 <OpenDocsLayout><![CDATA[<?xml version="1.0"?><!--
 
@@ -379,7 +383,7 @@
   Copyright (c) 2001-2016 Actipro Software LLC.  All rights reserved.
   http://www.actiprosoftware.com
 
---><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="1219, 468" SelectedTabbedMdiWindow="5d4c508c-f784-47dc-a049-ddd1febdca08"><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="e6c53592-2600-47bd-bb84-e80a1b9fa9d1" /><DocumentWindow Key="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_Socket - WISH+Dayton\src\interruptions.c" Guid="5d4c508c-f784-47dc-a049-ddd1febdca08" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
+--><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="1327, 610" SelectedTabbedMdiWindow="d91e1d71-fb9c-4cc6-be63-e0af5ecd4efc"><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="e6c53592-2600-47bd-bb84-e80a1b9fa9d1" /><DocumentWindow Key="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_Socket - WISH+Dayton\src\interruptions.c" Guid="5d4c508c-f784-47dc-a049-ddd1febdca08" /><DocumentWindow Key="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_Socket - WISH+Dayton\src\command_processing.c" Guid="d91e1d71-fb9c-4cc6-be63-e0af5ecd4efc" /><DocumentWindow Key="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_Socket - WISH+Dayton\src\command_processing.h" Guid="50c3a128-95cf-4094-8282-2871845dcfae" /><DocumentWindow Key="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_Socket - WISH+Dayton\src\globals.h" Guid="c34c85c9-3163-4c54-b871-f1ff14dd8842" /><DocumentWindow Key="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_Socket - WISH+Dayton\src\main.c" Guid="9ba34394-c3a6-4274-88ed-d77b9c6db29c" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
 <config v="Release" />
 <AutoUpdate v="true" />
 </CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21>

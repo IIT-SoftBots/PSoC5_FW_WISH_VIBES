@@ -129,4 +129,7 @@ uint32 emg_history_next_idx;    /*!< Vector index of last (newest) element.*/
 
  int16 PWM_IMU_1 = 0;     
  int16 PWM_IMU_2 = 0; 
+ char superstring[2500]= "";
+
+
 /* END OF FILE */

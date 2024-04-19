@@ -323,6 +323,7 @@ struct parameter{
     uint8 MENU;
     uint8 NUM_STR;
     uint8 custom;
+    uint8 ping;
 };
 //=================================================     filter variables
 /** \brief Filter structure
@@ -389,6 +390,9 @@ extern struct menu menu_type;
 // -----------------------------------------------------------------------------
 extern int16 PWM_IMU_1;     
 extern int16 PWM_IMU_2;  
+ 
+extern char superstring[2500];
+
 #endif
 
 //[] END OF FILE

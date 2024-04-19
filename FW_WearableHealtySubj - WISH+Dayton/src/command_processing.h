@@ -75,7 +75,7 @@
  * \param 	info_string 	An array of chars containing the requested information.
 **/
 void    prepare_generic_info(char *info_string);
-
+void    qbadminp_string(uint8 n_param, uint8 n_menus ,const struct parameter P[] ,const struct menu M[]);
 //============================================================  prepare_counter_info
 /** This function is used to prepare an information string about the cycles counter
  *  of the hand.

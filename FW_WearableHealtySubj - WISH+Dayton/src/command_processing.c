@@ -367,22 +367,18 @@ void infoGet(uint16 info_type) {
 //==============================================================================
 
 void get_param_list ( uint8 num_params, uint8 num_menus, const struct parameter PARAM_LIST[], const struct menu MENU_LIST[], uint8  sendToDevice){
-    //Auxiliary variables
-    uint8 CYDATA idx = 0;       //Parameter number
+    
+    uint8 CYDATA idx = 0;      
     uint8* m_addr = (uint8*)PARAM_LIST[0].VAR_P;
     uint8 CYDATA string_length;
     char CYDATA aux_str[250] = "";
     char CYDATA aux_str1[250] = ""; 
-    
     
     int32 aux_int32;
     uint8 i, j;
     uint8 count;
     char aux_char[50];
     
-    
-    
-
     uint16 packet_length = PARAM_BYTE_SLOT*num_params + PARAM_MENU_SLOT*num_menus + PARAM_BYTE_SLOT;
     uint8 packet_data[packet_length];
     for (int ii = 0; ii < packet_length; ii++) packet_data[ii] = 0;
@@ -524,33 +520,39 @@ void manage_param_list(uint16 index, uint8 sendToDevice) {
         
     uint8 NUM_MENUs = sizeof(MENU_LIST)/sizeof(menu_type);  
     
-    struct parameter param_type;
+    struct parameter param_type;   
     
     const struct parameter PARAM_LIST[]=
     {
-    //  {VAR_P                                              , TYPES           , NUM_ITEMS , PARAM_STR                               , MENU,         , STRUCTURE         , CUSTOM            }
-        {(uint8*)&(MEM_P->dev.id)                           , TYPE_UINT8      , 1         , "Device ID:"                            , 0             , ST_DEVICE         , 0                 },      
-        {(uint8*)&(MEM_P->emg.emg_threshold[0])             , TYPE_UINT16     , 2         , "EMG thresholds:"                       , 0             , ST_EMG            , 0                 },
-        {(uint8*)&(MEM_P->emg.emg_max_value[0])             , TYPE_UINT32     , 2         , "EMG max values:"                       , 0             , ST_EMG            , 0                 },
-        {(uint8*)&(MEM_P->emg.emg_speed[0])                 , TYPE_UINT8      , 2         , "EMG max speeds:"                       , 0             , ST_EMG            , 0                 },
-        {(uint8*)&(MEM_P->emg.switch_emg)                   , TYPE_FLAG       , 1         , "EMG inversion:"                        , MENU_Y_N      , ST_EMG            , 0                 },
-        {(uint8*)&(MEM_P->MS.master_mode_active)            , TYPE_FLAG       , 1         , "Master Mode:"                          , MENU_ON_OFF   , ST_MS_SPEC        , 0                 }, 
-        {(uint8*)&(MEM_P->MS.slave_ID)                      , TYPE_UINT8      , 1         , "Slave ID:"                             , 0             , ST_MS_SPEC        , 0                 }, 
-        {(uint8*)&(MEM_P->SH_config.res)                    , TYPE_UINT8      , 1         , "Slave resolution:"                     , 0             , ST_MS_SPEC        , 0                 }, 
-        {(uint8*)&(MEM_P->SH_config.input_mode)             , TYPE_FLAG       , 1         , "Input mode:"                           , MENU_INPUT    , ST_MS_SPEC        , CUSTOM_INPUT      },
-        {(uint8*)&(MEM_P->SH_config.pos_lim_inf)            , TYPE_INT32      , 2         , "Pos. limits [inf, sup]:"               , 0             , ST_MS_SPEC        , CUSTOM_POS_LIM    },      
-        {(uint8*)&(MEM_P->FB.vibrotactile_feedback_active)  , TYPE_FLAG       , 1         , "Vibrotactile Feedback:"                , MENU_ON_OFF   , ST_MS_SPEC        , 0                 },
-        {(uint8*)&(MEM_P->FB.airchamber_feedback_active)    , TYPE_FLAG       , 1         , "Air Chamber Feedback:"                 , MENU_ON_OFF   , ST_MS_SPEC        , 0                 },
-        {(uint8*)&(MEM_P->FB.max_residual_current)          , TYPE_INT32      , 1         , "Maximum slave residual current:"       , 0             , ST_MS_SPEC        , 0                 },              
-        {(uint8*)&(MEM_P->FB.maximum_pressure_kPa)          , TYPE_FLOAT      , 1         , "Maximum pressure feedback (kPa):"      , 0             , ST_MS_SPEC        , 0                 },
-        {(uint8*)&(MEM_P->FB.prop_err_fb_gain)              , TYPE_FLOAT      , 1         , "Proportional pressure error gain:"     , 0             , ST_MS_SPEC        , 0                 },
+    //  {VAR_P                                                     , TYPES           , NUM_ITEMS , PARAM_STR                               , MENU,         , STRUCTURE         , CUSTOM            , SHOW WITH PING}
+        {(uint8* const) &(MEM_P->dev.id)                           , TYPE_UINT8      , 1         , "Device ID:"                            , 0             , ST_DEVICE         , 0                 , TRUE},  
+        {(uint8* const) &(MEM_P->emg.emg_threshold[0])             , TYPE_UINT16     , 2         , "EMG thresholds:"                       , 0             , ST_EMG            , 0                 , TRUE},
+        {(uint8* const) &(MEM_P->emg.emg_max_value[0])             , TYPE_UINT32     , 2         , "EMG max values:"                       , 0             , ST_EMG            , 0                 , TRUE}, 
+        {(uint8* const) &(MEM_P->emg.emg_speed[0])                 , TYPE_UINT8      , 2         , "EMG max speeds:"                       , 0             , ST_EMG            , 0                 , TRUE}, 
+        {(uint8* const) &(MEM_P->emg.switch_emg)                   , TYPE_FLAG       , 1         , "EMG inversion:"                        , MENU_Y_N      , ST_EMG            , 0                 , TRUE}, 
+        {(uint8* const) &(MEM_P->MS.master_mode_active)            , TYPE_FLAG       , 1         , "Master Mode:"                          , MENU_ON_OFF   , ST_MS_SPEC        , 0                 , TRUE},  
+        {(uint8* const) &(MEM_P->MS.slave_ID)                      , TYPE_UINT8      , 1         , "Slave ID:"                             , 0             , ST_MS_SPEC        , 0                 , TRUE},  
+        {(uint8* const) &(MEM_P->SH_config.res)                    , TYPE_UINT8      , 1         , "Slave resolution:"                     , 0             , ST_MS_SPEC        , 0                 , TRUE},  
+        {(uint8* const) &(MEM_P->SH_config.input_mode)             , TYPE_FLAG       , 1         , "Input mode:"                           , MENU_INPUT    , ST_MS_SPEC        , CUSTOM_INPUT      , TRUE}, 
+        {(uint8* const) &(MEM_P->SH_config.pos_lim_inf)            , TYPE_INT32      , 2         , "Pos. limits [inf, sup]:"               , 0             , ST_MS_SPEC        , CUSTOM_POS_LIM    , TRUE},       
+        {(uint8* const) &(MEM_P->FB.vibrotactile_feedback_active)  , TYPE_FLAG       , 1         , "Vibrotactile Feedback:"                , MENU_ON_OFF   , ST_MS_SPEC        , 0                 , TRUE}, 
+        {(uint8* const) &(MEM_P->FB.airchamber_feedback_active)    , TYPE_FLAG       , 1         , "Air Chamber Feedback:"                 , MENU_ON_OFF   , ST_MS_SPEC        , 0                 , TRUE}, 
+        {(uint8* const) &(MEM_P->FB.max_residual_current)          , TYPE_INT32      , 1         , "Maximum slave residual current:"       , 0             , ST_MS_SPEC        , 0                 , TRUE},              
+        {(uint8* const) &(MEM_P->FB.maximum_pressure_kPa)          , TYPE_FLOAT      , 1         , "Maximum pressure feedback (kPa):"      , 0             , ST_MS_SPEC        , 0                 , TRUE}, 
+        {(uint8* const) &(MEM_P->FB.prop_err_fb_gain)              , TYPE_FLOAT      , 1         , "Proportional pressure error gain:"     , 0             , ST_MS_SPEC        , 0                 , TRUE}
     };
-    uint8 NUM_PARAMs = sizeof(PARAM_LIST)/sizeof(param_type);    
+    uint8 NUM_PARAMs = sizeof(PARAM_LIST)/sizeof(param_type);  
+    
 
     if (!index) {
         // Get parameters list with relative types
         get_param_list(NUM_PARAMs, NUM_MENUs, PARAM_LIST, MENU_LIST, sendToDevice);
+    }   
+    else if  (index == 300) {
+        
+        qbadminp_string(NUM_PARAMs, NUM_MENUs, PARAM_LIST, MENU_LIST);
     }
+
     else {
          // Set specific parameter        
         PARAM_IDX = index -1;       // Get right vector param index
@@ -640,91 +642,127 @@ void setZeros()
 {
 }
 
+
+void  qbadminp_string ( uint8 num_params, uint8 num_menus, const struct parameter PARAM_LIST[], const struct menu MENU_LIST[]){
+    strcpy(superstring, "");
+    char info_string[2500] = "";
+    int i;
+    int idx;
+    int32 aux_int32;
+    uint32 aux_uint32;
+    float aux_float;
+    uint8 aux_uint8;
+    int8 aux_int8;
+    int16 aux_int16;
+    uint16 aux_uint16;
+    struct st_eeprom* MEM_P = &c_mem; 
+    
+    if(c_mem.dev.id != 250){                //To avoid dummy board ping
+        uint8* m_addr;
+        uint8* m_tmp;
+        char str[100];
+        strcpy(info_string, "");
+        strcat(info_string, "ECCCOCIIII:\n");
+        
+        
+        for (idx = 0; idx < num_params; idx ++) {
+            if (PARAM_LIST[idx].ping){
+                strcat(info_string, PARAM_LIST[idx].PARAM_STR );
+                m_addr = (uint8*)PARAM_LIST[idx].VAR_P;
+                uint8 sod = num_of_bytes(PARAM_LIST[idx].TYPES);
+                switch(PARAM_LIST[idx].custom){
+                case 0:   default:    
+                    for (i = 0; i < PARAM_LIST[idx].NUM_ITEMS; i++){
+                        m_tmp = m_addr + i*sod;
+                        switch (PARAM_LIST[idx].TYPES){
+                            case TYPE_UINT8:
+                                aux_uint8 = *((uint8*)m_tmp);
+                                sprintf(str, " %d", aux_uint8);
+                                break;
+                            case TYPE_INT8:
+                                aux_int8 = *((int8*)m_tmp);
+                                sprintf(str, " %d", aux_int8);
+                                break;
+                            case TYPE_INT16:   
+                                aux_int16 = *((int16*)m_tmp);
+                                sprintf(str, " %d", aux_int16);
+                                break;
+                            
+                            case TYPE_UINT16: 
+                                aux_uint16 = *((uint16*)m_tmp);
+                                sprintf(str, " %d", aux_uint16);
+                                break;
+                            
+                            case TYPE_UINT32:
+                                aux_uint32 = *((uint32*)m_tmp);
+                                sprintf(str, " %ld", aux_uint32);
+                                break;
+                                
+                            case TYPE_INT32:
+                                aux_int32 = *((int32*)m_tmp);
+                                sprintf(str, " %ld", aux_int32);
+                                break;
+                                
+                            case TYPE_FLOAT:
+                                aux_float = *((float*)m_tmp);
+                                sprintf(str, " %f", aux_float);
+                                break;
+                                
+                            case TYPE_FLAG:
+                                for (i = 0; i < num_menus; i++){
+                                    if (MENU_LIST[i].name == PARAM_LIST[idx].MENU){
+                                        strcpy(str, "");
+                                        strcat(str, MENU_LIST[i].choice[*m_addr]);
+                                        break;
+                                    }
+                                }
+                                break;
+                        } 
+                        strcat(info_string, str);
+                    }
+                    break;
+                    
+                    
+                case CUSTOM_POS_LIM:        
+                    aux_int32 = (c_mem.SH_config.pos_lim_inf >> c_mem.SH_config.res);
+                    sprintf(str, " %ld", aux_int32);
+                    strcat(info_string, str);
+                    aux_int32 = (c_mem.SH_config.pos_lim_sup >> c_mem.SH_config.res);
+                    sprintf(str, " %ld", aux_int32);
+                    strcat(info_string, str);
+                    break;
+                }
+                
+                strcat(info_string, "\n");
+                
+            }
+            
+        }
+              
+      
+    strcat(superstring,info_string);
+    strcat(superstring,"ertyuioooiuytu");
+}}
 //==============================================================================
 //                                                   PREPARE GENERIC DEVICE INFO
 //==============================================================================
 
-void prepare_generic_info(char *info_string)
-{  int i;
-
+void prepare_generic_info(char *info_string){   
+     manage_param_list(300,0);
+    int i;
     struct st_eeprom* MEM_P = &c_mem; 
     
     if(c_mem.dev.id != 250){                //To avoid dummy board ping
+        
         char str[100];
         strcpy(info_string, "");
         strcat(info_string, "\r\n");
         strcat(info_string, "Firmware version: ");
         strcat(info_string, VERSION);
         strcat(info_string, ".\r\n\r\n");      
-
         strcat(info_string, "DEVICE INFO\r\n");
-        sprintf(str, "ID: %d\r\n", (int) MEM_P->dev.id);
-        strcat(info_string, str);
-
         strcat(info_string, "Device: PULSE\r\n");
-           
-        strcat(info_string, "\r\n");  
-        
-       
-
-            switch(MEM_P->SH_config.input_mode) {
-                case INPUT_MODE_EXTERNAL:
-                    strcat(info_string, "Input mode: USB\r\n");
-                    break;
-                case INPUT_MODE_ENCODER3:
-                    strcat(info_string, "Input mode: Handle\r\n");
-                    break;
-                case INPUT_MODE_EMG_PROPORTIONAL:
-                    strcat(info_string, "Input mode: EMG proportional\r\n");
-                    break;
-                case INPUT_MODE_EMG_INTEGRAL:
-                    strcat(info_string, "Input mode: EMG integral\r\n");
-                    break;
-                case INPUT_MODE_EMG_FCFS:
-                    strcat(info_string, "Input mode: EMG FCFS\r\n");
-                    break;
-                case INPUT_MODE_EMG_FCFS_ADV:
-                    strcat(info_string, "Input mode: EMG FCFS ADV\r\n");
-                    break;
-                case INPUT_MODE_JOYSTICK:
-                    strcat(info_string, "Input mode: Joystick\r\n");
-                    break;
-                case INPUT_MODE_EMG_PROPORTIONAL_NC:
-                    strcat(info_string, "Input mode: EMG proportional Normally Closed\r\n");
-                    break;
-            }
-
-
-            strcat(info_string, "SoftHand sensor resolution: ");
-            
-                sprintf(str, "%d\r\n", (int) MEM_P->SH_config.res);
-                strcat(info_string, str);
-                
-
-            sprintf(str, "Position limit SoftHand: inf -> %ld  ", (int32)MEM_P->SH_config.pos_lim_inf >> MEM_P->SH_config.res);
-            strcat(info_string, str);
-            sprintf(str, "sup -> %ld\r\n", (int32)MEM_P->SH_config.pos_lim_sup >> MEM_P->SH_config.res);
-            strcat(info_string, str);
-
-         
-      
-        strcat(info_string, "EMG CONFIGURATION\r\n");
-        sprintf(str, "EMG thresholds [0 - 1024]: %u, %u", MEM_P->emg.emg_threshold[0], MEM_P->emg.emg_threshold[1]);
-        strcat(info_string, str);
-        strcat(info_string, "\r\n");
-
-        sprintf(str, "EMG max values [0 - 4096]: %lu, %lu", MEM_P->emg.emg_max_value[0], MEM_P->emg.emg_max_value[1]);
-        strcat(info_string, str);
-        strcat(info_string, "\r\n");
-
-        if (MEM_P->emg.switch_emg)
-            strcat(info_string, "EMG inversion: YES\r\n");
-        else
-            strcat(info_string, "EMG inversion: NO\r\n");
-        
-
-        sprintf(str, "EMG max speed: %d %d", (int)MEM_P->emg.emg_speed[0], (int)MEM_P->emg.emg_speed[1]);
-        strcat(info_string, str);
+        strcat(info_string, superstring);
         strcat(info_string, "\r\n");
 
             for (i = 0; i < NUM_OF_INPUT_EMGS; ++i) {
@@ -732,30 +770,11 @@ void prepare_generic_info(char *info_string)
                 strcat(info_string, str);
                 strcat(info_string,"\r\n");
             }
-         
-
-        if (MEM_P->MS.master_mode_active)
-            strcat(info_string, "Master Mode active: YES\r\n");
-        else
-            strcat(info_string, "Master Mode active: NO\r\n");
-
-        sprintf(str, "Slave ID: %d\r\n", (int)MEM_P->MS.slave_ID);
-        strcat(info_string, str);
-
-        if (MEM_P->FB.airchamber_feedback_active)
-            strcat(info_string, "Airchamber FB active: YES\r\n");
-        else
-            strcat(info_string, "Airchamber FB active: NO\r\n");
-            
-        if (MEM_P->FB.vibrotactile_feedback_active)
-            strcat(info_string, "Vibrotactile FB active: YES\r\n");
-        else
-            strcat(info_string, "Vibrotactile FB active: NO\r\n");
-
 
         sprintf(str, "Last FW cycle time: %u us\r\n", (uint16)timer_value0 - (uint16)timer_value);
         strcat(info_string, str);
-  
+
+               
         strcat(info_string, "\r\n\0");      // End of info_string
     }
 }
