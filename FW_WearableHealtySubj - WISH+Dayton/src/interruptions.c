@@ -171,7 +171,8 @@ void interrupt_manager(){
                     rx_queue[1] = 0;
                     rx_queue[2] = 0;
                     state       = WAIT_ID;                    
-                }else
+                }
+                else
                     if ((rx_queue[0] == 63) &&      //ASCII - ?
                         (rx_queue[1] == 13) &&      //ASCII - CR
                         (rx_queue[2] == 10))        //ASCII - LF)
@@ -268,10 +269,11 @@ void interrupt_manager(){
 void function_scheduler(void) {
       
     MY_TIMER_REG_Write(0x00);
-    timer_value0 = (uint32)MY_TIMER_ReadCounter();/*
+    timer_value0 = (uint32)MY_TIMER_ReadCounter();
     // Start ADC Conversion, SOC = 1
 
     ADC_SOC_Write(0x01); 
+    flag_master = MASTER_MODE_FLAG_Read();
     
     // Check Interrupt 
 
@@ -280,88 +282,80 @@ void function_scheduler(void) {
         interrupt_manager();
     }
    
-            // if master_mode parameter is set to 1
-            if (g_mem.MS.master_mode_active){  
-                
-                // Check if voltage on pin MASTER MODE VOLTAGE, set by a physical switch, is HIGH or LOW. 
-                // This is a way to force exit from master_mode during execution, since USB commands from PC 
-                // are hampered by the communications between the two boards (slave and master)
-                
-                if (flag_master < 2000)       // if voltage is LOW, exit master mode
-                    master_mode = 0;
-                
-                else if (flag_master > 2000)  // if voltage is HIGH, enter master mode
-                    master_mode = 1;
-            }
+    // if master_mode parameter is set to 1
+    if (g_mem.MS.master_mode_active){  
+        
+        // Check if voltage on pin MASTER MODE VOLTAGE, set by a physical switch, is HIGH or LOW. 
+        // This is a way to force exit from master_mode during execution, since USB commands from PC 
+        // are hampered by the communications between the two boards (slave and master)
+        
+        if (!flag_master)       // if voltage is LOW, exit master mode
+            master_mode = 0;
+        
+        else if (flag_master)  // if voltage is HIGH, enter master mode
+            master_mode = 1;
+    }
             
-            else{
-                master_mode = 0;
-            }
+    else{
+        master_mode = 0;
+    }
                     
-            if (master_mode){
-                
-                //-------------------------------------------------------------- Air Chamber and Vibrotactile control
-                if (g_mem.FB.vibrotactile_feedback_active && g_mem.FB.airchamber_feedback_active){    
-                                     
-                    air_chambers_control();
-                    vibrotactile_control();
-                  
-                }
-                
-                //-------------------------------------------------------------- Air Chamber control
-                else if (g_mem.FB.airchamber_feedback_active){
-                    
-                    
-                      
-                    air_chambers_control();
-                    
-                }
+    if (master_mode){
+        
+        LED_CONTROL_Write(RED);     // Orange
+        
+        //-------------------------------------------------------------- Air Chamber and Vibrotactile control
+        if (g_mem.FB.vibrotactile_feedback_active && g_mem.FB.airchamber_feedback_active){                  
+            air_chambers_control();
+            vibrotactile_control();
+        }
+        
+        //-------------------------------------------------------------- Air Chamber control
+        else if (g_mem.FB.airchamber_feedback_active){
+            air_chambers_control();
             
-                //-------------------------------------------------------------- Vibrotactile control
-                else if (g_mem.FB.vibrotactile_feedback_active){
-                    
-                    
-                    
-                    
-                    vibrotactile_control();
-                }
-                
-                if (interrupt_flag){
-                    interrupt_flag = FALSE;
-                    interrupt_manager();
-                }
-                    
-            //    motor_control_generic(SECOND_MOTOR_IDX); // Compute reference for the SH starting from EMG values
-                    
-                drive_slave(c_mem.MS.slave_ID); // Send reference to the SH calling cmd_set_inputs
-                    
-                if (interrupt_flag){
-                    interrupt_flag = FALSE;
-                    interrupt_manager();
-                }
-            }
+        }
+    
+        //-------------------------------------------------------------- Vibrotactile control
+        else if (g_mem.FB.vibrotactile_feedback_active){
+            vibrotactile_control();
+        }
+        
+        if (interrupt_flag){
+            interrupt_flag = FALSE;
+            interrupt_manager();
+        }
+            
+       compute_SH_reference(); // Compute reference for the SH starting from EMG values
+            
+        drive_slave(c_mem.MS.slave_ID); // Send reference to the SH calling cmd_set_inputs
+            
+        if (interrupt_flag){
+            interrupt_flag = FALSE;
+            interrupt_manager();
+        }
+    }
             
            
-            else {
-                
-                
-                
-                    
-                // Check Interrupt 
-                if (interrupt_flag){
-                    interrupt_flag = FALSE;
-                    interrupt_manager();
-                } 
-            }
+    else {
+        
+        LED_CONTROL_Write(GREEN);     // Red
             
-          //  motor_control_generic(MOTOR_IDX);  // Compute references and drive air pump
+        // Check Interrupt 
+        if (interrupt_flag){
+            interrupt_flag = FALSE;
+            interrupt_manager();
+        } 
+    }
     
-            if (interrupt_flag){
-                interrupt_flag = FALSE;
-                interrupt_manager();
-            }
-    
-           
+    pump_control();  // Compute references and drive air pump
+    VT_control();  // Compute references and drive air pump
+
+    if (interrupt_flag){
+        interrupt_flag = FALSE;
+        interrupt_manager();
+    }
+               
     //---------------------------------- Read conversion buffer - LOCK function
 
     analog_read_end();
@@ -369,36 +363,10 @@ void function_scheduler(void) {
     if (interrupt_flag){
         interrupt_flag = FALSE;
         interrupt_manager();
-    }
-
-    //---------------------------------- Control Overcurrent
-
-    overcurrent_control();
-    
-    // Check Interrupt 
-    
-    if (interrupt_flag){
-        interrupt_flag = FALSE;
-        interrupt_manager();
-    }
-
-  
-
-    
-     
-
-    
-    // Check Interrupt 
-    
-    if (interrupt_flag){
-        interrupt_flag = FALSE;
-        interrupt_manager();
-    }
-    
-   
+    }  
    
     //---------------------------------- Update States
-*/    
+
     // Load k-1 state
     memcpy( &g_adc_measOld, &g_adc_meas, sizeof(g_adc_meas) );
     memcpy( &SH_refOld, &SH_ref, sizeof(SH_ref) );
@@ -646,6 +614,7 @@ void analog_read_end() {
     */
 
     int32 CYDATA i_aux;
+    
     static uint8 idx = 0;
     
     // Wait for conversion end
@@ -659,17 +628,22 @@ void analog_read_end() {
     }
 
         // Read pressure in any case
-        pressure_value  = (int32)(ADC_buf[0] );    //0 - 4096  
+        g_adc_meas.pressure  = (int32)(ADC_buf[0]);    //0 - 4096  
+        pressure_value = g_adc_meas.pressure;
         pressure_value = (((float)pressure_value/4096.0)/0.002421)-101.325;       // datasheet transfer function ticks->kPa sensor MPXH6400A
-        if (pressure_value < 0) pressure_value = 0;
+        if (pressure_value < 0) 
+            pressure_value = 0;
     
-        flag_master =  (int32)((ADC_buf[1]/4096.0)*5000);
+        //flag_master =  (int32)((ADC_buf[1]/4096.0)*5000);
 
         // Reset emg
         for (idx = 0; idx < NUM_OF_INPUT_EMGS; idx++){
             g_adc_meas.emg[idx] = 0;
         }
-
+ 
+        
+        // Read EMG channel 1
+        i_aux = 0;  
         i_aux = (int32)(ADC_buf[1 + c_mem.emg.switch_emg]);
         if (i_aux < 0) 
             i_aux = 0;
@@ -680,17 +654,20 @@ void analog_read_end() {
             interrupt_flag = FALSE;
             interrupt_manager();
         }
+        
         //Saturation
-        if (i_aux < 0)
+        if (i_aux < 0) 
             i_aux = 0;
         else 
-            if (i_aux > 1024) 
+            if (i_aux > 1024)
                 i_aux = 1024;
         
         g_adc_meas.emg[0] = i_aux;
-            
+        
+        // Read EMG channel 2
+        i_aux = 0;  
         i_aux = (int32)(ADC_buf[2 - c_mem.emg.switch_emg]);
-
+        
         if (i_aux < 0)
             i_aux = 0;
         i_aux = filter(i_aux, &filt_emg[1]);
@@ -706,7 +683,7 @@ void analog_read_end() {
         else 
             if (i_aux > 1024)
                 i_aux = 1024;
-        
+       
         g_adc_meas.emg[1] = i_aux;
     
 }

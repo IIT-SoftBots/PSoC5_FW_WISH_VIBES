@@ -6,7 +6,7 @@
 
 #Build Date:         Sep  9 2019 11:47:43
 
-#File Generated:     Oct 24 2023 20:04:13
+#File Generated:     May 3 2024 15:46:42
 
 #Purpose:            
 
@@ -136,7 +136,7 @@ Clock: timer_clock(fixed-function) | Frequency: N/A       | Target:   1.0 MHz
 ======================================================================
                      End of Clock Summary
 ######################################################################
-D2088: Phase 7, elapsed time : 0.4 (sec)
+D2088: Phase 7, elapsed time : 0.5 (sec)
 
 Final Design Statistics
     Number of Combinational MCs 	:	29
@@ -262,7 +262,7 @@ Clock: timer_clock(fixed-function) | Frequency: N/A       | Target:   1.0 MHz
 ======================================================================
                      End of Clock Summary
 ######################################################################
-D2088: Phase 7, elapsed time : 1.6 (sec)
+D2088: Phase 7, elapsed time : 1.4 (sec)
 
 Final Design Statistics
     Number of Combinational MCs 	:	29
@@ -323,5 +323,5 @@ D2088: Phase 8, elapsed time : 0.0 (sec)
 
 D2054: Placement of the design completed successfully
 
-I2076: Total run-time: 3.2 sec.
+I2076: Total run-time: 3.1 sec.
 

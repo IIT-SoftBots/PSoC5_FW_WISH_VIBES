@@ -117,7 +117,8 @@ void motor_control_SH();
 /** This function controls the motor direction and velocity, depending on 
  * 	the input and control modality set. 
 **/
-void motor_control_generic(uint8 index);
+void pump_control();
+void VT_control();
 /** \} */
 
 /** \name Analog readings */

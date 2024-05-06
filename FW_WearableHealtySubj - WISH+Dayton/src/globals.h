@@ -87,9 +87,10 @@
 #define NUM_OF_VT_ACTUATORS     2           
 #define NUM_OF_EXTERNAL_IMU     2
 #define SCALA                   30
-#define MIN_INPUT_PWM           10
-#define MAX_INPUT_PWM           100
- 
+#define MIN_VT_PWM              10
+#define MAX_VT_PWM              100
+#define MIN_PUMP_PWM            20
+#define MAX_PUMP_PWM            80
 //==============================================================================
 //                                                              STRUCTURES INDEX
 //==============================================================================
@@ -117,7 +118,7 @@
 #define TRUE                    1
 #define RED                     1
 #define GREEN                   2
-#define YELLOW                  3
+#define ORANGE                  3
 #define DEFAULT_EEPROM_DISPLACEMENT 50  /*!< Number of pages occupied by the EEPROM.*/
 #define EEPROM_BYTES_ROW        16      /*!< EEPROM number of bytes per row.*/
 #define EEPROM_COUNTERS_ROWS    7       /*!< EEPROM number of rows dedicated to store counters.*/
@@ -284,7 +285,7 @@ extern CYBIT can_write;                             /*!< Write to EEPROM flag.*/
 extern uint8 rest_enabled;                          /*!< Rest position flag.*/
 extern uint8 forced_open;                           /*!< Forced open flag (used in position with rest position control).*/
 extern uint8 battery_low_SoC;                       /*!< Battery low State of Charge flag (re-open terminal device when active).*/
-extern uint8 change_ext_ref_flag;                   /*!< This flag is set when an external reference command is received.*/
+extern uint8 change_ext_ref_flag[3];                   /*!< This flag is set when an external reference command is received.*/
 extern CYBIT reset_PSoC_flag;                       /*!< This flag is set when a board fw reset is necessary.*/
 
 // ADC Buffer
@@ -353,13 +354,6 @@ struct st_adc_meas {
 // ADC Buffer
 
 extern uint8 NUM_OF_ANALOG_INPUTS;                  /*! ADC currently configured channels.*/
-
-
-
-extern int32 SH_ref, SH_refOld, SH_refNew ;                          /*!< Motor position reference for SH.*/
-extern uint8 VT_ref[NUM_OF_VT_ACTUATORS], VT_refOld[NUM_OF_VT_ACTUATORS], VT_refNew[NUM_OF_VT_ACTUATORS];
-extern uint8 Pump_ref, Pump_refOld, Pump_refNew ;
-extern uint8 ValveState, ValveStateOld,ValveStateNew;
 
 extern struct st_data   g_rx;                       /*!< Incoming/Outcoming data.*/
 extern CYBIT interrupt_flag;                        /*!< Interrupt flag enabler.*/

@@ -23,9 +23,9 @@
   <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\WISH_VIBES_Socket.cydsn\codegentemp\LED_CONTROL.h" value="HEADER;;;;;LED_CONTROL" />
   <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\WISH_VIBES_Socket.cydsn\codegentemp\LED_CONTROL.c" value="SOURCE_C;CortexM3;;;;LED_CONTROL" />
   <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\WISH_VIBES_Socket.cydsn\codegentemp\LED_CONTROL_PM.c" value="SOURCE_C;CortexM3;;;;LED_CONTROL" />
-  <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\WISH_VIBES_Socket.cydsn\codegentemp\LED_GREEN_1_aliases.h" value="HEADER;;;;;LED_GREEN_1" />
-  <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\WISH_VIBES_Socket.cydsn\codegentemp\LED_GREEN_1.c" value="SOURCE_C;CortexM3;;;;LED_GREEN_1" />
-  <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\WISH_VIBES_Socket.cydsn\codegentemp\LED_GREEN_1.h" value="HEADER;;;;;LED_GREEN_1" />
+  <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\WISH_VIBES_Socket.cydsn\codegentemp\LED_GREEN_aliases.h" value="HEADER;;;;;LED_GREEN" />
+  <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\WISH_VIBES_Socket.cydsn\codegentemp\LED_GREEN.c" value="SOURCE_C;CortexM3;;;;LED_GREEN" />
+  <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\WISH_VIBES_Socket.cydsn\codegentemp\LED_GREEN.h" value="HEADER;;;;;LED_GREEN" />
   <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\WISH_VIBES_Socket.cydsn\codegentemp\EMG_2_aliases.h" value="HEADER;;;;;EMG_2" />
   <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\WISH_VIBES_Socket.cydsn\codegentemp\EMG_2.c" value="SOURCE_C;CortexM3;;;;EMG_2" />
   <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\WISH_VIBES_Socket.cydsn\codegentemp\EMG_2.h" value="HEADER;;;;;EMG_2" />
@@ -145,6 +145,9 @@
   <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\WISH_VIBES_Socket.cydsn\codegentemp\VT2_DIR_PM.c" value="SOURCE_C;CortexM3;;;;VT2_DIR" />
   <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\WISH_VIBES_Socket.cydsn\codegentemp\CLOCK_VT.c" value="SOURCE_C;CortexM3;;;;CLOCK_VT" />
   <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\WISH_VIBES_Socket.cydsn\codegentemp\CLOCK_VT.h" value="HEADER;;;;;CLOCK_VT" />
+  <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\WISH_VIBES_Socket.cydsn\codegentemp\LED_RED_aliases.h" value="HEADER;;;;;LED_RED" />
+  <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\WISH_VIBES_Socket.cydsn\codegentemp\LED_RED.c" value="SOURCE_C;CortexM3;;;;LED_RED" />
+  <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\WISH_VIBES_Socket.cydsn\codegentemp\LED_RED.h" value="HEADER;;;;;LED_RED" />
   <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\WISH_VIBES_Socket.cydsn\codegentemp\SD_SPI0.c" value="SOURCE_C;CortexM3;;;;SD_SPI0" />
   <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\WISH_VIBES_Socket.cydsn\codegentemp\SD_SPI0.h" value="HEADER;;;;;SD_SPI0" />
   <file name="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\WISH_VIBES_Socket.cydsn\codegentemp\SD_SPI0_PM.c" value="SOURCE_C;CortexM3;;;;SD_SPI0" />

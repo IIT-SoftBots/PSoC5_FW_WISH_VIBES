@@ -1,7 +1,7 @@
 # WISH_VIBES_Socket
-# 2024-04-18 11:53:30Z
+# 2024-05-03 15:20:10Z
 
-set_io "LED_GREEN_1(0)" iocell 12 1
+set_io "LED_GREEN(0)" iocell 12 1
 set_io "EMG_2(0)" iocell 2 7
 set_io "EMG_1(0)" iocell 2 6
 set_io "PRESSURE_SENSOR(0)" iocell 0 1
@@ -25,4 +25,5 @@ set_io "VT_1A(0)" iocell 3 3
 set_io "VT_1B(0)" iocell 3 4
 set_io "VT_2A(0)" iocell 3 5
 set_io "VT_2B(0)" iocell 0 3
+set_io "LED_RED(0)" iocell 12 0
 set_location "\ADC:DSM\" dsmodcell -1 -1 0

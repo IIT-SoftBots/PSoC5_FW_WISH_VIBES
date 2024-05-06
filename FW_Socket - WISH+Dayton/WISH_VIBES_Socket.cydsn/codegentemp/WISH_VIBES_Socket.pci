@@ -1,5 +1,5 @@
 # WISH_VIBES_Socket
-# 2023-10-24 18:04:12Z
+# 2024-05-03 13:46:41Z
 
 set_io "CURRENT_SENSE_2(0)" iocell 0 2
 set_io "VOLTAGE_SENSE_2(0)" iocell 2 3

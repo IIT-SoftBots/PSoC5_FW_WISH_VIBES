@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cceQyYtG.s 			page 1
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc1Xe3Cu.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cceQyYtG.s 			page 1
   24:Generated_Source\PSoC5/CYCLES_TIMER_PM.c **** /*******************************************************************************
   25:Generated_Source\PSoC5/CYCLES_TIMER_PM.c **** * Function Name: CYCLES_TIMER_SaveConfig
   26:Generated_Source\PSoC5/CYCLES_TIMER_PM.c **** ********************************************************************************
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cceQyYtG.s 			page 2
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc1Xe3Cu.s 			page 2
 
 
   27:Generated_Source\PSoC5/CYCLES_TIMER_PM.c **** *
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cceQyYtG.s 			page 1
   56              		.global	CYCLES_TIMER_RestoreConfig
   57              		.thumb
   58              		.thumb_func
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cceQyYtG.s 			page 3
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc1Xe3Cu.s 			page 3
 
 
   59              		.type	CYCLES_TIMER_RestoreConfig, %function
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cceQyYtG.s 			page 1
   78              		.cfi_restore 7
   79              		.cfi_def_cfa_offset 0
   80 000a 7047     		bx	lr
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cceQyYtG.s 			page 4
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc1Xe3Cu.s 			page 4
 
 
   81              		.cfi_endproc
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cceQyYtG.s 			page 1
  118:Generated_Source\PSoC5/CYCLES_TIMER_PM.c ****             /* Timer is enabled */
  119:Generated_Source\PSoC5/CYCLES_TIMER_PM.c ****             CYCLES_TIMER_backup.TimerEnableState = 1u;
  109              		.loc 1 119 0
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cceQyYtG.s 			page 5
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc1Xe3Cu.s 			page 5
 
 
  110 0012 074B     		ldr	r3, .L6+4
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cceQyYtG.s 			page 1
  141:Generated_Source\PSoC5/CYCLES_TIMER_PM.c **** *
  142:Generated_Source\PSoC5/CYCLES_TIMER_PM.c **** * Return:
  143:Generated_Source\PSoC5/CYCLES_TIMER_PM.c **** *  void
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cceQyYtG.s 			page 6
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc1Xe3Cu.s 			page 6
 
 
  144:Generated_Source\PSoC5/CYCLES_TIMER_PM.c **** *
@@ -358,40 +358,40 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cceQyYtG.s 			page 1
  181 0006 00000000 		.4byte	.Ldebug_abbrev0
  182 000a 04       		.byte	0x4
  183 000b 01       		.uleb128 0x1
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cceQyYtG.s 			page 7
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc1Xe3Cu.s 			page 7
 
 
- 184 000c F8000000 		.4byte	.LASF21
+ 184 000c 49010000 		.4byte	.LASF21
  185 0010 0C       		.byte	0xc
- 186 0011 B8000000 		.4byte	.LASF22
- 187 0015 F8010000 		.4byte	.LASF23
+ 186 0011 09010000 		.4byte	.LASF22
+ 187 0015 5E000000 		.4byte	.LASF23
  188 0019 00000000 		.4byte	.Ldebug_ranges0+0
  189 001d 00000000 		.4byte	0
  190 0021 00000000 		.4byte	.Ldebug_line0
  191 0025 02       		.uleb128 0x2
  192 0026 01       		.byte	0x1
  193 0027 06       		.byte	0x6
- 194 0028 C6010000 		.4byte	.LASF0
+ 194 0028 25020000 		.4byte	.LASF0
  195 002c 02       		.uleb128 0x2
  196 002d 01       		.byte	0x1
  197 002e 08       		.byte	0x8
- 198 002f 86010000 		.4byte	.LASF1
+ 198 002f D7010000 		.4byte	.LASF1
  199 0033 02       		.uleb128 0x2
  200 0034 02       		.byte	0x2
  201 0035 05       		.byte	0x5
- 202 0036 A2010000 		.4byte	.LASF2
+ 202 0036 57020000 		.4byte	.LASF2
  203 003a 02       		.uleb128 0x2
  204 003b 02       		.byte	0x2
  205 003c 07       		.byte	0x7
- 206 003d B3010000 		.4byte	.LASF3
+ 206 003d 12020000 		.4byte	.LASF3
  207 0041 02       		.uleb128 0x2
  208 0042 04       		.byte	0x4
  209 0043 05       		.byte	0x5
- 210 0044 99010000 		.4byte	.LASF4
+ 210 0044 EA010000 		.4byte	.LASF4
  211 0048 02       		.uleb128 0x2
  212 0049 04       		.byte	0x4
  213 004a 07       		.byte	0x7
- 214 004b 8F000000 		.4byte	.LASF5
+ 214 004b E0000000 		.4byte	.LASF5
  215 004f 02       		.uleb128 0x2
  216 0050 08       		.byte	0x8
  217 0051 05       		.byte	0x5
@@ -399,7 +399,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cceQyYtG.s 			page 1
  219 0056 02       		.uleb128 0x2
  220 0057 08       		.byte	0x8
  221 0058 07       		.byte	0x7
- 222 0059 A1000000 		.4byte	.LASF7
+ 222 0059 F2000000 		.4byte	.LASF7
  223 005d 03       		.uleb128 0x3
  224 005e 04       		.byte	0x4
  225 005f 05       		.byte	0x5
@@ -409,27 +409,27 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cceQyYtG.s 			page 1
  229 0066 07       		.byte	0x7
  230 0067 0E000000 		.4byte	.LASF8
  231 006b 04       		.uleb128 0x4
- 232 006c 89000000 		.4byte	.LASF12
+ 232 006c DA000000 		.4byte	.LASF12
  233 0070 02       		.byte	0x2
  234 0071 E401     		.2byte	0x1e4
  235 0073 2C000000 		.4byte	0x2c
  236 0077 02       		.uleb128 0x2
  237 0078 04       		.byte	0x4
  238 0079 04       		.byte	0x4
- 239 007a E1000000 		.4byte	.LASF9
+ 239 007a 32010000 		.4byte	.LASF9
  240 007e 02       		.uleb128 0x2
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cceQyYtG.s 			page 8
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc1Xe3Cu.s 			page 8
 
 
  241 007f 08       		.byte	0x8
  242 0080 04       		.byte	0x4
- 243 0081 AC010000 		.4byte	.LASF10
+ 243 0081 0B020000 		.4byte	.LASF10
  244 0085 02       		.uleb128 0x2
  245 0086 01       		.byte	0x1
  246 0087 08       		.byte	0x8
- 247 0088 94010000 		.4byte	.LASF11
+ 247 0088 E5010000 		.4byte	.LASF11
  248 008c 04       		.uleb128 0x4
- 249 008d 53020000 		.4byte	.LASF13
+ 249 008d 61020000 		.4byte	.LASF13
  250 0091 02       		.byte	0x2
  251 0092 8E02     		.2byte	0x28e
  252 0094 98000000 		.4byte	0x98
@@ -438,30 +438,30 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cceQyYtG.s 			page 1
  255 009d 02       		.uleb128 0x2
  256 009e 08       		.byte	0x8
  257 009f 04       		.byte	0x4
- 258 00a0 EC010000 		.4byte	.LASF14
+ 258 00a0 4B020000 		.4byte	.LASF14
  259 00a4 02       		.uleb128 0x2
  260 00a5 04       		.byte	0x4
  261 00a6 07       		.byte	0x7
- 262 00a7 58020000 		.4byte	.LASF15
+ 262 00a7 66020000 		.4byte	.LASF15
  263 00ab 06       		.uleb128 0x6
  264 00ac 01       		.byte	0x1
  265 00ad 03       		.byte	0x3
  266 00ae 43       		.byte	0x43
  267 00af C0000000 		.4byte	0xc0
  268 00b3 07       		.uleb128 0x7
- 269 00b4 E7000000 		.4byte	.LASF24
+ 269 00b4 38010000 		.4byte	.LASF24
  270 00b8 03       		.byte	0x3
  271 00b9 45       		.byte	0x45
  272 00ba 6B000000 		.4byte	0x6b
  273 00be 00       		.byte	0
  274 00bf 00       		.byte	0
  275 00c0 08       		.uleb128 0x8
- 276 00c1 D2010000 		.4byte	.LASF16
+ 276 00c1 31020000 		.4byte	.LASF16
  277 00c5 03       		.byte	0x3
  278 00c6 53       		.byte	0x53
  279 00c7 AB000000 		.4byte	0xab
  280 00cb 09       		.uleb128 0x9
- 281 00cc 5E000000 		.4byte	.LASF17
+ 281 00cc F3010000 		.4byte	.LASF17
  282 00d0 01       		.byte	0x1
  283 00d1 2B       		.byte	0x2b
  284 00d2 00000000 		.4byte	.LFB0
@@ -477,8 +477,8 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cceQyYtG.s 			page 1
  294 00eb 01       		.uleb128 0x1
  295 00ec 9C       		.byte	0x9c
  296 00ed 0A       		.uleb128 0xa
- 297 00ee 76000000 		.4byte	.LASF19
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cceQyYtG.s 			page 9
+ 297 00ee C7000000 		.4byte	.LASF19
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc1Xe3Cu.s 			page 9
 
 
  298 00f2 01       		.byte	0x1
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cceQyYtG.s 			page 1
  352 001d 00       		.byte	0
  353 001e 03       		.uleb128 0x3
  354 001f 24       		.uleb128 0x24
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cceQyYtG.s 			page 10
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc1Xe3Cu.s 			page 10
 
 
  355 0020 00       		.byte	0
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cceQyYtG.s 			page 1
  409 0056 0B       		.uleb128 0xb
  410 0057 00       		.byte	0
  411 0058 00       		.byte	0
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cceQyYtG.s 			page 11
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc1Xe3Cu.s 			page 11
 
 
  412 0059 08       		.uleb128 0x8
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cceQyYtG.s 			page 1
  466 0090 18       		.uleb128 0x18
  467 0091 9642     		.uleb128 0x2116
  468 0093 19       		.uleb128 0x19
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cceQyYtG.s 			page 12
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc1Xe3Cu.s 			page 12
 
 
  469 0094 00       		.byte	0
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cceQyYtG.s 			page 1
  519      01010101 
  520              	.LASF6:
  521 0000 6C6F6E67 		.ascii	"long long int\000"
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cceQyYtG.s 			page 13
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc1Xe3Cu.s 			page 13
 
 
  521      206C6F6E 
@@ -747,125 +747,128 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cceQyYtG.s 			page 1
  529      494D4552 
  529      5F626163 
  529      6B757000 
- 530              	.LASF17:
- 531 005e 4359434C 		.ascii	"CYCLES_TIMER_SaveConfig\000"
- 531      45535F54 
- 531      494D4552 
- 531      5F536176 
- 531      65436F6E 
- 532              	.LASF19:
- 533 0076 4359434C 		.ascii	"CYCLES_TIMER_Sleep\000"
- 533      45535F54 
- 533      494D4552 
- 533      5F536C65 
- 533      657000
- 534              	.LASF12:
- 535 0089 75696E74 		.ascii	"uint8\000"
- 535      3800
- 536              	.LASF5:
- 537 008f 6C6F6E67 		.ascii	"long unsigned int\000"
- 537      20756E73 
- 537      69676E65 
- 537      6420696E 
- 537      7400
- 538              	.LASF7:
- 539 00a1 6C6F6E67 		.ascii	"long long unsigned int\000"
- 539      206C6F6E 
- 539      6720756E 
- 539      7369676E 
- 539      65642069 
- 540              	.LASF22:
- 541 00b8 47656E65 		.ascii	"Generated_Source\\PSoC5\\CYCLES_TIMER_PM.c\000"
- 541      72617465 
- 541      645F536F 
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cceQyYtG.s 			page 14
+ 530              	.LASF23:
+ 531 005e 433A5C55 		.ascii	"C:\\Users\\mgnocco\\Documents\\Git\\PSoC5\\PSoC5_FW"
+ 531      73657273 
+ 531      5C6D676E 
+ 531      6F63636F 
+ 531      5C446F63 
+ 532 008b 5F574953 		.ascii	"_WISH_VIBES\\FW_Socket - WISH+Dayton\\WISH_VIBES_So"
+ 532      485F5649 
+ 532      4245535C 
+ 532      46575F53 
+ 532      6F636B65 
+ 533 00bc 636B6574 		.ascii	"cket.cydsn\000"
+ 533      2E637964 
+ 533      736E00
+ 534              	.LASF19:
+ 535 00c7 4359434C 		.ascii	"CYCLES_TIMER_Sleep\000"
+ 535      45535F54 
+ 535      494D4552 
+ 535      5F536C65 
+ 535      657000
+ 536              	.LASF12:
+ 537 00da 75696E74 		.ascii	"uint8\000"
+ 537      3800
+ 538              	.LASF5:
+ 539 00e0 6C6F6E67 		.ascii	"long unsigned int\000"
+ 539      20756E73 
+ 539      69676E65 
+ 539      6420696E 
+ 539      7400
+ 540              	.LASF7:
+ 541 00f2 6C6F6E67 		.ascii	"long long unsigned int\000"
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc1Xe3Cu.s 			page 14
 
 
- 541      75726365 
- 541      5C50536F 
- 542              	.LASF9:
- 543 00e1 666C6F61 		.ascii	"float\000"
- 543      7400
- 544              	.LASF24:
- 545 00e7 54696D65 		.ascii	"TimerEnableState\000"
- 545      72456E61 
- 545      626C6553 
- 545      74617465 
- 545      00
- 546              	.LASF21:
- 547 00f8 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
- 547      43313120 
- 547      352E342E 
- 547      31203230 
- 547      31363036 
- 548 012b 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
- 548      20726576 
- 548      6973696F 
- 548      6E203233 
- 548      37373135 
- 549 015e 30202D66 		.ascii	"0 -ffunction-sections -ffat-lto-objects\000"
- 549      66756E63 
- 549      74696F6E 
- 549      2D736563 
- 549      74696F6E 
- 550              	.LASF1:
- 551 0186 756E7369 		.ascii	"unsigned char\000"
- 551      676E6564 
- 551      20636861 
- 551      7200
- 552              	.LASF11:
- 553 0194 63686172 		.ascii	"char\000"
- 553      00
- 554              	.LASF4:
- 555 0199 6C6F6E67 		.ascii	"long int\000"
- 555      20696E74 
+ 541      206C6F6E 
+ 541      6720756E 
+ 541      7369676E 
+ 541      65642069 
+ 542              	.LASF22:
+ 543 0109 47656E65 		.ascii	"Generated_Source\\PSoC5\\CYCLES_TIMER_PM.c\000"
+ 543      72617465 
+ 543      645F536F 
+ 543      75726365 
+ 543      5C50536F 
+ 544              	.LASF9:
+ 545 0132 666C6F61 		.ascii	"float\000"
+ 545      7400
+ 546              	.LASF24:
+ 547 0138 54696D65 		.ascii	"TimerEnableState\000"
+ 547      72456E61 
+ 547      626C6553 
+ 547      74617465 
+ 547      00
+ 548              	.LASF21:
+ 549 0149 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 549      43313120 
+ 549      352E342E 
+ 549      31203230 
+ 549      31363036 
+ 550 017c 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
+ 550      20726576 
+ 550      6973696F 
+ 550      6E203233 
+ 550      37373135 
+ 551 01af 30202D66 		.ascii	"0 -ffunction-sections -ffat-lto-objects\000"
+ 551      66756E63 
+ 551      74696F6E 
+ 551      2D736563 
+ 551      74696F6E 
+ 552              	.LASF1:
+ 553 01d7 756E7369 		.ascii	"unsigned char\000"
+ 553      676E6564 
+ 553      20636861 
+ 553      7200
+ 554              	.LASF11:
+ 555 01e5 63686172 		.ascii	"char\000"
  555      00
- 556              	.LASF2:
- 557 01a2 73686F72 		.ascii	"short int\000"
- 557      7420696E 
- 557      7400
- 558              	.LASF10:
- 559 01ac 646F7562 		.ascii	"double\000"
- 559      6C6500
- 560              	.LASF3:
- 561 01b3 73686F72 		.ascii	"short unsigned int\000"
- 561      7420756E 
- 561      7369676E 
- 561      65642069 
- 561      6E7400
- 562              	.LASF0:
- 563 01c6 7369676E 		.ascii	"signed char\000"
- 563      65642063 
- 563      68617200 
- 564              	.LASF16:
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cceQyYtG.s 			page 15
+ 556              	.LASF4:
+ 557 01ea 6C6F6E67 		.ascii	"long int\000"
+ 557      20696E74 
+ 557      00
+ 558              	.LASF17:
+ 559 01f3 4359434C 		.ascii	"CYCLES_TIMER_SaveConfig\000"
+ 559      45535F54 
+ 559      494D4552 
+ 559      5F536176 
+ 559      65436F6E 
+ 560              	.LASF10:
+ 561 020b 646F7562 		.ascii	"double\000"
+ 561      6C6500
+ 562              	.LASF3:
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc1Xe3Cu.s 			page 15
 
 
- 565 01d2 4359434C 		.ascii	"CYCLES_TIMER_backupStruct\000"
- 565      45535F54 
- 565      494D4552 
- 565      5F626163 
- 565      6B757053 
- 566              	.LASF14:
- 567 01ec 6C6F6E67 		.ascii	"long double\000"
- 567      20646F75 
- 567      626C6500 
- 568              	.LASF23:
- 569 01f8 433A5C55 		.ascii	"C:\\Users\\mgnocco\\Documents\\Git\\PSoC5\\PSoC5_FW"
- 569      73657273 
- 569      5C6D676E 
- 569      6F63636F 
- 569      5C446F63 
- 570 0225 5F574953 		.ascii	"_WISH_VIBES\\FW_Socket\\WISH_VIBES_Socket.cydsn\000"
- 570      485F5649 
- 570      4245535C 
- 570      46575F53 
- 570      6F636B65 
- 571              	.LASF13:
- 572 0253 72656738 		.ascii	"reg8\000"
- 572      00
- 573              	.LASF15:
- 574 0258 73697A65 		.ascii	"sizetype\000"
- 574      74797065 
- 574      00
- 575              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran
+ 563 0212 73686F72 		.ascii	"short unsigned int\000"
+ 563      7420756E 
+ 563      7369676E 
+ 563      65642069 
+ 563      6E7400
+ 564              	.LASF0:
+ 565 0225 7369676E 		.ascii	"signed char\000"
+ 565      65642063 
+ 565      68617200 
+ 566              	.LASF16:
+ 567 0231 4359434C 		.ascii	"CYCLES_TIMER_backupStruct\000"
+ 567      45535F54 
+ 567      494D4552 
+ 567      5F626163 
+ 567      6B757053 
+ 568              	.LASF14:
+ 569 024b 6C6F6E67 		.ascii	"long double\000"
+ 569      20646F75 
+ 569      626C6500 
+ 570              	.LASF2:
+ 571 0257 73686F72 		.ascii	"short int\000"
+ 571      7420696E 
+ 571      7400
+ 572              	.LASF13:
+ 573 0261 72656738 		.ascii	"reg8\000"
+ 573      00
+ 574              	.LASF15:
+ 575 0266 73697A65 		.ascii	"sizetype\000"
+ 575      74797065 
+ 575      00
+ 576              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

@@ -102,9 +102,10 @@ int main()
     CYCLES_TIMER_Start();
     ISR_CYCLES_StartEx(ISR_CYCLES_Handler);
     
+    PWM_PUMP_Start();
     PWM_VT_Start();
-    PWM_VT_WriteCompare1(0);
-    PWM_VT_WriteCompare2(0);    
+    PWM_VT_WriteCompare1(50);
+    PWM_VT_WriteCompare2(50);    
     VT1_DIR_Write(0);
     VT2_DIR_Write(0);
     
@@ -129,25 +130,21 @@ int main()
     PACER_TIMER_Start();    
     
     CYGlobalIntEnable;              // Enable interrupts.
-
-    filt_detect_pc.gain = 500;    
-   
+    filt_emg[0].gain      = 50;   // Emg channels filter constant.
+    filt_emg[1].gain      = 50;   // Emg channels filter constant.
+    
+    for (uint8 i = 0; i < 3; i++){
+        change_ext_ref_flag[i] = FALSE;
+    }
     //---------------------------------------------------  Initialize emg structure
     g_adc_meas.emg[0] = 0;
     g_adc_meas.emg[1] = 0;
-   
-    for (uint16 k = 0; k<SAMPLES_FOR_EMG_HISTORY; k++){
-        for (j = 0; j<NUM_OF_INPUT_EMGS; j++){
-            emg_history[k][j] = (uint16)0;
-        }
-    }
-    emg_history_next_idx = 0;
 
     //------------------------------------------------- Initialize package on receive from RS485
     g_rx.length = 0;
     g_rx.ready  = 0;
     
-    LED_CONTROL_Write(1);     // Default - red light
+    LED_CONTROL_Write(1);     // Green
 
     //============================================================     main loop
     

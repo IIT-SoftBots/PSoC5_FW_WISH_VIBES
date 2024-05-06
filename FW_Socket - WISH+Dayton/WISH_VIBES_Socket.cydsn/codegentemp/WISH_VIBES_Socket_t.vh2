@@ -1,5 +1,5 @@
--- Project:   C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES - Copia\FW_Socket - WISH+Dayton\WISH_VIBES_Socket.cydsn\WISH_VIBES_Socket.cyprj
--- Generated: 10/24/2023 20:04:20
+-- Project:   C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_Socket - WISH+Dayton\WISH_VIBES_Socket.cydsn\WISH_VIBES_Socket.cyprj
+-- Generated: 05/03/2024 15:46:49
 -- PSoC Creator  4.4
 
 ENTITY WISH_VIBES_Socket IS

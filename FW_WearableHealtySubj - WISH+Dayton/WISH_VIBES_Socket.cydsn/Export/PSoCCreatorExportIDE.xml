@@ -141,6 +141,12 @@
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\MISO_RTC_aliases.h</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\MISO_RTC.c</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\MISO_RTC.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\LED_RED_aliases.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\LED_RED.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\LED_RED.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\LED_GREEN_aliases.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\LED_GREEN.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\LED_GREEN.h</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\ADC_SOC.h</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\ADC_SOC.c</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\ADC_SOC_PM.c</File>
@@ -247,9 +253,6 @@
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\VT2_DIR_PM.c</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\CLOCK_VT.c</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\CLOCK_VT.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\LED_GREEN_1_aliases.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\LED_GREEN_1.c</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\LED_GREEN_1.h</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\PWM_PUMP.c</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\PWM_PUMP.h</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\PWM_PUMP_PM.c</File>

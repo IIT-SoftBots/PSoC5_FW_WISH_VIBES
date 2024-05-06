@@ -226,8 +226,7 @@ void commProcess(void){
 
 //============================================================     CMD_HAND_CALIBRATE
 
-        case CMD_HAND_CALIBRATE:
-           
+        case CMD_HAND_CALIBRATE:           
             break;
             
 //=====================================================     CMD_GET_IMU_READINGS
@@ -522,14 +521,18 @@ void manage_param_list(uint16 index, uint8 sendToDevice) {
     
     struct parameter param_type;   
     
-    const struct parameter PARAM_LIST[]=
-    {
+    const struct parameter PARAM_LIST[] = {
     //  {VAR_P                                                     , TYPES           , NUM_ITEMS , PARAM_STR                               , MENU,         , STRUCTURE         , CUSTOM            , SHOW WITH PING}
+        //DEVICE_PARAMETERS    
         {(uint8* const) &(MEM_P->dev.id)                           , TYPE_UINT8      , 1         , "Device ID:"                            , 0             , ST_DEVICE         , 0                 , TRUE},  
+        
+        //EMG_PARAMETERS    
         {(uint8* const) &(MEM_P->emg.emg_threshold[0])             , TYPE_UINT16     , 2         , "EMG thresholds:"                       , 0             , ST_EMG            , 0                 , TRUE},
         {(uint8* const) &(MEM_P->emg.emg_max_value[0])             , TYPE_UINT32     , 2         , "EMG max values:"                       , 0             , ST_EMG            , 0                 , TRUE}, 
         {(uint8* const) &(MEM_P->emg.emg_speed[0])                 , TYPE_UINT8      , 2         , "EMG max speeds:"                       , 0             , ST_EMG            , 0                 , TRUE}, 
         {(uint8* const) &(MEM_P->emg.switch_emg)                   , TYPE_FLAG       , 1         , "EMG inversion:"                        , MENU_Y_N      , ST_EMG            , 0                 , TRUE}, 
+        
+        //MASTER MODE PARAMETERS
         {(uint8* const) &(MEM_P->MS.master_mode_active)            , TYPE_FLAG       , 1         , "Master Mode:"                          , MENU_ON_OFF   , ST_MS_SPEC        , 0                 , TRUE},  
         {(uint8* const) &(MEM_P->MS.slave_ID)                      , TYPE_UINT8      , 1         , "Slave ID:"                             , 0             , ST_MS_SPEC        , 0                 , TRUE},  
         {(uint8* const) &(MEM_P->SH_config.res)                    , TYPE_UINT8      , 1         , "Slave resolution:"                     , 0             , ST_MS_SPEC        , 0                 , TRUE},  
@@ -549,7 +552,7 @@ void manage_param_list(uint16 index, uint8 sendToDevice) {
         get_param_list(NUM_PARAMs, NUM_MENUs, PARAM_LIST, MENU_LIST, sendToDevice);
     }   
     else if  (index == 300) {
-        
+        // Called only by prepre_generic_info to get data  from the parameters to print
         qbadminp_string(NUM_PARAMs, NUM_MENUs, PARAM_LIST, MENU_LIST);
     }
 
@@ -642,7 +645,6 @@ void setZeros()
 {
 }
 
-
 void  qbadminp_string ( uint8 num_params, uint8 num_menus, const struct parameter PARAM_LIST[], const struct menu MENU_LIST[]){
     strcpy(superstring, "");
     char info_string[2500] = "";
@@ -662,7 +664,7 @@ void  qbadminp_string ( uint8 num_params, uint8 num_menus, const struct paramete
         uint8* m_tmp;
         char str[100];
         strcpy(info_string, "");
-        strcat(info_string, "ECCCOCIIII:\n");
+        strcat(info_string, "\n");
         
         
         for (idx = 0; idx < num_params; idx ++) {
@@ -741,7 +743,7 @@ void  qbadminp_string ( uint8 num_params, uint8 num_menus, const struct paramete
               
       
     strcat(superstring,info_string);
-    strcat(superstring,"ertyuioooiuytu");
+    
 }}
 //==============================================================================
 //                                                   PREPARE GENERIC DEVICE INFO
@@ -770,7 +772,10 @@ void prepare_generic_info(char *info_string){
                 strcat(info_string, str);
                 strcat(info_string,"\r\n");
             }
-
+            
+            
+        sprintf(str,"Actuators input: Pump = %d, VT0 = %d, VT1 = %d \r\n",(int) Pump_refOld, (int)VT_refOld[0], (int) VT_refOld[1]);
+        strcat(info_string, str);
         sprintf(str, "Last FW cycle time: %u us\r\n", (uint16)timer_value0 - (uint16)timer_value);
         strcat(info_string, str);
 
@@ -1132,11 +1137,50 @@ void cmd_get_joystick() {
 }
 
 void cmd_set_inputs(){
+     // Store position setted in right variables
+    int16 aux_int16[3];
+    static int16 last_aux_int16[3];
     
-}
+    aux_int16[0] = (int16)(g_rx.buffer[1]<<8 | g_rx.buffer[2]);
+    aux_int16[1] = (int16)(g_rx.buffer[3]<<8 | g_rx.buffer[4]);
+    aux_int16[2] = (int16)(g_rx.buffer[5]<<8 | g_rx.buffer[6]);
+    // Check if last command received was the same as this 
+    //(Note: last command not last motor reference in g_ref)
+    for (uint8 i = 0; i < 3; i++) {
+       //if(last_aux_int16[i] != aux_int16[i]){
+            change_ext_ref_flag[i] = TRUE;
+       }
+        // Update last command
+      // last_aux_int16[i] = aux_int16[i];
+    
+    
+    // Update g_refNew in case a new command has been received
+    if (change_ext_ref_flag[0]) {
+        Pump_refNew = aux_int16[0];
+                
+        // Check if the reference is nor higher or lower than the position limits
+        if (Pump_refNew < 0)
+            Pump_refNew = 0;
+                
+        if (Pump_refNew > 100)
+            Pump_refNew = 100;       
+    }
+    
+    if (change_ext_ref_flag[1]) 
+        VT_refNew[0] = aux_int16[1];
+    
+    if (change_ext_ref_flag[2]) 
+        VT_refNew[1] = aux_int16[2];
+                
+   }
 
 void cmd_activate(){
-    
+ uint8 aux = g_rx.buffer[1];
+ VALVE_Write((aux >> 1) & 0x01);
+ if (aux == 0)
+ Pump_refNew = 0;
+ VT_refNew[0] = 0;   
+ VT_refNew[1] = 0;   
 }
 
 void cmd_get_activate(){
@@ -1150,6 +1194,32 @@ void cmd_get_curr_and_meas(){
 
 void cmd_get_currents(){
    
+    // Packet: header + motor_measure(int16) + crc
+    
+    uint8 packet_data[6]; 
+    int16 aux_int16;
+    
+    //Header package
+
+    packet_data[0] = CMD_GET_CURRENTS;
+
+     // Send pressure times 100 here instead of current (Simulink use)
+    aux_int16 = (int16)(pressure_value*100.0); //Pressure
+    packet_data[2] = ((char*)(&aux_int16))[0];
+    packet_data[1] = ((char*)(&aux_int16))[1];
+    
+    
+       // aux_int16 = (int16) g_measOld[g_mem.motor[0].encoder_line].estim_curr; //Estimated current
+        aux_int16 = (int16)PWM_IMU_2;
+    
+    packet_data[4] = ((char*)(&aux_int16))[0];
+    packet_data[3] = ((char*)(&aux_int16))[1];
+
+    // Calculate Checksum and send message to UART 
+
+    packet_data[5] = LCRChecksum (packet_data, 5);
+    
+    commWrite(packet_data, 6);
 }
 
 void cmd_get_currents_for_cuff(){
@@ -1384,12 +1454,12 @@ void vibrotactile_control() {
     // Values received are already the PWM commands computed by the slave board proportional to the IMU values read.
     
     PWM_IMU_1 = (int16)(((float)PWM_IMU_1/50.0) * SCALA);
-    if (PWM_IMU_1 > MAX_INPUT_PWM) PWM_IMU_1 = MAX_INPUT_PWM;
-    if (PWM_IMU_1 < MIN_INPUT_PWM) PWM_IMU_1 = 0;
+    if (PWM_IMU_1 > MAX_VT_PWM) PWM_IMU_1 = MAX_VT_PWM;
+    if (PWM_IMU_1 < MIN_VT_PWM) PWM_IMU_1 = 0;
     
     PWM_IMU_2 = (int16) (((float)PWM_IMU_2/50.0) * SCALA);
-    if (PWM_IMU_2 > MAX_INPUT_PWM) PWM_IMU_2 = MAX_INPUT_PWM;
-    if (PWM_IMU_2 < MIN_INPUT_PWM) PWM_IMU_2 = 0;
+    if (PWM_IMU_2 > MAX_VT_PWM) PWM_IMU_2 = MAX_VT_PWM;
+    if (PWM_IMU_2 < MIN_VT_PWM) PWM_IMU_2 = 0;
     
     VT_ref[0] = PWM_IMU_1;
     VT_ref[1] = PWM_IMU_2;
@@ -1418,7 +1488,7 @@ void air_chambers_control() {
 
     int16 curr_diff;
     int32 pressure_reference;
-    int32 err_pressure, pressure_value;
+    int32 err_pressure;
     int32 valve_command;
     int16 x_value;
 
@@ -1438,7 +1508,6 @@ void air_chambers_control() {
     if (pressure_reference > c_mem.FB.maximum_pressure_kPa)
         pressure_reference = c_mem.FB.maximum_pressure_kPa;
     
-    pressure_value = (int32)g_adc_meas.pressure;
     err_pressure = pressure_reference - pressure_value;       // error in kPa
 
     if (x_value <= 0){
@@ -1459,9 +1528,9 @@ void air_chambers_control() {
     //c_mem.FB.prop_err_fb_gain default 1.0 gain since, max err_pressure is 25 and pwm range is approx. 25 ticks [45=2V,70=3V]
     
     // Limit output voltage
-    if (Pump_refNew > 80) // 80 (3.5V) 80% of 4.3V (5V - 1 diode)
-        Pump_refNew = 80; // 80
-    if (Pump_refNew < 20)
+    if (Pump_refNew > MAX_PUMP_PWM) // 80 (3.5V) 80% of 4.3V (5V - 1 diode)
+        Pump_refNew = MAX_PUMP_PWM; // 80
+    if (Pump_refNew < MIN_PUMP_PWM)
         Pump_refNew = 0;
         
     VALVE_Write(valve_command);
@@ -1474,7 +1543,20 @@ void air_chambers_control() {
 
 }
 
+void pump_control() {
+    if (Pump_ref > 100)
+        Pump_ref = 100;
+    PWM_PUMP_WriteCompare(Pump_ref);
+}
 
+void VT_control() {
+    if (VT_ref[0] > 100)
+        VT_ref[0] = 100;
+    PWM_VT_WriteCompare1(VT_ref[0]);
+    if (VT_ref[1] > 100)
+        VT_ref[1] = 100;
+    PWM_VT_WriteCompare2(VT_ref[1]);
+}
 //==============================================================================
 //                                                   EMG ACTIVATION VELOCITY FSM
 //==============================================================================
@@ -1591,7 +1673,6 @@ void drive_slave( uint8 slave_ID) {
     packet_length = 6;
     packet_data[packet_length - 1] = LCRChecksum(packet_data,packet_length - 1);
     commWriteID(packet_data, packet_length, slave_ID);
-
 
 }
 //==============================================================================

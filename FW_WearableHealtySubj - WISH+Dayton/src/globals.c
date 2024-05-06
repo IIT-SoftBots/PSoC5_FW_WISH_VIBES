@@ -56,7 +56,7 @@
 int16 ADC_buf[3];     /*! ADC measurements buffer.*/
 uint8 NUM_OF_ANALOG_INPUTS = 3;             /*! ADC currently configured channels.*/
 struct st_eeprom    g_mem, c_mem;               // Memory variables.
- struct st_adc_meas g_adc_meas, g_adc_measOld;/*!< EMG Measurements.*/
+ 
 int32 pressure_value;
 CYBIT interrupt_flag = FALSE;               /*!< Interrupt flag enabler.*/
 int32 flag_master;
@@ -101,7 +101,7 @@ CYBIT can_write = TRUE;                     /*!< Write to EEPROM flag.*/
 uint8 rest_enabled;                         /*!< Rest position flag.*/
 uint8 forced_open;                          /*!< Forced open flag (used in position with rest position control).*/                               
 uint8 battery_low_SoC = FALSE;              /*!< Battery low State of Charge flag (re-open terminal device when active).*/
-uint8 change_ext_ref_flag = FALSE;          /*!< This flag is set when an external reference command is received.*/
+uint8 change_ext_ref_flag[3];          /*!< This flag is set when an external reference command is received.*/
 
 
 // ADC Buffer

@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccD9IFNh.s 			page 1
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc4jhSAC.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccD9IFNh.s 			page 1
   28:Generated_Source\PSoC5/ADC_STATUS.c **** *  Reads the current value assigned to the Status Register.
   29:Generated_Source\PSoC5/ADC_STATUS.c **** *
   30:Generated_Source\PSoC5/ADC_STATUS.c **** * Parameters:
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccD9IFNh.s 			page 2
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc4jhSAC.s 			page 2
 
 
   31:Generated_Source\PSoC5/ADC_STATUS.c **** *  None.
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccD9IFNh.s 			page 1
   47:Generated_Source\PSoC5/ADC_STATUS.c **** * Summary:
   48:Generated_Source\PSoC5/ADC_STATUS.c **** *  Enables the Status Register interrupt.
   49:Generated_Source\PSoC5/ADC_STATUS.c **** *
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccD9IFNh.s 			page 3
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc4jhSAC.s 			page 3
 
 
   50:Generated_Source\PSoC5/ADC_STATUS.c **** * Parameters:
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccD9IFNh.s 			page 1
  106              		.cfi_endproc
  107              	.LFE1:
  108              		.size	ADC_STATUS_InterruptEnable, .-ADC_STATUS_InterruptEnable
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccD9IFNh.s 			page 4
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc4jhSAC.s 			page 4
 
 
  109              		.section	.text.ADC_STATUS_InterruptDisable,"ax",%progbits
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccD9IFNh.s 			page 1
  141              		.loc 1 85 0
  142 001e FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
  143 0020 1846     		mov	r0, r3
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccD9IFNh.s 			page 5
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc4jhSAC.s 			page 5
 
 
  144 0022 FFF7FEFF 		bl	CyExitCriticalSection
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccD9IFNh.s 			page 1
  179              		.cfi_def_cfa_register 7
  180 0006 0346     		mov	r3, r0
  181 0008 FB71     		strb	r3, [r7, #7]
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccD9IFNh.s 			page 6
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc4jhSAC.s 			page 6
 
 
  105:Generated_Source\PSoC5/ADC_STATUS.c ****     #if(ADC_STATUS_INPUTS < 8u)
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccD9IFNh.s 			page 1
  125:Generated_Source\PSoC5/ADC_STATUS.c **** *******************************************************************************/
  126:Generated_Source\PSoC5/ADC_STATUS.c **** uint8 ADC_STATUS_ReadMask(void) 
  127:Generated_Source\PSoC5/ADC_STATUS.c **** {
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccD9IFNh.s 			page 7
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc4jhSAC.s 			page 7
 
 
  216              		.loc 1 127 0
@@ -403,40 +403,40 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccD9IFNh.s 			page 1
  253 0006 00000000 		.4byte	.Ldebug_abbrev0
  254 000a 04       		.byte	0x4
  255 000b 01       		.uleb128 0x1
- 256 000c BF000000 		.4byte	.LASF22
+ 256 000c 22010000 		.4byte	.LASF22
  257 0010 0C       		.byte	0xc
- 258 0011 90000000 		.4byte	.LASF23
- 259 0015 C0010000 		.4byte	.LASF24
+ 258 0011 F9000000 		.4byte	.LASF23
+ 259 0015 40000000 		.4byte	.LASF24
  260 0019 00000000 		.4byte	.Ldebug_ranges0+0
  261 001d 00000000 		.4byte	0
  262 0021 00000000 		.4byte	.Ldebug_line0
  263 0025 02       		.uleb128 0x2
  264 0026 01       		.byte	0x1
  265 0027 06       		.byte	0x6
- 266 0028 A8010000 		.4byte	.LASF0
+ 266 0028 0B020000 		.4byte	.LASF0
  267 002c 02       		.uleb128 0x2
  268 002d 01       		.byte	0x1
  269 002e 08       		.byte	0x8
- 270 002f 68010000 		.4byte	.LASF1
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccD9IFNh.s 			page 8
+ 270 002f CB010000 		.4byte	.LASF1
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc4jhSAC.s 			page 8
 
 
  271 0033 02       		.uleb128 0x2
  272 0034 02       		.byte	0x2
  273 0035 05       		.byte	0x5
- 274 0036 84010000 		.4byte	.LASF2
+ 274 0036 E7010000 		.4byte	.LASF2
  275 003a 02       		.uleb128 0x2
  276 003b 02       		.byte	0x2
  277 003c 07       		.byte	0x7
- 278 003d 95010000 		.4byte	.LASF3
+ 278 003d F8010000 		.4byte	.LASF3
  279 0041 02       		.uleb128 0x2
  280 0042 04       		.byte	0x4
  281 0043 05       		.byte	0x5
- 282 0044 7B010000 		.4byte	.LASF4
+ 282 0044 DE010000 		.4byte	.LASF4
  283 0048 02       		.uleb128 0x2
  284 0049 04       		.byte	0x4
  285 004a 07       		.byte	0x7
- 286 004b 4B000000 		.4byte	.LASF5
+ 286 004b B4000000 		.4byte	.LASF5
  287 004f 02       		.uleb128 0x2
  288 0050 08       		.byte	0x8
  289 0051 05       		.byte	0x5
@@ -444,7 +444,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccD9IFNh.s 			page 1
  291 0056 02       		.uleb128 0x2
  292 0057 08       		.byte	0x8
  293 0058 07       		.byte	0x7
- 294 0059 5D000000 		.4byte	.LASF7
+ 294 0059 C6000000 		.4byte	.LASF7
  295 005d 03       		.uleb128 0x3
  296 005e 04       		.byte	0x4
  297 005f 05       		.byte	0x5
@@ -454,40 +454,40 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccD9IFNh.s 			page 1
  301 0066 07       		.byte	0x7
  302 0067 0E000000 		.4byte	.LASF8
  303 006b 04       		.uleb128 0x4
- 304 006c 45000000 		.4byte	.LASF12
+ 304 006c AE000000 		.4byte	.LASF12
  305 0070 02       		.byte	0x2
  306 0071 E401     		.2byte	0x1e4
  307 0073 2C000000 		.4byte	0x2c
  308 0077 02       		.uleb128 0x2
  309 0078 04       		.byte	0x4
  310 0079 04       		.byte	0x4
- 311 007a B9000000 		.4byte	.LASF9
+ 311 007a 23020000 		.4byte	.LASF9
  312 007e 02       		.uleb128 0x2
  313 007f 08       		.byte	0x8
  314 0080 04       		.byte	0x4
- 315 0081 8E010000 		.4byte	.LASF10
+ 315 0081 F1010000 		.4byte	.LASF10
  316 0085 02       		.uleb128 0x2
  317 0086 01       		.byte	0x1
  318 0087 08       		.byte	0x8
- 319 0088 76010000 		.4byte	.LASF11
+ 319 0088 D9010000 		.4byte	.LASF11
  320 008c 04       		.uleb128 0x4
- 321 008d 40000000 		.4byte	.LASF13
+ 321 008d A9000000 		.4byte	.LASF13
  322 0091 02       		.byte	0x2
  323 0092 8E02     		.2byte	0x28e
  324 0094 98000000 		.4byte	0x98
  325 0098 05       		.uleb128 0x5
  326 0099 6B000000 		.4byte	0x6b
  327 009d 02       		.uleb128 0x2
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccD9IFNh.s 			page 9
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc4jhSAC.s 			page 9
 
 
  328 009e 08       		.byte	0x8
  329 009f 04       		.byte	0x4
- 330 00a0 B4010000 		.4byte	.LASF14
+ 330 00a0 17020000 		.4byte	.LASF14
  331 00a4 02       		.uleb128 0x2
  332 00a5 04       		.byte	0x4
  333 00a6 07       		.byte	0x7
- 334 00a7 2F020000 		.4byte	.LASF15
+ 334 00a7 3D020000 		.4byte	.LASF15
  335 00ab 06       		.uleb128 0x6
  336 00ac 30000000 		.4byte	.LASF20
  337 00b0 01       		.byte	0x1
@@ -498,7 +498,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccD9IFNh.s 			page 1
  342 00be 01       		.uleb128 0x1
  343 00bf 9C       		.byte	0x9c
  344 00c0 07       		.uleb128 0x7
- 345 00c1 4D010000 		.4byte	.LASF16
+ 345 00c1 B0010000 		.4byte	.LASF16
  346 00c5 01       		.byte	0x1
  347 00c6 39       		.byte	0x39
  348 00c7 00000000 		.4byte	.LFB1
@@ -507,7 +507,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccD9IFNh.s 			page 1
  351 00d0 9C       		.byte	0x9c
  352 00d1 E4000000 		.4byte	0xe4
  353 00d5 08       		.uleb128 0x8
- 354 00d6 38020000 		.4byte	.LASF18
+ 354 00d6 46020000 		.4byte	.LASF18
  355 00da 01       		.byte	0x1
  356 00db 3B       		.byte	0x3b
  357 00dc 6B000000 		.4byte	0x6b
@@ -516,7 +516,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccD9IFNh.s 			page 1
  360 00e2 77       		.sleb128 -9
  361 00e3 00       		.byte	0
  362 00e4 07       		.uleb128 0x7
- 363 00e5 74000000 		.4byte	.LASF17
+ 363 00e5 DD000000 		.4byte	.LASF17
  364 00e9 01       		.byte	0x1
  365 00ea 50       		.byte	0x50
  366 00eb 00000000 		.4byte	.LFB2
@@ -525,7 +525,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccD9IFNh.s 			page 1
  369 00f4 9C       		.byte	0x9c
  370 00f5 08010000 		.4byte	0x108
  371 00f9 08       		.uleb128 0x8
- 372 00fa 38020000 		.4byte	.LASF18
+ 372 00fa 46020000 		.4byte	.LASF18
  373 00fe 01       		.byte	0x1
  374 00ff 52       		.byte	0x52
  375 0100 6B000000 		.4byte	0x6b
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccD9IFNh.s 			page 1
  382 010d 01       		.byte	0x1
  383 010e 67       		.byte	0x67
  384 010f 00000000 		.4byte	.LFB3
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccD9IFNh.s 			page 10
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc4jhSAC.s 			page 10
 
 
  385 0113 28000000 		.4byte	.LFE3-.LFB3
@@ -546,7 +546,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccD9IFNh.s 			page 1
  387 0118 9C       		.byte	0x9c
  388 0119 2C010000 		.4byte	0x12c
  389 011d 0A       		.uleb128 0xa
- 390 011e B4000000 		.4byte	.LASF25
+ 390 011e 1D010000 		.4byte	.LASF25
  391 0122 01       		.byte	0x1
  392 0123 67       		.byte	0x67
  393 0124 6B000000 		.4byte	0x6b
@@ -555,7 +555,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccD9IFNh.s 			page 1
  396 012a 77       		.sleb128 -9
  397 012b 00       		.byte	0
  398 012c 06       		.uleb128 0x6
- 399 012d 1B020000 		.4byte	.LASF21
+ 399 012d 29020000 		.4byte	.LASF21
  400 0131 01       		.byte	0x1
  401 0132 7E       		.byte	0x7e
  402 0133 6B000000 		.4byte	0x6b
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccD9IFNh.s 			page 1
  439 001d 00       		.byte	0
  440 001e 03       		.uleb128 0x3
  441 001f 24       		.uleb128 0x24
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccD9IFNh.s 			page 11
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc4jhSAC.s 			page 11
 
 
  442 0020 00       		.byte	0
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccD9IFNh.s 			page 1
  496 0057 07       		.uleb128 0x7
  497 0058 2E       		.uleb128 0x2e
  498 0059 01       		.byte	0x1
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccD9IFNh.s 			page 12
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc4jhSAC.s 			page 12
 
 
  499 005a 3F       		.uleb128 0x3f
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccD9IFNh.s 			page 1
  553 0091 40       		.uleb128 0x40
  554 0092 18       		.uleb128 0x18
  555 0093 9742     		.uleb128 0x2117
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccD9IFNh.s 			page 13
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc4jhSAC.s 			page 13
 
 
  556 0095 19       		.uleb128 0x19
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccD9IFNh.s 			page 1
  610 002c 00000000 		.4byte	0
  611              		.section	.debug_line,"",%progbits
  612              	.Ldebug_line0:
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccD9IFNh.s 			page 14
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc4jhSAC.s 			page 14
 
 
  613 0000 AA000000 		.section	.debug_str,"MS",%progbits,1
@@ -807,127 +807,130 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccD9IFNh.s 			page 1
  621      53544154 
  621      55535F52 
  621      65616400 
- 622              	.LASF13:
- 623 0040 72656738 		.ascii	"reg8\000"
- 623      00
- 624              	.LASF12:
- 625 0045 75696E74 		.ascii	"uint8\000"
- 625      3800
- 626              	.LASF5:
- 627 004b 6C6F6E67 		.ascii	"long unsigned int\000"
- 627      20756E73 
- 627      69676E65 
- 627      6420696E 
- 627      7400
- 628              	.LASF7:
- 629 005d 6C6F6E67 		.ascii	"long long unsigned int\000"
- 629      206C6F6E 
- 629      6720756E 
- 629      7369676E 
- 629      65642069 
- 630              	.LASF17:
- 631 0074 4144435F 		.ascii	"ADC_STATUS_InterruptDisable\000"
- 631      53544154 
- 631      55535F49 
- 631      6E746572 
- 631      72757074 
- 632              	.LASF23:
- 633 0090 47656E65 		.ascii	"Generated_Source\\PSoC5\\ADC_STATUS.c\000"
- 633      72617465 
- 633      645F536F 
- 633      75726365 
- 633      5C50536F 
- 634              	.LASF25:
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccD9IFNh.s 			page 15
+ 622              	.LASF24:
+ 623 0040 433A5C55 		.ascii	"C:\\Users\\mgnocco\\Documents\\Git\\PSoC5\\PSoC5_FW"
+ 623      73657273 
+ 623      5C6D676E 
+ 623      6F63636F 
+ 623      5C446F63 
+ 624 006d 5F574953 		.ascii	"_WISH_VIBES\\FW_Socket - WISH+Dayton\\WISH_VIBES_So"
+ 624      485F5649 
+ 624      4245535C 
+ 624      46575F53 
+ 624      6F636B65 
+ 625 009e 636B6574 		.ascii	"cket.cydsn\000"
+ 625      2E637964 
+ 625      736E00
+ 626              	.LASF13:
+ 627 00a9 72656738 		.ascii	"reg8\000"
+ 627      00
+ 628              	.LASF12:
+ 629 00ae 75696E74 		.ascii	"uint8\000"
+ 629      3800
+ 630              	.LASF5:
+ 631 00b4 6C6F6E67 		.ascii	"long unsigned int\000"
+ 631      20756E73 
+ 631      69676E65 
+ 631      6420696E 
+ 631      7400
+ 632              	.LASF7:
+ 633 00c6 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 633      206C6F6E 
+ 633      6720756E 
+ 633      7369676E 
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc4jhSAC.s 			page 15
 
 
- 635 00b4 6D61736B 		.ascii	"mask\000"
- 635      00
- 636              	.LASF9:
- 637 00b9 666C6F61 		.ascii	"float\000"
- 637      7400
- 638              	.LASF22:
- 639 00bf 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
- 639      43313120 
- 639      352E342E 
- 639      31203230 
- 639      31363036 
- 640 00f2 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
- 640      20726576 
- 640      6973696F 
- 640      6E203233 
- 640      37373135 
- 641 0125 30202D66 		.ascii	"0 -ffunction-sections -ffat-lto-objects\000"
- 641      66756E63 
- 641      74696F6E 
- 641      2D736563 
- 641      74696F6E 
- 642              	.LASF16:
- 643 014d 4144435F 		.ascii	"ADC_STATUS_InterruptEnable\000"
- 643      53544154 
- 643      55535F49 
- 643      6E746572 
- 643      72757074 
- 644              	.LASF1:
- 645 0168 756E7369 		.ascii	"unsigned char\000"
- 645      676E6564 
- 645      20636861 
- 645      7200
- 646              	.LASF11:
- 647 0176 63686172 		.ascii	"char\000"
- 647      00
- 648              	.LASF4:
- 649 017b 6C6F6E67 		.ascii	"long int\000"
- 649      20696E74 
+ 633      65642069 
+ 634              	.LASF17:
+ 635 00dd 4144435F 		.ascii	"ADC_STATUS_InterruptDisable\000"
+ 635      53544154 
+ 635      55535F49 
+ 635      6E746572 
+ 635      72757074 
+ 636              	.LASF23:
+ 637 00f9 47656E65 		.ascii	"Generated_Source\\PSoC5\\ADC_STATUS.c\000"
+ 637      72617465 
+ 637      645F536F 
+ 637      75726365 
+ 637      5C50536F 
+ 638              	.LASF25:
+ 639 011d 6D61736B 		.ascii	"mask\000"
+ 639      00
+ 640              	.LASF22:
+ 641 0122 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 641      43313120 
+ 641      352E342E 
+ 641      31203230 
+ 641      31363036 
+ 642 0155 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
+ 642      20726576 
+ 642      6973696F 
+ 642      6E203233 
+ 642      37373135 
+ 643 0188 30202D66 		.ascii	"0 -ffunction-sections -ffat-lto-objects\000"
+ 643      66756E63 
+ 643      74696F6E 
+ 643      2D736563 
+ 643      74696F6E 
+ 644              	.LASF16:
+ 645 01b0 4144435F 		.ascii	"ADC_STATUS_InterruptEnable\000"
+ 645      53544154 
+ 645      55535F49 
+ 645      6E746572 
+ 645      72757074 
+ 646              	.LASF1:
+ 647 01cb 756E7369 		.ascii	"unsigned char\000"
+ 647      676E6564 
+ 647      20636861 
+ 647      7200
+ 648              	.LASF11:
+ 649 01d9 63686172 		.ascii	"char\000"
  649      00
- 650              	.LASF2:
- 651 0184 73686F72 		.ascii	"short int\000"
- 651      7420696E 
- 651      7400
- 652              	.LASF10:
- 653 018e 646F7562 		.ascii	"double\000"
- 653      6C6500
- 654              	.LASF3:
- 655 0195 73686F72 		.ascii	"short unsigned int\000"
- 655      7420756E 
- 655      7369676E 
- 655      65642069 
- 655      6E7400
- 656              	.LASF0:
- 657 01a8 7369676E 		.ascii	"signed char\000"
- 657      65642063 
- 657      68617200 
- 658              	.LASF14:
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccD9IFNh.s 			page 16
+ 650              	.LASF4:
+ 651 01de 6C6F6E67 		.ascii	"long int\000"
+ 651      20696E74 
+ 651      00
+ 652              	.LASF2:
+ 653 01e7 73686F72 		.ascii	"short int\000"
+ 653      7420696E 
+ 653      7400
+ 654              	.LASF10:
+ 655 01f1 646F7562 		.ascii	"double\000"
+ 655      6C6500
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc4jhSAC.s 			page 16
 
 
- 659 01b4 6C6F6E67 		.ascii	"long double\000"
- 659      20646F75 
- 659      626C6500 
- 660              	.LASF24:
- 661 01c0 433A5C55 		.ascii	"C:\\Users\\mgnocco\\Documents\\Git\\PSoC5\\PSoC5_FW"
- 661      73657273 
- 661      5C6D676E 
- 661      6F63636F 
- 661      5C446F63 
- 662 01ed 5F574953 		.ascii	"_WISH_VIBES\\FW_Socket\\WISH_VIBES_Socket.cydsn\000"
- 662      485F5649 
- 662      4245535C 
- 662      46575F53 
- 662      6F636B65 
- 663              	.LASF21:
- 664 021b 4144435F 		.ascii	"ADC_STATUS_ReadMask\000"
- 664      53544154 
- 664      55535F52 
- 664      6561644D 
- 664      61736B00 
- 665              	.LASF15:
- 666 022f 73697A65 		.ascii	"sizetype\000"
- 666      74797065 
- 666      00
- 667              	.LASF18:
- 668 0238 696E7465 		.ascii	"interruptState\000"
- 668      72727570 
- 668      74537461 
- 668      746500
- 669              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran
+ 656              	.LASF3:
+ 657 01f8 73686F72 		.ascii	"short unsigned int\000"
+ 657      7420756E 
+ 657      7369676E 
+ 657      65642069 
+ 657      6E7400
+ 658              	.LASF0:
+ 659 020b 7369676E 		.ascii	"signed char\000"
+ 659      65642063 
+ 659      68617200 
+ 660              	.LASF14:
+ 661 0217 6C6F6E67 		.ascii	"long double\000"
+ 661      20646F75 
+ 661      626C6500 
+ 662              	.LASF9:
+ 663 0223 666C6F61 		.ascii	"float\000"
+ 663      7400
+ 664              	.LASF21:
+ 665 0229 4144435F 		.ascii	"ADC_STATUS_ReadMask\000"
+ 665      53544154 
+ 665      55535F52 
+ 665      6561644D 
+ 665      61736B00 
+ 666              	.LASF15:
+ 667 023d 73697A65 		.ascii	"sizetype\000"
+ 667      74797065 
+ 667      00
+ 668              	.LASF18:
+ 669 0246 696E7465 		.ascii	"interruptState\000"
+ 669      72727570 
+ 669      74537461 
+ 669      746500
+ 670              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

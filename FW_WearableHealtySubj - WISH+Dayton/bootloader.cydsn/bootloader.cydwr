@@ -254,8 +254,10 @@
       <Data key="4c15b41e-e284-4978-99e7-5aaee19bd0ce" value="USB_VDD" />
       <Data key="11c30cbe-dd54-4133-b9f8-c632e49aa813" value="MOTOR_PORT" />
       <Data key="52f31aa9-2f0a-497d-9a1f-1424095e13e6" value="FTDI_ENABLE" />
+      <Data key="258ad99a-bf76-4c4a-8863-183b35d59b35" value="EMG1" />
       <Data key="294a8542-13bb-492d-93ce-945bd1f598a8" value="RS_485_EN" />
       <Data key="1425177d-0d0e-4468-8bcc-e638e5509a9b" value="RS485_RX" />
+      <Data key="a1902807-f577-423f-9e98-566b0a510419" value="EMG2" />
       <Data key="d55049de-f559-4856-91bd-6913f5ef939b" value="RS485_TX" />
       <Data key="e851a3b9-efb8-48be-bbb8-b303b216c393" value="Pin_1" />
     </Group>
@@ -3359,6 +3361,11 @@
         <Data key="Port Format" value="1,2" />
       </Group>
     </Group>
+    <Group key="258ad99a-bf76-4c4a-8863-183b35d59b35">
+      <Group key="0">
+        <Data key="Port Format" value="2,6" />
+      </Group>
+    </Group>
     <Group key="294a8542-13bb-492d-93ce-945bd1f598a8">
       <Group key="0">
         <Data key="Port Format" value="12,4" />
@@ -3367,6 +3374,11 @@
     <Group key="1425177d-0d0e-4468-8bcc-e638e5509a9b">
       <Group key="0">
         <Data key="Port Format" value="12,6" />
+      </Group>
+    </Group>
+    <Group key="a1902807-f577-423f-9e98-566b0a510419">
+      <Group key="0">
+        <Data key="Port Format" value="2,7" />
       </Group>
     </Group>
     <Group key="d55049de-f559-4856-91bd-6913f5ef939b">

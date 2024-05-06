@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccf5qXp5.s 			page 1
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc2bNoNq.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccf5qXp5.s 			page 1
   22:Generated_Source\PSoC5/PWM_VT.c **** ********************************************************************************/
   23:Generated_Source\PSoC5/PWM_VT.c **** 
   24:Generated_Source\PSoC5/PWM_VT.c **** #include "PWM_VT.h"
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccf5qXp5.s 			page 2
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc2bNoNq.s 			page 2
 
 
   25:Generated_Source\PSoC5/PWM_VT.c **** 
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccf5qXp5.s 			page 1
   51              		.loc 1 61 0
   52 0010 034B     		ldr	r3, .L3
   53 0012 0122     		movs	r2, #1
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccf5qXp5.s 			page 3
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc2bNoNq.s 			page 3
 
 
   54 0014 1A70     		strb	r2, [r3]
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccf5qXp5.s 			page 1
   84 0002 82B0     		sub	sp, sp, #8
   85              		.cfi_def_cfa_offset 16
   86 0004 00AF     		add	r7, sp, #0
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccf5qXp5.s 			page 4
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc2bNoNq.s 			page 4
 
 
   87              		.cfi_def_cfa_register 7
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccf5qXp5.s 			page 1
  127:Generated_Source\PSoC5/PWM_VT.c ****         #else /* (PWM_VT_Resolution == 16)*/
  128:Generated_Source\PSoC5/PWM_VT.c ****             /* Set FIFO 0 to 1 byte register for period */
  129:Generated_Source\PSoC5/PWM_VT.c ****             PWM_VT_AUX_CONTROLDP0 |= (PWM_VT_AUX_CTRL_FIFO0_CLR);
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccf5qXp5.s 			page 5
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc2bNoNq.s 			page 5
 
 
  100              		.loc 1 129 0
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccf5qXp5.s 			page 1
  156:Generated_Source\PSoC5/PWM_VT.c **** 
  157:Generated_Source\PSoC5/PWM_VT.c ****     #if (PWM_VT_UsingFixedFunction)
  158:Generated_Source\PSoC5/PWM_VT.c ****         /* Globally Enable the Fixed Function Block chosen */
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccf5qXp5.s 			page 6
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc2bNoNq.s 			page 6
 
 
  159:Generated_Source\PSoC5/PWM_VT.c ****         PWM_VT_GLOBAL_ENABLE |= PWM_VT_BLOCK_EN_MASK;
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccf5qXp5.s 			page 1
  188:Generated_Source\PSoC5/PWM_VT.c **** *
  189:Generated_Source\PSoC5/PWM_VT.c **** * Parameters:
  190:Generated_Source\PSoC5/PWM_VT.c **** *  None
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccf5qXp5.s 			page 7
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc2bNoNq.s 			page 7
 
 
  191:Generated_Source\PSoC5/PWM_VT.c **** *
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccf5qXp5.s 			page 1
  186              		.size	PWM_VT_Enable, .-PWM_VT_Enable
  187              		.section	.text.PWM_VT_Stop,"ax",%progbits
  188              		.align	2
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccf5qXp5.s 			page 8
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc2bNoNq.s 			page 8
 
 
  189              		.global	PWM_VT_Stop
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccf5qXp5.s 			page 1
  242:Generated_Source\PSoC5/PWM_VT.c ****         PWM_VT_GLOBAL_STBY_ENABLE &= ((uint8)(~PWM_VT_BLOCK_STBY_EN_MASK));
  243:Generated_Source\PSoC5/PWM_VT.c ****     #endif /* (PWM_VT_UsingFixedFunction) */
  244:Generated_Source\PSoC5/PWM_VT.c **** }
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccf5qXp5.s 			page 9
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc2bNoNq.s 			page 9
 
 
  213              		.loc 1 244 0
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccf5qXp5.s 			page 1
  275:Generated_Source\PSoC5/PWM_VT.c **** 
  276:Generated_Source\PSoC5/PWM_VT.c ****                 PWM_VT_CONTROL3 &= ((uint8)(~PWM_VT_CTRL_CMPMODE1_MASK)); /*Clear Existing Data */
  277:Generated_Source\PSoC5/PWM_VT.c ****                 PWM_VT_CONTROL3 |= comparemodemasked;
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccf5qXp5.s 			page 10
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc2bNoNq.s 			page 10
 
 
  278:Generated_Source\PSoC5/PWM_VT.c **** 
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccf5qXp5.s 			page 1
  332:Generated_Source\PSoC5/PWM_VT.c ****                 uint8 comparemodemasked = comparemode & PWM_VT_CTRL_CMPMODE1_MASK;
  333:Generated_Source\PSoC5/PWM_VT.c ****             #endif /* (0 != PWM_VT_CTRL_CMPMODE1_SHIFT) */
  334:Generated_Source\PSoC5/PWM_VT.c **** 
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccf5qXp5.s 			page 11
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc2bNoNq.s 			page 11
 
 
  335:Generated_Source\PSoC5/PWM_VT.c ****             #if (PWM_VT_UseControl)
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccf5qXp5.s 			page 1
  389:Generated_Source\PSoC5/PWM_VT.c ****     *  implemented for that currently running period and only that period. This API
  390:Generated_Source\PSoC5/PWM_VT.c ****     *  is valid only for UDB implementation and not available for fixed function
  391:Generated_Source\PSoC5/PWM_VT.c ****     *  PWM implementation.
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccf5qXp5.s 			page 12
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc2bNoNq.s 			page 12
 
 
  392:Generated_Source\PSoC5/PWM_VT.c ****     *
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccf5qXp5.s 			page 1
  275              		.global	PWM_VT_ReadCounter
  276              		.thumb
  277              		.thumb_func
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccf5qXp5.s 			page 13
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc2bNoNq.s 			page 13
 
 
  278              		.type	PWM_VT_ReadCounter, %function
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccf5qXp5.s 			page 1
  305              		.cfi_def_cfa_offset 0
  306 0014 7047     		bx	lr
  307              	.L20:
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccf5qXp5.s 			page 14
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc2bNoNq.s 			page 14
 
 
  308 0016 00BF     		.align	2
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccf5qXp5.s 			page 1
  474:Generated_Source\PSoC5/PWM_VT.c **** * Parameters:
  475:Generated_Source\PSoC5/PWM_VT.c **** *  period:  Period value. May be between 1 and (2^Resolution)-1.  A value of 0
  476:Generated_Source\PSoC5/PWM_VT.c **** *           will result in the counter remaining at zero.
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccf5qXp5.s 			page 15
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc2bNoNq.s 			page 15
 
 
  477:Generated_Source\PSoC5/PWM_VT.c **** *
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccf5qXp5.s 			page 1
  364              		.type	PWM_VT_WriteCompare1, %function
  365              	PWM_VT_WriteCompare1:
  366              	.LFB7:
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccf5qXp5.s 			page 16
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc2bNoNq.s 			page 16
 
 
  490:Generated_Source\PSoC5/PWM_VT.c **** 
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccf5qXp5.s 			page 1
  544:Generated_Source\PSoC5/PWM_VT.c ****     *  reflect the new value on the next UDB clock.  The compare output will be
  545:Generated_Source\PSoC5/PWM_VT.c ****     *  driven high when the present counter value is less than or less than or
  546:Generated_Source\PSoC5/PWM_VT.c ****     *  equal to the compare register, depending on the mode.
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccf5qXp5.s 			page 17
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc2bNoNq.s 			page 17
 
 
  547:Generated_Source\PSoC5/PWM_VT.c ****     *
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccf5qXp5.s 			page 1
  404              		.align	2
  405              		.global	PWM_VT_WriteCompare2
  406              		.thumb
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccf5qXp5.s 			page 18
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc2bNoNq.s 			page 18
 
 
  407              		.thumb_func
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccf5qXp5.s 			page 1
  432              		.cfi_def_cfa_offset 4
  433 0014 BD46     		mov	sp, r7
  434              		.cfi_def_cfa_register 13
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccf5qXp5.s 			page 19
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc2bNoNq.s 			page 19
 
 
  435              		@ sp needed
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccf5qXp5.s 			page 1
  627:Generated_Source\PSoC5/PWM_VT.c ****                 PWM_VT_DEADBAND_COUNT |= deadtime & PWM_VT_DEADBAND_COUNT_MASK;
  628:Generated_Source\PSoC5/PWM_VT.c ****             #endif /* (PWM_VT_DEADBAND_COUNT_SHIFT) */
  629:Generated_Source\PSoC5/PWM_VT.c **** 
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccf5qXp5.s 			page 20
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc2bNoNq.s 			page 20
 
 
  630:Generated_Source\PSoC5/PWM_VT.c ****         #endif /* (!PWM_VT_DeadBand2_4) */
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccf5qXp5.s 			page 1
  684:Generated_Source\PSoC5/PWM_VT.c ****     void PWM_VT_SetInterruptMode(uint8 interruptMode) 
  685:Generated_Source\PSoC5/PWM_VT.c ****     {
  686:Generated_Source\PSoC5/PWM_VT.c ****         CY_SET_REG8(PWM_VT_STATUS_MASK_PTR, interruptMode);
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccf5qXp5.s 			page 21
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc2bNoNq.s 			page 21
 
 
  687:Generated_Source\PSoC5/PWM_VT.c ****     }
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccf5qXp5.s 			page 1
  457              		@ args = 0, pretend = 0, frame = 8
  458              		@ frame_needed = 1, uses_anonymous_args = 0
  459              		@ link register save eliminated.
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccf5qXp5.s 			page 22
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc2bNoNq.s 			page 22
 
 
  460 0000 80B4     		push	{r7}
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccf5qXp5.s 			page 1
  754:Generated_Source\PSoC5/PWM_VT.c ****     * Parameters:
  755:Generated_Source\PSoC5/PWM_VT.c ****     *  uint8 control: Control register bit field, The status register bits are:
  756:Generated_Source\PSoC5/PWM_VT.c ****     *  [7]   : PWM Enable
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccf5qXp5.s 			page 23
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc2bNoNq.s 			page 23
 
 
  757:Generated_Source\PSoC5/PWM_VT.c ****     *  [6]   : Reset
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccf5qXp5.s 			page 1
  541              	PWM_VT_ReadCapture:
  542              	.LFB11:
  769:Generated_Source\PSoC5/PWM_VT.c **** 
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccf5qXp5.s 			page 24
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc2bNoNq.s 			page 24
 
 
  770:Generated_Source\PSoC5/PWM_VT.c **** #endif /* (PWM_VT_UseControl) */
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccf5qXp5.s 			page 1
  573              		.section	.text.PWM_VT_ReadCompare1,"ax",%progbits
  574              		.align	2
  575              		.global	PWM_VT_ReadCompare1
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccf5qXp5.s 			page 25
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc2bNoNq.s 			page 25
 
 
  576              		.thumb
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccf5qXp5.s 			page 1
  843:Generated_Source\PSoC5/PWM_VT.c ****     {
  581              		.loc 1 843 0
  582              		.cfi_startproc
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccf5qXp5.s 			page 26
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc2bNoNq.s 			page 26
 
 
  583              		@ args = 0, pretend = 0, frame = 0
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccf5qXp5.s 			page 1
  862:Generated_Source\PSoC5/PWM_VT.c ****     uint16 PWM_VT_ReadCompare2(void) 
  863:Generated_Source\PSoC5/PWM_VT.c ****     {
  619              		.loc 1 863 0
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccf5qXp5.s 			page 27
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc2bNoNq.s 			page 27
 
 
  620              		.cfi_startproc
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccf5qXp5.s 			page 1
  881:Generated_Source\PSoC5/PWM_VT.c **** *  uint8/16: Period value
  882:Generated_Source\PSoC5/PWM_VT.c **** *
  883:Generated_Source\PSoC5/PWM_VT.c **** *******************************************************************************/
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccf5qXp5.s 			page 28
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc2bNoNq.s 			page 28
 
 
  884:Generated_Source\PSoC5/PWM_VT.c **** uint16 PWM_VT_ReadPeriod(void) 
@@ -1671,18 +1671,18 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccf5qXp5.s 			page 1
  696 000b 01       		.uleb128 0x1
  697 000c 19000000 		.4byte	.LASF38
  698 0010 0C       		.byte	0xc
- 699 0011 CF010000 		.4byte	.LASF39
- 700 0015 EF010000 		.4byte	.LASF40
+ 699 0011 38020000 		.4byte	.LASF39
+ 700 0015 44010000 		.4byte	.LASF40
  701 0019 00000000 		.4byte	.Ldebug_ranges0+0
  702 001d 00000000 		.4byte	0
  703 0021 00000000 		.4byte	.Ldebug_line0
  704 0025 02       		.uleb128 0x2
  705 0026 01       		.byte	0x1
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccf5qXp5.s 			page 29
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc2bNoNq.s 			page 29
 
 
  706 0027 06       		.byte	0x6
- 707 0028 DA020000 		.4byte	.LASF0
+ 707 0028 E8020000 		.4byte	.LASF0
  708 002c 02       		.uleb128 0x2
  709 002d 01       		.byte	0x1
  710 002e 08       		.byte	0x8
@@ -1690,15 +1690,15 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccf5qXp5.s 			page 1
  712 0033 02       		.uleb128 0x2
  713 0034 02       		.byte	0x2
  714 0035 05       		.byte	0x5
- 715 0036 9F020000 		.4byte	.LASF2
+ 715 0036 AD020000 		.4byte	.LASF2
  716 003a 02       		.uleb128 0x2
  717 003b 02       		.byte	0x2
  718 003c 07       		.byte	0x7
- 719 003d EE020000 		.4byte	.LASF3
+ 719 003d FC020000 		.4byte	.LASF3
  720 0041 02       		.uleb128 0x2
  721 0042 04       		.byte	0x4
  722 0043 05       		.byte	0x5
- 723 0044 C5020000 		.4byte	.LASF4
+ 723 0044 D3020000 		.4byte	.LASF4
  724 0048 02       		.uleb128 0x2
  725 0049 04       		.byte	0x4
  726 004a 07       		.byte	0x7
@@ -1706,11 +1706,11 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccf5qXp5.s 			page 1
  728 004f 02       		.uleb128 0x2
  729 0050 08       		.byte	0x8
  730 0051 05       		.byte	0x5
- 731 0052 58020000 		.4byte	.LASF6
+ 731 0052 66020000 		.4byte	.LASF6
  732 0056 02       		.uleb128 0x2
  733 0057 08       		.byte	0x8
  734 0058 07       		.byte	0x7
- 735 0059 96010000 		.4byte	.LASF7
+ 735 0059 FF010000 		.4byte	.LASF7
  736 005d 03       		.uleb128 0x3
  737 005e 04       		.byte	0x4
  738 005f 05       		.byte	0x5
@@ -1718,14 +1718,14 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccf5qXp5.s 			page 1
  740 0064 02       		.uleb128 0x2
  741 0065 04       		.byte	0x4
  742 0066 07       		.byte	0x7
- 743 0067 89010000 		.4byte	.LASF8
+ 743 0067 F2010000 		.4byte	.LASF8
  744 006b 04       		.uleb128 0x4
  745 006c 36010000 		.4byte	.LASF9
  746 0070 02       		.byte	0x2
  747 0071 E401     		.2byte	0x1e4
  748 0073 2C000000 		.4byte	0x2c
  749 0077 04       		.uleb128 0x4
- 750 0078 82010000 		.4byte	.LASF10
+ 750 0078 EB010000 		.4byte	.LASF10
  751 007c 02       		.byte	0x2
  752 007d E501     		.2byte	0x1e5
  753 007f 3A000000 		.4byte	0x3a
@@ -1736,14 +1736,14 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccf5qXp5.s 			page 1
  758 008a 02       		.uleb128 0x2
  759 008b 08       		.byte	0x8
  760 008c 04       		.byte	0x4
- 761 008d 44010000 		.4byte	.LASF12
+ 761 008d AD010000 		.4byte	.LASF12
  762 0091 02       		.uleb128 0x2
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccf5qXp5.s 			page 30
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc2bNoNq.s 			page 30
 
 
  763 0092 01       		.byte	0x1
  764 0093 08       		.byte	0x8
- 765 0094 66020000 		.4byte	.LASF13
+ 765 0094 74020000 		.4byte	.LASF13
  766 0098 04       		.uleb128 0x4
  767 0099 1F010000 		.4byte	.LASF14
  768 009d 02       		.byte	0x2
@@ -1761,13 +1761,13 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccf5qXp5.s 			page 1
  780 00ba 02       		.uleb128 0x2
  781 00bb 08       		.byte	0x8
  782 00bc 04       		.byte	0x4
- 783 00bd CE020000 		.4byte	.LASF16
+ 783 00bd DC020000 		.4byte	.LASF16
  784 00c1 02       		.uleb128 0x2
  785 00c2 04       		.byte	0x4
  786 00c3 07       		.byte	0x7
- 787 00c4 4F020000 		.4byte	.LASF17
+ 787 00c4 5D020000 		.4byte	.LASF17
  788 00c8 06       		.uleb128 0x6
- 789 00c9 80020000 		.4byte	.LASF18
+ 789 00c9 8E020000 		.4byte	.LASF18
  790 00cd 01       		.byte	0x1
  791 00ce 37       		.byte	0x37
  792 00cf 00000000 		.4byte	.LFB0
@@ -1775,7 +1775,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccf5qXp5.s 			page 1
  794 00d7 01       		.uleb128 0x1
  795 00d8 9C       		.byte	0x9c
  796 00d9 07       		.uleb128 0x7
- 797 00da 15030000 		.4byte	.LASF21
+ 797 00da 23030000 		.4byte	.LASF21
  798 00de 01       		.byte	0x1
  799 00df 54       		.byte	0x54
  800 00e0 00000000 		.4byte	.LFB1
@@ -1784,7 +1784,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccf5qXp5.s 			page 1
  803 00e9 9C       		.byte	0x9c
  804 00ea FD000000 		.4byte	0xfd
  805 00ee 08       		.uleb128 0x8
- 806 00ef 4A020000 		.4byte	.LASF29
+ 806 00ef 58020000 		.4byte	.LASF29
  807 00f3 01       		.byte	0x1
  808 00f4 57       		.byte	0x57
  809 00f5 6B000000 		.4byte	0x6b
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccf5qXp5.s 			page 1
  817 0103 C7       		.byte	0xc7
  818 0104 00000000 		.4byte	.LFB2
  819 0108 20000000 		.4byte	.LFE2-.LFB2
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccf5qXp5.s 			page 31
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc2bNoNq.s 			page 31
 
 
  820 010c 01       		.uleb128 0x1
@@ -1812,7 +1812,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccf5qXp5.s 			page 1
  828 011d 01       		.uleb128 0x1
  829 011e 9C       		.byte	0x9c
  830 011f 0A       		.uleb128 0xa
- 831 0120 01030000 		.4byte	.LASF22
+ 831 0120 0F030000 		.4byte	.LASF22
  832 0124 01       		.byte	0x1
  833 0125 9301     		.2byte	0x193
  834 0127 00000000 		.4byte	.LFB4
@@ -1830,7 +1830,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccf5qXp5.s 			page 1
  846 0143 76       		.sleb128 -10
  847 0144 00       		.byte	0
  848 0145 0C       		.uleb128 0xc
- 849 0146 6F010000 		.4byte	.LASF33
+ 849 0146 D8010000 		.4byte	.LASF33
  850 014a 01       		.byte	0x1
  851 014b A901     		.2byte	0x1a9
  852 014d 77000000 		.4byte	0x77
@@ -1857,8 +1857,8 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccf5qXp5.s 			page 1
  873 017f 76       		.sleb128 -10
  874 0180 00       		.byte	0
  875 0181 0A       		.uleb128 0xa
- 876 0182 6B020000 		.4byte	.LASF26
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccf5qXp5.s 			page 32
+ 876 0182 79020000 		.4byte	.LASF26
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc2bNoNq.s 			page 32
 
 
  877 0186 01       		.byte	0x1
@@ -1869,7 +1869,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccf5qXp5.s 			page 1
  882 0192 9C       		.byte	0x9c
  883 0193 A7010000 		.4byte	0x1a7
  884 0197 0B       		.uleb128 0xb
- 885 0198 E6020000 		.4byte	.LASF27
+ 885 0198 F4020000 		.4byte	.LASF27
  886 019c 01       		.byte	0x1
  887 019d 2B02     		.2byte	0x22b
  888 019f 77000000 		.4byte	0x77
@@ -1878,7 +1878,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccf5qXp5.s 			page 1
  891 01a5 76       		.sleb128 -10
  892 01a6 00       		.byte	0
  893 01a7 0A       		.uleb128 0xa
- 894 01a8 4B010000 		.4byte	.LASF28
+ 894 01a8 B4010000 		.4byte	.LASF28
  895 01ac 01       		.byte	0x1
  896 01ad 4802     		.2byte	0x248
  897 01af 00000000 		.4byte	.LFB8
@@ -1887,7 +1887,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccf5qXp5.s 			page 1
  900 01b8 9C       		.byte	0x9c
  901 01b9 CD010000 		.4byte	0x1cd
  902 01bd 0B       		.uleb128 0xb
- 903 01be E6020000 		.4byte	.LASF27
+ 903 01be F4020000 		.4byte	.LASF27
  904 01c2 01       		.byte	0x1
  905 01c3 4802     		.2byte	0x248
  906 01c5 77000000 		.4byte	0x77
@@ -1896,7 +1896,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccf5qXp5.s 			page 1
  909 01cb 76       		.sleb128 -10
  910 01cc 00       		.byte	0
  911 01cd 0D       		.uleb128 0xd
- 912 01ce AD010000 		.4byte	.LASF41
+ 912 01ce 16020000 		.4byte	.LASF41
  913 01d2 01       		.byte	0x1
  914 01d3 E102     		.2byte	0x2e1
  915 01d5 6B000000 		.4byte	0x6b
@@ -1906,7 +1906,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccf5qXp5.s 			page 1
  919 01e2 9C       		.byte	0x9c
  920 01e3 F7010000 		.4byte	0x1f7
  921 01e7 0E       		.uleb128 0xe
- 922 01e8 C8010000 		.4byte	.LASF30
+ 922 01e8 31020000 		.4byte	.LASF30
  923 01ec 01       		.byte	0x1
  924 01ed E302     		.2byte	0x2e3
  925 01ef 6B000000 		.4byte	0x6b
@@ -1915,10 +1915,10 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccf5qXp5.s 			page 1
  928 01f5 77       		.sleb128 -9
  929 01f6 00       		.byte	0
  930 01f7 0A       		.uleb128 0xa
- 931 01f8 A9020000 		.4byte	.LASF31
+ 931 01f8 B7020000 		.4byte	.LASF31
  932 01fc 01       		.byte	0x1
  933 01fd FD02     		.2byte	0x2fd
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccf5qXp5.s 			page 33
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc2bNoNq.s 			page 33
 
 
  934 01ff 00000000 		.4byte	.LFB10
@@ -1963,7 +1963,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccf5qXp5.s 			page 1
  973 025d 01       		.uleb128 0x1
  974 025e 9C       		.byte	0x9c
  975 025f 0C       		.uleb128 0xc
- 976 0260 8D020000 		.4byte	.LASF37
+ 976 0260 9B020000 		.4byte	.LASF37
  977 0264 01       		.byte	0x1
  978 0265 7403     		.2byte	0x374
  979 0267 77000000 		.4byte	0x77
@@ -1972,13 +1972,13 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccf5qXp5.s 			page 1
  982 0273 01       		.uleb128 0x1
  983 0274 9C       		.byte	0x9c
  984 0275 0F       		.uleb128 0xf
- 985 0276 60010000 		.4byte	.LASF42
+ 985 0276 C9010000 		.4byte	.LASF42
  986 027a 01       		.byte	0x1
  987 027b 20       		.byte	0x20
  988 027c 6B000000 		.4byte	0x6b
  989 0280 05       		.uleb128 0x5
  990 0281 03       		.byte	0x3
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccf5qXp5.s 			page 34
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc2bNoNq.s 			page 34
 
 
  991 0282 00000000 		.4byte	PWM_VT_initVar
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccf5qXp5.s 			page 1
  1045 0032 49       		.uleb128 0x49
  1046 0033 13       		.uleb128 0x13
  1047 0034 00       		.byte	0
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccf5qXp5.s 			page 35
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc2bNoNq.s 			page 35
 
 
  1048 0035 00       		.byte	0
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccf5qXp5.s 			page 1
  1102 006d 00       		.byte	0
  1103 006e 00       		.byte	0
  1104 006f 08       		.uleb128 0x8
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccf5qXp5.s 			page 36
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc2bNoNq.s 			page 36
 
 
  1105 0070 34       		.uleb128 0x34
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccf5qXp5.s 			page 1
  1159 00a7 40       		.uleb128 0x40
  1160 00a8 18       		.uleb128 0x18
  1161 00a9 9742     		.uleb128 0x2117
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccf5qXp5.s 			page 37
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc2bNoNq.s 			page 37
 
 
  1162 00ab 19       		.uleb128 0x19
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccf5qXp5.s 			page 1
  1216 00e2 3B       		.uleb128 0x3b
  1217 00e3 05       		.uleb128 0x5
  1218 00e4 27       		.uleb128 0x27
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccf5qXp5.s 			page 38
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc2bNoNq.s 			page 38
 
 
  1219 00e5 19       		.uleb128 0x19
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccf5qXp5.s 			page 1
  1273 000c 0000     		.2byte	0
  1274 000e 0000     		.2byte	0
  1275 0010 00000000 		.4byte	.LFB0
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccf5qXp5.s 			page 39
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc2bNoNq.s 			page 39
 
 
  1276 0014 24000000 		.4byte	.LFE0-.LFB0
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccf5qXp5.s 			page 1
  1330 0054 20000000 		.4byte	.LFE10
  1331 0058 00000000 		.4byte	.LFB11
  1332 005c 18000000 		.4byte	.LFE11
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccf5qXp5.s 			page 40
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc2bNoNq.s 			page 40
 
 
  1333 0060 00000000 		.4byte	.LFB12
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccf5qXp5.s 			page 1
  1359 00ce 50574D5F 		.ascii	"PWM_VT_ReadCompare2\000"
  1359      56545F52 
  1359      65616443 
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccf5qXp5.s 			page 41
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc2bNoNq.s 			page 41
 
 
  1359      6F6D7061 
@@ -2440,146 +2440,149 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccf5qXp5.s 			page 1
  1376              	.LASF32:
  1377 013c 636F6E74 		.ascii	"control\000"
  1377      726F6C00 
- 1378              	.LASF12:
- 1379 0144 646F7562 		.ascii	"double\000"
- 1379      6C6500
- 1380              	.LASF28:
- 1381 014b 50574D5F 		.ascii	"PWM_VT_WriteCompare2\000"
- 1381      56545F57 
- 1381      72697465 
- 1381      436F6D70 
- 1381      61726532 
- 1382              	.LASF42:
- 1383 0160 50574D5F 		.ascii	"PWM_VT_initVar\000"
- 1383      56545F69 
- 1383      6E697456 
- 1383      617200
- 1384              	.LASF33:
- 1385 016f 50574D5F 		.ascii	"PWM_VT_ReadCounter\000"
- 1385      56545F52 
- 1385      65616443 
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccf5qXp5.s 			page 42
+ 1378              	.LASF40:
+ 1379 0144 433A5C55 		.ascii	"C:\\Users\\mgnocco\\Documents\\Git\\PSoC5\\PSoC5_FW"
+ 1379      73657273 
+ 1379      5C6D676E 
+ 1379      6F63636F 
+ 1379      5C446F63 
+ 1380 0171 5F574953 		.ascii	"_WISH_VIBES\\FW_Socket - WISH+Dayton\\WISH_VIBES_So"
+ 1380      485F5649 
+ 1380      4245535C 
+ 1380      46575F53 
+ 1380      6F636B65 
+ 1381 01a2 636B6574 		.ascii	"cket.cydsn\000"
+ 1381      2E637964 
+ 1381      736E00
+ 1382              	.LASF12:
+ 1383 01ad 646F7562 		.ascii	"double\000"
+ 1383      6C6500
+ 1384              	.LASF28:
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc2bNoNq.s 			page 42
 
 
- 1385      6F756E74 
- 1385      657200
- 1386              	.LASF10:
- 1387 0182 75696E74 		.ascii	"uint16\000"
- 1387      313600
- 1388              	.LASF8:
- 1389 0189 756E7369 		.ascii	"unsigned int\000"
- 1389      676E6564 
- 1389      20696E74 
- 1389      00
- 1390              	.LASF7:
- 1391 0196 6C6F6E67 		.ascii	"long long unsigned int\000"
- 1391      206C6F6E 
- 1391      6720756E 
- 1391      7369676E 
- 1391      65642069 
- 1392              	.LASF41:
- 1393 01ad 50574D5F 		.ascii	"PWM_VT_ReadControlRegister\000"
- 1393      56545F52 
- 1393      65616443 
- 1393      6F6E7472 
- 1393      6F6C5265 
- 1394              	.LASF30:
- 1395 01c8 72657375 		.ascii	"result\000"
- 1395      6C7400
- 1396              	.LASF39:
- 1397 01cf 47656E65 		.ascii	"Generated_Source\\PSoC5\\PWM_VT.c\000"
- 1397      72617465 
- 1397      645F536F 
- 1397      75726365 
- 1397      5C50536F 
- 1398              	.LASF40:
- 1399 01ef 433A5C55 		.ascii	"C:\\Users\\mgnocco\\Documents\\Git\\PSoC5\\PSoC5_FW"
- 1399      73657273 
- 1399      5C6D676E 
- 1399      6F63636F 
- 1399      5C446F63 
- 1400 021c 5F574953 		.ascii	"_WISH_VIBES\\FW_Socket\\WISH_VIBES_Socket.cydsn\000"
- 1400      485F5649 
- 1400      4245535C 
- 1400      46575F53 
- 1400      6F636B65 
- 1401              	.LASF29:
- 1402 024a 6374726C 		.ascii	"ctrl\000"
- 1402      00
- 1403              	.LASF17:
- 1404 024f 73697A65 		.ascii	"sizetype\000"
- 1404      74797065 
- 1404      00
- 1405              	.LASF6:
- 1406 0258 6C6F6E67 		.ascii	"long long int\000"
- 1406      206C6F6E 
- 1406      6720696E 
- 1406      7400
- 1407              	.LASF13:
- 1408 0266 63686172 		.ascii	"char\000"
- 1408      00
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccf5qXp5.s 			page 43
+ 1385 01b4 50574D5F 		.ascii	"PWM_VT_WriteCompare2\000"
+ 1385      56545F57 
+ 1385      72697465 
+ 1385      436F6D70 
+ 1385      61726532 
+ 1386              	.LASF42:
+ 1387 01c9 50574D5F 		.ascii	"PWM_VT_initVar\000"
+ 1387      56545F69 
+ 1387      6E697456 
+ 1387      617200
+ 1388              	.LASF33:
+ 1389 01d8 50574D5F 		.ascii	"PWM_VT_ReadCounter\000"
+ 1389      56545F52 
+ 1389      65616443 
+ 1389      6F756E74 
+ 1389      657200
+ 1390              	.LASF10:
+ 1391 01eb 75696E74 		.ascii	"uint16\000"
+ 1391      313600
+ 1392              	.LASF8:
+ 1393 01f2 756E7369 		.ascii	"unsigned int\000"
+ 1393      676E6564 
+ 1393      20696E74 
+ 1393      00
+ 1394              	.LASF7:
+ 1395 01ff 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1395      206C6F6E 
+ 1395      6720756E 
+ 1395      7369676E 
+ 1395      65642069 
+ 1396              	.LASF41:
+ 1397 0216 50574D5F 		.ascii	"PWM_VT_ReadControlRegister\000"
+ 1397      56545F52 
+ 1397      65616443 
+ 1397      6F6E7472 
+ 1397      6F6C5265 
+ 1398              	.LASF30:
+ 1399 0231 72657375 		.ascii	"result\000"
+ 1399      6C7400
+ 1400              	.LASF39:
+ 1401 0238 47656E65 		.ascii	"Generated_Source\\PSoC5\\PWM_VT.c\000"
+ 1401      72617465 
+ 1401      645F536F 
+ 1401      75726365 
+ 1401      5C50536F 
+ 1402              	.LASF29:
+ 1403 0258 6374726C 		.ascii	"ctrl\000"
+ 1403      00
+ 1404              	.LASF17:
+ 1405 025d 73697A65 		.ascii	"sizetype\000"
+ 1405      74797065 
+ 1405      00
+ 1406              	.LASF6:
+ 1407 0266 6C6F6E67 		.ascii	"long long int\000"
+ 1407      206C6F6E 
+ 1407      6720696E 
+ 1407      7400
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc2bNoNq.s 			page 43
 
 
- 1409              	.LASF26:
- 1410 026b 50574D5F 		.ascii	"PWM_VT_WriteCompare1\000"
- 1410      56545F57 
- 1410      72697465 
- 1410      436F6D70 
- 1410      61726531 
- 1411              	.LASF18:
- 1412 0280 50574D5F 		.ascii	"PWM_VT_Start\000"
- 1412      56545F53 
- 1412      74617274 
- 1412      00
- 1413              	.LASF37:
- 1414 028d 50574D5F 		.ascii	"PWM_VT_ReadPeriod\000"
- 1414      56545F52 
- 1414      65616450 
- 1414      6572696F 
- 1414      6400
- 1415              	.LASF2:
- 1416 029f 73686F72 		.ascii	"short int\000"
- 1416      7420696E 
- 1416      7400
- 1417              	.LASF31:
- 1418 02a9 50574D5F 		.ascii	"PWM_VT_WriteControlRegister\000"
- 1418      56545F57 
- 1418      72697465 
- 1418      436F6E74 
- 1418      726F6C52 
- 1419              	.LASF4:
- 1420 02c5 6C6F6E67 		.ascii	"long int\000"
- 1420      20696E74 
- 1420      00
- 1421              	.LASF16:
- 1422 02ce 6C6F6E67 		.ascii	"long double\000"
- 1422      20646F75 
- 1422      626C6500 
- 1423              	.LASF0:
- 1424 02da 7369676E 		.ascii	"signed char\000"
- 1424      65642063 
- 1424      68617200 
- 1425              	.LASF27:
- 1426 02e6 636F6D70 		.ascii	"compare\000"
- 1426      61726500 
- 1427              	.LASF3:
- 1428 02ee 73686F72 		.ascii	"short unsigned int\000"
- 1428      7420756E 
- 1428      7369676E 
- 1428      65642069 
- 1428      6E7400
- 1429              	.LASF22:
- 1430 0301 50574D5F 		.ascii	"PWM_VT_WriteCounter\000"
- 1430      56545F57 
- 1430      72697465 
- 1430      436F756E 
- 1430      74657200 
- 1431              	.LASF21:
- 1432 0315 50574D5F 		.ascii	"PWM_VT_Init\000"
- 1432      56545F49 
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccf5qXp5.s 			page 44
+ 1408              	.LASF13:
+ 1409 0274 63686172 		.ascii	"char\000"
+ 1409      00
+ 1410              	.LASF26:
+ 1411 0279 50574D5F 		.ascii	"PWM_VT_WriteCompare1\000"
+ 1411      56545F57 
+ 1411      72697465 
+ 1411      436F6D70 
+ 1411      61726531 
+ 1412              	.LASF18:
+ 1413 028e 50574D5F 		.ascii	"PWM_VT_Start\000"
+ 1413      56545F53 
+ 1413      74617274 
+ 1413      00
+ 1414              	.LASF37:
+ 1415 029b 50574D5F 		.ascii	"PWM_VT_ReadPeriod\000"
+ 1415      56545F52 
+ 1415      65616450 
+ 1415      6572696F 
+ 1415      6400
+ 1416              	.LASF2:
+ 1417 02ad 73686F72 		.ascii	"short int\000"
+ 1417      7420696E 
+ 1417      7400
+ 1418              	.LASF31:
+ 1419 02b7 50574D5F 		.ascii	"PWM_VT_WriteControlRegister\000"
+ 1419      56545F57 
+ 1419      72697465 
+ 1419      436F6E74 
+ 1419      726F6C52 
+ 1420              	.LASF4:
+ 1421 02d3 6C6F6E67 		.ascii	"long int\000"
+ 1421      20696E74 
+ 1421      00
+ 1422              	.LASF16:
+ 1423 02dc 6C6F6E67 		.ascii	"long double\000"
+ 1423      20646F75 
+ 1423      626C6500 
+ 1424              	.LASF0:
+ 1425 02e8 7369676E 		.ascii	"signed char\000"
+ 1425      65642063 
+ 1425      68617200 
+ 1426              	.LASF27:
+ 1427 02f4 636F6D70 		.ascii	"compare\000"
+ 1427      61726500 
+ 1428              	.LASF3:
+ 1429 02fc 73686F72 		.ascii	"short unsigned int\000"
+ 1429      7420756E 
+ 1429      7369676E 
+ 1429      65642069 
+ 1429      6E7400
+ 1430              	.LASF22:
+ 1431 030f 50574D5F 		.ascii	"PWM_VT_WriteCounter\000"
+ 1431      56545F57 
+ 1431      72697465 
+ 1431      436F756E 
+ 1431      74657200 
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc2bNoNq.s 			page 44
 
 
- 1432      6E697400 
- 1433              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran
+ 1432              	.LASF21:
+ 1433 0323 50574D5F 		.ascii	"PWM_VT_Init\000"
+ 1433      56545F49 
+ 1433      6E697400 
+ 1434              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

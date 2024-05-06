@@ -677,7 +677,7 @@
       <Data key="f6213fc3-2dc4-4fc3-a7f7-64d232c045b5" value="CS_ENCODER1" />
       <Data key="f1224875-b991-4103-8489-a48d67847102" value="MOTOR_EN_2" />
       <Data key="fa317fe3-42e6-4c88-87df-5d5f0f9ec96d" value="CS_RTC" />
-      <Data key="fd3f2b55-1315-434f-986e-6d6afe236caf" value="LED_GREEN_1" />
+      <Data key="fd3f2b55-1315-434f-986e-6d6afe236caf" value="LED_GREEN" />
       <Data key="ff3f21bb-5fbe-41ef-8e50-999e152733a1" value="MISO_ENCODER" />
     </Group>
   </Group>

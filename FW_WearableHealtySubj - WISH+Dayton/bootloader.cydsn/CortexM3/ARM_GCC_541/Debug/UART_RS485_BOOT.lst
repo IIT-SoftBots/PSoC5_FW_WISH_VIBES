@@ -1,0 +1,1663 @@
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccCBpfVX.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.syntax unified
+  15              		.file	"UART_RS485_BOOT.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.section	.text.UART_RS485_CyBtldrCommStart,"ax",%progbits
+  20              		.align	2
+  21              		.global	UART_RS485_CyBtldrCommStart
+  22              		.thumb
+  23              		.thumb_func
+  24              		.type	UART_RS485_CyBtldrCommStart, %function
+  25              	UART_RS485_CyBtldrCommStart:
+  26              	.LFB0:
+  27              		.file 1 "Generated_Source\\PSoC5\\UART_RS485_BOOT.c"
+   1:Generated_Source\PSoC5/UART_RS485_BOOT.c **** /*******************************************************************************
+   2:Generated_Source\PSoC5/UART_RS485_BOOT.c **** * File Name: UART_RS485_BOOT.c
+   3:Generated_Source\PSoC5/UART_RS485_BOOT.c **** * Version 2.50
+   4:Generated_Source\PSoC5/UART_RS485_BOOT.c **** *
+   5:Generated_Source\PSoC5/UART_RS485_BOOT.c **** * Description:
+   6:Generated_Source\PSoC5/UART_RS485_BOOT.c **** *  This file provides the source code of bootloader communication APIs for the
+   7:Generated_Source\PSoC5/UART_RS485_BOOT.c **** *  UART component.
+   8:Generated_Source\PSoC5/UART_RS485_BOOT.c **** *
+   9:Generated_Source\PSoC5/UART_RS485_BOOT.c **** * Note:
+  10:Generated_Source\PSoC5/UART_RS485_BOOT.c **** *
+  11:Generated_Source\PSoC5/UART_RS485_BOOT.c **** ********************************************************************************
+  12:Generated_Source\PSoC5/UART_RS485_BOOT.c **** * Copyright 2008-2015, Cypress Semiconductor Corporation.  All rights reserved.
+  13:Generated_Source\PSoC5/UART_RS485_BOOT.c **** * You may use this file only in accordance with the license, terms, conditions,
+  14:Generated_Source\PSoC5/UART_RS485_BOOT.c **** * disclaimers, and limitations in the end user license agreement accompanying
+  15:Generated_Source\PSoC5/UART_RS485_BOOT.c **** * the software package with which this file was provided.
+  16:Generated_Source\PSoC5/UART_RS485_BOOT.c **** *******************************************************************************/
+  17:Generated_Source\PSoC5/UART_RS485_BOOT.c **** 
+  18:Generated_Source\PSoC5/UART_RS485_BOOT.c **** #include "UART_RS485.h"
+  19:Generated_Source\PSoC5/UART_RS485_BOOT.c **** 
+  20:Generated_Source\PSoC5/UART_RS485_BOOT.c **** #if defined(CYDEV_BOOTLOADER_IO_COMP) && (0u != ((CYDEV_BOOTLOADER_IO_COMP == CyBtldr_UART_RS485) |
+  21:Generated_Source\PSoC5/UART_RS485_BOOT.c ****                                           (CYDEV_BOOTLOADER_IO_COMP == CyBtldr_Custom_Interface)))
+  22:Generated_Source\PSoC5/UART_RS485_BOOT.c **** 
+  23:Generated_Source\PSoC5/UART_RS485_BOOT.c **** 
+  24:Generated_Source\PSoC5/UART_RS485_BOOT.c **** /*******************************************************************************
+  25:Generated_Source\PSoC5/UART_RS485_BOOT.c **** * Function Name: UART_RS485_CyBtldrCommStart
+  26:Generated_Source\PSoC5/UART_RS485_BOOT.c **** ********************************************************************************
+  27:Generated_Source\PSoC5/UART_RS485_BOOT.c **** *
+  28:Generated_Source\PSoC5/UART_RS485_BOOT.c **** * Summary:
+  29:Generated_Source\PSoC5/UART_RS485_BOOT.c **** *  Starts the UART communication component.
+  30:Generated_Source\PSoC5/UART_RS485_BOOT.c **** *
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccCBpfVX.s 			page 2
+
+
+  31:Generated_Source\PSoC5/UART_RS485_BOOT.c **** * Parameters:
+  32:Generated_Source\PSoC5/UART_RS485_BOOT.c **** *  None
+  33:Generated_Source\PSoC5/UART_RS485_BOOT.c **** *
+  34:Generated_Source\PSoC5/UART_RS485_BOOT.c **** * Return:
+  35:Generated_Source\PSoC5/UART_RS485_BOOT.c **** *  None
+  36:Generated_Source\PSoC5/UART_RS485_BOOT.c **** *
+  37:Generated_Source\PSoC5/UART_RS485_BOOT.c **** * Side Effects:
+  38:Generated_Source\PSoC5/UART_RS485_BOOT.c **** *  This component automatically enables global interrupt.
+  39:Generated_Source\PSoC5/UART_RS485_BOOT.c **** *
+  40:Generated_Source\PSoC5/UART_RS485_BOOT.c **** *******************************************************************************/
+  41:Generated_Source\PSoC5/UART_RS485_BOOT.c **** void UART_RS485_CyBtldrCommStart(void) CYSMALL 
+  42:Generated_Source\PSoC5/UART_RS485_BOOT.c **** {
+  28              		.loc 1 42 0
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 0
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  32 0000 08B5     		push	{r3, lr}
+  33              		.cfi_def_cfa_offset 8
+  34              		.cfi_offset 3, -8
+  35              		.cfi_offset 14, -4
+  43:Generated_Source\PSoC5/UART_RS485_BOOT.c ****     /* Start UART component and clear the Tx,Rx buffers */
+  44:Generated_Source\PSoC5/UART_RS485_BOOT.c ****     UART_RS485_Start();
+  36              		.loc 1 44 0
+  37 0002 FFF7FEFF 		bl	UART_RS485_Start
+  38              	.LVL0:
+  45:Generated_Source\PSoC5/UART_RS485_BOOT.c ****     UART_RS485_ClearRxBuffer();
+  39              		.loc 1 45 0
+  40 0006 FFF7FEFF 		bl	UART_RS485_ClearRxBuffer
+  41              	.LVL1:
+  46:Generated_Source\PSoC5/UART_RS485_BOOT.c ****     UART_RS485_ClearTxBuffer();
+  42              		.loc 1 46 0
+  43 000a FFF7FEFF 		bl	UART_RS485_ClearTxBuffer
+  44              	.LVL2:
+  45 000e 08BD     		pop	{r3, pc}
+  46              		.cfi_endproc
+  47              	.LFE0:
+  48              		.size	UART_RS485_CyBtldrCommStart, .-UART_RS485_CyBtldrCommStart
+  49              		.section	.text.UART_RS485_CyBtldrCommStop,"ax",%progbits
+  50              		.align	2
+  51              		.global	UART_RS485_CyBtldrCommStop
+  52              		.thumb
+  53              		.thumb_func
+  54              		.type	UART_RS485_CyBtldrCommStop, %function
+  55              	UART_RS485_CyBtldrCommStop:
+  56              	.LFB1:
+  47:Generated_Source\PSoC5/UART_RS485_BOOT.c **** }
+  48:Generated_Source\PSoC5/UART_RS485_BOOT.c **** 
+  49:Generated_Source\PSoC5/UART_RS485_BOOT.c **** 
+  50:Generated_Source\PSoC5/UART_RS485_BOOT.c **** /*******************************************************************************
+  51:Generated_Source\PSoC5/UART_RS485_BOOT.c **** * Function Name: UART_RS485_CyBtldrCommStop
+  52:Generated_Source\PSoC5/UART_RS485_BOOT.c **** ********************************************************************************
+  53:Generated_Source\PSoC5/UART_RS485_BOOT.c **** *
+  54:Generated_Source\PSoC5/UART_RS485_BOOT.c **** * Summary:
+  55:Generated_Source\PSoC5/UART_RS485_BOOT.c **** *  Disables the communication component and disables the interrupt.
+  56:Generated_Source\PSoC5/UART_RS485_BOOT.c **** *
+  57:Generated_Source\PSoC5/UART_RS485_BOOT.c **** * Parameters:
+  58:Generated_Source\PSoC5/UART_RS485_BOOT.c **** *  None
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccCBpfVX.s 			page 3
+
+
+  59:Generated_Source\PSoC5/UART_RS485_BOOT.c **** *
+  60:Generated_Source\PSoC5/UART_RS485_BOOT.c **** * Return:
+  61:Generated_Source\PSoC5/UART_RS485_BOOT.c **** *  None
+  62:Generated_Source\PSoC5/UART_RS485_BOOT.c **** *
+  63:Generated_Source\PSoC5/UART_RS485_BOOT.c **** *******************************************************************************/
+  64:Generated_Source\PSoC5/UART_RS485_BOOT.c **** void UART_RS485_CyBtldrCommStop(void) CYSMALL 
+  65:Generated_Source\PSoC5/UART_RS485_BOOT.c **** {
+  57              		.loc 1 65 0
+  58              		.cfi_startproc
+  59              		@ args = 0, pretend = 0, frame = 0
+  60              		@ frame_needed = 0, uses_anonymous_args = 0
+  61 0000 08B5     		push	{r3, lr}
+  62              		.cfi_def_cfa_offset 8
+  63              		.cfi_offset 3, -8
+  64              		.cfi_offset 14, -4
+  66:Generated_Source\PSoC5/UART_RS485_BOOT.c ****     /* Stop UART component */
+  67:Generated_Source\PSoC5/UART_RS485_BOOT.c ****     UART_RS485_Stop();
+  65              		.loc 1 67 0
+  66 0002 FFF7FEFF 		bl	UART_RS485_Stop
+  67              	.LVL3:
+  68 0006 08BD     		pop	{r3, pc}
+  69              		.cfi_endproc
+  70              	.LFE1:
+  71              		.size	UART_RS485_CyBtldrCommStop, .-UART_RS485_CyBtldrCommStop
+  72              		.section	.text.UART_RS485_CyBtldrCommReset,"ax",%progbits
+  73              		.align	2
+  74              		.global	UART_RS485_CyBtldrCommReset
+  75              		.thumb
+  76              		.thumb_func
+  77              		.type	UART_RS485_CyBtldrCommReset, %function
+  78              	UART_RS485_CyBtldrCommReset:
+  79              	.LFB2:
+  68:Generated_Source\PSoC5/UART_RS485_BOOT.c **** }
+  69:Generated_Source\PSoC5/UART_RS485_BOOT.c **** 
+  70:Generated_Source\PSoC5/UART_RS485_BOOT.c **** 
+  71:Generated_Source\PSoC5/UART_RS485_BOOT.c **** /*******************************************************************************
+  72:Generated_Source\PSoC5/UART_RS485_BOOT.c **** * Function Name: UART_RS485_CyBtldrCommReset
+  73:Generated_Source\PSoC5/UART_RS485_BOOT.c **** ********************************************************************************
+  74:Generated_Source\PSoC5/UART_RS485_BOOT.c **** *
+  75:Generated_Source\PSoC5/UART_RS485_BOOT.c **** * Summary:
+  76:Generated_Source\PSoC5/UART_RS485_BOOT.c **** *  Resets the receive and transmit communication Buffers.
+  77:Generated_Source\PSoC5/UART_RS485_BOOT.c **** *
+  78:Generated_Source\PSoC5/UART_RS485_BOOT.c **** * Parameters:
+  79:Generated_Source\PSoC5/UART_RS485_BOOT.c **** *  None
+  80:Generated_Source\PSoC5/UART_RS485_BOOT.c **** *
+  81:Generated_Source\PSoC5/UART_RS485_BOOT.c **** * Return:
+  82:Generated_Source\PSoC5/UART_RS485_BOOT.c **** *  None
+  83:Generated_Source\PSoC5/UART_RS485_BOOT.c **** *
+  84:Generated_Source\PSoC5/UART_RS485_BOOT.c **** *******************************************************************************/
+  85:Generated_Source\PSoC5/UART_RS485_BOOT.c **** void UART_RS485_CyBtldrCommReset(void) CYSMALL 
+  86:Generated_Source\PSoC5/UART_RS485_BOOT.c **** {
+  80              		.loc 1 86 0
+  81              		.cfi_startproc
+  82              		@ args = 0, pretend = 0, frame = 0
+  83              		@ frame_needed = 0, uses_anonymous_args = 0
+  84 0000 08B5     		push	{r3, lr}
+  85              		.cfi_def_cfa_offset 8
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccCBpfVX.s 			page 4
+
+
+  86              		.cfi_offset 3, -8
+  87              		.cfi_offset 14, -4
+  87:Generated_Source\PSoC5/UART_RS485_BOOT.c ****     /* Clear RX and TX buffers */
+  88:Generated_Source\PSoC5/UART_RS485_BOOT.c ****     UART_RS485_ClearRxBuffer();
+  88              		.loc 1 88 0
+  89 0002 FFF7FEFF 		bl	UART_RS485_ClearRxBuffer
+  90              	.LVL4:
+  89:Generated_Source\PSoC5/UART_RS485_BOOT.c ****     UART_RS485_ClearTxBuffer();
+  91              		.loc 1 89 0
+  92 0006 FFF7FEFF 		bl	UART_RS485_ClearTxBuffer
+  93              	.LVL5:
+  94 000a 08BD     		pop	{r3, pc}
+  95              		.cfi_endproc
+  96              	.LFE2:
+  97              		.size	UART_RS485_CyBtldrCommReset, .-UART_RS485_CyBtldrCommReset
+  98              		.section	.text.UART_RS485_CyBtldrCommWrite,"ax",%progbits
+  99              		.align	2
+ 100              		.global	UART_RS485_CyBtldrCommWrite
+ 101              		.thumb
+ 102              		.thumb_func
+ 103              		.type	UART_RS485_CyBtldrCommWrite, %function
+ 104              	UART_RS485_CyBtldrCommWrite:
+ 105              	.LFB3:
+  90:Generated_Source\PSoC5/UART_RS485_BOOT.c **** }
+  91:Generated_Source\PSoC5/UART_RS485_BOOT.c **** 
+  92:Generated_Source\PSoC5/UART_RS485_BOOT.c **** 
+  93:Generated_Source\PSoC5/UART_RS485_BOOT.c **** /*******************************************************************************
+  94:Generated_Source\PSoC5/UART_RS485_BOOT.c **** * Function Name: UART_RS485_CyBtldrCommWrite
+  95:Generated_Source\PSoC5/UART_RS485_BOOT.c **** ********************************************************************************
+  96:Generated_Source\PSoC5/UART_RS485_BOOT.c **** *
+  97:Generated_Source\PSoC5/UART_RS485_BOOT.c **** * Summary:
+  98:Generated_Source\PSoC5/UART_RS485_BOOT.c **** *  Allows the caller to write data to the boot loader host. This function uses
+  99:Generated_Source\PSoC5/UART_RS485_BOOT.c **** * a blocking write function for writing data using UART communication component.
+ 100:Generated_Source\PSoC5/UART_RS485_BOOT.c **** *
+ 101:Generated_Source\PSoC5/UART_RS485_BOOT.c **** * Parameters:
+ 102:Generated_Source\PSoC5/UART_RS485_BOOT.c **** *  pData:    A pointer to the block of data to send to the device
+ 103:Generated_Source\PSoC5/UART_RS485_BOOT.c **** *  size:     The number of bytes to write.
+ 104:Generated_Source\PSoC5/UART_RS485_BOOT.c **** *  count:    Pointer to an unsigned short variable to write the number of
+ 105:Generated_Source\PSoC5/UART_RS485_BOOT.c **** *             bytes actually written.
+ 106:Generated_Source\PSoC5/UART_RS485_BOOT.c **** *  timeOut:  Number of units to wait before returning because of a timeout.
+ 107:Generated_Source\PSoC5/UART_RS485_BOOT.c **** *
+ 108:Generated_Source\PSoC5/UART_RS485_BOOT.c **** * Return:
+ 109:Generated_Source\PSoC5/UART_RS485_BOOT.c **** *   cystatus: This function will return CYRET_SUCCESS if data is sent
+ 110:Generated_Source\PSoC5/UART_RS485_BOOT.c **** *             successfully.
+ 111:Generated_Source\PSoC5/UART_RS485_BOOT.c **** *
+ 112:Generated_Source\PSoC5/UART_RS485_BOOT.c **** * Side Effects:
+ 113:Generated_Source\PSoC5/UART_RS485_BOOT.c **** *  This function should be called after command was received .
+ 114:Generated_Source\PSoC5/UART_RS485_BOOT.c **** *
+ 115:Generated_Source\PSoC5/UART_RS485_BOOT.c **** *******************************************************************************/
+ 116:Generated_Source\PSoC5/UART_RS485_BOOT.c **** cystatus UART_RS485_CyBtldrCommWrite(const uint8 pData[], uint16 size, uint16 * count, uint8 timeOu
+ 117:Generated_Source\PSoC5/UART_RS485_BOOT.c ****          
+ 118:Generated_Source\PSoC5/UART_RS485_BOOT.c **** {
+ 106              		.loc 1 118 0
+ 107              		.cfi_startproc
+ 108              		@ args = 0, pretend = 0, frame = 0
+ 109              		@ frame_needed = 0, uses_anonymous_args = 0
+ 110              	.LVL6:
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccCBpfVX.s 			page 5
+
+
+ 111 0000 F8B5     		push	{r3, r4, r5, r6, r7, lr}
+ 112              		.cfi_def_cfa_offset 24
+ 113              		.cfi_offset 3, -24
+ 114              		.cfi_offset 4, -20
+ 115              		.cfi_offset 5, -16
+ 116              		.cfi_offset 6, -12
+ 117              		.cfi_offset 7, -8
+ 118              		.cfi_offset 14, -4
+ 119 0002 0646     		mov	r6, r0
+ 120 0004 0D46     		mov	r5, r1
+ 121 0006 1746     		mov	r7, r2
+ 122              	.LVL7:
+ 119:Generated_Source\PSoC5/UART_RS485_BOOT.c ****     uint16 bufIndex = 0u;
+ 120:Generated_Source\PSoC5/UART_RS485_BOOT.c **** 
+ 121:Generated_Source\PSoC5/UART_RS485_BOOT.c ****     if(0u != timeOut)
+ 122:Generated_Source\PSoC5/UART_RS485_BOOT.c ****     {
+ 123:Generated_Source\PSoC5/UART_RS485_BOOT.c ****         /* Suppress compiler warning */
+ 124:Generated_Source\PSoC5/UART_RS485_BOOT.c ****     }
+ 125:Generated_Source\PSoC5/UART_RS485_BOOT.c **** 
+ 126:Generated_Source\PSoC5/UART_RS485_BOOT.c ****     /* Clear receive buffers */
+ 127:Generated_Source\PSoC5/UART_RS485_BOOT.c ****     UART_RS485_ClearRxBuffer();
+ 123              		.loc 1 127 0
+ 124 0008 FFF7FEFF 		bl	UART_RS485_ClearRxBuffer
+ 125              	.LVL8:
+ 119:Generated_Source\PSoC5/UART_RS485_BOOT.c ****     uint16 bufIndex = 0u;
+ 126              		.loc 1 119 0
+ 127 000c 0024     		movs	r4, #0
+ 128:Generated_Source\PSoC5/UART_RS485_BOOT.c **** 
+ 129:Generated_Source\PSoC5/UART_RS485_BOOT.c ****     /* Write TX data using blocking function */
+ 130:Generated_Source\PSoC5/UART_RS485_BOOT.c ****     while(bufIndex < size)
+ 128              		.loc 1 130 0
+ 129 000e 04E0     		b	.L8
+ 130              	.LVL9:
+ 131              	.L9:
+ 131:Generated_Source\PSoC5/UART_RS485_BOOT.c ****     {
+ 132:Generated_Source\PSoC5/UART_RS485_BOOT.c ****         UART_RS485_PutChar(pData[bufIndex]);
+ 132              		.loc 1 132 0
+ 133 0010 305D     		ldrb	r0, [r6, r4]	@ zero_extendqisi2
+ 134 0012 FFF7FEFF 		bl	UART_RS485_PutChar
+ 135              	.LVL10:
+ 133:Generated_Source\PSoC5/UART_RS485_BOOT.c ****         bufIndex++;
+ 136              		.loc 1 133 0
+ 137 0016 0134     		adds	r4, r4, #1
+ 138              	.LVL11:
+ 139 0018 A4B2     		uxth	r4, r4
+ 140              	.LVL12:
+ 141              	.L8:
+ 130:Generated_Source\PSoC5/UART_RS485_BOOT.c ****     {
+ 142              		.loc 1 130 0
+ 143 001a AC42     		cmp	r4, r5
+ 144 001c F8D3     		bcc	.L9
+ 134:Generated_Source\PSoC5/UART_RS485_BOOT.c ****     }
+ 135:Generated_Source\PSoC5/UART_RS485_BOOT.c **** 
+ 136:Generated_Source\PSoC5/UART_RS485_BOOT.c ****     /* Return success code */
+ 137:Generated_Source\PSoC5/UART_RS485_BOOT.c ****     *count = size;
+ 145              		.loc 1 137 0
+ 146 001e 3D80     		strh	r5, [r7]	@ movhi
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccCBpfVX.s 			page 6
+
+
+ 138:Generated_Source\PSoC5/UART_RS485_BOOT.c **** 
+ 139:Generated_Source\PSoC5/UART_RS485_BOOT.c ****     return (CYRET_SUCCESS);
+ 140:Generated_Source\PSoC5/UART_RS485_BOOT.c **** }
+ 147              		.loc 1 140 0
+ 148 0020 0020     		movs	r0, #0
+ 149 0022 F8BD     		pop	{r3, r4, r5, r6, r7, pc}
+ 150              		.cfi_endproc
+ 151              	.LFE3:
+ 152              		.size	UART_RS485_CyBtldrCommWrite, .-UART_RS485_CyBtldrCommWrite
+ 153              		.section	.text.UART_RS485_CyBtldrCommRead,"ax",%progbits
+ 154              		.align	2
+ 155              		.global	UART_RS485_CyBtldrCommRead
+ 156              		.thumb
+ 157              		.thumb_func
+ 158              		.type	UART_RS485_CyBtldrCommRead, %function
+ 159              	UART_RS485_CyBtldrCommRead:
+ 160              	.LFB4:
+ 141:Generated_Source\PSoC5/UART_RS485_BOOT.c **** 
+ 142:Generated_Source\PSoC5/UART_RS485_BOOT.c **** 
+ 143:Generated_Source\PSoC5/UART_RS485_BOOT.c **** /*******************************************************************************
+ 144:Generated_Source\PSoC5/UART_RS485_BOOT.c **** * Function Name: UART_RS485_CyBtldrCommRead
+ 145:Generated_Source\PSoC5/UART_RS485_BOOT.c **** ********************************************************************************
+ 146:Generated_Source\PSoC5/UART_RS485_BOOT.c **** *
+ 147:Generated_Source\PSoC5/UART_RS485_BOOT.c **** * Summary:
+ 148:Generated_Source\PSoC5/UART_RS485_BOOT.c **** *  Receives the command.
+ 149:Generated_Source\PSoC5/UART_RS485_BOOT.c **** *
+ 150:Generated_Source\PSoC5/UART_RS485_BOOT.c **** * Parameters:
+ 151:Generated_Source\PSoC5/UART_RS485_BOOT.c **** *  pData:    A pointer to the area to store the block of data received
+ 152:Generated_Source\PSoC5/UART_RS485_BOOT.c **** *             from the device.
+ 153:Generated_Source\PSoC5/UART_RS485_BOOT.c **** *  size:     Maximum size of the read buffer
+ 154:Generated_Source\PSoC5/UART_RS485_BOOT.c **** *  count:    Pointer to an unsigned short variable to write the number
+ 155:Generated_Source\PSoC5/UART_RS485_BOOT.c **** *             of bytes actually read.
+ 156:Generated_Source\PSoC5/UART_RS485_BOOT.c **** *  timeOut:  Number of units to wait before returning because of a timeOut.
+ 157:Generated_Source\PSoC5/UART_RS485_BOOT.c **** *            Time out is measured in 10s of ms.
+ 158:Generated_Source\PSoC5/UART_RS485_BOOT.c **** *
+ 159:Generated_Source\PSoC5/UART_RS485_BOOT.c **** * Return:
+ 160:Generated_Source\PSoC5/UART_RS485_BOOT.c **** *  cystatus: This function will return CYRET_SUCCESS if at least one byte is
+ 161:Generated_Source\PSoC5/UART_RS485_BOOT.c **** *            received successfully within the time out interval. If no data is
+ 162:Generated_Source\PSoC5/UART_RS485_BOOT.c **** *            received  this function will return CYRET_EMPTY.
+ 163:Generated_Source\PSoC5/UART_RS485_BOOT.c **** *
+ 164:Generated_Source\PSoC5/UART_RS485_BOOT.c **** *  BYTE2BYTE_TIME_OUT is used for detecting time out marking end of block data
+ 165:Generated_Source\PSoC5/UART_RS485_BOOT.c **** *  from host. This has to be set to a value which is greater than the expected
+ 166:Generated_Source\PSoC5/UART_RS485_BOOT.c **** *  maximum delay between two bytes during a block/packet transmission from the
+ 167:Generated_Source\PSoC5/UART_RS485_BOOT.c **** *  host. You have to account for the delay in hardware converters while
+ 168:Generated_Source\PSoC5/UART_RS485_BOOT.c **** *  calculating this value, if you are using any USB-UART bridges.
+ 169:Generated_Source\PSoC5/UART_RS485_BOOT.c **** *******************************************************************************/
+ 170:Generated_Source\PSoC5/UART_RS485_BOOT.c **** cystatus UART_RS485_CyBtldrCommRead(uint8 pData[], uint16 size, uint16 * count, uint8 timeOut) CYSM
+ 171:Generated_Source\PSoC5/UART_RS485_BOOT.c ****          
+ 172:Generated_Source\PSoC5/UART_RS485_BOOT.c **** {
+ 161              		.loc 1 172 0
+ 162              		.cfi_startproc
+ 163              		@ args = 0, pretend = 0, frame = 0
+ 164              		@ frame_needed = 0, uses_anonymous_args = 0
+ 165              	.LVL13:
+ 166 0000 2DE9F047 		push	{r4, r5, r6, r7, r8, r9, r10, lr}
+ 167              		.cfi_def_cfa_offset 32
+ 168              		.cfi_offset 4, -32
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccCBpfVX.s 			page 7
+
+
+ 169              		.cfi_offset 5, -28
+ 170              		.cfi_offset 6, -24
+ 171              		.cfi_offset 7, -20
+ 172              		.cfi_offset 8, -16
+ 173              		.cfi_offset 9, -12
+ 174              		.cfi_offset 10, -8
+ 175              		.cfi_offset 14, -4
+ 176 0004 0746     		mov	r7, r0
+ 177 0006 8946     		mov	r9, r1
+ 178 0008 9046     		mov	r8, r2
+ 179 000a 1D46     		mov	r5, r3
+ 180              	.LVL14:
+ 173:Generated_Source\PSoC5/UART_RS485_BOOT.c ****     uint16 iCntr;
+ 174:Generated_Source\PSoC5/UART_RS485_BOOT.c ****     uint16 dataIndexCntr;
+ 175:Generated_Source\PSoC5/UART_RS485_BOOT.c ****     uint16 tempCount;
+ 176:Generated_Source\PSoC5/UART_RS485_BOOT.c ****     uint16 oldDataCount;
+ 177:Generated_Source\PSoC5/UART_RS485_BOOT.c **** 
+ 178:Generated_Source\PSoC5/UART_RS485_BOOT.c ****     cystatus status = CYRET_EMPTY;
+ 179:Generated_Source\PSoC5/UART_RS485_BOOT.c **** 
+ 180:Generated_Source\PSoC5/UART_RS485_BOOT.c ****     /* Check whether data is received within the time out period.
+ 181:Generated_Source\PSoC5/UART_RS485_BOOT.c ****     *  Time out period is in units of 10ms.
+ 182:Generated_Source\PSoC5/UART_RS485_BOOT.c ****     *  If at least one byte is received within the time out interval, wait for more data */
+ 183:Generated_Source\PSoC5/UART_RS485_BOOT.c ****     for (iCntr = 0u; iCntr < ((uint16)10u * timeOut); iCntr++)
+ 181              		.loc 1 183 0
+ 182 000c 0024     		movs	r4, #0
+ 183 000e 14E0     		b	.L12
+ 184              	.LVL15:
+ 185              	.L16:
+ 184:Generated_Source\PSoC5/UART_RS485_BOOT.c ****     {
+ 185:Generated_Source\PSoC5/UART_RS485_BOOT.c ****         /* If at least one byte is received within the timeout interval
+ 186:Generated_Source\PSoC5/UART_RS485_BOOT.c ****         *  enter the next loop waiting for more data reception
+ 187:Generated_Source\PSoC5/UART_RS485_BOOT.c ****         */
+ 188:Generated_Source\PSoC5/UART_RS485_BOOT.c ****         if(0u != UART_RS485_GetRxBufferSize())
+ 186              		.loc 1 188 0
+ 187 0010 FFF7FEFF 		bl	UART_RS485_GetRxBufferSize
+ 188              	.LVL16:
+ 189 0014 60B1     		cbz	r0, .L13
+ 190              	.LVL17:
+ 191              	.L14:
+ 189:Generated_Source\PSoC5/UART_RS485_BOOT.c ****         {
+ 190:Generated_Source\PSoC5/UART_RS485_BOOT.c ****             /* Wait for more data until 25ms byte to byte time out interval.
+ 191:Generated_Source\PSoC5/UART_RS485_BOOT.c ****             * If no data is received during the last 25 ms(BYTE2BYTE_TIME_OUT)
+ 192:Generated_Source\PSoC5/UART_RS485_BOOT.c ****             * then it is considered as end of transmitted data block(packet)
+ 193:Generated_Source\PSoC5/UART_RS485_BOOT.c ****             * from the host and the program execution will break from the
+ 194:Generated_Source\PSoC5/UART_RS485_BOOT.c ****             * data awaiting loop with status=CYRET_SUCCESS
+ 195:Generated_Source\PSoC5/UART_RS485_BOOT.c ****             */
+ 196:Generated_Source\PSoC5/UART_RS485_BOOT.c ****             do
+ 197:Generated_Source\PSoC5/UART_RS485_BOOT.c ****             {
+ 198:Generated_Source\PSoC5/UART_RS485_BOOT.c ****                 oldDataCount = UART_RS485_GetRxBufferSize();
+ 192              		.loc 1 198 0 discriminator 1
+ 193 0016 FFF7FEFF 		bl	UART_RS485_GetRxBufferSize
+ 194              	.LVL18:
+ 195 001a 0446     		mov	r4, r0
+ 196              	.LVL19:
+ 199:Generated_Source\PSoC5/UART_RS485_BOOT.c ****                 CyDelay(UART_RS485_BYTE2BYTE_TIME_OUT);
+ 197              		.loc 1 199 0 discriminator 1
+ 198 001c 1920     		movs	r0, #25
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccCBpfVX.s 			page 8
+
+
+ 199 001e FFF7FEFF 		bl	CyDelay
+ 200              	.LVL20:
+ 200:Generated_Source\PSoC5/UART_RS485_BOOT.c ****             }
+ 201:Generated_Source\PSoC5/UART_RS485_BOOT.c ****             while(UART_RS485_GetRxBufferSize() > oldDataCount);
+ 201              		.loc 1 201 0 discriminator 1
+ 202 0022 FFF7FEFF 		bl	UART_RS485_GetRxBufferSize
+ 203              	.LVL21:
+ 204 0026 8442     		cmp	r4, r0
+ 205 0028 F5D3     		bcc	.L14
+ 202:Generated_Source\PSoC5/UART_RS485_BOOT.c **** 
+ 203:Generated_Source\PSoC5/UART_RS485_BOOT.c ****             status = CYRET_SUCCESS;
+ 206              		.loc 1 203 0
+ 207 002a 4FF0000A 		mov	r10, #0
+ 208 002e 0BE0     		b	.L15
+ 209              	.LVL22:
+ 210              	.L13:
+ 204:Generated_Source\PSoC5/UART_RS485_BOOT.c ****             break;
+ 205:Generated_Source\PSoC5/UART_RS485_BOOT.c ****         }
+ 206:Generated_Source\PSoC5/UART_RS485_BOOT.c ****         /* If the data is not received, give a delay of 
+ 207:Generated_Source\PSoC5/UART_RS485_BOOT.c ****         *  UART_RS485_BL_CHK_DELAY_MS and check again until the timeOut specified.
+ 208:Generated_Source\PSoC5/UART_RS485_BOOT.c ****         */
+ 209:Generated_Source\PSoC5/UART_RS485_BOOT.c ****         else
+ 210:Generated_Source\PSoC5/UART_RS485_BOOT.c ****         {
+ 211:Generated_Source\PSoC5/UART_RS485_BOOT.c ****             CyDelay(UART_RS485_BL_CHK_DELAY_MS);
+ 211              		.loc 1 211 0 discriminator 2
+ 212 0030 0120     		movs	r0, #1
+ 213 0032 FFF7FEFF 		bl	CyDelay
+ 214              	.LVL23:
+ 183:Generated_Source\PSoC5/UART_RS485_BOOT.c ****     {
+ 215              		.loc 1 183 0 discriminator 2
+ 216 0036 0134     		adds	r4, r4, #1
+ 217              	.LVL24:
+ 218 0038 A4B2     		uxth	r4, r4
+ 219              	.LVL25:
+ 220              	.L12:
+ 183:Generated_Source\PSoC5/UART_RS485_BOOT.c ****     {
+ 221              		.loc 1 183 0 is_stmt 0 discriminator 1
+ 222 003a 05EB8502 		add	r2, r5, r5, lsl #2
+ 223 003e 5300     		lsls	r3, r2, #1
+ 224 0040 9C42     		cmp	r4, r3
+ 225 0042 E5DB     		blt	.L16
+ 178:Generated_Source\PSoC5/UART_RS485_BOOT.c **** 
+ 226              		.loc 1 178 0 is_stmt 1
+ 227 0044 4FF0050A 		mov	r10, #5
+ 228              	.LVL26:
+ 229              	.L15:
+ 212:Generated_Source\PSoC5/UART_RS485_BOOT.c ****         }
+ 213:Generated_Source\PSoC5/UART_RS485_BOOT.c ****     }
+ 214:Generated_Source\PSoC5/UART_RS485_BOOT.c **** 
+ 215:Generated_Source\PSoC5/UART_RS485_BOOT.c ****     /* Initialize the data read indexes and Count value */
+ 216:Generated_Source\PSoC5/UART_RS485_BOOT.c ****     *count = 0u;
+ 230              		.loc 1 216 0
+ 231 0048 0025     		movs	r5, #0
+ 232 004a A8F80050 		strh	r5, [r8]	@ movhi
+ 233              	.LVL27:
+ 217:Generated_Source\PSoC5/UART_RS485_BOOT.c ****     dataIndexCntr = 0u;
+ 218:Generated_Source\PSoC5/UART_RS485_BOOT.c **** 
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccCBpfVX.s 			page 9
+
+
+ 219:Generated_Source\PSoC5/UART_RS485_BOOT.c ****     /* If GetRxBufferSize()>0 , move the received data to the pData buffer */
+ 220:Generated_Source\PSoC5/UART_RS485_BOOT.c ****     while(UART_RS485_GetRxBufferSize() > 0u)
+ 234              		.loc 1 220 0
+ 235 004e 22E0     		b	.L17
+ 236              	.LVL28:
+ 237              	.L23:
+ 221:Generated_Source\PSoC5/UART_RS485_BOOT.c ****     {
+ 222:Generated_Source\PSoC5/UART_RS485_BOOT.c ****         tempCount = UART_RS485_GetRxBufferSize();
+ 238              		.loc 1 222 0
+ 239 0050 FFF7FEFF 		bl	UART_RS485_GetRxBufferSize
+ 240              	.LVL29:
+ 241 0054 86B2     		uxth	r6, r0
+ 242              	.LVL30:
+ 223:Generated_Source\PSoC5/UART_RS485_BOOT.c ****         *count  =(*count) + tempCount;
+ 243              		.loc 1 223 0
+ 244 0056 B8F80020 		ldrh	r2, [r8]
+ 245 005a B318     		adds	r3, r6, r2
+ 246 005c 9BB2     		uxth	r3, r3
+ 247 005e A8F80030 		strh	r3, [r8]	@ movhi
+ 224:Generated_Source\PSoC5/UART_RS485_BOOT.c **** 
+ 225:Generated_Source\PSoC5/UART_RS485_BOOT.c ****         /* Check if buffer overflow will occur before moving the data */
+ 226:Generated_Source\PSoC5/UART_RS485_BOOT.c ****         if(*count < size)
+ 248              		.loc 1 226 0
+ 249 0062 4B45     		cmp	r3, r9
+ 250 0064 08D3     		bcc	.L24
+ 251 0066 13E0     		b	.L25
+ 252              	.LVL31:
+ 253              	.L20:
+ 227:Generated_Source\PSoC5/UART_RS485_BOOT.c ****         {
+ 228:Generated_Source\PSoC5/UART_RS485_BOOT.c ****             for (iCntr = 0u; iCntr < tempCount; iCntr++)
+ 229:Generated_Source\PSoC5/UART_RS485_BOOT.c ****             {
+ 230:Generated_Source\PSoC5/UART_RS485_BOOT.c ****                 /* Read the data and move it to the pData buffer */
+ 231:Generated_Source\PSoC5/UART_RS485_BOOT.c ****                 pData[dataIndexCntr] = UART_RS485_ReadRxData();
+ 254              		.loc 1 231 0 discriminator 3
+ 255 0068 FFF7FEFF 		bl	UART_RS485_ReadRxData
+ 256              	.LVL32:
+ 257 006c 7855     		strb	r0, [r7, r5]
+ 232:Generated_Source\PSoC5/UART_RS485_BOOT.c ****                 dataIndexCntr++;
+ 258              		.loc 1 232 0 discriminator 3
+ 259 006e 0135     		adds	r5, r5, #1
+ 260              	.LVL33:
+ 261 0070 ADB2     		uxth	r5, r5
+ 262              	.LVL34:
+ 228:Generated_Source\PSoC5/UART_RS485_BOOT.c ****             {
+ 263              		.loc 1 228 0 discriminator 3
+ 264 0072 0134     		adds	r4, r4, #1
+ 265              	.LVL35:
+ 266 0074 A4B2     		uxth	r4, r4
+ 267              	.LVL36:
+ 268 0076 00E0     		b	.L18
+ 269              	.LVL37:
+ 270              	.L24:
+ 271 0078 0024     		movs	r4, #0
+ 272              	.L18:
+ 273              	.LVL38:
+ 228:Generated_Source\PSoC5/UART_RS485_BOOT.c ****             {
+ 274              		.loc 1 228 0 is_stmt 0 discriminator 1
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccCBpfVX.s 			page 10
+
+
+ 275 007a B442     		cmp	r4, r6
+ 276 007c F4D3     		bcc	.L20
+ 233:Generated_Source\PSoC5/UART_RS485_BOOT.c ****             }
+ 234:Generated_Source\PSoC5/UART_RS485_BOOT.c **** 
+ 235:Generated_Source\PSoC5/UART_RS485_BOOT.c ****             /* Check if the last received byte is end of packet defined by bootloader
+ 236:Generated_Source\PSoC5/UART_RS485_BOOT.c ****             *  If not wait for additional UART_RS485_WAIT_EOP_DELAY ms.
+ 237:Generated_Source\PSoC5/UART_RS485_BOOT.c ****             */
+ 238:Generated_Source\PSoC5/UART_RS485_BOOT.c ****             if(pData[dataIndexCntr - 1u] != UART_RS485_PACKET_EOP)
+ 277              		.loc 1 238 0 is_stmt 1
+ 278 007e 7B19     		adds	r3, r7, r5
+ 279 0080 13F8013C 		ldrb	r3, [r3, #-1]	@ zero_extendqisi2
+ 280 0084 172B     		cmp	r3, #23
+ 281 0086 06D0     		beq	.L17
+ 239:Generated_Source\PSoC5/UART_RS485_BOOT.c ****             {
+ 240:Generated_Source\PSoC5/UART_RS485_BOOT.c ****                 CyDelay(UART_RS485_WAIT_EOP_DELAY);
+ 282              		.loc 1 240 0
+ 283 0088 0520     		movs	r0, #5
+ 284 008a FFF7FEFF 		bl	CyDelay
+ 285              	.LVL39:
+ 286 008e 02E0     		b	.L17
+ 287              	.LVL40:
+ 288              	.L25:
+ 241:Generated_Source\PSoC5/UART_RS485_BOOT.c ****             }
+ 242:Generated_Source\PSoC5/UART_RS485_BOOT.c ****         }
+ 243:Generated_Source\PSoC5/UART_RS485_BOOT.c ****         /* If there is no space to move data, break from the loop */
+ 244:Generated_Source\PSoC5/UART_RS485_BOOT.c ****         else
+ 245:Generated_Source\PSoC5/UART_RS485_BOOT.c ****         {
+ 246:Generated_Source\PSoC5/UART_RS485_BOOT.c ****             *count = (*count) - tempCount;
+ 289              		.loc 1 246 0
+ 290 0090 A8F80020 		strh	r2, [r8]	@ movhi
+ 247:Generated_Source\PSoC5/UART_RS485_BOOT.c ****             break;
+ 291              		.loc 1 247 0
+ 292 0094 03E0     		b	.L22
+ 293              	.LVL41:
+ 294              	.L17:
+ 220:Generated_Source\PSoC5/UART_RS485_BOOT.c ****     {
+ 295              		.loc 1 220 0
+ 296 0096 FFF7FEFF 		bl	UART_RS485_GetRxBufferSize
+ 297              	.LVL42:
+ 298 009a 0028     		cmp	r0, #0
+ 299 009c D8D1     		bne	.L23
+ 300              	.L22:
+ 248:Generated_Source\PSoC5/UART_RS485_BOOT.c ****         }
+ 249:Generated_Source\PSoC5/UART_RS485_BOOT.c ****     }
+ 250:Generated_Source\PSoC5/UART_RS485_BOOT.c **** 
+ 251:Generated_Source\PSoC5/UART_RS485_BOOT.c ****     return (status);
+ 252:Generated_Source\PSoC5/UART_RS485_BOOT.c **** }
+ 301              		.loc 1 252 0
+ 302 009e 5046     		mov	r0, r10
+ 303 00a0 BDE8F087 		pop	{r4, r5, r6, r7, r8, r9, r10, pc}
+ 304              		.cfi_endproc
+ 305              	.LFE4:
+ 306              		.size	UART_RS485_CyBtldrCommRead, .-UART_RS485_CyBtldrCommRead
+ 307              		.text
+ 308              	.Letext0:
+ 309              		.file 2 "Generated_Source\\PSoC5\\cytypes.h"
+ 310              		.file 3 "Generated_Source\\PSoC5\\UART_RS485.h"
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccCBpfVX.s 			page 11
+
+
+ 311              		.file 4 "Generated_Source\\PSoC5\\CyLib.h"
+ 312              		.section	.debug_info,"",%progbits
+ 313              	.Ldebug_info0:
+ 314 0000 1D030000 		.4byte	0x31d
+ 315 0004 0400     		.2byte	0x4
+ 316 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 317 000a 04       		.byte	0x4
+ 318 000b 01       		.uleb128 0x1
+ 319 000c B9000000 		.4byte	.LASF40
+ 320 0010 0C       		.byte	0xc
+ 321 0011 FB010000 		.4byte	.LASF41
+ 322 0015 97020000 		.4byte	.LASF42
+ 323 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 324 001d 00000000 		.4byte	0
+ 325 0021 00000000 		.4byte	.Ldebug_line0
+ 326 0025 02       		.uleb128 0x2
+ 327 0026 01       		.byte	0x1
+ 328 0027 06       		.byte	0x6
+ 329 0028 8B020000 		.4byte	.LASF0
+ 330 002c 02       		.uleb128 0x2
+ 331 002d 01       		.byte	0x1
+ 332 002e 08       		.byte	0x8
+ 333 002f 80010000 		.4byte	.LASF1
+ 334 0033 02       		.uleb128 0x2
+ 335 0034 02       		.byte	0x2
+ 336 0035 05       		.byte	0x5
+ 337 0036 64020000 		.4byte	.LASF2
+ 338 003a 02       		.uleb128 0x2
+ 339 003b 02       		.byte	0x2
+ 340 003c 07       		.byte	0x7
+ 341 003d 3D000000 		.4byte	.LASF3
+ 342 0041 02       		.uleb128 0x2
+ 343 0042 04       		.byte	0x4
+ 344 0043 05       		.byte	0x5
+ 345 0044 76020000 		.4byte	.LASF4
+ 346 0048 02       		.uleb128 0x2
+ 347 0049 04       		.byte	0x4
+ 348 004a 07       		.byte	0x7
+ 349 004b 47010000 		.4byte	.LASF5
+ 350 004f 02       		.uleb128 0x2
+ 351 0050 08       		.byte	0x8
+ 352 0051 05       		.byte	0x5
+ 353 0052 51020000 		.4byte	.LASF6
+ 354 0056 02       		.uleb128 0x2
+ 355 0057 08       		.byte	0x8
+ 356 0058 07       		.byte	0x7
+ 357 0059 E4010000 		.4byte	.LASF7
+ 358 005d 03       		.uleb128 0x3
+ 359 005e 04       		.byte	0x4
+ 360 005f 05       		.byte	0x5
+ 361 0060 696E7400 		.ascii	"int\000"
+ 362 0064 02       		.uleb128 0x2
+ 363 0065 04       		.byte	0x4
+ 364 0066 07       		.byte	0x7
+ 365 0067 D7010000 		.4byte	.LASF8
+ 366 006b 04       		.uleb128 0x4
+ 367 006c 59010000 		.4byte	.LASF9
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccCBpfVX.s 			page 12
+
+
+ 368 0070 02       		.byte	0x2
+ 369 0071 E401     		.2byte	0x1e4
+ 370 0073 2C000000 		.4byte	0x2c
+ 371 0077 04       		.uleb128 0x4
+ 372 0078 C3010000 		.4byte	.LASF10
+ 373 007c 02       		.byte	0x2
+ 374 007d E501     		.2byte	0x1e5
+ 375 007f 3A000000 		.4byte	0x3a
+ 376 0083 02       		.uleb128 0x2
+ 377 0084 04       		.byte	0x4
+ 378 0085 04       		.byte	0x4
+ 379 0086 95000000 		.4byte	.LASF11
+ 380 008a 02       		.uleb128 0x2
+ 381 008b 08       		.byte	0x8
+ 382 008c 04       		.byte	0x4
+ 383 008d A9010000 		.4byte	.LASF12
+ 384 0091 02       		.uleb128 0x2
+ 385 0092 01       		.byte	0x1
+ 386 0093 08       		.byte	0x8
+ 387 0094 5F020000 		.4byte	.LASF13
+ 388 0098 04       		.uleb128 0x4
+ 389 0099 00000000 		.4byte	.LASF14
+ 390 009d 02       		.byte	0x2
+ 391 009e 8602     		.2byte	0x286
+ 392 00a0 48000000 		.4byte	0x48
+ 393 00a4 02       		.uleb128 0x2
+ 394 00a5 08       		.byte	0x8
+ 395 00a6 04       		.byte	0x4
+ 396 00a7 7F020000 		.4byte	.LASF15
+ 397 00ab 02       		.uleb128 0x2
+ 398 00ac 04       		.byte	0x4
+ 399 00ad 07       		.byte	0x7
+ 400 00ae 48020000 		.4byte	.LASF16
+ 401 00b2 05       		.uleb128 0x5
+ 402 00b3 79000000 		.4byte	.LASF17
+ 403 00b7 01       		.byte	0x1
+ 404 00b8 29       		.byte	0x29
+ 405 00b9 00000000 		.4byte	.LFB0
+ 406 00bd 10000000 		.4byte	.LFE0-.LFB0
+ 407 00c1 01       		.uleb128 0x1
+ 408 00c2 9C       		.byte	0x9c
+ 409 00c3 E3000000 		.4byte	0xe3
+ 410 00c7 06       		.uleb128 0x6
+ 411 00c8 06000000 		.4byte	.LVL0
+ 412 00cc C8020000 		.4byte	0x2c8
+ 413 00d0 06       		.uleb128 0x6
+ 414 00d1 0A000000 		.4byte	.LVL1
+ 415 00d5 D3020000 		.4byte	0x2d3
+ 416 00d9 06       		.uleb128 0x6
+ 417 00da 0E000000 		.4byte	.LVL2
+ 418 00de DE020000 		.4byte	0x2de
+ 419 00e2 00       		.byte	0
+ 420 00e3 05       		.uleb128 0x5
+ 421 00e4 40030000 		.4byte	.LASF18
+ 422 00e8 01       		.byte	0x1
+ 423 00e9 40       		.byte	0x40
+ 424 00ea 00000000 		.4byte	.LFB1
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccCBpfVX.s 			page 13
+
+
+ 425 00ee 08000000 		.4byte	.LFE1-.LFB1
+ 426 00f2 01       		.uleb128 0x1
+ 427 00f3 9C       		.byte	0x9c
+ 428 00f4 02010000 		.4byte	0x102
+ 429 00f8 06       		.uleb128 0x6
+ 430 00f9 06000000 		.4byte	.LVL3
+ 431 00fd E9020000 		.4byte	0x2e9
+ 432 0101 00       		.byte	0
+ 433 0102 05       		.uleb128 0x5
+ 434 0103 50000000 		.4byte	.LASF19
+ 435 0107 01       		.byte	0x1
+ 436 0108 55       		.byte	0x55
+ 437 0109 00000000 		.4byte	.LFB2
+ 438 010d 0C000000 		.4byte	.LFE2-.LFB2
+ 439 0111 01       		.uleb128 0x1
+ 440 0112 9C       		.byte	0x9c
+ 441 0113 2A010000 		.4byte	0x12a
+ 442 0117 06       		.uleb128 0x6
+ 443 0118 06000000 		.4byte	.LVL4
+ 444 011c D3020000 		.4byte	0x2d3
+ 445 0120 06       		.uleb128 0x6
+ 446 0121 0A000000 		.4byte	.LVL5
+ 447 0125 DE020000 		.4byte	0x2de
+ 448 0129 00       		.byte	0
+ 449 012a 07       		.uleb128 0x7
+ 450 012b 24030000 		.4byte	.LASF24
+ 451 012f 01       		.byte	0x1
+ 452 0130 74       		.byte	0x74
+ 453 0131 98000000 		.4byte	0x98
+ 454 0135 00000000 		.4byte	.LFB3
+ 455 0139 24000000 		.4byte	.LFE3-.LFB3
+ 456 013d 01       		.uleb128 0x1
+ 457 013e 9C       		.byte	0x9c
+ 458 013f A1010000 		.4byte	0x1a1
+ 459 0143 08       		.uleb128 0x8
+ 460 0144 73000000 		.4byte	.LASF20
+ 461 0148 01       		.byte	0x1
+ 462 0149 74       		.byte	0x74
+ 463 014a A1010000 		.4byte	0x1a1
+ 464 014e 00000000 		.4byte	.LLST0
+ 465 0152 08       		.uleb128 0x8
+ 466 0153 B4000000 		.4byte	.LASF21
+ 467 0157 01       		.byte	0x1
+ 468 0158 74       		.byte	0x74
+ 469 0159 77000000 		.4byte	0x77
+ 470 015d 1E000000 		.4byte	.LLST1
+ 471 0161 08       		.uleb128 0x8
+ 472 0162 37000000 		.4byte	.LASF22
+ 473 0166 01       		.byte	0x1
+ 474 0167 74       		.byte	0x74
+ 475 0168 AC010000 		.4byte	0x1ac
+ 476 016c 3F000000 		.4byte	.LLST2
+ 477 0170 08       		.uleb128 0x8
+ 478 0171 6E020000 		.4byte	.LASF23
+ 479 0175 01       		.byte	0x1
+ 480 0176 74       		.byte	0x74
+ 481 0177 6B000000 		.4byte	0x6b
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccCBpfVX.s 			page 14
+
+
+ 482 017b 5D000000 		.4byte	.LLST3
+ 483 017f 09       		.uleb128 0x9
+ 484 0180 24020000 		.4byte	.LASF26
+ 485 0184 01       		.byte	0x1
+ 486 0185 77       		.byte	0x77
+ 487 0186 77000000 		.4byte	0x77
+ 488 018a 7E000000 		.4byte	.LLST4
+ 489 018e 06       		.uleb128 0x6
+ 490 018f 0C000000 		.4byte	.LVL8
+ 491 0193 D3020000 		.4byte	0x2d3
+ 492 0197 06       		.uleb128 0x6
+ 493 0198 16000000 		.4byte	.LVL10
+ 494 019c F4020000 		.4byte	0x2f4
+ 495 01a0 00       		.byte	0
+ 496 01a1 0A       		.uleb128 0xa
+ 497 01a2 04       		.byte	0x4
+ 498 01a3 A7010000 		.4byte	0x1a7
+ 499 01a7 0B       		.uleb128 0xb
+ 500 01a8 6B000000 		.4byte	0x6b
+ 501 01ac 0A       		.uleb128 0xa
+ 502 01ad 04       		.byte	0x4
+ 503 01ae 77000000 		.4byte	0x77
+ 504 01b2 07       		.uleb128 0x7
+ 505 01b3 2D020000 		.4byte	.LASF25
+ 506 01b7 01       		.byte	0x1
+ 507 01b8 AA       		.byte	0xaa
+ 508 01b9 98000000 		.4byte	0x98
+ 509 01bd 00000000 		.4byte	.LFB4
+ 510 01c1 A4000000 		.4byte	.LFE4-.LFB4
+ 511 01c5 01       		.uleb128 0x1
+ 512 01c6 9C       		.byte	0x9c
+ 513 01c7 C2020000 		.4byte	0x2c2
+ 514 01cb 08       		.uleb128 0x8
+ 515 01cc 73000000 		.4byte	.LASF20
+ 516 01d0 01       		.byte	0x1
+ 517 01d1 AA       		.byte	0xaa
+ 518 01d2 C2020000 		.4byte	0x2c2
+ 519 01d6 A8000000 		.4byte	.LLST5
+ 520 01da 08       		.uleb128 0x8
+ 521 01db B4000000 		.4byte	.LASF21
+ 522 01df 01       		.byte	0x1
+ 523 01e0 AA       		.byte	0xaa
+ 524 01e1 77000000 		.4byte	0x77
+ 525 01e5 C6000000 		.4byte	.LLST6
+ 526 01e9 08       		.uleb128 0x8
+ 527 01ea 37000000 		.4byte	.LASF22
+ 528 01ee 01       		.byte	0x1
+ 529 01ef AA       		.byte	0xaa
+ 530 01f0 AC010000 		.4byte	0x1ac
+ 531 01f4 E7000000 		.4byte	.LLST7
+ 532 01f8 08       		.uleb128 0x8
+ 533 01f9 6E020000 		.4byte	.LASF23
+ 534 01fd 01       		.byte	0x1
+ 535 01fe AA       		.byte	0xaa
+ 536 01ff 6B000000 		.4byte	0x6b
+ 537 0203 05010000 		.4byte	.LLST8
+ 538 0207 09       		.uleb128 0x9
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccCBpfVX.s 			page 15
+
+
+ 539 0208 1E030000 		.4byte	.LASF27
+ 540 020c 01       		.byte	0x1
+ 541 020d AD       		.byte	0xad
+ 542 020e 77000000 		.4byte	0x77
+ 543 0212 26010000 		.4byte	.LLST9
+ 544 0216 09       		.uleb128 0x9
+ 545 0217 29000000 		.4byte	.LASF28
+ 546 021b 01       		.byte	0x1
+ 547 021c AE       		.byte	0xae
+ 548 021d 77000000 		.4byte	0x77
+ 549 0221 7C010000 		.4byte	.LLST10
+ 550 0225 09       		.uleb128 0x9
+ 551 0226 1F000000 		.4byte	.LASF29
+ 552 022a 01       		.byte	0x1
+ 553 022b AF       		.byte	0xaf
+ 554 022c 77000000 		.4byte	0x77
+ 555 0230 A6010000 		.4byte	.LLST11
+ 556 0234 09       		.uleb128 0x9
+ 557 0235 CA010000 		.4byte	.LASF30
+ 558 0239 01       		.byte	0x1
+ 559 023a B0       		.byte	0xb0
+ 560 023b 77000000 		.4byte	0x77
+ 561 023f B9010000 		.4byte	.LLST12
+ 562 0243 09       		.uleb128 0x9
+ 563 0244 6C000000 		.4byte	.LASF31
+ 564 0248 01       		.byte	0x1
+ 565 0249 B2       		.byte	0xb2
+ 566 024a 98000000 		.4byte	0x98
+ 567 024e D1010000 		.4byte	.LLST13
+ 568 0252 06       		.uleb128 0x6
+ 569 0253 14000000 		.4byte	.LVL16
+ 570 0257 FF020000 		.4byte	0x2ff
+ 571 025b 06       		.uleb128 0x6
+ 572 025c 1A000000 		.4byte	.LVL18
+ 573 0260 FF020000 		.4byte	0x2ff
+ 574 0264 0C       		.uleb128 0xc
+ 575 0265 22000000 		.4byte	.LVL20
+ 576 0269 0A030000 		.4byte	0x30a
+ 577 026d 77020000 		.4byte	0x277
+ 578 0271 0D       		.uleb128 0xd
+ 579 0272 01       		.uleb128 0x1
+ 580 0273 50       		.byte	0x50
+ 581 0274 01       		.uleb128 0x1
+ 582 0275 49       		.byte	0x49
+ 583 0276 00       		.byte	0
+ 584 0277 06       		.uleb128 0x6
+ 585 0278 26000000 		.4byte	.LVL21
+ 586 027c FF020000 		.4byte	0x2ff
+ 587 0280 0C       		.uleb128 0xc
+ 588 0281 36000000 		.4byte	.LVL23
+ 589 0285 0A030000 		.4byte	0x30a
+ 590 0289 93020000 		.4byte	0x293
+ 591 028d 0D       		.uleb128 0xd
+ 592 028e 01       		.uleb128 0x1
+ 593 028f 50       		.byte	0x50
+ 594 0290 01       		.uleb128 0x1
+ 595 0291 31       		.byte	0x31
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccCBpfVX.s 			page 16
+
+
+ 596 0292 00       		.byte	0
+ 597 0293 06       		.uleb128 0x6
+ 598 0294 54000000 		.4byte	.LVL29
+ 599 0298 FF020000 		.4byte	0x2ff
+ 600 029c 06       		.uleb128 0x6
+ 601 029d 6C000000 		.4byte	.LVL32
+ 602 02a1 15030000 		.4byte	0x315
+ 603 02a5 0C       		.uleb128 0xc
+ 604 02a6 8E000000 		.4byte	.LVL39
+ 605 02aa 0A030000 		.4byte	0x30a
+ 606 02ae B8020000 		.4byte	0x2b8
+ 607 02b2 0D       		.uleb128 0xd
+ 608 02b3 01       		.uleb128 0x1
+ 609 02b4 50       		.byte	0x50
+ 610 02b5 01       		.uleb128 0x1
+ 611 02b6 35       		.byte	0x35
+ 612 02b7 00       		.byte	0
+ 613 02b8 06       		.uleb128 0x6
+ 614 02b9 9A000000 		.4byte	.LVL42
+ 615 02bd FF020000 		.4byte	0x2ff
+ 616 02c1 00       		.byte	0
+ 617 02c2 0A       		.uleb128 0xa
+ 618 02c3 04       		.byte	0x4
+ 619 02c4 6B000000 		.4byte	0x6b
+ 620 02c8 0E       		.uleb128 0xe
+ 621 02c9 6F010000 		.4byte	.LASF32
+ 622 02cd 6F010000 		.4byte	.LASF32
+ 623 02d1 03       		.byte	0x3
+ 624 02d2 54       		.byte	0x54
+ 625 02d3 0E       		.uleb128 0xe
+ 626 02d4 9B000000 		.4byte	.LASF33
+ 627 02d8 9B000000 		.4byte	.LASF33
+ 628 02dc 03       		.byte	0x3
+ 629 02dd 75       		.byte	0x75
+ 630 02de 0E       		.uleb128 0xe
+ 631 02df 05030000 		.4byte	.LASF34
+ 632 02e3 05030000 		.4byte	.LASF34
+ 633 02e7 03       		.byte	0x3
+ 634 02e8 8F       		.byte	0x8f
+ 635 02e9 0E       		.uleb128 0xe
+ 636 02ea 5F010000 		.4byte	.LASF35
+ 637 02ee 5F010000 		.4byte	.LASF35
+ 638 02f2 03       		.byte	0x3
+ 639 02f3 55       		.byte	0x55
+ 640 02f4 0E       		.uleb128 0xe
+ 641 02f5 B0010000 		.4byte	.LASF36
+ 642 02f9 B0010000 		.4byte	.LASF36
+ 643 02fd 03       		.byte	0x3
+ 644 02fe 8A       		.byte	0x8a
+ 645 02ff 0E       		.uleb128 0xe
+ 646 0300 8E010000 		.4byte	.LASF37
+ 647 0304 8E010000 		.4byte	.LASF37
+ 648 0308 03       		.byte	0x3
+ 649 0309 73       		.byte	0x73
+ 650 030a 0E       		.uleb128 0xe
+ 651 030b 5B030000 		.4byte	.LASF38
+ 652 030f 5B030000 		.4byte	.LASF38
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccCBpfVX.s 			page 17
+
+
+ 653 0313 04       		.byte	0x4
+ 654 0314 76       		.byte	0x76
+ 655 0315 0E       		.uleb128 0xe
+ 656 0316 09000000 		.4byte	.LASF39
+ 657 031a 09000000 		.4byte	.LASF39
+ 658 031e 03       		.byte	0x3
+ 659 031f 6F       		.byte	0x6f
+ 660 0320 00       		.byte	0
+ 661              		.section	.debug_abbrev,"",%progbits
+ 662              	.Ldebug_abbrev0:
+ 663 0000 01       		.uleb128 0x1
+ 664 0001 11       		.uleb128 0x11
+ 665 0002 01       		.byte	0x1
+ 666 0003 25       		.uleb128 0x25
+ 667 0004 0E       		.uleb128 0xe
+ 668 0005 13       		.uleb128 0x13
+ 669 0006 0B       		.uleb128 0xb
+ 670 0007 03       		.uleb128 0x3
+ 671 0008 0E       		.uleb128 0xe
+ 672 0009 1B       		.uleb128 0x1b
+ 673 000a 0E       		.uleb128 0xe
+ 674 000b 55       		.uleb128 0x55
+ 675 000c 17       		.uleb128 0x17
+ 676 000d 11       		.uleb128 0x11
+ 677 000e 01       		.uleb128 0x1
+ 678 000f 10       		.uleb128 0x10
+ 679 0010 17       		.uleb128 0x17
+ 680 0011 00       		.byte	0
+ 681 0012 00       		.byte	0
+ 682 0013 02       		.uleb128 0x2
+ 683 0014 24       		.uleb128 0x24
+ 684 0015 00       		.byte	0
+ 685 0016 0B       		.uleb128 0xb
+ 686 0017 0B       		.uleb128 0xb
+ 687 0018 3E       		.uleb128 0x3e
+ 688 0019 0B       		.uleb128 0xb
+ 689 001a 03       		.uleb128 0x3
+ 690 001b 0E       		.uleb128 0xe
+ 691 001c 00       		.byte	0
+ 692 001d 00       		.byte	0
+ 693 001e 03       		.uleb128 0x3
+ 694 001f 24       		.uleb128 0x24
+ 695 0020 00       		.byte	0
+ 696 0021 0B       		.uleb128 0xb
+ 697 0022 0B       		.uleb128 0xb
+ 698 0023 3E       		.uleb128 0x3e
+ 699 0024 0B       		.uleb128 0xb
+ 700 0025 03       		.uleb128 0x3
+ 701 0026 08       		.uleb128 0x8
+ 702 0027 00       		.byte	0
+ 703 0028 00       		.byte	0
+ 704 0029 04       		.uleb128 0x4
+ 705 002a 16       		.uleb128 0x16
+ 706 002b 00       		.byte	0
+ 707 002c 03       		.uleb128 0x3
+ 708 002d 0E       		.uleb128 0xe
+ 709 002e 3A       		.uleb128 0x3a
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccCBpfVX.s 			page 18
+
+
+ 710 002f 0B       		.uleb128 0xb
+ 711 0030 3B       		.uleb128 0x3b
+ 712 0031 05       		.uleb128 0x5
+ 713 0032 49       		.uleb128 0x49
+ 714 0033 13       		.uleb128 0x13
+ 715 0034 00       		.byte	0
+ 716 0035 00       		.byte	0
+ 717 0036 05       		.uleb128 0x5
+ 718 0037 2E       		.uleb128 0x2e
+ 719 0038 01       		.byte	0x1
+ 720 0039 3F       		.uleb128 0x3f
+ 721 003a 19       		.uleb128 0x19
+ 722 003b 03       		.uleb128 0x3
+ 723 003c 0E       		.uleb128 0xe
+ 724 003d 3A       		.uleb128 0x3a
+ 725 003e 0B       		.uleb128 0xb
+ 726 003f 3B       		.uleb128 0x3b
+ 727 0040 0B       		.uleb128 0xb
+ 728 0041 27       		.uleb128 0x27
+ 729 0042 19       		.uleb128 0x19
+ 730 0043 11       		.uleb128 0x11
+ 731 0044 01       		.uleb128 0x1
+ 732 0045 12       		.uleb128 0x12
+ 733 0046 06       		.uleb128 0x6
+ 734 0047 40       		.uleb128 0x40
+ 735 0048 18       		.uleb128 0x18
+ 736 0049 9742     		.uleb128 0x2117
+ 737 004b 19       		.uleb128 0x19
+ 738 004c 01       		.uleb128 0x1
+ 739 004d 13       		.uleb128 0x13
+ 740 004e 00       		.byte	0
+ 741 004f 00       		.byte	0
+ 742 0050 06       		.uleb128 0x6
+ 743 0051 898201   		.uleb128 0x4109
+ 744 0054 00       		.byte	0
+ 745 0055 11       		.uleb128 0x11
+ 746 0056 01       		.uleb128 0x1
+ 747 0057 31       		.uleb128 0x31
+ 748 0058 13       		.uleb128 0x13
+ 749 0059 00       		.byte	0
+ 750 005a 00       		.byte	0
+ 751 005b 07       		.uleb128 0x7
+ 752 005c 2E       		.uleb128 0x2e
+ 753 005d 01       		.byte	0x1
+ 754 005e 3F       		.uleb128 0x3f
+ 755 005f 19       		.uleb128 0x19
+ 756 0060 03       		.uleb128 0x3
+ 757 0061 0E       		.uleb128 0xe
+ 758 0062 3A       		.uleb128 0x3a
+ 759 0063 0B       		.uleb128 0xb
+ 760 0064 3B       		.uleb128 0x3b
+ 761 0065 0B       		.uleb128 0xb
+ 762 0066 27       		.uleb128 0x27
+ 763 0067 19       		.uleb128 0x19
+ 764 0068 49       		.uleb128 0x49
+ 765 0069 13       		.uleb128 0x13
+ 766 006a 11       		.uleb128 0x11
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccCBpfVX.s 			page 19
+
+
+ 767 006b 01       		.uleb128 0x1
+ 768 006c 12       		.uleb128 0x12
+ 769 006d 06       		.uleb128 0x6
+ 770 006e 40       		.uleb128 0x40
+ 771 006f 18       		.uleb128 0x18
+ 772 0070 9742     		.uleb128 0x2117
+ 773 0072 19       		.uleb128 0x19
+ 774 0073 01       		.uleb128 0x1
+ 775 0074 13       		.uleb128 0x13
+ 776 0075 00       		.byte	0
+ 777 0076 00       		.byte	0
+ 778 0077 08       		.uleb128 0x8
+ 779 0078 05       		.uleb128 0x5
+ 780 0079 00       		.byte	0
+ 781 007a 03       		.uleb128 0x3
+ 782 007b 0E       		.uleb128 0xe
+ 783 007c 3A       		.uleb128 0x3a
+ 784 007d 0B       		.uleb128 0xb
+ 785 007e 3B       		.uleb128 0x3b
+ 786 007f 0B       		.uleb128 0xb
+ 787 0080 49       		.uleb128 0x49
+ 788 0081 13       		.uleb128 0x13
+ 789 0082 02       		.uleb128 0x2
+ 790 0083 17       		.uleb128 0x17
+ 791 0084 00       		.byte	0
+ 792 0085 00       		.byte	0
+ 793 0086 09       		.uleb128 0x9
+ 794 0087 34       		.uleb128 0x34
+ 795 0088 00       		.byte	0
+ 796 0089 03       		.uleb128 0x3
+ 797 008a 0E       		.uleb128 0xe
+ 798 008b 3A       		.uleb128 0x3a
+ 799 008c 0B       		.uleb128 0xb
+ 800 008d 3B       		.uleb128 0x3b
+ 801 008e 0B       		.uleb128 0xb
+ 802 008f 49       		.uleb128 0x49
+ 803 0090 13       		.uleb128 0x13
+ 804 0091 02       		.uleb128 0x2
+ 805 0092 17       		.uleb128 0x17
+ 806 0093 00       		.byte	0
+ 807 0094 00       		.byte	0
+ 808 0095 0A       		.uleb128 0xa
+ 809 0096 0F       		.uleb128 0xf
+ 810 0097 00       		.byte	0
+ 811 0098 0B       		.uleb128 0xb
+ 812 0099 0B       		.uleb128 0xb
+ 813 009a 49       		.uleb128 0x49
+ 814 009b 13       		.uleb128 0x13
+ 815 009c 00       		.byte	0
+ 816 009d 00       		.byte	0
+ 817 009e 0B       		.uleb128 0xb
+ 818 009f 26       		.uleb128 0x26
+ 819 00a0 00       		.byte	0
+ 820 00a1 49       		.uleb128 0x49
+ 821 00a2 13       		.uleb128 0x13
+ 822 00a3 00       		.byte	0
+ 823 00a4 00       		.byte	0
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccCBpfVX.s 			page 20
+
+
+ 824 00a5 0C       		.uleb128 0xc
+ 825 00a6 898201   		.uleb128 0x4109
+ 826 00a9 01       		.byte	0x1
+ 827 00aa 11       		.uleb128 0x11
+ 828 00ab 01       		.uleb128 0x1
+ 829 00ac 31       		.uleb128 0x31
+ 830 00ad 13       		.uleb128 0x13
+ 831 00ae 01       		.uleb128 0x1
+ 832 00af 13       		.uleb128 0x13
+ 833 00b0 00       		.byte	0
+ 834 00b1 00       		.byte	0
+ 835 00b2 0D       		.uleb128 0xd
+ 836 00b3 8A8201   		.uleb128 0x410a
+ 837 00b6 00       		.byte	0
+ 838 00b7 02       		.uleb128 0x2
+ 839 00b8 18       		.uleb128 0x18
+ 840 00b9 9142     		.uleb128 0x2111
+ 841 00bb 18       		.uleb128 0x18
+ 842 00bc 00       		.byte	0
+ 843 00bd 00       		.byte	0
+ 844 00be 0E       		.uleb128 0xe
+ 845 00bf 2E       		.uleb128 0x2e
+ 846 00c0 00       		.byte	0
+ 847 00c1 3F       		.uleb128 0x3f
+ 848 00c2 19       		.uleb128 0x19
+ 849 00c3 3C       		.uleb128 0x3c
+ 850 00c4 19       		.uleb128 0x19
+ 851 00c5 6E       		.uleb128 0x6e
+ 852 00c6 0E       		.uleb128 0xe
+ 853 00c7 03       		.uleb128 0x3
+ 854 00c8 0E       		.uleb128 0xe
+ 855 00c9 3A       		.uleb128 0x3a
+ 856 00ca 0B       		.uleb128 0xb
+ 857 00cb 3B       		.uleb128 0x3b
+ 858 00cc 0B       		.uleb128 0xb
+ 859 00cd 00       		.byte	0
+ 860 00ce 00       		.byte	0
+ 861 00cf 00       		.byte	0
+ 862              		.section	.debug_loc,"",%progbits
+ 863              	.Ldebug_loc0:
+ 864              	.LLST0:
+ 865 0000 00000000 		.4byte	.LVL6
+ 866 0004 0B000000 		.4byte	.LVL8-1
+ 867 0008 0100     		.2byte	0x1
+ 868 000a 50       		.byte	0x50
+ 869 000b 0B000000 		.4byte	.LVL8-1
+ 870 000f 24000000 		.4byte	.LFE3
+ 871 0013 0100     		.2byte	0x1
+ 872 0015 56       		.byte	0x56
+ 873 0016 00000000 		.4byte	0
+ 874 001a 00000000 		.4byte	0
+ 875              	.LLST1:
+ 876 001e 00000000 		.4byte	.LVL6
+ 877 0022 0B000000 		.4byte	.LVL8-1
+ 878 0026 0100     		.2byte	0x1
+ 879 0028 51       		.byte	0x51
+ 880 0029 0B000000 		.4byte	.LVL8-1
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccCBpfVX.s 			page 21
+
+
+ 881 002d 24000000 		.4byte	.LFE3
+ 882 0031 0400     		.2byte	0x4
+ 883 0033 F3       		.byte	0xf3
+ 884 0034 01       		.uleb128 0x1
+ 885 0035 51       		.byte	0x51
+ 886 0036 9F       		.byte	0x9f
+ 887 0037 00000000 		.4byte	0
+ 888 003b 00000000 		.4byte	0
+ 889              	.LLST2:
+ 890 003f 00000000 		.4byte	.LVL6
+ 891 0043 0B000000 		.4byte	.LVL8-1
+ 892 0047 0100     		.2byte	0x1
+ 893 0049 52       		.byte	0x52
+ 894 004a 0B000000 		.4byte	.LVL8-1
+ 895 004e 24000000 		.4byte	.LFE3
+ 896 0052 0100     		.2byte	0x1
+ 897 0054 57       		.byte	0x57
+ 898 0055 00000000 		.4byte	0
+ 899 0059 00000000 		.4byte	0
+ 900              	.LLST3:
+ 901 005d 00000000 		.4byte	.LVL6
+ 902 0061 0B000000 		.4byte	.LVL8-1
+ 903 0065 0100     		.2byte	0x1
+ 904 0067 53       		.byte	0x53
+ 905 0068 0B000000 		.4byte	.LVL8-1
+ 906 006c 24000000 		.4byte	.LFE3
+ 907 0070 0400     		.2byte	0x4
+ 908 0072 F3       		.byte	0xf3
+ 909 0073 01       		.uleb128 0x1
+ 910 0074 53       		.byte	0x53
+ 911 0075 9F       		.byte	0x9f
+ 912 0076 00000000 		.4byte	0
+ 913 007a 00000000 		.4byte	0
+ 914              	.LLST4:
+ 915 007e 08000000 		.4byte	.LVL7
+ 916 0082 10000000 		.4byte	.LVL9
+ 917 0086 0200     		.2byte	0x2
+ 918 0088 30       		.byte	0x30
+ 919 0089 9F       		.byte	0x9f
+ 920 008a 10000000 		.4byte	.LVL9
+ 921 008e 18000000 		.4byte	.LVL11
+ 922 0092 0100     		.2byte	0x1
+ 923 0094 54       		.byte	0x54
+ 924 0095 1A000000 		.4byte	.LVL12
+ 925 0099 24000000 		.4byte	.LFE3
+ 926 009d 0100     		.2byte	0x1
+ 927 009f 54       		.byte	0x54
+ 928 00a0 00000000 		.4byte	0
+ 929 00a4 00000000 		.4byte	0
+ 930              	.LLST5:
+ 931 00a8 00000000 		.4byte	.LVL13
+ 932 00ac 10000000 		.4byte	.LVL15
+ 933 00b0 0100     		.2byte	0x1
+ 934 00b2 50       		.byte	0x50
+ 935 00b3 10000000 		.4byte	.LVL15
+ 936 00b7 A4000000 		.4byte	.LFE4
+ 937 00bb 0100     		.2byte	0x1
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccCBpfVX.s 			page 22
+
+
+ 938 00bd 57       		.byte	0x57
+ 939 00be 00000000 		.4byte	0
+ 940 00c2 00000000 		.4byte	0
+ 941              	.LLST6:
+ 942 00c6 00000000 		.4byte	.LVL13
+ 943 00ca 10000000 		.4byte	.LVL15
+ 944 00ce 0100     		.2byte	0x1
+ 945 00d0 51       		.byte	0x51
+ 946 00d1 10000000 		.4byte	.LVL15
+ 947 00d5 A4000000 		.4byte	.LFE4
+ 948 00d9 0400     		.2byte	0x4
+ 949 00db F3       		.byte	0xf3
+ 950 00dc 01       		.uleb128 0x1
+ 951 00dd 51       		.byte	0x51
+ 952 00de 9F       		.byte	0x9f
+ 953 00df 00000000 		.4byte	0
+ 954 00e3 00000000 		.4byte	0
+ 955              	.LLST7:
+ 956 00e7 00000000 		.4byte	.LVL13
+ 957 00eb 10000000 		.4byte	.LVL15
+ 958 00ef 0100     		.2byte	0x1
+ 959 00f1 52       		.byte	0x52
+ 960 00f2 10000000 		.4byte	.LVL15
+ 961 00f6 A4000000 		.4byte	.LFE4
+ 962 00fa 0100     		.2byte	0x1
+ 963 00fc 58       		.byte	0x58
+ 964 00fd 00000000 		.4byte	0
+ 965 0101 00000000 		.4byte	0
+ 966              	.LLST8:
+ 967 0105 00000000 		.4byte	.LVL13
+ 968 0109 10000000 		.4byte	.LVL15
+ 969 010d 0100     		.2byte	0x1
+ 970 010f 53       		.byte	0x53
+ 971 0110 10000000 		.4byte	.LVL15
+ 972 0114 A4000000 		.4byte	.LFE4
+ 973 0118 0400     		.2byte	0x4
+ 974 011a F3       		.byte	0xf3
+ 975 011b 01       		.uleb128 0x1
+ 976 011c 53       		.byte	0x53
+ 977 011d 9F       		.byte	0x9f
+ 978 011e 00000000 		.4byte	0
+ 979 0122 00000000 		.4byte	0
+ 980              	.LLST9:
+ 981 0126 0C000000 		.4byte	.LVL14
+ 982 012a 10000000 		.4byte	.LVL15
+ 983 012e 0200     		.2byte	0x2
+ 984 0130 30       		.byte	0x30
+ 985 0131 9F       		.byte	0x9f
+ 986 0132 10000000 		.4byte	.LVL15
+ 987 0136 16000000 		.4byte	.LVL17
+ 988 013a 0100     		.2byte	0x1
+ 989 013c 54       		.byte	0x54
+ 990 013d 30000000 		.4byte	.LVL22
+ 991 0141 38000000 		.4byte	.LVL24
+ 992 0145 0100     		.2byte	0x1
+ 993 0147 54       		.byte	0x54
+ 994 0148 3A000000 		.4byte	.LVL25
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccCBpfVX.s 			page 23
+
+
+ 995 014c 48000000 		.4byte	.LVL26
+ 996 0150 0100     		.2byte	0x1
+ 997 0152 54       		.byte	0x54
+ 998 0153 68000000 		.4byte	.LVL31
+ 999 0157 74000000 		.4byte	.LVL35
+ 1000 015b 0100     		.2byte	0x1
+ 1001 015d 54       		.byte	0x54
+ 1002 015e 76000000 		.4byte	.LVL36
+ 1003 0162 78000000 		.4byte	.LVL37
+ 1004 0166 0100     		.2byte	0x1
+ 1005 0168 54       		.byte	0x54
+ 1006 0169 7A000000 		.4byte	.LVL38
+ 1007 016d 90000000 		.4byte	.LVL40
+ 1008 0171 0100     		.2byte	0x1
+ 1009 0173 54       		.byte	0x54
+ 1010 0174 00000000 		.4byte	0
+ 1011 0178 00000000 		.4byte	0
+ 1012              	.LLST10:
+ 1013 017c 4E000000 		.4byte	.LVL27
+ 1014 0180 50000000 		.4byte	.LVL28
+ 1015 0184 0200     		.2byte	0x2
+ 1016 0186 30       		.byte	0x30
+ 1017 0187 9F       		.byte	0x9f
+ 1018 0188 50000000 		.4byte	.LVL28
+ 1019 018c 70000000 		.4byte	.LVL33
+ 1020 0190 0100     		.2byte	0x1
+ 1021 0192 55       		.byte	0x55
+ 1022 0193 72000000 		.4byte	.LVL34
+ 1023 0197 A4000000 		.4byte	.LFE4
+ 1024 019b 0100     		.2byte	0x1
+ 1025 019d 55       		.byte	0x55
+ 1026 019e 00000000 		.4byte	0
+ 1027 01a2 00000000 		.4byte	0
+ 1028              	.LLST11:
+ 1029 01a6 56000000 		.4byte	.LVL30
+ 1030 01aa 96000000 		.4byte	.LVL41
+ 1031 01ae 0100     		.2byte	0x1
+ 1032 01b0 56       		.byte	0x56
+ 1033 01b1 00000000 		.4byte	0
+ 1034 01b5 00000000 		.4byte	0
+ 1035              	.LLST12:
+ 1036 01b9 1C000000 		.4byte	.LVL19
+ 1037 01bd 30000000 		.4byte	.LVL22
+ 1038 01c1 0600     		.2byte	0x6
+ 1039 01c3 74       		.byte	0x74
+ 1040 01c4 00       		.sleb128 0
+ 1041 01c5 08       		.byte	0x8
+ 1042 01c6 FF       		.byte	0xff
+ 1043 01c7 1A       		.byte	0x1a
+ 1044 01c8 9F       		.byte	0x9f
+ 1045 01c9 00000000 		.4byte	0
+ 1046 01cd 00000000 		.4byte	0
+ 1047              	.LLST13:
+ 1048 01d1 0C000000 		.4byte	.LVL14
+ 1049 01d5 48000000 		.4byte	.LVL26
+ 1050 01d9 0200     		.2byte	0x2
+ 1051 01db 35       		.byte	0x35
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccCBpfVX.s 			page 24
+
+
+ 1052 01dc 9F       		.byte	0x9f
+ 1053 01dd 48000000 		.4byte	.LVL26
+ 1054 01e1 A4000000 		.4byte	.LFE4
+ 1055 01e5 0100     		.2byte	0x1
+ 1056 01e7 5A       		.byte	0x5a
+ 1057 01e8 00000000 		.4byte	0
+ 1058 01ec 00000000 		.4byte	0
+ 1059              		.section	.debug_aranges,"",%progbits
+ 1060 0000 3C000000 		.4byte	0x3c
+ 1061 0004 0200     		.2byte	0x2
+ 1062 0006 00000000 		.4byte	.Ldebug_info0
+ 1063 000a 04       		.byte	0x4
+ 1064 000b 00       		.byte	0
+ 1065 000c 0000     		.2byte	0
+ 1066 000e 0000     		.2byte	0
+ 1067 0010 00000000 		.4byte	.LFB0
+ 1068 0014 10000000 		.4byte	.LFE0-.LFB0
+ 1069 0018 00000000 		.4byte	.LFB1
+ 1070 001c 08000000 		.4byte	.LFE1-.LFB1
+ 1071 0020 00000000 		.4byte	.LFB2
+ 1072 0024 0C000000 		.4byte	.LFE2-.LFB2
+ 1073 0028 00000000 		.4byte	.LFB3
+ 1074 002c 24000000 		.4byte	.LFE3-.LFB3
+ 1075 0030 00000000 		.4byte	.LFB4
+ 1076 0034 A4000000 		.4byte	.LFE4-.LFB4
+ 1077 0038 00000000 		.4byte	0
+ 1078 003c 00000000 		.4byte	0
+ 1079              		.section	.debug_ranges,"",%progbits
+ 1080              	.Ldebug_ranges0:
+ 1081 0000 00000000 		.4byte	.LFB0
+ 1082 0004 10000000 		.4byte	.LFE0
+ 1083 0008 00000000 		.4byte	.LFB1
+ 1084 000c 08000000 		.4byte	.LFE1
+ 1085 0010 00000000 		.4byte	.LFB2
+ 1086 0014 0C000000 		.4byte	.LFE2
+ 1087 0018 00000000 		.4byte	.LFB3
+ 1088 001c 24000000 		.4byte	.LFE3
+ 1089 0020 00000000 		.4byte	.LFB4
+ 1090 0024 A4000000 		.4byte	.LFE4
+ 1091 0028 00000000 		.4byte	0
+ 1092 002c 00000000 		.4byte	0
+ 1093              		.section	.debug_line,"",%progbits
+ 1094              	.Ldebug_line0:
+ 1095 0000 23010000 		.section	.debug_str,"MS",%progbits,1
+ 1095      02006700 
+ 1095      00000201 
+ 1095      FB0E0D00 
+ 1095      01010101 
+ 1096              	.LASF14:
+ 1097 0000 63797374 		.ascii	"cystatus\000"
+ 1097      61747573 
+ 1097      00
+ 1098              	.LASF39:
+ 1099 0009 55415254 		.ascii	"UART_RS485_ReadRxData\000"
+ 1099      5F525334 
+ 1099      38355F52 
+ 1099      65616452 
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccCBpfVX.s 			page 25
+
+
+ 1099      78446174 
+ 1100              	.LASF29:
+ 1101 001f 74656D70 		.ascii	"tempCount\000"
+ 1101      436F756E 
+ 1101      7400
+ 1102              	.LASF28:
+ 1103 0029 64617461 		.ascii	"dataIndexCntr\000"
+ 1103      496E6465 
+ 1103      78436E74 
+ 1103      7200
+ 1104              	.LASF22:
+ 1105 0037 636F756E 		.ascii	"count\000"
+ 1105      7400
+ 1106              	.LASF3:
+ 1107 003d 73686F72 		.ascii	"short unsigned int\000"
+ 1107      7420756E 
+ 1107      7369676E 
+ 1107      65642069 
+ 1107      6E7400
+ 1108              	.LASF19:
+ 1109 0050 55415254 		.ascii	"UART_RS485_CyBtldrCommReset\000"
+ 1109      5F525334 
+ 1109      38355F43 
+ 1109      7942746C 
+ 1109      6472436F 
+ 1110              	.LASF31:
+ 1111 006c 73746174 		.ascii	"status\000"
+ 1111      757300
+ 1112              	.LASF20:
+ 1113 0073 70446174 		.ascii	"pData\000"
+ 1113      6100
+ 1114              	.LASF17:
+ 1115 0079 55415254 		.ascii	"UART_RS485_CyBtldrCommStart\000"
+ 1115      5F525334 
+ 1115      38355F43 
+ 1115      7942746C 
+ 1115      6472436F 
+ 1116              	.LASF11:
+ 1117 0095 666C6F61 		.ascii	"float\000"
+ 1117      7400
+ 1118              	.LASF33:
+ 1119 009b 55415254 		.ascii	"UART_RS485_ClearRxBuffer\000"
+ 1119      5F525334 
+ 1119      38355F43 
+ 1119      6C656172 
+ 1119      52784275 
+ 1120              	.LASF21:
+ 1121 00b4 73697A65 		.ascii	"size\000"
+ 1121      00
+ 1122              	.LASF40:
+ 1123 00b9 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 1123      43313120 
+ 1123      352E342E 
+ 1123      31203230 
+ 1123      31363036 
+ 1124 00ec 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
+ 1124      20726576 
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccCBpfVX.s 			page 26
+
+
+ 1124      6973696F 
+ 1124      6E203233 
+ 1124      37373135 
+ 1125 011f 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 1125      66756E63 
+ 1125      74696F6E 
+ 1125      2D736563 
+ 1125      74696F6E 
+ 1126              	.LASF5:
+ 1127 0147 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1127      20756E73 
+ 1127      69676E65 
+ 1127      6420696E 
+ 1127      7400
+ 1128              	.LASF9:
+ 1129 0159 75696E74 		.ascii	"uint8\000"
+ 1129      3800
+ 1130              	.LASF35:
+ 1131 015f 55415254 		.ascii	"UART_RS485_Stop\000"
+ 1131      5F525334 
+ 1131      38355F53 
+ 1131      746F7000 
+ 1132              	.LASF32:
+ 1133 016f 55415254 		.ascii	"UART_RS485_Start\000"
+ 1133      5F525334 
+ 1133      38355F53 
+ 1133      74617274 
+ 1133      00
+ 1134              	.LASF1:
+ 1135 0180 756E7369 		.ascii	"unsigned char\000"
+ 1135      676E6564 
+ 1135      20636861 
+ 1135      7200
+ 1136              	.LASF37:
+ 1137 018e 55415254 		.ascii	"UART_RS485_GetRxBufferSize\000"
+ 1137      5F525334 
+ 1137      38355F47 
+ 1137      65745278 
+ 1137      42756666 
+ 1138              	.LASF12:
+ 1139 01a9 646F7562 		.ascii	"double\000"
+ 1139      6C6500
+ 1140              	.LASF36:
+ 1141 01b0 55415254 		.ascii	"UART_RS485_PutChar\000"
+ 1141      5F525334 
+ 1141      38355F50 
+ 1141      75744368 
+ 1141      617200
+ 1142              	.LASF10:
+ 1143 01c3 75696E74 		.ascii	"uint16\000"
+ 1143      313600
+ 1144              	.LASF30:
+ 1145 01ca 6F6C6444 		.ascii	"oldDataCount\000"
+ 1145      61746143 
+ 1145      6F756E74 
+ 1145      00
+ 1146              	.LASF8:
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccCBpfVX.s 			page 27
+
+
+ 1147 01d7 756E7369 		.ascii	"unsigned int\000"
+ 1147      676E6564 
+ 1147      20696E74 
+ 1147      00
+ 1148              	.LASF7:
+ 1149 01e4 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1149      206C6F6E 
+ 1149      6720756E 
+ 1149      7369676E 
+ 1149      65642069 
+ 1150              	.LASF41:
+ 1151 01fb 47656E65 		.ascii	"Generated_Source\\PSoC5\\UART_RS485_BOOT.c\000"
+ 1151      72617465 
+ 1151      645F536F 
+ 1151      75726365 
+ 1151      5C50536F 
+ 1152              	.LASF26:
+ 1153 0224 62756649 		.ascii	"bufIndex\000"
+ 1153      6E646578 
+ 1153      00
+ 1154              	.LASF25:
+ 1155 022d 55415254 		.ascii	"UART_RS485_CyBtldrCommRead\000"
+ 1155      5F525334 
+ 1155      38355F43 
+ 1155      7942746C 
+ 1155      6472436F 
+ 1156              	.LASF16:
+ 1157 0248 73697A65 		.ascii	"sizetype\000"
+ 1157      74797065 
+ 1157      00
+ 1158              	.LASF6:
+ 1159 0251 6C6F6E67 		.ascii	"long long int\000"
+ 1159      206C6F6E 
+ 1159      6720696E 
+ 1159      7400
+ 1160              	.LASF13:
+ 1161 025f 63686172 		.ascii	"char\000"
+ 1161      00
+ 1162              	.LASF2:
+ 1163 0264 73686F72 		.ascii	"short int\000"
+ 1163      7420696E 
+ 1163      7400
+ 1164              	.LASF23:
+ 1165 026e 74696D65 		.ascii	"timeOut\000"
+ 1165      4F757400 
+ 1166              	.LASF4:
+ 1167 0276 6C6F6E67 		.ascii	"long int\000"
+ 1167      20696E74 
+ 1167      00
+ 1168              	.LASF15:
+ 1169 027f 6C6F6E67 		.ascii	"long double\000"
+ 1169      20646F75 
+ 1169      626C6500 
+ 1170              	.LASF0:
+ 1171 028b 7369676E 		.ascii	"signed char\000"
+ 1171      65642063 
+ 1171      68617200 
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccCBpfVX.s 			page 28
+
+
+ 1172              	.LASF42:
+ 1173 0297 433A5C55 		.ascii	"C:\\Users\\mgnocco\\Documents\\Git\\PSoC5\\PSoC5_FW"
+ 1173      73657273 
+ 1173      5C6D676E 
+ 1173      6F63636F 
+ 1173      5C446F63 
+ 1174 02c4 5F574953 		.ascii	"_WISH_VIBES\\FW_WearableHealtySubj - WISH+Dayton\\b"
+ 1174      485F5649 
+ 1174      4245535C 
+ 1174      46575F57 
+ 1174      65617261 
+ 1175 02f5 6F6F746C 		.ascii	"ootloader.cydsn\000"
+ 1175      6F616465 
+ 1175      722E6379 
+ 1175      64736E00 
+ 1176              	.LASF34:
+ 1177 0305 55415254 		.ascii	"UART_RS485_ClearTxBuffer\000"
+ 1177      5F525334 
+ 1177      38355F43 
+ 1177      6C656172 
+ 1177      54784275 
+ 1178              	.LASF27:
+ 1179 031e 69436E74 		.ascii	"iCntr\000"
+ 1179      7200
+ 1180              	.LASF24:
+ 1181 0324 55415254 		.ascii	"UART_RS485_CyBtldrCommWrite\000"
+ 1181      5F525334 
+ 1181      38355F43 
+ 1181      7942746C 
+ 1181      6472436F 
+ 1182              	.LASF18:
+ 1183 0340 55415254 		.ascii	"UART_RS485_CyBtldrCommStop\000"
+ 1183      5F525334 
+ 1183      38355F43 
+ 1183      7942746C 
+ 1183      6472436F 
+ 1184              	.LASF38:
+ 1185 035b 43794465 		.ascii	"CyDelay\000"
+ 1185      6C617900 
+ 1186              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

@@ -1,6 +1,7 @@
-C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\WISH_VIBES_Socket.cydsn\WISH_VIBES_Socket.cyprj|fd54212a-7df0-44f2-a31b-7d1081687647
-C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|f7a57ef8-c813-4eb7-b586-580b0d894aaa
-C:\Users\mgnocco\Documents\PSoC Creator\4.4\Downloads ( 4.4).cylib\Downloads ( 4.4).cyprj|89aa14fa-ab65-4dad-b1f5-4ee422a1f860
-C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|7c57220f-332f-4733-ba6f-a86968c365c3
-C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|8ef8707b-6dda-4d19-b47b-efd26f2b7326
-C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|b4bfa25f-ab6f-4a1c-9732-3a30f9d6dab0
+C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\WISH_VIBES_Socket.cydsn\WISH_VIBES_Socket.cyprj|b73e0864-ef08-4280-bc08-a141bbd44197
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|438cdd31-fe2d-4e07-8c38-18175689e4c4
+C:\Users\mgnocco\Documents\PSoC Creator\4.4\Downloads ( 4.4).cylib\Downloads ( 4.4).cyprj|f20b2504-55a7-4951-a79a-5bdb443975e3
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|ca1b87e8-9db5-42ce-8d93-43a9624d6998
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|379411da-420b-4e91-b427-b0d84ca71449
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|9567383a-9e5c-4d60-8a5b-090f59107b20
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\dev\psoc3\AnalogDevice\PSoC35AnalogDevice.cylib\PSoC35AnalogDevice.cyprj|1389983f-7237-4283-834a-61209b858ed4

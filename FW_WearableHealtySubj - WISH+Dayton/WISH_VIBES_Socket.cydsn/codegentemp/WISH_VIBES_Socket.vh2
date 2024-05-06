@@ -2,7 +2,7 @@
 --	Conversion of WISH_VIBES_Socket.v to vh2:
 --
 --	Cypress Semiconductor - WARP Version 6.3 IR 41
---	Thu Apr 18 13:53:29 2024
+--	Fri May 03 17:20:09 2024
 --
 
 USE cypress.cypress.all;
@@ -38,13 +38,13 @@ SIGNAL \LED_CONTROL:control_3\ : bit;
 SIGNAL \LED_CONTROL:control_2\ : bit;
 SIGNAL \LED_CONTROL:control_1\ : bit;
 SIGNAL \LED_CONTROL:control_0\ : bit;
-SIGNAL tmpOE__LED_GREEN_1_net_0 : bit;
-SIGNAL tmpFB_0__LED_GREEN_1_net_0 : bit;
-SIGNAL tmpIO_0__LED_GREEN_1_net_0 : bit;
-TERMINAL tmpSIOVREF__LED_GREEN_1_net_0 : bit;
+SIGNAL tmpOE__LED_GREEN_net_0 : bit;
+SIGNAL tmpFB_0__LED_GREEN_net_0 : bit;
+SIGNAL tmpIO_0__LED_GREEN_net_0 : bit;
+TERMINAL tmpSIOVREF__LED_GREEN_net_0 : bit;
 SIGNAL zero : bit;
 SIGNAL one : bit;
-SIGNAL tmpINTERRUPT_0__LED_GREEN_1_net_0 : bit;
+SIGNAL tmpINTERRUPT_0__LED_GREEN_net_0 : bit;
 SIGNAL tmpOE__EMG_2_net_0 : bit;
 SIGNAL tmpFB_0__EMG_2_net_0 : bit;
 TERMINAL Net_10974 : bit;
@@ -1836,6 +1836,11 @@ SIGNAL \VT2_DIR:control_3\ : bit;
 SIGNAL \VT2_DIR:control_2\ : bit;
 SIGNAL \VT2_DIR:control_1\ : bit;
 SIGNAL \VT2_DIR:control_0\ : bit;
+SIGNAL tmpOE__LED_RED_net_0 : bit;
+SIGNAL tmpFB_0__LED_RED_net_0 : bit;
+SIGNAL tmpIO_0__LED_RED_net_0 : bit;
+TERMINAL tmpSIOVREF__LED_RED_net_0 : bit;
+SIGNAL tmpINTERRUPT_0__LED_RED_net_0 : bit;
 SIGNAL \MODULE_7:g1:a0:newa_1\ : bit;
 SIGNAL MODIN6_1 : bit;
 SIGNAL \MODULE_7:g1:a0:newa_0\ : bit;
@@ -2014,7 +2019,7 @@ BEGIN
 
 zero <=  ('0') ;
 
-tmpOE__LED_GREEN_1_net_0 <=  ('1') ;
+tmpOE__LED_GREEN_net_0 <=  ('1') ;
 
 cy_srff_3D <= ((not Net_5460 and Net_4627)
 	OR (not Net_5460 and Net_5205));
@@ -2302,8 +2307,8 @@ Net_10755 <= ((not Net_10374 and Net_10359));
 	PORT MAP(reset=>zero,
 		clock=>zero,
 		control=>(\LED_CONTROL:control_7\, \LED_CONTROL:control_6\, \LED_CONTROL:control_5\, \LED_CONTROL:control_4\,
-			\LED_CONTROL:control_3\, \LED_CONTROL:control_2\, \LED_CONTROL:control_1\, Net_11626));
-LED_GREEN_1:cy_psoc3_pins_v1_10
+			\LED_CONTROL:control_3\, \LED_CONTROL:control_2\, Net_11771, Net_11626));
+LED_GREEN:cy_psoc3_pins_v1_10
 	GENERIC MAP(id=>"fd3f2b55-1315-434f-986e-6d6afe236caf",
 		drive_mode=>"110",
 		ibuf_enabled=>"1",
@@ -2359,20 +2364,20 @@ LED_GREEN_1:cy_psoc3_pins_v1_10
 		ovt_slew_control=>"00",
 		ovt_hyst_trim=>"0",
 		input_buffer_sel=>"00")
-	PORT MAP(oe=>(tmpOE__LED_GREEN_1_net_0),
+	PORT MAP(oe=>(tmpOE__LED_GREEN_net_0),
 		y=>Net_11626,
-		fb=>(tmpFB_0__LED_GREEN_1_net_0),
+		fb=>(tmpFB_0__LED_GREEN_net_0),
 		analog=>(open),
-		io=>(tmpIO_0__LED_GREEN_1_net_0),
-		siovref=>(tmpSIOVREF__LED_GREEN_1_net_0),
+		io=>(tmpIO_0__LED_GREEN_net_0),
+		siovref=>(tmpSIOVREF__LED_GREEN_net_0),
 		annotation=>(open),
 		in_clock=>zero,
-		in_clock_en=>tmpOE__LED_GREEN_1_net_0,
+		in_clock_en=>tmpOE__LED_GREEN_net_0,
 		in_reset=>zero,
 		out_clock=>zero,
-		out_clock_en=>tmpOE__LED_GREEN_1_net_0,
+		out_clock_en=>tmpOE__LED_GREEN_net_0,
 		out_reset=>zero,
-		interrupt=>tmpINTERRUPT_0__LED_GREEN_1_net_0);
+		interrupt=>tmpINTERRUPT_0__LED_GREEN_net_0);
 EMG_2:cy_psoc3_pins_v1_10
 	GENERIC MAP(id=>"8bdc6afb-c07c-41de-8955-c5a9e7e52bcb",
 		drive_mode=>"000",
@@ -2429,7 +2434,7 @@ EMG_2:cy_psoc3_pins_v1_10
 		ovt_slew_control=>"00",
 		ovt_hyst_trim=>"0",
 		input_buffer_sel=>"00")
-	PORT MAP(oe=>(tmpOE__LED_GREEN_1_net_0),
+	PORT MAP(oe=>(tmpOE__LED_GREEN_net_0),
 		y=>(zero),
 		fb=>(tmpFB_0__EMG_2_net_0),
 		analog=>Net_10974,
@@ -2437,10 +2442,10 @@ EMG_2:cy_psoc3_pins_v1_10
 		siovref=>(tmpSIOVREF__EMG_2_net_0),
 		annotation=>(open),
 		in_clock=>zero,
-		in_clock_en=>tmpOE__LED_GREEN_1_net_0,
+		in_clock_en=>tmpOE__LED_GREEN_net_0,
 		in_reset=>zero,
 		out_clock=>zero,
-		out_clock_en=>tmpOE__LED_GREEN_1_net_0,
+		out_clock_en=>tmpOE__LED_GREEN_net_0,
 		out_reset=>zero,
 		interrupt=>tmpINTERRUPT_0__EMG_2_net_0);
 EMG_1:cy_psoc3_pins_v1_10
@@ -2499,7 +2504,7 @@ EMG_1:cy_psoc3_pins_v1_10
 		ovt_slew_control=>"00",
 		ovt_hyst_trim=>"0",
 		input_buffer_sel=>"00")
-	PORT MAP(oe=>(tmpOE__LED_GREEN_1_net_0),
+	PORT MAP(oe=>(tmpOE__LED_GREEN_net_0),
 		y=>(zero),
 		fb=>(tmpFB_0__EMG_1_net_0),
 		analog=>Net_10973,
@@ -2507,10 +2512,10 @@ EMG_1:cy_psoc3_pins_v1_10
 		siovref=>(tmpSIOVREF__EMG_1_net_0),
 		annotation=>(open),
 		in_clock=>zero,
-		in_clock_en=>tmpOE__LED_GREEN_1_net_0,
+		in_clock_en=>tmpOE__LED_GREEN_net_0,
 		in_reset=>zero,
 		out_clock=>zero,
-		out_clock_en=>tmpOE__LED_GREEN_1_net_0,
+		out_clock_en=>tmpOE__LED_GREEN_net_0,
 		out_reset=>zero,
 		interrupt=>tmpINTERRUPT_0__EMG_1_net_0);
 PRESSURE_SENSOR:cy_psoc3_pins_v1_10
@@ -2569,7 +2574,7 @@ PRESSURE_SENSOR:cy_psoc3_pins_v1_10
 		ovt_slew_control=>"00",
 		ovt_hyst_trim=>"0",
 		input_buffer_sel=>"00")
-	PORT MAP(oe=>(tmpOE__LED_GREEN_1_net_0),
+	PORT MAP(oe=>(tmpOE__LED_GREEN_net_0),
 		y=>(zero),
 		fb=>(tmpFB_0__PRESSURE_SENSOR_net_0),
 		analog=>Net_10972,
@@ -2577,10 +2582,10 @@ PRESSURE_SENSOR:cy_psoc3_pins_v1_10
 		siovref=>(tmpSIOVREF__PRESSURE_SENSOR_net_0),
 		annotation=>(open),
 		in_clock=>zero,
-		in_clock_en=>tmpOE__LED_GREEN_1_net_0,
+		in_clock_en=>tmpOE__LED_GREEN_net_0,
 		in_reset=>zero,
 		out_clock=>zero,
-		out_clock_en=>tmpOE__LED_GREEN_1_net_0,
+		out_clock_en=>tmpOE__LED_GREEN_net_0,
 		out_reset=>zero,
 		interrupt=>tmpINTERRUPT_0__PRESSURE_SENSOR_net_0);
 \ADC_N_CHANNELS_USED:Sync:ctrl_reg\:cy_psoc3_control
@@ -2664,7 +2669,7 @@ FTDI_ENABLE:cy_psoc3_pins_v1_10
 		ovt_slew_control=>"00",
 		ovt_hyst_trim=>"0",
 		input_buffer_sel=>"00")
-	PORT MAP(oe=>(tmpOE__LED_GREEN_1_net_0),
+	PORT MAP(oe=>(tmpOE__LED_GREEN_net_0),
 		y=>(zero),
 		fb=>(tmpFB_0__FTDI_ENABLE_net_0),
 		analog=>(open),
@@ -2672,10 +2677,10 @@ FTDI_ENABLE:cy_psoc3_pins_v1_10
 		siovref=>(tmpSIOVREF__FTDI_ENABLE_net_0),
 		annotation=>(open),
 		in_clock=>zero,
-		in_clock_en=>tmpOE__LED_GREEN_1_net_0,
+		in_clock_en=>tmpOE__LED_GREEN_net_0,
 		in_reset=>zero,
 		out_clock=>zero,
-		out_clock_en=>tmpOE__LED_GREEN_1_net_0,
+		out_clock_en=>tmpOE__LED_GREEN_net_0,
 		out_reset=>zero,
 		interrupt=>tmpINTERRUPT_0__FTDI_ENABLE_net_0);
 RS485_CTS:cy_psoc3_pins_v1_10
@@ -2734,7 +2739,7 @@ RS485_CTS:cy_psoc3_pins_v1_10
 		ovt_slew_control=>"00",
 		ovt_hyst_trim=>"0",
 		input_buffer_sel=>"00")
-	PORT MAP(oe=>(tmpOE__LED_GREEN_1_net_0),
+	PORT MAP(oe=>(tmpOE__LED_GREEN_net_0),
 		y=>(zero),
 		fb=>(tmpFB_0__RS485_CTS_net_0),
 		analog=>(open),
@@ -2742,17 +2747,17 @@ RS485_CTS:cy_psoc3_pins_v1_10
 		siovref=>(tmpSIOVREF__RS485_CTS_net_0),
 		annotation=>(open),
 		in_clock=>zero,
-		in_clock_en=>tmpOE__LED_GREEN_1_net_0,
+		in_clock_en=>tmpOE__LED_GREEN_net_0,
 		in_reset=>zero,
 		out_clock=>zero,
-		out_clock_en=>tmpOE__LED_GREEN_1_net_0,
+		out_clock_en=>tmpOE__LED_GREEN_net_0,
 		out_reset=>zero,
 		interrupt=>tmpINTERRUPT_0__RS485_CTS_net_0);
 \PACER_TIMER:TimerHW\:cy_psoc3_timer_v1_0
 	GENERIC MAP(cy_registers=>"")
 	PORT MAP(clock=>Net_3328,
 		kill=>zero,
-		enable=>tmpOE__LED_GREEN_1_net_0,
+		enable=>tmpOE__LED_GREEN_net_0,
 		capture=>zero,
 		timer_reset=>zero,
 		tc=>Net_3264,
@@ -2789,7 +2794,7 @@ timer_clock_1:cy_clock_v1_0
 	GENERIC MAP(cy_registers=>"")
 	PORT MAP(clock=>Net_4387,
 		kill=>zero,
-		enable=>tmpOE__LED_GREEN_1_net_0,
+		enable=>tmpOE__LED_GREEN_net_0,
 		capture=>zero,
 		timer_reset=>Net_4386,
 		tc=>\MY_TIMER:Net_51\,
@@ -2816,7 +2821,7 @@ timer_clock:cy_clock_v1_0
 \UART_RS485:BUART:ClkSync\:cy_psoc3_udb_clock_enable_v1_0
 	GENERIC MAP(sync_mode=>'1')
 	PORT MAP(clock_in=>Net_124,
-		enable=>tmpOE__LED_GREEN_1_net_0,
+		enable=>tmpOE__LED_GREEN_net_0,
 		clock_out=>\UART_RS485:BUART:clock_op\);
 \UART_RS485:BUART:sTX:TxShifter:u0\:cy_psoc3_dp
 	GENERIC MAP(cy_dpconfig=>"0000000000000000000000000000000000000000000000000000000011000000000000000000000000000010010000000000000000000000000000000000000011111111000000001111111111111111000000000000000001000100111100000000000000001100",
@@ -3095,7 +3100,7 @@ timer_clock:cy_clock_v1_0
 	PORT MAP(clock=>\UART_RS485:BUART:clock_op\,
 		reset=>\UART_RS485:BUART:reset_reg\,
 		load=>\UART_RS485:BUART:rx_counter_load\,
-		enable=>tmpOE__LED_GREEN_1_net_0,
+		enable=>tmpOE__LED_GREEN_net_0,
 		count=>(\UART_RS485:BUART:rx_count_6\, \UART_RS485:BUART:rx_count_5\, \UART_RS485:BUART:rx_count_4\, \UART_RS485:BUART:rx_count_3\,
 			\UART_RS485:BUART:rx_count_2\, \UART_RS485:BUART:rx_count_1\, \UART_RS485:BUART:rx_count_0\),
 		tc=>\UART_RS485:BUART:rx_count7_tc\);
@@ -3164,7 +3169,7 @@ RS485_RX:cy_psoc3_pins_v1_10
 		ovt_slew_control=>"00",
 		ovt_hyst_trim=>"0",
 		input_buffer_sel=>"00")
-	PORT MAP(oe=>(tmpOE__LED_GREEN_1_net_0),
+	PORT MAP(oe=>(tmpOE__LED_GREEN_net_0),
 		y=>(zero),
 		fb=>Net_6196,
 		analog=>(open),
@@ -3172,10 +3177,10 @@ RS485_RX:cy_psoc3_pins_v1_10
 		siovref=>(tmpSIOVREF__RS485_RX_net_0),
 		annotation=>(open),
 		in_clock=>zero,
-		in_clock_en=>tmpOE__LED_GREEN_1_net_0,
+		in_clock_en=>tmpOE__LED_GREEN_net_0,
 		in_reset=>zero,
 		out_clock=>zero,
-		out_clock_en=>tmpOE__LED_GREEN_1_net_0,
+		out_clock_en=>tmpOE__LED_GREEN_net_0,
 		out_reset=>zero,
 		interrupt=>tmpINTERRUPT_0__RS485_RX_net_0);
 RS485_TX:cy_psoc3_pins_v1_10
@@ -3234,7 +3239,7 @@ RS485_TX:cy_psoc3_pins_v1_10
 		ovt_slew_control=>"00",
 		ovt_hyst_trim=>"0",
 		input_buffer_sel=>"00")
-	PORT MAP(oe=>(tmpOE__LED_GREEN_1_net_0),
+	PORT MAP(oe=>(tmpOE__LED_GREEN_net_0),
 		y=>Net_2627,
 		fb=>(tmpFB_0__RS485_TX_net_0),
 		analog=>(open),
@@ -3242,10 +3247,10 @@ RS485_TX:cy_psoc3_pins_v1_10
 		siovref=>(tmpSIOVREF__RS485_TX_net_0),
 		annotation=>(open),
 		in_clock=>zero,
-		in_clock_en=>tmpOE__LED_GREEN_1_net_0,
+		in_clock_en=>tmpOE__LED_GREEN_net_0,
 		in_reset=>zero,
 		out_clock=>zero,
-		out_clock_en=>tmpOE__LED_GREEN_1_net_0,
+		out_clock_en=>tmpOE__LED_GREEN_net_0,
 		out_reset=>zero,
 		interrupt=>tmpINTERRUPT_0__RS485_TX_net_0);
 RS_485_EN:cy_psoc3_pins_v1_10
@@ -3304,7 +3309,7 @@ RS_485_EN:cy_psoc3_pins_v1_10
 		ovt_slew_control=>"00",
 		ovt_hyst_trim=>"0",
 		input_buffer_sel=>"00")
-	PORT MAP(oe=>(tmpOE__LED_GREEN_1_net_0),
+	PORT MAP(oe=>(tmpOE__LED_GREEN_net_0),
 		y=>Net_6020,
 		fb=>(tmpFB_0__RS_485_EN_net_0),
 		analog=>(open),
@@ -3312,10 +3317,10 @@ RS_485_EN:cy_psoc3_pins_v1_10
 		siovref=>(tmpSIOVREF__RS_485_EN_net_0),
 		annotation=>(open),
 		in_clock=>zero,
-		in_clock_en=>tmpOE__LED_GREEN_1_net_0,
+		in_clock_en=>tmpOE__LED_GREEN_net_0,
 		in_reset=>zero,
 		out_clock=>zero,
-		out_clock_en=>tmpOE__LED_GREEN_1_net_0,
+		out_clock_en=>tmpOE__LED_GREEN_net_0,
 		out_reset=>zero,
 		interrupt=>tmpINTERRUPT_0__RS_485_EN_net_0);
 ISR_RS485_RX:cy_isr_v1_0
@@ -3336,7 +3341,7 @@ CLOCK_UART:cy_clock_v1_0
 	GENERIC MAP(cy_registers=>"")
 	PORT MAP(clock=>Net_2711,
 		kill=>zero,
-		enable=>tmpOE__LED_GREEN_1_net_0,
+		enable=>tmpOE__LED_GREEN_net_0,
 		capture=>zero,
 		timer_reset=>zero,
 		tc=>Net_345,
@@ -3359,7 +3364,7 @@ ISR_CYCLES:cy_isr_v1_0
 \SD:SPI0:BSPIM:ClkEn\:cy_psoc3_udb_clock_enable_v1_0
 	GENERIC MAP(sync_mode=>'1')
 	PORT MAP(clock_in=>\SD:Net_19\,
-		enable=>tmpOE__LED_GREEN_1_net_0,
+		enable=>tmpOE__LED_GREEN_net_0,
 		clock_out=>\SD:SPI0:BSPIM:clk_fin\);
 \SD:SPI0:BSPIM:BitCounter\:cy_psoc3_count7
 	GENERIC MAP(cy_period=>"0001111",
@@ -3534,7 +3539,7 @@ ISR_CYCLES:cy_isr_v1_0
 		ovt_slew_control=>"",
 		ovt_hyst_trim=>"",
 		input_buffer_sel=>"")
-	PORT MAP(oe=>(tmpOE__LED_GREEN_1_net_0),
+	PORT MAP(oe=>(tmpOE__LED_GREEN_net_0),
 		y=>\SD:Net_10\,
 		fb=>(\SD:tmpFB_0__mosi0_net_0\),
 		analog=>(open),
@@ -3542,10 +3547,10 @@ ISR_CYCLES:cy_isr_v1_0
 		siovref=>(\SD:tmpSIOVREF__mosi0_net_0\),
 		annotation=>(open),
 		in_clock=>zero,
-		in_clock_en=>tmpOE__LED_GREEN_1_net_0,
+		in_clock_en=>tmpOE__LED_GREEN_net_0,
 		in_reset=>zero,
 		out_clock=>zero,
-		out_clock_en=>tmpOE__LED_GREEN_1_net_0,
+		out_clock_en=>tmpOE__LED_GREEN_net_0,
 		out_reset=>zero,
 		interrupt=>\SD:tmpINTERRUPT_0__mosi0_net_0\);
 \SD:Clock_1\:cy_clock_v1_0
@@ -3614,7 +3619,7 @@ ISR_CYCLES:cy_isr_v1_0
 		ovt_slew_control=>"",
 		ovt_hyst_trim=>"",
 		input_buffer_sel=>"")
-	PORT MAP(oe=>(tmpOE__LED_GREEN_1_net_0),
+	PORT MAP(oe=>(tmpOE__LED_GREEN_net_0),
 		y=>(zero),
 		fb=>\SD:Net_16\,
 		analog=>(open),
@@ -3622,10 +3627,10 @@ ISR_CYCLES:cy_isr_v1_0
 		siovref=>(\SD:tmpSIOVREF__miso0_net_0\),
 		annotation=>(open),
 		in_clock=>zero,
-		in_clock_en=>tmpOE__LED_GREEN_1_net_0,
+		in_clock_en=>tmpOE__LED_GREEN_net_0,
 		in_reset=>zero,
 		out_clock=>zero,
-		out_clock_en=>tmpOE__LED_GREEN_1_net_0,
+		out_clock_en=>tmpOE__LED_GREEN_net_0,
 		out_reset=>zero,
 		interrupt=>\SD:tmpINTERRUPT_0__miso0_net_0\);
 \SD:sclk0\:cy_psoc3_pins_v1_10
@@ -3684,7 +3689,7 @@ ISR_CYCLES:cy_isr_v1_0
 		ovt_slew_control=>"",
 		ovt_hyst_trim=>"",
 		input_buffer_sel=>"")
-	PORT MAP(oe=>(tmpOE__LED_GREEN_1_net_0),
+	PORT MAP(oe=>(tmpOE__LED_GREEN_net_0),
 		y=>\SD:Net_22\,
 		fb=>(\SD:tmpFB_0__sclk0_net_0\),
 		analog=>(open),
@@ -3692,10 +3697,10 @@ ISR_CYCLES:cy_isr_v1_0
 		siovref=>(\SD:tmpSIOVREF__sclk0_net_0\),
 		annotation=>(open),
 		in_clock=>zero,
-		in_clock_en=>tmpOE__LED_GREEN_1_net_0,
+		in_clock_en=>tmpOE__LED_GREEN_net_0,
 		in_reset=>zero,
 		out_clock=>zero,
-		out_clock_en=>tmpOE__LED_GREEN_1_net_0,
+		out_clock_en=>tmpOE__LED_GREEN_net_0,
 		out_reset=>zero,
 		interrupt=>\SD:tmpINTERRUPT_0__sclk0_net_0\);
 \SD:SPI0_CS\:cy_psoc3_pins_v1_10
@@ -3754,7 +3759,7 @@ ISR_CYCLES:cy_isr_v1_0
 		ovt_slew_control=>"",
 		ovt_hyst_trim=>"",
 		input_buffer_sel=>"")
-	PORT MAP(oe=>(tmpOE__LED_GREEN_1_net_0),
+	PORT MAP(oe=>(tmpOE__LED_GREEN_net_0),
 		y=>(zero),
 		fb=>(\SD:tmpFB_0__SPI0_CS_net_0\),
 		analog=>(open),
@@ -3762,10 +3767,10 @@ ISR_CYCLES:cy_isr_v1_0
 		siovref=>(\SD:tmpSIOVREF__SPI0_CS_net_0\),
 		annotation=>(open),
 		in_clock=>zero,
-		in_clock_en=>tmpOE__LED_GREEN_1_net_0,
+		in_clock_en=>tmpOE__LED_GREEN_net_0,
 		in_reset=>zero,
 		out_clock=>zero,
-		out_clock_en=>tmpOE__LED_GREEN_1_net_0,
+		out_clock_en=>tmpOE__LED_GREEN_net_0,
 		out_reset=>zero,
 		interrupt=>\SD:tmpINTERRUPT_0__SPI0_CS_net_0\);
 CS_RTC:cy_psoc3_pins_v1_10
@@ -3824,7 +3829,7 @@ CS_RTC:cy_psoc3_pins_v1_10
 		ovt_slew_control=>"00",
 		ovt_hyst_trim=>"0",
 		input_buffer_sel=>"00")
-	PORT MAP(oe=>(tmpOE__LED_GREEN_1_net_0),
+	PORT MAP(oe=>(tmpOE__LED_GREEN_net_0),
 		y=>(zero),
 		fb=>(tmpFB_0__CS_RTC_net_0),
 		analog=>(open),
@@ -3832,10 +3837,10 @@ CS_RTC:cy_psoc3_pins_v1_10
 		siovref=>(tmpSIOVREF__CS_RTC_net_0),
 		annotation=>(open),
 		in_clock=>zero,
-		in_clock_en=>tmpOE__LED_GREEN_1_net_0,
+		in_clock_en=>tmpOE__LED_GREEN_net_0,
 		in_reset=>zero,
 		out_clock=>zero,
-		out_clock_en=>tmpOE__LED_GREEN_1_net_0,
+		out_clock_en=>tmpOE__LED_GREEN_net_0,
 		out_reset=>zero,
 		interrupt=>tmpINTERRUPT_0__CS_RTC_net_0);
 CLK_RTC:cy_psoc3_pins_v1_10
@@ -3894,7 +3899,7 @@ CLK_RTC:cy_psoc3_pins_v1_10
 		ovt_slew_control=>"00",
 		ovt_hyst_trim=>"0",
 		input_buffer_sel=>"00")
-	PORT MAP(oe=>(tmpOE__LED_GREEN_1_net_0),
+	PORT MAP(oe=>(tmpOE__LED_GREEN_net_0),
 		y=>(zero),
 		fb=>(tmpFB_0__CLK_RTC_net_0),
 		analog=>(open),
@@ -3902,10 +3907,10 @@ CLK_RTC:cy_psoc3_pins_v1_10
 		siovref=>(tmpSIOVREF__CLK_RTC_net_0),
 		annotation=>(open),
 		in_clock=>zero,
-		in_clock_en=>tmpOE__LED_GREEN_1_net_0,
+		in_clock_en=>tmpOE__LED_GREEN_net_0,
 		in_reset=>zero,
 		out_clock=>zero,
-		out_clock_en=>tmpOE__LED_GREEN_1_net_0,
+		out_clock_en=>tmpOE__LED_GREEN_net_0,
 		out_reset=>zero,
 		interrupt=>tmpINTERRUPT_0__CLK_RTC_net_0);
 MOSI_RTC:cy_psoc3_pins_v1_10
@@ -3964,7 +3969,7 @@ MOSI_RTC:cy_psoc3_pins_v1_10
 		ovt_slew_control=>"00",
 		ovt_hyst_trim=>"0",
 		input_buffer_sel=>"00")
-	PORT MAP(oe=>(tmpOE__LED_GREEN_1_net_0),
+	PORT MAP(oe=>(tmpOE__LED_GREEN_net_0),
 		y=>(zero),
 		fb=>(tmpFB_0__MOSI_RTC_net_0),
 		analog=>(open),
@@ -3972,10 +3977,10 @@ MOSI_RTC:cy_psoc3_pins_v1_10
 		siovref=>(tmpSIOVREF__MOSI_RTC_net_0),
 		annotation=>(open),
 		in_clock=>zero,
-		in_clock_en=>tmpOE__LED_GREEN_1_net_0,
+		in_clock_en=>tmpOE__LED_GREEN_net_0,
 		in_reset=>zero,
 		out_clock=>zero,
-		out_clock_en=>tmpOE__LED_GREEN_1_net_0,
+		out_clock_en=>tmpOE__LED_GREEN_net_0,
 		out_reset=>zero,
 		interrupt=>tmpINTERRUPT_0__MOSI_RTC_net_0);
 MISO_RTC:cy_psoc3_pins_v1_10
@@ -4034,7 +4039,7 @@ MISO_RTC:cy_psoc3_pins_v1_10
 		ovt_slew_control=>"00",
 		ovt_hyst_trim=>"0",
 		input_buffer_sel=>"00")
-	PORT MAP(oe=>(tmpOE__LED_GREEN_1_net_0),
+	PORT MAP(oe=>(tmpOE__LED_GREEN_net_0),
 		y=>(zero),
 		fb=>(tmpFB_0__MISO_RTC_net_0),
 		analog=>(open),
@@ -4042,10 +4047,10 @@ MISO_RTC:cy_psoc3_pins_v1_10
 		siovref=>(tmpSIOVREF__MISO_RTC_net_0),
 		annotation=>(open),
 		in_clock=>zero,
-		in_clock_en=>tmpOE__LED_GREEN_1_net_0,
+		in_clock_en=>tmpOE__LED_GREEN_net_0,
 		in_reset=>zero,
 		out_clock=>zero,
-		out_clock_en=>tmpOE__LED_GREEN_1_net_0,
+		out_clock_en=>tmpOE__LED_GREEN_net_0,
 		out_reset=>zero,
 		interrupt=>tmpINTERRUPT_0__MISO_RTC_net_0);
 \BasicCounter:MODULE_4:g2:a0:g1:z1:s0:g1:u0:gs(24):g2:g3:ub\:cy_buf
@@ -4146,7 +4151,7 @@ PUMP:cy_psoc3_pins_v1_10
 		ovt_slew_control=>"00",
 		ovt_hyst_trim=>"0",
 		input_buffer_sel=>"00")
-	PORT MAP(oe=>(tmpOE__LED_GREEN_1_net_0),
+	PORT MAP(oe=>(tmpOE__LED_GREEN_net_0),
 		y=>Net_14627,
 		fb=>(tmpFB_0__PUMP_net_0),
 		analog=>(open),
@@ -4154,10 +4159,10 @@ PUMP:cy_psoc3_pins_v1_10
 		siovref=>(tmpSIOVREF__PUMP_net_0),
 		annotation=>(open),
 		in_clock=>zero,
-		in_clock_en=>tmpOE__LED_GREEN_1_net_0,
+		in_clock_en=>tmpOE__LED_GREEN_net_0,
 		in_reset=>zero,
 		out_clock=>zero,
-		out_clock_en=>tmpOE__LED_GREEN_1_net_0,
+		out_clock_en=>tmpOE__LED_GREEN_net_0,
 		out_reset=>zero,
 		interrupt=>tmpINTERRUPT_0__PUMP_net_0);
 MASTER_MODE_FLAG:cy_psoc3_pins_v1_10
@@ -4216,7 +4221,7 @@ MASTER_MODE_FLAG:cy_psoc3_pins_v1_10
 		ovt_slew_control=>"00",
 		ovt_hyst_trim=>"0",
 		input_buffer_sel=>"00")
-	PORT MAP(oe=>(tmpOE__LED_GREEN_1_net_0),
+	PORT MAP(oe=>(tmpOE__LED_GREEN_net_0),
 		y=>(zero),
 		fb=>Net_11144,
 		analog=>(open),
@@ -4224,16 +4229,16 @@ MASTER_MODE_FLAG:cy_psoc3_pins_v1_10
 		siovref=>(tmpSIOVREF__MASTER_MODE_FLAG_net_0),
 		annotation=>(open),
 		in_clock=>zero,
-		in_clock_en=>tmpOE__LED_GREEN_1_net_0,
+		in_clock_en=>tmpOE__LED_GREEN_net_0,
 		in_reset=>zero,
 		out_clock=>zero,
-		out_clock_en=>tmpOE__LED_GREEN_1_net_0,
+		out_clock_en=>tmpOE__LED_GREEN_net_0,
 		out_reset=>zero,
 		interrupt=>tmpINTERRUPT_0__MASTER_MODE_FLAG_net_0);
 \PWM_PUMP:PWMUDB:clock_enable_block\:cy_psoc3_udb_clock_enable_v1_0
 	GENERIC MAP(sync_mode=>'1')
 	PORT MAP(clock_in=>Net_10350,
-		enable=>tmpOE__LED_GREEN_1_net_0,
+		enable=>tmpOE__LED_GREEN_net_0,
 		clock_out=>\PWM_PUMP:PWMUDB:ClockOutFromEnBlock\);
 \PWM_PUMP:PWMUDB:genblk1:ctrlreg\:cy_psoc3_control
 	GENERIC MAP(cy_init_value=>"00000000",
@@ -4511,7 +4516,7 @@ VALVE:cy_psoc3_pins_v1_10
 		ovt_slew_control=>"00",
 		ovt_hyst_trim=>"0",
 		input_buffer_sel=>"00")
-	PORT MAP(oe=>(tmpOE__LED_GREEN_1_net_0),
+	PORT MAP(oe=>(tmpOE__LED_GREEN_net_0),
 		y=>(zero),
 		fb=>(tmpFB_0__VALVE_net_0),
 		analog=>(open),
@@ -4519,10 +4524,10 @@ VALVE:cy_psoc3_pins_v1_10
 		siovref=>(tmpSIOVREF__VALVE_net_0),
 		annotation=>(open),
 		in_clock=>zero,
-		in_clock_en=>tmpOE__LED_GREEN_1_net_0,
+		in_clock_en=>tmpOE__LED_GREEN_net_0,
 		in_reset=>zero,
 		out_clock=>zero,
-		out_clock_en=>tmpOE__LED_GREEN_1_net_0,
+		out_clock_en=>tmpOE__LED_GREEN_net_0,
 		out_reset=>zero,
 		interrupt=>tmpINTERRUPT_0__VALVE_net_0);
 VT_1A:cy_psoc3_pins_v1_10
@@ -4581,7 +4586,7 @@ VT_1A:cy_psoc3_pins_v1_10
 		ovt_slew_control=>"00",
 		ovt_hyst_trim=>"0",
 		input_buffer_sel=>"00")
-	PORT MAP(oe=>(tmpOE__LED_GREEN_1_net_0),
+	PORT MAP(oe=>(tmpOE__LED_GREEN_net_0),
 		y=>Net_10747,
 		fb=>(tmpFB_0__VT_1A_net_0),
 		analog=>(open),
@@ -4589,16 +4594,16 @@ VT_1A:cy_psoc3_pins_v1_10
 		siovref=>(tmpSIOVREF__VT_1A_net_0),
 		annotation=>(open),
 		in_clock=>zero,
-		in_clock_en=>tmpOE__LED_GREEN_1_net_0,
+		in_clock_en=>tmpOE__LED_GREEN_net_0,
 		in_reset=>zero,
 		out_clock=>zero,
-		out_clock_en=>tmpOE__LED_GREEN_1_net_0,
+		out_clock_en=>tmpOE__LED_GREEN_net_0,
 		out_reset=>zero,
 		interrupt=>tmpINTERRUPT_0__VT_1A_net_0);
 \PWM_VT:PWMUDB:clock_enable_block\:cy_psoc3_udb_clock_enable_v1_0
 	GENERIC MAP(sync_mode=>'1')
 	PORT MAP(clock_in=>Net_10350,
-		enable=>tmpOE__LED_GREEN_1_net_0,
+		enable=>tmpOE__LED_GREEN_net_0,
 		clock_out=>\PWM_VT:PWMUDB:ClockOutFromEnBlock\);
 \PWM_VT:PWMUDB:genblk1:ctrlreg\:cy_psoc3_control
 	GENERIC MAP(cy_init_value=>"00000000",
@@ -4847,7 +4852,7 @@ VT_1B:cy_psoc3_pins_v1_10
 		ovt_slew_control=>"00",
 		ovt_hyst_trim=>"0",
 		input_buffer_sel=>"00")
-	PORT MAP(oe=>(tmpOE__LED_GREEN_1_net_0),
+	PORT MAP(oe=>(tmpOE__LED_GREEN_net_0),
 		y=>Net_10763,
 		fb=>(tmpFB_0__VT_1B_net_0),
 		analog=>(open),
@@ -4855,10 +4860,10 @@ VT_1B:cy_psoc3_pins_v1_10
 		siovref=>(tmpSIOVREF__VT_1B_net_0),
 		annotation=>(open),
 		in_clock=>zero,
-		in_clock_en=>tmpOE__LED_GREEN_1_net_0,
+		in_clock_en=>tmpOE__LED_GREEN_net_0,
 		in_reset=>zero,
 		out_clock=>zero,
-		out_clock_en=>tmpOE__LED_GREEN_1_net_0,
+		out_clock_en=>tmpOE__LED_GREEN_net_0,
 		out_reset=>zero,
 		interrupt=>tmpINTERRUPT_0__VT_1B_net_0);
 \VT1_DIR:Sync:ctrl_reg\:cy_psoc3_control
@@ -4927,7 +4932,7 @@ VT_2A:cy_psoc3_pins_v1_10
 		ovt_slew_control=>"00",
 		ovt_hyst_trim=>"0",
 		input_buffer_sel=>"00")
-	PORT MAP(oe=>(tmpOE__LED_GREEN_1_net_0),
+	PORT MAP(oe=>(tmpOE__LED_GREEN_net_0),
 		y=>Net_10749,
 		fb=>(tmpFB_0__VT_2A_net_0),
 		analog=>(open),
@@ -4935,10 +4940,10 @@ VT_2A:cy_psoc3_pins_v1_10
 		siovref=>(tmpSIOVREF__VT_2A_net_0),
 		annotation=>(open),
 		in_clock=>zero,
-		in_clock_en=>tmpOE__LED_GREEN_1_net_0,
+		in_clock_en=>tmpOE__LED_GREEN_net_0,
 		in_reset=>zero,
 		out_clock=>zero,
-		out_clock_en=>tmpOE__LED_GREEN_1_net_0,
+		out_clock_en=>tmpOE__LED_GREEN_net_0,
 		out_reset=>zero,
 		interrupt=>tmpINTERRUPT_0__VT_2A_net_0);
 VT_2B:cy_psoc3_pins_v1_10
@@ -4997,7 +5002,7 @@ VT_2B:cy_psoc3_pins_v1_10
 		ovt_slew_control=>"00",
 		ovt_hyst_trim=>"0",
 		input_buffer_sel=>"00")
-	PORT MAP(oe=>(tmpOE__LED_GREEN_1_net_0),
+	PORT MAP(oe=>(tmpOE__LED_GREEN_net_0),
 		y=>Net_10755,
 		fb=>(tmpFB_0__VT_2B_net_0),
 		analog=>(open),
@@ -5005,10 +5010,10 @@ VT_2B:cy_psoc3_pins_v1_10
 		siovref=>(tmpSIOVREF__VT_2B_net_0),
 		annotation=>(open),
 		in_clock=>zero,
-		in_clock_en=>tmpOE__LED_GREEN_1_net_0,
+		in_clock_en=>tmpOE__LED_GREEN_net_0,
 		in_reset=>zero,
 		out_clock=>zero,
-		out_clock_en=>tmpOE__LED_GREEN_1_net_0,
+		out_clock_en=>tmpOE__LED_GREEN_net_0,
 		out_reset=>zero,
 		interrupt=>tmpINTERRUPT_0__VT_2B_net_0);
 \VT2_DIR:Sync:ctrl_reg\:cy_psoc3_control
@@ -5031,6 +5036,76 @@ CLOCK_VT:cy_clock_v1_0
 		is_digital=>'1')
 	PORT MAP(clock_out=>Net_10350,
 		dig_domain_out=>open);
+LED_RED:cy_psoc3_pins_v1_10
+	GENERIC MAP(id=>"9a2cf45d-6117-434c-b59b-8d3b55fadb43",
+		drive_mode=>"110",
+		ibuf_enabled=>"1",
+		init_dr_st=>"0",
+		input_sync=>"1",
+		input_clk_en=>'0',
+		input_sync_mode=>"0",
+		intr_mode=>"00",
+		invert_in_clock=>'0',
+		invert_in_clock_en=>'0',
+		invert_in_reset=>'0',
+		invert_out_clock=>'0',
+		invert_out_clock_en=>'0',
+		invert_out_reset=>'0',
+		io_voltage=>"",
+		layout_mode=>"CONTIGUOUS",
+		output_conn=>"1",
+		output_sync=>"0",
+		output_clk_en=>'0',
+		output_mode=>"0",
+		output_reset=>'0',
+		output_clock_mode=>"0",
+		oe_sync=>"0",
+		oe_conn=>"0",
+		oe_reset=>'0',
+		pin_aliases=>"",
+		pin_mode=>"O",
+		por_state=>4,
+		sio_group_cnt=>0,
+		sio_hifreq=>"",
+		sio_hyst=>"1",
+		sio_ibuf=>"00000000",
+		sio_info=>"00",
+		sio_obuf=>"00000000",
+		sio_refsel=>"00000000",
+		sio_vtrip=>"00000000",
+		sio_vohsel=>"",
+		slew_rate=>"0",
+		spanning=>'0',
+		sw_only=>'0',
+		vtrip=>"10",
+		width=>1,
+		port_alias_required=>'0',
+		port_alias_group=>"",
+		use_annotation=>"0",
+		pa_in_clock=>-1,
+		pa_in_clock_en=>-1,
+		pa_in_reset=>-1,
+		pa_out_clock=>-1,
+		pa_out_clock_en=>-1,
+		pa_out_reset=>-1,
+		ovt_needed=>"0",
+		ovt_slew_control=>"00",
+		ovt_hyst_trim=>"0",
+		input_buffer_sel=>"00")
+	PORT MAP(oe=>(tmpOE__LED_GREEN_net_0),
+		y=>Net_11771,
+		fb=>(tmpFB_0__LED_RED_net_0),
+		analog=>(open),
+		io=>(tmpIO_0__LED_RED_net_0),
+		siovref=>(tmpSIOVREF__LED_RED_net_0),
+		annotation=>(open),
+		in_clock=>zero,
+		in_clock_en=>tmpOE__LED_GREEN_net_0,
+		in_reset=>zero,
+		out_clock=>zero,
+		out_clock_en=>tmpOE__LED_GREEN_net_0,
+		out_reset=>zero,
+		interrupt=>tmpINTERRUPT_0__LED_RED_net_0);
 cy_srff_3:cy_dff
 	PORT MAP(d=>cy_srff_3D,
 		clk=>Net_5442,
@@ -5240,7 +5315,7 @@ Net_6020:cy_dff
 		clk=>\SD:SPI0:BSPIM:clk_fin\,
 		q=>\SD:Net_22\);
 \PWM_PUMP:PWMUDB:min_kill_reg\:cy_dsrff
-	PORT MAP(d=>tmpOE__LED_GREEN_1_net_0,
+	PORT MAP(d=>tmpOE__LED_GREEN_net_0,
 		s=>zero,
 		r=>zero,
 		clk=>\PWM_PUMP:PWMUDB:ClockOutFromEnBlock\,
@@ -5264,7 +5339,7 @@ Net_6020:cy_dff
 		clk=>\PWM_PUMP:PWMUDB:ClockOutFromEnBlock\,
 		q=>\PWM_PUMP:PWMUDB:sc_kill_tmp\);
 \PWM_PUMP:PWMUDB:ltch_kill_reg\:cy_dsrff
-	PORT MAP(d=>tmpOE__LED_GREEN_1_net_0,
+	PORT MAP(d=>tmpOE__LED_GREEN_net_0,
 		s=>zero,
 		r=>zero,
 		clk=>\PWM_PUMP:PWMUDB:ClockOutFromEnBlock\,
@@ -5298,7 +5373,7 @@ Net_6020:cy_dff
 		clk=>\PWM_PUMP:PWMUDB:ClockOutFromEnBlock\,
 		q=>\PWM_PUMP:PWMUDB:tc_i_reg\);
 \PWM_VT:PWMUDB:min_kill_reg\:cy_dsrff
-	PORT MAP(d=>tmpOE__LED_GREEN_1_net_0,
+	PORT MAP(d=>tmpOE__LED_GREEN_net_0,
 		s=>zero,
 		r=>zero,
 		clk=>\PWM_VT:PWMUDB:ClockOutFromEnBlock\,
@@ -5322,7 +5397,7 @@ Net_6020:cy_dff
 		clk=>\PWM_VT:PWMUDB:ClockOutFromEnBlock\,
 		q=>\PWM_VT:PWMUDB:sc_kill_tmp\);
 \PWM_VT:PWMUDB:ltch_kill_reg\:cy_dsrff
-	PORT MAP(d=>tmpOE__LED_GREEN_1_net_0,
+	PORT MAP(d=>tmpOE__LED_GREEN_net_0,
 		s=>zero,
 		r=>zero,
 		clk=>\PWM_VT:PWMUDB:ClockOutFromEnBlock\,

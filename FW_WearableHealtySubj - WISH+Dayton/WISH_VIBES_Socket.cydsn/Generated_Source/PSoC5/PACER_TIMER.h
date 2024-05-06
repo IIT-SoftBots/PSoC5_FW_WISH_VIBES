@@ -168,7 +168,7 @@ void PACER_TIMER_Wakeup(void)        ;
 *    Initialial Parameter Constants
 ***************************************/
 
-#define PACER_TIMER_INIT_PERIOD             47999u
+#define PACER_TIMER_INIT_PERIOD             2399u
 #define PACER_TIMER_INIT_CAPTURE_MODE       ((uint8)((uint8)1u << PACER_TIMER_CTRL_CAP_MODE_SHIFT))
 #define PACER_TIMER_INIT_TRIGGER_MODE       ((uint8)((uint8)0u << PACER_TIMER_CTRL_TRIG_MODE_SHIFT))
 #if (PACER_TIMER_UsingFixedFunction)
