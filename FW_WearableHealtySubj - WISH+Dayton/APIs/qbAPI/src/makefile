@@ -2,7 +2,8 @@
 COMPILER = g++
 
 # flags
-CFLAGS = -c -Wall
+#CFLAGS = -c -Wall
+CFLAGS = -c 
 
 ifeq "$(OS)"  "Windows_NT"
 

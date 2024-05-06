@@ -356,6 +356,12 @@
 <name v=".\src\utils.c" />
 <name v=".\src\interruptions.c" />
 <name v=".\src\command_processing.c" />
+<name v=".\WISH_VIBES_Socket.cydsn\Generated_Source\PSoC5\ADC.h" />
+<name v=".\WISH_VIBES_Socket.cydsn\Generated_Source\PSoC5\CySpc.c" />
+<name v=".\src\main.c" />
+<name v=".\src\interruptions.h" />
+<name v=".\src\globals.h" />
+<name v=".\src\globals.c" />
 </OpenDocs>
 <OpenDocsLayout><![CDATA[<?xml version="1.0"?><!--
 
@@ -363,7 +369,7 @@
   Copyright (c) 2001-2016 Actipro Software LLC.  All rights reserved.
   http://www.actiprosoftware.com
 
---><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="1055, 495" SelectedTabbedMdiWindow="24052d5e-6866-4212-90e1-8e889f51ee9a"><DocumentWindow Key="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\src\utils.c" Guid="3db05b86-3a83-4ecd-8262-b9c529c80464" /><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="e6c53592-2600-47bd-bb84-e80a1b9fa9d1" /><DocumentWindow Key="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\src\interruptions.c" Guid="8714514f-6bd3-4577-b5a8-b7375a6ef78f" /><DocumentWindow Key="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\src\command_processing.c" Guid="24052d5e-6866-4212-90e1-8e889f51ee9a" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
+--><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="1055, 495" SelectedTabbedMdiWindow="24052d5e-6866-4212-90e1-8e889f51ee9a"><DocumentWindow Key="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\src\utils.c" Guid="3db05b86-3a83-4ecd-8262-b9c529c80464" /><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="e6c53592-2600-47bd-bb84-e80a1b9fa9d1" /><DocumentWindow Key="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\src\interruptions.c" Guid="8714514f-6bd3-4577-b5a8-b7375a6ef78f" /><DocumentWindow Key="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\src\command_processing.c" Guid="24052d5e-6866-4212-90e1-8e889f51ee9a" /><DocumentWindow Key="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\WISH_VIBES_Socket.cydsn\Generated_Source\PSoC5\ADC.h" Guid="0f8991dd-fd09-4ec3-9e3f-8dd5acdc7e21" /><DocumentWindow Key="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\WISH_VIBES_Socket.cydsn\Generated_Source\PSoC5\CySpc.c" Guid="063b2103-0ef3-438c-a19e-c0de51515006" /><DocumentWindow Key="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\src\main.c" Guid="11f4f312-1763-4c79-b9cc-0cd32e2a80e1" /><DocumentWindow Key="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\src\interruptions.h" Guid="cd59f356-6d49-4701-b095-b300e18e0053" /><DocumentWindow Key="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\src\globals.h" Guid="d5aece63-b47c-4693-a725-cf217f3254a4" /><DocumentWindow Key="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\src\globals.c" Guid="4ae2b61e-017c-464f-8404-53e7ccd0f52c" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
 <config v="Release" />
 <AutoUpdate v="true" />
 </CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21>
