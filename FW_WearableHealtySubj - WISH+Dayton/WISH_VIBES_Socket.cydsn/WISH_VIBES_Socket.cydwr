@@ -651,6 +651,7 @@
       <Data key="1425177d-0d0e-4468-8bcc-e638e5509a9b" value="RS485_RX" />
       <Data key="9381434d-ab9e-46b9-8147-fd3f5c4d8b7d" value="MISO_ENCODER" />
       <Data key="24181710-909c-4a53-828b-d4f835263bfb" value="VT_2A" />
+      <Data key="a4f1362d-bbca-41b5-9be0-b4ba636fa6e3" value="Battery_ON" />
       <Data key="a014e3ff-1a80-46b9-bbcb-22ceb5400b46" value="EMG_B" />
       <Data key="a87ba707-cce4-4c08-8e8b-3e989cfba7aa" value="EMG_6" />
       <Data key="aada205a-44dc-40db-9cc0-7a4530316a40" value="CS1" />
@@ -660,6 +661,7 @@
       <Data key="b2c64652-8fd1-4414-a6d8-7525576a1723" value="LED_GREEN" />
       <Data key="b93a1898-c704-49a4-a5e1-61e60c4f9ae4" value="MASTER_MODE_FLAG" />
       <Data key="b472b5a3-8866-40d5-9011-6f6354224e98" value="MOTOR_EN_1" />
+      <Data key="c7fb9786-1588-41bf-a70f-1285c1e31df3" value="Battery_flag" />
       <Data key="c895fa86-8fdb-4b47-a74a-fad607a4d135" value="ENC_MOSI" />
       <Data key="cc3bcd7e-5dc0-48ea-9bf6-6aa082be1ada" value="CLK_ENCODER" />
       <Data key="cf40d4c6-577e-43fd-aaba-a74445905ab0" value="CURRENT_SENSE_2" />
@@ -3959,6 +3961,11 @@
         <Data key="Port Format" value="3,5" />
       </Group>
     </Group>
+    <Group key="a4f1362d-bbca-41b5-9be0-b4ba636fa6e3">
+      <Group key="0">
+        <Data key="Port Format" value="3,0" />
+      </Group>
+    </Group>
     <Group key="a014e3ff-1a80-46b9-bbcb-22ceb5400b46">
       <Group key="0">
         <Data key="Port Format" value="0,5" />
@@ -4000,6 +4007,11 @@
       </Group>
     </Group>
     <Group key="b472b5a3-8866-40d5-9011-6f6354224e98">
+      <Group key="0">
+        <Data key="Port Format" value="3,0" />
+      </Group>
+    </Group>
+    <Group key="c7fb9786-1588-41bf-a70f-1285c1e31df3">
       <Group key="0">
         <Data key="Port Format" value="3,0" />
       </Group>

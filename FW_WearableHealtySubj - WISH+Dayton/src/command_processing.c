@@ -750,6 +750,7 @@ void  qbadminp_string ( uint8 num_params, uint8 num_menus, const struct paramete
 //==============================================================================
 
 void prepare_generic_info(char *info_string){   
+    
      manage_param_list(300,0);
     int i;
     struct st_eeprom* MEM_P = &c_mem; 
@@ -776,7 +777,8 @@ void prepare_generic_info(char *info_string){
             
         sprintf(str,"Actuators input: Pump = %d, VT0 = %d, VT1 = %d \r\n",(int) Pump_refOld, (int)VT_refOld[0], (int) VT_refOld[1]);
         strcat(info_string, str);
-        sprintf(str, "Last FW cycle time: %u us\r\n", (uint16)timer_value0 - (uint16)timer_value);
+        //sprintf(str, "Last FW cycle time: %d us\r\n", (uint16_t)cycle_time);
+        sprintf(str, "Last FW cycle time: %u us\r\n", (uint16)cycle_time);
         strcat(info_string, str);
 
                
@@ -1177,10 +1179,7 @@ void cmd_set_inputs(){
 void cmd_activate(){
  uint8 aux = g_rx.buffer[1];
  VALVE_Write((aux >> 1) & 0x01);
- if (aux == 0)
- Pump_refNew = 0;
- VT_refNew[0] = 0;   
- VT_refNew[1] = 0;   
+ 
 }
 
 void cmd_get_activate(){
@@ -1204,13 +1203,14 @@ void cmd_get_currents(){
     packet_data[0] = CMD_GET_CURRENTS;
 
      // Send pressure times 100 here instead of current (Simulink use)
-    aux_int16 = (int16)(pressure_value*100.0); //Pressure
+    aux_int16 = (int16)(pressure_value * 1000); //Pressure
+    if (aux_int16 < 0) aux_int16 = 0;
     packet_data[2] = ((char*)(&aux_int16))[0];
     packet_data[1] = ((char*)(&aux_int16))[1];
     
     
-       // aux_int16 = (int16) g_measOld[g_mem.motor[0].encoder_line].estim_curr; //Estimated current
-        aux_int16 = (int16)PWM_IMU_2;
+    // aux_int16 = (int16) g_measOld[g_mem.motor[0].encoder_line].estim_curr; //Estimated current
+    aux_int16 = (int16)(Battery_level_out);
     
     packet_data[4] = ((char*)(&aux_int16))[0];
     packet_data[3] = ((char*)(&aux_int16))[1];
@@ -1220,6 +1220,7 @@ void cmd_get_currents(){
     packet_data[5] = LCRChecksum (packet_data, 5);
     
     commWrite(packet_data, 6);
+
 }
 
 void cmd_get_currents_for_cuff(){
@@ -1230,13 +1231,54 @@ void cmd_get_vibrotactile_inputs(){
     
 }
 
+void commReadWriteSH() {
+     
+    uint8 packet_data[16];
+    uint8 packet_length;
+   
+    uint32 t_start, t_end;
+    uint8 read_flag = TRUE;
+
+    packet_length = 2;
+    packet_data[0] = CMD_GET_VIBROTACTILE_INPUTS;
+    packet_data[1] = CMD_GET_VIBROTACTILE_INPUTS;
+    commWriteID(packet_data, packet_length, c_mem.MS.slave_ID);
+
+    t_start = (uint32) MY_TIMER_ReadCounter();
+    while(g_rx.buffer[0] != CMD_SET_VIBROTACTILE_INPUTS) {
+        if (interrupt_flag){
+            interrupt_flag = FALSE;
+            interrupt_manager();
+        }
+
+        t_end = (uint32) MY_TIMER_ReadCounter();
+        if((t_start - t_end) > 4500000){            // 4.5 s timeout
+            read_flag = FALSE;
+            master_mode = 0;                // Exit from master mode
+            break;
+        }
+    }
+
+        if (read_flag) {
+        PWM_IMU_1 = (int16)(g_rx.buffer[1]<<8 | g_rx.buffer[2]);      
+        PWM_IMU_2 = (int16)(g_rx.buffer[3]<<8 | g_rx.buffer[4]);      
+    }
+    
+    
+}
+
+
 //==============================================================================
 //                                                 READ IMU VALUES FROM SOFTHAND
 //==============================================================================
 void commReadIMUFromSH(){
-
     // Send CMD_GET_VIBROTACTILE_INPUTS to the slave and gets the PWM control values for the vibrotactile devices,
     // resulted from the processed IMU values.
+    // This function use RS485 protocol to communicate with the second board. 
+    // Baude Rate is set to 2000000. 
+    // Here a request (: : ID pk_length CMD check) is sent  --> 6bytes * 8bit * 0.5us = 24us
+    // and an answer (: : ID pk_length CMD data1[0] data1[1] data2[0] data2[1] check) received --> 10bytes * 8bit * 0.5us = 40 us
+    // At least 64 us are requested for this communication 
     
     uint8 packet_data[16];
     uint8 packet_length;
@@ -1274,7 +1316,11 @@ void commReadIMUFromSH(){
 //==============================================================================
 //                                  READ RESIDUAL CURRENT FUNCTION FROM SOFTHAND
 //==============================================================================
-
+// This function use RS485 protocol to communicate with the second board. 
+// Baude Rate is set to 2000000. 
+// Here a request (: : ID pk_length CMD check) is sent  --> 6bytes * 8bit * 0.5us = 24us
+// and an answer (: : ID pk_length CMD data1[0] data1[1] check) received --> 8bytes * 8bit * 0.5us = 32 us
+// At least 56 us are requested for this communication 
 int16 commReadResCurrFromSH()
 {
     uint8 packet_data[16];
@@ -1654,6 +1700,11 @@ void otbk_act_wrist_control(int slave_motor_idx) {
  
  
 void drive_slave( uint8 slave_ID) {
+// This function use RS485 protocol to communicate with the second board. 
+// Baude Rate is set to 2000000. 
+// Here a request (: : ID pk_length CMD check) is sent  --> 6bytes * 8bit * 0.5us = 24us
+// and an answer (: : ID pk_length CMD data1[0] data1[1] check) received --> 8bytes * 8bit * 0.5us = 32 us
+// At least 56 us are requested for this communication 
 
     uint8 packet_data[6];
     uint8 packet_length;

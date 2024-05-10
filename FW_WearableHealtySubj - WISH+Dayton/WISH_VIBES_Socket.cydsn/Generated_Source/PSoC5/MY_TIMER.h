@@ -37,7 +37,7 @@ extern uint8 MY_TIMER_initVar;
 **************************************/
 
 #define MY_TIMER_Resolution                 16u
-#define MY_TIMER_UsingFixedFunction         1u
+#define MY_TIMER_UsingFixedFunction         0u
 #define MY_TIMER_UsingHWCaptureCounter      0u
 #define MY_TIMER_SoftwareCaptureMode        0u
 #define MY_TIMER_SoftwareTriggerMode        0u

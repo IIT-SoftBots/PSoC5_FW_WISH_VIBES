@@ -3999,33 +3999,7 @@ void cmd_get_imu_readings(){
             c = c + 16;
         }
         
-         /*
-        if (c_mem.imu.IMU_conf[IMU_connected[k_imu]][3]){
-         //   aux_float = (float) g_imu[k_imu].quat_value[0];
-            aux_float = (float)k_imu;
-            for(k = 0; k < 4; k++) {
-                single_packet[c + 4 - k -1] = ((char*)(&aux_float))[k];
-            }
-
-           // aux_float = (float) g_imu[k_imu].quat_value[1];
-           aux_float = (float)((int16)g_refNew_vibrotactile[1].pwm);
-            for(k = 0; k < 4; k++) {
-                single_packet[c + 8 - k -1] = ((char*)(&aux_float))[k];
-            }
-
-            //aux_float = (float) g_imu[k_imu].quat_value[2];
-             aux_float = (float)input_act_sent[1];;
-            for(k = 0; k < 4; k++) {
-                single_packet[c + 12 - k -1] = ((char*)(&aux_float))[k];               
-            }
-
-            //aux_float = (float) g_imu[k_imu].quat_value[3];
-             aux_float = (float) 78;
-            for(k = 0; k < 4; k++) {
-                single_packet[c + 16 - k -1] = ((char*)(&aux_float))[k];
-            }
-            c = c + 16;
-        }*/
+      
         
         if (c_mem.imu.IMU_conf[IMU_connected[k_imu]][4]){
             aux_int16 = (int16) g_imu[k_imu].temp_value;

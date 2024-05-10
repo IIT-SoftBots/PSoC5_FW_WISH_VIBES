@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc7WBng1.s 			page 1
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccjl721f.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc7WBng1.s 			page 1
   28:..\src/utils.c **** // SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
   29:..\src/utils.c **** // CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
   30:..\src/utils.c **** // OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc7WBng1.s 			page 2
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccjl721f.s 			page 2
 
 
   31:..\src/utils.c **** // OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc7WBng1.s 			page 1
   58              		.cfi_endproc
   59              	.LFE64:
   60              		.size	curr_estim, .-curr_estim
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc7WBng1.s 			page 3
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccjl721f.s 			page 3
 
 
   61              		.section	.text.filter,"ax",%progbits
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc7WBng1.s 			page 1
  104 0036 FA68     		ldr	r2, [r7, #12]
  105 0038 1A60     		str	r2, [r3]
   66:..\src/utils.c **** 
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc7WBng1.s 			page 4
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccjl721f.s 			page 4
 
 
   67:..\src/utils.c ****     return (aux / 64);
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc7WBng1.s 			page 1
  150 000a 7B68     		ldr	r3, [r7, #4]
  151 000c 002B     		cmp	r3, #0
  152 000e 08DB     		blt	.L8
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc7WBng1.s 			page 5
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccjl721f.s 			page 5
 
 
   77:..\src/utils.c ****         return (int32)(val % divisor);
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc7WBng1.s 			page 1
   84:..\src/utils.c **** //==============================================================================
   85:..\src/utils.c **** //                                                                     CALIBRATE
   86:..\src/utils.c **** //==============================================================================
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc7WBng1.s 			page 6
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccjl721f.s 			page 6
 
 
   87:..\src/utils.c **** 
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc7WBng1.s 			page 1
  111:..\src/utils.c **** //     inv_a = t;
  112:..\src/utils.c **** //     inv_b = s - q * t;
  113:..\src/utils.c **** // return
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc7WBng1.s 			page 7
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccjl721f.s 			page 7
 
 
  114:..\src/utils.c **** 
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc7WBng1.s 			page 1
  274              		@ link register save eliminated.
  275 0000 80B4     		push	{r7}
  276              		.cfi_def_cfa_offset 4
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc7WBng1.s 			page 8
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccjl721f.s 			page 8
 
 
  277              		.cfi_offset 7, -4
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc7WBng1.s 			page 1
  322 0006 BD46     		mov	sp, r7
  323              		.cfi_def_cfa_register 13
  324              		@ sp needed
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc7WBng1.s 			page 9
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccjl721f.s 			page 9
 
 
  325 0008 80BC     		pop	{r7}
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc7WBng1.s 			page 1
  371              		.thumb
  372              		.thumb_func
  373              		.type	battery_management, %function
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc7WBng1.s 			page 10
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccjl721f.s 			page 10
 
 
  374              	battery_management:
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc7WBng1.s 			page 1
  415              		.cfi_def_cfa_register 7
  154:..\src/utils.c ****    
  155:..\src/utils.c **** }
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc7WBng1.s 			page 11
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccjl721f.s 			page 11
 
 
  416              		.loc 1 155 0
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc7WBng1.s 			page 1
  463 0018 7047     		bx	lr
  464              		.cfi_endproc
  465              	.LFE74:
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc7WBng1.s 			page 12
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccjl721f.s 			page 12
 
 
  466              		.size	enable_motor, .-enable_motor
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc7WBng1.s 			page 1
  506              		.cfi_startproc
  507              		@ args = 0, pretend = 0, frame = 8
  508              		@ frame_needed = 1, uses_anonymous_args = 0
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc7WBng1.s 			page 13
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccjl721f.s 			page 13
 
 
  509              		@ link register save eliminated.
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc7WBng1.s 			page 1
  185:..\src/utils.c ****    
  186:..\src/utils.c **** }
  555              		.loc 1 186 0
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc7WBng1.s 			page 14
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccjl721f.s 			page 14
 
 
  556 0008 00BF     		nop
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc7WBng1.s 			page 1
  603              		.size	v4_normalize, .-v4_normalize
  604 0012 00BF     		.section	.text.update_EMG_history,"ax",%progbits
  605              		.align	2
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc7WBng1.s 			page 15
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccjl721f.s 			page 15
 
 
  606              		.global	update_EMG_history
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc7WBng1.s 			page 1
  648              		.cfi_def_cfa_offset 4
  649              		.cfi_offset 7, -4
  650 0002 00AF     		add	r7, sp, #0
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc7WBng1.s 			page 16
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccjl721f.s 			page 16
 
 
  651              		.cfi_def_cfa_register 7
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc7WBng1.s 			page 1
  703 0046 02       		.byte	0x2
  704 0047 3F       		.byte	0x3f
  705 0048 4C000000 		.4byte	0x4c
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc7WBng1.s 			page 17
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccjl721f.s 			page 17
 
 
  706 004c 02       		.uleb128 0x2
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc7WBng1.s 			page 1
  760 00b5 08       		.byte	0x8
  761 00b6 20020000 		.4byte	.LASF16
  762 00ba 02       		.uleb128 0x2
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc7WBng1.s 			page 18
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccjl721f.s 			page 18
 
 
  763 00bb 08       		.byte	0x8
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc7WBng1.s 			page 1
  817 0127 01       		.byte	0x1
  818 0128 33       		.byte	0x33
  819 0129 99000000 		.4byte	0x99
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc7WBng1.s 			page 19
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccjl721f.s 			page 19
 
 
  820 012d 02       		.uleb128 0x2
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc7WBng1.s 			page 1
  874 018e 8D000000 		.4byte	0x8d
  875 0192 00000000 		.4byte	.LFB66
  876 0196 50000000 		.4byte	.LFE66-.LFB66
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc7WBng1.s 			page 20
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccjl721f.s 			page 20
 
 
  877 019a 01       		.uleb128 0x1
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc7WBng1.s 			page 1
  931 0203 09       		.uleb128 0x9
  932 0204 4E3100   		.ascii	"N1\000"
  933 0207 01       		.byte	0x1
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc7WBng1.s 			page 21
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccjl721f.s 			page 21
 
 
  934 0208 76       		.byte	0x76
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc7WBng1.s 			page 1
  988 026e 01       		.byte	0x1
  989 026f 7B       		.byte	0x7b
  990 0270 30020000 		.4byte	0x230
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc7WBng1.s 			page 22
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccjl721f.s 			page 22
 
 
  991 0274 02       		.uleb128 0x2
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc7WBng1.s 			page 1
  1045 02d8 10       		.uleb128 0x10
  1046 02d9 9A010000 		.4byte	.LASF34
  1047 02dd 01       		.byte	0x1
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc7WBng1.s 			page 23
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccjl721f.s 			page 23
 
 
  1048 02de 99       		.byte	0x99
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc7WBng1.s 			page 1
  1102 034e 02       		.uleb128 0x2
  1103 034f 91       		.byte	0x91
  1104 0350 74       		.sleb128 -12
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc7WBng1.s 			page 24
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccjl721f.s 			page 24
 
 
  1105 0351 00       		.byte	0
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc7WBng1.s 			page 1
  1159 03c0 01       		.uleb128 0x1
  1160 03c1 9C       		.byte	0x9c
  1161 03c2 11       		.uleb128 0x11
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc7WBng1.s 			page 25
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccjl721f.s 			page 25
 
 
  1162 03c3 32020000 		.4byte	.LASF49
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc7WBng1.s 			page 1
  1216 002d 00       		.byte	0
  1217 002e 0B       		.uleb128 0xb
  1218 002f 0B       		.uleb128 0xb
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc7WBng1.s 			page 26
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccjl721f.s 			page 26
 
 
  1219 0030 3E       		.uleb128 0x3e
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc7WBng1.s 			page 1
  1273 0066 03       		.uleb128 0x3
  1274 0067 0E       		.uleb128 0xe
  1275 0068 3A       		.uleb128 0x3a
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc7WBng1.s 			page 27
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccjl721f.s 			page 27
 
 
  1276 0069 0B       		.uleb128 0xb
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc7WBng1.s 			page 1
  1330 00a0 3A       		.uleb128 0x3a
  1331 00a1 0B       		.uleb128 0xb
  1332 00a2 3B       		.uleb128 0x3b
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc7WBng1.s 			page 28
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccjl721f.s 			page 28
 
 
  1333 00a3 0B       		.uleb128 0xb
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc7WBng1.s 			page 1
  1387 00da 0B       		.uleb128 0xb
  1388 00db 3B       		.uleb128 0x3b
  1389 00dc 0B       		.uleb128 0xb
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc7WBng1.s 			page 29
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccjl721f.s 			page 29
 
 
  1390 00dd 27       		.uleb128 0x27
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc7WBng1.s 			page 1
  1444 0115 00       		.byte	0
  1445 0116 49       		.uleb128 0x49
  1446 0117 13       		.uleb128 0x13
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc7WBng1.s 			page 30
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccjl721f.s 			page 30
 
 
  1447 0118 00       		.byte	0
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc7WBng1.s 			page 1
  1501 0014 50000000 		.4byte	.LFE66
  1502 0018 00000000 		.4byte	.LFB67
  1503 001c 0C000000 		.4byte	.LFE67
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc7WBng1.s 			page 31
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccjl721f.s 			page 31
 
 
  1504 0020 00000000 		.4byte	.LFB68
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc7WBng1.s 			page 1
  1541              	.LASF21:
  1542 0094 63757272 		.ascii	"curr_estim\000"
  1542      5F657374 
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc7WBng1.s 			page 32
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccjl721f.s 			page 32
 
 
  1542      696D00
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc7WBng1.s 			page 1
  1565 0152 5F574953 		.ascii	"_WISH_VIBES\\FW_WearableHealtySubj - WISH+Dayton\\W"
  1565      485F5649 
  1565      4245535C 
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc7WBng1.s 			page 33
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccjl721f.s 			page 33
 
 
  1565      46575F57 
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc7WBng1.s 			page 1
  1590      4D475F68 
  1590      6973746F 
  1590      727900
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc7WBng1.s 			page 34
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccjl721f.s 			page 34
 
 
  1591              	.LASF16:
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc7WBng1.s 			page 1
  1618 02ab 62617474 		.ascii	"battery_management\000"
  1618      6572795F 
  1618      6D616E61 
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\cc7WBng1.s 			page 35
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccjl721f.s 			page 35
 
 
  1618      67656D65 

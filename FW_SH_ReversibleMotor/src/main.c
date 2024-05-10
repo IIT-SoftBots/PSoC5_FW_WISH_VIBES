@@ -292,7 +292,7 @@ int main()
     
     // All peripherals has started, now it is ok to start communication
     RS485_CTS_Write(0);             // Clear To Send on RS485.
-
+    CLOCK_PWM_1_SetDividerValue(6);
     for(;;)
 
     {             

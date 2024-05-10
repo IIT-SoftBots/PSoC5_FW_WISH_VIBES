@@ -13,7 +13,7 @@
 <v>Output</v>
 </TreeKeys>
 <TreeStates>
-<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="WISH_VIBES_Socket_Workspace\WISH_VIBES_Socket\Source Files\main.c">
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="WISH_VIBES_Socket_Workspace\WISH_VIBES_Socket\TopDesign">
 <ExpandedNodeIds>
 <v>WISH_VIBES_Socket_Workspace</v>
 <v>WISH_VIBES_Socket_Workspace\WISH_VIBES_Socket</v>
@@ -50,6 +50,9 @@
 <v>WISH_VIBES_Socket_Workspace\WISH_VIBES_Socket\Generated_Source\PSoC5</v>
 </ExpandedNodeIds>
 <VisibleNodeIds>
+<v>WISH_VIBES_Socket_Workspace</v>
+<v>WISH_VIBES_Socket_Workspace\WISH_VIBES_Socket</v>
+<v>WISH_VIBES_Socket_Workspace\WISH_VIBES_Socket\TopDesign</v>
 <v>WISH_VIBES_Socket_Workspace\WISH_VIBES_Socket\WISH_VIBES_Socket.cydwr</v>
 <v>WISH_VIBES_Socket_Workspace\WISH_VIBES_Socket\WISH_VIBES_Socket.cydwr\Pins</v>
 <v>WISH_VIBES_Socket_Workspace\WISH_VIBES_Socket\WISH_VIBES_Socket.cydwr\Analog</v>
@@ -83,9 +86,6 @@
 <v>WISH_VIBES_Socket_Workspace\WISH_VIBES_Socket\Generated_Source\PSoC5\ADC</v>
 <v>WISH_VIBES_Socket_Workspace\WISH_VIBES_Socket\Generated_Source\PSoC5\ADC_AMux</v>
 <v>WISH_VIBES_Socket_Workspace\WISH_VIBES_Socket\Generated_Source\PSoC5\ADC_Ext_CP_Clk</v>
-<v>WISH_VIBES_Socket_Workspace\WISH_VIBES_Socket\Generated_Source\PSoC5\ADC_IRQ</v>
-<v>WISH_VIBES_Socket_Workspace\WISH_VIBES_Socket\Generated_Source\PSoC5\ADC_N_CHANNELS_USED</v>
-<v>WISH_VIBES_Socket_Workspace\WISH_VIBES_Socket\Generated_Source\PSoC5\ADC_SOC</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 <CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
@@ -122,6 +122,7 @@
 <v>WISH_VIBES_Socket_Workspace\WISH_VIBES_Socket\CortexM3\ARM_GCC_541\Release\Listing Files\ADC_SOC_PM.lst</v>
 <v>WISH_VIBES_Socket_Workspace\WISH_VIBES_Socket\CortexM3\ARM_GCC_541\Release\Listing Files\ADC_STATUS.lst</v>
 <v>WISH_VIBES_Socket_Workspace\WISH_VIBES_Socket\CortexM3\ARM_GCC_541\Release\Listing Files\ADC_theACLK.lst</v>
+<v>WISH_VIBES_Socket_Workspace\WISH_VIBES_Socket\CortexM3\ARM_GCC_541\Release\Listing Files\Battery_flag.lst</v>
 <v>WISH_VIBES_Socket_Workspace\WISH_VIBES_Socket\CortexM3\ARM_GCC_541\Release\Listing Files\Bootloadable.lst</v>
 <v>WISH_VIBES_Socket_Workspace\WISH_VIBES_Socket\CortexM3\ARM_GCC_541\Release\Listing Files\CLK_RTC.lst</v>
 <v>WISH_VIBES_Socket_Workspace\WISH_VIBES_Socket\CortexM3\ARM_GCC_541\Release\Listing Files\CLOCK_UART.lst</v>
@@ -216,40 +217,6 @@
 <VisibleNodeIds>
 <v>WISH_VIBES_Socket_Workspace</v>
 <v>WISH_VIBES_Socket_Workspace\WISH_VIBES_Socket</v>
-<v>WISH_VIBES_Socket_Workspace\WISH_VIBES_Socket\CortexM3</v>
-<v>WISH_VIBES_Socket_Workspace\WISH_VIBES_Socket\CortexM3\ARM_GCC_541</v>
-<v>WISH_VIBES_Socket_Workspace\WISH_VIBES_Socket\CortexM3\ARM_GCC_541\Release</v>
-<v>WISH_VIBES_Socket_Workspace\WISH_VIBES_Socket\CortexM3\ARM_GCC_541\Release\Listing Files</v>
-<v>WISH_VIBES_Socket_Workspace\WISH_VIBES_Socket\CortexM3\ARM_GCC_541\Release\Listing Files\ADC.lst</v>
-<v>WISH_VIBES_Socket_Workspace\WISH_VIBES_Socket\CortexM3\ARM_GCC_541\Release\Listing Files\ADC_AMux.lst</v>
-<v>WISH_VIBES_Socket_Workspace\WISH_VIBES_Socket\CortexM3\ARM_GCC_541\Release\Listing Files\ADC_Ext_CP_Clk.lst</v>
-<v>WISH_VIBES_Socket_Workspace\WISH_VIBES_Socket\CortexM3\ARM_GCC_541\Release\Listing Files\ADC_INT.lst</v>
-<v>WISH_VIBES_Socket_Workspace\WISH_VIBES_Socket\CortexM3\ARM_GCC_541\Release\Listing Files\ADC_IRQ.lst</v>
-<v>WISH_VIBES_Socket_Workspace\WISH_VIBES_Socket\CortexM3\ARM_GCC_541\Release\Listing Files\ADC_N_CHANNELS_USED.lst</v>
-<v>WISH_VIBES_Socket_Workspace\WISH_VIBES_Socket\CortexM3\ARM_GCC_541\Release\Listing Files\ADC_N_CHANNELS_USED_PM.lst</v>
-<v>WISH_VIBES_Socket_Workspace\WISH_VIBES_Socket\CortexM3\ARM_GCC_541\Release\Listing Files\ADC_PM.lst</v>
-<v>WISH_VIBES_Socket_Workspace\WISH_VIBES_Socket\CortexM3\ARM_GCC_541\Release\Listing Files\ADC_SOC.lst</v>
-<v>WISH_VIBES_Socket_Workspace\WISH_VIBES_Socket\CortexM3\ARM_GCC_541\Release\Listing Files\ADC_SOC_PM.lst</v>
-<v>WISH_VIBES_Socket_Workspace\WISH_VIBES_Socket\CortexM3\ARM_GCC_541\Release\Listing Files\ADC_STATUS.lst</v>
-<v>WISH_VIBES_Socket_Workspace\WISH_VIBES_Socket\CortexM3\ARM_GCC_541\Release\Listing Files\ADC_theACLK.lst</v>
-<v>WISH_VIBES_Socket_Workspace\WISH_VIBES_Socket\CortexM3\ARM_GCC_541\Release\Listing Files\Bootloadable.lst</v>
-<v>WISH_VIBES_Socket_Workspace\WISH_VIBES_Socket\CortexM3\ARM_GCC_541\Release\Listing Files\CLK_RTC.lst</v>
-<v>WISH_VIBES_Socket_Workspace\WISH_VIBES_Socket\CortexM3\ARM_GCC_541\Release\Listing Files\CLOCK_UART.lst</v>
-<v>WISH_VIBES_Socket_Workspace\WISH_VIBES_Socket\CortexM3\ARM_GCC_541\Release\Listing Files\CLOCK_VT.lst</v>
-<v>WISH_VIBES_Socket_Workspace\WISH_VIBES_Socket\CortexM3\ARM_GCC_541\Release\Listing Files\Cm3Start.lst</v>
-<v>WISH_VIBES_Socket_Workspace\WISH_VIBES_Socket\CortexM3\ARM_GCC_541\Release\Listing Files\command_processing.lst</v>
-<v>WISH_VIBES_Socket_Workspace\WISH_VIBES_Socket\CortexM3\ARM_GCC_541\Release\Listing Files\counter_cyc_clk.lst</v>
-<v>WISH_VIBES_Socket_Workspace\WISH_VIBES_Socket\CortexM3\ARM_GCC_541\Release\Listing Files\CS_RTC.lst</v>
-<v>WISH_VIBES_Socket_Workspace\WISH_VIBES_Socket\CortexM3\ARM_GCC_541\Release\Listing Files\cy_em_eeprom.lst</v>
-<v>WISH_VIBES_Socket_Workspace\WISH_VIBES_Socket\CortexM3\ARM_GCC_541\Release\Listing Files\CyBootAsmGnu.lst</v>
-<v>WISH_VIBES_Socket_Workspace\WISH_VIBES_Socket\CortexM3\ARM_GCC_541\Release\Listing Files\cybootloader.lst</v>
-<v>WISH_VIBES_Socket_Workspace\WISH_VIBES_Socket\CortexM3\ARM_GCC_541\Release\Listing Files\CYCLES_TIMER.lst</v>
-<v>WISH_VIBES_Socket_Workspace\WISH_VIBES_Socket\CortexM3\ARM_GCC_541\Release\Listing Files\CYCLES_TIMER_PM.lst</v>
-<v>WISH_VIBES_Socket_Workspace\WISH_VIBES_Socket\CortexM3\ARM_GCC_541\Release\Listing Files\CyDmac.lst</v>
-<v>WISH_VIBES_Socket_Workspace\WISH_VIBES_Socket\CortexM3\ARM_GCC_541\Release\Listing Files\cyfitter_cfg.lst</v>
-<v>WISH_VIBES_Socket_Workspace\WISH_VIBES_Socket\CortexM3\ARM_GCC_541\Release\Listing Files\CyFlash.lst</v>
-<v>WISH_VIBES_Socket_Workspace\WISH_VIBES_Socket\CortexM3\ARM_GCC_541\Release\Listing Files\CyLib.lst</v>
-<v>WISH_VIBES_Socket_Workspace\WISH_VIBES_Socket\CortexM3\ARM_GCC_541\Release\Listing Files\cymetadata.lst</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 </TreeStates>
@@ -354,14 +321,17 @@
 <Unloaded />
 <OpenDocs>
 <name v=".\src\utils.c" />
-<name v=".\src\interruptions.c" />
-<name v=".\src\command_processing.c" />
 <name v=".\WISH_VIBES_Socket.cydsn\Generated_Source\PSoC5\ADC.h" />
 <name v=".\WISH_VIBES_Socket.cydsn\Generated_Source\PSoC5\CySpc.c" />
-<name v=".\src\main.c" />
 <name v=".\src\interruptions.h" />
-<name v=".\src\globals.h" />
+<name v=".\src\main.c" />
+<name v=".\WISH_VIBES_Socket.cydsn\WISH_VIBES_Socket.cydwr" />
+<name v=".\WISH_VIBES_Socket.cydsn\TopDesign\TopDesign.cysch" />
+<name v=".\src\interruptions.c" />
 <name v=".\src\globals.c" />
+<name v=".\src\command_processing.c" />
+<name v=".\src\globals.h" />
+<name v=".\src\IMU_functions.c" />
 </OpenDocs>
 <OpenDocsLayout><![CDATA[<?xml version="1.0"?><!--
 
@@ -369,7 +339,7 @@
   Copyright (c) 2001-2016 Actipro Software LLC.  All rights reserved.
   http://www.actiprosoftware.com
 
---><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="1055, 495" SelectedTabbedMdiWindow="24052d5e-6866-4212-90e1-8e889f51ee9a"><DocumentWindow Key="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\src\utils.c" Guid="3db05b86-3a83-4ecd-8262-b9c529c80464" /><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="e6c53592-2600-47bd-bb84-e80a1b9fa9d1" /><DocumentWindow Key="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\src\interruptions.c" Guid="8714514f-6bd3-4577-b5a8-b7375a6ef78f" /><DocumentWindow Key="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\src\command_processing.c" Guid="24052d5e-6866-4212-90e1-8e889f51ee9a" /><DocumentWindow Key="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\WISH_VIBES_Socket.cydsn\Generated_Source\PSoC5\ADC.h" Guid="0f8991dd-fd09-4ec3-9e3f-8dd5acdc7e21" /><DocumentWindow Key="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\WISH_VIBES_Socket.cydsn\Generated_Source\PSoC5\CySpc.c" Guid="063b2103-0ef3-438c-a19e-c0de51515006" /><DocumentWindow Key="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\src\main.c" Guid="11f4f312-1763-4c79-b9cc-0cd32e2a80e1" /><DocumentWindow Key="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\src\interruptions.h" Guid="cd59f356-6d49-4701-b095-b300e18e0053" /><DocumentWindow Key="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\src\globals.h" Guid="d5aece63-b47c-4693-a725-cf217f3254a4" /><DocumentWindow Key="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\src\globals.c" Guid="4ae2b61e-017c-464f-8404-53e7ccd0f52c" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
+--><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="1055, 497" SelectedTabbedMdiWindow="664837d0-43c3-47ab-b468-5f6f26e8bbe6"><DocumentWindow Key="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\src\utils.c" Guid="3db05b86-3a83-4ecd-8262-b9c529c80464" /><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="e6c53592-2600-47bd-bb84-e80a1b9fa9d1" /><DocumentWindow Key="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\WISH_VIBES_Socket.cydsn\Generated_Source\PSoC5\ADC.h" Guid="0f8991dd-fd09-4ec3-9e3f-8dd5acdc7e21" /><DocumentWindow Key="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\WISH_VIBES_Socket.cydsn\Generated_Source\PSoC5\CySpc.c" Guid="063b2103-0ef3-438c-a19e-c0de51515006" /><DocumentWindow Key="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\src\interruptions.h" Guid="cd59f356-6d49-4701-b095-b300e18e0053" /><DocumentWindow Key="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\src\main.c" Guid="cf6a6c34-b3ee-47bb-bcc7-cc9e1bf353f7" /><DocumentWindow Key="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\WISH_VIBES_Socket.cydsn\WISH_VIBES_Socket.cydwr" Guid="6ef252fa-0e78-465b-a3bc-b04a2b74b2cc" /><DocumentWindow Key="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\WISH_VIBES_Socket.cydsn\TopDesign\TopDesign.cysch" Guid="664837d0-43c3-47ab-b468-5f6f26e8bbe6" /><DocumentWindow Key="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\src\interruptions.c" Guid="cb83cf7a-9a71-4250-9593-91e0baa35f95" /><DocumentWindow Key="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\src\globals.c" Guid="4c41abb5-1428-48d7-ae49-b08b1b0da580" /><DocumentWindow Key="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\src\command_processing.c" Guid="0640b70a-87ed-4d06-a1fa-395503907505" /><DocumentWindow Key="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\src\globals.h" Guid="689f2e39-3def-4ef0-9f26-388bf3f83d43" /><DocumentWindow Key="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_WearableHealtySubj - WISH+Dayton\src\IMU_functions.c" Guid="f8b41c7d-3878-4144-b499-7e1677dbd051" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
 <config v="Release" />
 <AutoUpdate v="true" />
 </CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21>

@@ -57,7 +57,7 @@ int16 ADC_buf[3];     /*! ADC measurements buffer.*/
 uint8 NUM_OF_ANALOG_INPUTS = 3;             /*! ADC currently configured channels.*/
 struct st_eeprom    g_mem, c_mem;               // Memory variables.
  
-int32 pressure_value;
+int32 pressure_value, atm_pressure,Battery_level_out;
 CYBIT interrupt_flag = FALSE;               /*!< Interrupt flag enabler.*/
 int32 flag_master;
 uint8 master_mode;               /*!< Flag used to set/unset master mode to send messages to other boards.*/
@@ -67,6 +67,7 @@ uint8 master_mode;               /*!< Flag used to set/unset master mode to send
 struct st_data      g_rx;                       // Income data.
  int16 PWM_IMU_1;     
  int16 PWM_IMU_2;  
+int16 curr_diff;  
 CYBIT reset_PSoC_flag = FALSE;              /*!< This flag is set when a board fw reset is necessary.*/
 
 

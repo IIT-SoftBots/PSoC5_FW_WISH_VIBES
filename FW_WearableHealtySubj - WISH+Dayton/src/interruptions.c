@@ -132,9 +132,7 @@ CY_ISR(ISR_CYCLES_Handler){
 //==============================================================================
 
 void interrupt_manager(){
-
-    
-    //===========================================     local variables definition
+      //===========================================     local variables definition
 
     static uint8 CYDATA state = WAIT_START;                      // state
     
@@ -271,10 +269,9 @@ void function_scheduler(void) {
     MY_TIMER_REG_Write(0x00);
     timer_value0 = (uint32)MY_TIMER_ReadCounter();
     // Start ADC Conversion, SOC = 1
-
     ADC_SOC_Write(0x01); 
     flag_master = MASTER_MODE_FLAG_Read();
-    
+
     // Check Interrupt 
 
     if (interrupt_flag){
@@ -382,9 +379,9 @@ void function_scheduler(void) {
         interrupt_flag = FALSE;
         interrupt_manager();
     }
-
+    
     timer_value = (uint16)MY_TIMER_ReadCounter();
-    cycle_time = ((float)(timer_value0 - timer_value)/1000000.0);
+    cycle_time = ((float)(timer_value0 - timer_value)/48.0);
     MY_TIMER_REG_Write(0x01);   // reset timer
 
 }
@@ -627,21 +624,21 @@ void analog_read_end() {
         }
     }
 
+
+
         // Read pressure in any case
         g_adc_meas.pressure  = (int32)(ADC_buf[0]);    //0 - 4096  
         pressure_value = g_adc_meas.pressure;
-        pressure_value = (((float)pressure_value/4096.0)/0.002421)-101.325;       // datasheet transfer function ticks->kPa sensor MPXH6400A
+        pressure_value =(((float)pressure_value/4096.0 + 0.00842)/0.002421) - atm_pressure;       // datasheet transfer function ticks->kPa sensor MPXH6400A
+    
         if (pressure_value < 0) 
             pressure_value = 0;
-    
-        //flag_master =  (int32)((ADC_buf[1]/4096.0)*5000);
-
+            
         // Reset emg
         for (idx = 0; idx < NUM_OF_INPUT_EMGS; idx++){
             g_adc_meas.emg[idx] = 0;
         }
- 
-        
+         
         // Read EMG channel 1
         i_aux = 0;  
         i_aux = (int32)(ADC_buf[1 + c_mem.emg.switch_emg]);

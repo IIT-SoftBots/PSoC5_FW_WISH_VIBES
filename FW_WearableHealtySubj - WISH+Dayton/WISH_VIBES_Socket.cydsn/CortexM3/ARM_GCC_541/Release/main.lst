@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccHVTFb3.s 			page 1
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccabezqU.s 			page 1
 
 
    1              		.syntax unified
@@ -19,15 +19,20 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccHVTFb3.s 			page 1
   16              		.text
   17              	.Ltext0:
   18              		.cfi_sections	.debug_frame
-  19              		.section	.text.main,"ax",%progbits
-  20              		.align	2
-  21              		.global	main
-  22              		.thumb
-  23              		.thumb_func
-  24              		.type	main, %function
-  25              	main:
-  26              	.LFB64:
-  27              		.file 1 "..\\src\\main.c"
+  19              		.global	__aeabi_i2f
+  20              		.global	__aeabi_f2d
+  21              		.global	__aeabi_ddiv
+  22              		.global	__aeabi_dadd
+  23              		.global	__aeabi_d2iz
+  24              		.section	.text.main,"ax",%progbits
+  25              		.align	2
+  26              		.global	main
+  27              		.thumb
+  28              		.thumb_func
+  29              		.type	main, %function
+  30              	main:
+  31              	.LFB64:
+  32              		.file 1 "..\\src\\main.c"
    1:..\src/main.c **** // ----------------------------------------------------------------------------
    2:..\src/main.c **** // BSD 3-Clause License
    3:..\src/main.c **** 
@@ -53,14 +58,14 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccHVTFb3.s 			page 1
   23:..\src/main.c **** // AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
   24:..\src/main.c **** // IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
   25:..\src/main.c **** // DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccabezqU.s 			page 2
+
+
   26:..\src/main.c **** // FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
   27:..\src/main.c **** // DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
   28:..\src/main.c **** // SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
   29:..\src/main.c **** // CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
   30:..\src/main.c **** // OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccHVTFb3.s 			page 2
-
-
   31:..\src/main.c **** // OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
   32:..\src/main.c **** // POSSIBILITY OF SUCH DAMAGE.
   33:..\src/main.c **** // ----------------------------------------------------------------------------
@@ -104,23 +109,24 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccHVTFb3.s 			page 1
   71:..\src/main.c **** 
   72:..\src/main.c **** int main()
   73:..\src/main.c **** {
-  28              		.loc 1 73 0
-  29              		.cfi_startproc
-  30              		@ args = 0, pretend = 0, frame = 8
-  31              		@ frame_needed = 1, uses_anonymous_args = 0
-  32 0000 80B5     		push	{r7, lr}
-  33              		.cfi_def_cfa_offset 8
-  34              		.cfi_offset 7, -8
-  35              		.cfi_offset 14, -4
-  36 0002 82B0     		sub	sp, sp, #8
-  37              		.cfi_def_cfa_offset 16
-  38 0004 00AF     		add	r7, sp, #0
-  39              		.cfi_def_cfa_register 7
+  33              		.loc 1 73 0
+  34              		.cfi_startproc
+  35              		@ args = 0, pretend = 0, frame = 16
+  36              		@ frame_needed = 1, uses_anonymous_args = 0
+  37 0000 90B5     		push	{r4, r7, lr}
+  38              		.cfi_def_cfa_offset 12
+  39              		.cfi_offset 4, -12
+  40              		.cfi_offset 7, -8
+  41              		.cfi_offset 14, -4
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccabezqU.s 			page 3
+
+
+  42 0002 85B0     		sub	sp, sp, #20
+  43              		.cfi_def_cfa_offset 32
+  44 0004 00AF     		add	r7, sp, #0
+  45              		.cfi_def_cfa_register 7
   74:..\src/main.c ****     // Iterator    
   75:..\src/main.c ****     uint8 j;
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccHVTFb3.s 			page 3
-
-
   76:..\src/main.c ****     
   77:..\src/main.c ****     // Variable declarations for DMA     
   78:..\src/main.c ****     uint8 DMA_Chan;
@@ -130,1221 +136,1346 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccHVTFb3.s 			page 1
   82:..\src/main.c **** 
   83:..\src/main.c ****     // EEPROM
   84:..\src/main.c ****     EEPROM_Start();
-  40              		.loc 1 84 0
-  41 0006 FFF7FEFF 		bl	EEPROM_Start
+  46              		.loc 1 84 0
+  47 0006 FFF7FEFF 		bl	EEPROM_Start
   85:..\src/main.c ****     memRecall();                                        // Recall configuration.  
-  42              		.loc 1 85 0
-  43 000a FFF7FEFF 		bl	memRecall
+  48              		.loc 1 85 0
+  49 000a FFF7FEFF 		bl	memRecall
   86:..\src/main.c ****     
   87:..\src/main.c ****     // FTDI chip enable
   88:..\src/main.c ****     CyDelay(100);
-  44              		.loc 1 88 0
-  45 000e 6420     		movs	r0, #100
-  46 0010 FFF7FEFF 		bl	CyDelay
+  50              		.loc 1 88 0
+  51 000e 6420     		movs	r0, #100
+  52 0010 FFF7FEFF 		bl	CyDelay
   89:..\src/main.c ****     FTDI_ENABLE_Write(0x01);
-  47              		.loc 1 89 0
-  48 0014 0120     		movs	r0, #1
-  49 0016 FFF7FEFF 		bl	FTDI_ENABLE_Write
+  53              		.loc 1 89 0
+  54 0014 0120     		movs	r0, #1
+  55 0016 FFF7FEFF 		bl	FTDI_ENABLE_Write
   90:..\src/main.c ****     
   91:..\src/main.c **** 	// LED Enable   
   92:..\src/main.c ****     
   93:..\src/main.c ****     // RS485
   94:..\src/main.c ****     UART_RS485_Stop();
-  50              		.loc 1 94 0
-  51 001a FFF7FEFF 		bl	UART_RS485_Stop
+  56              		.loc 1 94 0
+  57 001a FFF7FEFF 		bl	UART_RS485_Stop
   95:..\src/main.c ****     UART_RS485_Start();
-  52              		.loc 1 95 0
-  53 001e FFF7FEFF 		bl	UART_RS485_Start
+  58              		.loc 1 95 0
+  59 001e FFF7FEFF 		bl	UART_RS485_Start
   96:..\src/main.c ****     UART_RS485_Init();
-  54              		.loc 1 96 0
-  55 0022 FFF7FEFF 		bl	UART_RS485_Init
+  60              		.loc 1 96 0
+  61 0022 FFF7FEFF 		bl	UART_RS485_Init
   97:..\src/main.c ****     UART_RS485_ClearRxBuffer();
-  56              		.loc 1 97 0
-  57 0026 FFF7FEFF 		bl	UART_RS485_ClearRxBuffer
+  62              		.loc 1 97 0
+  63 0026 FFF7FEFF 		bl	UART_RS485_ClearRxBuffer
   98:..\src/main.c ****     UART_RS485_ClearTxBuffer();
-  58              		.loc 1 98 0
-  59 002a FFF7FEFF 		bl	UART_RS485_ClearTxBuffer
+  64              		.loc 1 98 0
+  65 002a FFF7FEFF 		bl	UART_RS485_ClearTxBuffer
   99:..\src/main.c ****     ISR_RS485_RX_StartEx(ISR_RS485_RX_ExInterrupt);
-  60              		.loc 1 99 0
-  61 002e 4F48     		ldr	r0, .L9
-  62 0030 FFF7FEFF 		bl	ISR_RS485_RX_StartEx
+  66              		.loc 1 99 0
+  67 002e 7648     		ldr	r0, .L10+24
+  68 0030 FFF7FEFF 		bl	ISR_RS485_RX_StartEx
  100:..\src/main.c ****     
  101:..\src/main.c ****     // CYCLES TIMER   
  102:..\src/main.c ****     CYCLES_TIMER_Start();
-  63              		.loc 1 102 0
-  64 0034 FFF7FEFF 		bl	CYCLES_TIMER_Start
+  69              		.loc 1 102 0
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccabezqU.s 			page 4
+
+
+  70 0034 FFF7FEFF 		bl	CYCLES_TIMER_Start
  103:..\src/main.c ****     ISR_CYCLES_StartEx(ISR_CYCLES_Handler);
-  65              		.loc 1 103 0
-  66 0038 4D48     		ldr	r0, .L9+4
-  67 003a FFF7FEFF 		bl	ISR_CYCLES_StartEx
+  71              		.loc 1 103 0
+  72 0038 7448     		ldr	r0, .L10+28
+  73 003a FFF7FEFF 		bl	ISR_CYCLES_StartEx
  104:..\src/main.c ****     
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccHVTFb3.s 			page 4
-
-
  105:..\src/main.c ****     PWM_PUMP_Start();
-  68              		.loc 1 105 0
-  69 003e FFF7FEFF 		bl	PWM_PUMP_Start
+  74              		.loc 1 105 0
+  75 003e FFF7FEFF 		bl	PWM_PUMP_Start
  106:..\src/main.c ****     PWM_VT_Start();
-  70              		.loc 1 106 0
-  71 0042 FFF7FEFF 		bl	PWM_VT_Start
+  76              		.loc 1 106 0
+  77 0042 FFF7FEFF 		bl	PWM_VT_Start
  107:..\src/main.c ****     PWM_VT_WriteCompare1(50);
-  72              		.loc 1 107 0
-  73 0046 3220     		movs	r0, #50
-  74 0048 FFF7FEFF 		bl	PWM_VT_WriteCompare1
+  78              		.loc 1 107 0
+  79 0046 3220     		movs	r0, #50
+  80 0048 FFF7FEFF 		bl	PWM_VT_WriteCompare1
  108:..\src/main.c ****     PWM_VT_WriteCompare2(50);    
-  75              		.loc 1 108 0
-  76 004c 3220     		movs	r0, #50
-  77 004e FFF7FEFF 		bl	PWM_VT_WriteCompare2
+  81              		.loc 1 108 0
+  82 004c 3220     		movs	r0, #50
+  83 004e FFF7FEFF 		bl	PWM_VT_WriteCompare2
  109:..\src/main.c ****     VT1_DIR_Write(0);
-  78              		.loc 1 109 0
-  79 0052 0020     		movs	r0, #0
-  80 0054 FFF7FEFF 		bl	VT1_DIR_Write
+  84              		.loc 1 109 0
+  85 0052 0020     		movs	r0, #0
+  86 0054 FFF7FEFF 		bl	VT1_DIR_Write
  110:..\src/main.c ****     VT2_DIR_Write(0);
-  81              		.loc 1 110 0
-  82 0058 0020     		movs	r0, #0
-  83 005a FFF7FEFF 		bl	VT2_DIR_Write
+  87              		.loc 1 110 0
+  88 0058 0020     		movs	r0, #0
+  89 005a FFF7FEFF 		bl	VT2_DIR_Write
  111:..\src/main.c ****     
  112:..\src/main.c ****     //VALVE_Write(CLOSED);
  113:..\src/main.c ****     flag_master = 0;  //Master Mode disabled
-  84              		.loc 1 113 0
-  85 005e 454B     		ldr	r3, .L9+8
-  86 0060 0022     		movs	r2, #0
-  87 0062 1A60     		str	r2, [r3]
+  90              		.loc 1 113 0
+  91 005e 6C4B     		ldr	r3, .L10+32
+  92 0060 0022     		movs	r2, #0
+  93 0062 1A60     		str	r2, [r3]
  114:..\src/main.c **** 
  115:..\src/main.c ****     // ADC
- 116:..\src/main.c ****     ADC_Set_N_Channels();           // Set right number of ADC channels to sample
-  88              		.loc 1 116 0
-  89 0064 FFF7FEFF 		bl	ADC_Set_N_Channels
- 117:..\src/main.c ****     ADC_Start();
-  90              		.loc 1 117 0
-  91 0068 FFF7FEFF 		bl	ADC_Start
- 118:..\src/main.c ****     ADC_SOC_Write(0x01);            // Force first read cycle.
-  92              		.loc 1 118 0
-  93 006c 0120     		movs	r0, #1
-  94 006e FFF7FEFF 		bl	ADC_SOC_Write
- 119:..\src/main.c **** 
- 120:..\src/main.c ****     // ADC DMA    
- 121:..\src/main.c ****     DMA_Chan = DMA_DmaInitialize(DMA_BYTES_PER_BURST, DMA_REQUEST_PER_BURST, HI16(DMA_SRC_BASE), HI
-  95              		.loc 1 121 0
-  96 0072 41F6FF73 		movw	r3, #8191
-  97 0076 4FF48042 		mov	r2, #16384
-  98 007a 0121     		movs	r1, #1
-  99 007c 0220     		movs	r0, #2
- 100 007e FFF7FEFF 		bl	DMA_DmaInitialize
- 101 0082 0346     		mov	r3, r0
- 102 0084 BB71     		strb	r3, [r7, #6]
- 122:..\src/main.c ****     DMA_TD[0] = CyDmaTdAllocate();                                                                 
- 103              		.loc 1 122 0
- 104 0086 FFF7FEFF 		bl	CyDmaTdAllocate
- 105 008a 0346     		mov	r3, r0
- 106 008c 3B71     		strb	r3, [r7, #4]
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccHVTFb3.s 			page 5
+ 116:..\src/main.c ****     ADC_Start();
+  94              		.loc 1 116 0
+  95 0064 FFF7FEFF 		bl	ADC_Start
+ 117:..\src/main.c ****     ADC_SOC_Write(0x01);            // Force first read cycle.
+  96              		.loc 1 117 0
+  97 0068 0120     		movs	r0, #1
+  98 006a FFF7FEFF 		bl	ADC_SOC_Write
+ 118:..\src/main.c ****     Battery_level_out = 0;
+  99              		.loc 1 118 0
+ 100 006e 694B     		ldr	r3, .L10+36
+ 101 0070 0022     		movs	r2, #0
+ 102 0072 1A60     		str	r2, [r3]
+ 119:..\src/main.c ****     // ADC DMA    
+ 120:..\src/main.c ****     DMA_Chan = DMA_DmaInitialize(DMA_BYTES_PER_BURST, DMA_REQUEST_PER_BURST, HI16(DMA_SRC_BASE), HI
+ 103              		.loc 1 120 0
+ 104 0074 41F6FF73 		movw	r3, #8191
+ 105 0078 4FF48042 		mov	r2, #16384
+ 106 007c 0121     		movs	r1, #1
+ 107 007e 0220     		movs	r0, #2
+ 108 0080 FFF7FEFF 		bl	DMA_DmaInitialize
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccabezqU.s 			page 5
 
 
- 123:..\src/main.c ****     CyDmaTdSetConfiguration(DMA_TD[0], 2 * NUM_OF_ANALOG_INPUTS, DMA_TD[0], DMA__TD_TERMOUT_EN | TD
- 107              		.loc 1 123 0
- 108 008e 3879     		ldrb	r0, [r7, #4]	@ zero_extendqisi2
- 109 0090 394B     		ldr	r3, .L9+12
- 110 0092 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
- 111 0094 9BB2     		uxth	r3, r3
- 112 0096 5B00     		lsls	r3, r3, #1
- 113 0098 99B2     		uxth	r1, r3
- 114 009a 3A79     		ldrb	r2, [r7, #4]	@ zero_extendqisi2
- 115 009c 0623     		movs	r3, #6
- 116 009e FFF7FEFF 		bl	CyDmaTdSetConfiguration
- 124:..\src/main.c ****     CyDmaTdSetAddress(DMA_TD[0], LO16((uint32)ADC_DEC_SAMP_PTR), LO16((uint32)ADC_buf));           
- 117              		.loc 1 124 0
- 118 00a2 3B79     		ldrb	r3, [r7, #4]	@ zero_extendqisi2
- 119 00a4 354A     		ldr	r2, .L9+16
- 120 00a6 92B2     		uxth	r2, r2
- 121 00a8 44F61061 		movw	r1, #19984
- 122 00ac 1846     		mov	r0, r3
- 123 00ae FFF7FEFF 		bl	CyDmaTdSetAddress
- 125:..\src/main.c ****     CyDmaChSetInitialTd(DMA_Chan, DMA_TD[0]);                                                      
- 124              		.loc 1 125 0
- 125 00b2 3A79     		ldrb	r2, [r7, #4]	@ zero_extendqisi2
- 126 00b4 BB79     		ldrb	r3, [r7, #6]	@ zero_extendqisi2
- 127 00b6 1146     		mov	r1, r2
- 128 00b8 1846     		mov	r0, r3
- 129 00ba FFF7FEFF 		bl	CyDmaChSetInitialTd
- 126:..\src/main.c ****     CyDmaChEnable(DMA_Chan, 1);                                                                    
- 130              		.loc 1 126 0
- 131 00be BB79     		ldrb	r3, [r7, #6]	@ zero_extendqisi2
- 132 00c0 0121     		movs	r1, #1
- 133 00c2 1846     		mov	r0, r3
- 134 00c4 FFF7FEFF 		bl	CyDmaChEnable
- 127:..\src/main.c ****     
- 128:..\src/main.c ****     // TIMER
- 129:..\src/main.c ****     MY_TIMER_Start();           
- 135              		.loc 1 129 0
- 136 00c8 FFF7FEFF 		bl	MY_TIMER_Start
- 130:..\src/main.c ****     PACER_TIMER_Start();    
- 137              		.loc 1 130 0
- 138 00cc FFF7FEFF 		bl	PACER_TIMER_Start
- 131:..\src/main.c ****     
- 132:..\src/main.c ****     CYGlobalIntEnable;              // Enable interrupts.
- 139              		.loc 1 132 0
- 140              		.syntax unified
- 141              	@ 132 "..\src\main.c" 1
- 142 00d0 62B6     		CPSIE   i
- 143              	@ 0 "" 2
- 133:..\src/main.c ****     filt_emg[0].gain      = 50;   // Emg channels filter constant.
- 144              		.loc 1 133 0
- 145              		.thumb
- 146              		.syntax unified
- 147 00d2 2B4B     		ldr	r3, .L9+20
- 148 00d4 3222     		movs	r2, #50
- 149 00d6 5A60     		str	r2, [r3, #4]
- 134:..\src/main.c ****     filt_emg[1].gain      = 50;   // Emg channels filter constant.
- 150              		.loc 1 134 0
- 151 00d8 294B     		ldr	r3, .L9+20
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccHVTFb3.s 			page 6
+ 109 0084 0346     		mov	r3, r0
+ 110 0086 BB73     		strb	r3, [r7, #14]
+ 121:..\src/main.c ****     DMA_TD[0] = CyDmaTdAllocate();                                                                 
+ 111              		.loc 1 121 0
+ 112 0088 FFF7FEFF 		bl	CyDmaTdAllocate
+ 113 008c 0346     		mov	r3, r0
+ 114 008e 3B71     		strb	r3, [r7, #4]
+ 122:..\src/main.c ****     CyDmaTdSetConfiguration(DMA_TD[0], 2 * NUM_OF_ANALOG_INPUTS, DMA_TD[0], DMA__TD_TERMOUT_EN | TD
+ 115              		.loc 1 122 0
+ 116 0090 3879     		ldrb	r0, [r7, #4]	@ zero_extendqisi2
+ 117 0092 614B     		ldr	r3, .L10+40
+ 118 0094 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 119 0096 9BB2     		uxth	r3, r3
+ 120 0098 5B00     		lsls	r3, r3, #1
+ 121 009a 99B2     		uxth	r1, r3
+ 122 009c 3A79     		ldrb	r2, [r7, #4]	@ zero_extendqisi2
+ 123 009e 0623     		movs	r3, #6
+ 124 00a0 FFF7FEFF 		bl	CyDmaTdSetConfiguration
+ 123:..\src/main.c ****     CyDmaTdSetAddress(DMA_TD[0], LO16((uint32)ADC_DEC_SAMP_PTR), LO16((uint32)ADC_buf));           
+ 125              		.loc 1 123 0
+ 126 00a4 3B79     		ldrb	r3, [r7, #4]	@ zero_extendqisi2
+ 127 00a6 5D4A     		ldr	r2, .L10+44
+ 128 00a8 92B2     		uxth	r2, r2
+ 129 00aa 44F61061 		movw	r1, #19984
+ 130 00ae 1846     		mov	r0, r3
+ 131 00b0 FFF7FEFF 		bl	CyDmaTdSetAddress
+ 124:..\src/main.c ****     CyDmaChSetInitialTd(DMA_Chan, DMA_TD[0]);                                                      
+ 132              		.loc 1 124 0
+ 133 00b4 3A79     		ldrb	r2, [r7, #4]	@ zero_extendqisi2
+ 134 00b6 BB7B     		ldrb	r3, [r7, #14]	@ zero_extendqisi2
+ 135 00b8 1146     		mov	r1, r2
+ 136 00ba 1846     		mov	r0, r3
+ 137 00bc FFF7FEFF 		bl	CyDmaChSetInitialTd
+ 125:..\src/main.c ****     CyDmaChEnable(DMA_Chan, 1);                                                                    
+ 138              		.loc 1 125 0
+ 139 00c0 BB7B     		ldrb	r3, [r7, #14]	@ zero_extendqisi2
+ 140 00c2 0121     		movs	r1, #1
+ 141 00c4 1846     		mov	r0, r3
+ 142 00c6 FFF7FEFF 		bl	CyDmaChEnable
+ 126:..\src/main.c ****     
+ 127:..\src/main.c ****     // TIMER
+ 128:..\src/main.c ****     MY_TIMER_Start();           
+ 143              		.loc 1 128 0
+ 144 00ca FFF7FEFF 		bl	MY_TIMER_Start
+ 129:..\src/main.c ****     PACER_TIMER_Start();    
+ 145              		.loc 1 129 0
+ 146 00ce FFF7FEFF 		bl	PACER_TIMER_Start
+ 130:..\src/main.c ****     
+ 131:..\src/main.c ****     CYGlobalIntEnable;              // Enable interrupts.
+ 147              		.loc 1 131 0
+ 148              		.syntax unified
+ 149              	@ 131 "..\src\main.c" 1
+ 150 00d2 62B6     		CPSIE   i
+ 151              	@ 0 "" 2
+ 132:..\src/main.c ****     filt_emg[0].gain      = 50;   // Emg channels filter constant.
+ 152              		.loc 1 132 0
+ 153              		.thumb
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccabezqU.s 			page 6
 
 
- 152 00da 3222     		movs	r2, #50
- 153 00dc DA60     		str	r2, [r3, #12]
- 154              	.LBB2:
- 135:..\src/main.c ****     
- 136:..\src/main.c ****     for (uint8 i = 0; i < 3; i++){
- 155              		.loc 1 136 0
- 156 00de 0023     		movs	r3, #0
- 157 00e0 FB71     		strb	r3, [r7, #7]
- 158 00e2 06E0     		b	.L2
- 159              	.L3:
- 137:..\src/main.c ****         change_ext_ref_flag[i] = FALSE;
- 160              		.loc 1 137 0 discriminator 3
- 161 00e4 FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
- 162 00e6 274A     		ldr	r2, .L9+24
- 163 00e8 0021     		movs	r1, #0
- 164 00ea D154     		strb	r1, [r2, r3]
+ 154              		.syntax unified
+ 155 00d4 524B     		ldr	r3, .L10+48
+ 156 00d6 3222     		movs	r2, #50
+ 157 00d8 5A60     		str	r2, [r3, #4]
+ 133:..\src/main.c ****     filt_emg[1].gain      = 50;   // Emg channels filter constant.
+ 158              		.loc 1 133 0
+ 159 00da 514B     		ldr	r3, .L10+48
+ 160 00dc 3222     		movs	r2, #50
+ 161 00de DA60     		str	r2, [r3, #12]
+ 162              	.LBB2:
+ 134:..\src/main.c ****     
+ 135:..\src/main.c ****     for (uint8 i = 0; i < 3; i++){
+ 163              		.loc 1 135 0
+ 164 00e0 0023     		movs	r3, #0
+ 165 00e2 FB73     		strb	r3, [r7, #15]
+ 166 00e4 06E0     		b	.L2
+ 167              	.L3:
  136:..\src/main.c ****         change_ext_ref_flag[i] = FALSE;
- 165              		.loc 1 136 0 discriminator 3
- 166 00ec FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
- 167 00ee 0133     		adds	r3, r3, #1
- 168 00f0 FB71     		strb	r3, [r7, #7]
- 169              	.L2:
- 136:..\src/main.c ****         change_ext_ref_flag[i] = FALSE;
- 170              		.loc 1 136 0 is_stmt 0 discriminator 1
- 171 00f2 FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
- 172 00f4 022B     		cmp	r3, #2
- 173 00f6 F5D9     		bls	.L3
- 174              	.LBE2:
- 138:..\src/main.c ****     }
- 139:..\src/main.c ****     //---------------------------------------------------  Initialize emg structure
- 140:..\src/main.c ****     g_adc_meas.emg[0] = 0;
- 175              		.loc 1 140 0 is_stmt 1
- 176 00f8 234B     		ldr	r3, .L9+28
- 177 00fa 0022     		movs	r2, #0
- 178 00fc 1A60     		str	r2, [r3]
- 141:..\src/main.c ****     g_adc_meas.emg[1] = 0;
- 179              		.loc 1 141 0
- 180 00fe 224B     		ldr	r3, .L9+28
- 181 0100 0022     		movs	r2, #0
- 182 0102 5A60     		str	r2, [r3, #4]
- 142:..\src/main.c **** 
- 143:..\src/main.c ****     //------------------------------------------------- Initialize package on receive from RS485
- 144:..\src/main.c ****     g_rx.length = 0;
- 183              		.loc 1 144 0
- 184 0104 214B     		ldr	r3, .L9+32
- 185 0106 0022     		movs	r2, #0
- 186 0108 A3F88020 		strh	r2, [r3, #128]	@ movhi
- 145:..\src/main.c ****     g_rx.ready  = 0;
- 187              		.loc 1 145 0
- 188 010c 1F4B     		ldr	r3, .L9+32
- 189 010e 0022     		movs	r2, #0
- 190 0110 83F88420 		strb	r2, [r3, #132]
- 146:..\src/main.c ****     
- 147:..\src/main.c ****     LED_CONTROL_Write(1);     // Green
- 191              		.loc 1 147 0
- 192 0114 0120     		movs	r0, #1
- 193 0116 FFF7FEFF 		bl	LED_CONTROL_Write
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccHVTFb3.s 			page 7
+ 168              		.loc 1 136 0 discriminator 3
+ 169 00e6 FB7B     		ldrb	r3, [r7, #15]	@ zero_extendqisi2
+ 170 00e8 4E4A     		ldr	r2, .L10+52
+ 171 00ea 0021     		movs	r1, #0
+ 172 00ec D154     		strb	r1, [r2, r3]
+ 135:..\src/main.c ****         change_ext_ref_flag[i] = FALSE;
+ 173              		.loc 1 135 0 discriminator 3
+ 174 00ee FB7B     		ldrb	r3, [r7, #15]	@ zero_extendqisi2
+ 175 00f0 0133     		adds	r3, r3, #1
+ 176 00f2 FB73     		strb	r3, [r7, #15]
+ 177              	.L2:
+ 135:..\src/main.c ****         change_ext_ref_flag[i] = FALSE;
+ 178              		.loc 1 135 0 is_stmt 0 discriminator 1
+ 179 00f4 FB7B     		ldrb	r3, [r7, #15]	@ zero_extendqisi2
+ 180 00f6 022B     		cmp	r3, #2
+ 181 00f8 F5D9     		bls	.L3
+ 182              	.LBE2:
+ 137:..\src/main.c ****     }
+ 138:..\src/main.c ****     //---------------------------------------------------  Initialize emg structure
+ 139:..\src/main.c ****     g_adc_meas.emg[0] = 0;
+ 183              		.loc 1 139 0 is_stmt 1
+ 184 00fa 4B4B     		ldr	r3, .L10+56
+ 185 00fc 0022     		movs	r2, #0
+ 186 00fe 1A60     		str	r2, [r3]
+ 140:..\src/main.c ****     g_adc_meas.emg[1] = 0;
+ 187              		.loc 1 140 0
+ 188 0100 494B     		ldr	r3, .L10+56
+ 189 0102 0022     		movs	r2, #0
+ 190 0104 5A60     		str	r2, [r3, #4]
+ 141:..\src/main.c **** 
+ 142:..\src/main.c ****     //------------------------------------------------- Initialize package on receive from RS485
+ 143:..\src/main.c ****     g_rx.length = 0;
+ 191              		.loc 1 143 0
+ 192 0106 494B     		ldr	r3, .L10+60
+ 193 0108 0022     		movs	r2, #0
+ 194 010a A3F88020 		strh	r2, [r3, #128]	@ movhi
+ 144:..\src/main.c ****     g_rx.ready  = 0;
+ 195              		.loc 1 144 0
+ 196 010e 474B     		ldr	r3, .L10+60
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccabezqU.s 			page 7
 
 
- 148:..\src/main.c **** 
- 149:..\src/main.c ****     //============================================================     main loop
- 150:..\src/main.c ****     
- 151:..\src/main.c ****     // All peripherals has started, now it is ok to start communication
- 152:..\src/main.c ****     RS485_CTS_Write(0);             // Clear To Send on RS485.
- 194              		.loc 1 152 0
- 195 011a 0020     		movs	r0, #0
- 196 011c FFF7FEFF 		bl	RS485_CTS_Write
- 197              	.L8:
- 153:..\src/main.c **** 
- 154:..\src/main.c ****     for(;;)
- 155:..\src/main.c **** 
- 156:..\src/main.c ****     {         
- 157:..\src/main.c ****         // Put the FF reset pin to LOW
- 158:..\src/main.c ****         RESET_FF_Write(0x00);
- 198              		.loc 1 158 0
- 199 0120 0020     		movs	r0, #0
- 200 0122 FFF7FEFF 		bl	RESET_FF_Write
- 159:..\src/main.c **** 
- 160:..\src/main.c ****         // Call function scheduler
- 161:..\src/main.c ****         function_scheduler(); 
- 201              		.loc 1 161 0
- 202 0126 FFF7FEFF 		bl	function_scheduler
- 162:..\src/main.c **** 
- 163:..\src/main.c ****         //  Wait until the FF is set to 1
- 164:..\src/main.c ****         while(FF_STATUS_Read() == 0){
- 203              		.loc 1 164 0
- 204 012a 08E0     		b	.L4
- 205              	.L5:
- 165:..\src/main.c ****             // On interrupt from RS485
- 166:..\src/main.c ****             if (interrupt_flag){
- 206              		.loc 1 166 0
- 207 012c 184B     		ldr	r3, .L9+36
- 208 012e 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
- 209 0130 002B     		cmp	r3, #0
- 210 0132 04D0     		beq	.L4
- 167:..\src/main.c ****                 // Reset flags
- 168:..\src/main.c ****                 interrupt_flag = FALSE;
- 211              		.loc 1 168 0
- 212 0134 164B     		ldr	r3, .L9+36
- 213 0136 0022     		movs	r2, #0
- 214 0138 1A70     		strb	r2, [r3]
- 169:..\src/main.c ****                 
- 170:..\src/main.c ****                 // Manage Interrupt on rs485
- 171:..\src/main.c ****                 interrupt_manager();
- 215              		.loc 1 171 0
- 216 013a FFF7FEFF 		bl	interrupt_manager
- 217              	.L4:
- 164:..\src/main.c ****             // On interrupt from RS485
- 218              		.loc 1 164 0
- 219 013e FFF7FEFF 		bl	FF_STATUS_Read
- 220 0142 0346     		mov	r3, r0
- 221 0144 002B     		cmp	r3, #0
- 222 0146 F1D0     		beq	.L5
- 172:..\src/main.c ****             }
- 173:..\src/main.c ****         };
- 174:..\src/main.c **** 
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccHVTFb3.s 			page 8
+ 197 0110 0022     		movs	r2, #0
+ 198 0112 83F88420 		strb	r2, [r3, #132]
+ 145:..\src/main.c ****     
+ 146:..\src/main.c ****     LED_CONTROL_Write(1);     // Green
+ 199              		.loc 1 146 0
+ 200 0116 0120     		movs	r0, #1
+ 201 0118 FFF7FEFF 		bl	LED_CONTROL_Write
+ 147:..\src/main.c **** 
+ 148:..\src/main.c ****     //============================================================     main loop
+ 149:..\src/main.c ****     
+ 150:..\src/main.c ****     // All peripherals has started, now it is ok to start communication
+ 151:..\src/main.c ****     RS485_CTS_Write(0);             // Clear To Send on RS485.
+ 202              		.loc 1 151 0
+ 203 011c 0020     		movs	r0, #0
+ 204 011e FFF7FEFF 		bl	RS485_CTS_Write
+ 152:..\src/main.c ****     int a=0;
+ 205              		.loc 1 152 0
+ 206 0122 0023     		movs	r3, #0
+ 207 0124 BB60     		str	r3, [r7, #8]
+ 153:..\src/main.c ****     
+ 154:..\src/main.c ****     /*
+ 155:..\src/main.c ****     while(!Battery_level_out){
+ 156:..\src/main.c ****         Battery_level_out = Battery_flag_Read();
+ 157:..\src/main.c ****         if (interrupt_flag){
+ 158:..\src/main.c ****                 // Reset flags
+ 159:..\src/main.c ****                 interrupt_flag = FALSE;
+ 160:..\src/main.c ****                 
+ 161:..\src/main.c ****                 // Manage Interrupt on rs485
+ 162:..\src/main.c ****                 interrupt_manager();
+ 163:..\src/main.c ****             }      
+ 164:..\src/main.c ****         a = 1;
+ 165:..\src/main.c ****     };
+ 166:..\src/main.c ****     */
+ 167:..\src/main.c ****     if (a == 1){
+ 208              		.loc 1 167 0
+ 209 0126 BB68     		ldr	r3, [r7, #8]
+ 210 0128 012B     		cmp	r3, #1
+ 211 012a 38D1     		bne	.L4
+ 168:..\src/main.c ****         CyDelay(50);  // Pressure sensor has warm-up time of 20 ms
+ 212              		.loc 1 168 0
+ 213 012c 3220     		movs	r0, #50
+ 214 012e FFF7FEFF 		bl	CyDelay
+ 169:..\src/main.c ****         while(!ADC_STATUS_Read()){}
+ 215              		.loc 1 169 0
+ 216 0132 00BF     		nop
+ 217              	.L5:
+ 218              		.loc 1 169 0 is_stmt 0 discriminator 1
+ 219 0134 FFF7FEFF 		bl	ADC_STATUS_Read
+ 220 0138 0346     		mov	r3, r0
+ 221 013a 002B     		cmp	r3, #0
+ 222 013c FAD0     		beq	.L5
+ 170:..\src/main.c ****         // Read pressure in any case
+ 171:..\src/main.c ****         g_adc_meas.pressure  = (int32)(ADC_buf[0]);    //0 - 4096  
+ 223              		.loc 1 171 0 is_stmt 1
+ 224 013e 374B     		ldr	r3, .L10+44
+ 225 0140 B3F90030 		ldrsh	r3, [r3]
+ 226 0144 1846     		mov	r0, r3
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccabezqU.s 			page 8
 
 
- 175:..\src/main.c ****         // Command a FF reset
- 176:..\src/main.c ****         RESET_FF_Write(0x01);
- 223              		.loc 1 176 0
- 224 0148 0120     		movs	r0, #1
- 225 014a FFF7FEFF 		bl	RESET_FF_Write
- 177:..\src/main.c **** 
- 178:..\src/main.c ****         // Wait for FF to be reset
- 179:..\src/main.c ****         while(FF_STATUS_Read() == 1);
- 226              		.loc 1 179 0
- 227 014e 00BF     		nop
- 228              	.L6:
- 229              		.loc 1 179 0 is_stmt 0 discriminator 1
- 230 0150 FFF7FEFF 		bl	FF_STATUS_Read
- 231 0154 0346     		mov	r3, r0
- 232 0156 012B     		cmp	r3, #1
- 233 0158 FAD0     		beq	.L6
- 180:..\src/main.c **** 
- 181:..\src/main.c ****         if(UART_RS485_ReadRxStatus() & UART_RS485_RX_STS_SOFT_BUFF_OVER)
- 234              		.loc 1 181 0 is_stmt 1
- 235 015a FFF7FEFF 		bl	UART_RS485_ReadRxStatus
- 236 015e 0346     		mov	r3, r0
- 237 0160 5BB2     		sxtb	r3, r3
- 238 0162 002B     		cmp	r3, #0
- 239 0164 DCDA     		bge	.L8
- 182:..\src/main.c ****             UART_RS485_ClearRxBuffer();
- 240              		.loc 1 182 0
- 241 0166 FFF7FEFF 		bl	UART_RS485_ClearRxBuffer
- 183:..\src/main.c ****     }
- 242              		.loc 1 183 0
- 243 016a D9E7     		b	.L8
- 244              	.L10:
- 245              		.align	2
- 246              	.L9:
- 247 016c 00000000 		.word	ISR_RS485_RX_ExInterrupt
- 248 0170 00000000 		.word	ISR_CYCLES_Handler
- 249 0174 00000000 		.word	flag_master
- 250 0178 00000000 		.word	NUM_OF_ANALOG_INPUTS
- 251 017c 00000000 		.word	ADC_buf
- 252 0180 00000000 		.word	filt_emg
- 253 0184 00000000 		.word	change_ext_ref_flag
- 254 0188 00000000 		.word	g_adc_meas
- 255 018c 00000000 		.word	g_rx
- 256 0190 00000000 		.word	interrupt_flag
- 257              		.cfi_endproc
- 258              	.LFE64:
- 259              		.size	main, .-main
- 260              		.text
- 261              	.Letext0:
- 262              		.file 2 "c:\\program files (x86)\\cypress\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.
- 263              		.file 3 "c:\\program files (x86)\\cypress\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.
- 264              		.file 4 "Generated_Source\\PSoC5/cytypes.h"
- 265              		.file 5 "..\\src\\globals.h"
- 266              		.file 6 "Generated_Source\\PSoC5/core_cm3.h"
- 267              		.section	.debug_info,"",%progbits
- 268              	.Ldebug_info0:
- 269 0000 9E020000 		.4byte	0x29e
- 270 0004 0400     		.2byte	0x4
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccHVTFb3.s 			page 9
+ 227 0146 FFF7FEFF 		bl	__aeabi_i2f
+ 228 014a 0246     		mov	r2, r0
+ 229 014c 364B     		ldr	r3, .L10+56
+ 230 014e 9A60     		str	r2, [r3, #8]	@ float
+ 172:..\src/main.c ****         atm_pressure = (((g_adc_meas.pressure/4095.0 + 0.00842)/0.002421));       // P_atm in Pasca
+ 231              		.loc 1 172 0
+ 232 0150 354B     		ldr	r3, .L10+56
+ 233 0152 9B68     		ldr	r3, [r3, #8]	@ float
+ 234 0154 1846     		mov	r0, r3
+ 235 0156 FFF7FEFF 		bl	__aeabi_f2d
+ 236 015a 25A3     		adr	r3, .L10
+ 237 015c D3E90023 		ldrd	r2, [r3]
+ 238 0160 FFF7FEFF 		bl	__aeabi_ddiv
+ 239 0164 0346     		mov	r3, r0
+ 240 0166 0C46     		mov	r4, r1
+ 241 0168 1846     		mov	r0, r3
+ 242 016a 2146     		mov	r1, r4
+ 243 016c 22A3     		adr	r3, .L10+8
+ 244 016e D3E90023 		ldrd	r2, [r3]
+ 245 0172 FFF7FEFF 		bl	__aeabi_dadd
+ 246 0176 0346     		mov	r3, r0
+ 247 0178 0C46     		mov	r4, r1
+ 248 017a 1846     		mov	r0, r3
+ 249 017c 2146     		mov	r1, r4
+ 250 017e 20A3     		adr	r3, .L10+16
+ 251 0180 D3E90023 		ldrd	r2, [r3]
+ 252 0184 FFF7FEFF 		bl	__aeabi_ddiv
+ 253 0188 0346     		mov	r3, r0
+ 254 018a 0C46     		mov	r4, r1
+ 255 018c 1846     		mov	r0, r3
+ 256 018e 2146     		mov	r1, r4
+ 257 0190 FFF7FEFF 		bl	__aeabi_d2iz
+ 258 0194 0246     		mov	r2, r0
+ 259 0196 264B     		ldr	r3, .L10+64
+ 260 0198 1A60     		str	r2, [r3]
+ 173:..\src/main.c ****         a = 0;
+ 261              		.loc 1 173 0
+ 262 019a 0023     		movs	r3, #0
+ 263 019c BB60     		str	r3, [r7, #8]
+ 264              	.L4:
+ 174:..\src/main.c ****     }
+ 175:..\src/main.c ****     for(;;)
+ 176:..\src/main.c ****     {         
+ 177:..\src/main.c ****         // Put the FF reset pin to LOW
+ 178:..\src/main.c ****         RESET_FF_Write(0x00);
+ 265              		.loc 1 178 0
+ 266 019e 0020     		movs	r0, #0
+ 267 01a0 FFF7FEFF 		bl	RESET_FF_Write
+ 179:..\src/main.c ****             // Call function scheduler
+ 180:..\src/main.c ****         function_scheduler(); 
+ 268              		.loc 1 180 0
+ 269 01a4 FFF7FEFF 		bl	function_scheduler
+ 181:..\src/main.c ****      
+ 182:..\src/main.c **** 
+ 183:..\src/main.c ****         //  Wait until the FF is set to 1
+ 184:..\src/main.c ****         while(FF_STATUS_Read() == 0){
+ 270              		.loc 1 184 0
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccabezqU.s 			page 9
 
 
- 271 0006 00000000 		.4byte	.Ldebug_abbrev0
- 272 000a 04       		.byte	0x4
- 273 000b 01       		.uleb128 0x1
- 274 000c 0E000000 		.4byte	.LASF42
- 275 0010 0C       		.byte	0xc
- 276 0011 86020000 		.4byte	.LASF43
- 277 0015 38010000 		.4byte	.LASF44
- 278 0019 00000000 		.4byte	.Ldebug_ranges0+0
- 279 001d 00000000 		.4byte	0
- 280 0021 00000000 		.4byte	.Ldebug_line0
- 281 0025 02       		.uleb128 0x2
- 282 0026 01       		.byte	0x1
- 283 0027 06       		.byte	0x6
- 284 0028 94020000 		.4byte	.LASF0
- 285 002c 02       		.uleb128 0x2
- 286 002d 01       		.byte	0x1
- 287 002e 08       		.byte	0x8
- 288 002f 25010000 		.4byte	.LASF1
- 289 0033 02       		.uleb128 0x2
- 290 0034 02       		.byte	0x2
- 291 0035 05       		.byte	0x5
- 292 0036 60020000 		.4byte	.LASF2
- 293 003a 02       		.uleb128 0x2
- 294 003b 02       		.byte	0x2
- 295 003c 07       		.byte	0x7
- 296 003d A0020000 		.4byte	.LASF3
- 297 0041 03       		.uleb128 0x3
- 298 0042 D4000000 		.4byte	.LASF9
- 299 0046 02       		.byte	0x2
- 300 0047 3F       		.byte	0x3f
- 301 0048 4C000000 		.4byte	0x4c
- 302 004c 02       		.uleb128 0x2
- 303 004d 04       		.byte	0x4
- 304 004e 05       		.byte	0x5
- 305 004f 71020000 		.4byte	.LASF4
- 306 0053 02       		.uleb128 0x2
- 307 0054 04       		.byte	0x4
- 308 0055 07       		.byte	0x7
- 309 0056 D4010000 		.4byte	.LASF5
- 310 005a 02       		.uleb128 0x2
- 311 005b 08       		.byte	0x8
- 312 005c 05       		.byte	0x5
- 313 005d 4B020000 		.4byte	.LASF6
- 314 0061 02       		.uleb128 0x2
- 315 0062 08       		.byte	0x8
- 316 0063 07       		.byte	0x7
- 317 0064 0E010000 		.4byte	.LASF7
- 318 0068 04       		.uleb128 0x4
- 319 0069 04       		.byte	0x4
- 320 006a 05       		.byte	0x5
- 321 006b 696E7400 		.ascii	"int\000"
- 322 006f 02       		.uleb128 0x2
- 323 0070 04       		.byte	0x4
- 324 0071 07       		.byte	0x7
- 325 0072 0A020000 		.4byte	.LASF8
- 326 0076 03       		.uleb128 0x3
- 327 0077 2E020000 		.4byte	.LASF10
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccHVTFb3.s 			page 10
+ 271 01a8 08E0     		b	.L6
+ 272              	.L7:
+ 185:..\src/main.c ****             // On interrupt from RS485
+ 186:..\src/main.c ****             if (interrupt_flag){
+ 273              		.loc 1 186 0
+ 274 01aa 224B     		ldr	r3, .L10+68
+ 275 01ac 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 276 01ae 002B     		cmp	r3, #0
+ 277 01b0 04D0     		beq	.L6
+ 187:..\src/main.c ****                 // Reset flags
+ 188:..\src/main.c ****                 interrupt_flag = FALSE;
+ 278              		.loc 1 188 0
+ 279 01b2 204B     		ldr	r3, .L10+68
+ 280 01b4 0022     		movs	r2, #0
+ 281 01b6 1A70     		strb	r2, [r3]
+ 189:..\src/main.c ****                 
+ 190:..\src/main.c ****                 // Manage Interrupt on rs485
+ 191:..\src/main.c ****                 interrupt_manager();
+ 282              		.loc 1 191 0
+ 283 01b8 FFF7FEFF 		bl	interrupt_manager
+ 284              	.L6:
+ 184:..\src/main.c ****             // On interrupt from RS485
+ 285              		.loc 1 184 0
+ 286 01bc FFF7FEFF 		bl	FF_STATUS_Read
+ 287 01c0 0346     		mov	r3, r0
+ 288 01c2 002B     		cmp	r3, #0
+ 289 01c4 F1D0     		beq	.L7
+ 192:..\src/main.c ****             }
+ 193:..\src/main.c ****         };
+ 194:..\src/main.c **** 
+ 195:..\src/main.c ****         // Command a FF reset
+ 196:..\src/main.c ****         RESET_FF_Write(0x01);
+ 290              		.loc 1 196 0
+ 291 01c6 0120     		movs	r0, #1
+ 292 01c8 FFF7FEFF 		bl	RESET_FF_Write
+ 197:..\src/main.c **** 
+ 198:..\src/main.c ****         // Wait for FF to be reset
+ 199:..\src/main.c ****         while(FF_STATUS_Read() == 1);
+ 293              		.loc 1 199 0
+ 294 01cc 00BF     		nop
+ 295              	.L8:
+ 296              		.loc 1 199 0 is_stmt 0 discriminator 1
+ 297 01ce FFF7FEFF 		bl	FF_STATUS_Read
+ 298 01d2 0346     		mov	r3, r0
+ 299 01d4 012B     		cmp	r3, #1
+ 300 01d6 FAD0     		beq	.L8
+ 200:..\src/main.c **** 
+ 201:..\src/main.c ****         if(UART_RS485_ReadRxStatus() & UART_RS485_RX_STS_SOFT_BUFF_OVER)
+ 301              		.loc 1 201 0 is_stmt 1
+ 302 01d8 FFF7FEFF 		bl	UART_RS485_ReadRxStatus
+ 303 01dc 0346     		mov	r3, r0
+ 304 01de 5BB2     		sxtb	r3, r3
+ 305 01e0 002B     		cmp	r3, #0
+ 306 01e2 DCDA     		bge	.L4
+ 202:..\src/main.c ****             UART_RS485_ClearRxBuffer();
+ 307              		.loc 1 202 0
+ 308 01e4 FFF7FEFF 		bl	UART_RS485_ClearRxBuffer
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccabezqU.s 			page 10
 
 
- 328 007b 03       		.byte	0x3
- 329 007c 2C       		.byte	0x2c
- 330 007d 41000000 		.4byte	0x41
- 331 0081 05       		.uleb128 0x5
- 332 0082 B8010000 		.4byte	.LASF11
- 333 0086 04       		.byte	0x4
- 334 0087 E401     		.2byte	0x1e4
- 335 0089 2C000000 		.4byte	0x2c
- 336 008d 05       		.uleb128 0x5
- 337 008e EB010000 		.4byte	.LASF12
- 338 0092 04       		.byte	0x4
- 339 0093 E501     		.2byte	0x1e5
- 340 0095 3A000000 		.4byte	0x3a
- 341 0099 05       		.uleb128 0x5
- 342 009a FB010000 		.4byte	.LASF13
- 343 009e 04       		.byte	0x4
- 344 009f E601     		.2byte	0x1e6
- 345 00a1 53000000 		.4byte	0x53
- 346 00a5 05       		.uleb128 0x5
- 347 00a6 28020000 		.4byte	.LASF14
- 348 00aa 04       		.byte	0x4
- 349 00ab E801     		.2byte	0x1e8
- 350 00ad 33000000 		.4byte	0x33
- 351 00b1 05       		.uleb128 0x5
- 352 00b2 00000000 		.4byte	.LASF15
- 353 00b6 04       		.byte	0x4
- 354 00b7 E901     		.2byte	0x1e9
- 355 00b9 4C000000 		.4byte	0x4c
- 356 00bd 02       		.uleb128 0x2
- 357 00be 04       		.byte	0x4
- 358 00bf 04       		.byte	0x4
- 359 00c0 08010000 		.4byte	.LASF16
- 360 00c4 02       		.uleb128 0x2
- 361 00c5 08       		.byte	0x8
- 362 00c6 04       		.byte	0x4
- 363 00c7 F3000000 		.4byte	.LASF17
- 364 00cb 02       		.uleb128 0x2
- 365 00cc 01       		.byte	0x1
- 366 00cd 08       		.byte	0x8
- 367 00ce 23020000 		.4byte	.LASF18
- 368 00d2 05       		.uleb128 0x5
- 369 00d3 33010000 		.4byte	.LASF19
- 370 00d7 04       		.byte	0x4
- 371 00d8 8E02     		.2byte	0x28e
- 372 00da DE000000 		.4byte	0xde
- 373 00de 06       		.uleb128 0x6
- 374 00df 81000000 		.4byte	0x81
- 375 00e3 02       		.uleb128 0x2
- 376 00e4 08       		.byte	0x8
- 377 00e5 04       		.byte	0x4
- 378 00e6 7A020000 		.4byte	.LASF20
- 379 00ea 02       		.uleb128 0x2
- 380 00eb 04       		.byte	0x4
- 381 00ec 07       		.byte	0x7
- 382 00ed 36020000 		.4byte	.LASF21
- 383 00f1 07       		.uleb128 0x7
- 384 00f2 06000000 		.4byte	.LASF25
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccHVTFb3.s 			page 11
+ 203:..\src/main.c ****     }
+ 309              		.loc 1 203 0
+ 310 01e8 D9E7     		b	.L4
+ 311              	.L11:
+ 312 01ea 00BFAFF3 		.align	3
+ 312      0080
+ 313              	.L10:
+ 314 01f0 00000000 		.word	0
+ 315 01f4 00FEAF40 		.word	1085275648
+ 316 01f8 CAFD0E45 		.word	1158610378
+ 317 01fc 813E813F 		.word	1065434753
+ 318 0200 F10F5B7A 		.word	2052788209
+ 319 0204 34D5633F 		.word	1063507252
+ 320 0208 00000000 		.word	ISR_RS485_RX_ExInterrupt
+ 321 020c 00000000 		.word	ISR_CYCLES_Handler
+ 322 0210 00000000 		.word	flag_master
+ 323 0214 00000000 		.word	Battery_level_out
+ 324 0218 00000000 		.word	NUM_OF_ANALOG_INPUTS
+ 325 021c 00000000 		.word	ADC_buf
+ 326 0220 00000000 		.word	filt_emg
+ 327 0224 00000000 		.word	change_ext_ref_flag
+ 328 0228 00000000 		.word	g_adc_meas
+ 329 022c 00000000 		.word	g_rx
+ 330 0230 00000000 		.word	atm_pressure
+ 331 0234 00000000 		.word	interrupt_flag
+ 332              		.cfi_endproc
+ 333              	.LFE64:
+ 334              		.size	main, .-main
+ 335              		.text
+ 336              	.Letext0:
+ 337              		.file 2 "c:\\program files (x86)\\cypress\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.
+ 338              		.file 3 "c:\\program files (x86)\\cypress\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.
+ 339              		.file 4 "Generated_Source\\PSoC5/cytypes.h"
+ 340              		.file 5 "..\\src\\globals.h"
+ 341              		.file 6 "Generated_Source\\PSoC5/core_cm3.h"
+ 342              		.section	.debug_info,"",%progbits
+ 343              	.Ldebug_info0:
+ 344 0000 C2020000 		.4byte	0x2c2
+ 345 0004 0400     		.2byte	0x4
+ 346 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 347 000a 04       		.byte	0x4
+ 348 000b 01       		.uleb128 0x1
+ 349 000c 08000000 		.4byte	.LASF44
+ 350 0010 0C       		.byte	0xc
+ 351 0011 98020000 		.4byte	.LASF45
+ 352 0015 38010000 		.4byte	.LASF46
+ 353 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 354 001d 00000000 		.4byte	0
+ 355 0021 00000000 		.4byte	.Ldebug_line0
+ 356 0025 02       		.uleb128 0x2
+ 357 0026 01       		.byte	0x1
+ 358 0027 06       		.byte	0x6
+ 359 0028 A6020000 		.4byte	.LASF0
+ 360 002c 02       		.uleb128 0x2
+ 361 002d 01       		.byte	0x1
+ 362 002e 08       		.byte	0x8
+ 363 002f 1F010000 		.4byte	.LASF1
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccabezqU.s 			page 11
 
 
- 385 00f6 86       		.byte	0x86
- 386 00f7 05       		.byte	0x5
- 387 00f8 9B       		.byte	0x9b
- 388 00f9 2E010000 		.4byte	0x12e
- 389 00fd 08       		.uleb128 0x8
- 390 00fe 6A020000 		.4byte	.LASF22
- 391 0102 05       		.byte	0x5
- 392 0103 9C       		.byte	0x9c
- 393 0104 2E010000 		.4byte	0x12e
- 394 0108 00       		.byte	0
- 395 0109 08       		.uleb128 0x8
- 396 010a B3020000 		.4byte	.LASF23
- 397 010e 05       		.byte	0x5
- 398 010f 9D       		.byte	0x9d
- 399 0110 A5000000 		.4byte	0xa5
- 400 0114 80       		.byte	0x80
- 401 0115 09       		.uleb128 0x9
- 402 0116 696E6400 		.ascii	"ind\000"
- 403 011a 05       		.byte	0x5
- 404 011b 9E       		.byte	0x9e
- 405 011c A5000000 		.4byte	0xa5
- 406 0120 82       		.byte	0x82
- 407 0121 08       		.uleb128 0x8
- 408 0122 B2010000 		.4byte	.LASF24
- 409 0126 05       		.byte	0x5
- 410 0127 9F       		.byte	0x9f
- 411 0128 81000000 		.4byte	0x81
- 412 012c 84       		.byte	0x84
- 413 012d 00       		.byte	0
- 414 012e 0A       		.uleb128 0xa
- 415 012f 81000000 		.4byte	0x81
- 416 0133 3E010000 		.4byte	0x13e
- 417 0137 0B       		.uleb128 0xb
- 418 0138 EA000000 		.4byte	0xea
- 419 013c 7F       		.byte	0x7f
- 420 013d 00       		.byte	0
- 421 013e 0A       		.uleb128 0xa
- 422 013f 81000000 		.4byte	0x81
- 423 0143 4E010000 		.4byte	0x14e
- 424 0147 0B       		.uleb128 0xb
- 425 0148 EA000000 		.4byte	0xea
- 426 014c 00       		.byte	0
- 427 014d 00       		.byte	0
- 428 014e 07       		.uleb128 0x7
- 429 014f BA020000 		.4byte	.LASF26
- 430 0153 08       		.byte	0x8
- 431 0154 05       		.byte	0x5
- 432 0155 F5       		.byte	0xf5
- 433 0156 73010000 		.4byte	0x173
- 434 015a 08       		.uleb128 0x8
- 435 015b DE000000 		.4byte	.LASF27
- 436 015f 05       		.byte	0x5
- 437 0160 F6       		.byte	0xf6
- 438 0161 B1000000 		.4byte	0xb1
- 439 0165 00       		.byte	0
- 440 0166 08       		.uleb128 0x8
- 441 0167 FA000000 		.4byte	.LASF28
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccHVTFb3.s 			page 12
+ 364 0033 02       		.uleb128 0x2
+ 365 0034 02       		.byte	0x2
+ 366 0035 05       		.byte	0x5
+ 367 0036 72020000 		.4byte	.LASF2
+ 368 003a 02       		.uleb128 0x2
+ 369 003b 02       		.byte	0x2
+ 370 003c 07       		.byte	0x7
+ 371 003d BF020000 		.4byte	.LASF3
+ 372 0041 03       		.uleb128 0x3
+ 373 0042 CE000000 		.4byte	.LASF9
+ 374 0046 02       		.byte	0x2
+ 375 0047 3F       		.byte	0x3f
+ 376 0048 4C000000 		.4byte	0x4c
+ 377 004c 02       		.uleb128 0x2
+ 378 004d 04       		.byte	0x4
+ 379 004e 05       		.byte	0x5
+ 380 004f 83020000 		.4byte	.LASF4
+ 381 0053 02       		.uleb128 0x2
+ 382 0054 04       		.byte	0x4
+ 383 0055 07       		.byte	0x7
+ 384 0056 D4010000 		.4byte	.LASF5
+ 385 005a 02       		.uleb128 0x2
+ 386 005b 08       		.byte	0x8
+ 387 005c 05       		.byte	0x5
+ 388 005d 5D020000 		.4byte	.LASF6
+ 389 0061 02       		.uleb128 0x2
+ 390 0062 08       		.byte	0x8
+ 391 0063 07       		.byte	0x7
+ 392 0064 08010000 		.4byte	.LASF7
+ 393 0068 04       		.uleb128 0x4
+ 394 0069 04       		.byte	0x4
+ 395 006a 05       		.byte	0x5
+ 396 006b 696E7400 		.ascii	"int\000"
+ 397 006f 02       		.uleb128 0x2
+ 398 0070 04       		.byte	0x4
+ 399 0071 07       		.byte	0x7
+ 400 0072 0A020000 		.4byte	.LASF8
+ 401 0076 03       		.uleb128 0x3
+ 402 0077 40020000 		.4byte	.LASF10
+ 403 007b 03       		.byte	0x3
+ 404 007c 2C       		.byte	0x2c
+ 405 007d 41000000 		.4byte	0x41
+ 406 0081 05       		.uleb128 0x5
+ 407 0082 B8010000 		.4byte	.LASF11
+ 408 0086 04       		.byte	0x4
+ 409 0087 E401     		.2byte	0x1e4
+ 410 0089 2C000000 		.4byte	0x2c
+ 411 008d 05       		.uleb128 0x5
+ 412 008e EB010000 		.4byte	.LASF12
+ 413 0092 04       		.byte	0x4
+ 414 0093 E501     		.2byte	0x1e5
+ 415 0095 3A000000 		.4byte	0x3a
+ 416 0099 05       		.uleb128 0x5
+ 417 009a FB010000 		.4byte	.LASF13
+ 418 009e 04       		.byte	0x4
+ 419 009f E601     		.2byte	0x1e6
+ 420 00a1 53000000 		.4byte	0x53
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccabezqU.s 			page 12
 
 
- 442 016b 05       		.byte	0x5
- 443 016c F7       		.byte	0xf7
- 444 016d B1000000 		.4byte	0xb1
- 445 0171 04       		.byte	0x4
- 446 0172 00       		.byte	0
- 447 0173 0C       		.uleb128 0xc
- 448 0174 3F020000 		.4byte	.LASF29
- 449 0178 0C       		.byte	0xc
- 450 0179 05       		.byte	0x5
- 451 017a 5C01     		.2byte	0x15c
- 452 017c 9B010000 		.4byte	0x19b
- 453 0180 0D       		.uleb128 0xd
- 454 0181 656D6700 		.ascii	"emg\000"
- 455 0185 05       		.byte	0x5
- 456 0186 5D01     		.2byte	0x15d
- 457 0188 9B010000 		.4byte	0x19b
- 458 018c 00       		.byte	0
- 459 018d 0E       		.uleb128 0xe
- 460 018e FF000000 		.4byte	.LASF30
- 461 0192 05       		.byte	0x5
- 462 0193 5E01     		.2byte	0x15e
- 463 0195 BD000000 		.4byte	0xbd
- 464 0199 08       		.byte	0x8
- 465 019a 00       		.byte	0
- 466 019b 0A       		.uleb128 0xa
- 467 019c B1000000 		.4byte	0xb1
- 468 01a0 AB010000 		.4byte	0x1ab
- 469 01a4 0B       		.uleb128 0xb
- 470 01a5 EA000000 		.4byte	0xea
- 471 01a9 01       		.byte	0x1
- 472 01aa 00       		.byte	0
- 473 01ab 0F       		.uleb128 0xf
- 474 01ac E6010000 		.4byte	.LASF45
- 475 01b0 01       		.byte	0x1
- 476 01b1 48       		.byte	0x48
- 477 01b2 68000000 		.4byte	0x68
- 478 01b6 00000000 		.4byte	.LFB64
- 479 01ba 94010000 		.4byte	.LFE64-.LFB64
- 480 01be 01       		.uleb128 0x1
- 481 01bf 9C       		.byte	0x9c
- 482 01c0 00020000 		.4byte	0x200
- 483 01c4 10       		.uleb128 0x10
- 484 01c5 6A00     		.ascii	"j\000"
- 485 01c7 01       		.byte	0x1
- 486 01c8 4B       		.byte	0x4b
- 487 01c9 81000000 		.4byte	0x81
- 488 01cd 11       		.uleb128 0x11
- 489 01ce F2010000 		.4byte	.LASF31
- 490 01d2 01       		.byte	0x1
- 491 01d3 4E       		.byte	0x4e
- 492 01d4 81000000 		.4byte	0x81
- 493 01d8 02       		.uleb128 0x2
- 494 01d9 91       		.byte	0x91
- 495 01da 76       		.sleb128 -10
- 496 01db 11       		.uleb128 0x11
- 497 01dc 59020000 		.4byte	.LASF32
- 498 01e0 01       		.byte	0x1
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccHVTFb3.s 			page 13
+ 421 00a5 05       		.uleb128 0x5
+ 422 00a6 3A020000 		.4byte	.LASF14
+ 423 00aa 04       		.byte	0x4
+ 424 00ab E801     		.2byte	0x1e8
+ 425 00ad 33000000 		.4byte	0x33
+ 426 00b1 05       		.uleb128 0x5
+ 427 00b2 2D010000 		.4byte	.LASF15
+ 428 00b6 04       		.byte	0x4
+ 429 00b7 E901     		.2byte	0x1e9
+ 430 00b9 4C000000 		.4byte	0x4c
+ 431 00bd 02       		.uleb128 0x2
+ 432 00be 04       		.byte	0x4
+ 433 00bf 04       		.byte	0x4
+ 434 00c0 02010000 		.4byte	.LASF16
+ 435 00c4 02       		.uleb128 0x2
+ 436 00c5 08       		.byte	0x8
+ 437 00c6 04       		.byte	0x4
+ 438 00c7 ED000000 		.4byte	.LASF17
+ 439 00cb 02       		.uleb128 0x2
+ 440 00cc 01       		.byte	0x1
+ 441 00cd 08       		.byte	0x8
+ 442 00ce 35020000 		.4byte	.LASF18
+ 443 00d2 05       		.uleb128 0x5
+ 444 00d3 33010000 		.4byte	.LASF19
+ 445 00d7 04       		.byte	0x4
+ 446 00d8 8E02     		.2byte	0x28e
+ 447 00da DE000000 		.4byte	0xde
+ 448 00de 06       		.uleb128 0x6
+ 449 00df 81000000 		.4byte	0x81
+ 450 00e3 02       		.uleb128 0x2
+ 451 00e4 08       		.byte	0x8
+ 452 00e5 04       		.byte	0x4
+ 453 00e6 8C020000 		.4byte	.LASF20
+ 454 00ea 02       		.uleb128 0x2
+ 455 00eb 04       		.byte	0x4
+ 456 00ec 07       		.byte	0x7
+ 457 00ed 48020000 		.4byte	.LASF21
+ 458 00f1 07       		.uleb128 0x7
+ 459 00f2 00000000 		.4byte	.LASF25
+ 460 00f6 86       		.byte	0x86
+ 461 00f7 05       		.byte	0x5
+ 462 00f8 9B       		.byte	0x9b
+ 463 00f9 2E010000 		.4byte	0x12e
+ 464 00fd 08       		.uleb128 0x8
+ 465 00fe 7C020000 		.4byte	.LASF22
+ 466 0102 05       		.byte	0x5
+ 467 0103 9C       		.byte	0x9c
+ 468 0104 2E010000 		.4byte	0x12e
+ 469 0108 00       		.byte	0
+ 470 0109 08       		.uleb128 0x8
+ 471 010a D2020000 		.4byte	.LASF23
+ 472 010e 05       		.byte	0x5
+ 473 010f 9D       		.byte	0x9d
+ 474 0110 A5000000 		.4byte	0xa5
+ 475 0114 80       		.byte	0x80
+ 476 0115 09       		.uleb128 0x9
+ 477 0116 696E6400 		.ascii	"ind\000"
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccabezqU.s 			page 13
 
 
- 499 01e1 4F       		.byte	0x4f
- 500 01e2 3E010000 		.4byte	0x13e
- 501 01e6 02       		.uleb128 0x2
- 502 01e7 91       		.byte	0x91
- 503 01e8 74       		.sleb128 -12
- 504 01e9 12       		.uleb128 0x12
- 505 01ea DE000000 		.4byte	.LBB2
- 506 01ee 1A000000 		.4byte	.LBE2-.LBB2
- 507 01f2 13       		.uleb128 0x13
- 508 01f3 6900     		.ascii	"i\000"
- 509 01f5 01       		.byte	0x1
- 510 01f6 88       		.byte	0x88
- 511 01f7 81000000 		.4byte	0x81
- 512 01fb 02       		.uleb128 0x2
- 513 01fc 91       		.byte	0x91
- 514 01fd 77       		.sleb128 -9
- 515 01fe 00       		.byte	0
- 516 01ff 00       		.byte	0
- 517 0200 14       		.uleb128 0x14
- 518 0201 BE010000 		.4byte	.LASF33
- 519 0205 06       		.byte	0x6
- 520 0206 1207     		.2byte	0x712
- 521 0208 0C020000 		.4byte	0x20c
- 522 020c 06       		.uleb128 0x6
- 523 020d 76000000 		.4byte	0x76
- 524 0211 14       		.uleb128 0x14
- 525 0212 E8000000 		.4byte	.LASF34
- 526 0216 05       		.byte	0x5
- 527 0217 6D01     		.2byte	0x16d
- 528 0219 73010000 		.4byte	0x173
- 529 021d 14       		.uleb128 0x14
- 530 021e AD010000 		.4byte	.LASF35
- 531 0222 05       		.byte	0x5
- 532 0223 6601     		.2byte	0x166
- 533 0225 F1000000 		.4byte	0xf1
- 534 0229 14       		.uleb128 0x14
- 535 022a 17020000 		.4byte	.LASF36
- 536 022e 05       		.byte	0x5
- 537 022f 6901     		.2byte	0x169
- 538 0231 B1000000 		.4byte	0xb1
- 539 0235 14       		.uleb128 0x14
- 540 0236 C5000000 		.4byte	.LASF37
- 541 023a 05       		.byte	0x5
- 542 023b 6701     		.2byte	0x167
- 543 023d 81000000 		.4byte	0x81
- 544 0241 0A       		.uleb128 0xa
- 545 0242 81000000 		.4byte	0x81
- 546 0246 51020000 		.4byte	0x251
- 547 024a 0B       		.uleb128 0xb
- 548 024b EA000000 		.4byte	0xea
- 549 024f 02       		.byte	0x2
- 550 0250 00       		.byte	0
- 551 0251 14       		.uleb128 0x14
- 552 0252 9C000000 		.4byte	.LASF38
- 553 0256 05       		.byte	0x5
- 554 0257 2001     		.2byte	0x120
- 555 0259 41020000 		.4byte	0x241
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccHVTFb3.s 			page 14
+ 478 011a 05       		.byte	0x5
+ 479 011b 9E       		.byte	0x9e
+ 480 011c A5000000 		.4byte	0xa5
+ 481 0120 82       		.byte	0x82
+ 482 0121 08       		.uleb128 0x8
+ 483 0122 B2010000 		.4byte	.LASF24
+ 484 0126 05       		.byte	0x5
+ 485 0127 9F       		.byte	0x9f
+ 486 0128 81000000 		.4byte	0x81
+ 487 012c 84       		.byte	0x84
+ 488 012d 00       		.byte	0
+ 489 012e 0A       		.uleb128 0xa
+ 490 012f 81000000 		.4byte	0x81
+ 491 0133 3E010000 		.4byte	0x13e
+ 492 0137 0B       		.uleb128 0xb
+ 493 0138 EA000000 		.4byte	0xea
+ 494 013c 7F       		.byte	0x7f
+ 495 013d 00       		.byte	0
+ 496 013e 0A       		.uleb128 0xa
+ 497 013f 81000000 		.4byte	0x81
+ 498 0143 4E010000 		.4byte	0x14e
+ 499 0147 0B       		.uleb128 0xb
+ 500 0148 EA000000 		.4byte	0xea
+ 501 014c 00       		.byte	0
+ 502 014d 00       		.byte	0
+ 503 014e 07       		.uleb128 0x7
+ 504 014f D9020000 		.4byte	.LASF26
+ 505 0153 08       		.byte	0x8
+ 506 0154 05       		.byte	0x5
+ 507 0155 F5       		.byte	0xf5
+ 508 0156 73010000 		.4byte	0x173
+ 509 015a 08       		.uleb128 0x8
+ 510 015b D8000000 		.4byte	.LASF27
+ 511 015f 05       		.byte	0x5
+ 512 0160 F6       		.byte	0xf6
+ 513 0161 B1000000 		.4byte	0xb1
+ 514 0165 00       		.byte	0
+ 515 0166 08       		.uleb128 0x8
+ 516 0167 F4000000 		.4byte	.LASF28
+ 517 016b 05       		.byte	0x5
+ 518 016c F7       		.byte	0xf7
+ 519 016d B1000000 		.4byte	0xb1
+ 520 0171 04       		.byte	0x4
+ 521 0172 00       		.byte	0
+ 522 0173 0C       		.uleb128 0xc
+ 523 0174 51020000 		.4byte	.LASF29
+ 524 0178 0C       		.byte	0xc
+ 525 0179 05       		.byte	0x5
+ 526 017a 5C01     		.2byte	0x15c
+ 527 017c 9B010000 		.4byte	0x19b
+ 528 0180 0D       		.uleb128 0xd
+ 529 0181 656D6700 		.ascii	"emg\000"
+ 530 0185 05       		.byte	0x5
+ 531 0186 5D01     		.2byte	0x15d
+ 532 0188 9B010000 		.4byte	0x19b
+ 533 018c 00       		.byte	0
+ 534 018d 0E       		.uleb128 0xe
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccabezqU.s 			page 14
 
 
- 556 025d 0A       		.uleb128 0xa
- 557 025e A5000000 		.4byte	0xa5
- 558 0262 6D020000 		.4byte	0x26d
- 559 0266 0B       		.uleb128 0xb
- 560 0267 EA000000 		.4byte	0xea
- 561 026b 02       		.byte	0x2
- 562 026c 00       		.byte	0
- 563 026d 14       		.uleb128 0x14
- 564 026e 02020000 		.4byte	.LASF39
- 565 0272 05       		.byte	0x5
- 566 0273 2401     		.2byte	0x124
- 567 0275 5D020000 		.4byte	0x25d
- 568 0279 14       		.uleb128 0x14
- 569 027a B0000000 		.4byte	.LASF40
- 570 027e 05       		.byte	0x5
- 571 027f 6401     		.2byte	0x164
- 572 0281 81000000 		.4byte	0x81
- 573 0285 0A       		.uleb128 0xa
- 574 0286 4E010000 		.4byte	0x14e
- 575 028a 95020000 		.4byte	0x295
- 576 028e 0B       		.uleb128 0xb
- 577 028f EA000000 		.4byte	0xea
- 578 0293 01       		.byte	0x1
- 579 0294 00       		.byte	0
- 580 0295 14       		.uleb128 0x14
- 581 0296 CB010000 		.4byte	.LASF41
- 582 029a 05       		.byte	0x5
- 583 029b 7A01     		.2byte	0x17a
- 584 029d 85020000 		.4byte	0x285
- 585 02a1 00       		.byte	0
- 586              		.section	.debug_abbrev,"",%progbits
- 587              	.Ldebug_abbrev0:
- 588 0000 01       		.uleb128 0x1
- 589 0001 11       		.uleb128 0x11
- 590 0002 01       		.byte	0x1
- 591 0003 25       		.uleb128 0x25
- 592 0004 0E       		.uleb128 0xe
- 593 0005 13       		.uleb128 0x13
- 594 0006 0B       		.uleb128 0xb
- 595 0007 03       		.uleb128 0x3
- 596 0008 0E       		.uleb128 0xe
- 597 0009 1B       		.uleb128 0x1b
- 598 000a 0E       		.uleb128 0xe
- 599 000b 55       		.uleb128 0x55
- 600 000c 17       		.uleb128 0x17
- 601 000d 11       		.uleb128 0x11
- 602 000e 01       		.uleb128 0x1
- 603 000f 10       		.uleb128 0x10
- 604 0010 17       		.uleb128 0x17
- 605 0011 00       		.byte	0
- 606 0012 00       		.byte	0
- 607 0013 02       		.uleb128 0x2
- 608 0014 24       		.uleb128 0x24
- 609 0015 00       		.byte	0
- 610 0016 0B       		.uleb128 0xb
- 611 0017 0B       		.uleb128 0xb
- 612 0018 3E       		.uleb128 0x3e
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccHVTFb3.s 			page 15
+ 535 018e F9000000 		.4byte	.LASF30
+ 536 0192 05       		.byte	0x5
+ 537 0193 5E01     		.2byte	0x15e
+ 538 0195 BD000000 		.4byte	0xbd
+ 539 0199 08       		.byte	0x8
+ 540 019a 00       		.byte	0
+ 541 019b 0A       		.uleb128 0xa
+ 542 019c B1000000 		.4byte	0xb1
+ 543 01a0 AB010000 		.4byte	0x1ab
+ 544 01a4 0B       		.uleb128 0xb
+ 545 01a5 EA000000 		.4byte	0xea
+ 546 01a9 01       		.byte	0x1
+ 547 01aa 00       		.byte	0
+ 548 01ab 0F       		.uleb128 0xf
+ 549 01ac E6010000 		.4byte	.LASF47
+ 550 01b0 01       		.byte	0x1
+ 551 01b1 48       		.byte	0x48
+ 552 01b2 68000000 		.4byte	0x68
+ 553 01b6 00000000 		.4byte	.LFB64
+ 554 01ba 38020000 		.4byte	.LFE64-.LFB64
+ 555 01be 01       		.uleb128 0x1
+ 556 01bf 9C       		.byte	0x9c
+ 557 01c0 0C020000 		.4byte	0x20c
+ 558 01c4 10       		.uleb128 0x10
+ 559 01c5 6A00     		.ascii	"j\000"
+ 560 01c7 01       		.byte	0x1
+ 561 01c8 4B       		.byte	0x4b
+ 562 01c9 81000000 		.4byte	0x81
+ 563 01cd 11       		.uleb128 0x11
+ 564 01ce F2010000 		.4byte	.LASF31
+ 565 01d2 01       		.byte	0x1
+ 566 01d3 4E       		.byte	0x4e
+ 567 01d4 81000000 		.4byte	0x81
+ 568 01d8 02       		.uleb128 0x2
+ 569 01d9 91       		.byte	0x91
+ 570 01da 6E       		.sleb128 -18
+ 571 01db 11       		.uleb128 0x11
+ 572 01dc 6B020000 		.4byte	.LASF32
+ 573 01e0 01       		.byte	0x1
+ 574 01e1 4F       		.byte	0x4f
+ 575 01e2 3E010000 		.4byte	0x13e
+ 576 01e6 02       		.uleb128 0x2
+ 577 01e7 91       		.byte	0x91
+ 578 01e8 64       		.sleb128 -28
+ 579 01e9 12       		.uleb128 0x12
+ 580 01ea 6100     		.ascii	"a\000"
+ 581 01ec 01       		.byte	0x1
+ 582 01ed 98       		.byte	0x98
+ 583 01ee 68000000 		.4byte	0x68
+ 584 01f2 02       		.uleb128 0x2
+ 585 01f3 91       		.byte	0x91
+ 586 01f4 68       		.sleb128 -24
+ 587 01f5 13       		.uleb128 0x13
+ 588 01f6 E0000000 		.4byte	.LBB2
+ 589 01fa 1A000000 		.4byte	.LBE2-.LBB2
+ 590 01fe 12       		.uleb128 0x12
+ 591 01ff 6900     		.ascii	"i\000"
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccabezqU.s 			page 15
 
 
- 613 0019 0B       		.uleb128 0xb
- 614 001a 03       		.uleb128 0x3
- 615 001b 0E       		.uleb128 0xe
- 616 001c 00       		.byte	0
- 617 001d 00       		.byte	0
- 618 001e 03       		.uleb128 0x3
- 619 001f 16       		.uleb128 0x16
- 620 0020 00       		.byte	0
- 621 0021 03       		.uleb128 0x3
- 622 0022 0E       		.uleb128 0xe
- 623 0023 3A       		.uleb128 0x3a
- 624 0024 0B       		.uleb128 0xb
- 625 0025 3B       		.uleb128 0x3b
- 626 0026 0B       		.uleb128 0xb
- 627 0027 49       		.uleb128 0x49
- 628 0028 13       		.uleb128 0x13
- 629 0029 00       		.byte	0
- 630 002a 00       		.byte	0
- 631 002b 04       		.uleb128 0x4
- 632 002c 24       		.uleb128 0x24
- 633 002d 00       		.byte	0
- 634 002e 0B       		.uleb128 0xb
- 635 002f 0B       		.uleb128 0xb
- 636 0030 3E       		.uleb128 0x3e
- 637 0031 0B       		.uleb128 0xb
- 638 0032 03       		.uleb128 0x3
- 639 0033 08       		.uleb128 0x8
- 640 0034 00       		.byte	0
- 641 0035 00       		.byte	0
- 642 0036 05       		.uleb128 0x5
- 643 0037 16       		.uleb128 0x16
- 644 0038 00       		.byte	0
- 645 0039 03       		.uleb128 0x3
- 646 003a 0E       		.uleb128 0xe
- 647 003b 3A       		.uleb128 0x3a
- 648 003c 0B       		.uleb128 0xb
- 649 003d 3B       		.uleb128 0x3b
- 650 003e 05       		.uleb128 0x5
- 651 003f 49       		.uleb128 0x49
- 652 0040 13       		.uleb128 0x13
- 653 0041 00       		.byte	0
- 654 0042 00       		.byte	0
- 655 0043 06       		.uleb128 0x6
- 656 0044 35       		.uleb128 0x35
- 657 0045 00       		.byte	0
- 658 0046 49       		.uleb128 0x49
- 659 0047 13       		.uleb128 0x13
- 660 0048 00       		.byte	0
- 661 0049 00       		.byte	0
- 662 004a 07       		.uleb128 0x7
- 663 004b 13       		.uleb128 0x13
- 664 004c 01       		.byte	0x1
- 665 004d 03       		.uleb128 0x3
- 666 004e 0E       		.uleb128 0xe
- 667 004f 0B       		.uleb128 0xb
- 668 0050 0B       		.uleb128 0xb
- 669 0051 3A       		.uleb128 0x3a
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccHVTFb3.s 			page 16
+ 592 0201 01       		.byte	0x1
+ 593 0202 87       		.byte	0x87
+ 594 0203 81000000 		.4byte	0x81
+ 595 0207 02       		.uleb128 0x2
+ 596 0208 91       		.byte	0x91
+ 597 0209 6F       		.sleb128 -17
+ 598 020a 00       		.byte	0
+ 599 020b 00       		.byte	0
+ 600 020c 14       		.uleb128 0x14
+ 601 020d BE010000 		.4byte	.LASF33
+ 602 0211 06       		.byte	0x6
+ 603 0212 1207     		.2byte	0x712
+ 604 0214 18020000 		.4byte	0x218
+ 605 0218 06       		.uleb128 0x6
+ 606 0219 76000000 		.4byte	0x76
+ 607 021d 14       		.uleb128 0x14
+ 608 021e E2000000 		.4byte	.LASF34
+ 609 0222 05       		.byte	0x5
+ 610 0223 6D01     		.2byte	0x16d
+ 611 0225 73010000 		.4byte	0x173
+ 612 0229 14       		.uleb128 0x14
+ 613 022a AD010000 		.4byte	.LASF35
+ 614 022e 05       		.byte	0x5
+ 615 022f 6601     		.2byte	0x166
+ 616 0231 F1000000 		.4byte	0xf1
+ 617 0235 14       		.uleb128 0x14
+ 618 0236 17020000 		.4byte	.LASF36
+ 619 023a 05       		.byte	0x5
+ 620 023b 6901     		.2byte	0x169
+ 621 023d B1000000 		.4byte	0xb1
+ 622 0241 14       		.uleb128 0x14
+ 623 0242 BF000000 		.4byte	.LASF37
+ 624 0246 05       		.byte	0x5
+ 625 0247 6701     		.2byte	0x167
+ 626 0249 81000000 		.4byte	0x81
+ 627 024d 0A       		.uleb128 0xa
+ 628 024e 81000000 		.4byte	0x81
+ 629 0252 5D020000 		.4byte	0x25d
+ 630 0256 0B       		.uleb128 0xb
+ 631 0257 EA000000 		.4byte	0xea
+ 632 025b 02       		.byte	0x2
+ 633 025c 00       		.byte	0
+ 634 025d 14       		.uleb128 0x14
+ 635 025e 96000000 		.4byte	.LASF38
+ 636 0262 05       		.byte	0x5
+ 637 0263 2001     		.2byte	0x120
+ 638 0265 4D020000 		.4byte	0x24d
+ 639 0269 0A       		.uleb128 0xa
+ 640 026a A5000000 		.4byte	0xa5
+ 641 026e 79020000 		.4byte	0x279
+ 642 0272 0B       		.uleb128 0xb
+ 643 0273 EA000000 		.4byte	0xea
+ 644 0277 02       		.byte	0x2
+ 645 0278 00       		.byte	0
+ 646 0279 14       		.uleb128 0x14
+ 647 027a 02020000 		.4byte	.LASF39
+ 648 027e 05       		.byte	0x5
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccabezqU.s 			page 16
 
 
- 670 0052 0B       		.uleb128 0xb
- 671 0053 3B       		.uleb128 0x3b
- 672 0054 0B       		.uleb128 0xb
- 673 0055 01       		.uleb128 0x1
- 674 0056 13       		.uleb128 0x13
- 675 0057 00       		.byte	0
- 676 0058 00       		.byte	0
- 677 0059 08       		.uleb128 0x8
- 678 005a 0D       		.uleb128 0xd
- 679 005b 00       		.byte	0
- 680 005c 03       		.uleb128 0x3
- 681 005d 0E       		.uleb128 0xe
- 682 005e 3A       		.uleb128 0x3a
- 683 005f 0B       		.uleb128 0xb
- 684 0060 3B       		.uleb128 0x3b
- 685 0061 0B       		.uleb128 0xb
- 686 0062 49       		.uleb128 0x49
- 687 0063 13       		.uleb128 0x13
- 688 0064 38       		.uleb128 0x38
- 689 0065 0B       		.uleb128 0xb
- 690 0066 00       		.byte	0
- 691 0067 00       		.byte	0
- 692 0068 09       		.uleb128 0x9
- 693 0069 0D       		.uleb128 0xd
- 694 006a 00       		.byte	0
- 695 006b 03       		.uleb128 0x3
- 696 006c 08       		.uleb128 0x8
- 697 006d 3A       		.uleb128 0x3a
- 698 006e 0B       		.uleb128 0xb
- 699 006f 3B       		.uleb128 0x3b
- 700 0070 0B       		.uleb128 0xb
- 701 0071 49       		.uleb128 0x49
- 702 0072 13       		.uleb128 0x13
- 703 0073 38       		.uleb128 0x38
- 704 0074 0B       		.uleb128 0xb
- 705 0075 00       		.byte	0
- 706 0076 00       		.byte	0
- 707 0077 0A       		.uleb128 0xa
- 708 0078 01       		.uleb128 0x1
- 709 0079 01       		.byte	0x1
- 710 007a 49       		.uleb128 0x49
- 711 007b 13       		.uleb128 0x13
- 712 007c 01       		.uleb128 0x1
- 713 007d 13       		.uleb128 0x13
- 714 007e 00       		.byte	0
- 715 007f 00       		.byte	0
- 716 0080 0B       		.uleb128 0xb
- 717 0081 21       		.uleb128 0x21
- 718 0082 00       		.byte	0
- 719 0083 49       		.uleb128 0x49
- 720 0084 13       		.uleb128 0x13
- 721 0085 2F       		.uleb128 0x2f
- 722 0086 0B       		.uleb128 0xb
- 723 0087 00       		.byte	0
- 724 0088 00       		.byte	0
- 725 0089 0C       		.uleb128 0xc
- 726 008a 13       		.uleb128 0x13
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccHVTFb3.s 			page 17
+ 649 027f 2401     		.2byte	0x124
+ 650 0281 69020000 		.4byte	0x269
+ 651 0285 14       		.uleb128 0x14
+ 652 0286 AA000000 		.4byte	.LASF40
+ 653 028a 05       		.byte	0x5
+ 654 028b 6401     		.2byte	0x164
+ 655 028d 81000000 		.4byte	0x81
+ 656 0291 14       		.uleb128 0x14
+ 657 0292 B2020000 		.4byte	.LASF41
+ 658 0296 05       		.byte	0x5
+ 659 0297 6B01     		.2byte	0x16b
+ 660 0299 B1000000 		.4byte	0xb1
+ 661 029d 14       		.uleb128 0x14
+ 662 029e 23020000 		.4byte	.LASF42
+ 663 02a2 05       		.byte	0x5
+ 664 02a3 6B01     		.2byte	0x16b
+ 665 02a5 B1000000 		.4byte	0xb1
+ 666 02a9 0A       		.uleb128 0xa
+ 667 02aa 4E010000 		.4byte	0x14e
+ 668 02ae B9020000 		.4byte	0x2b9
+ 669 02b2 0B       		.uleb128 0xb
+ 670 02b3 EA000000 		.4byte	0xea
+ 671 02b7 01       		.byte	0x1
+ 672 02b8 00       		.byte	0
+ 673 02b9 14       		.uleb128 0x14
+ 674 02ba CB010000 		.4byte	.LASF43
+ 675 02be 05       		.byte	0x5
+ 676 02bf 7A01     		.2byte	0x17a
+ 677 02c1 A9020000 		.4byte	0x2a9
+ 678 02c5 00       		.byte	0
+ 679              		.section	.debug_abbrev,"",%progbits
+ 680              	.Ldebug_abbrev0:
+ 681 0000 01       		.uleb128 0x1
+ 682 0001 11       		.uleb128 0x11
+ 683 0002 01       		.byte	0x1
+ 684 0003 25       		.uleb128 0x25
+ 685 0004 0E       		.uleb128 0xe
+ 686 0005 13       		.uleb128 0x13
+ 687 0006 0B       		.uleb128 0xb
+ 688 0007 03       		.uleb128 0x3
+ 689 0008 0E       		.uleb128 0xe
+ 690 0009 1B       		.uleb128 0x1b
+ 691 000a 0E       		.uleb128 0xe
+ 692 000b 55       		.uleb128 0x55
+ 693 000c 17       		.uleb128 0x17
+ 694 000d 11       		.uleb128 0x11
+ 695 000e 01       		.uleb128 0x1
+ 696 000f 10       		.uleb128 0x10
+ 697 0010 17       		.uleb128 0x17
+ 698 0011 00       		.byte	0
+ 699 0012 00       		.byte	0
+ 700 0013 02       		.uleb128 0x2
+ 701 0014 24       		.uleb128 0x24
+ 702 0015 00       		.byte	0
+ 703 0016 0B       		.uleb128 0xb
+ 704 0017 0B       		.uleb128 0xb
+ 705 0018 3E       		.uleb128 0x3e
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccabezqU.s 			page 17
 
 
- 727 008b 01       		.byte	0x1
- 728 008c 03       		.uleb128 0x3
- 729 008d 0E       		.uleb128 0xe
- 730 008e 0B       		.uleb128 0xb
- 731 008f 0B       		.uleb128 0xb
- 732 0090 3A       		.uleb128 0x3a
- 733 0091 0B       		.uleb128 0xb
- 734 0092 3B       		.uleb128 0x3b
- 735 0093 05       		.uleb128 0x5
- 736 0094 01       		.uleb128 0x1
- 737 0095 13       		.uleb128 0x13
- 738 0096 00       		.byte	0
- 739 0097 00       		.byte	0
- 740 0098 0D       		.uleb128 0xd
- 741 0099 0D       		.uleb128 0xd
- 742 009a 00       		.byte	0
- 743 009b 03       		.uleb128 0x3
- 744 009c 08       		.uleb128 0x8
- 745 009d 3A       		.uleb128 0x3a
- 746 009e 0B       		.uleb128 0xb
- 747 009f 3B       		.uleb128 0x3b
- 748 00a0 05       		.uleb128 0x5
- 749 00a1 49       		.uleb128 0x49
- 750 00a2 13       		.uleb128 0x13
- 751 00a3 38       		.uleb128 0x38
- 752 00a4 0B       		.uleb128 0xb
- 753 00a5 00       		.byte	0
- 754 00a6 00       		.byte	0
- 755 00a7 0E       		.uleb128 0xe
- 756 00a8 0D       		.uleb128 0xd
- 757 00a9 00       		.byte	0
- 758 00aa 03       		.uleb128 0x3
- 759 00ab 0E       		.uleb128 0xe
- 760 00ac 3A       		.uleb128 0x3a
- 761 00ad 0B       		.uleb128 0xb
- 762 00ae 3B       		.uleb128 0x3b
- 763 00af 05       		.uleb128 0x5
- 764 00b0 49       		.uleb128 0x49
- 765 00b1 13       		.uleb128 0x13
- 766 00b2 38       		.uleb128 0x38
- 767 00b3 0B       		.uleb128 0xb
- 768 00b4 00       		.byte	0
- 769 00b5 00       		.byte	0
- 770 00b6 0F       		.uleb128 0xf
- 771 00b7 2E       		.uleb128 0x2e
- 772 00b8 01       		.byte	0x1
- 773 00b9 3F       		.uleb128 0x3f
- 774 00ba 19       		.uleb128 0x19
- 775 00bb 03       		.uleb128 0x3
- 776 00bc 0E       		.uleb128 0xe
- 777 00bd 3A       		.uleb128 0x3a
- 778 00be 0B       		.uleb128 0xb
- 779 00bf 3B       		.uleb128 0x3b
- 780 00c0 0B       		.uleb128 0xb
- 781 00c1 49       		.uleb128 0x49
- 782 00c2 13       		.uleb128 0x13
- 783 00c3 11       		.uleb128 0x11
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccHVTFb3.s 			page 18
+ 706 0019 0B       		.uleb128 0xb
+ 707 001a 03       		.uleb128 0x3
+ 708 001b 0E       		.uleb128 0xe
+ 709 001c 00       		.byte	0
+ 710 001d 00       		.byte	0
+ 711 001e 03       		.uleb128 0x3
+ 712 001f 16       		.uleb128 0x16
+ 713 0020 00       		.byte	0
+ 714 0021 03       		.uleb128 0x3
+ 715 0022 0E       		.uleb128 0xe
+ 716 0023 3A       		.uleb128 0x3a
+ 717 0024 0B       		.uleb128 0xb
+ 718 0025 3B       		.uleb128 0x3b
+ 719 0026 0B       		.uleb128 0xb
+ 720 0027 49       		.uleb128 0x49
+ 721 0028 13       		.uleb128 0x13
+ 722 0029 00       		.byte	0
+ 723 002a 00       		.byte	0
+ 724 002b 04       		.uleb128 0x4
+ 725 002c 24       		.uleb128 0x24
+ 726 002d 00       		.byte	0
+ 727 002e 0B       		.uleb128 0xb
+ 728 002f 0B       		.uleb128 0xb
+ 729 0030 3E       		.uleb128 0x3e
+ 730 0031 0B       		.uleb128 0xb
+ 731 0032 03       		.uleb128 0x3
+ 732 0033 08       		.uleb128 0x8
+ 733 0034 00       		.byte	0
+ 734 0035 00       		.byte	0
+ 735 0036 05       		.uleb128 0x5
+ 736 0037 16       		.uleb128 0x16
+ 737 0038 00       		.byte	0
+ 738 0039 03       		.uleb128 0x3
+ 739 003a 0E       		.uleb128 0xe
+ 740 003b 3A       		.uleb128 0x3a
+ 741 003c 0B       		.uleb128 0xb
+ 742 003d 3B       		.uleb128 0x3b
+ 743 003e 05       		.uleb128 0x5
+ 744 003f 49       		.uleb128 0x49
+ 745 0040 13       		.uleb128 0x13
+ 746 0041 00       		.byte	0
+ 747 0042 00       		.byte	0
+ 748 0043 06       		.uleb128 0x6
+ 749 0044 35       		.uleb128 0x35
+ 750 0045 00       		.byte	0
+ 751 0046 49       		.uleb128 0x49
+ 752 0047 13       		.uleb128 0x13
+ 753 0048 00       		.byte	0
+ 754 0049 00       		.byte	0
+ 755 004a 07       		.uleb128 0x7
+ 756 004b 13       		.uleb128 0x13
+ 757 004c 01       		.byte	0x1
+ 758 004d 03       		.uleb128 0x3
+ 759 004e 0E       		.uleb128 0xe
+ 760 004f 0B       		.uleb128 0xb
+ 761 0050 0B       		.uleb128 0xb
+ 762 0051 3A       		.uleb128 0x3a
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccabezqU.s 			page 18
 
 
- 784 00c4 01       		.uleb128 0x1
- 785 00c5 12       		.uleb128 0x12
- 786 00c6 06       		.uleb128 0x6
- 787 00c7 40       		.uleb128 0x40
- 788 00c8 18       		.uleb128 0x18
- 789 00c9 9642     		.uleb128 0x2116
- 790 00cb 19       		.uleb128 0x19
- 791 00cc 01       		.uleb128 0x1
- 792 00cd 13       		.uleb128 0x13
- 793 00ce 00       		.byte	0
- 794 00cf 00       		.byte	0
- 795 00d0 10       		.uleb128 0x10
- 796 00d1 34       		.uleb128 0x34
- 797 00d2 00       		.byte	0
- 798 00d3 03       		.uleb128 0x3
- 799 00d4 08       		.uleb128 0x8
- 800 00d5 3A       		.uleb128 0x3a
- 801 00d6 0B       		.uleb128 0xb
- 802 00d7 3B       		.uleb128 0x3b
- 803 00d8 0B       		.uleb128 0xb
- 804 00d9 49       		.uleb128 0x49
- 805 00da 13       		.uleb128 0x13
- 806 00db 00       		.byte	0
- 807 00dc 00       		.byte	0
- 808 00dd 11       		.uleb128 0x11
- 809 00de 34       		.uleb128 0x34
- 810 00df 00       		.byte	0
- 811 00e0 03       		.uleb128 0x3
- 812 00e1 0E       		.uleb128 0xe
- 813 00e2 3A       		.uleb128 0x3a
- 814 00e3 0B       		.uleb128 0xb
- 815 00e4 3B       		.uleb128 0x3b
- 816 00e5 0B       		.uleb128 0xb
- 817 00e6 49       		.uleb128 0x49
- 818 00e7 13       		.uleb128 0x13
- 819 00e8 02       		.uleb128 0x2
- 820 00e9 18       		.uleb128 0x18
- 821 00ea 00       		.byte	0
- 822 00eb 00       		.byte	0
- 823 00ec 12       		.uleb128 0x12
- 824 00ed 0B       		.uleb128 0xb
- 825 00ee 01       		.byte	0x1
- 826 00ef 11       		.uleb128 0x11
- 827 00f0 01       		.uleb128 0x1
- 828 00f1 12       		.uleb128 0x12
- 829 00f2 06       		.uleb128 0x6
- 830 00f3 00       		.byte	0
- 831 00f4 00       		.byte	0
- 832 00f5 13       		.uleb128 0x13
- 833 00f6 34       		.uleb128 0x34
- 834 00f7 00       		.byte	0
- 835 00f8 03       		.uleb128 0x3
- 836 00f9 08       		.uleb128 0x8
- 837 00fa 3A       		.uleb128 0x3a
- 838 00fb 0B       		.uleb128 0xb
- 839 00fc 3B       		.uleb128 0x3b
- 840 00fd 0B       		.uleb128 0xb
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccHVTFb3.s 			page 19
+ 763 0052 0B       		.uleb128 0xb
+ 764 0053 3B       		.uleb128 0x3b
+ 765 0054 0B       		.uleb128 0xb
+ 766 0055 01       		.uleb128 0x1
+ 767 0056 13       		.uleb128 0x13
+ 768 0057 00       		.byte	0
+ 769 0058 00       		.byte	0
+ 770 0059 08       		.uleb128 0x8
+ 771 005a 0D       		.uleb128 0xd
+ 772 005b 00       		.byte	0
+ 773 005c 03       		.uleb128 0x3
+ 774 005d 0E       		.uleb128 0xe
+ 775 005e 3A       		.uleb128 0x3a
+ 776 005f 0B       		.uleb128 0xb
+ 777 0060 3B       		.uleb128 0x3b
+ 778 0061 0B       		.uleb128 0xb
+ 779 0062 49       		.uleb128 0x49
+ 780 0063 13       		.uleb128 0x13
+ 781 0064 38       		.uleb128 0x38
+ 782 0065 0B       		.uleb128 0xb
+ 783 0066 00       		.byte	0
+ 784 0067 00       		.byte	0
+ 785 0068 09       		.uleb128 0x9
+ 786 0069 0D       		.uleb128 0xd
+ 787 006a 00       		.byte	0
+ 788 006b 03       		.uleb128 0x3
+ 789 006c 08       		.uleb128 0x8
+ 790 006d 3A       		.uleb128 0x3a
+ 791 006e 0B       		.uleb128 0xb
+ 792 006f 3B       		.uleb128 0x3b
+ 793 0070 0B       		.uleb128 0xb
+ 794 0071 49       		.uleb128 0x49
+ 795 0072 13       		.uleb128 0x13
+ 796 0073 38       		.uleb128 0x38
+ 797 0074 0B       		.uleb128 0xb
+ 798 0075 00       		.byte	0
+ 799 0076 00       		.byte	0
+ 800 0077 0A       		.uleb128 0xa
+ 801 0078 01       		.uleb128 0x1
+ 802 0079 01       		.byte	0x1
+ 803 007a 49       		.uleb128 0x49
+ 804 007b 13       		.uleb128 0x13
+ 805 007c 01       		.uleb128 0x1
+ 806 007d 13       		.uleb128 0x13
+ 807 007e 00       		.byte	0
+ 808 007f 00       		.byte	0
+ 809 0080 0B       		.uleb128 0xb
+ 810 0081 21       		.uleb128 0x21
+ 811 0082 00       		.byte	0
+ 812 0083 49       		.uleb128 0x49
+ 813 0084 13       		.uleb128 0x13
+ 814 0085 2F       		.uleb128 0x2f
+ 815 0086 0B       		.uleb128 0xb
+ 816 0087 00       		.byte	0
+ 817 0088 00       		.byte	0
+ 818 0089 0C       		.uleb128 0xc
+ 819 008a 13       		.uleb128 0x13
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccabezqU.s 			page 19
 
 
- 841 00fe 49       		.uleb128 0x49
- 842 00ff 13       		.uleb128 0x13
- 843 0100 02       		.uleb128 0x2
- 844 0101 18       		.uleb128 0x18
- 845 0102 00       		.byte	0
- 846 0103 00       		.byte	0
- 847 0104 14       		.uleb128 0x14
- 848 0105 34       		.uleb128 0x34
- 849 0106 00       		.byte	0
- 850 0107 03       		.uleb128 0x3
- 851 0108 0E       		.uleb128 0xe
- 852 0109 3A       		.uleb128 0x3a
- 853 010a 0B       		.uleb128 0xb
- 854 010b 3B       		.uleb128 0x3b
- 855 010c 05       		.uleb128 0x5
- 856 010d 49       		.uleb128 0x49
- 857 010e 13       		.uleb128 0x13
- 858 010f 3F       		.uleb128 0x3f
- 859 0110 19       		.uleb128 0x19
- 860 0111 3C       		.uleb128 0x3c
- 861 0112 19       		.uleb128 0x19
- 862 0113 00       		.byte	0
- 863 0114 00       		.byte	0
- 864 0115 00       		.byte	0
- 865              		.section	.debug_aranges,"",%progbits
- 866 0000 1C000000 		.4byte	0x1c
- 867 0004 0200     		.2byte	0x2
- 868 0006 00000000 		.4byte	.Ldebug_info0
- 869 000a 04       		.byte	0x4
- 870 000b 00       		.byte	0
- 871 000c 0000     		.2byte	0
- 872 000e 0000     		.2byte	0
- 873 0010 00000000 		.4byte	.LFB64
- 874 0014 94010000 		.4byte	.LFE64-.LFB64
- 875 0018 00000000 		.4byte	0
- 876 001c 00000000 		.4byte	0
- 877              		.section	.debug_ranges,"",%progbits
- 878              	.Ldebug_ranges0:
- 879 0000 00000000 		.4byte	.LFB64
- 880 0004 94010000 		.4byte	.LFE64
- 881 0008 00000000 		.4byte	0
- 882 000c 00000000 		.4byte	0
- 883              		.section	.debug_line,"",%progbits
- 884              	.Ldebug_line0:
- 885 0000 C8010000 		.section	.debug_str,"MS",%progbits,1
- 885      02006001 
- 885      00000201 
- 885      FB0E0D00 
- 885      01010101 
- 886              	.LASF15:
- 887 0000 696E7433 		.ascii	"int32\000"
- 887      3200
- 888              	.LASF25:
- 889 0006 73745F64 		.ascii	"st_data\000"
- 889      61746100 
- 890              	.LASF42:
- 891 000e 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccHVTFb3.s 			page 20
+ 820 008b 01       		.byte	0x1
+ 821 008c 03       		.uleb128 0x3
+ 822 008d 0E       		.uleb128 0xe
+ 823 008e 0B       		.uleb128 0xb
+ 824 008f 0B       		.uleb128 0xb
+ 825 0090 3A       		.uleb128 0x3a
+ 826 0091 0B       		.uleb128 0xb
+ 827 0092 3B       		.uleb128 0x3b
+ 828 0093 05       		.uleb128 0x5
+ 829 0094 01       		.uleb128 0x1
+ 830 0095 13       		.uleb128 0x13
+ 831 0096 00       		.byte	0
+ 832 0097 00       		.byte	0
+ 833 0098 0D       		.uleb128 0xd
+ 834 0099 0D       		.uleb128 0xd
+ 835 009a 00       		.byte	0
+ 836 009b 03       		.uleb128 0x3
+ 837 009c 08       		.uleb128 0x8
+ 838 009d 3A       		.uleb128 0x3a
+ 839 009e 0B       		.uleb128 0xb
+ 840 009f 3B       		.uleb128 0x3b
+ 841 00a0 05       		.uleb128 0x5
+ 842 00a1 49       		.uleb128 0x49
+ 843 00a2 13       		.uleb128 0x13
+ 844 00a3 38       		.uleb128 0x38
+ 845 00a4 0B       		.uleb128 0xb
+ 846 00a5 00       		.byte	0
+ 847 00a6 00       		.byte	0
+ 848 00a7 0E       		.uleb128 0xe
+ 849 00a8 0D       		.uleb128 0xd
+ 850 00a9 00       		.byte	0
+ 851 00aa 03       		.uleb128 0x3
+ 852 00ab 0E       		.uleb128 0xe
+ 853 00ac 3A       		.uleb128 0x3a
+ 854 00ad 0B       		.uleb128 0xb
+ 855 00ae 3B       		.uleb128 0x3b
+ 856 00af 05       		.uleb128 0x5
+ 857 00b0 49       		.uleb128 0x49
+ 858 00b1 13       		.uleb128 0x13
+ 859 00b2 38       		.uleb128 0x38
+ 860 00b3 0B       		.uleb128 0xb
+ 861 00b4 00       		.byte	0
+ 862 00b5 00       		.byte	0
+ 863 00b6 0F       		.uleb128 0xf
+ 864 00b7 2E       		.uleb128 0x2e
+ 865 00b8 01       		.byte	0x1
+ 866 00b9 3F       		.uleb128 0x3f
+ 867 00ba 19       		.uleb128 0x19
+ 868 00bb 03       		.uleb128 0x3
+ 869 00bc 0E       		.uleb128 0xe
+ 870 00bd 3A       		.uleb128 0x3a
+ 871 00be 0B       		.uleb128 0xb
+ 872 00bf 3B       		.uleb128 0x3b
+ 873 00c0 0B       		.uleb128 0xb
+ 874 00c1 49       		.uleb128 0x49
+ 875 00c2 13       		.uleb128 0x13
+ 876 00c3 11       		.uleb128 0x11
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccabezqU.s 			page 20
 
 
- 891      43313120 
- 891      352E342E 
- 891      31203230 
- 891      31363036 
- 892 0041 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
- 892      20726576 
- 892      6973696F 
- 892      6E203233 
- 892      37373135 
- 893 0074 30202D66 		.ascii	"0 -ffunction-sections -ffat-lto-objects\000"
- 893      66756E63 
- 893      74696F6E 
- 893      2D736563 
- 893      74696F6E 
- 894              	.LASF38:
- 895 009c 6368616E 		.ascii	"change_ext_ref_flag\000"
- 895      67655F65 
- 895      78745F72 
- 895      65665F66 
- 895      6C616700 
- 896              	.LASF40:
- 897 00b0 4E554D5F 		.ascii	"NUM_OF_ANALOG_INPUTS\000"
- 897      4F465F41 
- 897      4E414C4F 
- 897      475F494E 
- 897      50555453 
- 898              	.LASF37:
- 899 00c5 696E7465 		.ascii	"interrupt_flag\000"
- 899      72727570 
- 899      745F666C 
- 899      616700
- 900              	.LASF9:
- 901 00d4 5F5F696E 		.ascii	"__int32_t\000"
- 901      7433325F 
- 901      7400
- 902              	.LASF27:
- 903 00de 6F6C645F 		.ascii	"old_value\000"
- 903      76616C75 
- 903      6500
- 904              	.LASF34:
- 905 00e8 675F6164 		.ascii	"g_adc_meas\000"
- 905      635F6D65 
- 905      617300
- 906              	.LASF17:
- 907 00f3 646F7562 		.ascii	"double\000"
- 907      6C6500
- 908              	.LASF28:
- 909 00fa 6761696E 		.ascii	"gain\000"
- 909      00
- 910              	.LASF30:
- 911 00ff 70726573 		.ascii	"pressure\000"
- 911      73757265 
- 911      00
- 912              	.LASF16:
- 913 0108 666C6F61 		.ascii	"float\000"
- 913      7400
- 914              	.LASF7:
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccHVTFb3.s 			page 21
+ 877 00c4 01       		.uleb128 0x1
+ 878 00c5 12       		.uleb128 0x12
+ 879 00c6 06       		.uleb128 0x6
+ 880 00c7 40       		.uleb128 0x40
+ 881 00c8 18       		.uleb128 0x18
+ 882 00c9 9642     		.uleb128 0x2116
+ 883 00cb 19       		.uleb128 0x19
+ 884 00cc 01       		.uleb128 0x1
+ 885 00cd 13       		.uleb128 0x13
+ 886 00ce 00       		.byte	0
+ 887 00cf 00       		.byte	0
+ 888 00d0 10       		.uleb128 0x10
+ 889 00d1 34       		.uleb128 0x34
+ 890 00d2 00       		.byte	0
+ 891 00d3 03       		.uleb128 0x3
+ 892 00d4 08       		.uleb128 0x8
+ 893 00d5 3A       		.uleb128 0x3a
+ 894 00d6 0B       		.uleb128 0xb
+ 895 00d7 3B       		.uleb128 0x3b
+ 896 00d8 0B       		.uleb128 0xb
+ 897 00d9 49       		.uleb128 0x49
+ 898 00da 13       		.uleb128 0x13
+ 899 00db 00       		.byte	0
+ 900 00dc 00       		.byte	0
+ 901 00dd 11       		.uleb128 0x11
+ 902 00de 34       		.uleb128 0x34
+ 903 00df 00       		.byte	0
+ 904 00e0 03       		.uleb128 0x3
+ 905 00e1 0E       		.uleb128 0xe
+ 906 00e2 3A       		.uleb128 0x3a
+ 907 00e3 0B       		.uleb128 0xb
+ 908 00e4 3B       		.uleb128 0x3b
+ 909 00e5 0B       		.uleb128 0xb
+ 910 00e6 49       		.uleb128 0x49
+ 911 00e7 13       		.uleb128 0x13
+ 912 00e8 02       		.uleb128 0x2
+ 913 00e9 18       		.uleb128 0x18
+ 914 00ea 00       		.byte	0
+ 915 00eb 00       		.byte	0
+ 916 00ec 12       		.uleb128 0x12
+ 917 00ed 34       		.uleb128 0x34
+ 918 00ee 00       		.byte	0
+ 919 00ef 03       		.uleb128 0x3
+ 920 00f0 08       		.uleb128 0x8
+ 921 00f1 3A       		.uleb128 0x3a
+ 922 00f2 0B       		.uleb128 0xb
+ 923 00f3 3B       		.uleb128 0x3b
+ 924 00f4 0B       		.uleb128 0xb
+ 925 00f5 49       		.uleb128 0x49
+ 926 00f6 13       		.uleb128 0x13
+ 927 00f7 02       		.uleb128 0x2
+ 928 00f8 18       		.uleb128 0x18
+ 929 00f9 00       		.byte	0
+ 930 00fa 00       		.byte	0
+ 931 00fb 13       		.uleb128 0x13
+ 932 00fc 0B       		.uleb128 0xb
+ 933 00fd 01       		.byte	0x1
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccabezqU.s 			page 21
 
 
- 915 010e 6C6F6E67 		.ascii	"long long unsigned int\000"
- 915      206C6F6E 
- 915      6720756E 
- 915      7369676E 
- 915      65642069 
- 916              	.LASF1:
- 917 0125 756E7369 		.ascii	"unsigned char\000"
- 917      676E6564 
- 917      20636861 
- 917      7200
- 918              	.LASF19:
- 919 0133 72656738 		.ascii	"reg8\000"
- 919      00
- 920              	.LASF44:
- 921 0138 433A5C55 		.ascii	"C:\\Users\\mgnocco\\Documents\\Git\\PSoC5\\PSoC5_FW"
- 921      73657273 
- 921      5C6D676E 
- 921      6F63636F 
- 921      5C446F63 
- 922 0165 5F574953 		.ascii	"_WISH_VIBES\\FW_WearableHealtySubj - WISH+Dayton\\W"
- 922      485F5649 
- 922      4245535C 
- 922      46575F57 
- 922      65617261 
- 923 0196 4953485F 		.ascii	"ISH_VIBES_Socket.cydsn\000"
- 923      56494245 
- 923      535F536F 
- 923      636B6574 
- 923      2E637964 
- 924              	.LASF35:
- 925 01ad 675F7278 		.ascii	"g_rx\000"
- 925      00
- 926              	.LASF24:
- 927 01b2 72656164 		.ascii	"ready\000"
- 927      7900
- 928              	.LASF11:
- 929 01b8 75696E74 		.ascii	"uint8\000"
- 929      3800
- 930              	.LASF33:
- 931 01be 49544D5F 		.ascii	"ITM_RxBuffer\000"
- 931      52784275 
- 931      66666572 
- 931      00
- 932              	.LASF41:
- 933 01cb 66696C74 		.ascii	"filt_emg\000"
- 933      5F656D67 
- 933      00
- 934              	.LASF5:
- 935 01d4 6C6F6E67 		.ascii	"long unsigned int\000"
- 935      20756E73 
- 935      69676E65 
- 935      6420696E 
- 935      7400
- 936              	.LASF45:
- 937 01e6 6D61696E 		.ascii	"main\000"
- 937      00
- 938              	.LASF12:
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccHVTFb3.s 			page 22
+ 934 00fe 11       		.uleb128 0x11
+ 935 00ff 01       		.uleb128 0x1
+ 936 0100 12       		.uleb128 0x12
+ 937 0101 06       		.uleb128 0x6
+ 938 0102 00       		.byte	0
+ 939 0103 00       		.byte	0
+ 940 0104 14       		.uleb128 0x14
+ 941 0105 34       		.uleb128 0x34
+ 942 0106 00       		.byte	0
+ 943 0107 03       		.uleb128 0x3
+ 944 0108 0E       		.uleb128 0xe
+ 945 0109 3A       		.uleb128 0x3a
+ 946 010a 0B       		.uleb128 0xb
+ 947 010b 3B       		.uleb128 0x3b
+ 948 010c 05       		.uleb128 0x5
+ 949 010d 49       		.uleb128 0x49
+ 950 010e 13       		.uleb128 0x13
+ 951 010f 3F       		.uleb128 0x3f
+ 952 0110 19       		.uleb128 0x19
+ 953 0111 3C       		.uleb128 0x3c
+ 954 0112 19       		.uleb128 0x19
+ 955 0113 00       		.byte	0
+ 956 0114 00       		.byte	0
+ 957 0115 00       		.byte	0
+ 958              		.section	.debug_aranges,"",%progbits
+ 959 0000 1C000000 		.4byte	0x1c
+ 960 0004 0200     		.2byte	0x2
+ 961 0006 00000000 		.4byte	.Ldebug_info0
+ 962 000a 04       		.byte	0x4
+ 963 000b 00       		.byte	0
+ 964 000c 0000     		.2byte	0
+ 965 000e 0000     		.2byte	0
+ 966 0010 00000000 		.4byte	.LFB64
+ 967 0014 38020000 		.4byte	.LFE64-.LFB64
+ 968 0018 00000000 		.4byte	0
+ 969 001c 00000000 		.4byte	0
+ 970              		.section	.debug_ranges,"",%progbits
+ 971              	.Ldebug_ranges0:
+ 972 0000 00000000 		.4byte	.LFB64
+ 973 0004 38020000 		.4byte	.LFE64
+ 974 0008 00000000 		.4byte	0
+ 975 000c 00000000 		.4byte	0
+ 976              		.section	.debug_line,"",%progbits
+ 977              	.Ldebug_line0:
+ 978 0000 DA010000 		.section	.debug_str,"MS",%progbits,1
+ 978      02006001 
+ 978      00000201 
+ 978      FB0E0D00 
+ 978      01010101 
+ 979              	.LASF25:
+ 980 0000 73745F64 		.ascii	"st_data\000"
+ 980      61746100 
+ 981              	.LASF44:
+ 982 0008 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 982      43313120 
+ 982      352E342E 
+ 982      31203230 
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccabezqU.s 			page 22
 
 
- 939 01eb 75696E74 		.ascii	"uint16\000"
- 939      313600
- 940              	.LASF31:
- 941 01f2 444D415F 		.ascii	"DMA_Chan\000"
- 941      4368616E 
- 941      00
- 942              	.LASF13:
- 943 01fb 75696E74 		.ascii	"uint32\000"
- 943      333200
- 944              	.LASF39:
- 945 0202 4144435F 		.ascii	"ADC_buf\000"
- 945      62756600 
- 946              	.LASF8:
- 947 020a 756E7369 		.ascii	"unsigned int\000"
- 947      676E6564 
- 947      20696E74 
- 947      00
- 948              	.LASF36:
- 949 0217 666C6167 		.ascii	"flag_master\000"
- 949      5F6D6173 
- 949      74657200 
- 950              	.LASF18:
- 951 0223 63686172 		.ascii	"char\000"
- 951      00
- 952              	.LASF14:
- 953 0228 696E7431 		.ascii	"int16\000"
- 953      3600
- 954              	.LASF10:
- 955 022e 696E7433 		.ascii	"int32_t\000"
- 955      325F7400 
- 956              	.LASF21:
- 957 0236 73697A65 		.ascii	"sizetype\000"
- 957      74797065 
- 957      00
- 958              	.LASF29:
- 959 023f 73745F61 		.ascii	"st_adc_meas\000"
- 959      64635F6D 
- 959      65617300 
- 960              	.LASF6:
- 961 024b 6C6F6E67 		.ascii	"long long int\000"
- 961      206C6F6E 
- 961      6720696E 
- 961      7400
- 962              	.LASF32:
- 963 0259 444D415F 		.ascii	"DMA_TD\000"
- 963      544400
- 964              	.LASF2:
- 965 0260 73686F72 		.ascii	"short int\000"
- 965      7420696E 
- 965      7400
- 966              	.LASF22:
- 967 026a 62756666 		.ascii	"buffer\000"
- 967      657200
- 968              	.LASF4:
- 969 0271 6C6F6E67 		.ascii	"long int\000"
- 969      20696E74 
- 969      00
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccHVTFb3.s 			page 23
+ 982      31363036 
+ 983 003b 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
+ 983      20726576 
+ 983      6973696F 
+ 983      6E203233 
+ 983      37373135 
+ 984 006e 30202D66 		.ascii	"0 -ffunction-sections -ffat-lto-objects\000"
+ 984      66756E63 
+ 984      74696F6E 
+ 984      2D736563 
+ 984      74696F6E 
+ 985              	.LASF38:
+ 986 0096 6368616E 		.ascii	"change_ext_ref_flag\000"
+ 986      67655F65 
+ 986      78745F72 
+ 986      65665F66 
+ 986      6C616700 
+ 987              	.LASF40:
+ 988 00aa 4E554D5F 		.ascii	"NUM_OF_ANALOG_INPUTS\000"
+ 988      4F465F41 
+ 988      4E414C4F 
+ 988      475F494E 
+ 988      50555453 
+ 989              	.LASF37:
+ 990 00bf 696E7465 		.ascii	"interrupt_flag\000"
+ 990      72727570 
+ 990      745F666C 
+ 990      616700
+ 991              	.LASF9:
+ 992 00ce 5F5F696E 		.ascii	"__int32_t\000"
+ 992      7433325F 
+ 992      7400
+ 993              	.LASF27:
+ 994 00d8 6F6C645F 		.ascii	"old_value\000"
+ 994      76616C75 
+ 994      6500
+ 995              	.LASF34:
+ 996 00e2 675F6164 		.ascii	"g_adc_meas\000"
+ 996      635F6D65 
+ 996      617300
+ 997              	.LASF17:
+ 998 00ed 646F7562 		.ascii	"double\000"
+ 998      6C6500
+ 999              	.LASF28:
+ 1000 00f4 6761696E 		.ascii	"gain\000"
+ 1000      00
+ 1001              	.LASF30:
+ 1002 00f9 70726573 		.ascii	"pressure\000"
+ 1002      73757265 
+ 1002      00
+ 1003              	.LASF16:
+ 1004 0102 666C6F61 		.ascii	"float\000"
+ 1004      7400
+ 1005              	.LASF7:
+ 1006 0108 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1006      206C6F6E 
+ 1006      6720756E 
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccabezqU.s 			page 23
 
 
- 970              	.LASF20:
- 971 027a 6C6F6E67 		.ascii	"long double\000"
- 971      20646F75 
- 971      626C6500 
- 972              	.LASF43:
- 973 0286 2E2E5C73 		.ascii	"..\\src\\main.c\000"
- 973      72635C6D 
- 973      61696E2E 
- 973      6300
- 974              	.LASF0:
- 975 0294 7369676E 		.ascii	"signed char\000"
- 975      65642063 
- 975      68617200 
- 976              	.LASF3:
- 977 02a0 73686F72 		.ascii	"short unsigned int\000"
- 977      7420756E 
- 977      7369676E 
- 977      65642069 
- 977      6E7400
- 978              	.LASF23:
- 979 02b3 6C656E67 		.ascii	"length\000"
- 979      746800
- 980              	.LASF26:
- 981 02ba 73745F66 		.ascii	"st_filter\000"
- 981      696C7465 
- 981      7200
- 982              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran
+ 1006      7369676E 
+ 1006      65642069 
+ 1007              	.LASF1:
+ 1008 011f 756E7369 		.ascii	"unsigned char\000"
+ 1008      676E6564 
+ 1008      20636861 
+ 1008      7200
+ 1009              	.LASF15:
+ 1010 012d 696E7433 		.ascii	"int32\000"
+ 1010      3200
+ 1011              	.LASF19:
+ 1012 0133 72656738 		.ascii	"reg8\000"
+ 1012      00
+ 1013              	.LASF46:
+ 1014 0138 433A5C55 		.ascii	"C:\\Users\\mgnocco\\Documents\\Git\\PSoC5\\PSoC5_FW"
+ 1014      73657273 
+ 1014      5C6D676E 
+ 1014      6F63636F 
+ 1014      5C446F63 
+ 1015 0165 5F574953 		.ascii	"_WISH_VIBES\\FW_WearableHealtySubj - WISH+Dayton\\W"
+ 1015      485F5649 
+ 1015      4245535C 
+ 1015      46575F57 
+ 1015      65617261 
+ 1016 0196 4953485F 		.ascii	"ISH_VIBES_Socket.cydsn\000"
+ 1016      56494245 
+ 1016      535F536F 
+ 1016      636B6574 
+ 1016      2E637964 
+ 1017              	.LASF35:
+ 1018 01ad 675F7278 		.ascii	"g_rx\000"
+ 1018      00
+ 1019              	.LASF24:
+ 1020 01b2 72656164 		.ascii	"ready\000"
+ 1020      7900
+ 1021              	.LASF11:
+ 1022 01b8 75696E74 		.ascii	"uint8\000"
+ 1022      3800
+ 1023              	.LASF33:
+ 1024 01be 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ 1024      52784275 
+ 1024      66666572 
+ 1024      00
+ 1025              	.LASF43:
+ 1026 01cb 66696C74 		.ascii	"filt_emg\000"
+ 1026      5F656D67 
+ 1026      00
+ 1027              	.LASF5:
+ 1028 01d4 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1028      20756E73 
+ 1028      69676E65 
+ 1028      6420696E 
+ 1028      7400
+ 1029              	.LASF47:
+ 1030 01e6 6D61696E 		.ascii	"main\000"
+ 1030      00
+ 1031              	.LASF12:
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccabezqU.s 			page 24
+
+
+ 1032 01eb 75696E74 		.ascii	"uint16\000"
+ 1032      313600
+ 1033              	.LASF31:
+ 1034 01f2 444D415F 		.ascii	"DMA_Chan\000"
+ 1034      4368616E 
+ 1034      00
+ 1035              	.LASF13:
+ 1036 01fb 75696E74 		.ascii	"uint32\000"
+ 1036      333200
+ 1037              	.LASF39:
+ 1038 0202 4144435F 		.ascii	"ADC_buf\000"
+ 1038      62756600 
+ 1039              	.LASF8:
+ 1040 020a 756E7369 		.ascii	"unsigned int\000"
+ 1040      676E6564 
+ 1040      20696E74 
+ 1040      00
+ 1041              	.LASF36:
+ 1042 0217 666C6167 		.ascii	"flag_master\000"
+ 1042      5F6D6173 
+ 1042      74657200 
+ 1043              	.LASF42:
+ 1044 0223 42617474 		.ascii	"Battery_level_out\000"
+ 1044      6572795F 
+ 1044      6C657665 
+ 1044      6C5F6F75 
+ 1044      7400
+ 1045              	.LASF18:
+ 1046 0235 63686172 		.ascii	"char\000"
+ 1046      00
+ 1047              	.LASF14:
+ 1048 023a 696E7431 		.ascii	"int16\000"
+ 1048      3600
+ 1049              	.LASF10:
+ 1050 0240 696E7433 		.ascii	"int32_t\000"
+ 1050      325F7400 
+ 1051              	.LASF21:
+ 1052 0248 73697A65 		.ascii	"sizetype\000"
+ 1052      74797065 
+ 1052      00
+ 1053              	.LASF29:
+ 1054 0251 73745F61 		.ascii	"st_adc_meas\000"
+ 1054      64635F6D 
+ 1054      65617300 
+ 1055              	.LASF6:
+ 1056 025d 6C6F6E67 		.ascii	"long long int\000"
+ 1056      206C6F6E 
+ 1056      6720696E 
+ 1056      7400
+ 1057              	.LASF32:
+ 1058 026b 444D415F 		.ascii	"DMA_TD\000"
+ 1058      544400
+ 1059              	.LASF2:
+ 1060 0272 73686F72 		.ascii	"short int\000"
+ 1060      7420696E 
+ 1060      7400
+ 1061              	.LASF22:
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccabezqU.s 			page 25
+
+
+ 1062 027c 62756666 		.ascii	"buffer\000"
+ 1062      657200
+ 1063              	.LASF4:
+ 1064 0283 6C6F6E67 		.ascii	"long int\000"
+ 1064      20696E74 
+ 1064      00
+ 1065              	.LASF20:
+ 1066 028c 6C6F6E67 		.ascii	"long double\000"
+ 1066      20646F75 
+ 1066      626C6500 
+ 1067              	.LASF45:
+ 1068 0298 2E2E5C73 		.ascii	"..\\src\\main.c\000"
+ 1068      72635C6D 
+ 1068      61696E2E 
+ 1068      6300
+ 1069              	.LASF0:
+ 1070 02a6 7369676E 		.ascii	"signed char\000"
+ 1070      65642063 
+ 1070      68617200 
+ 1071              	.LASF41:
+ 1072 02b2 61746D5F 		.ascii	"atm_pressure\000"
+ 1072      70726573 
+ 1072      73757265 
+ 1072      00
+ 1073              	.LASF3:
+ 1074 02bf 73686F72 		.ascii	"short unsigned int\000"
+ 1074      7420756E 
+ 1074      7369676E 
+ 1074      65642069 
+ 1074      6E7400
+ 1075              	.LASF23:
+ 1076 02d2 6C656E67 		.ascii	"length\000"
+ 1076      746800
+ 1077              	.LASF26:
+ 1078 02d9 73745F66 		.ascii	"st_filter\000"
+ 1078      696C7465 
+ 1078      7200
+ 1079              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

@@ -478,6 +478,13 @@ uint8 emg_activation_velocity_fsm();
 /* This function is used to drive Ottobock active wrist device */
 void otbk_act_wrist_control(int slave_motor_idx);
 
+
+//============================================================  commReadWriteSH
+/** This function reads on the serial port the residual current from SH, the Control for vibreotactile feedback and set the input for the hand motor according to EMG values.
+ *
+**/
+void commReadWriteSH();
+
 //============================================================  commReadIMUFromSH
 /** This function reads on the serial port the residual current from SH.
  *

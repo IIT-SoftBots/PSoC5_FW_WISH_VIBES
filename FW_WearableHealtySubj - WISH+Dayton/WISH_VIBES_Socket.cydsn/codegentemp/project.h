@@ -83,6 +83,8 @@
 #include "CLOCK_VT.h"
 #include "LED_RED_aliases.h"
 #include "LED_RED.h"
+#include "Battery_flag_aliases.h"
+#include "Battery_flag.h"
 #include "SD_SPI0.h"
 #include "SD_SPI0_PVT.h"
 #include "SD_mosi0_aliases.h"

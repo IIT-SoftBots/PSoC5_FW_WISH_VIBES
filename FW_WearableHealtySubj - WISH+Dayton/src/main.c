@@ -113,10 +113,9 @@ int main()
     flag_master = 0;  //Master Mode disabled
 
     // ADC
-    ADC_Set_N_Channels();           // Set right number of ADC channels to sample
     ADC_Start();
     ADC_SOC_Write(0x01);            // Force first read cycle.
-
+    Battery_level_out = 0;
     // ADC DMA    
     DMA_Chan = DMA_DmaInitialize(DMA_BYTES_PER_BURST, DMA_REQUEST_PER_BURST, HI16(DMA_SRC_BASE), HI16(DMA_DST_BASE));
     DMA_TD[0] = CyDmaTdAllocate();                                                                          // Allocate TD.
@@ -150,15 +149,36 @@ int main()
     
     // All peripherals has started, now it is ok to start communication
     RS485_CTS_Write(0);             // Clear To Send on RS485.
-
+    int a=0;
+    
+    /*
+    while(!Battery_level_out){
+        Battery_level_out = Battery_flag_Read();
+        if (interrupt_flag){
+                // Reset flags
+                interrupt_flag = FALSE;
+                
+                // Manage Interrupt on rs485
+                interrupt_manager();
+            }      
+        a = 1;
+    };
+    */
+    if (a == 1){
+        CyDelay(50);  // Pressure sensor has warm-up time of 20 ms
+        while(!ADC_STATUS_Read()){}
+        // Read pressure in any case
+        g_adc_meas.pressure  = (int32)(ADC_buf[0]);    //0 - 4096  
+        atm_pressure = (((g_adc_meas.pressure/4095.0 + 0.00842)/0.002421));       // P_atm in Pascal   }
+        a = 0;
+    }
     for(;;)
-
     {         
         // Put the FF reset pin to LOW
         RESET_FF_Write(0x00);
-
-        // Call function scheduler
+            // Call function scheduler
         function_scheduler(); 
+     
 
         //  Wait until the FF is set to 1
         while(FF_STATUS_Read() == 0){

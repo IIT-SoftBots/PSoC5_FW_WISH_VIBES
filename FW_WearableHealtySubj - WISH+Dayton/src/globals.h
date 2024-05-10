@@ -347,8 +347,8 @@ extern int16 PWM_IMU_2;
 
 struct st_adc_meas {
     int32 emg[NUM_OF_INPUT_EMGS];           /*!< EMG sensors values.*/
-    float pressure;  /*!< Additional EMG sensors values.*/   
-};
+    float pressure;  /*!< Additional EMG sensors values.*/  
+    };
 
 
 // ADC Buffer
@@ -360,7 +360,7 @@ extern CYBIT interrupt_flag;                        /*!< Interrupt flag enabler.
 extern CYBIT reset_PSoC_flag;                       /*!< This flag is set when a board fw reset is necessary.*/
 extern int32 flag_master;
 extern uint8 master_mode;   
-extern int32 pressure_value; /*!< Flag used to set/unset master mode to send messages to other boards.*/
+extern int32 pressure_value, atm_pressure, Battery_level_out; /*!< Flag used to set/unset master mode to send messages to other boards.*/
 extern struct st_eeprom g_mem, c_mem;               /*!< Memory parameters.*/
 extern struct st_adc_meas g_adc_meas, g_adc_measOld;/*!< EMG Measurements.*/
 extern uint16 timer_value;                          /*!< End time of the firmware main loop.*/
@@ -384,7 +384,7 @@ extern struct menu menu_type;
 // -----------------------------------------------------------------------------
 extern int16 PWM_IMU_1;     
 extern int16 PWM_IMU_2;  
- 
+extern int16 curr_diff;  
 extern char superstring[2500];
 
 #endif
