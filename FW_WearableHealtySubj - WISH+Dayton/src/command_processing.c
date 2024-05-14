@@ -1231,22 +1231,33 @@ void cmd_get_vibrotactile_inputs(){
     
 }
 
-void commReadWriteSH() {
+void commReadWriteSH( uint8 slave_ID) {
      
-    uint8 packet_data[16];
+    
+    
+      uint8 packet_data[6];
     uint8 packet_length;
-   
-    uint32 t_start, t_end;
+    int16 aux_int16;
+uint32 t_start, t_end;
     uint8 read_flag = TRUE;
-
-    packet_length = 2;
-    packet_data[0] = CMD_GET_VIBROTACTILE_INPUTS;
-    packet_data[1] = CMD_GET_VIBROTACTILE_INPUTS;
-    commWriteID(packet_data, packet_length, c_mem.MS.slave_ID);
+       
+    //Sends a Set inputs command to a second board
+ //   packet_data[0] = CMD_DRIVE_SLAVE;
+    
+ //aux_int16 = (int16) motor_idx;
+   aux_int16 = (int16) (SH_ref >> g_mem.SH_config.res);
+    packet_data[2] = ((char*)(&aux_int16))[0];
+    packet_data[1] = ((char*)(&aux_int16))[1];
+    *((int16 *) &packet_data[3]) = 0;
+  //  packet_data[3] = (char*)0;
+   // packet_data[4] = (char*)0;
+    packet_length = 6;
+    packet_data[packet_length - 1] = LCRChecksum(packet_data,packet_length - 1);
+    commWriteID(packet_data, packet_length, slave_ID);
 
     t_start = (uint32) MY_TIMER_ReadCounter();
-    while(g_rx.buffer[0] != CMD_SET_VIBROTACTILE_INPUTS) {
-        if (interrupt_flag){
+  //  while(g_rx.buffer[0] != CMD_GET_FEEDBACK_INPUT) {
+       { if (interrupt_flag){
             interrupt_flag = FALSE;
             interrupt_manager();
         }
@@ -1255,15 +1266,15 @@ void commReadWriteSH() {
         if((t_start - t_end) > 4500000){            // 4.5 s timeout
             read_flag = FALSE;
             master_mode = 0;                // Exit from master mode
-            break;
+          //  break;
         }
     }
 
         if (read_flag) {
         PWM_IMU_1 = (int16)(g_rx.buffer[1]<<8 | g_rx.buffer[2]);      
         PWM_IMU_2 = (int16)(g_rx.buffer[3]<<8 | g_rx.buffer[4]);      
-    }
-    
+        curr_diff = (int16)(g_rx.buffer[5]<<8 | g_rx.buffer[6]);                        
+    }    
     
 }
 
@@ -1321,11 +1332,11 @@ void commReadIMUFromSH(){
 // Here a request (: : ID pk_length CMD check) is sent  --> 6bytes * 8bit * 0.5us = 24us
 // and an answer (: : ID pk_length CMD data1[0] data1[1] check) received --> 8bytes * 8bit * 0.5us = 32 us
 // At least 56 us are requested for this communication 
-int16 commReadResCurrFromSH()
+void commReadResCurrFromSH()
 {
     uint8 packet_data[16];
     uint8 packet_length;
-    int16 curr_diff = 0;
+    //int16 curr_diff = 0;
     uint32 t_start, t_end;
     uint8 read_flag = TRUE;
 
@@ -1353,7 +1364,7 @@ int16 commReadResCurrFromSH()
         curr_diff = (int16)(g_rx.buffer[1]<<8 | g_rx.buffer[2]);                        
     }
     
-    return curr_diff;
+    //return curr_diff;
 }
 
 
@@ -1540,7 +1551,7 @@ void air_chambers_control() {
 
     // Use pressure and residual current read from the SoftHand
     
-    curr_diff = (int16)commReadResCurrFromSH();
+    commReadResCurrFromSH();
 
     // Compute pressure reference
 

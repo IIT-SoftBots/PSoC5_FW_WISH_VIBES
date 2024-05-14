@@ -73,7 +73,7 @@ void ImusReset() {
 * Function Name: IMU Initialization
 *********************************************************************************/
 void InitIMU(){	
-    
+    /*
 	WriteControlRegisterIMU(MPU9250_PWR_MGMT_1, 0x10); 
 	CyDelay(10);	
 	WriteControlRegisterIMU(MPU9250_USER_CTRL, 0x20);  //I2C master enable - disable I2C (prima 0x30)
@@ -111,6 +111,14 @@ void InitIMU(){
 	CyDelay(10);
 	WriteControlRegisterIMU(MPU9250_PWR_MGMT_1, 0x00); 
 	CyDelay(20);
+    */
+    WriteControlRegisterIMU(0x1A, 0x06); //MPU9250
+    CyDelay(20);
+    WriteControlRegisterIMU(0x1C, 0x00); //MPU9250
+    CyDelay(20);
+    WriteControlRegisterIMU(0x1D, 0x08); //MPU9250 nolpf
+    CyDelay(20);
+    WriteControlRegisterIMU(0x6C, 0b00000111);
 }	
 
 /*******************************************************************************
@@ -500,11 +508,18 @@ void ReadQuat(int n)
 void ReadAllIMUs(){
     static uint8 k_imu = 0;
     uint16 tmp = 0, j = 0;
-
+    ChipSelectorIMU(IMU_connected[0]);
+         do 
+        {
+            j = ReadControlRegisterIMU(0x02);          
+        }
+        while ((j & 0b00000001) == 0);   
+        
     for (k_imu = 0; k_imu < N_IMU_Connected; k_imu++){ 
         // Read k_imu IMU
         ChipSelectorIMU(IMU_connected[k_imu]);
-        
+
+    
         
      /*   ReadIMU(IMU_connected[k_imu]);
          for (j = 0; j < 3; j++) {

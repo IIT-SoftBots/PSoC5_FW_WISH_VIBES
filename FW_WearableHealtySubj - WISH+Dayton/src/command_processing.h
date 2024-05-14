@@ -483,7 +483,7 @@ void otbk_act_wrist_control(int slave_motor_idx);
 /** This function reads on the serial port the residual current from SH, the Control for vibreotactile feedback and set the input for the hand motor according to EMG values.
  *
 **/
-void commReadWriteSH();
+void commReadWriteSH(uint8);
 
 //============================================================  commReadIMUFromSH
 /** This function reads on the serial port the residual current from SH.
@@ -495,7 +495,7 @@ void commReadIMUFromSH();
 /** This function reads on the serial port the residual current from SH.
  *
 **/
-int16 commReadResCurrFromSH();
+void commReadResCurrFromSH();
 //=====================================================     drive_slave
 /** This function is used to create a package and send it to another device, only
  *  if the actual board is in master mode.

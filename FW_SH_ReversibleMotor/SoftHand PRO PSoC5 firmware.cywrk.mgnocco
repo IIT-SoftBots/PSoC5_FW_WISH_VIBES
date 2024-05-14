@@ -13,7 +13,7 @@
 <v>Output</v>
 </TreeKeys>
 <TreeStates>
-<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="SoftHand PRO PSoC5 firmware\Generic\Header Files\FIRMWARE_CONFIGURATION.h">
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="SoftHand PRO PSoC5 firmware\Generic\TopDesign">
 <ExpandedNodeIds>
 <v>SoftHand PRO PSoC5 firmware</v>
 <v>SoftHand PRO PSoC5 firmware\Air_Chambers_Haptic_Feedback\TopDesign</v>

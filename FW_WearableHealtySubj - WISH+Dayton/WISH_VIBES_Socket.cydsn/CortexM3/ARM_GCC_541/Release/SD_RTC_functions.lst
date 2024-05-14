@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccOPAIN9.s 			page 1
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccbXB5RA.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccOPAIN9.s 			page 1
   28:..\src/SD_RTC_functions.c **** // SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
   29:..\src/SD_RTC_functions.c **** // CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
   30:..\src/SD_RTC_functions.c **** // OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccOPAIN9.s 			page 2
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccbXB5RA.s 			page 2
 
 
   31:..\src/SD_RTC_functions.c **** // OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccOPAIN9.s 			page 1
   55:..\src/SD_RTC_functions.c ****   DS1302_writeByte(data_wr);
   58              		.loc 1 55 0
   59 002a BB79     		ldrb	r3, [r7, #6]	@ zero_extendqisi2
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccOPAIN9.s 			page 3
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccbXB5RA.s 			page 3
 
 
   60 002c 1846     		mov	r0, r3
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccOPAIN9.s 			page 1
   65:..\src/SD_RTC_functions.c **** }
  105              		.loc 1 65 0
  106 0012 00BF     		nop
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccOPAIN9.s 			page 4
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccbXB5RA.s 			page 4
 
 
  107 0014 0837     		adds	r7, r7, #8
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccOPAIN9.s 			page 1
  152 0024 FFF7FEFF 		bl	DS1302_readByte
  153 0028 0346     		mov	r3, r0
  154 002a FB73     		strb	r3, [r7, #15]
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccOPAIN9.s 			page 5
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccbXB5RA.s 			page 5
 
 
   75:..\src/SD_RTC_functions.c ****   CS_RTC_Write(0);
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccOPAIN9.s 			page 1
  199 000c FB71     		strb	r3, [r7, #7]
   85:..\src/SD_RTC_functions.c ****   int i=0;
  200              		.loc 1 85 0
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccOPAIN9.s 			page 6
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccbXB5RA.s 			page 6
 
 
  201 000e 0023     		movs	r3, #0
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccOPAIN9.s 			page 1
  243 0056 1037     		adds	r7, r7, #16
  244              		.cfi_def_cfa_offset 8
  245 0058 BD46     		mov	sp, r7
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccOPAIN9.s 			page 7
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccbXB5RA.s 			page 7
 
 
  246              		.cfi_def_cfa_register 13
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccOPAIN9.s 			page 1
  293 002e FFF7FEFF 		bl	CLK_RTC_Write
  103:..\src/SD_RTC_functions.c ****         CLK_RTC_Write(0);
  294              		.loc 1 103 0 discriminator 3
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccOPAIN9.s 			page 8
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccbXB5RA.s 			page 8
 
 
  295 0032 0020     		movs	r0, #0
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccOPAIN9.s 			page 1
  341              		.cfi_restore 7
  342              		.cfi_def_cfa_offset 0
  343 000a 7047     		bx	lr
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccOPAIN9.s 			page 9
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccbXB5RA.s 			page 9
 
 
  344              		.cfi_endproc
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccOPAIN9.s 			page 1
  389              		@ link register save eliminated.
  390 0000 80B4     		push	{r7}
  391              		.cfi_def_cfa_offset 4
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccOPAIN9.s 			page 10
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccbXB5RA.s 			page 10
 
 
  392              		.cfi_offset 7, -4
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccOPAIN9.s 			page 1
  438 001c 3B1D     		adds	r3, r7, #4
  439 001e 1846     		mov	r0, r3
  440 0020 FFF7FEFF 		bl	prepare_SD_param_info
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccOPAIN9.s 			page 11
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccbXB5RA.s 			page 11
 
 
  127:..\src/SD_RTC_functions.c ****     FS_Write(pFile, info_, strlen(info_));
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccOPAIN9.s 			page 1
  488              		.cfi_def_cfa_offset 32
  489 0004 00AF     		add	r7, sp, #0
  490              		.cfi_def_cfa_register 7
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccOPAIN9.s 			page 12
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccbXB5RA.s 			page 12
 
 
  491 0006 F860     		str	r0, [r7, #12]
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccOPAIN9.s 			page 1
  534              	.LFE73:
  535              		.size	Read_SD_Closed_File, .-Read_SD_Closed_File
  536              		.section	.text.Remove_SD_File,"ax",%progbits
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccOPAIN9.s 			page 13
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccbXB5RA.s 			page 13
 
 
  537              		.align	2
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccOPAIN9.s 			page 1
  152:..\src/SD_RTC_functions.c **** 
  153:..\src/SD_RTC_functions.c **** /*******************************************************************************
  154:..\src/SD_RTC_functions.c **** * Function Name: Read SD Current Open Data File
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccOPAIN9.s 			page 14
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccbXB5RA.s 			page 14
 
 
  155:..\src/SD_RTC_functions.c **** *********************************************************************************/
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccOPAIN9.s 			page 1
  626              	.L25:
  167:..\src/SD_RTC_functions.c ****     }
  168:..\src/SD_RTC_functions.c ****     FS_FClose(pData);
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccOPAIN9.s 			page 15
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccbXB5RA.s 			page 15
 
 
  627              		.loc 1 168 0
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccOPAIN9.s 			page 1
  672              		.cfi_def_cfa_offset 32
  673 0004 00AF     		add	r7, sp, #0
  674              		.cfi_def_cfa_register 7
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccOPAIN9.s 			page 16
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccbXB5RA.s 			page 16
 
 
  178:..\src/SD_RTC_functions.c ****     int i;
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccOPAIN9.s 			page 1
  197:..\src/SD_RTC_functions.c ****     // Before exiting, reopen file in append mode
  198:..\src/SD_RTC_functions.c ****     pEMGHFile = FS_FOpen(sdEMGHFile, "a");
  710              		.loc 1 198 0
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccOPAIN9.s 			page 17
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccbXB5RA.s 			page 17
 
 
  711 0048 0849     		ldr	r1, .L30+12
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccOPAIN9.s 			page 1
  759              		.cfi_offset 7, -8
  760              		.cfi_offset 14, -4
  761 0002 B4B0     		sub	sp, sp, #208
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccOPAIN9.s 			page 18
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccbXB5RA.s 			page 18
 
 
  762              		.cfi_def_cfa_offset 216
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccOPAIN9.s 			page 1
  805 005e 0B46     		mov	r3, r1
  806 0060 1B88     		ldrh	r3, [r3]	@ unaligned
  807 0062 1380     		strh	r3, [r2]	@ unaligned
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccOPAIN9.s 			page 19
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccbXB5RA.s 			page 19
 
 
  216:..\src/SD_RTC_functions.c ****             strcat(curr_path, acDirname);
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccOPAIN9.s 			page 1
  854 00d6 1849     		ldr	r1, .L37+8
  855 00d8 1846     		mov	r0, r3
  856 00da FFF7FEFF 		bl	strcmp
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccOPAIN9.s 			page 20
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccbXB5RA.s 			page 20
 
 
  857 00de 0346     		mov	r3, r0
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccOPAIN9.s 			page 1
  900 012e 00BF     		.align	2
  901              	.L37:
  902 0130 08000000 		.word	.LC2
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccOPAIN9.s 			page 21
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccbXB5RA.s 			page 21
 
 
  903 0134 0C000000 		.word	.LC3
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccOPAIN9.s 			page 1
  940 0012 07F11003 		add	r3, r7, #16
  941 0016 0C3B     		subs	r3, r3, #12
  942 0018 1B68     		ldr	r3, [r3]
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccOPAIN9.s 			page 22
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccbXB5RA.s 			page 22
 
 
  943 001a 0022     		movs	r2, #0
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccOPAIN9.s 			page 1
  986 0082 03F10C03 		add	r3, r3, #12
  987 0086 1B68     		ldr	r3, [r3]
  988 0088 DB00     		lsls	r3, r3, #3
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccOPAIN9.s 			page 23
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccbXB5RA.s 			page 23
 
 
  989 008a D018     		adds	r0, r2, r3
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccOPAIN9.s 			page 1
  1036 00fe 56E2     		b	.L42
  1037              	.L49:
  1038              	.LBB5:
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccOPAIN9.s 			page 24
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccbXB5RA.s 			page 24
 
 
  264:..\src/SD_RTC_functions.c ****         char y_path[100] = "\\";
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccOPAIN9.s 			page 1
  1088 017c 03F16803 		add	r3, r3, #104
  1089 0180 1860     		str	r0, [r3]
  269:..\src/SD_RTC_functions.c ****         int nmonths = 0, ndays = 0;
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccOPAIN9.s 			page 25
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccbXB5RA.s 			page 25
 
 
  1090              		.loc 1 269 0
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccOPAIN9.s 			page 1
  1140 01f6 1846     		mov	r0, r3
  1141 01f8 FFF7FEFF 		bl	strcat
  274:..\src/SD_RTC_functions.c ****             strcat(m_path, "\\");
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccOPAIN9.s 			page 26
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccbXB5RA.s 			page 26
 
 
  1142              		.loc 1 274 0
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccOPAIN9.s 			page 1
  1192              		.loc 1 278 0
  1193 0270 07F19002 		add	r2, r7, #144
  1194 0274 203A     		subs	r2, r2, #32
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccOPAIN9.s 			page 27
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccbXB5RA.s 			page 27
 
 
  1195 0276 07F58873 		add	r3, r7, #272
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccOPAIN9.s 			page 1
  1246 02fc 1A44     		add	r2, r2, r3
  1247 02fe 07F50471 		add	r1, r7, #528
  1248 0302 1039     		subs	r1, r1, #16
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccOPAIN9.s 			page 28
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccbXB5RA.s 			page 28
 
 
  1249 0304 07F58873 		add	r3, r7, #272
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccOPAIN9.s 			page 1
  1298 0374 07F5C043 		add	r3, r7, #24576
  1299 0378 03F17003 		add	r3, r3, #112
  1300 037c 1B68     		ldr	r3, [r3]
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccOPAIN9.s 			page 29
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccbXB5RA.s 			page 29
 
 
  1301 037e 1A44     		add	r2, r2, r3
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccOPAIN9.s 			page 1
  294:..\src/SD_RTC_functions.c ****                     char str[100] = "";
  1348              		.loc 1 294 0 discriminator 3
  1349 03f8 07F50473 		add	r3, r7, #528
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccOPAIN9.s 			page 30
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccbXB5RA.s 			page 30
 
 
  1350 03fc 743B     		subs	r3, r3, #116
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccOPAIN9.s 			page 1
  1402 048c 1944     		add	r1, r1, r3
  1403 048e 07F5C043 		add	r3, r7, #24576
  1404 0492 03F17003 		add	r3, r3, #112
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccOPAIN9.s 			page 31
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccbXB5RA.s 			page 31
 
 
  1405 0496 1B68     		ldr	r3, [r3]
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccOPAIN9.s 			page 1
  1454 0508 07F5C043 		add	r3, r7, #24576
  1455 050c 03F17403 		add	r3, r3, #116
  1456 0510 1B68     		ldr	r3, [r3]
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccOPAIN9.s 			page 32
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccbXB5RA.s 			page 32
 
 
  1457 0512 0133     		adds	r3, r3, #1
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccOPAIN9.s 			page 1
  1504 058a 1268     		ldr	r2, [r2]
  1505 058c 1344     		add	r3, r3, r2
  1506 058e 07F5C142 		add	r2, r7, #24704
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccOPAIN9.s 			page 33
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccbXB5RA.s 			page 33
 
 
  1507 0592 02F10802 		add	r2, r2, #8
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccOPAIN9.s 			page 1
  1557 0000 77070000 		.4byte	0x777
  1558 0004 0400     		.2byte	0x4
  1559 0006 00000000 		.4byte	.Ldebug_abbrev0
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccOPAIN9.s 			page 34
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccbXB5RA.s 			page 34
 
 
  1560 000a 04       		.byte	0x4
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccOPAIN9.s 			page 1
  1614 0076 03       		.uleb128 0x3
  1615 0077 8B030000 		.4byte	.LASF10
  1616 007b 03       		.byte	0x3
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccOPAIN9.s 			page 35
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccbXB5RA.s 			page 35
 
 
  1617 007c 2C       		.byte	0x2c
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccOPAIN9.s 			page 1
  1671 00ec 80       		.byte	0x80
  1672 00ed F1000000 		.4byte	0xf1
  1673 00f1 09       		.uleb128 0x9
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccOPAIN9.s 			page 36
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccbXB5RA.s 			page 36
 
 
  1674 00f2 10000000 		.4byte	.LASF19
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccOPAIN9.s 			page 1
  1728 015b 93030000 		.4byte	.LASF21
  1729 015f 06       		.byte	0x6
  1730 0160 CC       		.byte	0xcc
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccOPAIN9.s 			page 37
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccbXB5RA.s 			page 37
 
 
  1731 0161 53000000 		.4byte	0x53
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccOPAIN9.s 			page 1
  1785 01cd 06       		.byte	0x6
  1786 01ce E0       		.byte	0xe0
  1787 01cf 53000000 		.4byte	0x53
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccOPAIN9.s 			page 38
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccbXB5RA.s 			page 38
 
 
  1788 01d3 0C       		.byte	0xc
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccOPAIN9.s 			page 1
  1842 023f 31       		.byte	0x31
  1843 0240 81000000 		.4byte	0x81
  1844 0244 02       		.uleb128 0x2
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccOPAIN9.s 			page 39
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccbXB5RA.s 			page 39
 
 
  1845 0245 91       		.byte	0x91
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccOPAIN9.s 			page 1
  1899 02b1 5C000000 		.4byte	.LFE67-.LFB67
  1900 02b5 01       		.uleb128 0x1
  1901 02b6 9C       		.byte	0x9c
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccOPAIN9.s 			page 40
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccbXB5RA.s 			page 40
 
 
  1902 02b7 E4020000 		.4byte	0x2e4
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccOPAIN9.s 			page 1
  1956 0319 01       		.byte	0x1
  1957 031a 6B       		.byte	0x6b
  1958 031b 00000000 		.4byte	.LFB69
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccOPAIN9.s 			page 41
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccbXB5RA.s 			page 41
 
 
  1959 031f 0C000000 		.4byte	.LFE69-.LFB69
@@ -2458,7 +2458,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccOPAIN9.s 			page 1
  2013 0393 98010000 		.4byte	.LASF52
  2014 0397 01       		.byte	0x1
  2015 0398 85       		.byte	0x85
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccOPAIN9.s 			page 42
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccbXB5RA.s 			page 42
 
 
  2016 0399 B0000000 		.4byte	0xb0
@@ -2518,7 +2518,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccOPAIN9.s 			page 1
  2070 03fc 74       		.sleb128 -12
  2071 03fd 00       		.byte	0
  2072 03fe 0D       		.uleb128 0xd
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccOPAIN9.s 			page 43
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccbXB5RA.s 			page 43
 
 
  2073 03ff FA020000 		.4byte	.LASF56
@@ -2578,7 +2578,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccOPAIN9.s 			page 1
  2127 0464 68000000 		.4byte	0x68
  2128 0468 02       		.uleb128 0x2
  2129 0469 91       		.byte	0x91
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccOPAIN9.s 			page 44
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccbXB5RA.s 			page 44
 
 
  2130 046a 70       		.sleb128 -16
@@ -2638,7 +2638,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccOPAIN9.s 			page 1
  2184 04d5 CC       		.byte	0xcc
  2185 04d6 68000000 		.4byte	0x68
  2186 04da 03       		.uleb128 0x3
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccOPAIN9.s 			page 45
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccbXB5RA.s 			page 45
 
 
  2187 04db 91       		.byte	0x91
@@ -2698,7 +2698,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccOPAIN9.s 			page 1
  2241 053e 00       		.byte	0
  2242 053f 06       		.uleb128 0x6
  2243 0540 04       		.byte	0x4
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccOPAIN9.s 			page 46
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccbXB5RA.s 			page 46
 
 
  2244 0541 B6000000 		.4byte	0xb6
@@ -2758,7 +2758,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccOPAIN9.s 			page 1
  2298 05b3 FC       		.byte	0xfc
  2299 05b4 22070000 		.4byte	0x722
  2300 05b8 04       		.uleb128 0x4
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccOPAIN9.s 			page 47
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccbXB5RA.s 			page 47
 
 
  2301 05b9 91       		.byte	0x91
@@ -2818,7 +2818,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccOPAIN9.s 			page 1
  2355 0627 76010000 		.4byte	.LASF78
  2356 062b 01       		.byte	0x1
  2357 062c 0D01     		.2byte	0x10d
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccOPAIN9.s 			page 48
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccbXB5RA.s 			page 48
 
 
  2358 062e 68000000 		.4byte	0x68
@@ -2878,7 +2878,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccOPAIN9.s 			page 1
  2412 06a0 91       		.byte	0x91
  2413 06a1 B4C07E   		.sleb128 -24524
  2414 06a4 17       		.uleb128 0x17
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccOPAIN9.s 			page 49
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccbXB5RA.s 			page 49
 
 
  2415 06a5 1A030000 		.4byte	.LBB10
@@ -2938,7 +2938,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccOPAIN9.s 			page 1
  2469 070c 07       		.uleb128 0x7
  2470 070d 9B000000 		.4byte	0x9b
  2471 0711 22070000 		.4byte	0x722
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccOPAIN9.s 			page 50
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccbXB5RA.s 			page 50
 
 
  2472 0715 08       		.uleb128 0x8
@@ -2998,7 +2998,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccOPAIN9.s 			page 1
  2526 0007 03       		.uleb128 0x3
  2527 0008 0E       		.uleb128 0xe
  2528 0009 1B       		.uleb128 0x1b
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccOPAIN9.s 			page 51
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccbXB5RA.s 			page 51
 
 
  2529 000a 0E       		.uleb128 0xe
@@ -3058,7 +3058,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccOPAIN9.s 			page 1
  2583 0040 13       		.uleb128 0x13
  2584 0041 00       		.byte	0
  2585 0042 00       		.byte	0
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccOPAIN9.s 			page 52
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccbXB5RA.s 			page 52
 
 
  2586 0043 06       		.uleb128 0x6
@@ -3118,7 +3118,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccOPAIN9.s 			page 1
  2640 0079 3A       		.uleb128 0x3a
  2641 007a 0B       		.uleb128 0xb
  2642 007b 3B       		.uleb128 0x3b
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccOPAIN9.s 			page 53
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccbXB5RA.s 			page 53
 
 
  2643 007c 0B       		.uleb128 0xb
@@ -3178,7 +3178,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccOPAIN9.s 			page 1
  2697 00b3 3B       		.uleb128 0x3b
  2698 00b4 0B       		.uleb128 0xb
  2699 00b5 49       		.uleb128 0x49
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccOPAIN9.s 			page 54
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccbXB5RA.s 			page 54
 
 
  2700 00b6 13       		.uleb128 0x13
@@ -3238,7 +3238,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccOPAIN9.s 			page 1
  2754 00ed 3A       		.uleb128 0x3a
  2755 00ee 0B       		.uleb128 0xb
  2756 00ef 3B       		.uleb128 0x3b
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccOPAIN9.s 			page 55
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccbXB5RA.s 			page 55
 
 
  2757 00f0 0B       		.uleb128 0xb
@@ -3298,7 +3298,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccOPAIN9.s 			page 1
  2811 0127 3B       		.uleb128 0x3b
  2812 0128 0B       		.uleb128 0xb
  2813 0129 11       		.uleb128 0x11
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccOPAIN9.s 			page 56
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccbXB5RA.s 			page 56
 
 
  2814 012a 01       		.uleb128 0x1
@@ -3358,7 +3358,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccOPAIN9.s 			page 1
  2868 0162 0E       		.uleb128 0xe
  2869 0163 3A       		.uleb128 0x3a
  2870 0164 0B       		.uleb128 0xb
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccOPAIN9.s 			page 57
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccbXB5RA.s 			page 57
 
 
  2871 0165 3B       		.uleb128 0x3b
@@ -3418,7 +3418,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccOPAIN9.s 			page 1
  2925 019b 49       		.uleb128 0x49
  2926 019c 13       		.uleb128 0x13
  2927 019d 00       		.byte	0
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccOPAIN9.s 			page 58
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccbXB5RA.s 			page 58
 
 
  2928 019e 00       		.byte	0
@@ -3478,7 +3478,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccOPAIN9.s 			page 1
  2982 0028 00000000 		.4byte	.LFB69
  2983 002c 0C000000 		.4byte	.LFE69
  2984 0030 00000000 		.4byte	.LFB70
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccOPAIN9.s 			page 59
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccbXB5RA.s 			page 59
 
 
  2985 0034 0C000000 		.4byte	.LFE70
@@ -3538,7 +3538,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccOPAIN9.s 			page 1
  3021              	.LASF58:
  3022 004e 70446174 		.ascii	"pData\000"
  3022      6100
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccOPAIN9.s 			page 60
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccbXB5RA.s 			page 60
 
 
  3023              	.LASF80:
@@ -3598,7 +3598,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccOPAIN9.s 			page 1
  3044      756D6500 
  3045              	.LASF62:
  3046 0158 4765745F 		.ascii	"Get_DirectoriesList\000"
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccOPAIN9.s 			page 61
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccbXB5RA.s 			page 61
 
 
  3046      44697265 
@@ -3658,7 +3658,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccOPAIN9.s 			page 1
  3073              	.LASF7:
  3074 01e7 6C6F6E67 		.ascii	"long long unsigned int\000"
  3074      206C6F6E 
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccOPAIN9.s 			page 62
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccbXB5RA.s 			page 62
 
 
  3074      6720756E 
@@ -3718,7 +3718,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccOPAIN9.s 			page 1
  3098      626C6500 
  3099              	.LASF66:
  3100 028e 6E756D5F 		.ascii	"num_found_dirs\000"
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccOPAIN9.s 			page 63
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccbXB5RA.s 			page 63
 
 
  3100      666F756E 
@@ -3778,7 +3778,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccOPAIN9.s 			page 1
  3126 0329 44533133 		.ascii	"DS1302_readByte\000"
  3126      30325F72 
  3126      65616442 
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccOPAIN9.s 			page 64
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccbXB5RA.s 			page 64
 
 
  3126      79746500 
@@ -3838,7 +3838,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccOPAIN9.s 			page 1
  3152      7400
  3153              	.LASF13:
  3154 03c5 646F7562 		.ascii	"double\000"
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccOPAIN9.s 			page 65
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccbXB5RA.s 			page 65
 
 
  3154      6C6500
@@ -3898,7 +3898,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccOPAIN9.s 			page 1
  3178 049f 46535F46 		.ascii	"FS_FIND_DATA\000"
  3178      494E445F 
  3178      44415441 
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccOPAIN9.s 			page 66
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccbXB5RA.s 			page 66
 
 
  3178      00

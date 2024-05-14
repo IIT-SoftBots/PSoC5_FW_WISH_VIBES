@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccabezqU.s 			page 1
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccxk1mfm.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccabezqU.s 			page 1
   23:..\src/main.c **** // AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
   24:..\src/main.c **** // IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
   25:..\src/main.c **** // DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccabezqU.s 			page 2
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccxk1mfm.s 			page 2
 
 
   26:..\src/main.c **** // FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccabezqU.s 			page 1
   39              		.cfi_offset 4, -12
   40              		.cfi_offset 7, -8
   41              		.cfi_offset 14, -4
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccabezqU.s 			page 3
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccxk1mfm.s 			page 3
 
 
   42 0002 85B0     		sub	sp, sp, #20
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccabezqU.s 			page 1
  101:..\src/main.c ****     // CYCLES TIMER   
  102:..\src/main.c ****     CYCLES_TIMER_Start();
   69              		.loc 1 102 0
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccabezqU.s 			page 4
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccxk1mfm.s 			page 4
 
 
   70 0034 FFF7FEFF 		bl	CYCLES_TIMER_Start
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccabezqU.s 			page 1
  106 007c 0121     		movs	r1, #1
  107 007e 0220     		movs	r0, #2
  108 0080 FFF7FEFF 		bl	DMA_DmaInitialize
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccabezqU.s 			page 5
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccxk1mfm.s 			page 5
 
 
  109 0084 0346     		mov	r3, r0
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccabezqU.s 			page 1
  132:..\src/main.c ****     filt_emg[0].gain      = 50;   // Emg channels filter constant.
  152              		.loc 1 132 0
  153              		.thumb
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccabezqU.s 			page 6
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccxk1mfm.s 			page 6
 
 
  154              		.syntax unified
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccabezqU.s 			page 1
  144:..\src/main.c ****     g_rx.ready  = 0;
  195              		.loc 1 144 0
  196 010e 474B     		ldr	r3, .L10+60
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccabezqU.s 			page 7
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccxk1mfm.s 			page 7
 
 
  197 0110 0022     		movs	r2, #0
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccabezqU.s 			page 1
  224 013e 374B     		ldr	r3, .L10+44
  225 0140 B3F90030 		ldrsh	r3, [r3]
  226 0144 1846     		mov	r0, r3
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccabezqU.s 			page 8
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccxk1mfm.s 			page 8
 
 
  227 0146 FFF7FEFF 		bl	__aeabi_i2f
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccabezqU.s 			page 1
  183:..\src/main.c ****         //  Wait until the FF is set to 1
  184:..\src/main.c ****         while(FF_STATUS_Read() == 0){
  270              		.loc 1 184 0
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccabezqU.s 			page 9
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccxk1mfm.s 			page 9
 
 
  271 01a8 08E0     		b	.L6
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccabezqU.s 			page 1
  202:..\src/main.c ****             UART_RS485_ClearRxBuffer();
  307              		.loc 1 202 0
  308 01e4 FFF7FEFF 		bl	UART_RS485_ClearRxBuffer
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccabezqU.s 			page 10
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccxk1mfm.s 			page 10
 
 
  203:..\src/main.c ****     }
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccabezqU.s 			page 1
  361 002d 01       		.byte	0x1
  362 002e 08       		.byte	0x8
  363 002f 1F010000 		.4byte	.LASF1
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccabezqU.s 			page 11
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccxk1mfm.s 			page 11
 
 
  364 0033 02       		.uleb128 0x2
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccabezqU.s 			page 1
  418 009e 04       		.byte	0x4
  419 009f E601     		.2byte	0x1e6
  420 00a1 53000000 		.4byte	0x53
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccabezqU.s 			page 12
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccxk1mfm.s 			page 12
 
 
  421 00a5 05       		.uleb128 0x5
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccabezqU.s 			page 1
  475 0114 80       		.byte	0x80
  476 0115 09       		.uleb128 0x9
  477 0116 696E6400 		.ascii	"ind\000"
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccabezqU.s 			page 13
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccxk1mfm.s 			page 13
 
 
  478 011a 05       		.byte	0x5
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccabezqU.s 			page 1
  532 0188 9B010000 		.4byte	0x19b
  533 018c 00       		.byte	0
  534 018d 0E       		.uleb128 0xe
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccabezqU.s 			page 14
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccxk1mfm.s 			page 14
 
 
  535 018e F9000000 		.4byte	.LASF30
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccabezqU.s 			page 1
  589 01fa 1A000000 		.4byte	.LBE2-.LBB2
  590 01fe 12       		.uleb128 0x12
  591 01ff 6900     		.ascii	"i\000"
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccabezqU.s 			page 15
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccxk1mfm.s 			page 15
 
 
  592 0201 01       		.byte	0x1
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccabezqU.s 			page 1
  646 0279 14       		.uleb128 0x14
  647 027a 02020000 		.4byte	.LASF39
  648 027e 05       		.byte	0x5
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccabezqU.s 			page 16
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccxk1mfm.s 			page 16
 
 
  649 027f 2401     		.2byte	0x124
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccabezqU.s 			page 1
  703 0016 0B       		.uleb128 0xb
  704 0017 0B       		.uleb128 0xb
  705 0018 3E       		.uleb128 0x3e
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccabezqU.s 			page 17
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccxk1mfm.s 			page 17
 
 
  706 0019 0B       		.uleb128 0xb
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccabezqU.s 			page 1
  760 004f 0B       		.uleb128 0xb
  761 0050 0B       		.uleb128 0xb
  762 0051 3A       		.uleb128 0x3a
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccabezqU.s 			page 18
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccxk1mfm.s 			page 18
 
 
  763 0052 0B       		.uleb128 0xb
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccabezqU.s 			page 1
  817 0088 00       		.byte	0
  818 0089 0C       		.uleb128 0xc
  819 008a 13       		.uleb128 0x13
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccabezqU.s 			page 19
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccxk1mfm.s 			page 19
 
 
  820 008b 01       		.byte	0x1
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccabezqU.s 			page 1
  874 00c1 49       		.uleb128 0x49
  875 00c2 13       		.uleb128 0x13
  876 00c3 11       		.uleb128 0x11
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccabezqU.s 			page 20
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccxk1mfm.s 			page 20
 
 
  877 00c4 01       		.uleb128 0x1
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccabezqU.s 			page 1
  931 00fb 13       		.uleb128 0x13
  932 00fc 0B       		.uleb128 0xb
  933 00fd 01       		.byte	0x1
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccabezqU.s 			page 21
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccxk1mfm.s 			page 21
 
 
  934 00fe 11       		.uleb128 0x11
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccabezqU.s 			page 1
  982      43313120 
  982      352E342E 
  982      31203230 
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccabezqU.s 			page 22
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccxk1mfm.s 			page 22
 
 
  982      31363036 
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccabezqU.s 			page 1
  1006 0108 6C6F6E67 		.ascii	"long long unsigned int\000"
  1006      206C6F6E 
  1006      6720756E 
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccabezqU.s 			page 23
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccxk1mfm.s 			page 23
 
 
  1006      7369676E 
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccabezqU.s 			page 1
  1030 01e6 6D61696E 		.ascii	"main\000"
  1030      00
  1031              	.LASF12:
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccabezqU.s 			page 24
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccxk1mfm.s 			page 24
 
 
  1032 01eb 75696E74 		.ascii	"uint16\000"
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccabezqU.s 			page 1
  1060      7420696E 
  1060      7400
  1061              	.LASF22:
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccabezqU.s 			page 25
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccxk1mfm.s 			page 25
 
 
  1062 027c 62756666 		.ascii	"buffer\000"
