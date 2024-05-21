@@ -511,17 +511,14 @@ void ReadAllIMUs(){
     ChipSelectorIMU(IMU_connected[0]);
          do 
         {
-            j = ReadControlRegisterIMU(0x02);          
+            j = ReadControlRegisterIMU(0x3A);          
         }
         while ((j & 0b00000001) == 0);   
         
     for (k_imu = 0; k_imu < N_IMU_Connected; k_imu++){ 
         // Read k_imu IMU
         ChipSelectorIMU(IMU_connected[k_imu]);
-
-    
-        
-     /*   ReadIMU(IMU_connected[k_imu]);
+        ReadIMU(IMU_connected[k_imu]);
          for (j = 0; j < 3; j++) {
             tmp = Accel[IMU_connected[k_imu]][2*j];
             g_imuNew[k_imu].accel_value[j] = (int16)(tmp<<8 | Accel[IMU_connected[k_imu]][2*j + 1]);
@@ -545,48 +542,7 @@ void ReadAllIMUs(){
         g_imuNew[k_imu].temp_value = (int16)(tmp<<8 | Temp[IMU_connected[k_imu]][1]);
     }
     
-    */
-    
-        
-    if (c_mem.imu.IMU_conf[IMU_connected[k_imu]][0]){ 
-        ReadAcc(IMU_connected[k_imu]);
-        for (j = 0; j < 3; j++) {
-            tmp = Accel[IMU_connected[k_imu]][2*j];
-            g_imuNew[k_imu].accel_value[j] = (int16)(tmp<<8 | Accel[IMU_connected[k_imu]][2*j + 1]);
-        }
-    }
-        
-    if (c_mem.imu.IMU_conf[IMU_connected[k_imu]][1]){
-        ReadGyro(IMU_connected[k_imu]);
-         for (j = 0; j < 3; j++) {
-            tmp = Gyro[IMU_connected[k_imu]][2*j];
-            g_imuNew[k_imu].gyro_value[j] = (int16)(tmp<<8 | Gyro[IMU_connected[k_imu]][2*j + 1]);
-        }
-    }
-        
-    if (c_mem.imu.IMU_conf[IMU_connected[k_imu]][2]) {
-        ReadMag(IMU_connected[k_imu]);
-        for (j = 0; j < 3; j++) {
-            tmp = Mag[IMU_connected[k_imu]][2*j];
-            g_imuNew[k_imu].mag_value[j] = (int16)(tmp<<8 | Mag[IMU_connected[k_imu]][2*j + 1]);
-        } 
-    }
-    
-    if (c_mem.imu.IMU_conf[IMU_connected[k_imu]][3]) {
-        ReadQuat(IMU_connected[k_imu]);
-        for (j = 0; j < 4; j++) {
-            g_imuNew[k_imu].quat_value[j] = (float)(Quat[IMU_connected[k_imu]][j]);
-        }
-    }
-        
-    if (c_mem.imu.IMU_conf[IMU_connected[k_imu]][4]) {
-        ReadTemp(IMU_connected[k_imu]);
-         tmp = Temp[IMU_connected[k_imu]][0];
-        g_imuNew[k_imu].temp_value = (int16)(tmp<<8 | Temp[IMU_connected[k_imu]][1]);
-    }
-
-    }
-    
+  
        
 }
 
