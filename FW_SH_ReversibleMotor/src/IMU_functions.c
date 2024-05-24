@@ -73,10 +73,10 @@ void ImusReset() {
 * Function Name: IMU Initialization
 *********************************************************************************/
 void InitIMU(){	
-    /*
+    
 	WriteControlRegisterIMU(MPU9250_PWR_MGMT_1, 0x10); 
 	CyDelay(10);	
-	WriteControlRegisterIMU(MPU9250_USER_CTRL, 0x20);  //I2C master enable - disable I2C (prima 0x30)
+	WriteControlRegisterIMU(MPU9250_USER_CTRL, 0x10);  //I2C master enable - disable I2C (prima 0x30)
 	CyDelay(10);
     WriteControlRegisterIMU(MPU9250_CONFIG, 0x06); //Gyro & Temp Low Pass Filter 0x01 = 184Hz, 0x02 = 92Hz, 0x04 = 20Hz, 0x05 = 10Hz
     CyDelay(10);	
@@ -111,14 +111,14 @@ void InitIMU(){
 	CyDelay(10);
 	WriteControlRegisterIMU(MPU9250_PWR_MGMT_1, 0x00); 
 	CyDelay(20);
-    */
-    WriteControlRegisterIMU(0x1A, 0x06); //MPU9250
+    
+ /*   WriteControlRegisterIMU(0x1A, 0x06); //MPU9250
     CyDelay(20);
     WriteControlRegisterIMU(0x1C, 0x00); //MPU9250
     CyDelay(20);
     WriteControlRegisterIMU(0x1D, 0x08); //MPU9250 nolpf
     CyDelay(20);
-    WriteControlRegisterIMU(0x6C, 0b00000111);
+    WriteControlRegisterIMU(0x6C, 0b00000111);*/
 }	
 
 /*******************************************************************************
@@ -509,41 +509,37 @@ void ReadAllIMUs(){
     static uint8 k_imu = 0;
     uint16 tmp = 0, j = 0;
     ChipSelectorIMU(IMU_connected[0]);
-         do 
-        {
-            j = ReadControlRegisterIMU(0x3A);          
-        }
-        while ((j & 0b00000001) == 0);   
-        
-    for (k_imu = 0; k_imu < N_IMU_Connected; k_imu++){ 
-        // Read k_imu IMU
-        ChipSelectorIMU(IMU_connected[k_imu]);
-        ReadIMU(IMU_connected[k_imu]);
-         for (j = 0; j < 3; j++) {
-            tmp = Accel[IMU_connected[k_imu]][2*j];
-            g_imuNew[k_imu].accel_value[j] = (int16)(tmp<<8 | Accel[IMU_connected[k_imu]][2*j + 1]);
-        }
-        
-        for (j = 0; j < 3; j++) {
-            tmp = Gyro[IMU_connected[k_imu]][2*j];
-            g_imuNew[k_imu].gyro_value[j] = (int16)(tmp<<8 | Gyro[IMU_connected[k_imu]][2*j + 1]);
-        }
-                
-        for (j = 0; j < 3; j++) {
-            tmp = Mag[IMU_connected[k_imu]][2*j];
-            g_imuNew[k_imu].mag_value[j] = (int16)(tmp<<8 | Mag[IMU_connected[k_imu]][2*j + 1]);
-        }  
-
-        for (j = 0; j < 4; j++) {
-            g_imuNew[k_imu].quat_value[j] = (float)(Quat[IMU_connected[k_imu]][j]);
-        }
-        
-        tmp = Temp[IMU_connected[k_imu]][0];
-        g_imuNew[k_imu].temp_value = (int16)(tmp<<8 | Temp[IMU_connected[k_imu]][1]);
-    }
+    j = ReadControlRegisterIMU(0x3A);          
     
-  
-       
+    if (j & 0b00000001) {
+            
+        for (k_imu = 0; k_imu < N_IMU_Connected; k_imu++){ 
+            // Read k_imu IMU
+            ChipSelectorIMU(IMU_connected[k_imu]);
+            ReadIMU(IMU_connected[k_imu]);
+             for (j = 0; j < 3; j++) {
+                tmp = Accel[IMU_connected[k_imu]][2*j];
+                g_imuNew[k_imu].accel_value[j] = (int16)(tmp<<8 | Accel[IMU_connected[k_imu]][2*j + 1]);
+            }
+            
+            for (j = 0; j < 3; j++) {
+                tmp = Gyro[IMU_connected[k_imu]][2*j];
+                g_imuNew[k_imu].gyro_value[j] = (int16)(tmp<<8 | Gyro[IMU_connected[k_imu]][2*j + 1]);
+            }
+                    
+            for (j = 0; j < 3; j++) {
+                tmp = Mag[IMU_connected[k_imu]][2*j];
+                g_imuNew[k_imu].mag_value[j] = (int16)(tmp<<8 | Mag[IMU_connected[k_imu]][2*j + 1]);
+            }  
+
+            for (j = 0; j < 4; j++) {
+                g_imuNew[k_imu].quat_value[j] = (float)(Quat[IMU_connected[k_imu]][j]);
+            }
+            
+            tmp = Temp[IMU_connected[k_imu]][0];
+            g_imuNew[k_imu].temp_value = (int16)(tmp<<8 | Temp[IMU_connected[k_imu]][1]);
+        }
+    }       
 }
 
 /*******************************************************************************
