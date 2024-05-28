@@ -67,7 +67,7 @@ uint8 master_mode;               /*!< Flag used to set/unset master mode to send
 struct st_data      g_rx;                       // Income data.
  int16 PWM_IMU_1;     
  int16 PWM_IMU_2;  
-int16 curr_diff;  
+
 CYBIT reset_PSoC_flag = FALSE;              /*!< This flag is set when a board fw reset is necessary.*/
 
 

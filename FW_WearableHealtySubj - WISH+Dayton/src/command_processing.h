@@ -495,7 +495,7 @@ void commReadIMUFromSH();
 /** This function reads on the serial port the residual current from SH.
  *
 **/
-void commReadResCurrFromSH();
+int16 commReadResCurrFromSH();
 //=====================================================     drive_slave
 /** This function is used to create a package and send it to another device, only
  *  if the actual board is in master mode.

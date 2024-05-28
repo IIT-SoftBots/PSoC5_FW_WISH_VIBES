@@ -384,7 +384,7 @@ extern struct menu menu_type;
 // -----------------------------------------------------------------------------
 extern int16 PWM_IMU_1;     
 extern int16 PWM_IMU_2;  
-extern int16 curr_diff;  
+
 extern char superstring[2500];
 
 #endif

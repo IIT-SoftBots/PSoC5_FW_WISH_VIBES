@@ -163,7 +163,7 @@ int main()
             }      
         a = 1;
     };
-    */
+   
     if (a == 1){
         CyDelay(50);  // Pressure sensor has warm-up time of 20 ms
         while(!ADC_STATUS_Read()){}
@@ -171,7 +171,10 @@ int main()
         g_adc_meas.pressure  = (int32)(ADC_buf[0]);    //0 - 4096  
         atm_pressure = (((g_adc_meas.pressure/4095.0 + 0.00842)/0.002421));       // P_atm in Pascal   }
         a = 0;
-    }
+    } */
+    
+    atm_pressure = 102;       // P_atm in Pascal   }
+    
     for(;;)
     {         
         // Put the FF reset pin to LOW
