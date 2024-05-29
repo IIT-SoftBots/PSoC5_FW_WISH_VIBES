@@ -102,20 +102,33 @@ int main()
     CYCLES_TIMER_Start();
     ISR_CYCLES_StartEx(ISR_CYCLES_Handler);
     
+    Pump_ref = 0;
+    Pump_refNew = 0;
+    PWM_PUMP_WriteCompare(0);
     PWM_PUMP_Start();
-    PWM_VT_Start();
-    PWM_VT_WriteCompare1(50);
-    PWM_VT_WriteCompare2(50);    
+    
+    VT_ref[0] = 0;
+    VT_ref[1] = 0;    
+    VT_refNew[0] = 0;
+    VT_refNew[1] = 0;
+    PWM_VT_WriteCompare1(0);
+    PWM_VT_WriteCompare2(0);    
     VT1_DIR_Write(0);
     VT2_DIR_Write(0);
+    PWM_VT_Start();
     
-    //VALVE_Write(CLOSED);
+
+    SH_ref = 0; 
+    SH_refNew = 0;
+    
+    VALVE_Write(CLOSED);
     flag_master = 0;  //Master Mode disabled
 
     // ADC
     ADC_Start();
     ADC_SOC_Write(0x01);            // Force first read cycle.
     Battery_level_out = 0;
+    
     // ADC DMA    
     DMA_Chan = DMA_DmaInitialize(DMA_BYTES_PER_BURST, DMA_REQUEST_PER_BURST, HI16(DMA_SRC_BASE), HI16(DMA_DST_BASE));
     DMA_TD[0] = CyDmaTdAllocate();                                                                          // Allocate TD.
@@ -143,7 +156,7 @@ int main()
     g_rx.length = 0;
     g_rx.ready  = 0;
     
-    LED_CONTROL_Write(1);     // Green
+    LED_CONTROL_Write(0);     // Green
 
     //============================================================     main loop
     

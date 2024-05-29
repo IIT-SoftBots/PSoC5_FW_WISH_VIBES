@@ -1056,7 +1056,7 @@ uint8 memInit(void)
     
     // SH STRUCT
     g_mem.SH_config.pos_lim_inf = 0;
-    g_mem.SH_config.pos_lim_sup = (int32)16000 << g_mem.SH_config.res;
+    g_mem.SH_config.pos_lim_sup = (int32)19000 << g_mem.SH_config.res;
     g_mem.SH_config.input_mode = INPUT_MODE_EMG_FCFS;
     g_mem.SH_config.res = 3;
 

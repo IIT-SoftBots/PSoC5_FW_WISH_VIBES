@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
   21:..\src/command_processing.c **** 
   22:..\src/command_processing.c **** // THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
   23:..\src/command_processing.c **** // AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 2
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 2
 
 
   24:..\src/command_processing.c **** // IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
   48 0006 0E4B     		ldr	r3, .L50
   49 0008 1B78     		ldrb	r3, [r3]
   50 000a 87F82F30 		strb	r3, [r7, #47]
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 3
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 3
 
 
   65:..\src/command_processing.c **** 
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
   95 0070 B1050000 		.word	.L49+1
   96 0074 B1050000 		.word	.L49+1
   97 0078 29050000 		.word	.L12+1
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 4
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 4
 
 
   98 007c 0F050000 		.word	.L13+1
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  152 0154 B1050000 		.word	.L49+1
  153 0158 B1050000 		.word	.L49+1
  154 015c B1050000 		.word	.L49+1
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 5
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 5
 
 
  155 0160 B1050000 		.word	.L49+1
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  209 0238 B1050000 		.word	.L49+1
  210 023c B1050000 		.word	.L49+1
  211 0240 B1050000 		.word	.L49+1
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 6
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 6
 
 
  212 0244 B1050000 		.word	.L49+1
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  266 031c B1050000 		.word	.L49+1
  267 0320 B1050000 		.word	.L49+1
  268 0324 B1050000 		.word	.L49+1
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 7
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 7
 
 
  269 0328 B1050000 		.word	.L49+1
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  323 0400 B1050000 		.word	.L49+1
  324 0404 B1050000 		.word	.L49+1
  325 0408 B1050000 		.word	.L49+1
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 8
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 8
 
 
  326 040c B1050000 		.word	.L49+1
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
   97:..\src/command_processing.c ****             break;
  358              		.loc 1 97 0
  359 0456 ACE0     		b	.L1
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 9
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 9
 
 
  360              	.L21:
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  384 0474 9DE0     		b	.L1
  385              	.L28:
  128:..\src/command_processing.c **** 
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 10
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 10
 
 
  129:..\src/command_processing.c **** //=========================================================     CMD_GET_JOYSTICK
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  158:..\src/command_processing.c **** 
  159:..\src/command_processing.c **** //=============================================================     CMD_GET_INFO
  160:..\src/command_processing.c **** 
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 11
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 11
 
 
  161:..\src/command_processing.c ****         case CMD_GET_INFO:
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
   46:Generated_Source\PSoC5/cmsis_gcc.h **** #endif
   47:Generated_Source\PSoC5/cmsis_gcc.h **** #ifndef   __USED
   48:Generated_Source\PSoC5/cmsis_gcc.h ****   #define __USED                    __attribute__((used))
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 12
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 12
 
 
   49:Generated_Source\PSoC5/cmsis_gcc.h **** #endif
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  103:Generated_Source\PSoC5/cmsis_gcc.h ****   return(result);
  104:Generated_Source\PSoC5/cmsis_gcc.h **** }
  105:Generated_Source\PSoC5/cmsis_gcc.h **** 
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 13
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 13
 
 
  106:Generated_Source\PSoC5/cmsis_gcc.h **** 
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  160:Generated_Source\PSoC5/cmsis_gcc.h **** 
  161:Generated_Source\PSoC5/cmsis_gcc.h **** /**
  162:Generated_Source\PSoC5/cmsis_gcc.h ****   \brief   Get APSR Register
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 14
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 14
 
 
  163:Generated_Source\PSoC5/cmsis_gcc.h ****   \details Returns the content of the APSR Register.
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  217:Generated_Source\PSoC5/cmsis_gcc.h **** 
  218:Generated_Source\PSoC5/cmsis_gcc.h **** 
  219:Generated_Source\PSoC5/cmsis_gcc.h **** /**
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 15
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 15
 
 
  220:Generated_Source\PSoC5/cmsis_gcc.h ****   \brief   Set Process Stack Pointer
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  274:Generated_Source\PSoC5/cmsis_gcc.h ****   \brief   Set Main Stack Pointer
  275:Generated_Source\PSoC5/cmsis_gcc.h ****   \details Assigns the given value to the Main Stack Pointer (MSP).
  276:Generated_Source\PSoC5/cmsis_gcc.h ****   \param [in]    topOfMainStack  Main Stack Pointer value to set
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 16
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 16
 
 
  277:Generated_Source\PSoC5/cmsis_gcc.h ****  */
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  331:Generated_Source\PSoC5/cmsis_gcc.h ****  */
  332:Generated_Source\PSoC5/cmsis_gcc.h **** __attribute__((always_inline)) __STATIC_INLINE void __set_PRIMASK(uint32_t priMask)
  333:Generated_Source\PSoC5/cmsis_gcc.h **** {
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 17
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 17
 
 
  334:Generated_Source\PSoC5/cmsis_gcc.h ****   __ASM volatile ("MSR primask, %0" : : "r" (priMask) : "memory");
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  388:Generated_Source\PSoC5/cmsis_gcc.h **** 
  389:Generated_Source\PSoC5/cmsis_gcc.h **** 
  390:Generated_Source\PSoC5/cmsis_gcc.h **** #if (defined (__ARM_FEATURE_CMSE ) && (__ARM_FEATURE_CMSE == 3))
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 18
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 18
 
 
  391:Generated_Source\PSoC5/cmsis_gcc.h **** /**
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  445:Generated_Source\PSoC5/cmsis_gcc.h ****   \return               Fault Mask register value
  446:Generated_Source\PSoC5/cmsis_gcc.h ****  */
  447:Generated_Source\PSoC5/cmsis_gcc.h **** __attribute__((always_inline)) __STATIC_INLINE uint32_t __get_FAULTMASK(void)
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 19
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 19
 
 
  448:Generated_Source\PSoC5/cmsis_gcc.h **** {
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  502:Generated_Source\PSoC5/cmsis_gcc.h **** 
  503:Generated_Source\PSoC5/cmsis_gcc.h **** /**
  504:Generated_Source\PSoC5/cmsis_gcc.h ****   \brief   Get Process Stack Pointer Limit
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 20
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 20
 
 
  505:Generated_Source\PSoC5/cmsis_gcc.h ****   \details Returns the current value of the Process Stack Pointer Limit (PSPLIM).
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  559:Generated_Source\PSoC5/cmsis_gcc.h **** /**
  560:Generated_Source\PSoC5/cmsis_gcc.h ****   \brief   Get Main Stack Pointer Limit
  561:Generated_Source\PSoC5/cmsis_gcc.h ****   \details Returns the current value of the Main Stack Pointer Limit (MSPLIM).
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 21
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 21
 
 
  562:Generated_Source\PSoC5/cmsis_gcc.h ****   \return               MSPLIM Register value
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  616:Generated_Source\PSoC5/cmsis_gcc.h ****            (defined (__ARM_ARCH_8M_BASE__ ) && (__ARM_ARCH_8M_BASE__ == 1U))    ) */
  617:Generated_Source\PSoC5/cmsis_gcc.h **** 
  618:Generated_Source\PSoC5/cmsis_gcc.h **** 
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 22
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 22
 
 
  619:Generated_Source\PSoC5/cmsis_gcc.h **** #if ((defined (__ARM_ARCH_7EM__     ) && (__ARM_ARCH_7EM__     == 1)) || \
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  673:Generated_Source\PSoC5/cmsis_gcc.h ****  * For thumb1, use low register (r0-r7), specified by constraint "l"
  674:Generated_Source\PSoC5/cmsis_gcc.h ****  * Otherwise, use general registers, specified by constraint "r" */
  675:Generated_Source\PSoC5/cmsis_gcc.h **** #if defined (__thumb__) && !defined (__thumb2__)
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 23
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 23
 
 
  676:Generated_Source\PSoC5/cmsis_gcc.h **** #define __CMSIS_GCC_OUT_REG(r) "=l" (r)
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  730:Generated_Source\PSoC5/cmsis_gcc.h ****   \brief   Instruction Synchronization Barrier
  731:Generated_Source\PSoC5/cmsis_gcc.h ****   \details Instruction Synchronization Barrier flushes the pipeline in the processor,
  732:Generated_Source\PSoC5/cmsis_gcc.h ****            so that all instructions following the ISB are fetched from cache or memory,
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 24
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 24
 
 
  733:Generated_Source\PSoC5/cmsis_gcc.h ****            after the instruction has been completed.
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  787:Generated_Source\PSoC5/cmsis_gcc.h ****  */
  788:Generated_Source\PSoC5/cmsis_gcc.h **** __attribute__((always_inline)) __STATIC_INLINE uint32_t __REV16(uint32_t value)
  789:Generated_Source\PSoC5/cmsis_gcc.h **** {
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 25
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 25
 
 
  790:Generated_Source\PSoC5/cmsis_gcc.h ****   uint32_t result;
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  455              		.thumb
  456              		.syntax unified
  457 04bc 3B61     		str	r3, [r7, #16]
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 26
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 26
 
 
  458              		.loc 2 793 0
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  490 04ea 62E0     		b	.L1
  491              	.L40:
  195:..\src/command_processing.c ****             break;
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 27
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 27
 
 
  492              		.loc 1 195 0
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  526              		.loc 1 213 0
  527 0520 0020     		movs	r0, #0
  528 0522 FFF7FEFF 		bl	sendAcknowledgment
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 28
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 28
 
 
  529              		.loc 1 214 0
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  556 0552 1B88     		ldrh	r3, [r3]
  557 0554 7B62     		str	r3, [r7, #36]
  558              	.LBB16:
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 29
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 29
 
 
  559              	.LBB17:
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  593 0578 1BE0     		b	.L1
  594              	.L34:
  261:..\src/command_processing.c ****             
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 30
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 30
 
 
  262:..\src/command_processing.c **** //=====================================================     CMD_GET_ADC_RAW
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  792:Generated_Source\PSoC5/cmsis_gcc.h ****   return(result);
  632              		.loc 2 792 0
  633 059e FB69     		ldr	r3, [r7, #28]
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 31
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 31
 
 
  634              		.syntax unified
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  289:..\src/command_processing.c **** //==============================================================================
  290:..\src/command_processing.c **** 
  291:..\src/command_processing.c **** void infoSend(void){
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 32
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 32
 
 
  677              		.loc 1 291 0
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  721 0000 80B4     		push	{r7}
  722              		.cfi_def_cfa_offset 4
  723              		.cfi_offset 7, -4
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 33
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 33
 
 
  724 0002 85B0     		sub	sp, sp, #20
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  767              		.loc 1 312 0
  768 0054 1846     		mov	r0, r3
  769 0056 1437     		adds	r7, r7, #20
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 34
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 34
 
 
  770              		.cfi_def_cfa_offset 4
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  320:..\src/command_processing.c ****     char CYDATA str_sd_data[20000] = "";
  817              		.loc 1 320 0
  818 002e 07F14803 		add	r3, r7, #72
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 35
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 35
 
 
  819 0032 403B     		subs	r3, r3, #64
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  863 009a 03F12803 		add	r3, r3, #40
  864 009e 1846     		mov	r0, r3
  865 00a0 FFF7FEFF 		bl	prepare_counter_info
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 36
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 36
 
 
  331:..\src/command_processing.c ****             UART_RS485_ClearTxBuffer();
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  907 0100 26E0     		b	.L72
  908              	.L69:
  344:..\src/command_processing.c ****         case GET_SD_FS_TREE:
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 37
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 37
 
 
  345:..\src/command_processing.c ****             Get_SD_FS(str_sd_data);
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  948              	.L72:
  360:..\src/command_processing.c ****     }
  361:..\src/command_processing.c **** }
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 38
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 38
 
 
  949              		.loc 1 361 0 discriminator 1
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  991              		.cfi_startproc
  992              		@ args = 4, pretend = 0, frame = 608
  993              		@ frame_needed = 1, uses_anonymous_args = 0
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 39
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 39
 
 
  994 0000 2DE9F043 		push	{r4, r5, r6, r7, r8, r9, lr}
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  1042 0058 1A60     		str	r2, [r3]
  1043 005a 0433     		adds	r3, r3, #4
  1044 005c F622     		movs	r2, #246
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 40
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 40
 
 
  1045 005e 0021     		movs	r1, #0
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  1091 00ce D400     		lsls	r4, r2, #3
  1092 00d0 0B46     		mov	r3, r1
  1093 00d2 0733     		adds	r3, r3, #7
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 41
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 41
 
 
  1094 00d4 DB08     		lsrs	r3, r3, #3
@@ -2458,7 +2458,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  1141 0136 1268     		ldr	r2, [r2]
  1142 0138 1344     		add	r3, r3, r2
  1143 013a 1B68     		ldr	r3, [r3]
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 42
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 42
 
 
  1144 013c C7F85032 		str	r3, [r7, #592]
@@ -2518,7 +2518,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  397:..\src/command_processing.c ****         case CUSTOM_POS_LIM:        //Position limits
  398:..\src/command_processing.c ****             aux_int32 = (c_mem.SH_config.pos_lim_inf >> c_mem.SH_config.res);
  1191              		.loc 1 398 0
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 43
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 43
 
 
  1192 01b4 B74B     		ldr	r3, .L114
@@ -2578,7 +2578,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  1239 0226 0023     		movs	r3, #0
  1240 0228 87F85C32 		strb	r3, [r7, #604]
  1241 022c 1DE0     		b	.L84
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 44
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 44
 
 
  1242              	.L85:
@@ -2638,7 +2638,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  1284              		.loc 1 413 0 discriminator 3
  1285 0288 97F85F32 		ldrb	r3, [r7, #607]	@ zero_extendqisi2
  1286 028c 3222     		movs	r2, #50
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 45
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 45
 
 
  1287 028e 02FB03F3 		mul	r3, r2, r3
@@ -2698,7 +2698,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  1334              		.loc 1 416 0 is_stmt 1
  1335 0308 00BF     		nop
  1336              	.L86:
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 46
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 46
 
 
  417:..\src/command_processing.c ****     }
@@ -2758,7 +2758,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  425:..\src/command_processing.c ****         
  426:..\src/command_processing.c ****         // Parameters with a menu
  427:..\src/command_processing.c ****         if (PARAM_LIST[idx].MENU != 0){
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 47
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 47
 
 
  1383              		.loc 1 427 0
@@ -2818,7 +2818,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  1431 03e6 07F5A473 		add	r3, r7, #328
  1432 03ea 1846     		mov	r0, r3
  1433 03ec FFF7FEFF 		bl	strlen
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 48
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 48
 
 
  1434 03f0 0346     		mov	r3, r0
@@ -2878,7 +2878,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  438:..\src/command_processing.c ****             packet_data[(4 + PARAM_BYTE_SLOT*idx) + (sod*PARAM_LIST[idx].NUM_ITEMS) + string_length
  1480              		.loc 1 438 0 discriminator 3
  1481 0464 97F85D32 		ldrb	r3, [r7, #605]	@ zero_extendqisi2
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 49
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 49
 
 
  1482 0468 013B     		subs	r3, r3, #1
@@ -2938,7 +2938,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  1528 04cc 02FB03F3 		mul	r3, r2, r3
  1529 04d0 1A1D     		adds	r2, r3, #4
  1530 04d2 97F84332 		ldrb	r3, [r7, #579]	@ zero_extendqisi2
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 50
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 50
 
 
  1531 04d6 97F85F12 		ldrb	r1, [r7, #607]	@ zero_extendqisi2
@@ -2998,7 +2998,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  1578 054e 0233     		adds	r3, r3, #2
  1579 0550 97F85F22 		ldrb	r2, [r7, #607]	@ zero_extendqisi2
  1580 0554 1201     		lsls	r2, r2, #4
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 51
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 51
 
 
  1581 0556 07F10801 		add	r1, r7, #8
@@ -3058,7 +3058,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  458:..\src/command_processing.c ****     // Add menu
  459:..\src/command_processing.c ****     for (j = 0; j < num_menus; j++) {
  1627              		.loc 1 459 0 is_stmt 1
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 52
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 52
 
 
  1628 05c6 0023     		movs	r3, #0
@@ -3118,7 +3118,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  1677 0630 0FCC     		ldmia	r4!, {r0, r1, r2, r3}
  1678 0632 2860     		str	r0, [r5]	@ unaligned
  1679 0634 6960     		str	r1, [r5, #4]	@ unaligned
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 53
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 53
 
 
  1680 0636 AA60     		str	r2, [r5, #8]	@ unaligned
@@ -3178,7 +3178,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  1726 069e 1344     		add	r3, r3, r2
  1727 06a0 5A68     		ldr	r2, [r3, #4]
  1728 06a2 07F14C03 		add	r3, r7, #76
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 54
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 54
 
 
  1729 06a6 1146     		mov	r1, r2
@@ -3238,7 +3238,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  1774 070c 01FB03F3 		mul	r3, r1, r3
  1775 0710 1A44     		add	r2, r2, r3
  1776 0712 97F85E32 		ldrb	r3, [r7, #606]	@ zero_extendqisi2
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 55
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 55
 
 
  1777 0716 1A44     		add	r2, r2, r3
@@ -3298,7 +3298,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  1822              		.loc 1 484 0
  1823 0786 97F88032 		ldrb	r3, [r7, #640]	@ zero_extendqisi2
  1824 078a 002B     		cmp	r3, #0
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 56
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 56
 
 
  1825 078c 07D0     		beq	.L112
@@ -3358,7 +3358,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  1863              	.LC22:
  1864 0058 454D4720 		.ascii	"EMG max speeds:\000"
  1864      6D617820 
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 57
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 57
 
 
  1864      73706565 
@@ -3418,7 +3418,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  1891 00fc 4D617869 		.ascii	"Maximum slave residual current:\000"
  1891      6D756D20 
  1891      736C6176 
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 58
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 58
 
 
  1891      65207265 
@@ -3478,7 +3478,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  1919 01c2 0000     		.align	2
  1920              	.LC7:
  1921 01c4 20454D47 		.ascii	" EMG proportional NC\000"
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 59
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 59
 
 
  1921      2070726F 
@@ -3538,7 +3538,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  1970 0264 00000000 		.word	.LC8
  1971 0268 00000000 		.word	.LC8
  1972 026c 00000000 		.word	.LC8
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 60
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 60
 
 
  1973 0270 00000000 		.word	.LC8
@@ -3598,7 +3598,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  2013              	.L119:
  507:..\src/command_processing.c ****     }
  508:..\src/command_processing.c **** 
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 61
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 61
 
 
  509:..\src/command_processing.c ****     struct menu menu_type;
@@ -3658,7 +3658,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  2048 007a 07F10C03 		add	r3, r7, #12
  2049 007e 0122     		movs	r2, #1
  2050 0080 DA73     		strb	r2, [r3, #15]
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 62
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 62
 
 
  528:..\src/command_processing.c ****         
@@ -3718,7 +3718,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  2099 0106 07F10C03 		add	r3, r7, #12
  2100 010a 0022     		movs	r2, #0
  2101 010c 83F82E20 		strb	r2, [r3, #46]
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 63
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 63
 
 
  2102 0110 07F10C03 		add	r3, r7, #12
@@ -3778,7 +3778,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  2152 01a6 83F84D20 		strb	r2, [r3, #77]
  2153 01aa 07F10C03 		add	r3, r7, #12
  2154 01ae 0022     		movs	r2, #0
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 64
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 64
 
 
  2155 01b0 83F84E20 		strb	r2, [r3, #78]
@@ -3838,7 +3838,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  2203 0240 83F86C20 		strb	r2, [r3, #108]
  2204 0244 07F10C03 		add	r3, r7, #12
  2205 0248 5022     		movs	r2, #80
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 65
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 65
 
 
  2206 024a 83F86D20 		strb	r2, [r3, #109]
@@ -3898,7 +3898,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  2256 02e6 0122     		movs	r2, #1
  2257 02e8 83F88C20 		strb	r2, [r3, #140]
  2258 02ec 07F10C03 		add	r3, r7, #12
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 66
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 66
 
 
  2259 02f0 5022     		movs	r2, #80
@@ -3958,7 +3958,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  2309 038e 07F10C03 		add	r3, r7, #12
  2310 0392 0522     		movs	r2, #5
  2311 0394 83F8AC20 		strb	r2, [r3, #172]
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 67
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 67
 
 
  2312 0398 07F10C03 		add	r3, r7, #12
@@ -4018,7 +4018,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  2364 043c 07F10C03 		add	r3, r7, #12
  2365 0440 0122     		movs	r2, #1
  2366 0442 83F8BF20 		strb	r2, [r3, #191]
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 68
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 68
 
 
  543:..\src/command_processing.c ****         {(uint8* const) &(MEM_P->FB.max_residual_current)          , TYPE_INT32      , 1         , 
@@ -4078,7 +4078,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  2417 04e4 83F8DE20 		strb	r2, [r3, #222]
  2418 04e8 07F10C03 		add	r3, r7, #12
  2419 04ec 0122     		movs	r2, #1
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 69
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 69
 
 
  2420 04ee 83F8DF20 		strb	r2, [r3, #223]
@@ -4138,7 +4138,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  2465 056e FFF7FEFF 		bl	get_param_list
  553:..\src/command_processing.c ****     }   
  554:..\src/command_processing.c ****     else if  (index == 300) {
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 70
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 70
 
 
  555:..\src/command_processing.c ****         // Called only by prepre_generic_info to get data  from the parameters to print
@@ -4198,7 +4198,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  2482              	.L122:
  2483              	.LBB24:
  561:..\src/command_processing.c ****         
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 71
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 71
 
 
  2484              		.loc 1 561 0
@@ -4258,7 +4258,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  2533 0602 97F8C721 		ldrb	r2, [r7, #455]	@ zero_extendqisi2
  2534 0606 D11C     		adds	r1, r2, #3
  2535 0608 97F8C621 		ldrb	r2, [r7, #454]	@ zero_extendqisi2
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 72
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 72
 
 
  2536 060c 0A44     		add	r2, r2, r1
@@ -4318,7 +4318,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  2584 067c 97F8C731 		ldrb	r3, [r7, #455]	@ zero_extendqisi2
  2585 0680 1344     		add	r3, r3, r2
  2586 0682 0022     		movs	r2, #0
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 73
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 73
 
 
  2587 0684 1A70     		strb	r2, [r3]
@@ -4378,7 +4378,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  586:..\src/command_processing.c ****             }   
  2638              		.loc 1 586 0
  2639 06f6 0E4B     		ldr	r3, .L137+20
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 74
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 74
 
 
  2640 06f8 0122     		movs	r2, #1
@@ -4438,7 +4438,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  2685              		@ args = 0, pretend = 0, frame = 16
  2686              		@ frame_needed = 1, uses_anonymous_args = 0
  2687 0000 80B5     		push	{r7, lr}
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 75
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 75
 
 
  2688              		.cfi_def_cfa_offset 8
@@ -4498,7 +4498,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  2728              		.loc 1 611 0
  2729 0040 3A4B     		ldr	r3, .L151
  2730 0042 DB78     		ldrb	r3, [r3, #3]	@ zero_extendqisi2
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 76
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 76
 
 
  2731 0044 1A06     		lsls	r2, r3, #24
@@ -4558,7 +4558,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  2780              	.L149:
  617:..\src/command_processing.c ****             default:
  618:..\src/command_processing.c **** 
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 77
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 77
 
 
  619:..\src/command_processing.c ****                 for (i = 0; i < PARAM_LIST[index].NUM_ITEMS * sod; i += sod){
@@ -4618,7 +4618,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  2828 00ea FA7B     		ldrb	r2, [r7, #15]	@ zero_extendqisi2
  2829 00ec FB88     		ldrh	r3, [r7, #6]
  2830 00ee 1B01     		lsls	r3, r3, #4
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 78
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 78
 
 
  2831 00f0 3968     		ldr	r1, [r7]
@@ -4678,7 +4678,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  2876              		.size	set_custom_param, .-set_custom_param
  2877              		.section	.text.get_IMU_param_list,"ax",%progbits
  2878              		.align	2
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 79
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 79
 
 
  2879              		.global	get_IMU_param_list
@@ -4738,7 +4738,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  643:..\src/command_processing.c **** 
  644:..\src/command_processing.c **** void setZeros()
  645:..\src/command_processing.c **** {
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 80
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 80
 
 
  2921              		.loc 1 645 0
@@ -4798,7 +4798,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  2971 0002 ADF66C2D 		subw	sp, sp, #2668
  2972              		.cfi_def_cfa_offset 2680
  2973 0006 00AF     		add	r7, sp, #0
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 81
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 81
 
 
  2974              		.cfi_def_cfa_register 7
@@ -4858,7 +4858,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  3010              		.loc 1 666 0
  3011 0054 A14B     		ldr	r3, .L181
  3012 0056 1A78     		ldrb	r2, [r3]	@ zero_extendqisi2
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 82
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 82
 
 
  3013 0058 07F17803 		add	r3, r7, #120
@@ -4918,7 +4918,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  3060 00c4 1B68     		ldr	r3, [r3]
  3061 00c6 C7F8583A 		str	r3, [r7, #2648]
  674:..\src/command_processing.c ****                 uint8 sod = num_of_bytes(PARAM_LIST[idx].TYPES);
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 83
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 83
 
 
  3062              		.loc 1 674 0
@@ -4978,7 +4978,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  3111 0144 91010000 		.word	.L167+1
  3112 0148 AD010000 		.word	.L168+1
  3113 014c E5010000 		.word	.L169+1
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 84
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 84
 
 
  3114 0150 C9010000 		.word	.L170+1
@@ -5038,7 +5038,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  3156              	.L168:
  692:..\src/command_processing.c ****                             
  693:..\src/command_processing.c ****                             case TYPE_UINT16: 
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 85
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 85
 
 
  694:..\src/command_processing.c ****                                 aux_uint16 = *((uint16*)m_tmp);
@@ -5098,7 +5098,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  709:..\src/command_processing.c ****                                 aux_float = *((float*)m_tmp);
  3196              		.loc 1 709 0
  3197 0200 D7F8503A 		ldr	r3, [r7, #2640]
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 86
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 86
 
 
  3198 0204 1B68     		ldr	r3, [r3]	@ float
@@ -5158,7 +5158,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  3244 026a 1268     		ldr	r2, [r2]
  3245 026c 1A44     		add	r2, r2, r3
  3246 026e D7F8583A 		ldr	r3, [r7, #2648]
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 87
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 87
 
 
  3247 0272 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
@@ -5218,7 +5218,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  3291 02ca 1344     		add	r3, r3, r2
  3292 02cc 5B79     		ldrb	r3, [r3, #5]	@ zero_extendqisi2
  3293 02ce 1A46     		mov	r2, r3
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 88
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 88
 
 
  3294 02d0 D7F8643A 		ldr	r3, [r7, #2660]
@@ -5278,7 +5278,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  3338 033c D7F8402A 		ldr	r2, [r7, #2624]
  3339 0340 1A49     		ldr	r1, .L183+4
  3340 0342 1846     		mov	r0, r3
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 89
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 89
 
 
  3341 0344 FFF7FEFF 		bl	sprintf
@@ -5338,7 +5338,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  3381 039a FFF7FEFF 		bl	strcat
  3382              	.L179:
  3383              	.LBE25:
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 90
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 90
 
 
  746:..\src/command_processing.c ****     
@@ -5398,7 +5398,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  3421              		.align	2
  3422              	.LC43:
  3423 02e4 454D4720 		.ascii	"EMG input %d -> %d\000"
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 91
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 91
 
 
  3423      696E7075 
@@ -5458,7 +5458,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  3459 0008 0021     		movs	r1, #0
  3460 000a 4FF49670 		mov	r0, #300
  3461 000e FFF7FEFF 		bl	manage_param_list
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 92
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 92
 
 
  755:..\src/command_processing.c ****     int i;
@@ -5518,7 +5518,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  764:..\src/command_processing.c ****         strcat(info_string, VERSION);
  3507              		.loc 1 764 0
  3508 0066 7868     		ldr	r0, [r7, #4]
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 93
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 93
 
 
  3509 0068 FFF7FEFF 		bl	strlen
@@ -5578,7 +5578,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  3560 00d0 1344     		add	r3, r3, r2
  3561 00d2 424A     		ldr	r2, .L190+24
  3562 00d4 1C46     		mov	r4, r3
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 94
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 94
 
 
  3563 00d6 1546     		mov	r5, r2
@@ -5638,7 +5638,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  3610 0136 7B68     		ldr	r3, [r7, #4]
  3611 0138 1344     		add	r3, r3, r2
  3612 013a 234A     		ldr	r2, .L190+4
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 95
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 95
 
 
  3613 013c 1188     		ldrh	r1, [r2]	@ unaligned
@@ -5698,7 +5698,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  3657              		.loc 1 782 0
  3658 0196 07F10C03 		add	r3, r7, #12
  3659 019a 1946     		mov	r1, r3
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 96
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 96
 
 
  3660 019c 7868     		ldr	r0, [r7, #4]
@@ -5758,7 +5758,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  3709              		.thumb
  3710              		.thumb_func
  3711              		.type	prepare_counter_info, %function
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 97
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 97
 
 
  3712              	prepare_counter_info:
@@ -5818,7 +5818,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  3751              		@ args = 0, pretend = 0, frame = 8
  3752              		@ frame_needed = 1, uses_anonymous_args = 0
  3753              		@ link register save eliminated.
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 98
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 98
 
 
  3754 0000 80B4     		push	{r7}
@@ -5878,7 +5878,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  3799 000a 0C37     		adds	r7, r7, #12
  3800              		.cfi_def_cfa_offset 4
  3801 000c BD46     		mov	sp, r7
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 99
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 99
 
 
  3802              		.cfi_def_cfa_register 13
@@ -5938,7 +5938,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  3848              		.global	prepare_SD_EMG_History_legend
  3849              		.thumb
  3850              		.thumb_func
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 100
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 100
 
 
  3851              		.type	prepare_SD_EMG_History_legend, %function
@@ -5998,7 +5998,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  3891              		@ args = 0, pretend = 0, frame = 8
  3892              		@ frame_needed = 1, uses_anonymous_args = 0
  3893              		@ link register save eliminated.
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 101
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 101
 
 
  3894 0000 80B4     		push	{r7}
@@ -6058,7 +6058,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  3938 0008 00BF     		nop
  3939 000a 0C37     		adds	r7, r7, #12
  3940              		.cfi_def_cfa_offset 4
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 102
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 102
 
 
  3941 000c BD46     		mov	sp, r7
@@ -6118,7 +6118,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  857:..\src/command_processing.c ****     //if(old_id)
  858:..\src/command_processing.c ****         UART_RS485_PutChar(old_id);
  3982              		.loc 1 858 0
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 103
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 103
 
 
  3983 001c 7B78     		ldrb	r3, [r7, #1]	@ zero_extendqisi2
@@ -6178,7 +6178,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  4022 005c 03F00103 		and	r3, r3, #1
  4023 0060 002B     		cmp	r3, #0
  4024 0062 05D1     		bne	.L202
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 104
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 104
 
 
  4025              		.loc 1 871 0 discriminator 1
@@ -6238,7 +6238,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  879:..\src/command_processing.c ****     uint16 CYDATA index;    // iterator
  880:..\src/command_processing.c **** 
  881:..\src/command_processing.c ****     // frame - start
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 105
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 105
 
 
  882:..\src/command_processing.c ****     UART_RS485_PutChar(':');
@@ -6298,7 +6298,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  4112 0050 FB81     		strh	r3, [r7, #14]	@ movhi
  894:..\src/command_processing.c **** 
  895:..\src/command_processing.c ****     while(!(UART_RS485_ReadTxStatus() & UART_RS485_TX_STS_COMPLETE) && index++ <= 1000){}
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 106
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 106
 
 
  4113              		.loc 1 895 0
@@ -6358,7 +6358,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  905:..\src/command_processing.c **** 
  906:..\src/command_processing.c **** void commWriteID(uint8 *packet_data, uint16 packet_length, uint8 id)
  907:..\src/command_processing.c **** {
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 107
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 107
 
 
  4158              		.loc 1 907 0
@@ -6418,7 +6418,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  4200 003c 7B68     		ldr	r3, [r7, #4]
  4201 003e 1344     		add	r3, r3, r2
  4202 0040 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 108
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 108
 
 
  4203 0042 1846     		mov	r0, r3
@@ -6478,7 +6478,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  4247 008e FFF7FEFF 		bl	RS485_CTS_Write
  928:..\src/command_processing.c **** }
  4248              		.loc 1 928 0
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 109
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 109
 
 
  4249 0092 00BF     		nop
@@ -6538,7 +6538,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  4290 0010 0023     		movs	r3, #0
  4291 0012 FB73     		strb	r3, [r7, #15]
  4292 0014 09E0     		b	.L219
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 110
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 110
 
 
  4293              	.L220:
@@ -6598,7 +6598,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  951:..\src/command_processing.c **** 
  952:..\src/command_processing.c **** void sendAcknowledgment(uint8 value) {
  4336              		.loc 1 952 0
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 111
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 111
 
 
  4337              		.cfi_startproc
@@ -6658,7 +6658,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  4383              	memStore:
  4384              	.LFB87:
  961:..\src/command_processing.c **** 
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 112
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 112
 
 
  962:..\src/command_processing.c **** //==============================================================================
@@ -6718,7 +6718,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  4415 0026 FB60     		str	r3, [r7, #12]
  986:..\src/command_processing.c **** 
  987:..\src/command_processing.c ****     for(i = 0; i < pages; ++i) {
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 113
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 113
 
 
  4416              		.loc 1 987 0
@@ -6778,7 +6778,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  4460 006a 074B     		ldr	r3, .L229
  4461 006c 1046     		mov	r0, r2
  4462 006e 1946     		mov	r1, r3
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 114
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 114
 
 
  4463 0070 6023     		movs	r3, #96
@@ -6838,7 +6838,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  4502 0002 82B0     		sub	sp, sp, #8
  4503              		.cfi_def_cfa_offset 16
  4504 0004 00AF     		add	r7, sp, #0
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 115
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 115
 
 
  4505              		.cfi_def_cfa_register 7
@@ -6898,7 +6898,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  4544 003e 1046     		mov	r0, r2
  4545 0040 1946     		mov	r1, r3
  4546 0042 6023     		movs	r3, #96
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 116
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 116
 
 
  4547 0044 1A46     		mov	r2, r3
@@ -6958,7 +6958,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  4590 000a 0EE0     		b	.L240
  4591              	.L241:
 1034:..\src/command_processing.c ****         ((reg8 *) (uint8*)&g_mem.flag)[i] = EEPROM_ADDR[i + (DEFAULT_EEPROM_DISPLACEMENT * 16)];
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 117
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 117
 
 
  4592              		.loc 1 1034 0 discriminator 3
@@ -7018,7 +7018,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  4635 004e 80BD     		pop	{r7, pc}
  4636              	.L245:
  4637              		.align	2
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 118
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 118
 
 
  4638              	.L244:
@@ -7072,13 +7072,13 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  4671 0010 2C4B     		ldr	r3, .L250
  4672 0012 0022     		movs	r2, #0
  4673 0014 1A62     		str	r2, [r3, #32]
-1059:..\src/command_processing.c ****     g_mem.SH_config.pos_lim_sup = (int32)16000 << g_mem.SH_config.res;
+1059:..\src/command_processing.c ****     g_mem.SH_config.pos_lim_sup = (int32)19000 << g_mem.SH_config.res;
  4674              		.loc 1 1059 0
  4675 0016 2B4B     		ldr	r3, .L250
  4676 0018 93F82930 		ldrb	r3, [r3, #41]	@ zero_extendqisi2
  4677 001c 1A46     		mov	r2, r3
- 4678 001e 4FF47A53 		mov	r3, #16000
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 119
+ 4678 001e 44F63823 		movw	r3, #19000
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 119
 
 
  4679 0022 9340     		lsls	r3, r3, r2
@@ -7138,7 +7138,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  4719 006c 154B     		ldr	r3, .L250
  4720 006e 0022     		movs	r2, #0
  4721 0070 83F84020 		strb	r2, [r3, #64]
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 120
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 120
 
 
 1074:..\src/command_processing.c ****     
@@ -7198,7 +7198,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  4762              		.loc 1 1087 0 discriminator 4
  4763 00bc 0023     		movs	r3, #0
  4764              	.L248:
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 121
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 121
 
 
  4765              		.loc 1 1087 0 discriminator 6
@@ -7258,7 +7258,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  4812              		.type	memInit_Master, %function
  4813              	memInit_Master:
  4814              	.LFB92:
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 122
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 122
 
 
 1095:..\src/command_processing.c **** 
@@ -7318,7 +7318,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  4855              		.loc 1 1108 0
  4856 0004 00BF     		nop
  4857 0006 BD46     		mov	sp, r7
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 123
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 123
 
 
  4858              		.cfi_def_cfa_register 13
@@ -7378,7 +7378,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
 1116:..\src/command_processing.c **** 
 1117:..\src/command_processing.c **** //==============================================================================
 1118:..\src/command_processing.c **** //                                                    ROUTINE INTERRUPT FUNCTION
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 124
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 124
 
 
 1119:..\src/command_processing.c **** //==============================================================================
@@ -7438,7 +7438,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  4946 0004 00BF     		nop
  4947 0006 BD46     		mov	sp, r7
  4948              		.cfi_def_cfa_register 13
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 125
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 125
 
 
  4949              		@ sp needed
@@ -7498,7 +7498,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  4997              		@ args = 0, pretend = 0, frame = 0
  4998              		@ frame_needed = 1, uses_anonymous_args = 0
  4999              		@ link register save eliminated.
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 126
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 126
 
 
  5000 0000 80B4     		push	{r7}
@@ -7558,7 +7558,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  5045 0014 1343     		orrs	r3, r3, r2
  5046 0016 1BB2     		sxth	r3, r3
  5047 0018 3B80     		strh	r3, [r7]	@ movhi
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 127
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 127
 
 
 1147:..\src/command_processing.c ****     aux_int16[1] = (int16)(g_rx.buffer[3]<<8 | g_rx.buffer[4]);
@@ -7618,7 +7618,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
 1156:..\src/command_processing.c ****       // last_aux_int16[i] = aux_int16[i];
 1157:..\src/command_processing.c ****     
 1158:..\src/command_processing.c ****     
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 128
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 128
 
 
 1159:..\src/command_processing.c ****     // Update g_refNew in case a new command has been received
@@ -7678,7 +7678,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  5128 0096 B7F90430 		ldrsh	r3, [r7, #4]
  5129 009a DAB2     		uxtb	r2, r3
  5130 009c 064B     		ldr	r3, .L267+12
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 129
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 129
 
 
  5131 009e 5A70     		strb	r2, [r3, #1]
@@ -7738,7 +7738,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  5179 000c FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
  5180 000e 5B08     		lsrs	r3, r3, #1
  5181 0010 DBB2     		uxtb	r3, r3
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 130
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 130
 
 
  5182 0012 03F00103 		and	r3, r3, #1
@@ -7798,7 +7798,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  5230              		.size	cmd_get_activate, .-cmd_get_activate
  5231              		.section	.text.cmd_get_curr_and_meas,"ax",%progbits
  5232              		.align	2
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 131
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 131
 
 
  5233              		.global	cmd_get_curr_and_meas
@@ -7858,7 +7858,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  5280              		.cfi_def_cfa_register 7
 1195:..\src/command_processing.c ****    
 1196:..\src/command_processing.c ****     // Packet: header + motor_measure(int16) + crc
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 132
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 132
 
 
 1197:..\src/command_processing.c ****     
@@ -7918,7 +7918,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  5318 0042 FB80     		strh	r3, [r7, #6]	@ movhi
 1214:..\src/command_processing.c ****     
 1215:..\src/command_processing.c ****     packet_data[4] = ((char*)(&aux_int16))[0];
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 133
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 133
 
 
  5319              		.loc 1 1215 0
@@ -7978,7 +7978,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
 1225:..\src/command_processing.c **** 
 1226:..\src/command_processing.c **** void cmd_get_currents_for_cuff(){
  5364              		.loc 1 1226 0
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 134
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 134
 
 
  5365              		.cfi_startproc
@@ -8038,7 +8038,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  5413              		.cfi_endproc
  5414              	.LFE105:
  5415              		.size	cmd_get_vibrotactile_inputs, .-cmd_get_vibrotactile_inputs
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 135
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 135
 
 
  5416              		.section	.text.commReadIMUFromSH,"ax",%progbits
@@ -8098,7 +8098,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  5446 0012 FA23     		movs	r3, #250
  5447 0014 7B71     		strb	r3, [r7, #5]
 1257:..\src/command_processing.c ****     commWriteID(packet_data, packet_length, c_mem.MS.slave_ID);
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 136
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 136
 
 
  5448              		.loc 1 1257 0
@@ -8158,7 +8158,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  5490 005c 154B     		ldr	r3, .L287+12
  5491 005e 0022     		movs	r2, #0
  5492 0060 1A70     		strb	r2, [r3]
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 137
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 137
 
 
 1270:..\src/command_processing.c ****             break;
@@ -8218,7 +8218,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  5536              		.cfi_def_cfa_register 13
  5537              		@ sp needed
  5538 00a4 80BD     		pop	{r7, pc}
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 138
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 138
 
 
  5539              	.L288:
@@ -8278,7 +8278,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  5577 000c 7B77     		strb	r3, [r7, #29]
 1296:..\src/command_processing.c **** 
 1297:..\src/command_processing.c ****     packet_length = 2;
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 139
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 139
 
 
  5578              		.loc 1 1297 0
@@ -8338,7 +8338,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  5619 0050 BA69     		ldr	r2, [r7, #24]
  5620 0052 7B69     		ldr	r3, [r7, #20]
  5621 0054 D31A     		subs	r3, r2, r3
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 140
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 140
 
 
  5622 0056 114A     		ldr	r2, .L296+8
@@ -8398,7 +8398,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  5663              		.cfi_def_cfa_register 13
  5664              		@ sp needed
  5665 0092 80BD     		pop	{r7, pc}
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 141
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 141
 
 
  5666              	.L297:
@@ -8458,7 +8458,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  5713              	cmd_ping:
  5714              	.LFB109:
 1330:..\src/command_processing.c **** 
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 142
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 142
 
 
 1331:..\src/command_processing.c **** void cmd_ping(){
@@ -8518,7 +8518,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  5756              	.LFB110:
 1344:..\src/command_processing.c **** 
 1345:..\src/command_processing.c **** void cmd_get_inputs(){
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 143
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 143
 
 
  5757              		.loc 1 1345 0
@@ -8578,7 +8578,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
 1355:..\src/command_processing.c ****     // Store params 
 1356:..\src/command_processing.c **** 
 1357:..\src/command_processing.c ****     if (c_mem.dev.id != g_mem.dev.id) {     //If a new id is going to be set we will lose communica
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 144
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 144
 
 
  5802              		.loc 1 1357 0
@@ -8638,7 +8638,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  5846 0052 FFF7FEFF 		bl	commWrite_old_id
  5847 0056 0CE0     		b	.L305
  5848              	.L302:
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 145
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 145
 
 
 1368:..\src/command_processing.c ****         }
@@ -8698,7 +8698,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  5889              		.section	.text.cmd_get_emg,"ax",%progbits
  5890              		.align	2
  5891              		.global	cmd_get_emg
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 146
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 146
 
 
  5892              		.thumb
@@ -8758,7 +8758,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  5931              		.loc 1 1396 0
  5932 0028 BB1D     		adds	r3, r7, #6
  5933 002a 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 147
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 147
 
 
  5934 002c 3B73     		strb	r3, [r7, #12]
@@ -8818,7 +8818,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  5979              		@ link register save eliminated.
  5980 0000 80B4     		push	{r7}
  5981              		.cfi_def_cfa_offset 4
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 148
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 148
 
 
  5982              		.cfi_offset 7, -4
@@ -8878,7 +8878,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  6031              		.thumb_func
  6032              		.type	cmd_get_encoder_raw, %function
  6033              	cmd_get_encoder_raw:
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 149
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 149
 
 
  6034              	.LFB115:
@@ -8938,7 +8938,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  6082              		.cfi_def_cfa_offset 0
  6083 000a 7047     		bx	lr
  6084              		.cfi_endproc
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 150
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 150
 
 
  6085              	.LFE116:
@@ -8998,7 +8998,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  6133 0002 ADF59C4D 		sub	sp, sp, #19968
  6134              		.cfi_def_cfa_offset 19976
  6135 0006 98B0     		sub	sp, sp, #96
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 151
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 151
 
 
  6136              		.cfi_def_cfa_offset 20072
@@ -9058,7 +9058,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  6182 0070 0023     		movs	r3, #0
  6183 0072 07F59C42 		add	r2, r7, #19968
  6184 0076 02F15F02 		add	r2, r2, #95
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 152
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 152
 
 
  6185 007a 1370     		strb	r3, [r2]
@@ -9118,7 +9118,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  6231 00ea 07F59C43 		add	r3, r7, #19968
  6232 00ee 03F12C03 		add	r3, r3, #44
  6233 00f2 1749     		ldr	r1, .L324+8
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 153
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 153
 
 
  6234 00f4 1846     		mov	r0, r3
@@ -9178,7 +9178,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  6276 014c 00000000 		.word	g_rx
  6277 0150 00000000 		.word	sdFile
  6278              		.cfi_endproc
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 154
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 154
 
 
  6279              	.LFE118:
@@ -9238,7 +9238,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
 1453:..\src/command_processing.c **** 
 1454:..\src/command_processing.c **** //==============================================================================
 1455:..\src/command_processing.c **** //                                                          VIBROTACTILE CONTROL
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 155
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 155
 
 
 1456:..\src/command_processing.c **** //==============================================================================
@@ -9298,7 +9298,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
 1468:..\src/command_processing.c ****     if (PWM_IMU_1 > MAX_VT_PWM) PWM_IMU_1 = MAX_VT_PWM;
  6371              		.loc 1 1468 0
  6372 004e 3A4B     		ldr	r3, .L335
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 156
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 156
 
 
  6373 0050 B3F90030 		ldrsh	r3, [r3]
@@ -9358,7 +9358,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  6423              		.loc 1 1472 0 is_stmt 0 discriminator 1
  6424 00bc 214B     		ldr	r3, .L335+12
  6425 00be 6422     		movs	r2, #100
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 157
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 157
 
 
  6426 00c0 1A80     		strh	r2, [r3]	@ movhi
@@ -9418,7 +9418,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  6470 010c FFF7FEFF 		bl	vibrotactile_control_generic
 1483:..\src/command_processing.c ****         
 1484:..\src/command_processing.c ****         if (interrupt_flag){
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 158
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 158
 
 
  6471              		.loc 1 1484 0
@@ -9478,7 +9478,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  6518              		.section	.text.air_chambers_control,"ax",%progbits
  6519              		.align	2
  6520              		.global	air_chambers_control
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 159
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 159
 
 
  6521              		.thumb
@@ -9538,7 +9538,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  6552 0020 FFF7FEFF 		bl	__aeabi_dsub
  6553 0024 0346     		mov	r3, r0
  6554 0026 0C46     		mov	r4, r1
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 160
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 160
 
 
  6555 0028 1846     		mov	r0, r3
@@ -9598,7 +9598,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  6605 00a0 0246     		mov	r2, r0
  6606 00a2 0B46     		mov	r3, r1
  6607 00a4 4046     		mov	r0, r8
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 161
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 161
 
 
  6608 00a6 4946     		mov	r1, r9
@@ -9658,7 +9658,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  6656              		.loc 1 1522 0
  6657 010a 204B     		ldr	r3, .L347+16
  6658 010c 1B68     		ldr	r3, [r3]
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 162
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 162
 
 
  6659 010e FA68     		ldr	r2, [r7, #12]
@@ -9718,7 +9718,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  6693 014c 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
  6694 014e 502B     		cmp	r3, #80
  6695 0150 02D9     		bls	.L344
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 163
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 163
 
 
 1543:..\src/command_processing.c ****         Pump_refNew = MAX_PUMP_PWM; // 80
@@ -9778,7 +9778,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  6737              		.align	2
  6738              		.global	pump_control
  6739              		.thumb
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 164
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 164
 
 
  6740              		.thumb_func
@@ -9838,7 +9838,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
 1563:..\src/command_processing.c **** void VT_control() {
  6787              		.loc 1 1563 0
  6788              		.cfi_startproc
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 165
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 165
 
 
  6789              		@ args = 0, pretend = 0, frame = 0
@@ -9898,7 +9898,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  6836              		.cfi_endproc
  6837              	.LFE123:
  6838              		.size	VT_control, .-VT_control
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 166
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 166
 
 
  6839              		.section	.text.emg_activation_velocity_fsm,"ax",%progbits
@@ -9958,7 +9958,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
 1585:..\src/command_processing.c **** 
 1586:..\src/command_processing.c **** void otbk_act_wrist_control(int slave_motor_idx) {
  6879              		.loc 1 1586 0
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 167
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 167
 
 
  6880              		.cfi_startproc
@@ -10018,7 +10018,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
 1629:..\src/command_processing.c ****             // Softhand stop
 1630:..\src/command_processing.c ****             // Do not update the motor reference, so the SoftHand stays still
 1631:..\src/command_processing.c ****             g_ref[slave_motor_idx].pos = g_refOld[slave_motor_idx].pos;
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 168
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 168
 
 
 1632:..\src/command_processing.c ****             g_refNew[slave_motor_idx].pos = g_ref[slave_motor_idx].pos;
@@ -10078,7 +10078,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
 1664:..\src/command_processing.c **** //==============================================================================
 1665:..\src/command_processing.c ****  
 1666:..\src/command_processing.c ****  
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 169
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 169
 
 
 1667:..\src/command_processing.c **** void drive_slave( uint8 slave_ID) {
@@ -10138,7 +10138,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
 1686:..\src/command_processing.c ****     *((int16 *) &packet_data[3]) = 0;
  6949              		.loc 1 1686 0
  6950 0030 07F11003 		add	r3, r7, #16
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 170
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 170
 
 
  6951 0034 0333     		adds	r3, r3, #3
@@ -10198,7 +10198,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  6998              		.thumb
  6999              		.thumb_func
  7000              		.type	stop_master_device, %function
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 171
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 171
 
 
  7001              	stop_master_device:
@@ -10258,7 +10258,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  7042              		.global	deactivate_slaves
  7043              		.thumb
  7044              		.thumb_func
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 172
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 172
 
 
  7045              		.type	deactivate_slaves, %function
@@ -10318,7 +10318,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  7090 000a 04       		.byte	0x4
  7091 000b 01       		.uleb128 0x1
  7092 000c 40080000 		.4byte	.LASF304
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 173
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 173
 
 
  7093 0010 0C       		.byte	0xc
@@ -10378,7 +10378,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  7147 007c 07       		.byte	0x7
  7148 007d 040A0000 		.4byte	.LASF10
  7149 0081 03       		.uleb128 0x3
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 174
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 174
 
 
  7150 0082 6C000000 		.4byte	.LASF11
@@ -10438,7 +10438,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  7204 00fa 8E02     		.2byte	0x28e
  7205 00fc 00010000 		.4byte	0x100
  7206 0100 06       		.uleb128 0x6
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 175
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 175
 
 
  7207 0101 97000000 		.4byte	0x97
@@ -10498,7 +10498,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  7261 0170 0A       		.uleb128 0xa
  7262 0171 7D0F0000 		.4byte	.LASF35
  7263 0175 0B       		.byte	0xb
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 176
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 176
 
 
  7264 0176 0A       		.uleb128 0xa
@@ -10558,7 +10558,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  7318 01e2 3C0C0000 		.4byte	.LASF53
  7319 01e6 08       		.byte	0x8
  7320 01e7 0A       		.uleb128 0xa
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 177
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 177
 
 
  7321 01e8 01080000 		.4byte	.LASF54
@@ -10618,7 +10618,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  7375 0257 81       		.byte	0x81
  7376 0258 0A       		.uleb128 0xa
  7377 0259 50050000 		.4byte	.LASF71
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 178
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 178
 
 
  7378 025d 82       		.byte	0x82
@@ -10678,7 +10678,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  7432 02c9 A5       		.byte	0xa5
  7433 02ca 0A       		.uleb128 0xa
  7434 02cb EC0D0000 		.4byte	.LASF90
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 179
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 179
 
 
  7435 02cf A6       		.byte	0xa6
@@ -10738,7 +10738,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  7489 033b 09       		.uleb128 0x9
  7490 033c 600F0000 		.4byte	.LASF105
  7491 0340 01       		.byte	0x1
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 180
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 180
 
 
  7492 0341 2C000000 		.4byte	0x2c
@@ -10798,7 +10798,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  7546 03ad 696E6400 		.ascii	"ind\000"
  7547 03b1 07       		.byte	0x7
  7548 03b2 9E       		.byte	0x9e
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 181
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 181
 
 
  7549 03b3 C7000000 		.4byte	0xc7
@@ -10858,7 +10858,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  7603 0421 0C       		.uleb128 0xc
  7604 0422 D9000000 		.4byte	.LASF124
  7605 0426 07       		.byte	0x7
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 182
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 182
 
 
  7606 0427 B5       		.byte	0xb5
@@ -10918,7 +10918,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  7660 0493 F0040000 		.4byte	.LASF130
  7661 0497 07       		.byte	0x7
  7662 0498 C4       		.byte	0xc4
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 183
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 183
 
 
  7663 0499 D7040000 		.4byte	0x4d7
@@ -10978,7 +10978,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  7717 050e 00       		.byte	0
  7718 050f 0C       		.uleb128 0xc
  7719 0510 74070000 		.4byte	.LASF134
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 184
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 184
 
 
  7720 0514 07       		.byte	0x7
@@ -11038,7 +11038,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  7774 057d 0B       		.uleb128 0xb
  7775 057e 83100000 		.4byte	.LASF141
  7776 0582 60       		.byte	0x60
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 185
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 185
 
 
  7777 0583 07       		.byte	0x7
@@ -11098,7 +11098,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  7831 05ed 30020000 		.4byte	.LASF144
  7832 05f1 2C       		.byte	0x2c
  7833 05f2 07       		.byte	0x7
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 186
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 186
 
 
  7834 05f3 3901     		.2byte	0x139
@@ -11158,7 +11158,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  7888 066a 07       		.byte	0x7
  7889 066b 4301     		.2byte	0x143
  7890 066d 19010000 		.4byte	0x119
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 187
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 187
 
 
  7891 0671 08       		.byte	0x8
@@ -11218,7 +11218,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  7945 06e4 00       		.byte	0
  7946 06e5 13       		.uleb128 0x13
  7947 06e6 A30D0000 		.4byte	.LASF307
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 188
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 188
 
 
  7948 06ea 02       		.byte	0x2
@@ -11278,7 +11278,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  8002 075f 00       		.byte	0
  8003 0760 18       		.uleb128 0x18
  8004 0761 E5060000 		.4byte	0x6e5
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 189
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 189
 
 
  8005 0765 B8040000 		.4byte	.LBB14
@@ -11338,7 +11338,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  8059 07d8 1A       		.uleb128 0x1a
  8060 07d9 86050000 		.4byte	.LBB19
  8061 07dd 08000000 		.4byte	.LBE19-.LBB19
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 190
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 190
 
 
  8062 07e1 1B       		.uleb128 0x1b
@@ -11398,7 +11398,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  8116 084f 21       		.uleb128 0x21
  8117 0850 1E070000 		.4byte	.LASF212
  8118 0854 01       		.byte	0x1
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 191
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 191
 
 
  8119 0855 2D01     		.2byte	0x12d
@@ -11458,7 +11458,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  8173 08cb 04       		.uleb128 0x4
  8174 08cc 91       		.byte	0x91
  8175 08cd B8C47E   		.sleb128 -24008
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 192
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 192
 
 
  8176 08d0 00       		.byte	0
@@ -11518,7 +11518,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  8230 0946 91       		.byte	0x91
  8231 0947 847B     		.sleb128 -636
  8232 0949 22       		.uleb128 0x22
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 193
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 193
 
 
  8233 094a 630C0000 		.4byte	.LASF172
@@ -11578,7 +11578,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  8287 09b3 C87B     		.sleb128 -568
  8288 09b5 23       		.uleb128 0x23
  8289 09b6 6900     		.ascii	"i\000"
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 194
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 194
 
 
  8290 09b8 01       		.byte	0x1
@@ -11638,7 +11638,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  8344 0a1f 7F01     		.2byte	0x17f
  8345 0a21 73000000 		.4byte	0x73
  8346 0a25 02       		.uleb128 0x2
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 195
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 195
 
 
  8347 0a26 91       		.byte	0x91
@@ -11698,7 +11698,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  8401 0a94 00000000 		.4byte	.LFB69
  8402 0a98 34070000 		.4byte	.LFE69-.LFB69
  8403 0a9c 01       		.uleb128 0x1
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 196
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 196
 
 
  8404 0a9d 9C       		.byte	0x9c
@@ -11758,7 +11758,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  8458 0b02 EC050000 		.4byte	0x5ec
  8459 0b06 03       		.uleb128 0x3
  8460 0b07 91       		.byte	0x91
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 197
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 197
 
 
  8461 0b08 B87F     		.sleb128 -72
@@ -11818,7 +11818,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  8515 0b72 07       		.uleb128 0x7
  8516 0b73 04       		.byte	0x4
  8517 0b74 7D050000 		.4byte	0x57d
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 198
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 198
 
 
  8518 0b78 0E       		.uleb128 0xe
@@ -11878,7 +11878,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  8572 0be9 5802     		.2byte	0x258
  8573 0beb 97000000 		.4byte	0x97
  8574 0bef 02       		.uleb128 0x2
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 199
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 199
 
 
  8575 0bf0 91       		.byte	0x91
@@ -11938,7 +11938,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  8629 0c5e 22       		.uleb128 0x22
  8630 0c5f 3C0D0000 		.4byte	.LASF169
  8631 0c63 01       		.byte	0x1
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 200
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 200
 
 
  8632 0c64 8802     		.2byte	0x288
@@ -11998,7 +11998,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  8686 0cca 510C0000 		.4byte	.LASF193
  8687 0cce 01       		.byte	0x1
  8688 0ccf 8E02     		.2byte	0x28e
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 201
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 201
 
 
  8689 0cd1 AF000000 		.4byte	0xaf
@@ -12058,7 +12058,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  8743 0d37 4A030000 		.4byte	.LBE25-.LBB25
  8744 0d3b 1F       		.uleb128 0x1f
  8745 0d3c EC090000 		.4byte	.LASF173
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 202
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 202
 
 
  8746 0d40 01       		.byte	0x1
@@ -12118,7 +12118,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  8800 0dad 00000000 		.4byte	.LFB74
  8801 0db1 04020000 		.4byte	.LFE74-.LFB74
  8802 0db5 01       		.uleb128 0x1
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 203
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 203
 
 
  8803 0db6 9C       		.byte	0x9c
@@ -12178,7 +12178,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  8857 0e25 91       		.byte	0x91
  8858 0e26 74       		.sleb128 -12
  8859 0e27 00       		.byte	0
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 204
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 204
 
 
  8860 0e28 26       		.uleb128 0x26
@@ -12238,7 +12238,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  8914 0e9a 26       		.uleb128 0x26
  8915 0e9b 7E0D0000 		.4byte	.LASF205
  8916 0e9f 01       		.byte	0x1
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 205
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 205
 
 
  8917 0ea0 3803     		.2byte	0x338
@@ -12298,7 +12298,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  8971 0f12 5103     		.2byte	0x351
  8972 0f14 00000000 		.4byte	.LFB82
  8973 0f18 84000000 		.4byte	.LFE82-.LFB82
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 206
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 206
 
 
  8974 0f1c 01       		.uleb128 0x1
@@ -12358,7 +12358,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  9028 0f85 8E070000 		.4byte	.LASF180
  9029 0f89 01       		.byte	0x1
  9030 0f8a 6D03     		.2byte	0x36d
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 207
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 207
 
 
  9031 0f8c A3000000 		.4byte	0xa3
@@ -12418,7 +12418,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  9085 0ff5 00       		.byte	0
  9086 0ff6 21       		.uleb128 0x21
  9087 0ff7 3E100000 		.4byte	.LASF213
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 208
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 208
 
 
  9088 0ffb 01       		.byte	0x1
@@ -12478,7 +12478,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  9142 1069 97000000 		.4byte	0x97
  9143 106d 02       		.uleb128 0x2
  9144 106e 91       		.byte	0x91
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 209
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 209
 
 
  9145 106f 6F       		.sleb128 -17
@@ -12538,7 +12538,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  9199 10d9 01       		.byte	0x1
  9200 10da CB03     		.2byte	0x3cb
  9201 10dc 73000000 		.4byte	0x73
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 210
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 210
 
 
  9202 10e0 02       		.uleb128 0x2
@@ -12598,7 +12598,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  9256 114b 00000000 		.4byte	.LFB90
  9257 114f CC000000 		.4byte	.LFE90-.LFB90
  9258 1153 01       		.uleb128 0x1
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 211
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 211
 
 
  9259 1154 9C       		.byte	0x9c
@@ -12658,7 +12658,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  9313 11cd 0C000000 		.4byte	.LFE97-.LFB97
  9314 11d1 01       		.uleb128 0x1
  9315 11d2 9C       		.byte	0x9c
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 212
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 212
 
 
  9316 11d3 27       		.uleb128 0x27
@@ -12718,7 +12718,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  9370 1245 56110000 		.4byte	.LASF237
  9371 1249 01       		.byte	0x1
  9372 124a 9B04     		.2byte	0x49b
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 213
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 213
 
 
  9373 124c 00000000 		.4byte	.LFB100
@@ -12778,7 +12778,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  9427 12c1 6E       		.sleb128 -18
  9428 12c2 00       		.byte	0
  9429 12c3 27       		.uleb128 0x27
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 214
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 214
 
 
  9430 12c4 FA0F0000 		.4byte	.LASF241
@@ -12838,7 +12838,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  9484 1337 91       		.byte	0x91
  9485 1338 6C       		.sleb128 -20
  9486 1339 1F       		.uleb128 0x1f
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 215
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 215
 
 
  9487 133a 9C030000 		.4byte	.LASF246
@@ -12898,7 +12898,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  9541 13ac 02       		.uleb128 0x2
  9542 13ad 91       		.byte	0x91
  9543 13ae 70       		.sleb128 -16
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 216
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 216
 
 
  9544 13af 1F       		.uleb128 0x1f
@@ -12958,7 +12958,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  9598 141e 4505     		.2byte	0x545
  9599 1420 00000000 		.4byte	.LFB111
  9600 1424 94000000 		.4byte	.LFE111-.LFB111
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 217
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 217
 
 
  9601 1428 01       		.uleb128 0x1
@@ -13018,7 +13018,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  9655 1491 27       		.uleb128 0x27
  9656 1492 25010000 		.4byte	.LASF254
  9657 1496 01       		.byte	0x1
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 218
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 218
 
 
  9658 1497 7D05     		.2byte	0x57d
@@ -13078,7 +13078,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  9712 1512 23       		.uleb128 0x23
  9713 1513 6900     		.ascii	"i\000"
  9714 1515 01       		.byte	0x1
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 219
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 219
 
 
  9715 1516 9005     		.2byte	0x590
@@ -13138,7 +13138,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  9769 1586 02       		.uleb128 0x2
  9770 1587 91       		.byte	0x91
  9771 1588 6F       		.sleb128 -17
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 220
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 220
 
 
  9772 1589 00       		.byte	0
@@ -13198,7 +13198,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  9826 15f2 1506     		.2byte	0x615
  9827 15f4 00000000 		.4byte	.LFB122
  9828 15f8 24000000 		.4byte	.LFE122-.LFB122
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 221
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 221
 
 
  9829 15fc 01       		.uleb128 0x1
@@ -13258,7 +13258,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  9883 1671 1F       		.uleb128 0x1f
  9884 1672 FA040000 		.4byte	.LASF181
  9885 1676 01       		.byte	0x1
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 222
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 222
 
 
  9886 1677 8A06     		.2byte	0x68a
@@ -13318,7 +13318,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  9940 16e8 AD060000 		.4byte	0x6ad
  9941 16ec 31       		.uleb128 0x31
  9942 16ed 74000000 		.4byte	.LASF280
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 223
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 223
 
 
  9943 16f1 07       		.byte	0x7
@@ -13378,7 +13378,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  9997 1770 950D0000 		.4byte	0xd95
  9998 1774 31       		.uleb128 0x31
  9999 1775 A1100000 		.4byte	.LASF290
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 224
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 224
 
 
  10000 1779 07       		.byte	0x7
@@ -13438,7 +13438,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  10054 17f9 B10D0000 		.4byte	.LASF301
  10055 17fd 07       		.byte	0x7
  10056 17fe 6B01     		.2byte	0x16b
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 225
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 225
 
 
  10057 1800 D3000000 		.4byte	0xd3
@@ -13498,7 +13498,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  10111 0022 0E       		.uleb128 0xe
  10112 0023 3A       		.uleb128 0x3a
  10113 0024 0B       		.uleb128 0xb
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 226
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 226
 
 
  10114 0025 3B       		.uleb128 0x3b
@@ -13558,7 +13558,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  10168 005b 04       		.uleb128 0x4
  10169 005c 01       		.byte	0x1
  10170 005d 03       		.uleb128 0x3
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 227
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 227
 
 
  10171 005e 0E       		.uleb128 0xe
@@ -13618,7 +13618,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  10225 0094 00       		.byte	0
  10226 0095 03       		.uleb128 0x3
  10227 0096 08       		.uleb128 0x8
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 228
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 228
 
 
  10228 0097 3A       		.uleb128 0x3a
@@ -13678,7 +13678,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  10282 00cd 38       		.uleb128 0x38
  10283 00ce 0B       		.uleb128 0xb
  10284 00cf 00       		.byte	0
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 229
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 229
 
 
  10285 00d0 00       		.byte	0
@@ -13738,7 +13738,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  10339 0106 0B       		.uleb128 0xb
  10340 0107 3B       		.uleb128 0x3b
  10341 0108 05       		.uleb128 0x5
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 230
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 230
 
 
  10342 0109 49       		.uleb128 0x49
@@ -13798,7 +13798,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  10396 0140 0B       		.uleb128 0xb
  10397 0141 59       		.uleb128 0x59
  10398 0142 0B       		.uleb128 0xb
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 231
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 231
 
 
  10399 0143 01       		.uleb128 0x1
@@ -13858,7 +13858,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  10453 0179 01       		.uleb128 0x1
  10454 017a 12       		.uleb128 0x12
  10455 017b 06       		.uleb128 0x6
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 232
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 232
 
 
  10456 017c 58       		.uleb128 0x58
@@ -13918,7 +13918,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  10510 01b3 00       		.byte	0
  10511 01b4 21       		.uleb128 0x21
  10512 01b5 2E       		.uleb128 0x2e
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 233
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 233
 
 
  10513 01b6 01       		.byte	0x1
@@ -13978,7 +13978,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  10567 01ed 00       		.byte	0
  10568 01ee 24       		.uleb128 0x24
  10569 01ef 0B       		.uleb128 0xb
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 234
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 234
 
 
  10570 01f0 01       		.byte	0x1
@@ -14038,7 +14038,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  10624 0227 11       		.uleb128 0x11
  10625 0228 01       		.uleb128 0x1
  10626 0229 12       		.uleb128 0x12
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 235
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 235
 
 
  10627 022a 06       		.uleb128 0x6
@@ -14098,7 +14098,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  10681 0262 03       		.uleb128 0x3
  10682 0263 0E       		.uleb128 0xe
  10683 0264 3A       		.uleb128 0x3a
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 236
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 236
 
 
  10684 0265 0B       		.uleb128 0xb
@@ -14158,7 +14158,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  10738 029d 06       		.uleb128 0x6
  10739 029e 40       		.uleb128 0x40
  10740 029f 18       		.uleb128 0x18
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 237
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 237
 
 
  10741 02a0 9742     		.uleb128 0x2117
@@ -14218,7 +14218,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  10795 02d9 2F       		.uleb128 0x2f
  10796 02da 2E       		.uleb128 0x2e
  10797 02db 00       		.byte	0
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 238
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 238
 
 
  10798 02dc 3F       		.uleb128 0x3f
@@ -14278,7 +14278,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  10852 0314 3C       		.uleb128 0x3c
  10853 0315 19       		.uleb128 0x19
  10854 0316 00       		.byte	0
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 239
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 239
 
 
  10855 0317 00       		.byte	0
@@ -14338,7 +14338,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  10909 007c 12000000 		.4byte	.LFE77-.LFB77
  10910 0080 00000000 		.4byte	.LFB78
  10911 0084 12000000 		.4byte	.LFE78-.LFB78
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 240
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 240
 
 
  10912 0088 00000000 		.4byte	.LFB79
@@ -14398,7 +14398,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  10966 0160 00000000 		.4byte	.LFB106
  10967 0164 C4000000 		.4byte	.LFE106-.LFB106
  10968 0168 00000000 		.4byte	.LFB107
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 241
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 241
 
 
  10969 016c A8000000 		.4byte	.LFE107-.LFB107
@@ -14458,7 +14458,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  11023 001c 64010000 		.4byte	.LFE67
  11024 0020 00000000 		.4byte	.LFB68
  11025 0024 BC070000 		.4byte	.LFE68
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 242
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 242
 
 
  11026 0028 00000000 		.4byte	.LFB69
@@ -14518,7 +14518,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  11080 0100 00000000 		.4byte	.LFB96
  11081 0104 0C000000 		.4byte	.LFE96
  11082 0108 00000000 		.4byte	.LFB97
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 243
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 243
 
 
  11083 010c 0C000000 		.4byte	.LFE97
@@ -14578,7 +14578,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  11137 01e4 0E000000 		.4byte	.LFE124
  11138 01e8 00000000 		.4byte	.LFB125
  11139 01ec 12000000 		.4byte	.LFE125
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 244
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 244
 
 
  11140 01f0 00000000 		.4byte	.LFB126
@@ -14638,7 +14638,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  11168 006c 696E7433 		.ascii	"int32_t\000"
  11168      325F7400 
  11169              	.LASF280:
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 245
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 245
 
 
  11170 0074 675F7278 		.ascii	"g_rx\000"
@@ -14698,7 +14698,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  11194      4E5400
  11195              	.LASF98:
  11196 0111 494E5055 		.ascii	"INPUT_MODE_EMG_FCFS\000"
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 246
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 246
 
 
  11196      545F4D4F 
@@ -14758,7 +14758,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  11220 01b8 43555354 		.ascii	"CUSTOM_MEAS_OFF_2\000"
  11220      4F4D5F4D 
  11220      4541535F 
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 247
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 247
 
 
  11220      4F46465F 
@@ -14818,7 +14818,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  11246      00
  11247              	.LASF37:
  11248 025e 43555354 		.ascii	"CUSTOM_CURR_PID_2\000"
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 248
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 248
 
 
  11248      4F4D5F43 
@@ -14878,7 +14878,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  11270      49445F32 
  11270      00
  11271              	.LASF300:
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 249
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 249
 
 
  11272 0307 70726573 		.ascii	"pressure_value\000"
@@ -14938,7 +14938,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  11294      5F666C61 
  11294      6700
  11295              	.LASF284:
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 250
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 250
 
 
  11296 03a6 696E7465 		.ascii	"interrupt_flag\000"
@@ -14998,7 +14998,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  11316      00
  11317              	.LASF21:
  11318 045c 63686172 		.ascii	"char\000"
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 251
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 251
 
 
  11318      00
@@ -15058,7 +15058,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  11342      65745F64 
  11342      61746100 
  11343              	.LASF120:
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 252
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 252
 
 
  11344 0506 73745F64 		.ascii	"st_device\000"
@@ -15118,7 +15118,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  11370      424C4500 
  11371              	.LASF273:
  11372 059f 736C6176 		.ascii	"slave_motor_idx\000"
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 253
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 253
 
 
  11372      655F6D6F 
@@ -15178,7 +15178,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  11394      73657273 
  11394      5C6D676E 
  11394      6F63636F 
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 254
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 254
 
 
  11394      5C446F63 
@@ -15238,7 +15238,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  11413              	.LASF220:
  11414 073f 64697370 		.ascii	"displacement\000"
  11414      6C616365 
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 255
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 255
 
 
  11414      6D656E74 
@@ -15298,7 +15298,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  11438      00
  11439              	.LASF190:
  11440 07e9 6765745F 		.ascii	"get_IMU_param_list\000"
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 256
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 256
 
 
  11440      494D555F 
@@ -15358,7 +15358,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  11458      5F7400
  11459              	.LASF8:
  11460 08fe 6C6F6E67 		.ascii	"long long int\000"
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 257
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 257
 
 
  11460      206C6F6E 
@@ -15418,7 +15418,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  11482      6F6C00
  11483              	.LASF19:
  11484 09a4 666C6F61 		.ascii	"float\000"
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 258
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 258
 
 
  11484      7400
@@ -15478,7 +15478,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  11510 0a3d 54595045 		.ascii	"TYPE_UINT16\000"
  11510      5F55494E 
  11510      54313600 
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 259
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 259
 
 
  11511              	.LASF142:
@@ -15538,7 +15538,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  11534      656C6F63 
  11535              	.LASF113:
  11536 0af1 54595045 		.ascii	"TYPE_FLOAT\000"
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 260
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 260
 
 
  11536      5F464C4F 
@@ -15598,7 +15598,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  11558      425F7370 
  11558      656300
  11559              	.LASF216:
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 261
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 261
 
 
  11560 0bab 63686563 		.ascii	"checksum\000"
@@ -15658,7 +15658,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  11584      333200
  11585              	.LASF193:
  11586 0c51 6175785F 		.ascii	"aux_uint32\000"
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 262
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 262
 
 
  11586      75696E74 
@@ -15718,7 +15718,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  11608      00
  11609              	.LASF208:
  11610 0cec 636F6D6D 		.ascii	"commWrite_old_id\000"
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 263
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 263
 
 
  11610      57726974 
@@ -15778,7 +15778,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  11631              	.LASF209:
  11632 0d9c 6F6C645F 		.ascii	"old_id\000"
  11632      696400
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 264
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 264
 
 
  11633              	.LASF307:
@@ -15838,7 +15838,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  11656      00
  11657              	.LASF73:
  11658 0e4c 434D445F 		.ascii	"CMD_GET_MEASUREMENTS\000"
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 265
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 265
 
 
  11658      4745545F 
@@ -15898,7 +15898,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  11679              	.LASF197:
  11680 0efe 6175785F 		.ascii	"aux_int16\000"
  11680      696E7431 
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 266
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 266
 
 
  11680      3600
@@ -15958,7 +15958,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  11704      656E636F 
  11704      6465725F 
  11704      6D617000 
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 267
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 267
 
 
  11705              	.LASF12:
@@ -16018,7 +16018,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  11730 104a 73686F72 		.ascii	"short unsigned int\000"
  11730      7420756E 
  11730      7369676E 
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 268
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 268
 
 
  11730      65642069 
@@ -16078,7 +16078,7 @@ ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 1
  11756      6F6D6D61 
  11756      6E645F70 
  11756      726F6365 
-ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJKp0me.s 			page 269
+ARM GAS  C:\Users\mgnocco\AppData\Local\Temp\ccJ7Dg3V.s 			page 269
 
 
  11757              	.LASF93:

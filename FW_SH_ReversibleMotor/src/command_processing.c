@@ -3175,6 +3175,10 @@ uint8 memInit(void)
         g_mem.motor[i].motor_driver_type = DRIVER_MC33887;      //SoftHand standard driver
         g_mem.motor[i].input_mode    = INPUT_MODE_EXTERNAL;
         g_mem.motor[i].control_mode  = CONTROL_ANGLE;
+        
+        
+        
+   
         g_mem.motor[i].max_step_pos = 0;
         g_mem.motor[i].max_step_neg = 0;
         for(j = 0; j < LOOKUP_DIM; j++) {
@@ -3212,7 +3216,7 @@ uint8 memInit(void)
         g_mem.motor[i].pos_lim_inf = 0;
         g_mem.motor[i].pos_lim_sup = (int32)19000 << g_mem.enc[g_mem.motor[i].encoder_line].res[0];
     }
-    
+
     // EMG STRUCT     
     g_mem.emg.emg_threshold[0] = 200;
     g_mem.emg.emg_threshold[1] = 200;
@@ -3258,6 +3262,32 @@ uint8 memInit(void)
     g_mem.WR.activation_mode = 0;                // Default Fast:wrist/syn2, Slow:hand/syn1
     g_mem.WR.fast_act_threshold[0] = 800;
 
+    
+    // THIS PART OVERWRITE SOME PARAMETERS NEEDED FOR PULSE'S HAND
+    g_mem.motor[0].control_mode  = CURR_AND_POS_CONTROL;
+    g_mem.motor[0].encoder_line = 1;  
+    g_mem.enc[1].double_encoder_on_off = TRUE;
+        
+    g_mem.imu.read_imu_flag = TRUE;
+    g_mem.imu.SPI_read_delay = 0;       // 0 - No delay
+    for (i = 0; i< N_IMU_MAX; i++){
+        g_mem.imu.IMU_conf[i][0] = 1;   // Accelerometers
+        g_mem.imu.IMU_conf[i][1] = 0;   // Gyroscopes
+        g_mem.imu.IMU_conf[i][2] = 0;   // Magnetometers
+        g_mem.imu.IMU_conf[i][3] = 0;   // Quaternions
+        g_mem.imu.IMU_conf[i][4] = 0;   // Temperatures
+    }
+    
+    
+   //  Current lookup mano sx : 0.002300 0.000086 42.163631 0.003416 -0.000000 0.006380
+   //  Current lookup manona dx :  0.005747 0.000047 49.028160 0.012273 -0.000005 0.024438
+    g_mem.motor[0].curr_lookup[0] = 0.005747;
+    g_mem.motor[0].curr_lookup[1] = 0.000047;
+    g_mem.motor[0].curr_lookup[2] = 49.028160;
+    g_mem.motor[0].curr_lookup[3] = 0.012273;
+    g_mem.motor[0].curr_lookup[4] = 0;
+    g_mem.motor[0].curr_lookup[5] = 0.024438;
+       
 #ifdef SOFTHAND_FW
     // Override memory values with specific ones for SoftHand Pro device
     memInit_SoftHandPro();
