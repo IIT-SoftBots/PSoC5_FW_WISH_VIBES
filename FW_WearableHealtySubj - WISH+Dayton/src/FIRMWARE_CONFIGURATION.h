@@ -51,7 +51,7 @@
 // Macro related to different firmware configurations
  
 #define MASTER_FW
-#define VERSION                 "AIR_CHAMBERS_and_VIBROTACTILE_FB"
+#define VERSION                 "PULSE FW - updated 28.05.24"
        
     #define NUM_OF_DEV_PARAMS           NUM_OF_PARAMS          // Number of parameters saved in the EEPROM for AIR_CHAMBERS_and_VIBROTACTILE_FB_FW FIRMWARE
                                                                // All parameters except: Wrist parameters (3)

@@ -150,8 +150,8 @@ int main()
     // All peripherals has started, now it is ok to start communication
     RS485_CTS_Write(0);             // Clear To Send on RS485.
     int a=0;
+   /* 
     
-    /*
     while(!Battery_level_out){
         Battery_level_out = Battery_flag_Read();
         if (interrupt_flag){
@@ -171,9 +171,9 @@ int main()
         g_adc_meas.pressure  = (int32)(ADC_buf[0]);    //0 - 4096  
         atm_pressure = (((g_adc_meas.pressure/4095.0 + 0.00842)/0.002421));       // P_atm in Pascal   }
         a = 0;
-    } */
-    
-    atm_pressure = 102;       // P_atm in Pascal   }
+    } 
+    */
+    atm_pressure = 105;       // P_atm in Pascal   }
     
     for(;;)
     {         

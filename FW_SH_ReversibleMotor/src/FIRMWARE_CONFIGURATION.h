@@ -65,7 +65,7 @@
     #define VERSION                 "SoftHand PRO firmware v. 1.10.1 (PSoC5)"
 #else
     #ifdef GENERIC_FW
-        #define VERSION                 "Firmware SH reversibile per aptica wish + vibes (PSoC5)"
+        #define VERSION                 "Firmware SH reversibile aptica - updated 28.05.24"
     #else   
         #define MASTER_FW
         #ifdef AIR_CHAMBERS_FB_FW
