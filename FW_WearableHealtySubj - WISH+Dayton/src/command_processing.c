@@ -1203,7 +1203,7 @@ void cmd_get_currents(){
     packet_data[0] = CMD_GET_CURRENTS;
 
      // Send pressure times 100 here instead of current (Simulink use)
-    aux_int16 = (int16)(pressure_value * 1000); //Pressure
+    aux_int16 = (int16)(pressure_value * 100); //Pressure in KPa * 100
     if (aux_int16 < 0) aux_int16 = 0;
     packet_data[2] = ((char*)(&aux_int16))[0];
     packet_data[1] = ((char*)(&aux_int16))[1];
@@ -1305,7 +1305,6 @@ int16  commReadResCurrFromSH()
             interrupt_flag = FALSE;
             interrupt_manager();
         }
-
         t_end = (uint32) MY_TIMER_ReadCounter();
         if((t_start - t_end) > 4500000){            // 4.5 s timeout
             read_flag = FALSE;
@@ -1504,11 +1503,9 @@ void air_chambers_control() {
     int16 x_value;
 
     // Use pressure and residual current read from the SoftHand
-    
     curr_diff = commReadResCurrFromSH();
 
     // Compute pressure reference
-
     x_value = curr_diff - 50.0;
     if (x_value < 0)
         x_value = 0;
@@ -1523,19 +1520,20 @@ void air_chambers_control() {
 
     if (x_value <= 0){
         //i.e the hand is opening
-        valve_command = 0;  //valve open: air passes
+        VALVE_Write(OPEN);
+        Pump_refNew = 0;
     }
     else {
         //i.e the hand is closing, so valve should stay closed independently from the pressure error
         //if err_pressure greater than 0, it means pressure should increase, so valve should stay closed
         //if err_pressure==0, it means you reached the right pressure, so valve should stay closed
-        valve_command = 1;  //3.6V (5V - 2 diodes) - valve close: air doesn't pass
-    }
+         VALVE_Write(CLOSED);  //3.6V (5V - 2 diodes) - valve close: air doesn't pass
+    
     
     // Pump control*/
    
     Pump_refNew = (int32)(c_mem.FB.prop_err_fb_gain*err_pressure);
-
+}
     //c_mem.FB.prop_err_fb_gain default 1.0 gain since, max err_pressure is 25 and pwm range is approx. 25 ticks [45=2V,70=3V]
     
     // Limit output voltage
@@ -1543,9 +1541,7 @@ void air_chambers_control() {
         Pump_refNew = MAX_PUMP_PWM; // 80
     if (Pump_refNew < MIN_PUMP_PWM)
         Pump_refNew = 0;
-        
-    VALVE_Write(valve_command);
-    
+         
     
     // Drive slave with reference generated on second motor index
     // Use second motor structures and parameters, only to generate position reference not for PID control

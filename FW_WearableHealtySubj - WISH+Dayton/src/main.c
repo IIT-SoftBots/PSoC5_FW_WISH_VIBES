@@ -156,37 +156,19 @@ int main()
     g_rx.length = 0;
     g_rx.ready  = 0;
     
-    LED_CONTROL_Write(0);     // Green
+    LED_CONTROL_Write(0);    
 
     //============================================================     main loop
     
     // All peripherals has started, now it is ok to start communication
     RS485_CTS_Write(0);             // Clear To Send on RS485.
-    int a=0;
-   /* 
-    
-    while(!Battery_level_out){
-        Battery_level_out = Battery_flag_Read();
-        if (interrupt_flag){
-                // Reset flags
-                interrupt_flag = FALSE;
-                
-                // Manage Interrupt on rs485
-                interrupt_manager();
-            }      
-        a = 1;
-    };
-   
-    if (a == 1){
-        CyDelay(50);  // Pressure sensor has warm-up time of 20 ms
-        while(!ADC_STATUS_Read()){}
+    CyDelay(50);  // Pressure sensor has warm-up time of 20 ms
+    while(!ADC_STATUS_Read()){}
         // Read pressure in any case
-        g_adc_meas.pressure  = (int32)(ADC_buf[0]);    //0 - 4096  
-        atm_pressure = (((g_adc_meas.pressure/4095.0 + 0.00842)/0.002421));       // P_atm in Pascal   }
-        a = 0;
-    } 
-    */
-    atm_pressure = 105;       // P_atm in Pascal   }
+    g_adc_meas.pressure  = (int32)(ADC_buf[0]);    //0 - 4096  
+    atm_pressure = (((g_adc_meas.pressure/4095.0 + 0.00842)/0.002421));       // P_atm in Pascal   }
+
+    
     
     for(;;)
     {         

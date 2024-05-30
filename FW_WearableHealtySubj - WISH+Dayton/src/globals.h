@@ -116,8 +116,8 @@
 #define OPEN                    0
 #define FALSE                   0
 #define TRUE                    1
-#define RED                     1
-#define GREEN                   2
+#define RED                     2
+#define GREEN                   1
 #define ORANGE                  3
 #define DEFAULT_EEPROM_DISPLACEMENT 50  /*!< Number of pages occupied by the EEPROM.*/
 #define EEPROM_BYTES_ROW        16      /*!< EEPROM number of bytes per row.*/

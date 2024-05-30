@@ -299,7 +299,7 @@ void function_scheduler(void) {
                     
     if (master_mode){
         
-        LED_CONTROL_Write(RED);     // Orange
+        LED_CONTROL_Write(RED);     
         
         //-------------------------------------------------------------- Air Chamber and Vibrotactile control
         if (g_mem.FB.vibrotactile_feedback_active && g_mem.FB.airchamber_feedback_active){                  
@@ -323,7 +323,7 @@ void function_scheduler(void) {
             interrupt_manager();
         }
             
-       compute_SH_reference(); // Compute reference for the SH starting from EMG values
+        compute_SH_reference(); // Compute reference for the SH starting from EMG values
             
         drive_slave(c_mem.MS.slave_ID); // Send reference to the SH calling cmd_set_inputs
             
@@ -336,7 +336,7 @@ void function_scheduler(void) {
            
     else {
         
-        LED_CONTROL_Write(GREEN);     // Red
+        LED_CONTROL_Write(GREEN);     
             
         // Check Interrupt 
         if (interrupt_flag){
