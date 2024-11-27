@@ -1,0 +1,401 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CyXmlSerializer>
+<!--This file is machine generated and read. It is not intended to be edited by hand.-->
+<!--Due to this, there is no schema for this file.-->
+<CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtWrkspcCustomData" version="4">
+<CyGuid_fdba8dfd-b15b-4469-9bbb-9e40c3e70997 type_name="CyDesigner.Common.Base.CyCustomData" version="2">
+<userData>
+<dataGuid v="1b906a0f-a7b6-4e4d-a428-82f98b53cb35">
+<CyGuid_1b906a0f-a7b6-4e4d-a428-82f98b53cb35 type_name="CyDesigner.Common.ProjMgmt.GUI.CyExplorerWindow+CyExplorerWindowState" version="3" SelectedTab="Source">
+<TreeKeys>
+<v>Source</v>
+<v>Components</v>
+<v>Output</v>
+</TreeKeys>
+<TreeStates>
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="VIBES_Socket(Toast)">
+<ExpandedNodeIds>
+<v>VIBES_Socket(Toast)</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\TopDesign</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\VIBES_Socket(Toast).cydwr</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\VIBES_Socket(Toast).cydwr\Pins</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\VIBES_Socket(Toast).cydwr\Analog</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\VIBES_Socket(Toast).cydwr\Clocks</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\VIBES_Socket(Toast).cydwr\Interrupts</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\VIBES_Socket(Toast).cydwr\DMA</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\VIBES_Socket(Toast).cydwr\System</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\VIBES_Socket(Toast).cydwr\Directives</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\VIBES_Socket(Toast).cydwr\Flash Security</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\VIBES_Socket(Toast).cydwr\EEPROM</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\Header Files</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\Header Files\command_processing.h</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\Header Files\commands.h</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\Header Files\device.h</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\Header Files\FIRMWARE_CONFIGURATION.h</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\Header Files\globals.h</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\Header Files\IMU_functions.h</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\Header Files\interruptions.h</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\Header Files\SD_RTC_functions.h</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\Header Files\utils.h</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\Source Files</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\Source Files\command_processing.c</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\Source Files\globals.c</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\Source Files\IMU_functions.c</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\Source Files\interruptions.c</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\Source Files\main.c</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\Source Files\SD_RTC_functions.c</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\Source Files\utils.c</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\Generated_Source</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\Generated_Source\PSoC5</v>
+</ExpandedNodeIds>
+<VisibleNodeIds>
+<v>VIBES_Socket(Toast)</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\TopDesign</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\VIBES_Socket(Toast).cydwr</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\VIBES_Socket(Toast).cydwr\Pins</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\VIBES_Socket(Toast).cydwr\Analog</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\VIBES_Socket(Toast).cydwr\Clocks</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\VIBES_Socket(Toast).cydwr\Interrupts</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\VIBES_Socket(Toast).cydwr\DMA</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\VIBES_Socket(Toast).cydwr\System</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\VIBES_Socket(Toast).cydwr\Directives</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\VIBES_Socket(Toast).cydwr\Flash Security</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\VIBES_Socket(Toast).cydwr\EEPROM</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\Header Files</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\Header Files\command_processing.h</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\Header Files\commands.h</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\Header Files\device.h</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\Header Files\FIRMWARE_CONFIGURATION.h</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\Header Files\globals.h</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\Header Files\IMU_functions.h</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\Header Files\interruptions.h</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\Header Files\SD_RTC_functions.h</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\Header Files\utils.h</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\Source Files</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\Source Files\command_processing.c</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\Source Files\globals.c</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\Source Files\IMU_functions.c</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\Source Files\interruptions.c</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\Source Files\main.c</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\Source Files\SD_RTC_functions.c</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\Source Files\utils.c</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\Generated_Source</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\Generated_Source\PSoC5</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\Generated_Source\PSoC5\ADC</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\Generated_Source\PSoC5\ADC_AMux</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\Generated_Source\PSoC5\ADC_Ext_CP_Clk</v>
+</VisibleNodeIds>
+</CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
+<ExpandedNodeIds>
+<v>VIBES_Socket(Toast)</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\TopDesign</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\TopDesign\TopDesign.cysch</v>
+</ExpandedNodeIds>
+<VisibleNodeIds>
+<v>VIBES_Socket(Toast)</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\TopDesign</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\TopDesign\TopDesign.cysch</v>
+</VisibleNodeIds>
+</CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
+<ExpandedNodeIds>
+<v>VIBES_Socket(Toast)</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CortexM3</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CortexM3\ARM_GCC_541</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CortexM3\ARM_GCC_541\Release</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CortexM3\ARM_GCC_541\Release\Listing Files</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CortexM3\ARM_GCC_541\Release\Listing Files\ADC.lst</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CortexM3\ARM_GCC_541\Release\Listing Files\ADC_AMux.lst</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CortexM3\ARM_GCC_541\Release\Listing Files\ADC_Ext_CP_Clk.lst</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CortexM3\ARM_GCC_541\Release\Listing Files\ADC_INT.lst</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CortexM3\ARM_GCC_541\Release\Listing Files\ADC_IRQ.lst</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CortexM3\ARM_GCC_541\Release\Listing Files\ADC_N_CHANNELS_USED.lst</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CortexM3\ARM_GCC_541\Release\Listing Files\ADC_N_CHANNELS_USED_PM.lst</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CortexM3\ARM_GCC_541\Release\Listing Files\ADC_PM.lst</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CortexM3\ARM_GCC_541\Release\Listing Files\ADC_SOC.lst</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CortexM3\ARM_GCC_541\Release\Listing Files\ADC_SOC_PM.lst</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CortexM3\ARM_GCC_541\Release\Listing Files\ADC_STATUS.lst</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CortexM3\ARM_GCC_541\Release\Listing Files\ADC_theACLK.lst</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CortexM3\ARM_GCC_541\Release\Listing Files\BLINK_05HZ.lst</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CortexM3\ARM_GCC_541\Release\Listing Files\BLINK_05HZ_PM.lst</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CortexM3\ARM_GCC_541\Release\Listing Files\BLINK_25HZ.lst</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CortexM3\ARM_GCC_541\Release\Listing Files\BLINK_25HZ_PM.lst</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CortexM3\ARM_GCC_541\Release\Listing Files\BLINK_CTRL_EN.lst</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CortexM3\ARM_GCC_541\Release\Listing Files\BLINK_CTRL_EN_PM.lst</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CortexM3\ARM_GCC_541\Release\Listing Files\Bootloadable.lst</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CortexM3\ARM_GCC_541\Release\Listing Files\CLK_RTC.lst</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CortexM3\ARM_GCC_541\Release\Listing Files\CLOCK_PWM.lst</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CortexM3\ARM_GCC_541\Release\Listing Files\CLOCK_PWM_BLINK.lst</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CortexM3\ARM_GCC_541\Release\Listing Files\CLOCK_UART.lst</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CortexM3\ARM_GCC_541\Release\Listing Files\CLOCK_VT.lst</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CortexM3\ARM_GCC_541\Release\Listing Files\Cm3Start.lst</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CortexM3\ARM_GCC_541\Release\Listing Files\command_processing.lst</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CortexM3\ARM_GCC_541\Release\Listing Files\counter_cyc_clk.lst</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CortexM3\ARM_GCC_541\Release\Listing Files\CS_RTC.lst</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CortexM3\ARM_GCC_541\Release\Listing Files\CURRENT_SENSE_2.lst</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CortexM3\ARM_GCC_541\Release\Listing Files\cy_em_eeprom.lst</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CortexM3\ARM_GCC_541\Release\Listing Files\CyBootAsmGnu.lst</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CortexM3\ARM_GCC_541\Release\Listing Files\cybootloader.lst</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CortexM3\ARM_GCC_541\Release\Listing Files\CYCLES_TIMER.lst</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CortexM3\ARM_GCC_541\Release\Listing Files\CYCLES_TIMER_PM.lst</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CortexM3\ARM_GCC_541\Release\Listing Files\CyDmac.lst</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CortexM3\ARM_GCC_541\Release\Listing Files\cyfitter_cfg.lst</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CortexM3\ARM_GCC_541\Release\Listing Files\CyFlash.lst</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CortexM3\ARM_GCC_541\Release\Listing Files\CyLib.lst</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CortexM3\ARM_GCC_541\Release\Listing Files\cymetadata.lst</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CortexM3\ARM_GCC_541\Release\Listing Files\cyPm.lst</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CortexM3\ARM_GCC_541\Release\Listing Files\CySpc.lst</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CortexM3\ARM_GCC_541\Release\Listing Files\cyutils.lst</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CortexM3\ARM_GCC_541\Release\Listing Files\DMA_dma.lst</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CortexM3\ARM_GCC_541\Release\Listing Files\EEPROM.lst</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CortexM3\ARM_GCC_541\Release\Listing Files\EMG_1.lst</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CortexM3\ARM_GCC_541\Release\Listing Files\EMG_2.lst</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CortexM3\ARM_GCC_541\Release\Listing Files\EMG_3.lst</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CortexM3\ARM_GCC_541\Release\Listing Files\EMG_4.lst</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CortexM3\ARM_GCC_541\Release\Listing Files\EMG_5.lst</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CortexM3\ARM_GCC_541\Release\Listing Files\EMG_6.lst</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CortexM3\ARM_GCC_541\Release\Listing Files\EMG_A.lst</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CortexM3\ARM_GCC_541\Release\Listing Files\EMG_B.lst</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CortexM3\ARM_GCC_541\Release\Listing Files\FF_STATUS.lst</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CortexM3\ARM_GCC_541\Release\Listing Files\FTDI_ENABLE.lst</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CortexM3\ARM_GCC_541\Release\Listing Files\globals.lst</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CortexM3\ARM_GCC_541\Release\Listing Files\IMU_functions.lst</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CortexM3\ARM_GCC_541\Release\Listing Files\interruptions.lst</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CortexM3\ARM_GCC_541\Release\Listing Files\ISR_CYCLES.lst</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CortexM3\ARM_GCC_541\Release\Listing Files\ISR_RS485_RX.lst</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CortexM3\ARM_GCC_541\Release\Listing Files\LED_CTRL.lst</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CortexM3\ARM_GCC_541\Release\Listing Files\LED_CTRL_PM.lst</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CortexM3\ARM_GCC_541\Release\Listing Files\LED_GREEN.lst</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CortexM3\ARM_GCC_541\Release\Listing Files\LED_RED.lst</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CortexM3\ARM_GCC_541\Release\Listing Files\main.lst</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CortexM3\ARM_GCC_541\Release\Listing Files\MASTER_MODE_VOLTAGE.lst</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CortexM3\ARM_GCC_541\Release\Listing Files\MISO_RTC.lst</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CortexM3\ARM_GCC_541\Release\Listing Files\MOSI_RTC.lst</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CortexM3\ARM_GCC_541\Release\Listing Files\MOTOR_2A.lst</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CortexM3\ARM_GCC_541\Release\Listing Files\MOTOR_2B.lst</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CortexM3\ARM_GCC_541\Release\Listing Files\MOTOR_DIR_1.lst</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CortexM3\ARM_GCC_541\Release\Listing Files\MOTOR_DIR_1_PM.lst</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CortexM3\ARM_GCC_541\Release\Listing Files\MOTOR_DIR_2.lst</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CortexM3\ARM_GCC_541\Release\Listing Files\MOTOR_DIR_2_PM.lst</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CortexM3\ARM_GCC_541\Release\Listing Files\MOTOR_DRIVER_TYPE.lst</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CortexM3\ARM_GCC_541\Release\Listing Files\MOTOR_DRIVER_TYPE_PM.lst</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CortexM3\ARM_GCC_541\Release\Listing Files\MOTOR_EN_1.lst</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CortexM3\ARM_GCC_541\Release\Listing Files\MOTOR_EN_2.lst</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CortexM3\ARM_GCC_541\Release\Listing Files\MOTOR_ON_OFF_1.lst</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CortexM3\ARM_GCC_541\Release\Listing Files\MOTOR_ON_OFF_1_PM.lst</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CortexM3\ARM_GCC_541\Release\Listing Files\MOTOR_ON_OFF_2.lst</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CortexM3\ARM_GCC_541\Release\Listing Files\MOTOR_ON_OFF_2_PM.lst</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CortexM3\ARM_GCC_541\Release\Listing Files\MY_TIMER.lst</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CortexM3\ARM_GCC_541\Release\Listing Files\MY_TIMER_PM.lst</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CortexM3\ARM_GCC_541\Release\Listing Files\MY_TIMER_REG.lst</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CortexM3\ARM_GCC_541\Release\Listing Files\MY_TIMER_REG_PM.lst</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CortexM3\ARM_GCC_541\Release\Listing Files\PACER_TIMER.lst</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CortexM3\ARM_GCC_541\Release\Listing Files\PACER_TIMER_PM.lst</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CortexM3\ARM_GCC_541\Release\Listing Files\PRESSURE_SENSOR.lst</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CortexM3\ARM_GCC_541\Release\Listing Files\PUMP.lst</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CortexM3\ARM_GCC_541\Release\Listing Files\PWM_MOTORS.lst</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CortexM3\ARM_GCC_541\Release\Listing Files\PWM_MOTORS_PM.lst</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CortexM3\ARM_GCC_541\Release\Listing Files\PWM_VT.lst</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CortexM3\ARM_GCC_541\Release\Listing Files\PWM_VT_PM.lst</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CortexM3\ARM_GCC_541\Release\Listing Files\RESET_FF.lst</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CortexM3\ARM_GCC_541\Release\Listing Files\RESET_FF_PM.lst</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CortexM3\ARM_GCC_541\Release\Listing Files\RS_485_EN.lst</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CortexM3\ARM_GCC_541\Release\Listing Files\RS485_CTS.lst</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CortexM3\ARM_GCC_541\Release\Listing Files\SD_Clock_1.lst</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CortexM3\ARM_GCC_541\Release\Listing Files\SD_ConfigMMC_SPI.lst</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CortexM3\ARM_GCC_541\Release\Listing Files\SD_miso0.lst</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CortexM3\ARM_GCC_541\Release\Listing Files\SD_MMC_HW_SPI.lst</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CortexM3\ARM_GCC_541\Release\Listing Files\SD_mosi0.lst</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CortexM3\ARM_GCC_541\Release\Listing Files\SD_PM.lst</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CortexM3\ARM_GCC_541\Release\Listing Files\SD_RTC_functions.lst</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CortexM3\ARM_GCC_541\Release\Listing Files\SD_sclk0.lst</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CortexM3\ARM_GCC_541\Release\Listing Files\SD_SPI0.lst</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CortexM3\ARM_GCC_541\Release\Listing Files\SD_SPI0_CS.lst</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CortexM3\ARM_GCC_541\Release\Listing Files\SD_SPI0_INT.lst</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CortexM3\ARM_GCC_541\Release\Listing Files\SD_SPI0_PM.lst</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CortexM3\ARM_GCC_541\Release\Listing Files\timer_clock.lst</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CortexM3\ARM_GCC_541\Release\Listing Files\UART_RS485.lst</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CortexM3\ARM_GCC_541\Release\Listing Files\UART_RS485_BOOT.lst</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CortexM3\ARM_GCC_541\Release\Listing Files\UART_RS485_INT.lst</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CortexM3\ARM_GCC_541\Release\Listing Files\UART_RS485_PM.lst</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CortexM3\ARM_GCC_541\Release\Listing Files\utils.lst</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CortexM3\ARM_GCC_541\Release\Listing Files\VALVE.lst</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CortexM3\ARM_GCC_541\Release\Listing Files\VOLTAGE_SENSE_2.lst</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CortexM3\ARM_GCC_541\Release\Listing Files\VT_1A.lst</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CortexM3\ARM_GCC_541\Release\Listing Files\VT_1B.lst</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CortexM3\ARM_GCC_541\Release\Listing Files\VT_2A.lst</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CortexM3\ARM_GCC_541\Release\Listing Files\VT_2B.lst</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CortexM3\ARM_GCC_541\Release\Listing Files\VT1_DIR.lst</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CortexM3\ARM_GCC_541\Release\Listing Files\VT1_DIR_PM.lst</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CortexM3\ARM_GCC_541\Release\Listing Files\VT2_DIR.lst</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CortexM3\ARM_GCC_541\Release\Listing Files\VT2_DIR_PM.lst</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CortexM3\ARM_GCC_541\Release\VIBES_Socket(Toast).cyacd</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CortexM3\ARM_GCC_541\Release\VIBES_Socket(Toast).elf</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CortexM3\ARM_GCC_541\Release\VIBES_Socket(Toast).hex</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CortexM3\ARM_GCC_541\Release\VIBES_Socket(Toast).map</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\VIBES_Socket(Toast).gpdsc</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\VIBES_Socket(Toast).rpt</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\VIBES_Socket(Toast)_timing.html</v>
+</ExpandedNodeIds>
+<VisibleNodeIds>
+<v>VIBES_Socket(Toast)</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CortexM3</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CortexM3\ARM_GCC_541</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CortexM3\ARM_GCC_541\Release</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CortexM3\ARM_GCC_541\Release\Listing Files</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CortexM3\ARM_GCC_541\Release\Listing Files\ADC.lst</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CortexM3\ARM_GCC_541\Release\Listing Files\ADC_AMux.lst</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CortexM3\ARM_GCC_541\Release\Listing Files\ADC_Ext_CP_Clk.lst</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CortexM3\ARM_GCC_541\Release\Listing Files\ADC_INT.lst</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CortexM3\ARM_GCC_541\Release\Listing Files\ADC_IRQ.lst</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CortexM3\ARM_GCC_541\Release\Listing Files\ADC_N_CHANNELS_USED.lst</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CortexM3\ARM_GCC_541\Release\Listing Files\ADC_N_CHANNELS_USED_PM.lst</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CortexM3\ARM_GCC_541\Release\Listing Files\ADC_PM.lst</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CortexM3\ARM_GCC_541\Release\Listing Files\ADC_SOC.lst</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CortexM3\ARM_GCC_541\Release\Listing Files\ADC_SOC_PM.lst</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CortexM3\ARM_GCC_541\Release\Listing Files\ADC_STATUS.lst</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CortexM3\ARM_GCC_541\Release\Listing Files\ADC_theACLK.lst</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CortexM3\ARM_GCC_541\Release\Listing Files\BLINK_05HZ.lst</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CortexM3\ARM_GCC_541\Release\Listing Files\BLINK_05HZ_PM.lst</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CortexM3\ARM_GCC_541\Release\Listing Files\BLINK_25HZ.lst</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CortexM3\ARM_GCC_541\Release\Listing Files\BLINK_25HZ_PM.lst</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CortexM3\ARM_GCC_541\Release\Listing Files\BLINK_CTRL_EN.lst</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CortexM3\ARM_GCC_541\Release\Listing Files\BLINK_CTRL_EN_PM.lst</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CortexM3\ARM_GCC_541\Release\Listing Files\Bootloadable.lst</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CortexM3\ARM_GCC_541\Release\Listing Files\CLK_RTC.lst</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CortexM3\ARM_GCC_541\Release\Listing Files\CLOCK_PWM.lst</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CortexM3\ARM_GCC_541\Release\Listing Files\CLOCK_PWM_BLINK.lst</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CortexM3\ARM_GCC_541\Release\Listing Files\CLOCK_UART.lst</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CortexM3\ARM_GCC_541\Release\Listing Files\CLOCK_VT.lst</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CortexM3\ARM_GCC_541\Release\Listing Files\Cm3Start.lst</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CortexM3\ARM_GCC_541\Release\Listing Files\command_processing.lst</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CortexM3\ARM_GCC_541\Release\Listing Files\counter_cyc_clk.lst</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CortexM3\ARM_GCC_541\Release\Listing Files\CS_RTC.lst</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CortexM3\ARM_GCC_541\Release\Listing Files\CURRENT_SENSE_2.lst</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CortexM3\ARM_GCC_541\Release\Listing Files\cy_em_eeprom.lst</v>
+</VisibleNodeIds>
+</CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
+</TreeStates>
+<TreeKeysV2>
+<v>Datasheet</v>
+</TreeKeysV2>
+<TreeStatesV2>
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
+<ExpandedNodeIds>
+<v>VIBES_Socket(Toast)</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\PSoC 5LP Architecture TRM</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CY8C58LP Family Datasheet</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\System Reference Guides</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\System Reference Guides\cy_boot_v5_70</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\ADC_DelSig_v3_20.pdf</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\AMuxHw_v1_50.pdf</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\and_v1_0</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\and_v1_0\and_v1_0.pdf</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\BasicCounter_v1_0.pdf</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\Bootloadable_v1_60.pdf</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\cy_clock_v2_20</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\cy_clock_v2_20\cy_clock_v2_20.pdf</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\cy_dma_v1_70.pdf</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\cy_isr_v1_70</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\cy_isr_v1_70\cy_isr_v1_70.pdf</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\cy_pins_v2_10</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\cy_pins_v2_10\cy_pins_v2_10.pdf</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\cy_pins_v2_20</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\cy_pins_v2_20\cy_pins_v2_20.pdf</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\cy_srff_v1_0</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\cy_srff_v1_0\cy_srff_v1_0.pdf</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\cy_sync_v1_0</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\cy_sync_v1_0\cy_sync_v1_0.pdf</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CyControlReg_v1_80</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CyControlReg_v1_80\CyControlReg_v1_80.pdf</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CyStatusReg_v1_90</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CyStatusReg_v1_90\CyStatusReg_v1_90.pdf</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\DigitalComp_v1_0.pdf</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\EEPROM_v3_0.pdf</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\emFile_v1_20.pdf</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\mux_v1_10</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\mux_v1_10\mux_v1_10.pdf</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\not_v1_0</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\not_v1_0\not_v1_0.pdf</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\or_v1_0</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\or_v1_0\or_v1_0.pdf</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\PWM_v3_30</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\PWM_v3_30\PWM_v3_30.pdf</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\Timer_v2_70</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\Timer_v2_70\Timer_v2_70.pdf</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\UART_v2_50.pdf</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\ZeroTerminal</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\ZeroTerminal\ZeroTerminal.pdf</v>
+</ExpandedNodeIds>
+<VisibleNodeIds>
+<v>VIBES_Socket(Toast)</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\PSoC 5LP Architecture TRM</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CY8C58LP Family Datasheet</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\System Reference Guides</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\System Reference Guides\cy_boot_v5_70</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\ADC_DelSig_v3_20.pdf</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\AMuxHw_v1_50.pdf</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\and_v1_0</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\and_v1_0\and_v1_0.pdf</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\BasicCounter_v1_0.pdf</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\Bootloadable_v1_60.pdf</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\cy_clock_v2_20</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\cy_clock_v2_20\cy_clock_v2_20.pdf</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\cy_dma_v1_70.pdf</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\cy_isr_v1_70</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\cy_isr_v1_70\cy_isr_v1_70.pdf</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\cy_pins_v2_10</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\cy_pins_v2_10\cy_pins_v2_10.pdf</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\cy_pins_v2_20</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\cy_pins_v2_20\cy_pins_v2_20.pdf</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\cy_srff_v1_0</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\cy_srff_v1_0\cy_srff_v1_0.pdf</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\cy_sync_v1_0</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\cy_sync_v1_0\cy_sync_v1_0.pdf</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CyControlReg_v1_80</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CyControlReg_v1_80\CyControlReg_v1_80.pdf</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CyStatusReg_v1_90</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\CyStatusReg_v1_90\CyStatusReg_v1_90.pdf</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\DigitalComp_v1_0.pdf</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\EEPROM_v3_0.pdf</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\emFile_v1_20.pdf</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\mux_v1_10</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\mux_v1_10\mux_v1_10.pdf</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\not_v1_0</v>
+<v>VIBES_Socket(Toast)\VIBES_Socket(Toast)\not_v1_0\not_v1_0.pdf</v>
+</VisibleNodeIds>
+</CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
+</TreeStatesV2>
+</CyGuid_1b906a0f-a7b6-4e4d-a428-82f98b53cb35>
+</dataGuid>
+<dataGuid v="5f2be1a5-0687-4501-bb8c-cf21cb8211bf">
+<CyGuid_5f2be1a5-0687-4501-bb8c-cf21cb8211bf type_name="CyDesigner.Common.ProjMgmt.GUI.CyBookmarkData" version="1">
+<indicators />
+</CyGuid_5f2be1a5-0687-4501-bb8c-cf21cb8211bf>
+</dataGuid>
+</userData>
+</CyGuid_fdba8dfd-b15b-4469-9bbb-9e40c3e70997>
+<Unloaded />
+<OpenDocs>
+<name v=".\src\FIRMWARE_CONFIGURATION.h" />
+</OpenDocs>
+<OpenDocsLayout><![CDATA[<?xml version="1.0"?><!--
+
+  Actipro Docking/MDI for WinForms
+  Copyright (c) 2001-2016 Actipro Software LLC.  All rights reserved.
+  http://www.actiprosoftware.com
+
+--><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="1055, 495" SelectedTabbedMdiWindow="30ebec82-c74b-47ba-9e84-c9a0be676f4e"><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="e6c53592-2600-47bd-bb84-e80a1b9fa9d1" /><DocumentWindow Key="C:\Users\mgnocco\Documents\Git\PSoC5\PSoC5_FW_WISH_VIBES\FW_VIBES_Socket(Toast)\src\FIRMWARE_CONFIGURATION.h" Guid="30ebec82-c74b-47ba-9e84-c9a0be676f4e" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
+<config v="Release" />
+<AutoUpdate v="true" />
+</CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21>
+</CyXmlSerializer>
